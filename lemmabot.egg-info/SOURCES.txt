@@ -1,7 +1,7 @@
 LICENSE
 MANIFEST.in
 Readme.md
-chatpdf.py
+lemmabot.py
 setup.py
 lemmabot.egg-info/PKG-INFO
 lemmabot.egg-info/SOURCES.txt

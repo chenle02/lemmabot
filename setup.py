@@ -12,7 +12,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     license='MIT',
-    py_modules=['chatpdf'],
+    py_modules=['lemmabot'],
     install_requires=[
         'openai>=0.27.0',
         'PyPDF2>=3.0.0',
@@ -26,7 +26,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'lemmabot=chatpdf:main',
+            'lemmabot=lemmabot:main',
         ],
     },
     classifiers=[

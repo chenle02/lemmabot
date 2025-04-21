@@ -1,2 +1,2 @@
 [console_scripts]
-lemmabot = chatpdf:main
+lemmabot = lemmabot:main

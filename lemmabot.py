@@ -345,7 +345,7 @@ def auth_login():
     if not key:
         print("Error: no API key provided.", file=sys.stderr)
         sys.exit(1)
-    # Write to XDG_CONFIG_HOME/chatpdf/.env
+    # Write to XDG_CONFIG_HOME/lemmabot/.env
     home = os.path.expanduser("~")
     config_home = os.environ.get("XDG_CONFIG_HOME", os.path.join(home, ".config"))
     conf_dir = os.path.join(config_home, "lemmabot")
