@@ -64,7 +64,7 @@ pip install -e .
    ```bash
    chatpdf query <index_prefix> "Your question here"
    ```
-   This will print the answer and a list of references (file path and page number) for each retrieved chunk.
+   This will print the answer (with any mathematical formulas formatted in LaTeX notation) and a list of references (file path and page number) for each retrieved chunk.
 
 3. Interactive REPL mode:
    ```bash

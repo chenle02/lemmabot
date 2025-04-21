@@ -289,7 +289,11 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
                     break
     # Extract texts for prompt
     context_texts = [entry['text'] for entry in selected]
-    system_prompt = "You are a helpful assistant that answers questions based on provided document excerpts."
+    system_prompt = (
+        "You are a helpful assistant that answers questions based on provided document excerpts. "
+        "When including mathematical formulas or equations, format them using LaTeX notation—"
+        "use $...$ for inline math and $$...$$ for display math."
+    )
     user_prompt = "Context:\n" + "\n---\n".join(context_texts) + f"\nQuestion: {question}"
     print("Querying chat completion...")
     chat_resp = openai.ChatCompletion.create(
