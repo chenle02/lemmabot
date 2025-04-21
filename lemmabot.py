@@ -176,22 +176,14 @@ def extract_with_grobid(pdf_path, grobid_url):
 
 def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_semantic=False):
     """Walk the directory, extract and embed text chunks (optionally via Grobid/Unstructured), and save index."""
+    docs = []
     print(f"Indexing PDFs under {root_dir}...")
-    # Discover all PDF files
-    pdf_paths = []
     for dirpath, _, filenames in os.walk(root_dir):
         for fname in filenames:
-            if fname.lower().endswith('.pdf'):
-                pdf_paths.append(os.path.join(dirpath, fname))
-    total_files = len(pdf_paths)
-    print(f"Found {total_files} PDF files under {root_dir}.")
-    if total_files == 0:
-        print("⚠️ No PDF files found. Exiting.")
-        return
-    docs = []
-    # Process each file in turn
-    for file_idx, full_path in enumerate(pdf_paths, start=1):
-        print(f"\nProcessing file {file_idx}/{total_files}: {full_path}")
+            if not fname.lower().endswith('.pdf'):
+                continue
+            full_path = os.path.join(dirpath, fname)
+            print(f"Processing file: {full_path}")
             # Extract content
             if use_grobid:
                 sections = extract_with_grobid(full_path, grobid_url)

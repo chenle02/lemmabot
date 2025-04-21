@@ -11,6 +11,7 @@ import argparse
 import pickle
 import requests
 from lxml import etree
+from tqdm import tqdm
 # Optional semantic tokenizer (only required if --semantic is used)
 try:
     from unstructured.partition.text import partition_text
@@ -175,13 +176,22 @@ def extract_with_grobid(pdf_path, grobid_url):
 
 def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_semantic=False):
     """Walk the directory, extract and embed text chunks (optionally via Grobid/Unstructured), and save index."""
-    docs = []
     print(f"Indexing PDFs under {root_dir}...")
+    # Discover all PDF files
+    pdf_paths = []
     for dirpath, _, filenames in os.walk(root_dir):
         for fname in filenames:
-            if not fname.lower().endswith('.pdf'):
-                continue
-            full_path = os.path.join(dirpath, fname)
+            if fname.lower().endswith('.pdf'):
+                pdf_paths.append(os.path.join(dirpath, fname))
+    total_files = len(pdf_paths)
+    print(f"Found {total_files} PDF files under {root_dir}.")
+    if total_files == 0:
+        print("⚠️ No PDF files found. Exiting.")
+        return
+    docs = []
+    # Process each file in turn
+    for file_idx, full_path in enumerate(pdf_paths, start=1):
+        print(f"\nProcessing file {file_idx}/{total_files}: {full_path}")
             # Extract content
             if use_grobid:
                 sections = extract_with_grobid(full_path, grobid_url)
@@ -251,10 +261,13 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
     # Report how many distinct PDFs were indexed
     unique_paths = set(doc['path'] for doc in docs)
     print(f"Indexed {len(unique_paths)} PDF files with extractable text.")
-    # Embed all chunks
+    # If no chunks were created, exit early to avoid errors
+    if not docs:
+        print("⚠️ No text chunks to index. Exiting.")
+        return
+    # Embed all chunks with progress bar
     embeddings = []
-    for idx, doc in enumerate(docs, 1):
-        print(f"Embedding chunk {idx}/{len(docs)}...", end='\r')
+    for doc in tqdm(docs, desc="Embedding chunks", unit="chunk"):
         try:
             resp = openai.Embedding.create(
                 input=doc['text'],
@@ -262,7 +275,8 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
             )
             emb = resp['data'][0]['embedding']
         except Exception as e:
-            print(f"\nError embedding chunk {idx}: {e}", file=sys.stderr)
+            path = doc.get('path', '<unknown>')
+            print(f"\nError embedding chunk for {path}: {e}", file=sys.stderr)
             emb = [0.0] * 1536
         embeddings.append(emb)
     # Convert to array and normalize for cosine (inner product) search
