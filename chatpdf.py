@@ -147,9 +147,30 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
     )
     q_emb = np.array(resp['data'][0]['embedding'], dtype=np.float32).reshape(1, -1)
     faiss.normalize_L2(q_emb)
-    distances, indices = faiss_index.search(q_emb, top_k)
-    # Gather selected document chunks and their metadata
-    selected = [docs[i] for i in indices[0]]
+    # Perform a broader search then select top_k unique documents
+    n_total = faiss_index.ntotal
+    k_search = min(n_total, top_k * 5)
+    distances, indices = faiss_index.search(q_emb, k_search)
+    # Filter for unique document paths
+    selected = []
+    seen_paths = set()
+    for idx in indices[0]:
+        entry = docs[idx]
+        path = entry.get('path')
+        if path not in seen_paths:
+            seen_paths.add(path)
+            selected.append(entry)
+            if len(selected) >= top_k:
+                break
+    # If not enough unique, fill with next best
+    if len(selected) < top_k:
+        for idx in indices[0]:
+            entry = docs[idx]
+            if entry not in selected:
+                selected.append(entry)
+                if len(selected) >= top_k:
+                    break
+    # Extract texts for prompt
     context_texts = [entry['text'] for entry in selected]
     system_prompt = "You are a helpful assistant that answers questions based on provided document excerpts."
     user_prompt = "Context:\n" + "\n---\n".join(context_texts) + f"\nQuestion: {question}"
