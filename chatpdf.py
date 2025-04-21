@@ -383,35 +383,65 @@ def query_index(index_path, question, top_k=5, temperature=0.2):
         print(f"[{idx}] {path} (page {page})")
 
 
+from datetime import datetime
+
 def repl_chat(index_prefix, top_k=5, temperature=0.2):
-    """Interactive REPL mode for querying PDF index."""
+    """Interactive REPL mode for querying PDF index, with automatic session logging."""
     # Load documents and FAISS index
-    base, ext = os.path.splitext(index_prefix)
+    base, _ = os.path.splitext(index_prefix)
     docs_file = base + '.pkl'
     faiss_file = base + '.faiss'
     with open(docs_file, 'rb') as f:
         docs = pickle.load(f)
     index = faiss.read_index(faiss_file)
-    print("Entering interactive REPL mode. Type 'exit' or press Ctrl-D to quit.")
-    # REPL loop
-    while True:
-        try:
+    # Prepare session log
+    now = datetime.now()
+    timestamp = now.strftime('%Y%m%d_%H%M%S')
+    log_filename = f"repl_session_{timestamp}.md"
+    try:
+        log_f = open(log_filename, 'w', encoding='utf-8')
+    except Exception as e:
+        print(f"⚠️ Could not open log file {log_filename}: {e}")
+        log_f = None
+    if log_f:
+        log_f.write(f"# LemmaBot Session Log\n")
+        log_f.write(f"Date: {now.isoformat()}\n\n")
+    print(f"Entering interactive REPL mode. Type 'exit' or press Ctrl-D to quit. Logging to {log_filename}.")
+    # Run REPL with guaranteed log closing
+    try:
+        while True:
             question = input("\nUser> ")
-        except (EOFError, KeyboardInterrupt):
-            print("\nExiting REPL.")
-            break
-        if not question or question.strip().lower() in ('exit', 'quit'):
-            print("Exiting REPL.")
-            break
-        # Get answer and contexts
-        answer, contexts = answer_question(docs, index, question, top_k, temperature)
-        print(f"\nAssistant> {answer}")
-        # Print references
-        print("References:")
-        for idx, ctx in enumerate(contexts, start=1):
-            path = ctx.get('path', '<unknown>')
-            page = ctx.get('page', 'N/A')
-            print(f" [{idx}] {path} (page {page})")
+            if not question or question.strip().lower() in ('exit', 'quit'):
+                print("Exiting REPL.")
+                break
+            # Get answer and contexts
+            answer, contexts = answer_question(docs, index, question, top_k, temperature)
+            # Print to console
+            print(f"\nAssistant> {answer}")
+            print("References:")
+            for idx, ctx in enumerate(contexts, start=1):
+                path = ctx.get('path', '<unknown>')
+                page = ctx.get('page', 'N/A')
+                print(f" [{idx}] {path} (page {page})")
+            # Log to file
+            if log_f:
+                log_f.write(f"## User:\n{question}\n\n")
+                log_f.write(f"## Assistant:\n{answer}\n\n")
+                log_f.write("**References:**\n")
+                for idx, ctx in enumerate(contexts, start=1):
+                    path = ctx.get('path', '<unknown>')
+                    page = ctx.get('page', 'N/A')
+                    log_f.write(f"- [{idx}] {path} (page {page})\n")
+                log_f.write("\n---\n\n")
+    except (EOFError, KeyboardInterrupt):
+        print("\nExiting REPL.")
+    finally:
+        if log_f:
+            try:
+                log_f.close()
+                print(f"Session saved to {log_filename}")
+            except Exception:
+                pass
 
 
 def main():

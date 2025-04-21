@@ -2,6 +2,7 @@
 ![Python](https://img.shields.io/badge/python-3.8--3.12-blue)
 
 # LemmaBot: Local AI-Powered Research Assistant for PDFs
+**⚠️ Experimental**: This tool is in an experimental stage. APIs and features may change without notice.
 
 A fast, offline-friendly CLI tool for indexing and querying large collections of research papers using OpenAI's models, FAISS, and (optionally) Grobid.
 
@@ -161,6 +162,7 @@ chatpdf repl myindex --top_k 8 --temperature 0.3
    lemmabot repl <index_prefix>
    ```
    Starts a session where you can ask multiple follow-up questions against the same index. Type `exit` or press Ctrl-D to quit.
+   Upon exit, the full session transcript (questions, answers, and references) is saved to a Markdown file named `repl_session_YYYYMMDD_HHMMSS.md` in the current directory.
 
 
 ## License
