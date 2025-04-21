@@ -5,6 +5,12 @@
 
 A fast, offline-friendly CLI tool for indexing and querying large collections of research papers using OpenAI's models, FAISS, and (optionally) Grobid.
 
+## Who Is This For?
+
+- **Researchers** looking to ask natural language questions across a large collection of scientific papers—especially those containing mathematical formulas, figures, and references.
+- **Students** studying technical literature who want to better understand complex concepts by querying papers in plain language.
+- **Developers** and educators building tools for navigating domain-specific PDF content using modern LLMs.
+
 ## Quickstart
 
 ```bash
@@ -27,6 +33,7 @@ chatpdf query myindex "What is the main result in the KPZ paper?"
   ```bash
   pip install -r requirements.txt
   ```
+
 - Set your OpenAI API key:
   - Via environment variable:
     ```bash
@@ -37,6 +44,8 @@ chatpdf query myindex "What is the main result in the KPZ paper?"
     chatpdf auth login
     ```
     This will prompt you for your key and store it in `~/.config/chatpdf/.env`.
+
+
 
 ### Grobid Setup (optional)
 
@@ -62,6 +71,11 @@ Install via pip:
 pip install .
 # or in editable mode for development:
 pip install -e .
+```
+
+After install, the main command is:
+```bash
+chatpdf --help
 ```
 
 ## Configuration
