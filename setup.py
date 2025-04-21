@@ -11,7 +11,10 @@ setup(
         'numpy>=1.20.0',
         'python-dotenv>=0.21.0',
         'faiss-cpu>=1.7.1',
-        'tiktoken>=0.3.0'
+        'tiktoken>=0.3.0',
+        'requests>=2.28.0',
+        'lxml>=4.9.0',
+        'unstructured>=0.7.3'
     ],
     entry_points={
         'console_scripts': [

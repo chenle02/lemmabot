@@ -9,6 +9,9 @@ import os
 import sys
 import argparse
 import pickle
+import requests
+from lxml import etree
+from unstructured.partition.text import partition_text
 
 from dotenv import load_dotenv
 import getpass
@@ -81,10 +84,66 @@ def chunk_text(text, chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP):
         chunks.append(chunk_str)
         start += chunk_size - overlap
     return chunks
+ 
+def semantic_chunk_paragraphs(paragraphs, chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP):
+    """Chunk list of paragraphs into semantic chunks based on token count."""
+    # Initialize tokenizer
+    try:
+        encoder = tiktoken.encoding_for_model(CHAT_MODEL)
+    except Exception:
+        encoder = tiktoken.get_encoding("cl100k_base")
+    chunks = []
+    current_chunk = []
+    current_tokens = 0
+    for para in paragraphs:
+        tokens = encoder.encode(para)
+        n_tokens = len(tokens)
+        if current_chunk and current_tokens + n_tokens > chunk_size:
+            chunks.append("\n\n".join(current_chunk))
+            # overlap: keep last paragraph
+            current_chunk = current_chunk[-1:]
+            current_tokens = len(encoder.encode(current_chunk[0])) if current_chunk else 0
+        current_chunk.append(para)
+        current_tokens += n_tokens
+    if current_chunk:
+        chunks.append("\n\n".join(current_chunk))
+    return chunks
+
+def extract_with_grobid(pdf_path, grobid_url):
+    """Extract sections and paragraphs from PDF using Grobid fulltext API."""
+    files = {'input': open(pdf_path, 'rb')}
+    params = {'consolidateHeader': '0', 'consolidateCitations': '0'}
+    try:
+        resp = requests.post(f"{grobid_url}/api/processFulltextDocument", files=files, params=params)
+        resp.raise_for_status()
+    except Exception as e:
+        print(f"Error calling Grobid on {pdf_path}: {e}", file=sys.stderr)
+        return []
+    xml = resp.text
+    try:
+        root = etree.fromstring(xml.encode('utf-8'))
+    except Exception as e:
+        print(f"Error parsing Grobid XML for {pdf_path}: {e}", file=sys.stderr)
+        return []
+    ns = {'tei': 'http://www.tei-c.org/ns/1.0'}
+    body = root.find('.//tei:text/tei:body', ns)
+    if body is None:
+        return []
+    sections = []
+    for div in body.findall('.//tei:div[@type="section"]', ns):
+        head = div.find('tei:head', ns)
+        title = head.text.strip() if head is not None and head.text else ''
+        paras = []
+        for p in div.findall('tei:p', ns):
+            if p.text and p.text.strip():
+                paras.append(p.text.strip())
+        if paras:
+            sections.append({'title': title, 'paragraphs': paras})
+    return sections
 
 
-def index_pdfs(root_dir, output_path):
-    """Walk the directory, extract and embed text chunks, and save to disk."""
+def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_semantic=False):
+    """Walk the directory, extract and embed text chunks (optionally via Grobid/Unstructured), and save index."""
     docs = []
     print(f"Indexing PDFs under {root_dir}...")
     for dirpath, _, filenames in os.walk(root_dir):
@@ -92,44 +151,71 @@ def index_pdfs(root_dir, output_path):
             if not fname.lower().endswith('.pdf'):
                 continue
             full_path = os.path.join(dirpath, fname)
-            # Try extracting text per page
-            text_pages = []
-            try:
-                reader = PdfReader(full_path)
-                for page in reader.pages:
-                    try:
-                        page_text = page.extract_text() or ''
-                    except Exception:
-                        page_text = ''
-                    if page_text.strip():
-                        text_pages.append(page_text)
-            except PdfReadError as e:
-                print(f"⚠️ Skipping unreadable PDF: {full_path} ({e})")
-                continue
-            # Fallback to txt file if no page text extracted
-            if not text_pages:
-                txt_path = os.path.splitext(full_path)[0] + '.txt'
-                if os.path.exists(txt_path):
-                    try:
-                        with open(txt_path, 'r', encoding='utf-8') as f:
-                            txt_text = f.read()
-                        if txt_text.strip():
-                            text_pages = [txt_text]
-                            print(f"ℹ️ Using TXT backup for {full_path}")
-                    except Exception as e:
-                        print(f"⚠️ Error reading TXT {txt_path}: {e}")
-            # Skip if still no text
-            if not text_pages:
-                continue
-            # Chunk each page or txt backup text
-            for page_num, page_text in enumerate(text_pages, start=1):
-                for chunk_idx, chunk in enumerate(chunk_text(page_text)):
-                    docs.append({
-                        'path': full_path,
-                        'page': page_num,
-                        'chunk': chunk_idx,
-                        'text': chunk
-                    })
+            # Extract content
+            if use_grobid:
+                sections = extract_with_grobid(full_path, grobid_url)
+                for sec in sections:
+                    paras = sec.get('paragraphs', [])
+                    # Chunk by semantic or simple token window
+                    if use_semantic:
+                        chunks = semantic_chunk_paragraphs(paras)
+                    else:
+                        chunks = chunk_text("\n\n".join(paras))
+                    for chunk_idx, chunk in enumerate(chunks):
+                        docs.append({
+                            'path': full_path,
+                            'section': sec.get('title', ''),
+                            'chunk': chunk_idx,
+                            'text': chunk
+                        })
+            else:
+                # Page-based or TXT fallback extraction
+                text_pages = []
+                try:
+                    reader = PdfReader(full_path)
+                    for page in reader.pages:
+                        try:
+                            page_text = page.extract_text() or ''
+                        except Exception:
+                            page_text = ''
+                        if page_text.strip():
+                            text_pages.append(page_text)
+                except PdfReadError as e:
+                    print(f"⚠️ Skipping unreadable PDF: {full_path} ({e})")
+                    continue
+                if not text_pages:
+                    txt_path = os.path.splitext(full_path)[0] + '.txt'
+                    if os.path.exists(txt_path):
+                        try:
+                            with open(txt_path, 'r', encoding='utf-8') as f:
+                                txt_text = f.read()
+                            if txt_text.strip():
+                                text_pages = [txt_text]
+                                print(f"ℹ️ Using TXT backup for {full_path}")
+                        except Exception as e:
+                            print(f"⚠️ Error reading TXT {txt_path}: {e}")
+                # Skip if still no text
+                if not text_pages:
+                    continue
+                for page_num, page_text in enumerate(text_pages, start=1):
+                    # Semantic chunk per page if requested
+                    if use_semantic:
+                        paras = []
+                        try:
+                            elems = partition_text(text=page_text)
+                            paras = [el.text.strip() for el in elems if getattr(el, 'element_type', '') == 'NarrativeText' and el.text]
+                        except Exception:
+                            paras = page_text.split('\n\n')
+                        chunks = semantic_chunk_paragraphs(paras)
+                    else:
+                        chunks = chunk_text(page_text)
+                    for chunk_idx, chunk in enumerate(chunks):
+                        docs.append({
+                            'path': full_path,
+                            'page': page_num,
+                            'chunk': chunk_idx,
+                            'text': chunk
+                        })
     print(f"Created {len(docs)} chunks.")
     # Report how many distinct PDFs were indexed
     unique_paths = set(doc['path'] for doc in docs)
@@ -157,7 +243,7 @@ def index_pdfs(root_dir, output_path):
     index = faiss.IndexFlatIP(dim)
     index.add(embeddings)
     # Determine output filenames
-    base, ext = os.path.splitext(output_path)
+    base = output_prefix
     docs_file = base + '.pkl'
     faiss_file = base + '.faiss'
     # Save documents metadata
@@ -306,9 +392,40 @@ def main():
     auth_sub = parser_auth.add_subparsers(dest='auth_cmd')
     auth_sub.add_parser('login', help='Prompt and save your OpenAI API key')
     # index subcommand
-    parser_index = subparsers.add_parser('index', help='Index PDFs under a directory')
-    parser_index.add_argument('root_dir', help='Root directory to search for PDFs')
-    parser_index.add_argument('index_prefix', help='Prefix for output index files (without extension)')
+    parser_index = subparsers.add_parser(
+        'index',
+        help='Index PDFs under a directory',
+        epilog=(
+            'Grobid setup (optional):\n'
+            '  docker pull lfoppiano/grobid:0.7.3\n'
+            '  docker run --rm -t -p 8070:8070 lfoppiano/grobid:0.7.3\n'
+            '  export GROBID_URL=http://localhost:8070\n'
+            'Use --grobid to enable Grobid-based extraction. See README for details.'
+        )
+    )
+    parser_index.add_argument(
+        'root_dir',
+        help='Root directory to search for PDF files'
+    )
+    parser_index.add_argument(
+        'index_prefix',
+        help='Prefix for output index files (without extension)'
+    )
+    parser_index.add_argument(
+        '--grobid', '-g',
+        action='store_true',
+        help='Enable Grobid-based section & metadata extraction (requires Grobid server). See README.'
+    )
+    parser_index.add_argument(
+        '--grobid-url',
+        default=os.getenv('GROBID_URL', 'http://localhost:8070'),
+        help='URL of running Grobid service (default from GROBID_URL or http://localhost:8070)'
+    )
+    parser_index.add_argument(
+        '--semantic', '-s',
+        action='store_true',
+        help='Enable Unstructured-based semantic chunking of paragraphs'
+    )
 
     parser_query = subparsers.add_parser('query', help='Query the indexed PDFs')
     parser_query.add_argument('index_prefix', help='Prefix of the index files (without extension)')
@@ -335,7 +452,10 @@ def main():
     # Load API key from env or config
     load_api_key()
     if args.command == 'index':
-        index_pdfs(args.root_dir, args.index_prefix)
+        index_pdfs(args.root_dir, args.index_prefix,
+                   use_grobid=args.grobid,
+                   grobid_url=args.grobid_url,
+                   use_semantic=args.semantic)
     elif args.command == 'query':
         question = ' '.join(args.question)
         query_index(args.index_prefix, question, args.top_k)
