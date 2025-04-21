@@ -8,3 +8,4 @@ vectorstore.pkl
 index.pkl
 *.pkl
 .DS_Store
+All_pdfs/c/example.pdf

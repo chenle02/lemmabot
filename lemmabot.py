@@ -251,6 +251,10 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
     # Report how many distinct PDFs were indexed
     unique_paths = set(doc['path'] for doc in docs)
     print(f"Indexed {len(unique_paths)} PDF files with extractable text.")
+    # If no chunks were created, exit early to avoid errors
+    if not docs:
+        print("⚠️ No text chunks to index. Exiting.")
+        return
     # Embed all chunks
     embeddings = []
     for idx, doc in enumerate(docs, 1):
