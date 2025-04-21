@@ -1,1 +1,31 @@
-# This is a test project to local research assistant to talk to my local pdf files.
+# ChatPDF: Local Research Assistant for PDF Documents
+
+A CLI tool for indexing and querying your local PDF collection using OpenAI APIs.
+
+## Setup
+
+- Create and activate a Python virtual environment (optional but recommended)
+- Install dependencies:
+  ```bash
+  pip install -r requirements.txt
+  ```
+- Set your OpenAI API key:
+  ```bash
+  export OPENAI_API_KEY="your_api_key_here"
+  ```
+
+## Usage
+
+1. Index your PDFs (creates a FAISS index and metadata):
+   ```bash
+   python3 chatpdf.py index <root_directory> <index_prefix>
+   ```
+   This will walk through `<root_directory>`, extract and embed text chunks, and save:
+   - `<index_prefix>.pkl` (documents metadata)
+   - `<index_prefix>.faiss` (FAISS vector index)
+
+2. Query your PDF collection (uses FAISS for fast retrieval):
+   ```bash
+   python3 chatpdf.py query <index_prefix> "Your question here"
+   ```
+   The tool will retrieve relevant chunks and use the LLM to answer your question.
