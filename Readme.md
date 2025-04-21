@@ -70,6 +70,39 @@ Example `~/.config/chatpdf/config.json`:
 }
 ```
 
+### Recommended OpenAI Models
+When choosing models, you should balance cost, speed, and quality. Here are some common options:
+
+Embedding models:
+- text-embedding-ada-002 (default): very cost-effective and high-quality for most tasks
+- text-embedding-3-small: lower cost and faster, suitable for large batch embeddings
+- text-embedding-3-large: higher accuracy for specialized applications
+
+Chat / reasoning models:
+- gpt-3.5-turbo (default): fast and affordable general-purpose chat
+- gpt-3.5-turbo-16k: extended context window (up to 16k tokens)
+- gpt-4: top-tier reasoning quality, standard-window (~8k tokens)
+- gpt-4-32k: extended context window (up to 32k tokens) for very long conversations
+
+Specify your choice in the config file under `embedding_model` and `chat_model`.
+
+## Tunable Parameters
+In addition to model choice, you can adjust these parameters:
+
+- `chunk_size` (config file): number of tokens per text chunk (default: 500)
+- `chunk_overlap` (config file): token overlap between chunks (default: 50)
+- `top_k` (CLI flag `--top_k`): number of top document chunks to retrieve (default: 5)
+- `temperature` (CLI flag `--temperature`): sampling temperature for the chat model (default: 0.2)
+
+Examples:
+```bash
+# Use top 10 chunks and a higher sampling temperature
+chatpdf query myindex "Explain the main theorem" --top_k 10 --temperature 0.7
+
+# In REPL mode, adjust temperature and top_k
+chatpdf repl myindex --top_k 8 --temperature 0.3
+```
+
 ## Usage
 
 1. Index your PDFs (creates a FAISS index and metadata):
