@@ -261,7 +261,7 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
     embeddings = []
     for doc in tqdm(docs, desc="Embedding chunks", unit="chunk"):
         try:
-            resp = openai.Embedding.create(
+            resp = openai.embeddings.create(
                 input=doc['text'],
                 model='text-embedding-ada-002'
             )
@@ -295,7 +295,7 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
 def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
     """Embed question, retrieve top_k contexts, and return the model's answer."""
     print("Embedding question...")
-    resp = openai.Embedding.create(
+    resp = openai.embeddings.create(
         input=question,
         model=EMBED_MODEL
     )
