@@ -1,6 +1,24 @@
-# ChatPDF: Local Research Assistant for PDF Documents
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+![Python](https://img.shields.io/badge/python-3.8--3.12-blue)
 
-A CLI tool for indexing and querying your local PDF collection using OpenAI APIs.
+# ChatPDF: Local AI-Powered Research Assistant for PDFs
+
+A fast, offline-friendly CLI tool for indexing and querying large collections of research papers using OpenAI's models, FAISS, and (optionally) Grobid.
+
+## Quickstart
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Set your OpenAI API key
+export OPENAI_API_KEY="your_api_key_here"
+
+# Index a folder of PDFs
+chatpdf index ./papers myindex
+
+# Ask a question!
+chatpdf query myindex "What is the main result in the KPZ paper?"
 
 ## Setup
 
@@ -132,3 +150,13 @@ chatpdf repl myindex --top_k 8 --temperature 0.3
    chatpdf repl <index_prefix>
    ```
    Starts a session where you can ask multiple follow-up questions against the same index. Type `exit` or press Ctrl-D to quit.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
+
+> Note: Use of OpenAI models must comply with [OpenAI's API Terms of Use](https://openai.com/policies/terms-of-use).

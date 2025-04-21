@@ -4,6 +4,7 @@ setup(
     name='chatpdf',
     version='0.1.0',
     description='Local Research Assistant CLI for PDF documents',
+    license='MIT',
     py_modules=['chatpdf'],
     install_requires=[
         'openai>=0.27.0',
