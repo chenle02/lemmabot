@@ -151,9 +151,6 @@ chatpdf repl myindex --top_k 8 --temperature 0.3
    ```
    Starts a session where you can ask multiple follow-up questions against the same index. Type `exit` or press Ctrl-D to quit.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## License
 
