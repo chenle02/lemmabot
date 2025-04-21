@@ -1,0 +1,2577 @@
+ZAMM · Z. Angew. Math. Mech. 96, No. 5, 570–584 (2016) / DOI 10.1002/zamm.201400311
+
+An attraction-repulsion chemotaxis system with logistic source
+Qingshan Zhang1,2 and Yuxiang Li1,∗
+1
+2
+
+Department of Mathematics, Southeast University, Nanjing 211189, P. R. China
+Department of Mathematics, Henan Institute of Science and Technology, Xinxiang 453003, P. R. China
+
+Received 30 December 2014, revised 6 May 2015, accepted 11 May 2015
+Published online 10 June 2015
+Key words Attraction-repulsion chemotaxis system, global existence, weak solution, asymptotic behavior.
+MSC (2010) 35K55, 35B40, 92C17
+This paper deals with the attraction-repulsion chemotaxis system with logistic source
+⎧
+⎪
+⎨ut = u − χ ∇ · (u∇v) + ξ ∇ · (u∇w) + f (u), x ∈ , t > 0,
+0 = v + αu − βv,
+x ∈ , t > 0,
+⎪
+⎩
+0 = w + γ u − δw,
+x ∈ , t > 0,
+under homogeneous Neumann boundary conditions in a smooth bounded domain  ⊂ Rn (n ≥ 1). Under a growth
+restriction on logistic source and suitable assumptions on the positive parameters χ , ξ , α, β, γ and δ, we show the
+existence of global bounded classical solutions. The global weak solution is also constructed if the logistic damping effect
+is rather mild. Furthermore, we obtain the asymptotic behavior of solutions for the logistic source f (u) = μu(1 − u).
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+1 Introduction
+Chemotaxis is a mechanism by which cells and organisms efficiently respond to chemical stimuli in their environment,
+moving toward beneficial targets or environments and avoiding undesired ones [1]. In the present paper, we consider
+chemoattraction-repulsion process in which cells undergo random motion and chemotaxis towards attractant and away
+from repellent [12]. Moreover, we consider the model with proliferation and death of cells and assume that chemicals
+diffuse very quickly [6, 19, 20]. These lead to the model of partial differential equations as follows:
+⎧
+ut = u − χ ∇ · (u∇v) + ξ ∇ · (u∇w) + f (u), x ∈ , t > 0,
+⎪
+⎪
+⎪
+⎪
+⎪
+x ∈ , t > 0,
+⎪
+⎨0 = v + αu − βv,
+0 = w + γ u − δw,
+x ∈ , t > 0,
+(1.1)
+⎪
+⎪
+∂u
+∂v
+∂w
+⎪
+= ∂ν = ∂ν = 0,
+x ∈ ∂, t > 0,
+⎪
+⎪
+∂ν
+⎪
+⎩
+u(x, 0) = u0 (x),
+x ∈ ,
+in a bounded domain  ⊂ Rn (n ≥ 1) with smooth boundary, where u(x, t) represents the population density, v(x, t) and
+w(x, t) denote chemical concentrations of attractant and repellent, respectively. The parameters χ , ξ , α, β, γ , and δ are all
+positive. The logistic function f (s) : R → R is smooth and satisfies f (0) ≥ 0 as well as
+f (s) ≤ μs(1 − s) for all s ≥ 0
+with some μ > 0.
+The attraction-repulsion chemotaxis model (1.1) is a generalization of the famous Keller-Segel model [8]
+⎧
+ut = u − χ ∇ · (u∇v) + f (u),
+⎪
+⎪
+⎪
+⎨τ v = v − v + u,
+t
+∂u
+∂v
+⎪
+= ∂ν
+= 0,
+⎪
+⎪
+⎩ ∂ν
+u(x, 0) = u0 (x), τ v(x, 0) = τ v0 .
+∗
+
+Corresponding author, E-mail: lieyx@seu.edu.cn, Phone: +86 137 7067 3528.
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+(1.2)
+
+(1.3)
+
+571
+
+During the past four decades, much attention has been focused on this classical chemotaxis model. A large amount of
+efforts were devoted to making clear whether solutions to the so-called minimal model (f (u) = 0) are blowup or bounded
+[4, 13, 16, 24, 27].
+Since the blowup of solutions is an extreme phenomenon in real application, a lot of papers consider the model variations
+in which the chemotactic collapse is precluded. The logistic function f (u) in (1.3) under some growth restrictions is expected
+to prevent chemotactic collapse. In the case τ > 0, if the logistic term satisfies
+f (u) ≤ a − μu2
+
+(1.4)
+
+with some a ≥ 0 and μ > 0, problem (1.3) possesses a unique global and bounded solution provided that either the
+space dimensions n ≤ 2 [15, 25] or n ≥ 3 and μ > μ0 (τ, χ , n) [25]. The variation of (1.3) has also been considered
+in [14], in which the production term u in the second equation of (1.3) is replaced by h(u). Under the assumptions
+0 ≤ h(u) ≤ (u + 1)β , 0 ≤ h (u) ≤ β(u + 1)β−1 , and f (u) ≤ 1 − μuα with 32 ≤ α ≤ 2, and 0 < β < α − 1 or (α, β) =
+( 32 , 12 ), solutions are global and bounded.
+The case τ = 0 means essentially that chemical diffuses much faster than cells move. Under the assumption (1.4), Tello
+χ , problem (1.3) with τ = 0 possess a unique global bounded
+and Winkler [20] proved that if either n ≤ 2 or n ≥ 3, μ > n−2
+n
+classical solution, and moreover for all n ≥ 1, μ > 0 there exist at least one global weak solution. When the degradation
+order of f is weaker than quadratic, i.e., −c0 (u + uα ) ≤ f (u) ≤ c1 − μuα for some c0 > 0, c1 ≥ 0 and μ > 0, Winkler
+[22] constructed a very weak solution and studied the boundedness properties of such solution if α > 2 − n1 . In a recent
+paper, Wang et al. [21] obtained the boundedness of solutions to the nonlinear-diffusion model with such proliferation
+term. However, chemotactic collapse is not always ruled out by logistic term. Winkler [26] studied the system
+
+ut = u − χ ∇ · (u∇v) + λu − νuκ ,
+(1.5)
+0 = v − m(t) + u
+
+1
+in a ball  ⊂ Rn , where m(t) = ||
+ u(x, t)dx. He proved when n ≥ 5 and κ <
+that radially symmetric solutions of (1.5) blow up in finite time.
+Recently, the attraction-repulsion chemotaxis system
+⎧
+ut = u − χ ∇ · (u∇v) + ξ ∇ · (u∇w),
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎨τ vt = v + αu − βv,
+τ wt = w + γ u − δw,
+⎪
+⎪
+∂u
+∂v
+⎪
+= ∂ν
+= ∂w
+= 0,
+⎪
+⎪
+∂ν
+∂ν
+⎪
+⎩
+u(x, 0) = u0 (x), τ v(x, 0) = τ v0 ,
+
+3
+2
+
++
+
+1
+,
+2n−2
+
+there exist initial data such
+
+(1.6)
+τ w(x, 0) = τ w0
+
+was studied by several authors [2, 3, 7, 10, 11, 17, 19]. Liu and Wang [10] studied the global existence, asymptotic behavior
+and steady states of solutions to system (1.6) with τ = 1 in one dimension. In the two-dimensional case, if χ α − ξ γ > 0
+8π
+(1.6) with τ = 0 possesses a global classical solution provided that  is a disk and u0 (x) L1 () < χα−ξ
+; however, under
+γ
+
+8π
+2
+the conditions u0 (x) L1 () > χα−ξ γ , β = δ and  u0 (x)|x − x0 | dx is sufficiently small, finite-time blow-up does occur.
+Moreover, (1.6) with τ > 0 has a global in time classical solution for small initial mass [2]. In the case χ α − ξ γ < 0, Jin
+[7] proved the global existence of classical solution in two dimensions and weak solution in three dimensions with large
+initial data. Tao and Wang [19] considered the global solvability, boundedness, blow-up, existence of steady states, and
+asymptotic behavior of system (1.6). It has been shown that if χ α − ξ γ < 0, system (1.6) with τ = 0 is globally well-posed
+in high dimensions n ≥ 2, and system (1.6) with τ = 1 is globally well-posed in two dimensions when χ α − ξ γ < 0 and
+β = δ.
+Our purpose in this paper is to investigate the global existence and asymptotic behavior of the solutions to system (1.1).
+The first result is concerning the existence of global bounded classical solution to system (1.1).
+Theorem 1.1. Assume f satisfies (1.2) and one of the following assumptions holds:
+(a) χ α − ξ γ ≤ μ,
+(b) n ≤ 2,
+(χ α − ξ γ ) < μ, n ≥ 3.
+(c) n−2
+n
+¯ the system (1.1) possesses a unique global classical solution (u, v, w) which
+Then for any nonnegative u0 (x) ∈ C 0 ()
+is uniformly bounded.
+www.zamm-journal.org
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+ZAMM · Z. Angew. Math. Mech. 96, No. 5 (2016) / www.zamm-journal.org
+
+Q. Zhang and Y. Li: Attraction-repulsion chemotaxis system
+
+The conditions from Theorem 1.1 are technical requirements. We have to leave open here whether they are optimal
+(χ α − ξ γ )], we give the existence of
+for the global existence of classical solutions. So in the case n ≥ 3 and μ ∈ (0, n−2
+n
+global weak solution in the following theorem.
+Theorem 1.2. Let f satisfy (1.2). Moreover, we assume f (u) ≥ −C0 u(1 + u) with some C0 > 0. Then for any
+¯ the system (1.1) possesses at least one global weak solution.
+nonnegative initial data u0 (x) ∈ C 0 (),
+Finally, we study the asymptotic behavior of solutions to system (1.1) with the logistic source f (u) = μu(1 − u).
+¯ be nonnegative function and f (u) = μu(1 − u). Suppose that μ > 2χ α. Then the
+Theorem 1.3. Let u0 (x) ∈ C 0 ()
+global classical solution of (1.1) satisfies
+γ
+α
+as t → ∞
+u(·, t) → 1, v(·, t) → , w(·, t) →
+β
+δ
+uniformly with respect to x ∈ .
+The rest of the paper is organized as follows. In Sect. 2, we state some preliminaries and prove local-in-time existence
+of classical solution. In Sect. 3, we prove the boundedness of global solution. The global weak solution is constructed in
+Sect. 4. Finally, in Sect. 5 we consider the large time behavior of solutions. Throughout the rest of this paper, C will denote
+a generic constant which may vary from line to line and we also denote it by Cδ or C(δ) to indicate that it depends on a
+real number δ.
+
+2 Preliminaries
+In this paper we need the following well-known facts concerning the Laplacian in  supplemented with homogeneous
+Neumann boundary conditions (for instance, see [5, 23]). Firstly, the operator A := − + 1 is sectorial in Lp () and
+therefore possesses closed fractional powers Aθ , θ ∈ (0, 1), with dense domain D(Aθ ). If m ∈ {0, 1}, p ∈ [1, ∞] and
+q ∈ (1, ∞) with m − pn < 2θ − qn , then we have
+ω
+
+W m,p ()
+
+≤ C Aθ ω
+
+ω ∈ D(Aθ ).
+
+Lq () ,
+
+(2.1)
+
+Moreover, for p < ∞ the associated heat semigroup (e )t≥0 maps L () into D(A ) in any of the space L () for
+q ≥ p, and there exist C > 0 and ν > 0 such that
+t
+
+Aθ e−tA ω
+
+≤ Ct −θ− 2 ( p − q ) e−νt ω
+n
+
+Lq ()
+
+1
+
+1
+
+p
+
+θ
+
+ω ∈ Lp ().
+
+Lp () ,
+
+q
+
+(2.2)
+
+Finally, given p ∈ (1, ∞), for any δ > 0 there exists Cδ > 0 such that
+Aθ et ∇ · z
+
+≤ Cδ t −θ− 2 −δ e−νt z
+1
+
+Lp ()
+
+Lp () ,
+
+z ∈ (Lp ())n .
+
+(2.3)
+
+The following lemma concerns the local solvability of (1.1).
+1,∞
+¯ is nonnegative. Then there exist Tmax ∈ (0, ∞] and
+(R), and that u0 ∈ C 0 ()
+Lemma 2.1. Suppose that f (u) ∈ Wloc
+¯ × [0, Tmax )) ∩ C 2,1 (
+¯ × (0, Tmax )) solves (1.1)
+a uniquely determined triple (u, v, w) of nonnegative functions from C 0 (
+in the classical sense. In addition, if Tmax < ∞, then
+
+u(·, t)
+
+L∞ ()
+
+→ ∞ as t  Tmax .
+
+P r o o f . The proof is based on the well-known and frequently used method (see [18, 25], for example). For completeness, we give the brief proof. With R > 0 and T ∈ (0, 1) to be specified below, in the Banach space
+¯
+X := C 0 ([0, T ]; C 0 ()),
+we consider the closed convex set
+
+S := u ∈ X u L∞ ((0,T );L∞ ()) ≤ R .
+We define a mapping  by
+t
+
+(u)(t) := et u0 +
+
+
+e(t−s) −χ ∇ · (u∇v) + ξ ∇ · (u∇w) + f (u) (s)ds
+
+0
+
+for u ∈ S and t ∈ [0, T ], where v is the solution of
+
+−v + βv = αu, x ∈ ,
+∂v
+∂ν
+
+= 0,
+
+x ∈ ∂,
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+(2.4)
+
+www.zamm-journal.org
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+572
+
+and w denotes the solution of
+
+−w + δw = γ u,
+∂w
+∂ν
+
+= 0,
+
+573
+
+x ∈ ,
+
+(2.5)
+
+x ∈ ∂.
+
+Applying the elliptic Lp estimates to (2.4) and (2.5), respectively, we obtain
+v(·, t)
+
+W 2,p ()
+
+≤ C u(·, t)
+
+and
+
+Lp ()
+
+w(·, t)
+
+W 2,p ()
+
+≤ C u(·, t)
+
+(2.6)
+
+Lp ()
+
+n 1
+for all t ∈ (0, T ). We choose θ ∈ ( 2p
+, 2 ) for p > n, and then ε ∈ (0, 12 − θ ). From the maximum principle, (2.1), (2.3)
+1,∞
+and (2.6) and f ∈ Wloc
+(R), we obtain
+
+(u)(t)
+
+L∞ ()
+
+= et u0
+
+L∞ ()
+
+t
+
++χ
+
+e(t−s) ∇ · (u∇v)(s)
+
+L∞ () ds
+
+0
+t
+
++ξ
+
+e(t−s) ∇ · (u∇w)(s)
+
+L∞ () ds
+
+0
+
+≤ u0
+
+t
+
++
+
+e(t−s) f (u)(s)
+
+L∞ () ds
+
+0
+
+L∞ ()
+
++ C(||, p)T
+
+1
+2 −θ−ε
+
+R2 + T f
+
+L∞ ((−R,R)×(− γδ R, γδ R)) .
+
+This proves that  maps S into itself by choosing R > 0 sufficiently large and T suitably small. According to a similar
+argument, using f is locally Lipschitz continuous in R, we deduce that  is a contraction on S. Therefore, by Banach fixed
+point theorem, we infer that there exists u ∈ S such that (u) = u. From (2.4) and (2.5), we obtain the existence of v and
+w. From the standard regularity argument, it follows that the solution (u, v, w) satisfies the regularity properties listed in
+the lemma. The maximum principle to the first equation in (1.1) ensures u ≥ 0. Then using elliptic maximum principle to
+the second equation and the third equation yields v ≥ 0 and w ≥ 0.
+Now we prove the uniqueness of the solution. Suppose that (u1 , v1 , w1 ) and (u2 , v2 , w2 ) are two solutions of (1.1)
+in  × (0, T ) for some T > 0. We fix T0 ∈ (0, T ), and let U = u1 − u2 , V = v1 − v2 , and W = w1 − w2 . A direct
+calculation yields
+Ut = U − χ ∇ · (U ∇v1 ) − χ ∇ · (u2 ∇V ) + ξ ∇ · (U ∇w1 ) + ξ ∇ · (u2 ∇W ) + f (u1 ) − f (u2 ).
+
+(2.7)
+
+Multiplying (2.7) by U and integrating by parts, we obtain
+1 d
+2 dt
+
+U2 +
+
+
+|∇U |2 = χ
+
+
+U ∇v1 · ∇U + χ
+
+
+u2 ∇V · ∇U
+
+
+−ξ
+
+U ∇w1 · ∇U − ξ
+
+
+u2 ∇W · ∇U
+
+
+(f (u1 ) − f (u2 )) U.
+
++
+
+
+In view of elliptic Lp -estimates, the boundedness of u1 , u2 , the local Lipschitz continuity of f and Young’s inequality, we
+conclude
+d
+U2 ≤ C
+U 2,
+dt 
+
+which yields U ≡ 0 in  × (0, T0 ). Since T0 ∈ (0, T ) is arbitrary, we have the uniqueness of the solution to (1.1).
+
+
+
+3 Existence of global bounded solutions
+In this section we shall show that the local solution constructed in Lemma 2.1 is global and uniformly bounded under the
+assumptions of Theorem 1.1. We start with some estimates for w. The idea of proof is based on [28], which obtained the
+similar results in the case n = 1.
+Lemma 3.1. Suppose that f satisfies (1.2). Then the solution (u, v, w) of (1.1) satisfies
+u≤M
+
+(3.1)
+
+
+
+and
+w≤
+
+
+www.zamm-journal.org
+
+γ
+M
+δ
+
+(3.2)
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+ZAMM · Z. Angew. Math. Mech. 96, No. 5 (2016) / www.zamm-journal.org
+
+Q. Zhang and Y. Li: Attraction-repulsion chemotaxis system
+
+as well as
+w
+
+γ
+u
+δ
+
+≤
+
+Lp ()
+
+p>1
+
+Lp () ,
+
+
+
+for all t ∈ (0, Tmax ), where M := max
+
+
+
+(3.3)
+
+u0 dx, || .
+
+P r o o f . Integrating the first equation in (1.1) and using (1.2), we obtain
+d
+dt
+
+u≤
+
+f (u) ≤ μ
+
+
+
+(u − u2 ).
+
+
+
+
+
+Since u2 ≥ 2u − 1, we get
+d
+dt
+
+u ≤ −μ
+
+u + μ||,
+
+
+
+
+
+which yields (3.1). The estimate (3.2) immediately follows from (3.1) and an integration of the third equation in (1.1).
+p
+Now, we prove (3.3). Multiplying the third equation in (1.1) by w(w2 + ε) 2 −1 with ε > 0 and integrating over , we
+get
+p
+
+p
+
+(p − 1)w2 + ε (w 2 + ε) 2 −2 |∇w|2 + δ
+
+
+p
+
+w 2 (w 2 + ε) 2 −1 = γ
+
+
+uw(w 2 + ε) 2 −1 .
+
+
+Dropping the first nonnegative term on the left, we have
+p
+
+p
+
+w 2 (w 2 + ε) 2 −1 ≤ γ
+
+δ
+
+
+uw(w 2 + ε) 2 −1 .
+
+
+We conclude by the monotone convergence theorem in taking ε → 0 that
+ p1 
+ p−1
+
+p
+p
+p−1
+p
+p
+δ w ≤γ
+uw
+≤γ
+u
+w
+.
+
+
+
+
+
+
+
+
+
+
+This completes the proof.
+Based on Lemma 3.1, we have the following estimate.
+Lemma 3.2. Let (1.2) hold. Then for any ε > 0 one can find C = C(ε, p, u0
+w p+1 ≤ ε
+
+
+up+1 + C,
+
+L1 () )
+
+> 0 such that
+
+p>0
+
+(3.4)
+
+
+
+for all t ∈ (0, Tmax ).
+P r o o f . Multiplying the third equation in (1.1) by wp , integrating over  and applying Young’s inequality, we see
+that
+w p−1 |∇w|2 + δ
+
+p
+
+
+w p+1 = γ
+
+uw p ≤
+
+
+
+
+
+γ p+1
++ 1)
+
+δ p (p
+
+up+1 +
+
+
+p
+δ
+p+1
+
+w p+1 .
+
+
+Consequently, we obtain
+4p
+p+1
+
+∇w
+
+p+1
+2
+
+2
+
+
+
+≤
+
+γ p+1
+δp
+
+up+1 .
+
+(3.5)
+
+
+
+2
+
+Since W 1,2 () →→ L2 () → L p+1 () for any p > 0, by Ehrling’s lemma, we have
+φ
+
+2
+L2 ()
+
+≤ Cε φ
+
+2
+W 1,2 ()
+
++C φ
+
+2
+2
+
+L p+1 ()
+
+,
+
+φ ∈ W 1,2 ().
+
+(3.6)
+
+p+1
+
+Using (3.2), (3.3) and (3.5), and (3.6) with φ = w 2 , we obtain
+
+
+
+p+1 2
+∇w 2
+w p+1 ≤ Cε
+w p+1 +
++C
+
+
+
+
+≤ε
+
+
+
+p+1
+w
+
+
+up+1 + C.
+
+
+This completes the proof.
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+
+www.zamm-journal.org
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+574
+
+575
+
+We now give Lp -bounds for u.
+Lemma 3.3. Suppose f satisfies (1.2). Let 1 < p < P , where
+
+∞
+if χ α − ξ γ ≤ μ,
+P :=
+χα−ξ γ
+if χ α − ξ γ > μ.
+χα−ξ γ −μ
+Then there exists C = C( u0
+u(t)
+
+Lp ()
+
+> 0 such that
+
+Lp () , p)
+
+≤ C,
+
+t ∈ (0, Tmax ).
+
+(3.7)
+
+P r o o f . We multiply the first equation in (1.1) by up−1 and integrate by parts over  to obtain
+1 d
+p dt
+
+up ≤
+
+up−1 u − χ
+
+
+
+
+
+up−1 ∇ · (u∇v) + ξ
+
+
+= −(p − 1)
+
+up (1 − u)
+
+
+
+up−2 |∇u|2 + χ (p − 1)
+
+
+
+
+up−1 ∇u · ∇v
+
+
+− ξ (p − 1)
+
+up−1 ∇u · ∇w + μ
+
+up (1 − u)
+
+
+
+
+
+up−2 |∇u|2 +
+
+= −(p − 1)
+
+up−1 ∇ · (u∇w) + μ
+
+
+
+p−1
+p
+
+up (−χ v + ξ w) + μ
+
+
+up (1 − u)
+
+
+for all t ∈ (0, Tmax ). From the second and third equations in (1.1), We have
+1 d
+p dt
+
+up ≤ −
+
+
+4(p − 1)
+p2
+
+p
+
+|∇u 2 |2 +
+
+
+p−1
+p
+
+up (ξ δw + (χ α − ξ γ )u − χβv) + μ
+
+
+up (1 − u).
+
+
+According to the fact that v ≥ 0 by Lemma 2.1, we see that
+d
+dt
+
+up ≤ ξ δ(p − 1)
+
+
+up w − (μp − (χ α − ξ γ )(p − 1))
+
+
+up+1 + μp
+
+
+up .
+
+
+Since λ := μp − (χ α − ξ γ )(p − 1) > 0 for 1 < p < P , by Young’s inequality, we have
+ξ δ(p − 1)
+
+up w ≤
+
+
+λ
+2
+
+up+1 + C
+
+
+w p+1 .
+
+
+It follows that
+d
+dt
+
+up ≤ −
+
+
+We apply (3.4) with ε =
+d
+dt
+
+λ
+4C
+
+up ≤ −
+
+
+λ
+2
+
+up+1 + C
+
+
+w p+1 + μp
+
+
+up .
+
+
+to have
+λ
+4
+
+up+1 + μp
+
+
+up + C.
+
+
+Using Young’s inequality once more, we deduce that
+p
+
+||
+λ
+4p
+up+1 +
+(μp + 1) up ≤
+(μp + 1)p+1 ,
+4 
+λ(p + 1)
+p+1
+
+which yields
+d
+dt
+
+up ≤ −
+
+
+up + C.
+
+
+
+
+Hence (3.7) follows from an application of the Gronwall inequality.
+The following lemma implies that the Lp -bounds for all p > 1 are still true with some μ < χ α − ξ γ .
+Lemma 3.4. Let (1.2) hold. Suppose that χ α − ξ γ > μ and
+n−2
+(χ α − ξ γ ) < μ.
+n
+www.zamm-journal.org
+
+(3.8)
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+ZAMM · Z. Angew. Math. Mech. 96, No. 5 (2016) / www.zamm-journal.org
+
+Q. Zhang and Y. Li: Attraction-repulsion chemotaxis system
+
+Then for all p > 1, there exists C = C( u0
+u(t)
+Proof.
+
+≤ C,
+
+Lp ()
+
+t ∈ (0, Tmax ).
+
+(3.9)
+
+We observe that (3.8) is equivalent to
+
+χα−ξ γ
+) such that
+( n2 , χα−ξ
+γ −μ
+
+u(t)
+
+Lp0 ()
+
+> 0 such that
+
+Lp () , p)
+
+≤ C,
+
+χα−ξ γ
+χα−ξ γ −μ
+
+> n2 . By means of Lemma 3.3 we can choose fixed p0 ∈
+
+t ∈ (0, Tmax )
+
+(3.10)
+
+by Lemma 3.3. Thus, it is sufficient to prove (3.9) for p > p0 . Once more testing the first equation in (1.1) by up−1 , from
+Young’s inequality we obtain
+d
+dt
+
+up ≤ −
+
+
+4(p − 1)
+p
+
+p
+
+|∇u 2 |2 + C
+
+
+up+1 + C.
+
+(3.11)
+
+
+
+It follows from (3.10) that
+p
+
+u 2 (t)
+
+L
+
+2p0
+p
+
+()
+
+≤ C,
+
+t ∈ (0, Tmax ).
+
+Applying the Gagliardo-Nirenberg inequality, we obtain
+2( p+1)
+p
+2( p+1)
+L p
+
+p
+
+up+1 = u 2
+
+
+≤ CGN ( ∇u
+p
+
+≤ C ∇u 2
+
+()
+
+p
+2
+
+a
+L2 ()
+
+2( p+1)
+a
+p
+L2 ()
+
+p
+
+u2
+
+p
+
+1−a
+2p0
+L p
+
+()
+
++ u2
+
+2p0
+L p
+
+()
+
+)
+
+2( p+1)
+p
+
++C
+
+where
+a=
+
+p
+2p0
+p
+2p0
+
+−
+−
+
+p
+2(p+1)
+1
++ n1
+2
+
+∈ (0, 1)
+
+because p > p0 > n2 . By a straightforward calculation using p0 > n2 , we see that
+inequality, we obtain
+up+1 ≤
+
+(C + 1)
+
+
+4(p − 1)
+p
+
+2(p+1)
+a
+p
+
+< 2, and therefore from Young’s
+
+p
+
+|∇u 2 |2 + C.
+
+
+This, along with (3.11), yields
+d
+dt
+
+up ≤ −
+
+up+1 + C.
+
+
+
+
+
+Consequently, an application of Hölder’s inequality gives
+
+ p+1
+p
+d
+− p1
+p
+p
+u ≤ −||
+u
++ C,
+dt 
+
+
+
+which implies (3.9).
+
+Combining Lemma 3.3 and Lemma 3.4 along with semigroup arguments (see [20, 25]), we can prove the following
+result concerning the existence of global bounded solutions to the problem (1.1).
+P r o o f o f T h e o r e m 1 . 1 . It follows from Lemma 2.1 that if for some τ ∈ (0, Tmax ) we can find C(τ ) > 0 such
+that
+u(·, t)
+
+L∞ ()
+
+≤ C(τ ),
+
+t ∈ (τ, Tmax ),
+
+then the solution is global in time. To this end, we fix τ ∈ (0, Tmax ) such that τ < 1 and p > n. Applying the elliptic Lp
+estimates, there exists C > 0 such that
+v(·, t)
+
+W 2,p ()
+
+≤ C u(·, t)
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+Lp ()
+
+and
+
+w(·, t)
+
+W 2,p ()
+
+≤ C u(·, t)
+
+Lp () ,
+
+t ∈ (0, Tmax ).
+www.zamm-journal.org
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+576
+
+577
+
+¯ for p > n yield a uniform bounded for ∇v and ∇w. The
+Lemma 3.3, Lemma 3.4 and the embedding W 2,p → C 1 ()
+variation-of-constants formula associated with the first equation in (1.1) represents u as
+t
+
+τ
+τ
+u(·, t) = e−(t− 2 )A u(·, ) − χ
+2
+t
+
++ξ
+
+τ
+2
+
+t
+
++
+
+τ
+2
+
+Since the semigroup e−tA
+
+τ
+2
+
+e−(t−s)A ∇ · u(·, s)∇w(·, s) ds
+
+e−(t−s)A (f (u(·, s)) + u(·, s)) ds,
+
+t≥0
+
+t
+τ
+2
+
+τ
+t ∈ ( , Tmax ).
+2
+
+is order preserving and u, w are both nonnegative, we have
+t
+
+τ
+τ
+u(·, t) ≤ e−(t− 2 )A u(·, ) − χ
+2
++ξ
+
+e−(t−s)A ∇ · u(·, s)∇v(·, s) ds
+
+τ
+2
+
+e−(t−s)A ∇ · u(·, s)∇v(·, s) ds
+
+e−(t−s)A ∇ · u(·, s)∇w(·, s) ds
+
++ (μ + 1)
+
+t
+τ
+2
+
+e−(t−s)A u(·, s)ds,
+τ
+t ∈ ( , Tmax ).
+2
+
+=: I1 (t) + I2 (t) + I3 (t) + I4 (t),
+
+(3.12)
+
+n 1
+, 2 ) and then ε ∈ (0, 12 − θ ). Using (2.1) and (2.2), we deduce that
+For p > n, we may choose θ ∈ ( 2p
+
+τ 
+τ
+
+
+I1 (t) L∞ () ≤ C Aθ e−(t− 2 )A u(·, )
+2 Lp ()
+
+τ 
+τ −θ −ν(t− τ ) 
+
+
+2 u(·,
+≤C t−
+e
+)
+2
+2 Lp ()
+
+≤ Cτ −θ ,
+
+t ∈ (τ, Tmax ).
+
+(3.13)
+
+Applying (2.1) and (2.3), it follows that
+I2 (t)
+
+L∞ ()
+
+≤C
+≤C
+
+t
+
+Aθ e−(t−s)A ∇ · u(·, s)∇v(·, s)
+
+τ
+2
+
+t
+τ
+2
+
+(t − s)−θ− 2 −ε e−ν(t−s) u(·, s)∇v(·, s)
+1
+
+
+
+≤ C
+
+Lp () ds
+
+
+1
+−θ −ε ,
+2
+
+Lp () ds
+
+t ∈ (τ, Tmax ),
+
+(3.14)
+
+where ( 12 − θ − ε) is a finite positive constant due to ε < 12 − θ . Similarly, we obtain
+
+
+1
+I3 (t) L∞ () ≤ C
+− θ − ε , t ∈ (τ, Tmax ).
+2
+
+(3.15)
+
+We employ (2.1) and (2.2) once more to get
+I4 (t)
+
+L∞ ()
+
+≤C
+≤C
+
+t
+τ
+2
+
+t
+τ
+2
+
+Aθ e−(t−s)A u(·, s)
+
+Lp () ds
+
+(t − s)−θ e−ν(t−s) u(·, s)
+
+≤ C(1 − θ ),
+
+Lp () ds
+
+t ∈ (τ, Tmax ),
+
+(3.16)
+
+where (1 − θ ) is a positive constant because of θ ∈ (0, 12 ). Collecting (3.12)-(3.16) gives the desired result.
+www.zamm-journal.org
+
+
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+ZAMM · Z. Angew. Math. Mech. 96, No. 5 (2016) / www.zamm-journal.org
+
+Q. Zhang and Y. Li: Attraction-repulsion chemotaxis system
+
+4 Existence of global weak solutions for any μ > 0
+In the case n−2
+(χ α − ξ γ ) ≥ μ, Theorem 1.1 may not be true. Hence the purpose of the present section is to construct the
+n
+global weak solutions to (1.1) for arbitrary μ > 0. In this section, we assume that χ α − ξ γ > μ and n ≥ 3. The main idea
+of the proof is base on the so-called regularized methods [9, 20].
+Definition 4.1. By a global weak solution of (1.1) we mean a triple (u, v, w) of nonnegative functions
+(u, v, w) ∈ L1loc ([0, ∞); W 1,1 ())
+
+3
+
+such that
+u∇v,
+
+belong to L1loc ([0, ∞); L1 ())
+
+f (u)
+
+and
+
+u∇w,
+
+and
+∞
+
+−
+0
+
+=χ
+
+u∂t φ1 −
+
+∞
+
+∞
+
+u∇v · ∇φ1 − ξ
+0
+
+
+∞
+
+∇v · ∇φ2 = α
+
+0
+
+0
+
+
+∞
+
+∞
+
+u∇w · ∇φ1 +
+0
+
+
+
+f (u)φ1 ,
+
+(4.1)
+
+
+
+∞
+0
+
+
+
+vφ2 ,
+
+(4.2)
+
+wφ2
+
+(4.3)
+
+
+∞
+
+uφ3 − δ
+
+0
+
+
+
+∇u · ∇φ1
+
+
+uφ2 − β
+
+∞
+
+∇w · ∇φ3 = γ
+
+0
+
+0
+∞
+
+
+
+0
+
+∞
+
+u0 φ1 (0) +
+
+0
+
+
+
+
+
+¯ × [0, ∞)), φ2 ∈ C0∞ (
+¯ × [0, ∞)), and φ3 ∈ C0∞ (
+¯ × [0, ∞)).
+for all φ1 ∈ C0∞ (
+Motivated by the works [20], for ε ∈ (0, 1), we introduce the following approximate problems
+⎧
+⎪
+⎪uεt = uε − χ ∇ · (uε ∇vε ) + ξ ∇ · (uε ∇wε ) + fε (uε ), x ∈ , t > 0,
+⎪
+⎪
+⎪
+x ∈ , t > 0,
+⎪
+⎨0 = vε + αuε − βvε ,
+0 = wε + γ uε − δwε ,
+x ∈ , t > 0,
+⎪
+⎪
+∂uε
+∂vε
+∂wε
+⎪
+= ∂ν = ∂ν = 0,
+x ∈ ∂, t > 0,
+⎪
+⎪
+∂ν
+⎪
+⎩
+uε (x, 0) = u0 (x),
+x ∈ ,
+
+(4.4)
+
+where fε (uε ) = f (uε ) − εuκε with fixed
+
+
+
+χα − ξγ
+κ ∈ 2, 1 + min 2,
+.
+χα − ξγ − μ
+
+(4.5)
+
+Thanks to the term −εuκε , proceeding similarly as in Lemma 3.3 and Theorem 1.1 we obtain for each ε ∈ (0, 1) the problem
+(4.4) has a unique nonnegative global classical solution (uε , vε , wε ) which is uniformly bounded. However, the bound
+depends on ε. In order to show that the solutions of (4.4) converge to the global weak solutions of (1.1) as ε → 0, we
+furthermore establish some ε-independent estimates in the following.
+χα−ξ γ
+). Then for any ε ∈ (0, 1) there exists C = C( u0
+Lemma 4.1. Let (1.2) hold and p ∈ (1, χα−ξ
+γ −μ
+that the solution of (4.4) satisfies
+
+uε (t)
+
+Lp ()
+
+≤ C,
+
+t ∈ (0, ∞)
+
+Lp () , p)
+
+> 0 such
+(4.6)
+
+as well as
+T
+0
+
+
+
+up+1
++
+ε
+
+T
+0
+
+p
+
+|∇uε2 | ≤ C(T + 1)
+
+(4.7)
+
+
+
+holds for each T > 0.
+P r o o f . Since fε (uε ) ≤ μuε (1 − uε ), arguing as in the proof of Lemma 3.3 we obtain (4.6) and
+d
+dt
+
+
+
+upε +
+
+4(p − 1)
+p
+
+p
+
+|∇uε2 |2 ≤ −
+
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+λ
+4
+
+
+
+up+1
++ μp
+ε
+
+
+
+upε + C.
+www.zamm-journal.org
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+578
+
+579
+
+Using Young’s inequality, it follows that
+d
+dt
+
+
+
+upε +
+
+4(p − 1)
+p
+
+p
+
+|∇uε2 |2 ≤ −
+
+
+λ
+8
+
+
+
+up+1
++ C.
+ε
+
+Hence, integrating with respect to t ∈ (0, T ) yields (4.7).
+
+
+
+Based on Lemma 4.1, we have the following estimates.
+χα−ξ γ
+}) and that f satisfies (1.2). Then for each T > 0 there exists C > 0
+Lemma 4.2. Assume that p ∈ (1, min{2, χα−ξ
+γ −μ
+such that for any ε ∈ (0, 1) the solution of (4.4) satisfies
+T
+0
+
+|∇uε |ι(p+1) ≤ C
+
+(4.8)
+
+
+
+for ι ∈ (0, 23 ], and moreover
+T
+0
+
+|uε ∇vε |
+
+p+1
+2
+
+≤ C,
+
+(4.9)
+
+≤ C.
+
+(4.10)
+
+
+
+and
+T
+0
+
+|uε ∇wε |
+
+p+1
+2
+
+
+
+In addition, if f (u) ≥ −C0 u(1 + u) with some C0 > 0, then
+T
+0
+
+|fε (uε )|
+
+p+1
+κ
+
+≤ C.
+
+(4.11)
+
+
+
+P r o o f . Since ι ∈ (0, 23 ] and p < 2 imply ι(p + 1) ≤ 23 (p + 1) < 2, we can use Young’s inequality to estimate
+p
+2−p ι(p+1)
+2
+∇uε2 uε 2
+p
+
+
+ι( p+1) ( 2−p)
+p
+2−ι( p+1)
+2 2
+.
+≤ C |∇uε | + uε
+
+|∇uε |ι(p+1) =
+
+Noting that
+ρ :=
+
+ι(p + 1)(2 − p)
+≤p+1
+2 − ι(p + 1)
+
+due to ι ∈ (0, 23 ], it follows from Hölder’s inequality that
+ T
+T
+p
+|∇uε |ι(p+1) ≤ C
+|∇uε2 |2 +
+0
+
+
+
+
+
+0
+
+≤C
+
+0
+
+
+T
+
+
+
+p
+
+0
+
+
+
+uρε
+
+T
+
+|∇uε2 |2 + (
+
+0
+
+
+
+T
+
+ρ
+
+
+
+up+1
+) p+1
+ε
+
+
+.
+
+This, along with (4.7), yields (4.8).
+Next we prove (4.9). An application of the elliptic Lp estimates to the second equation of (4.4) implies
+T
+0
+
+T
+
+|∇vε |p+1 ≤
+
+vε
+0
+
+
+
+p+1
+W 2,p+1
+
+T
+
+≤C
+0
+
+
+
+up+1
+.
+ε
+
+(4.12)
+
+From Cauchy’s inequality, we obtain
+T
+0
+
+|uε ∇vε |
+
+p+1
+2
+
+≤
+
+
+
+1
+2
+
+T
+0
+
+
+
+up+1
++
+ε
+
+1
+2
+
+T
+0
+
+|∇vε |p+1 ,
+
+
+which gives (4.9) due to (4.12) and (4.7). Inequality (4.10) can be checked in an analogous way.
+In view of (4.5), we have
+|fε (uε )| ≤ C(1 + uκε )
+with C independent of ε. From (4.7) it follows that (4.11).
+www.zamm-journal.org
+
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+ZAMM · Z. Angew. Math. Mech. 96, No. 5 (2016) / www.zamm-journal.org
+
+Q. Zhang and Y. Li: Attraction-repulsion chemotaxis system
+
+Using the estimates shown in this section, we are now prepared to prove the existence of global weak solutions to (1.1)
+for any μ > 0.
+P r o o f o f T h e o r e m 1 . 2 . According to Lemmas 4.1 and 4.2, for each T > 0 and ε ∈ (0, 1), there exists p0 > 1
+such that
+T
+0
+
+
+T
+
+0
+
+T
+
+upε 0 ≤ C,
+
+0
+
+
+
+T
+
+|∇uε |p0 ≤ C,
+
+T
+0
+
+0
+
+
+
+wεp0 ≤ C,
+T
+
+|∇vε |p0 ≤ C,
+
+0
+
+
+
+T
+
+vεp0 ≤ C,
+
+T
+
+|uε ∇vε |p0 ≤ C,
+0
+
+
+
+|∇wε |p0 ≤ C,
+
+0
+
+
+
+
+T
+
+|uε ∇wε |p0 ≤ C,
+
+|fε (uε )|p0 ≤ C.
+
+0
+
+
+
+
+
+Hence, we have
+uε
+
+Lp0 ((0,T );W 1,p0 ())
+
+≤ C.
+
+Then multiplying the first equation in (4.4) by ϕ ∈ C0∞ () and integrating by parts over , we obtain
+T
+0
+
+T
+
+uεt ϕ = −
+0
+
+
+
+T
+
+
+
+T
+
+|∇uε |p0
+
+0
+
+ p1
+
+0
+
+
+
+
+
+|uε ∇wε |
+
+0
+
+
+0
+
+p0
+
+T
+
+0
+
+|∇ϕ|
+
+0
+
+|fε (uε )|
+
+p0
+
+ p1 
+
+ϕ
+0
+
+
+
+Lp0 ((0,T );W 1,p0 ())
+
+0
+
+p0
+
+ p1
+
+0
+
+
+
+T
+
+0
+
+ p1
+
+
+
+ p1  
+
+
+
+T
+
++
+
+|uε ∇vε |p0
+
+0
+
+T
+
++ξ
+
+T
+
++χ
+
+
+
+
+
+fε (uε )ϕ
+
+0
+
+
+
+T
+
+≤C ϕ
+
+
+
+uε ∇wε · ∇ϕ +
+
+0
+
+uε ∇vε · ∇ϕ
+
+0
+
+
+
+−ξ
+≤
+
+T
+
+∇uε · ∇ϕ + χ
+
+p0
+
+ p1
+
+0
+
+
+
+,
+
+which implies
+uεt
+
+Lp0 ((0,T );(W 1,p0 ()) ∗ )
+
+≤ C.
+
+By means of the Aubin-Lions Lemma, we may pick a subsequence ε = εj → 0 such that
+⎧
+uε → u
+in Lp0 ((0, T ); Lp0 ()),
+⎪
+⎪
+⎪
+⎪
+⎪
+∇uε  ∇u
+in Lp0 ((0, T ); Lp0 ()),
+⎪
+⎪
+⎪
+⎨u ∇v  m in Lp0 ((0, T ); Lp0 ()),
+ε
+ε
+⎪uε ∇wε  m̄ in Lp0 ((0, T ); Lp0 ()),
+⎪
+⎪
+⎪
+⎪
+⎪
+fε (uε )  z
+in Lp0 ((0, T ); Lp0 ()),
+⎪
+⎪
+⎩
+uε → u
+a.e.  × (0, T ).
+
+(4.13)
+
+Using elliptic Lp estimates to the second and third equations of (4.4) implies
+vε → v,
+
+wε → w
+
+in Lp0 ((0, T ); W 2,p0 ()).
+
+Then, passing to a subsequence we get
+∇vε → ∇v,
+
+∇wε → ∇w
+
+a.e.  × (0, T ).
+
+This, along with (4.13), yields
+uε ∇vε → u∇v,
+
+uε ∇wε → u∇w
+
+a.e.  × (0, ∞).
+
+In view of [9, Lemma 1.3], it follows that
+m = u∇v,
+
+m̄ = u∇w.
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+(4.14)
+www.zamm-journal.org
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+580
+
+581
+
+According to the continuity of fε and (4.13), we immediately obtain
+z = f (u).
+
+(4.15)
+
+Consequently, according to (4.13)-(4.15), we pass to the limit in the identities
+∞
+
+−
+0
+
+=χ
+
+uε ∂t φ1 −
+
+∞
+0
+
+∞
+
+uε ∇vε · ∇φ1 − ξ
+0
+
+
+∞
+
+∞
+0
+
+0
+
+
+
+fε (uε )φ1 ,
+
+
+∞
+
+vε φ2 ,
+0
+
+
+∞
+
+uε φ3 − δ
+
+0
+
+
+
+∞
+
+uε ∇wε · ∇φ1 +
+
+
+∞
+
+∇wε · ∇φ3 = γ
+
+
+
+uε φ2 − β
+
+0
+
+
+
+∇uε · ∇φ1
+
+0
+∞
+
+
+
+∇vε · ∇φ2 = α
+
+0
+
+∞
+
+u0 φ1 (0) +
+
+w ε φ2
+0
+
+
+
+
+
+¯ × [0, ∞)), φ2 ∈ C0∞ (
+¯ × [0, ∞)), and φ3 ∈ C0∞ (
+¯ × [0, ∞)) to arrive (4.1)-(4.3). This completes the
+with φ1 ∈ C0∞ (
+proof of Theorem 1.2.
+
+
+5 Asymptotic behavior
+According to the idea in [18], we study the large time behavior of solutions of (1.1) with f (u) = μu(1 − u). Throughout
+this section we assume μ > 2χ α. Theorem 1.1 guarantees that the solution of (1.1) is global and uniformly bounded in
+this case. Therefore, we can assume that
+u := lim sup max u(x, t)
+t→∞
+
+¯
+x∈
+
+and
+u := lim inf min u(x, t) ,
+t→∞
+
+¯
+x∈
+
+then, it is easy to see that 0 ≤ u ≤ u. Due to the following lemma, in order to prove Theorem 1.3, it is sufficient to verify
+u = u.
+Lemma 5.1. For each t ∈ (0, ∞), we have
+α min u(y, t) ≤ βv(x, t) ≤ α max u(y, t)
+
+(5.1)
+
+γ min u(y, t) ≤ δw(x, t) ≤ γ max u(y, t)
+
+(5.2)
+
+¯
+y∈
+
+¯
+y∈
+
+and
+¯
+y∈
+
+¯
+y∈
+
+¯
+for all x ∈ .
+¯ satisfy ∂ϕ < 0 on ∂. We denote z := v(·, t) + εϕ. If z achieves its maximum at some point
+P r o o f . Let ϕ ∈ C 2 ()
+∂ν
+¯ we necessarily have x0 ∈ . Hence, z(x0 ) ≤ 0. Since
+x0 ∈ ,
+βz = z + αu − ε(ϕ − βϕ),
+we conclude at the point x0
+βz(x) ≤ βz(x0 ) ≤ αu(x0 ) − ε(ϕ − βϕ)(x0 )
+≤ α max u(y, t) + ε max |ϕ − βϕ|.
+¯
+y∈
+
+¯
+y∈
+
+By letting ε → 0, we get
+βv(x, t) ≤ α max u(y, t).
+¯
+y∈
+
+By similar arguments, we obtain the left inequality of (5.1) and the inequality (5.2).
+
+
+
+Corollary 5.2. For each ε > 0 there exists tε such that
+u − ε ≤ u(x, t) ≤ u + ε
+www.zamm-journal.org
+
+(5.3)
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+ZAMM · Z. Angew. Math. Mech. 96, No. 5 (2016) / www.zamm-journal.org
+
+Q. Zhang and Y. Li: Attraction-repulsion chemotaxis system
+
+and
+α(u − ε) ≤ βv(x, t) ≤ α(u + ε)
+
+(5.4)
+
+γ (u − ε) ≤ δw(x, t) ≤ γ (u + ε)
+
+(5.5)
+
+as well as
+¯ × (tε , ∞).
+for all (x, t) ∈ 
+
+
+P r o o f . This is an immediate consequence of Lemma 5.1.
+Based on Corollary 5.2, we can show the following lemma, which makes precise some relations between u and u.
+Lemma 5.3. Let μ > 2χ α. Then we have u = u = 1.
+P r o o f . We define a second-order elliptic differential operator by
+Lu := u + (−χ ∇v(x, t) + ξ ∇w(x, t)) · ∇u.
+The first equation in (1.1) then reads as
+ut − Lu = −χ uv + ξ uw + μu(1 − u).
+Using the second and third equations, we obtain
+
+ut − Lu = u μ − (μ − (χ α − ξ γ ))u − χβv + ξ δw .
+
+(5.6)
+
+For fixed ε > 0, there exists tε taken from Lemma 5.2 we obtain by (5.4) and (5.5) that
+−χβv ≤ −χ α(u − ε)
+and
+ξ δw ≤ ξ γ (u + ε)
+in  × (tε , ∞). Therefore, (5.6) yields
+
+ut − Lu ≤ u μ − (μ − (χ α − ξ γ ))u − χ α(u − ε) + ξ γ (u + ε) .
+A parabolic comparison argument shows that
+u(x, t) ≤ y1 (t)
+
+(5.7)
+
+¯ × (tε , ∞), where y1 is the solution of
+for all (x, t) ∈ 
+
+
+y1 = y1 μ − (μ − (χ α − ξ γ ))y1 − χ α(u − ε) + ξ γ (u + ε) ,
+y1 (tε ) = maxx∈¯ u(x, tε ).
+¯ by the strong maximum principle, we have
+Since u(x, tε ) > 0 in 
+
+
+μ − χ α(u − ε) + ξ γ (u + ε)
+y1 → max 0,
+μ − (χ α − ξ γ )
+as t → ∞. From (5.7), it follows that
+
+
+μ − χ α(u − ε) + ξ γ (u + ε)
+,
+u ≤ max 0,
+μ − (χ α − ξ γ )
+then upon letting ε → 0, we obtain
+(μ − (χ α − ξ γ )) u ≤ (μ − χ αu + ξ γ u)+ .
+
+(5.8)
+
+We once more use (5.4) and (5.5) to obtain
+−χβv ≥ −χ α(u + ε)
+and
+ξ δw ≥ ξ γ (u − ε)
+in  × (tε , ∞). This, along with (5.6), yields
+
+ut − Lu ≥ u μ − (μ − (χ α − ξ γ ))u − χ α(u + ε) + ξ γ (u − ε) .
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+www.zamm-journal.org
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+582
+
+583
+
+Let y2 be the solution of the initial-value problem
+
+
+y2 = y2 μ − (μ − (χ α − ξ γ ))y2 − χ α(u + ε) + ξ γ (u − ε) ,
+y2 (tε ) = minx∈¯ u(x, tε ).
+¯ × (tε , ∞). Similarly as for (5.8), we obtain
+It follows from the comparison principle that u(x, t) ≥ y2 in (x, t) ∈ 
+(μ − (χ α − ξ γ ))u ≥ μ − χ αu + ξ γ u.
+
+(5.9)
+
+We claim that μ > χ αu − ξ γ u. In fact, assume the contrary. In view of (5.8), we have u = u = 0, this is a contraction to
+(5.9). Hence, we get
+(μ − (χ α − ξ γ ))u ≤ μ − χ αu + ξ γ u.
+
+(5.10)
+
+We subtract (5.10) from (5.9) to obtain
+(μ − (χ α − ξ γ ))(u − u) ≤ χ α(u − u) + ξ γ (u − u).
+Since μ > 2χ α according to our assumption, we obtain u = u. From (5.10), we have u ≤ 1, and by (5.9) we see u ≥ 1.
+
+Then it follows that u = u = 1.
+P r o o f o f T h e o r e m 1 . 3 . In view of Lemma 5.1, Lemma 5.3 and the definitions of u, u, we complete the proof
+of Theorem 1.3.
+
+Acknowledgement The authors are grateful to the referee and the associated editor for their careful reading and valuable suggestions.
+This work is supported in part by National Natural Science Foundation of China (No. 11171063) and the Scientific Research Foundation
+of Graduate School of Southeast University (No. YBJJ1445). The first author is also supposed by National Natural Science Foundation
+of China (No. 31371525).
+
+References
+[1] M. Eisenbach, Chemotaxis (Wiley Online Library, 2004).
+[2] E. Espejo and T. Suzuki, Global existence and blow-up for a system describing the aggregation of microglia, Appl. Math. Lett. 35,
+29–34 (2014).
+[3] D. Horstmann, Generalizing the Keller-Segel model: Lyapunov functionals, steady state analysis, and blow-up results for multispecies chemotaxis models in the presence of attraction and repulsion between competitive interacting species, J. Nonlinear Sci.
+21(2), 231–270 (2011).
+[4] D. Horstmann and G. Wang, Blow-up in a chemotaxis model without symmetry assumptions, European J. Appl. Math. 12(2),
+159–177 (2001).
+[5] D. Horstmann and M. Winkler, Boundedness vs. blow-up in a chemotaxis system, J. Differential Equations 215(1), 52–107 (2005).
+[6] W. Jäger and S. Luckhaus, On explosions of solutions to a system of partial differential equations modelling chemotaxis, Trans.
+Amer. Math. Soc. 329(2), 819–824 (1992).
+[7] H. Y. Jin, Boundedness of the attraction-repulsion Keller-Segel system, J. Math. Anal. Appl. 422(2), 1463–1478 (2015).
+[8] E. F. Keller and L. A. Segel, Initiation of slime mold aggregation viewed as an instability, Journal of Theoretical Biology 26(3),
+399–415 (1970).
+[9] J. L. Lions, Quelques Méthodes de Résolution des Problèmes aux Limites non Linéaires (Dunod; Gauthier-Villars, Paris, 1969).
+[10] J. Liu and Z. A. Wang, Classical solutions and steady states of an attraction-repulsion chemotaxis in one dimension, J. Biol. Dyn.
+6(suppl. 1), 31–41 (2012).
+[11] P. Liu, J. Shi, and Z. A. Wang, Pattern formation of the attraction-repulsion Keller-Segel system, Discrete Contin. Dyn. Syst. Ser.
+B 18(10), 2597–2625 (2013).
+[12] M. Luca, A. Chavez-Ross, L. Edelstein-Keshet, and A. Mogilner, Chemotactic signaling, microglia, and alzheimers disease senile
+plaques: Is there a connection?, Bull. Math. Biol. 65(4), 693–730 (2003).
+[13] T. Nagai, T. Senba, and K. Yoshida, Application of the Trudinger-Moser inequality to a parabolic system of chemotaxis, Funkcial.
+Ekvac. 40(3), 411–433 (1997).
+[14] E. Nakaguchi and K. Osaki, Global existence of solutions to a parabolic-parabolic system for chemotaxis with weak degradation,
+Nonlinear Anal. 74(1), 286–297 (2011).
+[15] K. Osaki, T. Tsujikawa, A. Yagi, and M. Mimura, Exponential attractor for a chemotaxis-growth system of equations, Nonlinear
+Anal. 51(1, Ser. A: Theory Methods), 119–144 (2002).
+[16] K. Osaki and A. Yagi, Finite dimensional attractor for one-dimensional Keller-Segel equations, Funkcial. Ekvac. 44(3), 441–469
+(2001).
+[17] R. Shi and W. Wang, Well-posedness for a model derived from an attraction-repulsion chemotaxis system, J. Math. Anal. Appl.
+423(1), 497–520 (2015).
+[18] C. Stinner, J. Tello, and M. Winkler, Competitive exclusion in a two-species chemotaxis model, J. Math. Biol. pp. 1–20 (2013).
+www.zamm-journal.org
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+ZAMM · Z. Angew. Math. Mech. 96, No. 5 (2016) / www.zamm-journal.org
+
+Q. Zhang and Y. Li: Attraction-repulsion chemotaxis system
+
+[19] Y. Tao and Z. A. Wang, Competing effects of attraction vs. repulsion in chemotaxis, Math. Models Methods Appl. Sci. 23(1), 1–36
+(2013).
+[20] J. I. Tello and M. Winkler, A chemotaxis system with logistic source, Comm. Partial Differ. Equ. 32(4-6), 849–877 (2007).
+[21] L. Wang, C. Mu, and P. Zheng, On a quasilinear parabolic-elliptic chemotaxis system with logistic source, J. Diff. Equ. 256(5),
+1847–1872 (2014).
+[22] M. Winkler, Chemotaxis with logistic source: very weak global solutions and their boundedness properties, J. Math. Anal. Appl.
+348(2), 708–729 (2008).
+[23] M. Winkler, Absence of collapse in a parabolic chemotaxis system with signal-dependent sensitivity, Math. Nachr. 283(11),
+1664–1673 (2010).
+[24] M. Winkler, Aggregation vs. global diffusive behavior in the higher-dimensional Keller-Segel model, J. Diff. Equ. 248(12),
+2889–2905 (2010).
+[25] M. Winkler, Boundedness in the higher-dimensional parabolic-parabolic chemotaxis system with logistic source, Comm. Partial
+Differ. Equ. 35(8), 1516–1537 (2010).
+[26] M. Winkler, Blow-up in a higher-dimensional chemotaxis system despite logistic growth restriction, J. Math. Anal. Appl. 384(2),
+261–272 (2011).
+[27] M. Winkler, Finite-time blow-up in the higher-dimensional parabolic-parabolic Keller-Segel system, J. Math. Pures Appl. (9)
+100(5), 748–767 (2013).
+[28] M. Winkler, How far can chemotactic cross-diffusion enforce exceeding carrying capacities?, J. Nonlinear Sci. 24(5), 809–855
+(2014).
+
+
+C 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+
+www.zamm-journal.org
+
+15214001, 2016, 5, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/zamm.201400311 by Auburn University Libraries, Wiley Online Library on [30/12/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+584
+
+

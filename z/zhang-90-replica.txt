@@ -1,0 +1,729 @@
+PHYSICAL REVIEW B
+
+VOLUME 42, NUMBER 7
+
+1
+
+SEPTEMBER 1990
+
+Replica scaling analysis of interfaces in random media
+Yi-Cheng Zhang
+Istituto Naziona)e di Fisica Nuc)care, Dipartimento di Fisica, Universita di Roma, 00185 Roma, Italy
+(Received 17 May 1990)
+Interfaces subject to random disorder are analyzed by a replica scaling theory. Long-range and
+short-range disorder corresponds to repulsive and attractive interaction among the replicas, respectively. If these interactions are treated properly, a scaling exponent is given for short-range
+disorder, such as random bonds; the Flory exponent for long-range disorder, such as random
+fields, is reproduced.
+
+The problem of interfaces in random media arises in
+various experimental
+realizations in condensed-matter
+physics. Of particular interest are the interfaces subject
+to random fields (RF's) and random bonds (RB's). One is
+interested in the scaling behavior of interface deviations in
+the presence of disorder. A (d —1)-dimensional interface
+immersed in the d-dimensional space in equilibrium can
+be described by the partition function
+
+= exp( —F) .
+H—
+Dh exp —
+
+Z
+
+F is the free energy
+
+and
+
+H-, d'-'p[lVh(p)]'+ V[h(p), p]],
+
+&V(h, p) V(h', p'))
+
+where (
+
+b
+
+'(p —p')R(h —h'),
+
+(3)
+
+For the
+b(h), which
+
+) denotes the average over disorder.
+
+RF case R(h)-h; for the RB case R(h)
+
+(viewed in Fourier space or under rescalings) is equivalent
+with
+to R(h) 1/h. In general, we assume
+—1 a & 1 interpolating between the RB and RF cases.
+%e are interested in the scaling exponent of the interface roughness h-p~ (p ~p)). The free-energy fluctuation bt'-p» is also of interest. There is a standard assumption that these two exponents are related by
+
+~
+
+g
+
+—
+
+R(h)-h'
+
+2/+ d —3,
+
+(4)
+
+which follows from a dimensionality argument about the
+-p») in the Hamiltonian (2).
+kinetic term (h p
+The exponent
+can be estimated in analogy with the
+Imry-Ma argument, ' this was first proposed by Grinstein
+and Ma and by Villain3 for the RF case. Using a scaling
+argument they concluded that belo~ the upper critical di-
+
+(
+
+Fisher
+
+(s)
+
+has developed a functional renormalization-group
+
+(FRG) scheme to treat the RF and RB problems systematically; his analysis confirms the above estimate for
+the RF case while giving the (perturbative) estimate of
+the RB case. It is straightforward to generalize the above
+scaling exponent (5) for continuous a in (3),
+
+g-(5 -d)/(4- a),
+
+(6)
+
+which was first proposed by Kardar. 5 Equation (6) is obtained by requiring that the kinetic term in (2) (h p
+)
+and the random ~wtential term
+V-p '1~ h'~, where
+typically V-p ~ '1~2h'~i as implied by (3)] scale in the
+same way, in the spirit of the Flory argument6 for polymer physics. For d 2, the interface is reduced to a line, 7
+with the property of a directed polymers (DP). The system is related to the noise-driven Burgers equation. 9 Extensive dynamical renormalization-group
+(DRG) analyses
+were carried out for the general correlation exponent'
+a
+in (3). A refined version of Fisher's functional RG for the
+general a was proposed by Halpin-Healy.
+There is now consensus on the exponent
+(6) when disorder is suSciently long-range correlated (i.e., large a);
+the RF case falls in this category. The functional RG
+(Refs. 4 and 11) and dynamical RG (Ref. 10) results
+agree with that of the Flory argument (6). This can be at-
+
+[f
+
+—1)-dimensional
+
+vector on a base reference plane and h(p) is the interface height or deviation
+from the flat position h 0. Note that overhangs are
+neglected in the above formulation. We consider a continOur results will be applicable to the
+uum approximation.
+strong-coupling region and for finite temperature which
+we set T 1. Our formalism does not permit us to probe
+possible crossover length scales and eventual roughening
+phase transitions.
+V[h(p), p] is the random potential
+whose properties are specified by its correlation function,
+
+p is a (d
+
+5 the interface is rough and the exponent is
+
+g-(5 —d)/3.
+
+H is the disorder-dependent
+
+Hamiltonian
+
+where
+
+mension d,
+
+"
+
+(
+
+tributed to the fact that long-range-correlated
+disorder
+does not suffer anomalous renormalization under rescal' The
+ings.
+large distance behavior of the disorder correlator determines the scaling of the interface, hence g. On
+the other hand, the case when disorder is short-range
+correlated is less understood. The RB case is an example.
+Straightforward
+extrapolation of the above Flory exponent (6) to a —1 (i.e., the RB case) is clearly wrong:
+'
+in contrast to the exact exponent —, when d 2. Some—1) the Flory result (6)
+where in the range
+must fail. This can be seen from analyzing perturbation
+where one-loop calculation
+series in the RG schemes
+can give a reasonable estimate of g. For the RB case,
+Fisher4 obtained /=0. 2083m and e 5 —d while HalpinHealy" advocated g —,' e. Nattermann, ' using a
+straightforward generalization of the Imry-Ma arguinent,
+
+(1~ a~
+
+'"
+
+4897
+
+1990 The American Physical Society
+
+YI-CHENG ZHANG
+
+4898
+
+'"(
+
+has obtained
+(5 —d)/4. It is believed that RG
+schemes
+give exact g for not too small a. The border
+value has been evaluated at one-loop perturbation level, '
+a, ——,' . It is not clear if and how higher-order perturbative terms will change it.
+we propose a scaling
+In this Rapid Communication
+analysis based on a replica scheme which permits us to
+treat long-range disorder (e.g. , RF) and short-range disorder (e.g. , RB) on the same footing. In this analysis we
+
+shall see that the dividing value is rather naturally a, =0.
+It will become clear why the Flory exponent, which is valid for long-range disorder, fails for short-range disorder.
+For a & 0 the Flory exponent is reproduced as it should
+
+be; for a & 0, in particular, for interfaces subject to RB
+disorder, we obtain a new result which is somewhat
+different from the previous
+RG perturbative results.
+Let us take the partition function (1) to the nth power
+and average it over disorder
+
+'
+
+I
+
+(Z"&
+
+(exp(
+
+„Dhexp
+
+nf)—
+&
+
+n
+
+d~ 'p'
+
+—g [Vh;(p)] +QR[ii;(p) —hj(p)]
+
+where F —
+lnZ. It describes n identical interfaces, or replicas, with mutual interaction R(h; —hj), with the same
+local p coordinates. The n interfaces are subject to the initial condition h;(0) 0. For d 2 it reduces to a system
+of n directed polymers. When the interaction is R b(h;
+—hj ) the above path integral can be carried out explicitly
+side
+using Bethe ansatz techniques, '3 the right-hand
+(RHS) of (7) is found to be exp(cn3p) (assuming (F&
+0), where —cn 3 can be called the bound-state energy of
+the n replicas and c is a constant. For a particular case of
+very long-range disorder, Parisi was able to carry out the
+' His result also confirms the
+Flory
+path integral directly.
+result (6). Without explicit solutions for the more general
+cases it suffices to estimate the energy, as long as the exponent of n is correct. Indeed this can be done using a
+self-consistent Hartree-Fock approximation. '5 This approximation differs from the available exact results only in
+sub-leading-order terms' for large n.
+Before actually tackling the above path integral, we
+show how to eventually use the results to obtain the exponent g. Suppose that (7) is of the form exp(n~p"), i.e. ,
+
+dFP (F)exp —nF = (exp(
+4
+
+nF)
+
+&
+
+(n~p
+exp—
+
+"), (8)
+
+then the RHS of (8) can be regarded as the Laplace
+transform of the probability distribution density P(F) of
+the free energy of a single interface in the random medium. The RHS of (8) plays the analogous role of a characteristic function. Knowing it permits us to invert the Laplace transform to find the free-energy distribution densi17
+ty
+
+P(F) -exp( —a ~hF "/p"),
+(
+
+a is a constant, g -P/(P —1), r0 y/(P —1),
+Fp, Fo (F& is the mean free energy, and for our
+purpose it suffices to set Fo zero. Even though P(F) is
+defined to be symmetrical, only one sign (F & 0) contribwhere
+
+REF
+
+F
+
+utes in the above integral (8). Note that the above P(F)
+is obtained by a steepest-descent approximation which retains only the leading-order contribution for both large n
+and large p. This is valid only if the physics in (7) produces the form (8) with both P, y positive.
+The knowledge of the P(F) allows us to determine the
+free-energy Auctuation
+p~ln ~p)lrj
+
+(7)
+
+iWJ
+
+1
+
+(10)
+
+where by definition we have g y/P. The last relation can
+be combined with (4) to yield (,
+
+d
+
+3
+
+2
+
++ y
+
+2P
+
+Now we show how to obtain (8) from the physics in (7).
+Observe that when a &0 Eq. (7) describes n interfaces
+R (h; —h,
+with the mutual repulsive interaction
+That is, the potential energy tends to separate them. Only
+because of the kinetic-energy term and the initial condition h;(0) 0, these interfaces do not immediately run
+away. However, they do not form a bound state in the
+usual sense since the typical distance between the interfaces increases with large p. The potential energy can be
+p~ 'ni—
+h', the kinetic part
+easily estimated giving
+nh p
+. Maximizing the exponential
+
+)'.
+
+exp(
+
+np
+
+—
+'h 2+ n p
+
+'h')
+
+(12)
+
+respect to h we obtain the saddle-point solution
+—(np ) 'i ' . As a matter of fact, the above solution
+
+with
+h
+
+0~
+
+a & 2. Though for a & 1 we
+is valid in the range of
+may not find physical realizations for general interfaces,
+the model (2) is nevertheless well defined and both the
+Flory (6) and the result here are still meaningful. The
+above expression is now of the form exp(n~p"), with
+—
+—
+—
+—
+P (4 a)/(2 a) and y d 3+4/(2 a). Substituting the above y and P into (11) we obtain g (5
+—d)/(4 —a), which is the Flory result (6).
+The above analysis reproduces the Flory exponent for
+a & 0, thus reconfirming the conclusion reached for the inWhat happens if a&0?
+terfaces in random fields.
+Now the potential energy in (7) is attractive. From physical considerations we expect that the n interfaces form a
+translationally invariant (in the directions of p), layered
+bound state. There is a well-defined bound-state energy
+E(n) &0 and the RHS of (7) or (8) should behave as
+p" 'E(n)]. The potential term would squeeze all
+exp[ —
+the n interfaces to h 0, but this state has least entropy.
+is
+It is clear that the estimate of the kinetic energy h p
+inadequate for attractive interactions. In polymer physics
+it is well known that the kinetic term takes different
+forms: ii /p for
+4 p and p/h for h Jp.
+Fisher and Fisher ' were the first to consider the entro—
+py loss of a (d 1)-dimensional interface between two
+rigid parallel walls separated by a distance h. They have
+
+h»
+
+«
+
+REPLICA SCALING ANALYSIS OF INTERFACES IN RANDOM MEDIA
+
+4899
+
+estimated it to be (in our present notation)
+
+'" '"" " fo
+
+1 &
+
+~~-'exp[ —(h/h) ], ford
+
+3,
+
+r
+
+(h/h)
+
+d &3
+
+3.9—
+
+0, ford&3,
+
+h-p
+
+where
+
+)/,
+
+—
+
+Jlogp,
+)
+—hS
+
+1 & d & 3, d
+
+h
+
+3, and d
+
+and
+
+3, respectively.
+
+h-const,
+
+for
+Note that for
+
+reproduces for polymers p/h . It is
+2 the above
+term that
+the above entropy loss or kinetic-energy
+prevents the n interfaces from collapsing completely
+(h 0) in the presence of attractive interactions. This is
+3 unfortunately we have
+possible only for d & 3. For d
+not found a mechanism that prevents the collapse. Combining the above kinetic term to the potential part we have
+
+d
+
+0.7—
+
+O.
+
+~
+
+d
+
+Maximizing
+tion is
+1/h
+
+n
+
+(
+
+[ n(1/h) 2(d
+
+()/(3
+
+d)
+
++ n—2h a]]
+
+(13)
+
+(13) with respect to h, the saddle-point
+
+solu-
+
+(3-d)/(2(d-))+(3-d)al
+
+(14)
+
+Note that the saddle-point
+range
+
+solution
+
+only exists in the
+
+(2 —3a)/(2 —a) &d &3;
+
+(i5)
+
+—1, it is —
+', & d & 3. For d smaller
+
+for the RB case a
+than the lower bound the entropy loss term in (13) is not
+to counter the attractive insingular enough (when h
+teraction. Substituting the solution (14) into the boundstate energy in (13) we obtain
+
+«1)
+
+exp[ —
+p
+
+'E(n)], E(n)
+
+- nS, —
+
+4(d —1) + (3 —d) a
+2(d —1) + (3 —d) a
+With the help of (11) we find g,
+
+(5 —d) (d —1) + (3 —d) a
+4(d —1)+ (3 —d) a
+which is subject to the bound (15). Note that this result
+matches with that of the repulsive case a 0 at a 0. In
+fact, they both reduce to g (5 —d)/4 at a 0. One has
+the vato bear in mind that on the attractive side a
+lidity of the above matching relation is limited by (15)
+which is 1 & d & 3 for a 0. We do not know if the bound
+(15) is genuinely physical, or if it is due to the limitation
+of our formalism. Note also that though we do not have a
+saddle-point solution for the marginal case d 3, the result (17) for d & 3 has a well-behaved limit d
+3: g
+independent of a. Curiously, it coincides with the IrnryHowMa-type result for RB a la Nattermann'
+for
+ever, ours is not even a linear function of d, and (17) is
+(' (5 —d)/4 in the whole
+different from Nattermann's
+range of validity.
+Let us compare our result for d 2 with DP analysis.
+Our result (17) reproduces the exact result ' when
+a —1: g 3 . We plot our result together with that of
+RG perturbative result for general a in Fig. 1. The oneloop RG calculation'o of g, or Flory argument, is believed
+to be exact for long-range disorder. However, the bound-
+
+)
+
+0,
+
+d-3.
+
+l
+
+I
+
+I,
+
+I
+
+I
+
+|
+
+I
+
+-0.5
+
+I
+
+I
+
+1
+
+I
+
+I
+
+I
+
+I
+
+I
+
+0.5
+
+FIG. 1. The exponent g (vertical axis) vs a. The upper curve
+(3+a)/(4+a) for a & 0, obtained from (17) when
+
+is our result
+
+d 2, compared to the perturbative result, the lower curve. For
+a & 0 ( is the Fiory exponent and the two curves overlap.
+ary or critical value of a, has been determined perturbatively. From the present analysis it is clear that the conclusion about long-range disorder cannot be extended to
+a & 0, where the physics qualitatively changes from
+repulsion to attraction.
+Consider another special case that is the RB interface
+in d 3. Besides Nattermann's
+scaling argument g
+Fisher's RG gives
+4166 and Halpin-Healy argues for
+numerical simu9 =0.4444. A recent transfer-matrix
+lation' of interfaces subject to random-bond disorder has
+estimated
+0.50+'0.08 for d 3. It seems to support
+our scaling result. However, interface simulations for
+d 3 have proved to be very difficult to obtain reliable results at present stage.
+One may wonder what is the justification of keeping
+only the large n leading order, whereas the traditional re0 limit; thus the smallplica approaches consist of the n
+est power contributes most. For our problems at hand we
+expect that the RHS of (8) is a single positive power on
+the exponent. However, within our scaling formalism we
+can never be sure if our procedure has generated
+artificially a subleading order. The key to this puzzle is
+that such subleading order always has the opposite sign
+and one can easily verify that a negative power does not
+contribute to the scaling of P(F) defined in (8). Let us
+see how a subleading order arises. In our preceding discussions we assumed the kinetic terms being proportional
+to n But one .may argue that this factor should be n —1
+since the motion of the center of mass should be ruled out.
+We have assumed also that potential terms have a factor
+n ~, which should really be n(n —1) since an interface does
+not interact with itself. For more discussions on sublead20
+for the DP d 2.
+ing orders' see an explicit calculation
+With the above correction we would obtain (n —1)n~ ' in
+place of ns on the RHS of (8). On the other hand, positive "subleading" order can indeed appear in some circumstances when it plays a dominant role in the P(F)
+scaling and thus cannot be neglected: in an external field
+as shown by Kardar, ' and if the noise correlation function (3) is a Yukawa-like potential, ' e.g. , 1/h exp(
+which has different behaviors at the infrared and at the ultraviolet regions. In any event we do not expect these
+
+—
+
+(=0.
+
+(
+
+YI-CHENG ZHANG
+
+4900
+
+complications in our present problems.
+One may also wonder how the above replica scheme
+works; does the difference between attraction and repulsion manifest itself in the original random systems? Understanding this question will help us better appreciate the
+working of the present method and see its limitations. Let
+us call the optimal configuration of the interface in the
+random medium the ground state. Consider n identical
+interfaces being placed in a single-random environment
+without taking any average. For long-range disorder,
+such as RF, in the vicinity of the ground state it is not very
+likely that one would find energetically favorable (metastable) states '
+they are more likely at large distances.
+The thermal fluctuations will take the interfaces wandering over large distances. This is the origin of the repulsive
+interaction among the n replicas. For short-range disorder, on the other hand, in the neighborhood of the ground
+state there are many favorable states. ' The n replicas
+tend to stay together, and hence the attractive interaction.
+It is the non-Gaussian nature (9) of these fluctuations
+about the ground state that necessitates the detour into replica space. Our replica scheme serves to invert the moments to find the distribution function. In the above
+analysis we have tacitly assumed there is a unique ground
+state in the random systems; we have also assumed replica
+symmetry is unbroken in the replicated systems.
+We can generalize the present analysis to the general
+case of d'-dimensional manifold imbedded in d d' diwhich will not be discussed here. Of particumensions,
+lar interest is the problem of directed polymers in d & 2
+
+—
+
+"
+
+)
+
+'Y. Imry and S.-K. Ma, Phys. Rev. Lett. 35, 1399 (1975).
+2G. Grinstein and S.-K. Ma, Phys. Rev. Lett. 49, 685 (1982);
+Phys. Rev. B 28, 2588 (1983).
+3J. Villain, J. Phys. (Paris) 43, L551 (1982).
+4D. S. Fisher, Phys. Rev. Lett. 56, 1964 (1986).
+sM. Kardar, J. Appl. Phys. 61, 3601 (1987).
+sP. -G. de Gennes, Scaling Concepts in Polymer Physics (Cornell Univ. Press, Ithaca, 1979).
+7D. A. Huse and C. L. Henley, Phys. Rev. Lett. 54, 2708
+(1985); M. Kardar, ibid 55, 2923 (.1985); D. A. Huse, C. L.
+Henley, and D. S. Fisher, ibid 55, 2924 (198. 5).
+sM. Kardar and Y.-C. Zhang, Phys. Rev. Lett. 58, 2087 (1987).
+9D. Forster, D. R. Nelson, and M. J. Stephen, Phys. Rev. A 16,
+731 (1977).
+' E. Medina, T. Hwa, M. Kardar, and Y.-C. Zhang, Phys. Rev.
+A 39, 3053 (1989).
+iiT. Halpin-Healy, Phys. Rev. Lett. 62, 442 (1989).
+
+dimensions, which is related to other important physical
+problems, such as the surface growth.
+The relevant ath')', a = —d+ l. If we aptractive potential is R (h —
+—d
+ply the above analysis to directed polymers for a
+—
++1
+2, it can easily be verified that there is no (saddle
+point) physical solution.
+The failure to extend our
+analysis to DP of d
+3 shows some of our assumptions
+may break. Our conjecture is that the symmetry of replicas is broken. Derrida and co-workers have shown for
+finite or large d that replica symmetry is indeed broken. 23
+Further investigations
+into the possible replica breaking
+solutions for DP in high dimensions are worth pursuing.
+In this paper we have introduced a replica scaling
+theory to analyze the interfaces in random media. We
+have shown that short-range-correlated
+disorder and longrange-correlated disorder have to be treated differently.
+The former corresponds to attractive interaction among
+the n replicas and the latter to repulsive interaction, respectively. From our analysis we conclude that the border
+value is a, 0. For long-range disorder the Flory exponent is reproduced. For short-range disorder, in particular, for interfaces subject to random-bond disorder, a
+scaling exponent is found. Since they are based on the
+same level of assumptions we expect our result is as good
+as the Flory exponent for RF in the whole range of validi-
+
+—
+
+~
+
+~
+
+ty.
+
+I thank G. Parisi for helpful discussions and M. Kardar
+for pointing out a serious mistake in a preliminary version
+of this work.
+
+'2T. Nattermann, J. Phys. C 18, 6661 (1985).
+'3M. Kardar, Nucl. Phys. B290, [FS20] 582 (1987), and references therein.
+
+'4G. Parisi (unpublished).
+
+'sY. -C. Zhang, J. Stat. Phys. 57, 1123 (1989).
+'sJ. W. Negele and H. Orland, Quantum Many-Particle Sys
+tems (Addison-Wesley, London, 1988).
+'7Y. -C. Zhang, Europhys. Lett. 9, 113 (1989).
+'SM. E. Fisher and D. A. Fisher, Phys. Rev. B 25, 3192 (1982).
+'9M. Kardar and Y.-C. Zhang, Europhys. Lett. 8, 233 (1989).
+2eF. Calogero and A. De Gasperis, Phys. Rev. A 11, 265 (1975).
+2'Y. -C. Zhang, Phys. Rev. Lett. 59, 2125 (1987).
+M. Kardar, G. Parisi, and Y.-C. Zhang, Phys. Rev. Lett. 56,
+889 (1986).
+23B. Derrida and H. Spohn, J. Stat. Phys. 51, 817 (1988); J.
+Cook and B. Derrida, Europhys. Lett. 10, 195 (1989).
+24G. Parisi, J. Phys. (Paris) 51, 1595 (1990).
+
+

@@ -1,0 +1,432 @@
+Journal of Mathematical Sciences, Vol. 199, No. 2, May, 2014
+
+RANDOM DETERMINANTS, MIXED VOLUMES OF ELLIPSOIDS, AND ZEROS OF
+GAUSSIAN RANDOM FIELDS
+D. Zaporozhets∗ and Z. Kabluchko†
+
+UDC 519.2+514
+
+Consider a d × d matrix M whose rows are independent, centered, nondegenerate Gaussian vectors ξ1 , . . . , ξd with
+covariance matrices Σ1 , . . . , Σd . Denote by Ei the dispersion ellipsoid of ξi : Ei = {x ∈ Rd : x Σ−1
+i x ≤ 1}. We
+show that
+d!
+Vd (E1 , . . . , Ed ),
+E | det M | =
+(2π)d/2
+where Vd (·, . . . , ·) denotes the mixed volume. We also generalize this result to the case of rectangular matrices. As
+a direct corollary, we get an analytic expression for the mixed volume of d arbitrary ellipsoids in Rd .
+As another application, we consider a smooth, centered, nondegenerate Gaussian random field X = (X1 , . . . , Xk ) :
+of the intensity of zeros of X in terms
+Rd → Rk . Using the Kac–Rice formula, we obtain a geometric interpretation
+√
+of the mixed volume of dispersion ellipsoids of the gradients of Xi / VarXi . This relates zero sets of equations to
+mixed volumes in a way which is reminiscent of the well-known Bernstein theorem about the number of solutions of
+a typical system of algebraic equations. Bibliography: 10 titles.
+
+1. Main results
+1.1. Random determinant and mixed volume of ellipsoids. Consider independent, centered, nondegenerate Gaussian random vectors ξ1 , . . . , ξk ∈ Rd , k ≤ d, with covariance matrices Σ1 , . . . , Σk . Denote by Ei the
+dispersion ellipsoid of ξi :
+
+
+x
+≤
+1
+, i = 1, . . . , k.
+(1.1)
+Ei = x = (x1 , . . . , xd ) ∈ Rd : x Σ−1
+i
+Denote by M the k × d matrix whose rows are ξ1 , . . . , ξk .
+Theorem 1.1. The following relation holds:
+
+E det(M M  ) =
+
+(d)k
+Vd (E1 , . . . , Ek , B, . . . , B),
+(2π)k/2 κd−k
+
+(1.2)
+
+where Vd (·, . . . , ·) denotes the mixed volume of d convex bodies in Rd (see Sec. 2 for details), B is the unit ball
+in Rd , (d)k = d(d − 1) · · · (d − k + 1) is the Pochhammer symbol, and κn = π n/2 /Γ(1 + n/2) denotes the volume
+of the unit ball in Rn .
+The left-hand side of (1.2) can be interpreted as the average k-dimensional volume of a Gaussian random
+parallelotope.
+Corollary 1.2. In the case k = d, the following relation holds:
+E | det M | =
+
+d!
+Vd (E1 , . . . , Ed ).
+(2π)d/2
+
+As another direct corollary, we can calculate the mixed volume of d arbitrary ellipsoids in Rd .
+Corollary 1.3. If E1 , . . . , Ed are arbitrary ellipsoids defined by symmetric positive definite matrices Σ1 , . . . , Σd
+as in (1.1), then
+
+
+
+d
+d
+
+1 
+1
+−1
+(det Σi )−1/2
+| det(xij )|
+exp − x
+Σ
+x
+Vd (E1 , . . . , Ed ) =
+i dx11 . . . dxdd ,
+d! i=1
+2 i i
+i=1
+Rd2
+
+where
+xi = (xi1 , . . . , xid ) .
+∗ St.Petersburg Department of the Steklov Mathematical Institute, St.Petersburg, Russia, e-mail: zap1979@gmail.com.
+† Ulm University, Ulm, Germany, e-mail: zakhar.kabluchko@uni-ulm.de.
+
+Translated from Zapiski Nauchnykh Seminarov POMI, Vol. 408, 2012, pp. 187–196. Original article submitted October
+10, 2012.
+168
+1072-3374/14/1992-0168 ©2014 Springer Science+Business Media New York
+
+The only estimate of the mixed volume of ellipsoids which we know is due to Barvinok [2]. He showed that
+κd
+(d−1)/2
+3
+
+Dd (Σ1 , . . . , Σd ) ≤ Vd (E1 , . . . , Ed ) ≤ κd
+
+Dd (Σ1 , . . . , Σd ),
+
+where Dd (·, . . . , ·) denotes the mixed discriminant of d symmetric d × d matrices:
+Dd (A1 , . . . , Ad ) =
+
+∂d
+1
+det(λ1 A1 + · · · + λd Ad )
+.
+d! ∂λ1 . . . ∂λd
+λ1 =···=λd =0
+
+If ξ1 , . . . , ξk are independent, standard Gaussian vectors, then M M  is a Wishart matrix, and (1.2) turns
+into (see [5, 10])
+
+(d)k κd
+.
+E det(M M  ) =
+(2π)k/2 κd−k
+1.2. Intrinsic volumes. If ξ1 , ξ2 , . . . , ξk ∈ Rd , k ≤ d, are identically distributed with the common covariance
+matrix Σ and dispersion ellipsoid E, then (1.2) turns into
+
+k!
+Vk (E),
+(1.3)
+E det(M M  ) =
+(2π)k/2
+where Vk (·) denotes the kth intrinsic volume of a convex body in Rd :
+Vk (K) =
+
+d
+k
+
+κd−k
+
+Vd (K, . . . , K , B, . . . , B).
+ 
+k times
+
+The normalization is chosen so that Vk (K) depends only on K and not on the dimension of the surrounding
+space, i.e., if dim K < d, then the computation of Vk (K) in Rd leads to the same result as the computation in
+the aﬃne span of K. In particular, if dim K = k, then Vk (K) = Volk (K), the k-dimensional volume of K.
+It is known that V1 (K) is proportional to the mean width of K:
+V1 (K) =
+
+dκd
+w(K).
+2κd−1
+
+Taking k = 1 in (1.3), we see that for any centered Gaussian vector ξ with dispersion ellipsoid E,
+1
+Eξ = √ V1 (E).
+2π
+
+(1.4)
+
+It was pointed out by M. Lifshits that (1.4) is a special case of the following remarkable result of Sudakov.
+1.3. Connection with Sudakov’s result. For our purposes, the following ﬁnite-dimensional version of Sudakov’s theorem suﬃces. The result in full generality can be found in [9, Proposition 14].
+Proposition 1.4. For an arbitrary subset A ⊂ Rd ,
+1
+E sup x, η = √ V1 (conv(A)),
+2π
+x∈A
+
+(1.5)
+
+where η is a standard Gaussian vector in Rd and conv(A) is the convex hull of A.
+Let us deduce (1.4) from (1.5). Consider a matrix U such that Σ = U −1 (U −1 ) and U ξ is a standard Gaussian
+vector. Using (1.5) with A = E and η = U ξ, we get
+Eξ = E sup x, ξ = E sup (U −1 ) x, U ξ = E
+x≤1
+
+x≤1
+
+1
+x, U ξ = E supx, U ξ = √ V1 (E).
+2π
+x∈E
+U  x≤1
+sup
+
+169
+
+1.4. Zeros of Gaussian random fields. Let X(t) = (X1 (t), . . . , Xk (t)) : Rd → Rk , k ≤ d, be a random
+ﬁeld. Following Azaı̈s and Wschebor [1], we always assume that the following conditions hold:
+(a) X is Gaussian;
+(b) almost surely, the function X(·) is of class C 1 ;
+(c) for all t ∈ Rd , X(t) has a nondegenerate distribution;
+(d) almost surely, if X(t) = 0, then X  (t), the Jacobian matrix of X(t), has the full rank.
+Then, almost surely, the level set X −1 (0) is a C 1 -manifold of dimension d − k, and for any Borel set F , the
+Lebesgue measure Vold−k (X −1 (0) ∩ F ) is well-deﬁned (Vol0 (·) denotes the counting measure).
+It was shown in [1, p. 177] that
+
+
+
+E Vold−k (X −1 (0) ∩ F ) = E
+det (X  (t)X  (t) ) X(t) = 0 pX(t) (0) dt,
+(1.6)
+F
+
+where pX(t) (·) is the density of X(t). Thus, the integrand in (1.6) can be interpreted as the intensity of zeros
+of X.
+In this paper, we consider the special case where X is centered and its coordinates X1 , . . . , Xk are independent.
+Denote by Ei (t) the dispersion ellipsoid of ∇[Xi (t)/ Var Xi (t)].
+Theorem 1.5. Let X be a centered random field with independent coordinates defined as above and satisfying
+conditions (a)–(d). Then
+
+(d)k
+E Vold−k (X −1 (0) ∩ F ) =
+Vd (E1 (t), . . . , Ek (t), B, . . . , B) dt.
+(1.7)
+(2π)k κd−k
+F
+
+Formula (1.7) relates zero sets of random equations to mixed volumes. In the case k = d, it is therefore
+reminiscent of the well-known fact from the algebraic geometry which we formulate in the next subsection.
+1.5. Bernstein’s theorem. Consider a complex polynomial in d variables,
+
+f (z1 , . . . , zd ) =
+cj1 ,...,jd z1j1 . . . zdjd .
+The Newton polytope of f is the subset of Rd deﬁned as follows:
+
+
+Nw(f ) = conv (j1 , . . . , jd ) ∈ Zd : cj1 ,...,jd = 0 .
+Let K1 , . . . , Kd be compact convex polytopes in Rd with vertices in Zd . Consider a system of algebraic
+equations
+⎧
+⎪
+⎨f1 (z1 , . . . , zd ) = 0,
+...
+⎪
+⎩
+fd (z1 , . . . , zd ) = 0,
+such that Nw(fi ) = Ki . Bernstein showed [3] that for almost all such systems (with respect to Lebesgue measure
+in the space of coeﬃcients of the polynomials), the number of nonzero solutions is equal to
+Vol0 (f1−1 (0) ∩ · · · ∩ fd−1 (0) \ {0}) = d!Vd (K1 , . . . , Kd ).
+2. Some essential tools from geometry
+For the basic facts from integral and convex geometry we refer the reader to [4] and [8].
+2.1. Mixed volumes. Consider arbitrary convex bodies K1 , . . . , Kd ⊂ Rd . Minkowski showed [7] that
+Vold (λ1 K1 + · · · + λd Kd ), where λ1 , . . . , λd ≥ 0, is a homogeneous polynomial of degree d with nonnegative
+coeﬃcients:
+d
+d
+
+
+Vold (λ1 K1 + · · · + λd Kd ) =
+···
+λi1 . . . λid Vd (Ki1 , . . . , Kid ).
+(2.1)
+i1 =1
+
+id =1
+
+The coeﬃcients Vd (Ki1 , . . . , Kid ) are uniquely determined by the assumption that they are symmetric with
+respect to permutations of Ki1 , . . . , Kid . The coeﬃcient Vd (K1 , . . . , Kd ) is called the mixed volume of K1 , . . . , Kd .
+Diﬀerentiating (2.1), we get an alternative deﬁnition of the mixed volume:
+Vd (K1 , . . . , Kd ) =
+170
+
+∂d
+1
+Vold (λ1 K1 + · · · + λd Kd ) λ =···=λ =0 .
+1
+d
+d! ∂λ1 . . . ∂λd
+
+For any aﬃne transformation L,
+Vd (LK1 , . . . , LKd ) = | det L| · Vd (K1 , . . . , Kd ).
+The following relation can also be stated:
+
+κd−1
+Vd−1 (Pu K1 , . . . , Pu Kd−1 ) du =
+Vd (K1 , . . . , Kd−1 , B),
+κd
+
+(2.2)
+
+(2.3)
+
+Sd−1
+
+where du is the surface measure on Sd−1 normalized to have total mass 1 and Pu denotes the orthogonal projection
+to the linear hyperplane u⊥ .
+2.2. Volumes of parallelotopes. For any A ⊂ Rd and x1 , . . . , xk ∈ Rd denote by Px1 ,...,xk A the orthogonal
+projection of A to span⊥ {x1 , . . . , xk } (the orthogonal complement of the linear span of x1 , . . . , xk ). Denote by
+Hx1 ,...,xk the parallelotope generated by the vectors x1 , . . . , xk . It is known that
+
+(2.4)
+Volk (Hx1 ,...,xk ) = det(AA ),
+where A is the matrix whose rows are x1 , . . . , xk .
+For any x1 , . . . , xd ∈ Rd and k = 1, . . . , d − 1,
+Vold (Hx1 ,...,xd ) = Volk (Hx1 ,...,xk ) Vold−k (Px1 ,...,xk Hxk+1 ,...,xd ).
+
+(2.5)
+
+2.3. Ellipsoids. There is a bijection A → E between d × d symmetric positive deﬁnite matrices and ddimensional nondegenerate ellipsoids centered at the origin (see [6] for details):
+
+
+E = x ∈ Rd : x A−1 x ≤ 1 .
+Any nondegenerate linear coordinate transformation of the form x → Lx is reﬂected by a change of the corresponding representing matrix A to the matrix AL given by
+AL = LAL .
+
+(2.6)
+
+Let E  be the orthogonal projection of E onto an k-dimensional subspace with some orthonormal basis
+x1 , . . . , xk ∈ Rd . Denote by A the k × k matrix representing the ellipsoid E  in this basis. If C is the k × d
+matrix whose rows are x1 , . . . , xk , then
+A = CAC  .
+(2.7)
+3. Proofs
+3.1. Proof of Theorem 1.1. Case k = d. We proceed by induction on d. First let us assume that ξd is a standard
+Gaussian vector. Denote by χd a random variable having the chi distribution with d degrees of freedom and
+independent from ξ1 , . . . , ξd−1 . Using (2.4) and (2.5) with k = 1, we get the relations
+
+E Vold (Hξ1 ,...,ξd−1 ,χd u ) du
+E | det M | = E Vold (Hξ1 ,...,ξd ) =
+Sd−1
+
+
+
+= Eχd
+
+E Vold−1 (Pu Hξ1 ,...,ξd−1 ) du
+
+Sd−1
+
+=√
+
+dκd
+2πκd−1
+
+
+E Vold−1 (HPu ξ1 ,...,Pu ξd−1 ) du.
+Sd−1
+
+It follows from (2.7) that Pu ξi has dispersion ellipsoid Pu Ei . By the induction assumption,
+E Vold−1 HPu ξ1 ,...,Pu ξd−1 =
+
+(d − 1)!
+Vd−1 (Pu E1 , . . . , Pu Ed−1 ).
+(2π)(d−1)/2
+
+Combining the latter two relations with (2.3), we obtain the equality
+E | det M | =
+
+d!
+Vd (E1 , . . . , Ed−1 , B).
+(2π)d/2
+
+(3.1)
+171
+
+If ξd is an arbitrary nondegenerate Gaussian vector, then there exists a linear transformation L such that Lξd
+is a standard Gaussian vector. It follows from (2.6) that LEi is the dispersion ellipsoid of Lξi , and, in particular,
+LEd = B. Applying (3.1) to the matrix LM  and using (2.2), we get the equalities
+d!
+| det L|−1 Vd (LE1 , . . . , LEd−1 , B)
+(2π)d/2
+d!
+Vd (E1 , . . . , Ed−1 , Ed ).
+=
+(2π)d/2
+
+E | det M | = | det L|−1 E | det LM  | =
+
+
+
+3.2. Proof of Theorem 1.1. Case k < d. Consider a d × d matrix M  whose ﬁrst k rows form the matrix M and
+the last d − k rows are independent standard Gaussian vectors ξk+1 , . . . , ξd (independent from M ). By the
+previous case,
+d!
+Vd (E1 , . . . , Ek , B, . . . , B).
+E | det M  | =
+(2π)d/2
+On the other hand, by (2.5),
+E | det M  | = E Vold (Hξ1 ,...,ξd ) = E Volk (Hξ1 ,...,ξk ) Vold−k (Pξ1 ,...,ξk Hξk+1 ,...,ξd )
+
+= E det(M M  ) E Vold−k (Hη1 ,...,ηd−k ),
+where η1 , . . . , ηd−k are independent, standard Gaussian vectors in Rd−k . By the previous case,
+E Vold−k (Hη1 ,...,ηd−k ) =
+
+(d − k)!
+κd−k .
+(2π)(d−k)/2
+
+Combining the latter three relations completes the proof.
+
+
+
+3.3. Proof of Theorem 1.5. First we assume that Xj has a unit variance: Var Xj (t) ≡ 1 for all j = 1, . . . , k.
+Diﬀerentiating the relation EXj (t)Xj (t) = 1 with respect to ti , we obtain the equality
+∂Xj
+(t)Xj (t) = 0,
+∂ti
+which, together with the independence of the coordinates of X, implies that X  (t) and X(t) are independent.
+This means that the conditioning on X(t) = 0 in (1.6) may be dropped. To complete the proof of the theorem
+in the case Var Xj (t) ≡ 1, it remains to combine (1.6) with (1.2).
+To cover the general case, it suﬃces to note that Xj / Var Xj has the same zero set as Xj .
+
+E
+
+Acknowledgments. We are grateful to M. Lifshits for bringing our attention to Sudakov’s result. We are
+also grateful to A. I. Barvinok for the useful discussion.
+The second author is partially supported by the RFBR (project 10-01-00242), the Program “Leading Scientiﬁc
+Schools” (project-1216.2012.1), and DFG (grant 436 RUS 113/962/0-1 R).
+Translated by D. Zaporozhets and Z. Kabluchko.
+REFERENCES
+1. J. M. Azaı̈s and M. Wschebor, Level Sets and Extrema of Random Processes and Fields, Wiley (2009).
+2. A. Barvinok, “Computing mixed discriminants, mixed volumes, and permanents,” Discrete Comput. Geom.,
+18, 205–237 (1997).
+3. D. N. Bernshtein, “The number of roots of a system of equations,” Funct. Anal. Appl., 9, 183–185 (1975).
+4. Yu. D. Burago and V. A. Zalgaller, Geometric Inequalities, Grundlehren der Mathematischen Wissenschaften,
+Vol. 285, Springer–Verlag, Berlin (1988),
+5. N. R. Goodman, “The distribution of the determinant of a complex Wishart distributed matrix,” Ann. Math.
+Statist., 34, 178–180 (1963).
+6. W. C. Karl, G. C. Verghese, and A. S. Willsky, “Reconstructing ellipsoids from projections,” CVGIP:
+Graphical Model and Image Processing, 56, 124–139 (1994).
+7. H. Minkowski, “Theorie der konvexen Körper, insbesondere Begründung ihres Oberﬂächenbegriﬀs,” in:
+Gesammelte Abhandlungen, Vol. 2 (1911), pp. 131–229.
+8. R. Schneider and W. Weil, Stochastic and Integral Geometry, Springer–Verlag (2008).
+172
+
+9. V. N. Sudakov, “Geometric problems in the theory of inﬁnite-dimensional probability distributions,” Trudy
+Mat. Inst. Akad. Nauk SSSR, 141 (1976).
+10. S. S. Wilks, “Moment-generating operators for determinants of product moments in samples from a normal
+system,” Ann. Math., 35, 312–340 (1934).
+
+173
+
+

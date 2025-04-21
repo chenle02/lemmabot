@@ -1,0 +1,1226 @@
+Z. Wahrscheinlichkeitstheorie verw. Geb. 11,230--243 (1969)
+
+On the Optimal Filtering of Diffusion Processes
+MOSH:E ZAKAI
+
+Received November 1, 1967
+Summary. Let x(t) be a diffusion process satisfying a stochastic differential equation and
+let the observed process y(t) be related to x(t) by dy(t) = g(x(t)) + dw(t) where w(t) is a
+Brownian motion. The problem considered is that of finding the conditional probability of
+x(t) conditioned on the observed path y(s), 0 <~ s <~ t. Results on the gadon-Nikodym
+derivative of measures induced by diffusions processes are applied to derive equations which
+determine the required conditional probabilities.
+1. Introduction
+
+Let xt satisfy the stochastic differential equation dxt = a ( x t ) d t + b ( x t ) d ( v t
+where wt is a Brownian motion, and let Yt be related to xt b y dyt = g (xt)dt + dwt,
+where wt is a Brownian motion independent of wt (conditions on a (x), b (x)and
+g (x) will be imposed in the next section). The xt process can be considered as the
+motion of a noise-perturbed dynamical system and Yt as a noisy observation
+on xt. This suggests the problem of determining the conditional probability of xt,
+conditioned on the observed path ys, 0 ~ s ~_ t. This problem was considered
+b y STRATONOVICH[1], K v s ~ g
+[2], BvcY [3], SgmYA~V [4] and others. 1
+Previous work on this problem concentrated mainly on finding equations
+satisfied b y p (u, y~), the conditional density of xt given the observed path Ys,
+0 <-- s <~ t, (assuming it exists) and the derivations were formal. Recently K v s ~ N ] ~
+proved t h a t conditional expectations of functions of xt satisfy (under certain
+restrictions) a stochastic equation [2].
+Let r (u, y~) be related to p (u, y~) b y
+p (u, yto) = q) (u, yto). (~ q5 (u, yto) d u ) - l ,
+Ev
+the results of this paper deal with the unnormalized density ~b (u, yt). I t turns out
+t h a t this leads to considerably simpler equations as compared to the equations
+for p(u, y~). The results of this paper are based on results of S~:OgOHOD and
+GI~SA~OV for the Radon-Nikodym derivaties of measures induced b y solutions
+of stochastic differential equations. Two stochastic equations for ~5 (u, y~) are
+derived. The first equation is derived in section 3 (theorem 1 and corollary 1).
+1 After this paper was written we learned of the work of R. E. IV[ORT]~=~SE~(University
+of California, Berkeley, Elektronics Research Laboratory Report EgL-66-1, August 1966),
+and T. E. DvNCA~r (Stanford University, Center for Systems Research, Technical Report
+7001-4, May 1967), which contain results similar to some of the results of this paper. In
+particular, 1VIo~T~S~ derived, under some additional restrictions, the results of corollary I
+and DvNeA~ obtained, formally, the results of theorem 3. We wish to thank T. K).ILA~rEfor
+calling our attention to these references.
+
+On the Optimal Filtering of Diffusion Processes
+
+231
+
+The uniqueness of the solution to this equation is considered in section 4. The
+second equation is derived in section 5. The assumptions of theorem 3 (section 5)
+include some smoothness properties of the solution to equation (18). Conditions
+under which the solution has these properties are unknown at present. A similar
+remark applies to theorem 4 (section 5). I t will be obvious from the proofs that
+it is possible to trade assumptions on the transition density of the xt process for
+assumptions on the solution to Eq. (18) [or Eq. (30)]. The results of section 5
+should therefore be considered to be of exploratory nature.
+
+2. Some General Relations
+Let (Q, d ) be a measurable space and /~0, #1, two equivalent probability
+measures on (f2, ~4). Let
+
+A (co) = ~ - ~ (co)
+be the Radon-Nikodym derivative of #1 with respect to r Let X (co) be a random
+variable on (D, d ) and let the expectation of I X (x) I with respect to #1 be finite.
+Let ~ be a sub a-field of ~ and E(0)(E(1)) denote expectations and conditional
+expectation with respect to/~0 (#1). Then, a.s. #1 and/to, ([5], section 24.4):
+E(1) (X (co) ] ~ ) = E(0)(X (o)) A (~o)l ~)
+Let xt be the solution to the stochastic equation
+t
+
+t
+
+xt = xo + f a(xs) ds -t- f b(xs) d(vs
+0
+
+(2)
+
+0
+
+t
+
+t
+
+yt = fg(xs)
+
+8 +
+
+0
+
+0
+
+where x and a (x) are vectors in the Euclidean r-space Er, b (x) is an r • r matrix,
+wt is the standard r-dimensional Brownian motion, g (w) is scalar valued and ws
+is a standard one dimensional Brownian motion, independent of the ws process.
+Let h (x) stand for g (x) or any of the entries of a (x) and b (x), we assume that
+h (x) satisfies the Lipschitz condition
+
+x,y E .
+The initial condition for the xt process, x0, will be assumed to be a random variable
+independent of the wt, wt processes. Let/~1 be the measure induced on the space
+of Er+l valued continuous functions on [0, T] by Eq. (2), and let/~0 be the measure
+induced on the same space by:
+t
+
+t
+
+xt = xo + fa(xs)ds -~ fb(xs)d(zs
+0
+
+0
+
+t
+
+= ] dw .
+
+(3)
+
+0
+
+I t is known that under these conditions, #1 and/~o are equivalent measures and
+16"
+
+232
+
+M. ZAKAI:
+
+the l~adon-Nikodym derivative of #1 with respect to /to is given a. s. by ([6],
+Ch. 4, section 4; [7]):
+A (x~, y~) = ~dm tx
+, 0T, ~.T,
+o j = Exp - - ~
+
+g2(xs)ds+ Sg(xs)dys
+
+(4)
+
+0
+
+where x~ (y0~) stands for the path xs (Ys), 0 ~ 8 ~ T. Since/~1 and/t0 are equivalent,
+any a.s. property with respect to one measure is also a.s. with respect to the other
+measure. From here on all equalities between conditional expectations and conditional probabilities are to be understood in the a.s. sense, even when this is not
+stated explicitly. Also, all the a-fields considered will be assumed to be complete
+with respect to the involved measures (the Lebesgue measure on Er and [0, T],
+and/to).
+Let 2Y(xt, y~)) denote the sub a-field induced by the family of random variables
+xt, Yo, 0 ~-- 0 ~-- s (similarly, we will use ~ ( x s , xt, y~)), ~(y~)) etc.). Let ](x) be a
+reM valued, bounded Borel function of x (x e Er ;) then, by (1) and the smoothing
+property for conditional expectations we have:
+
+E (1) (/(xt)l~ (Yto)) ~ E{0)(E(0)(A(Z~o,y~) [g (xt, y~)) / (xt} l g (y*o)}
+E~o>{E(0)(A(x~o,y~o)l~(xt, y~))]2(y~)}
+
+(5)
+
+Let A(u, y~) be the value of some version of E(0)(A (x~, yg)[ ~ (xt, yto)) at xt = u
+and the path y~. Let
+P (u, t) = Prob {xt ~ u},
+u e Er
+(6)
+(where xt ~= u means that each component of xt satisfies the inequality with
+respect to the corresponding component of u). Since, under/to, 2Y(y~) and 2Y(x~)
+are independent, it follows by Fubini's theorem that:
+
+E(o){E(o)(A(xto, yto)l~(xt,Y~o))/(xt)l~(yto) } = .~/(u),4(u, Yto)P(du, t)
+
+(7)
+
+E~
+
+and
+
+E(1) (/(xt)I ~ (Yto)) = ~" ; A(~, Y~) ?(d~, t)
+
+(S)
+
+Br
+
+Since /(x) was arbitrary, a version of the conditional probability of the random
+variable xt conditioned on yt, with respect t o / t l is given by:
+fi(u, yl) P(au, t)
+F
+
+Prob {xt e F[ 2(y~)} = ~ 2{u, yD P(du, t)
+
+(9)
+
+E,
+
+where F is any Betel set in Er. Furthermore, the conditional probability obtained
+by (9) is a conditional probability distribution ofxt relative to ~ (y~) ([8], Ch. I, w9).
+In particular, if P (u, t) is absolutely continuous with respect to the Lebesgue
+measure and P(du, t ) = p(u, t)du then a version of Prob{xt ~ F I 2 ( y ~ ) } is also
+absolutely continuous with respect to the Lebesgue measure and the density
+satisfies:
+p (u, t 12 (yt)) _~
+
+A{u, y~)(_u,_t)
+p
+S ~(u, yl) p (u, t) ~ "
+
+Er
+
+(10)
+
+On the Optimal Filtering of Diffusion Processes
+
+233
+
+In view of Eqs. (9) and (10), the problem of finding the conditional probability
+of xt conditioned on yt0 (with respect to the measure induced by Eq. (2)) has been
+transformed to the problem of finding E(o)(A (xto, yto)]2(xt, yto)) where the conditional expectation is with respect to the measure induced by (3) and A (x~, yt)
+is given by (4). The numerators of (9) and (10) will be called the unnormalized conditional probability and density, respectively. Equations for expectations of
+multiplieative fnnetionals of Markov processes, including expectations of the form
+E (A (x~, y~)] ~ (xt)) (and E(0) (A (xt, yt)] 2 (xt, yto)) with Yt differentiable) were
+derived by Kac, Fortet and others [9]. These results, though not applicable to the
+present case, motivated Che results of sections 3 and 5.
+3. An Integral Equation for the Unnormalized Conditional Probability
+Theorem 1. For the (xt, yt) process defined by Eq. (2), P (xt ~ / ' ] ~(y~)) satis/ies
+Eq. (9) and A(u, yto) satis/ies a.s. the equation
+t
+
+A (u, yto) = 1 + .[ ~ g (z) ./l(z, y~) P (dz, s; u, t) dy~ ,
+
+(11)
+
+0 Er
+
+where P (dz, s; u, t) is the conditional distribution:
+P(F, s; u, t) = Prob {Xs ~F[xt = u},
+
+s < t.
+
+(12)
+
+Proo/. Applying ITo's formula ([10], [11]) to Eq. (4) we get:
+t
+8 Yo)g(x~)dy~.
+s
+A(x~o, Y~o)= 1 + f A (x o,
+
+(13)
+
+0
+
+Therefore:
+
+{i
+
+E(o)(A(x~, y~)l~(xt, yto)) -= 1 + E(o)
+
+}
+
+$ yo)g(xs)dysIG2(xt
+8
+, yto) .
+A ( Xo,
+
+(13a)
+
+It will be proved later (starting with Eq. (19)) that (13a) implies that:
+t
+
+E(o) (A (x~, yt)[M (xt, y~)) = 1 A- f E(o){A (x~, y~)g (Xs)[ M (xt, y~)} dys.
+
+(14)
+
+0
+
+Let t >--s > 0 and ~1 = ~ (x~, y~), ~2 -----~ (Y~-- Ys, s < ~ ~ t) and ~ -- ~ (xt, y~).
+Since, under it0, ~(x~) is independent of 2 ( y t) and ~ is a Brownian motion, it
+follows that ~1 and ~2 are conditionally independent given ~ ([5], 25.3A p. 351).
+Applying again theorem 25.3A of [5] (with subscripts 1 and 2 interchanged) it
+follows that for any B e x o, YoJ.
+P (B[ 2(xt, y~) = P (B[2(xt, y~)).
+By [8] (theorem 8.4 chapter I) and by the smoothing property of conditional
+expectations:
+
+~(0) {A (x$, y~) ~ (x~)I~ (x~, y~)} = E(0) {A (zb y~)g (x~)[~ (x. yg)}
+= E(0) {E(0) (A (xg, y~)[ ~ (xs, xt, y~)) g (xs)] 2 (xt, yg)}.
+By the Markov property of (Xs, ys), ~ (xg, y~) and ~ (xt) are conditionally indepen-
+
+234
+
+M. ZA~:AI:
+
+dent given ~(xs, Ys). Therefore ([5], 25.3A) ~ t x 0'8 .s,
+gO) and ~(xt) are also conditionally independent given ~(xs, y~). Applying again 25.3A of [5] with interchanged subscripts) we have from the last equation,
+
+K(o){A
+
+y )g
+= Eco){E(o)(A(x~,g)l~(xs,y~))g(x~)l~(xt,y~)
+
+}.
+
+(15)
+
+By the same argument as used for Eq. (7), the right hand side of (15) is given by
+([8], chapter I, theorem 9.5):
+
+f g(z) zl(z, y~) P (dz, s; u, t)
+
+(16)
+
+where P(dz, s; u, t) is defined by Eq. (12). Eq. (11) follows now by substituting
+(16) and (15) into (14).
+Corollary 1. I/the transition probability Prob {xt ~ F I xs = z}, s < t, is absolutely
+continuous with respect to the Lebesgue meazure with the density pz(u, t -- s), then a
+version o] Prob {xt e 1~I ~(y~)}, t > O, is also absolutely continuous with respect to
+the Lebesgue measure. This density, p(u, t l~(yto)), satis[ies
+
+~)(u, t)
+p (u, t I ~ (Y~o)) = ~ q~(u, t)du
+
+(17)
+
+Et
+
+where q5 (u, t), satis]ies a.s. the stochastic integral equations:
+t
+
+q5 (u, t) = p (u, t) ~- ~ f g (z) q5 (z, s) Pz (u, t -- s) dz dys
+
+(18)
+
+0 Er
+
+(where p(u, t) is the density o/Prob{xt e / ' } ) , and (0 < s ~= t):
+t
+
+t
+
+qS(u,t)= ~qS(z,s)pz(u,t--s)dz + f ~g(z)qS(z,u)pz(u,t--v)dzdy ~.
+Er
+
+(18a)
+
+SEr
+
+Proo]. Since
+Er
+
+where F (z) is the probability distribution of x0, it follows that for t > 0 Prob {xt e F}
+is also absolutely continuous with respect to the Lebesgue measure with density
+p(u, t). By Eq. (1O), we set: r
+t ) = A(u,y~o)p(u, t). Since xt is a Markov
+process p(u,t)P(dz, s;u,t)--=p(z,s)pz(u,t--s)dz. Therefore, multiplying Eq. (11)
+by p(u, t), (18) follows. Following the same arguments as used to derive (11), it
+also follows that
+t
+
+fi (u, y~) -= ] A(z, y~) P (dz, s; u, t) dz + ~ f g (z) A(z, y~)P (dz, U; u, t) dy v ,
+Br
+
+S .Er
+
+multiplying this equation by p(u, t) gives (18a).
+It remains, now, to prove that, a.s.,
+
+E(o)
+
+A(xg, yg)g(xs)dys]~(xt,Yto)
+
+= fE(o){A(x~,y~)g(xs)l~(xt,Yto)}dys
+0
+
+(19)
+
+On the OptimM Filtering of Diffusion Processes
+
+235
+
+where A (x~, y~) is given by Eq. (4). Throughout the proof we will write A (8) for
+A (x~, y~) and ~ (s) for ~ (xs, y~)).
+Let us first assume that [g(x)[ is bounded. I t follows, then, from theorem 7.3
+of [11] that all the moments of A(s) are bounded in any finite s interval and
+A(8)g(xs) is continuous in quadratic mean. Therefore, there exists a sequence of
+partitions
+0 -~- t (n) < t(1n) < " "
+
+< t~n ) ' ' " t (n) ~ - t
+
+(n)1 __ t!n)) ;
+max (ti+
+
+5n=
+
+O<=]<:n-1
+
+lim ~n -= 0 ,
+n-->vo
+
+such that the sequence of partial sums
+n--1
+
+in = ~. A (t~n)g (Zt!n)) (Yt(V. - Yt?))
+i=O
+
+ztJ.
+
+t
+
+converges in q.m. to ] A(s)g(xs)dys. Let
+0
+
+= ~ E(0) {A (t!~))g (x~,,))12 (t)) (y(~) -- y(~)).
+i=0
+
+&+x
+
+tt
+
+Since convergence in q.m. and conditional expectations commute,
+Z(0) {A (~) g (xs)[ ~ (t)}
+is q.m. continuous (in s) and:
+
+E(0)
+
+}
+
+{;
+
+A (~) g (xs) dy~ 1~ (t) = ~mE(0) {Ix 1~ (t)}
+~--+ r
+
+=- lim J n
+n - - + OO
+
+t
+
+-= f U(o) (A (s) g (xs) [~2 (t)} dys,
+0
+
+which proves (19) for Ig (x) l bounded. I t follows, by the same argument, that (19)
+holds whenever A (s)g(xs) is continuous in q.m.
+From this point up to Eq. (24) we follow D:z~KI~ ([11], proof of theorem 7.3).
+Let
+v
+]n (v) =
+
+for
+
+v<=n
+
+V + 89 (v - - n - - 2 ) (v - - n ) 3 for
+
+n < v< n + 1
+
+n-l- 89
+
+n-I-l<=v.
+
+for
+
+(20)
+
+I t follows by a direct calculation that:
+t
+
+~
+
+p
+
+a) for all x e [0, oo), In(X), /n(x), /'n'(x) are continuous and 0 = / n ( x ) <= 1;
+
+=< 0,
+b)/~(x)----0 for x_-->~+l; /~(x)=0 for x ~ ( n , n - } - l ) ,
+c) for any x~[0,r
+0 <=/n(X)~X as n-->c~.
+
+- ~ ~/~'(z)
+
+i/
+
+236
+
+1~. ZAKAI:
+Applying IT~)'s formula to ]n (A (s)) we have by Eq. (4)
+8
+
+In (A (s)) -- 1 = .[/n (A (0)) A (0) g (xo) dyo
+0
+8
+
++ 89.[f~'(A(O))A2(Olg2(xoldO.
+
+(21)
+
+0
+
+By property c and monotone convergence for conditional expectations we have
+
+E(0) {A (t) l 2 (t)}
+
+-
+
+1 = limE(0) {/n (A (t)] ~ (t))} -- 1
+n---> OO
+
+9
+
++ P~limff(0)
+
+(i
+
+,,#
+
+1,~ (A(s))A~(s)g2(zD~s]~(t)
+
+}
+
+provided that any one of the last two limits (in probability) exists. Similarly we
+have from Eq. (21):
+
+E(0) (A (t)} -- 1 = limE(0)
+
+Since k(t) is the R - - N
+
+{!
+
+}
+
+/'~(A (s)) A (s) g (xs) cly~
+
+derivative of two
+
+equivalent probability measures,
+
+E(o) {A (t)} = 1. Also, since
+
+E(o)
+
+(/'~(A(s)))~ A2(s)g2(z~)ds < (n + 1)2 S E(o)g2(xs)ds < ~ ,
+0
+
+the first term is the r.h.s, of Eq. (23), being the expeet~ation of a stochastic
+integral, is zero and; therefore:
+
+limE(o) ( ~f( (A (s)) A2(s)g2(xs)ds} = O.
+n-+~,
+
+(24)
+
+t0
+
+Since ]'~'(A) ~ 0, it follows tha~ the last term in the r.h.s, of Eq. (22) converges
+in L1 and, therefore, in probability to zero, and
+
+E(o){A(t)l~(t)}-- 1 = P-hmE(o)
+n-+oo
+
+Is',~(A(s))A(~)g(xs)dysl~(t )}.
+t0
+
+Since
+
+I/~(A(s))A(s) I ~ n + l
+
+and E(o)
+
+{i
+
+t
+
+g 2(x~)ds <r162
+
+it follows that/'n (A (s)) A (s) g (xs) is continuous in q.m., therefore :
+t
+
+E(o) {A (t) l ~ (t)} -- 1 = P4im j'E(o) {/~(A (s)) A (s) g (xs) l ~(t)} dys. (25)
+~,--.~ oo 0
+
+On the Optimal Filtering of Diffusion Processes
+
+237
+
+Since E(1)lg(xt)l ~ co, it follows from (1) that
+
+E(o) (A(t)lg(xt)I) < ~o.
+
+(26)
+
+Now, [/' (A (s)) A (s)g (x~)] <= I A (s)g (x~)l and /~ (A (s)) A (s). [g (x~) l converges
+to A(s). ]g(x~)] as n ~ o o . Therefore, a.s., IE(o){j~(A(s))A(s)g(x~)]2(t)}l
+~= E(o)(A(s)" Ig(xs)lj~(t)} and E(o){/~(A(s))A(s)g(xs)12(t)} converges a.s. to
+E(o) {A (s)g(xs)l~J(t)}. Applying, now, ITS'S dominated convergence lemma for
+stochastic integrals ([12] property G--2 p. 14, or [3] property 5 Ch. 2 section I),
+it follows that the order of the limit and the stochastic integration is Eq. (25) may
+be interchanged which proves Eq. (19).
+4. Sufficient Conditions for the Uniqueness of the Solution to Eq. (18)
+Lemma 1, I / p (u, t) is bounded on Er • [0, T] and g (u) is bounded on Er then,
+under the conditions o/ corollary 1,
+T
+
+~(1) f f (~(u, t))2dudt < ~ .
+OEr
+
+Proo/. By Eqs. (10) and (17) we have:
+E(D f (q5 (u, t))2du • K E ( 1 ) f (A(u, yto))2p (u, t)du
+= KE(1) {E(0)[E~0)(A (x~, y~)]2 (xt, y~) I ~(y~)]}
+<=K E (~){E(0) [E(0) (A~ (x~, yto) 12 (xt, yto) I ~ (y~)]}
+= KE(o) {A (Jo, Yto)E(0) [E(0) (A 2 (Xto,Y~)I 2 (xt, yto)) 12 (y~)]}
+....
+
+17 i~1/2
+
+1/2
+
+4
+
+t
+
+t
+
+<o) (A2(4, Y~o)).E<0) {A (x0, Yo)}.
+
+The result follows now by the boundedness of g(u), Eq. (4) and theorem 7.3
+(equation 7.84') of [10].
+Let H be the class of real valued functions ~(u, t, co) on Er • [0, T] • Y2
+such that
+T
+
+I1vll -= (E(1) f f V~(u, t, co)dudt)l/2 < r
+o~,~
+
+and for each t in [0, T], the collection of random variables ~p(u, s, co), 0 ~ s ~ t,
+u ~ Er, is measurable with respec?~ to ~ (~t, w~0).Note that H is Cauchy complete
+in the norm II~f l[ defined above. Let Ut denote the operator
+
+ut / (~) = (u,/(.)) (u) = f / (z) p~ (u, t) dz
+
+(27)
+
+for t > 0 and Uo/(u) =/(u). In this section we will assume that Ut is a bounded
+transformation from L2 functions on Er to L2 functions on Er, uniformly in [0, T].
+Namely, there exists a constant k < co such that
+
+(~,/(u))2 d~ __<~ f/2 (u) du
+for all t e [0, T] and all /(u) which are L2 on Er.
+
+(28)
+
+238
+
+M. Z~.KAZ:
+
+Sufficient conditions for pz(u, t) to exist and have this property are the
+following :
+(i) There exists a constant g > 0 such that for all
+
+xeEr,
+
+veer,
+
+v~bT(x)b(x)v > ~VTV.
+
+(ii) The functions,
+
+ai(x)
+
+Oai(x)
+
+axi
+
+'
+
+'
+
+(bT(x) b (x))i~, O(bT(x) b(x))~j a2(bT(x) b(x))~j
+axi
+'
+Ox~~xi
+
+are bounded, and satisfy a tt61der condition in Er.
+This follows from the bound 0.24 C2 of theorem 0.5 [10] and Parceval's theorem.
+Theorem 2. I1 p (% t) is bounded on Er X [0, T], g (u) is bounded on Er and Us
+satisfies Eq. (28), theu Eq. (18) has a unique solution in H.
+Pro@ Let ~ (u, s, co) belong to H. B y a standard argument (e. g. approximating
+Uo-s~f(u, s, co) by functions continuous in 0, u, s as on p. 17 of [6]), it follows that
+t
+
+f U~-s~p(u, s, co)dws(co) has a version which for almost all co is a Borel function in
+0
+t
+
+(u, t). Therefore ~ Ut-s~(u, s, o))dws(eo) also belongs to H and
+0
+
+!U~-s y~(u,s, co) dws(co) ~ k T t ] ~o(u, 87 co) ll.
+Define ~5i (u, s, co) by:
+
+~o (u, t, co) = p (u, t)
+t
+~i+l
+
+(U, t, co) = ]9(U, t) + I Ut-s ~Dl(u, t, 09) g (u) dys (co)
+o
+t
+= p (u, t) + ~ g (x~ (~o) Ut-~ g (u) ~l (u, s, o~)ds
+0
+t
++ ~ Ut-~ g (u) r (u, s, ~) dw~ (co).
+0
+
+I t follows now, by the method of successive approximations, that ~bi (u, t, co)
+converges in H as i --> vr to ~b (% t, co) which is a solution to (18) and the solution is
+unique. The details are the same as for stochastic differential equations (e. g. [6],
+[7], [10]), and, therefore, omitted.
+
+5. An Evolution-Type Integral Equation for the Unnormalized Density
+Assume that the xt process possesses a transition density Pz (u, t) for t > O.
+Let ~+ denote the (Fokker-Planck or forward Kolmogorov) differential operator
+
+~+=
+
+~ ~al(u)
+=
+
+1 ~
+
+~ 02(bT(u)b(u))lj
+
+i=1 j=]
+
+where a~(u) and (bT(u)b(u))fj denote the i-th component of a(u) and the i]-th
+component of bT(u)b(u), respectively.
+
+On the Optimal Filtering of Diffusion Processes
+
+239
+
+A real valued function / (x), x ~ Er, will be said to belong to C( 2, ~) ff / (x) and
+its first and second partial derivatives are bounded, continuous and satisfy on Er
+a HSlder condition with exponent ~ > 0.
+A transition density will be said to be of class A it ff satisfies the following
+conditions :
+A.1. I f / ( u ) is real valued, continuous and bounded on Er and 0 --< s --< t then
+t
+
+ut / (u) = u8 / (u) + y ~+ Go / (u) dO.
+
+(29)
+
+8
+
+A.2. I f / (u, 0), u ~ Er, 0 ~ [01, 02] and its first and second partial derivatives
+with respect to the u variables are bounded and continuous on Er • [01, 02], and
+](u, O) is C (2,~) in u, uniformly in [01, 02], then Ut](u , O) and its first and second
+partial derivatives with respect to the u viariables are continuous on (0, T)
+• Er X [01, 02] and bounded on [0, T] • G • [01, 02] where G is any bounded
+subset of Er.
+Theorem 3. Assume that the xt process possesses a transition density which is o/
+class A. Assume that #(u, t) satisfies Eq. (18) and a.s. q)(u, t) and g(u)#(u, t)
+together with their/irst and second derivatives with respect to the u variables bounded
+and continuous in Er • [tl, t2] and q5 (u, t), g (u)~9 (u, t) are C (2,~) in u, uni/ormly in
+[tl, t2], then qb (u, t) also satis/ies the evolution-type equation
+t
+
+t
+
+(u, t) = ~ (u, s) + f ~+ ~ (u, ~) d~ + ~g (u) ~ (u, ~) dy,
+8
+
+(30)
+
+8
+
+tl ~ s ~ t < - - t 2 .
+Proo/. Rewriting Eq. (18a) in terms of (27) we have:
+B
+
+qb (u, O) = Uo-s r (u, s) + f Uo-~ (g (u) qb(u, ~7))dye.
+
+(31)
+
+By Eq. (29):
+t
+
+Ut- 8q~(u,8) -----r
+
+8) + f~+U0_ 8r
+
+8) dO,
+
+(32)
+
+8
+t
+
+t
+
+f (Ut-,g(u)qb(u, ~))dy, = fg(u) r
+8
+
+~)dy,
+
+8
+t
+
+t
+
++ f f g+ Uo-~(g(u)q)(u, v))dOdy~.
+
+(33)
+
+s
+
+Subst~ituting for Uo-s from (31) to (32):
+t
+
+Ut-s cp (u, 8) = ~ (u, 8) + f g §
+
+(u, O) dO
+
+8
+t
+
+0
+
+- f ~§ ~ Uo-~ (g (u) ~ (u, ~)) dy~ dO.
+8
+
+8
+
+(34)
+
+2r
+
+M. ZA~I:
+
+Replacing, in (31), 0 by t and substituting from (34) and (33) we have:
+t
+
+t
+
+q5(u, t) = r (u, s) + i ~+q) (u, O)dO + Ig (u) ~ (u, V) dy,
+8
+
+t t
+
+8
+
++ f I g +Uo-,(g(u)~(u, 7))dOdyn
+s
+t
+
+e
+
+-- I g+ I Uo-, (g (u) r (u, V)) dy, dO.
+8
+
+8
+
+Comparing the last equation with (30), it follows that in order to prove (30) it
+remains to show that:
+t
+
+~
+
+t
+
+0
+
+I t follows from A.2, by the mean value theorem for derivatives and ITd's dominated convergence lemma ([12] p. 14 or [3] chapter 2 section I) that, in the right
+hand side of the last equation we may interchange g+ with the integration with
+respect to Yr. Eq. (35), therefore, beeomes:
+t
+
+t
+
+t
+
+8
+
+f f g+ Uo-n (g (u) ~)(u, 7)) dOdy~ ----f ~ g+ Uo-~ (g (u) e (u, 7)) dy~ dO
+8
+
+~
+
+S
+
+8
+
+t
+8
+
+8
+
+(and it remains to justify the formal interchange of the order of the integrations).
+Let:
+
+~o(e, fi) = g+U~_~(g(u)r
+
+fi),
+
+~ > fl
+
+we have, then, to show that:
+t
+
+t
+
+t
+
+I IV( O,v)dOdyv = I IV(v,O)dyodT.
+s
+
+r)
+
+s
+
+(35a)
+
+s
+
+Let
+f
+/1 (~) --'--: I V N (0, ?]) dO
+
+/5 (7) = S w (v, o) dvo
+$
+
+where
+
+<~v
+v~= {~,,
+o, t~'1
+I~[>~v.
+Consider now:
+E
+
+l:(7)av,-
+
+S12(7)d7
+
+9
+
+$
+
+The following relations are derived in [11]:
+
+E ( f hl(s)dys !h2(s)dy~)~ E ~hl(s)h2(s)ds
+
+(36)
+
+On the Optimal Filtering of Diffusion Processes
+
+241
+
+~nd
+
+Applying these relations repeatedly and using
+021_, 8 > U
+Zu(s)
+
+=
+
+,
+
+[1,
+
+s =
+
+u
+
+s<u
+
+we obtain the following equations:
+, ,
+
+885
+
+8 $
+
+$
+
+t t t
+
+= E f f f Z, (~) Ze (~) ~o~(7, ~) V,z~(0, ~) d~ d7 dO
+888
+
+-- 2 E
+
+(i, j,)
+2(7)d7
+
+~(7)dy~ = -- 2 E
+
+i,
+
+2(~1)~/~(~)dyed7
+
+8
+
+t
+
+8
+
+8
+
+t
+
+t
+
+88
+
+~
+~
+
+t
+
+8
+
+Substituting into (36), collecting the Z terms, and using 20(~)= 1--Ze(0);
+Z~ (~) = 1 -- Z~ (7) we get that (36) is zero. Let
+
+I~ =
+
+(j! ~(O,~)dOdy~ -- ~.~o(O,~)dy~dO )
+8 ~
+
+-
+
+(/! ~ ( 0 , 7 ) d O d y , - ~f~N(O,
+~ 7 ) d ~ d O ).
+88
+
+Then, for any ~ > 0:
+Prob{I IN] > 0} ~ Prob/sup [ ~0(0, 7)] ~ N / .
+Is<=o~_t
+
+Since under our assumptions ~ (0, 7) is a.s. a bounded function of 0, 7 in ~ e Is, 0],
+0 e Is, t], it follows that I~v converges in probability to zero. Therefore, (35a)
+and (35) holds a.s. Note that the strong assumptions in theorem 3 were mainly
+needed for the justification of the interchange of ~+ with the stochastic integration
+in the right hand side of (35) (the proof of (35 a) can be modified to hold under
+weaker assumptions).
+Theorem 4. Assume that Ut is o/ class A and i / / ( u ) and its/irst and second
+partial derivatives are continuous and bounded, then Ut ~+ /(u) -~ ~+ Ut /(u). Also
+
+242
+
+M: Z~K~:
+
+assume that a.s. qS(u, 0), g(u) r
+O) and ~ + g ( u ) r
+O) and their first and
+second Tartial derivatives are continuous and bounded in Er • [tl, t2] and q} (u, 0),
+g(u) qb(u, 0), g+g(u) qS(u, O) are C (2,~) in u uni/ormly in [tl, t3]. Then, i/ ~)(u, O)
+satis/ies in [tl, t2] Eq. (30), it also satis]ies in [tl, t~] Eq. (18/.
+Proo[. Only the formal part of the proof will be given; the justification for
+the operations are the same as in the proof of theorem 3 and are, therefore,
+omitted.
+t
+
+t
+
+t
+
+t
+
+S ~+ U~_or (u, o) dO = I ~+ r (u, O) dO + I ~+ f V~_~ ~+ ~ (u, O) d~ dO
+s
+
+s
+
+s
+
+0
+
+t
+
+t~7
+
+= I ~§ r
+
+o) dO + I I ~§ V~_, ~§ 9 (u, O) dO dv
+
+8
+
+8 8
+t
+
+t
+
++ ]g+ Ut-~fg+r
+
+= Sg+r
+8
+
+8
+
+8
+
+Substituting for f g+ ~ (u, O) dO from Eq. (30) yields:
+8
+t
+
+t
+
+t
+
+- f g+ Ut-~
+
+g (u) 6)(u, ~) dy e drl,
+
+8
+or :
+
+~+ Ut-v
+
+g (u) q5 (u, ~) dy~ d~ = I ~+ q5 (u, O) dO -- ~ ~+ Ut-, q5 (u, s) d~
+
+$
+
+8
+
+(37)
+
+$
+t
+
+=
+
+f g+r
+8
+
+O) d O - -
+
+Ut_ ~q)(u,8)
+
++
+
+r
+
+8).
+
+Applying (27) and interchanging the order of integrations :
+t
+
+t
+
+S vt-~g(u) ~(u, ~) dye - It(u) ~(u, ~) dye
+8
+
+8
+t
+
+t
+
+= ~ ~§ [. ut-, g (u) ~ (u, ~) d~ dye
+s
+
+~
+
+t
+
+(3S)
+
+~
+
+= .f ~§ g~_, ~ ~ (u) r (u, ~) dye d~.
+8
+
+8
+
+Eq. (18a) follows now from Eq. (38) and (37).
+l~emark. Several generalizations of the results of this paper with, essentially,
+the same proofs are straightforward. In particular, replacing a (x), b (x), g (x) by
+the time-dependent a(x, t), b(x, t), g(x, t); or, replacing the equation for yt in
+Eq. (2) by
+t
+
+~ =
+
+t
+
+I ~ (x~, ~) ds + I dw~
+0
+
+0
+
+where yt, g(x, y), ~vt take values in the q-dimensional Euclidean space Eq; or
+replacing wt and wt by general processes with independent increments [13], [14].
+
+On the Optimal Filtering of Diffusion Processes
+
+243
+
+References
+t. ST~ATO~OVICE,R. I.: Conditional )/Iarkov processes. Theor. Probab. Appl. 5, 156--178
+(1960).
+2. KvSH~E~, H. J. : Dynamical equations for optimal nonlinear filtering. J. Differential
+Equations 2, 179--190 (1967).
+3. B~rcY, R. C.: Nonlinear filtering theory. IEEE Trans. Automatic Control 10, 198--199
+(1965).
+4. SHIgYAF,V, A. N. : On stochastic equations in the theory of conditional Markov processes.
+Theor. Probab. Appl. l l , 179--184 (1966).
+5. Lo]~vE, M. : Probability theory, 3rd edition. Princeton, N. J. : Van Nostrand 1963.
+6. SKO~O~OD,A. V. : Studies in the theory of random processes. New York: Addison-Wesley
+1965.
+7. GmsANov, I.V.: On transforming a certain class of stochastic processes by absolutely
+continuous substitutions of measures. Theor. Probab. App]. 5, 285--301 (1960).
+8. DooB, J. L. : Stochastic processes. New York: Wiley 1953.
+9. B L A N c - L ~ I ~ E , A., and 1%.FORT~,w: Th@orie des fonctions al6atoires. Paris: Masson
+et Cie., Ed. 1953; Chapter VII. (Also: D. A. D~UaLI~G, and A. J. F. SIEGERT:
+A systematic approach to a class of problems in the theory of noise and other random
+phenomena. Part I, IRE Trans. Inform. Theory IT-3, 32--37 (1957)) .
+10. Du
+E. :B.: Markov processes. Berlin-Heidelberg-New York: Springer 1965.
+l l . IT6, K.: On a formula concerning stochastic differentials. Nagoya math. J. 8, 55--65
+(1951).
+12. -- On stochastic differential equations. ]V[em. Amer. math. Soc. 4 (1951).
+13. W o ~ ,
+M.: Some applications of stochastic differential equations to optimal nonlinear
+filtering. J. Soc. indnstr, appl. Math. Control 2, 347--369 (1965).
+14. ZAKAI, M.: The optimal filtering of Markov jump processes in additive white noise.
+Applied Research Lab, Sylvania Elektronie Systems, Waltham, Mass. R. N. 563,
+June 1965.
+Pros MOS~E Z~LKAI
+Department of Electrical Engineering
+Technion -- Israel Institute of Technology
+Haifa, Israel
+
+

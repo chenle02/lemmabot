@@ -1,0 +1,5165 @@
+Available online at www.sciencedirect.com
+
+ScienceDirect
+J. Differential Equations 267 (2019) 826–865
+www.elsevier.com/locate/jde
+
+Global existence and boundedness of solutions to
+a chemotaxis system with singular sensitivity and
+logistic-type source ✩
+Xiangdong Zhao a , Sining Zheng b,∗
+a School of Mathematical Sciences, Liaoning Normal University, Dalian 116029, PR China
+b School of Mathematical Sciences, Dalian University of Technology, Dalian 116024, PR China
+
+Received 13 August 2018; revised 14 January 2019
+Available online 1 February 2019
+
+Abstract
+We consider the fully parabolic Keller–Segel system with singular sensitivity and logistic-type
+source: ut = u − χ ∇ · ( uv ∇v) + ru − μuk , vt = v − v + u under the non-flux boundary conditions in a smooth bounded convex domain  ⊂ Rn , χ , r, μ > 0, k > 1. A global very weak so2
+
+lution for the system with n ≥ 2 is obtained under one of the following conditions: (i) r > χ4 for
+χ2
+
+4(k−1)
+0 < χ ≤ 2, or r > max{ 4 (1 − p02 ), χ − 1} for χ > 2 with p0 =
+if k ∈ (2 − n1 , 2];
+4+(2−k)kχ 2
+
+
+2)
+4
+if k > 2. Furthermore, this global very weak solution should be
+(ii) χ 2 < min 2(r+r
+, k(k−1)(k−2)
+k
+
+globally bounded in fact provided μr and the initial data u0 L2 () , ∇vL4 () suitably small for n = 2, 3.
+In addition, if k > 3(n+2)
+n+4 replaces k > 2 in the condition (ii), the system admits globally bounded classical
+solutions. All these describe the influence of the exponent k > 1 in the logistic-type source ru − μuk to the
+behavior of solutions for the considered fully parabolic Keller–Segel system with singular sensitivity.
+© 2019 Elsevier Inc. All rights reserved.
+MSC: 35K55; 35B45; 35B40; 92C17
+Keywords: Keller–Segel system; Singular sensitivity; Logistic source; Boundedness
+
+✩
+
+Supported by the National Natural Science Foundation of China (11171048).
+
+* Corresponding author.
+
+E-mail addresses: zhaoxd1223@163.com (X. Zhao), snzheng@dlut.edu.cn (S. Zheng).
+https://doi.org/10.1016/j.jde.2019.01.026
+0022-0396/© 2019 Elsevier Inc. All rights reserved.
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+827
+
+1. Introduction
+Chemotaxis, a spontaneous aggregative phenomenon, is a widespread cross-diffusion mechanism in a wide rage of biological processes. In 1970, Keller and Segel proposed a model to
+represent the chemotaxis phenomena, i.e., the oriented or partially oriented movement of cells in
+response to a chemical signal produced by the cells themselves [9]:
+
+
+ut = u − χ∇ · ( uv ∇v),
+
+x ∈ , t > 0,
+
+vt = v − v + u,
+
+x ∈ , t > 0,
+
+(1.1)
+
+where the singular chemotactic sensitive function χv with χ > 0 is derived by the Weber–Fechner
+laws on the response of the cells u to the chemical signal v. In the parabolic–elliptic case of (1.1),
+where the second parabolic equation in (1.1) is replaced by the elliptic equation 0 = v − v + u.
+It is known that all radial classical solutions are global-in-time if either n = 2 with χ > 0, or
+2
+n ≥ 3 with χ < n−2
+[14]. When χ < n2 with n ≥ 1, there exists a unique globally bounded
+n
+classical solution [7]. If n ≥ 2 and χ < n−2
+, there exists a generalized solution [3]. For the
+parabolic–parabolic case, all solutions are global in time when either n = 1 [16], or n = 2 and
+χ < 52 under the radial assumption, while χ < 1 without the radial assumption [15]. For n ≥ 2,
+
+there exist globally bounded classical solutions if 0 < χ < n2 [5], and a global weak solution
+
+n+2
+if 0 < χ < 3n+4
+[24]. Moreover, the system (1.6) possesses a global generalized solution for
+n ≥ 2 [12], provided
+⎧
+⎪
+n = 2,
+⎨ ∞,
+√
+χ<
+8, n = 3,
+⎪
+⎩
+n
+n−2 , n ≥ 4.
+
+(1.2)
+
+See [11,6] for more results with singular sensitivities.
+Generally, in a real chemotaxis system the proliferation-death mechanism of the cells u should
+be included as well. This can be mathematically formulated by adding a logistic-type source
+ru − μuk to the u-equation [2,10]
+
+
+ut = u − χ∇ · (u∇v) + ru − μuk ,
+
+x ∈ , t > 0,
+
+τ vt = v − v + u,
+
+x ∈ , t > 0,
+
+(1.3)
+
+where χ, r, μ > 0, k > 1 and τ ∈ {0, 1}. Such self-limiting growth source generally benefits
+the global existence-boundedness of solutions. For parabolic–elliptic case (τ = 0 in (1.3)), it is
+known with k = 2 that the solution is globally bounded if μ > n−2
+n χ , global weak solution is
+admitted for all μ > 0, and the constant equilibrium (1, 1) with r = μ is globally asymptotically
+stable in L∞ () if μ > 2χ [18]. When k > 2 − n1 with n ≥ 1, there exists a global very weak
+solution, which is globally bounded if μ sufficiently large and u0 L∞ () sufficiently small [21].
+1
+For the case with 0 = v − m(t) + u, m(t) := ||
+ u(x, t)dx instead of 0 = v − v + u
+in (1.3), there exists radial initial data such that the smooth solution blows up in finite time if
+1
+1 < k < 32 + 2n−2
+with n ≥ 5 [25]. For the parabolic–parabolic case (τ = 1 in (1.3)), if k = 2,
+n = 2 [17], or n ≥ 3 with μ > 0 sufficiently large [22], the solutions are globally bounded.
+
+828
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+When k > 2 − n1 with n ≥ 1, the problem possesses global very weak solutions [19], which are
+globally bounded if μr sufficiently small and the initial data sufficiently small in suitable norms
+for n = 3 [20]. Refer to [4,27,28] for results with nonlinear diffusion and sensitivities.
+Consider the chemotaxis system with singular sensitivity and logistic source
+
+
+ut = u − χ∇ · ( uv ∇v) + ru − μu2 ,
+
+x ∈ , t > 0,
+
+τ vt = v − v + u,
+
+x ∈ , t > 0,
+
+(1.4)
+
+where χ, r, μ > 0 and τ ∈ {0, 1}. For the parabolic–elliptic case (τ = 0 in (1.4)) with n = 2, there
+exists a unique globally bounded classical solution [8], whenever
+
+r>
+
+χ2
+4 ,
+
+0 < χ ≤ 2,
+χ − 1, χ > 2.
+
+(1.5)
+
+For the parabolic–parabolic case (τ = 1 in (1.4)), there exists a global solution when n = 2 [1].
+Currently, the authors have proved that the condition (1.5) ensures the global boundedness of
+classical solutions in fact as well [29].
+In this paper, we continuously consider case with general exponent k > 1 in the logistic-type
+source
+⎧
+ut = u − χ∇ · ( uv ∇v) + ru − μuk , x ∈ , t > 0,
+⎪
+⎪
+⎪
+⎪
+⎪
+x ∈ , t > 0,
+⎨ vt = v − v + u,
+∂u ∂v
+⎪
+=
+= 0,
+x ∈ ∂, t > 0,
+⎪
+⎪
+⎪
+∂ν
+∂ν
+⎪
+⎩
+x ∈ ,
+(u(x, 0), v(x, 0)) = (u0 (x), v0 (x)),
+
+(1.6)
+
+∂
+where χ, r, μ > 0, smooth bounded convex domain  ⊂ Rn , n ≥ 2, ∂ν
+denotes the derivation
+with respect to the outer normal of ∂, and the initial data
+
+
+
+u0 (x) ∈ C 0 (), u0 (x) ≥ 0 and u0 (x) = 0, x ∈ ,
+v0 (x) ∈ W 2,∞ (), v0 (x) > 0, x ∈ .
+
+(1.7)
+
+To treat the more general exponent k > 1, we have to deal with very weak solutions. Inspired
+by [21,19], we introduce the very weak solutions to (1.6) via the following definitions.
+Definition 1.1. Let T > 0. A pair (u, v) of nonnegative functions
+u ∈ L1 ( × (0, T )), v ∈ L1 ((0, T ); W 1,1 ())
+will be called a very weak subsolution to (1.6) in  × (0, T ) if
+uk and
+and moreover
+
+u
+∇v belong to L1 ( × (0, T )),
+v
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+T
+
+T
+
+−
+
+uϕt −
+0 
+
+T
+
+u0 ϕ(·, 0) ≤
+
+u
+∇v · ∇ϕ
+v
+
+uϕ + χ
+0 
+
+
+
+0 
+T
+
+T
+
++r
+
+uϕ − μ
+0 
+
+T
+
+uk ϕ,
+
+vψt −
+0 
+
+T
+
+v0 ψ(·, 0) +
+
+T
+
+∇v · ∇ψ +
+0 
+
+
+
+(1.8)
+
+0 
+
+T
+
+−
+
+829
+
+vψ =
+0 
+
+(1.9)
+
+uψ
+0 
+
+hold for all
+¯ × (0, T )) with ϕ ≥ 0 and
+ϕ ∈ C0∞ (
+
+∂ϕ
+= 0 on ∂ × (0, T ),
+∂ν
+
+(1.10)
+
+ψ ∈ L∞ ( × (0, T )) ∩ L2 ((0, T ); W 1,2 ()), and ψt ∈ L2 ( × (0, T )).
+
+(1.11)
+
+Definition 1.2. Let T > 0 and γ ∈ (0, 1). A pair of nonnegative functions
+u ∈ Lγ +1 ( × (0, T )), v ∈ L1 ((0, T ); W 1,1 ()) ∩ Lγ +1 ( × (0, T ))
+form a weak γ -entropy supersolution to (1.6) in  × (0, T ) if
+uγ −2 |∇u|2 and uγ
+
+|∇v|2
+belong to L1 ( × (0, T )),
+v2
+
+and moreover
+T
+
+−
+
+T
+
+u ϕt −
+0 
+
+T
+γ −2
+
+γ
+u0 ϕ(·, 0) ≥ γ (1 − γ )
+
+γ
+
+u
+
+|∇u| ϕ +
+2
+
+0 
+
+
+
+0 
+
+T
+γ −1
+
++ χγ (γ − 1)
+
+uγ ϕ
+
+u
+
+∇v
+∇u ·
+ϕ + χγ
+v
+
+0 
+T
+
++ rγ
+
+uγ
+
+∇v
+· ∇ϕ
+v
+
+0 
+T
+
+uγ −1+k ϕ
+
+uγ ϕ − μγ
+0 
+
+T
+
+(1.12)
+
+0 
+
+and the equality (1.9) hold for all ϕ and ψ satisfying (1.10) and (1.11).
+Definition 1.3. Let T > 0. We call a couple (u, v) a very weak solution to (1.6) in  × (0, T ) if
+it is both a very weak subsolution and a weak γ -entropy supersolution of (1.6) in  × (0, T ) for
+some γ ∈ (0, 1). A global very weak solution to (1.6) is a pair of functions defined in  × (0, ∞)
+which is a very weak solution to (1.6) in  × (0, T ) for all T > 0.
+
+830
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+In order to study the dynamic behavior of solutions to the system (1.6), we will at first establish
+a positive uniform-in-time lower bound of the chemical signal v. Similarly to those proceeded
+in [29], this can be transformed to build the global boundedness for  u−α dx with α > 0 via a
+crucial weighted integral  u−p v −q dx with p, q > 0 to be determined.
+To deal with the global very weak solution of (1.3) in [19] (i.e., without singular sensitivity v1 in (1.6)), the main step is to conclude that the solution {v } ∈(0,1) of the regularization
+k
+
+k
+
+k−1
+((0, ∞); W 1, k−1 ()) with respect to the strong topology
+problem is relatively compact in Lloc
+1
+for k ∈ (2 − n , 2). Differently, for the system (1.6), we will firstly show that {v } ∈(0,1) has a
+uniform-in-time lower bound (independent of ∈ (0, 1)), namely,
+
+1
+∈(0,1)
+
+v
+
+is relatively compact in L∞
+loc ( × (0, ∞))
+with respect to the weak-star topology.
+
+k
+Secondly, it will be derived that for some p > k−1
+with k > 2 − n1 that
+
+ ∇v 
+
+p
+
+∈(0,1)
+
+v
+
+is relatively compact in Lloc ( × (0, ∞))
+with respect to the weak topology.
+
+Thirdly, it will be essential that
+ ∇v 
+∈(0,1)
+
+v
+
+is relatively compact in L2loc ( × (0, ∞))
+with respect to the strong topology.
+
+Upon selecting a suitable subsequence, we will obtain a global very weak solution for k >
+2 − n1 with n ≥ 2 by a standard compactness argument. Furthermore, it will be shown that for the
+carrying capacity μr and the initial data u0 L2 () + ∇v0 L4 () suitably small, this global very
+weak solution for n = 2, 3 is in fact globally bounded.
+Finally, for the case n ≥ 2 and k > 2, by estimating on  up dx +  |∇v|2q dx with the a
+nk
+), we will conclude the global boundedness
+priori estimate  |∇v|l dx < C for l ∈ (k, (n+2−k)
++
+to classical solutions if k > 3(n+2)
+n+4 and χ > 0 suitably small.
+Now, we state the main results of this paper.
+
+Theorem 1. Let n ≥ 2. There exists a global very weak solution to the system (1.6), if one of the
+following holds:
+(i) k ∈ (2 − n1 , 2] and r, χ > 0 satisfy
+ χ2
+r>
+
+4 ,
+
+0 < χ ≤ 2,
+2
+
+4(k−1)
+max{ χ4 (1 − p02 ), χ − 1} with p0 := 4+(2−k)kχ
+2,
+
+χ > 2.
+
+(1.13)
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+831
+
+(ii) k > 2 and r, χ > 0 satisfy
+χ 2 < min
+
+ 2(r + r 2 )
+k
+
+,
+
+
+4
+.
+k(k − 1)(k − 2)
+
+(1.14)
+
+Theorem 2. Let (u, v) be the global very weak solution established in Theorem 1 for n = 2, 3.
+There exist η, λ > 0 small such that this very weak solution is globally bounded provided μr < η
+and u0 2L2 () + ∇v0 4L4 () < λ.
+Remark 1. It can be found that the global very weak solution to the system (1.6) with singular
+sensitivity obtained in Theorem 1 (i) corresponds to that for the classical chemotaxis system (1.3)
+in [21,19]. Theorem 2 says that the smallness of μr and the initial data (u0 , v0 ) ensure the global
+boundedness of the very weak solution to the system (1.6), and the same were observed for the
+classical chemotaxis system (1.3) in [21,20]. In particular, Theorems 1 and 2 show that k < 2 is
+permitted for the global boundedness of solutions to (1.6). This extends the global boundedness
+results for (1.6) (with k = 2) obtained in [29].
+Theorem 3. Let n ≥ 2, k > 3(n+2)
+n+4 and r, χ > 0 satisfy (1.14). Then the problem (1.6) possesses
+a globally bounded classical solution.
+Remark 2. Recall from [4,28] that the classical chemotaxis system (1.4) with logistic-type
+source ru − μuk possesses globally bounded classical solutions if k > 2 or k = 2 with μ > 0
+sufficiently large. While Theorem 3 says that the global boundedness of classical solutions requires k > 3(n+2)
+n+4 for n ≥ 2 with the chemotactic coefficient χ > 0 suitably small to the present
+problem (1.6). Here the difficulty due to the singular sensitivity involved in (1.6) is substantial.
+Remark 3. By [29, Theorem 1] it was known for n = 2 that k = 2 ensures the global boundedness
+of classical solutions to (1.6). On the other hand, it is easy to see that the value 3(n+2)
+n+4 = 2 in
+Theorem 3 if n = 2. Thus, combining with [29, Theorem 1], we conclude for the case n = 2 that
+the classical solutions must be globally bounded if k ≥ 2.
+The rest part of the paper is arranged as follows. In Section 2, we introduce the local existence
+of classical solutions and establish a uniform-in-time lower bound estimate on v. Section 3 deals
+with the global existence of classical solutions to the regularization problem of (1.6). Then we
+prove the global existence and boundedness to the very weak solutions in Sections 4–6. Finally,
+we study the global boundedness of classical solutions in Section 7.
+2. Lower estimate of v for k > 1
+We introduce a lemma on the local existence of classical solutions to the system (1.6)
+without proof, which can be obtained by the standard contraction argument as that in [29,
+Lemma 2.1].
+Lemma 2.1. With k > 1 and q > n, there exist Tmax ∈ (0, +∞] and a unique pair (u, v) of
+functions
+
+832
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+
+
+u ∈ C 0 ( × [0, Tmax )) ∩ C 2,1 ( × (0, Tmax )),
+1,q
+() ,
+v ∈ C 0 ( × [0, Tmax )) ∩ C 2,1 ( × (0, Tmax )) ∩ L∞
+loc [0, Tmax ); W
+
+satisfying (1.6) in the classical sense with u, v > 0 in  × (0, Tmax ). Moreover, either Tmax = ∞,
+or Tmax < ∞ with limt→Tmax (u(·, t)L∞ () + v(·, t)W 1,q () ) = ∞. 2
+Let (u, v) be the local classical solution established in this section. We give some simple a
+priori estimates for (u, v).
+Lemma 2.2. For k > 1, it holds that
+udx ≤ m∗ := max
+
+
+vdx ≤ max
+
+r  1 
+k−1
+u0 dx, ||
+, t ∈ (0, Tmax ),
+μ
+
+(2.1)
+
+
+
+
+
+
+
+
+
+
+v0 dx, m∗ , t ∈ (0, Tmax ).
+
+(2.2)
+
+
+
+Proof. Integrate (1.6)1 to get
+d
+dt
+
+udx = r
+
+
+udx − μ
+
+
+uk dx ≤ r
+
+
+udx −
+
+
+μ 
+||k−1
+
+k
+udx
+
+, t ∈ (0, Tmax )
+
+(2.3)
+
+
+
+by the Hölder inequality. This entails (2.1) by the Bernoulli inequality. Moreover, it is known by
+integrating (1.6)2 that
+d
+dt
+
+vdx = −
+
+
+vdx +
+
+
+udx, t ∈ (0, Tmax ).
+
+(2.4)
+
+
+
+This concludes (2.2), again by the Bernoulli inequality with (2.1).
+
+2
+
+To study the dynamic behavior of solutions to (1.6) for k > 1, the key step is to establish a positive uniform-in-time lower bound for v. This will be realized by a uniform-in-time
+upper estimate for the weighted integral  u−p v −q dx with some p, q > 0. Repeating the procedure in the proof of [29, Lemma 3.2], we can get the following differential inequality on
+−p −q
+ u v dx.
+
+2
+Lemma 2.3. With k > 1, we have for p > 0 and q > q+ = q+ (p) := p+1
+2 ( 1 + pχ − 1) that
+d
+dt
+
+u−p v −q dx ≤ (q − rp)
+
+
+u−p v −q dx + μp
+
+
+u−p−1+k v −q dx − q
+
+
+u−p+1 v −q−1 dx
+
+
+(2.5)
+for t ∈ (0, Tmax ).
+
+2
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+833
+
+In [29, Lemma 3.3] the authors proved that the chemical signal v for (1.4) (i.e. k = 2 in (1.6))
+has the uniform-in-time lower bound if the growth rate r > 0 is suitably large with respect to
+the chemotaxis coefficient χ > 0, or, in other words, χ > 0 is suitably small with respect to
+r > 0. This mechanism is also valid for the general k > 1, even with more complicated representations.
+At first consider the case k ∈ (1, 2].
+Lemma 2.4. Under the condition of Theorem 1 (i), there exists δ1 > 0 such that
+v(x, t) ≥ δ1 f or all t ∈ (0, Tmax ) and x ∈ .
+
+(2.6)
+
+Proof. The case of k = 2 was treated in [29, Lemma 3.3] already.
+Assume k ∈ (1, 2). Let β0 := 12 infx∈ v0 (x). By Lemma 2.1, there exists t0 ∈ (0, Tmax ), such
+that v(x, t) ≥ β0 for all x ∈  and t ∈ (0, t0 ], and u(x, t0 ) ≥ γ0 for all x ∈  with some γ0 > 0.
+So we only need to prove (2.6) for t ∈ (t0 , Tmax ).
+By Young’s inequality, we have
+u−p−1+k v −q dx ≤ q
+
+μp
+
+
+u−p+1 v −q−1 dx + (
+
+
+μp q+1
+)
+q +1
+
+u1−p+(k−2)(q+1) dx
+
+(2.7)
+
+
+
+for t ∈ (t0 , Tmax ). Notice that p, q > 0 with k ∈ (1, 2) implies 1 − p + (k − 2)(q + 1) < 1. Let
+f (p) := 1 − p + (k − 2)(q+ + 1)
+
+
+1
+= −p + k − 1 + (k − 2)(p + 1)( 1 + pχ 2 − 1), p ∈ (0, k − 1).
+2
+√
+4(k−1)
+With the fact of 1 + s < 1 + 2s for s > 0, we know for p ∈ (0, 4+(2−k)kχ
+2 ) ⊂ (0, k − 1) that
+1
+1
+f (p) > −p + k − 1 + (k − 2)(p + 1)pχ 2 > −p + k − 1 + p(k − 2)kχ 2 > 0,
+4
+4
+and hence there exists some q > q+ such that 1 −p +(k −2)(q +1) > 0. By the Hölder inequality
+with (2.1), (2.5) and (2.7), we have
+d
+dt
+
+u−p v −q dx ≤ (q − rp)
+
+
+u−p v −q dx + C1 μq+1 , t ∈ (t0 , Tmax )
+
+
+for some C1 > 0.
+Next, denote
+A(p) := q+ − rp =
+
+
+p+1
+( 1 + pχ 2 − 1) − rp, p > 0.
+2
+
+It is easy to see that A(p) < 0 is equivalent to
+B(p) := χ 2 p 2 + 2(χ 2 − 2r − 2r 2 )p + χ 2 − 4r < 0, p > 0.
+
+(2.8)
+
+834
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+A direct calculation shows
+p = 16r 2 [(1 + r)2 − χ 2 ] > 0,
+whenever r > max{0, χ − 1}. Denote
+
+2r 2 + 2r − χ 2 2r (1 + r)2 − χ 2
+p1,2 :=
+∓
+.
+χ2
+χ2
+
+(2.9)
+2
+
+Then A(p) < 0 for p ∈ (p1 , p2 ). By the Viète formula, we know p1 ≤ 0 < p2 if r ≥ χ4 with
+
+> 0 if χ − 1 < r < χ4 with χ > 2, and thus
+χ > 0, and moreover p1 · p2 = χ χ−4r
+2
+2
+
+2
+
+√
+0 < p 1 < p1 · p 2 ≤
+2
+
+
+
+χ 2 − 4r
+< p0 ,
+χ2
+
+2
+
+if max{χ − 1, χ4 (1 − p02 )} < r < χ4 . Take p∗ ∈ (0, p0 ) and q∗ > q+ such that 1 − p∗ +
+(k − 2)(q∗ + 1) ∈ (0, 1) and q∗ − rp∗ < 0 for r, χ > 0 and k ∈ (1, 2) satisfying (1.13). Let
+p∗
+α
+α := 1+q
+∈ (0, p∗ ). Then pq∗∗−α
+= 1, and hence
+∗
+
+
+u−α dx ≤
+
+
+u−p∗ v −q∗ dx
+
+α
+
+ p∗ −α
+
+p∗
+
+
+
+vdx
+
+p∗
+
+, t ∈ (t0 , Tmax )
+
+(2.10)
+
+
+
+by the Höder inequality. Integrating (2.8) from t0 to t yields
+u−p∗ v −q∗ dx ≤ e(q∗ −rp∗ )(t−t0 )
+
+
+u(x, t0 )−p∗ v(x, t0 )−q∗ dx +
+
+
+q∗ +1
+
+≤ C2 (1 + μ)
+
+C1
+μq∗ +1
+rp∗ − q∗
+
+, t ∈ (t0 , Tmax )
+
+(2.11)
+
+with some C2 > 0. Combining (2.10), (2.11) with (2.2), we have
+u−α dx ≤ C3 (1 + μ)
+
+(q∗ +1)α
+p∗
+
+, t ∈ (t0 , Tmax )
+
+
+
+with some C3 > 0, and hence
+α+1
+
+udx ≥ || α
+
+
+
+
+u−α dx
+
+− 1
+
+α
+
+−1
+
+α+1
+
+− q∗p+1
+∗
+
+≥ C3 α || α (1 + μ)
+
+=: η0 > 0
+
+(2.12)
+
+
+
+by the Hölder inequality for t ∈ (t0 , Tmax ). By the pointwise lower bound estimate for the Neumann heat semigroup {et }t≥0 , we obtain from (2.12) that
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+835
+
+t
+
+v(x, t) = e
+
+t (−1)
+
+v0 +
+
+e(t−s)(−1) u(x, s)ds
+0
+
+t
+
+≥
+0
+
+(diam)2 
+1
+e−((t−s)+ 4(t−s) )
+4π(t − s)
+
+t0
+
+≥ η0
+
+
+u(x, s)dx ds
+
+
+1 −(r+ (diam)2 )
+4r
+dr =: β1 > 0
+e
+4πr
+
+0
+
+for all t ∈ (t0 , Tmax ), x ∈ . This completes the proof with δ1 := max{β0 , β1 }.
+
+2
+
+Next consider the case of k > 2.
+Lemma 2.5. Under the condition of Theorem 1 (ii), there exists δ2 > 0 such that
+v(x, t) ≥ δ2 f or all t ∈ (0, T ) and x ∈ .
+
+(2.13)
+
+Proof. Notice that k > 2 with p ∈ (0, k − 1) and q > 0 implies 1 − p + (k − 2)(q + 1) > 0.
+Let
+g(p) := −p + (k − 2)(q+ + 1)
+
+
+1
+= −p + k − 2 + (k − 2)(p + 1)( 1 + pχ 2 − 1), p ∈ (0, k − 1).
+2
+
+4
+Since χ 2 < k(k−1)(k−2)
+, we have
+
+1
+1
+g(p) < −p + k − 2 + pχ 2 (p + 1)(k − 2) < −p + k − 2 + pχ 2 k(k − 2) < 0
+4
+4
+4(k−2)
+for p ∈ ( 4−(k−2)kχ
+2 , k − 1), and hence there exists q > q+ such that 1 − p + (k − 2)(q + 1) ∈
+(0, 1). Thus, we obtain from (2.7) and (2.1) that
+
+u−p−1+k v −q dx ≤ q
+
+μp
+
+
+u−p+1 v −q−1 dx + C4 μq+1
+
+(2.14)
+
+
+
+by Young’s inequality with C4 > 0. It is easy to know that p1 < 1 by (2.9) for 0 < χ < r + 1.
+4(k−2)
+4(k−2)
+Therefore, p2 > 4−(k−2)kχ
+2 is sufficient to ensure ( 4−(k−2)kχ 2 , k − 1) ∩ (p1 , p2 ) = ∅. A simple
+calculation shows
+p2 ≥
+2
+
+2r 2 + 2r − χ 2
+4(k − 2)
+>k−1>
+χ2
+4 − (k − 2)kχ 2
+
+)
+4(k−2)
+due to χ 2 < 2(r+r
+with k > 2 and r > 0. Take p∗ ∈ ( 4−(k−2)kχ
+2 , p2 ) with some q∗ > q+ .
+k
+Similarly to (2.10)–(2.12) with (2.14), we conclude (2.13) with some δ2 > 0. 2
+
+836
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+In summary, we have
+Corollary 2.1. Under the conditions of Theorem 1, there exists C̄ > 0 such that
+− q∗p+1
+∗
+
+v(x, t) ≥ C̄(1 + μ)
+with p∗ , q∗ > 0 selected in Lemmas 2.4 and 2.5.
+
+(2.15)
+
+2
+
+3. Regularization problem
+We introduce an appropriate regularization to deal with the very weak solution of (1.6). That
+is
+⎧
+u t = u − χ∇ · ( (1+ uu )v ∇v ) + ru − μuk ,
+⎪
+⎪
+⎪
+⎪
+⎪
+⎨ v t = v − v + u ,
+∂u
+∂v
+⎪
+=
+= 0,
+⎪
+⎪
+⎪ ∂ν
+∂ν
+⎪
+⎩
+(u (x, 0), v (x, 0)) = (u0 (x), v0 (x)),
+
+x ∈ , t > 0,
+x ∈ , t > 0,
+x ∈ ∂, t > 0,
+
+(3.1)
+
+x ∈
+
+for ∈ (0, 1). In [29, Lemma 2.1] the authors established the local existence of classical solutions to the regularization problem with k = 2. The local classical solutions of the regularization
+problem (3.1) with general k > 1 can be obtained in the same arguments.
+Lemma 3.1. Let  ⊂ Rn (n ≥ 2) be a bounded domain, k > 1 and q > n. If (u0 , v0 ) satisfies (1.7), then for each ∈ (0, 1) there exist Tmax, ≤ ∞ and a unique pair function
+
+
+¯ × [0, Tmax, )) ∩ C 2,1 (
+¯ × (0, Tmax, )),
+u ∈ C 0 (
+0
+2,1
+¯ × [0, Tmax, )) ∩ C (
+¯ × (0, Tmax, )) ∩ L∞ ([0, Tmax, ); W 1,q ()),
+v ∈ C (
+
+(3.2)
+
+loc
+
+solving (3.1) in the classical sense with u , v > 0 in  × (0, Tmax, ). Moreover, either
+Tmax, = ∞ or Tmax, < ∞ with limt→Tmax, ( u L∞ () + v W 1,q () ) = ∞. 2
+By the comparison principle with the positivity of u , we know from (3.1)2 that
+v ≥ inf v0 (y)e−t =: δ(t) for all (x, t) ∈  × (0, Tmax, ) and ∈ (0, 1).
+y∈
+
+(3.3)
+
+Lemma 3.2. For k > 1, it holds that
+u dx ≤ m∗ , t ∈ (0, Tmax, ),
+
+(3.4)
+
+
+t
+
+uk dxds ≤ M1 (1 + t), t ∈ (0, Tmax, )
+
+μ
+0 
+
+with M1 = m∗ max{1, r} for all ∈ (0, 1).
+
+(3.5)
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+837
+
+Proof. Integrate (3.1)1 over  with the Hölder inequality to know that
+d
+dt
+
+u dx = r
+
+
+u dx − μ
+
+
+uk dx
+
+(3.6)
+
+
+
+u dx −
+
+≤r
+
+
+μ
+||k−1
+
+k
+
+u dx , t ∈ (0, Tmax, ).
+
+(3.7)
+
+
+
+By the Bernoulli inequality with (3.7), we get (3.4). The estimate (3.5) comes from by integrating
+(3.6) from 0 to t and (3.4). 2
+n
+Lemma 3.3. Let n ≥ 2 and k > 1. If p ∈ (1, n−2
+), there exists M2 > 0 such that
+
+v p dx ≤ M2 , t ∈ (0, Tmax, )
+
+(3.8)
+
+
+n
+for all ∈ (0, 1). Moreover, if q ∈ (1, n−1
+), there exists M3 > 0 such that
+
+|∇v |q dx ≤ M3 , t ∈ (0, Tmax, )
+
+(3.9)
+
+
+
+for all ∈ (0, 1).
+1
+Proof. Denote ū = ū (t) := ||
+ u (x, t)dx. By the semigroup estimates in [23, Lemma 1.3],
+n
+) that
+we have from (3.1)2 with p ∈ (1, n−2
+t
+
+v Lp () ≤ v0 L∞ () +
+
+t
+
+e
+
+(t−s)(−1)
+
+(u − ū )Lp () ds +
+
+0
+
+e(t−s)(−1) ū Lp () ds
+0
+
+t
+−(1− p1 )
+
+≤ v0 L∞ () + K1
+
+(1 + (t − s)
+
+)e−λ1 (t−s) u − ū L1 () ds
+
+0
+t
+
++ m∗
+
+e−(t−s) ds
+0
+
+≤ M2 , t ∈ (0, Tmax, )
+n
+for some λ1 , K1 , M2 > 0 and all ∈ (0, 1). Similarly, we know for q ∈ (1, n−1
+) that
+t
+
+∇v Lq () ≤ ∇e
+
+t (−1)
+
+v0 Lq () +
+
+∇e(t−s)(−1) u Lq () ds
+0
+
+838
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+t
+− 12 − n2 (1− q1 )
+
+≤ K3 ∇v0 Lq () + K2
+
+(1 + (t − s)
+
+)u L1 () ds
+
+0
+
+≤ M3 , t ∈ (0, Tmax, )
+by [23, Lemma 1.3] and (3.4) with K2 , K3 , M3 > 0 for all ∈ (0, 1).
+
+2
+
+In addition, based on the Maximal Lp -Lq estimates for parabolic equations in [13, Theorem 3.1], we have directly the following lemma.
+Lemma 3.4. Let (u , v ) be the classical solution of (3.1). Then we have for p̄, q̄ > 1 that
+T̄
+
+T̄
+p̄
+v W 2,q̄ () ds +
+
+0
+
+p̄
+v t Lq̄ () ds ≤ K̄
+
+T̄
+
+
+p̄
+1 + u Lq̄ () ds , T̄ > 0
+
+0
+
+with K̄ > 0 independent of .
+
+(3.10)
+
+0
+
+2
+
+Now, we deal with the Lp -norm of u for each ∈ (0, 1).
+Lemma 3.5. Let n ≥ 2 and k > 1. Then for p > 2, there exists H1 = H1 ( , t) > 0 such that
+up dx ≤ H1 , t ∈ (0, Tmax, ).
+
+(3.11)
+
+
+
+Proof. It follows from (3.1)1 and (3.3) for p > 2 that
+p−1
+
+1 d
+p dt
+
+up dx = −(p − 1)
+
+
+up−2 |∇u |2 dx + χ(p − 1)
+
+
++r
+
+up dx − μ
+
+
+≤
+
+
+
+up+k−1 dx
+
+
+χ 2 (p − 1)
+
+up−2 |∇v |2 dx + r
+
+4 2 δ(t)2
+
+
+
+
+
+
+
+
+up+k−1 dx
+
+
+|∇v |p+k−1 dx
+
+
+up+k−1 dx + C6
+
+−μ
+
+up+k−1 dx
+
+
+|∇v |p dx − μ
+
+
+μ
+up dx +
+K̄
+
+≤ 2r
+
+up dx − μ
+
+
+ 1 p
+up dx + C5
+δ(t)
+
+≤ 2r
+
+u
+∇u · ∇v dx
+(1 + u )v
+
+ 1  p(p+k−1)
+k−1
+, t ∈ (0, Tmax, )
+δ(t)
+
+(3.12)
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+839
+
+by Young’s inequality twice with C5 , C6 > 0. By Lemma 3.4 with p̄ = q̄ = p + k − 1, we have
+t
+
+μ
+K̄
+
+|∇v |
+
+p+k−1
+
+t
+
+
+
+
+up+k−1 dxds , t ∈ (0, Tmax, ).
+
+dxds ≤ μ 1 +
+
+0 
+
+(3.13)
+
+0 
+
+By Gronwall’s inequality with (3.12) and (3.13), we arrive at
+
+u dx ≤ pe
+p
+
+2rpt
+
+t
+
+1
+p
+
+
+
+
+1 p(p+k−1)
+k−1
+ds =: H1 , t ∈ (0, Tmax, ).
+δ(s)
+
+p
+u0 dx + μ + C6
+0
+
+
+
+(3.14)
+The proof is complete.
+
+2
+
+Lemma 3.6. Let n ≥ 2, k > 1. Then there exists H2 = H2 ( , t) > 0 such that
+∇v L∞ () ≤ H2 , t ∈ (0, Tmax, ).
+
+(3.15)
+
+Proof. By the semigroup estimates in [23, Lemma 1.3] and (3.11), we have for (3.1)2 that
+t
+
+∇v 
+
+L∞ ()
+
+≤ ∇e
+
+t (−1)
+
+v0 
+
+L∞ ()
+
++
+
+∇e(t−s)(−1) u L∞ () ds
+
+(3.16)
+
+0
+t
+1
+
+n
+
+(1 + (t − s)− 2 − 2(n+1) )u Ln+1 () ds
+
+≤ K3 ∇v0 L∞ () + K2
+0
+
+t
+1
+
+n
+
+(1 + (t − s)− 2 − 2(n+1) )ds
+
+≤ K3 ∇v0 L∞ () + K2 H1
+0
+
+=: H2 , t ∈ (0, Tmax, )
+with K2 , K3 > 0.
+
+(3.17)
+
+2
+
+Lemma 3.7. Under the conditions in Lemma 3.1, for each
+globally classical solution.
+
+∈ (0, 1) the system (3.1) has a
+
+Proof. With k > 1, a simple calculation shows
+ra − μa k ≤ r(
+
+r 1 k−1
+) k−1
+=: ck , a ≥ 0.
+μk
+k
+
+(3.18)
+
+It is known from (3.1)1 by using the estimates in [23, Lemma 1.3] with (3.3), (3.15) and (3.18)
+that
+
+840
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+t
+
+u L∞ () ≤ e u0 L∞ () + χ
+t
+
+ (t−s)
+e
+∇ ·(
+
+0
+
+
+u
+∇v )L∞ ()
+(1 + u )v
+
+t
+
++
+
+e(t−s) (ru − μuk )L∞ () ds
+0
+t
+
+≤ u0 L∞ () + ck t + χK4
+
+
+1
+n
+(1 + (t − s)− 2 − 2(n+1) )
+
+0
+t
+
+≤ u0 L∞ () + ck t +
+
+χK4
+
+u
+(1 + u )v
+
+
+∇v Ln+1 () ds
+
+1
+1
+n
+(1 + (t − s)− 2 − 2(n+1) )∇v Ln+1 ()  L∞ () ds
+v
+
+0
+t
+
+χK4
+≤ u0 L∞ () + ck t + H2
+δ(t)
+
+1
+
+n
+
+(1 + (t − s)− 2 − 2(n+1) )ds
+0
+
+=: H3 = H3 ( , t), t ∈ (0, Tmax, )
+with K4 > 0. This concludes for each ∈ (0, 1) that Tmax, = ∞ by Lemma 3.1.
+
+2
+
+4. Estimates for (u , v )
+To arrive at the global existence of very weak solutions to (1.6), we should also establish a
+positive uniform-in-time lower bound of v for all ∈ (0, 1).
+At first consider the case of k ∈ (1, 2].
+Lemma 4.1. Under the condition of Theorem 1 (i), we have
+v (x, t) ≥ δ1 for all ∈ (0, 1), x ∈  and t > 0
+with δ1 defined in Lemma 2.4.
+Proof. With p, q > 0 to be determined, a direct computation with (3.1) shows
+d
+dt
+
+u−p v −q dx
+
+
+u−p−1 v −q [u − χ∇ · (
+
+= −p
+
+
+u−p v −q dx + μp
+
+− rp
+
+
+
+
+(1 + u )v
+
+∇v )]dx
+
+u−p−1+k v −q dx
+
+
+u−p v −q−1 v dx + q
+
+−q
+
+u
+
+u−p v −q dx − q
+
+
+u−p+1 v −q−1 dx
+
+
+(4.1)
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+
+
++
+
+
+≤
+
+
+
+
+1+ u
+
+
+− 2pq u−p−1 v −q−1 ∇u · ∇v dx
+
+
+ pqχ
+− q(q + 1) u−p v −q−2 |∇v |2 dx + (q − rp)
+1+ u
+u−p−1+k v −q dx − q
+
++ μp
+
+
+ p(p + 1)χ
+
+u−p−2 v −q |∇u |2 dx +
+
+= −p(p + 1)
+
+
+
+841
+
+u−p v −q dx
+
+
+u−p+1 v −q−1 dx
+
+
+
+2
+ p(p + 1)χ
+pqχ
+1
+− 2pq +
+− q(q + 1) u−p v −q−2 |∇v |2 dx
+4p(p + 1) 1 + u
+1+ u
+u−p v −q dx + μp
+
++ (q − rp)
+
+
+u−p−1+k v −q dx
+
+
+u−p+1 v −q−1 dx, t > 0
+
+−q
+
+(4.2)
+
+
+
+by Young’s inequality. Denote
+f (q; p, χ, u ) :=
+
+2
+ (p + 1)χ
+p
+pqχ
+− 2q +
+− q(q + 1),
+4(p + 1) 1 + u
+1+ u
+
+and rewrite it as the quadric expression in q to get
+4(p + 1)f (q; p, χ, u ) = p
+
+(p + 1)2 χ 2
++ 4pq 2 − 4(p + 1)q(q + 1)
+(1 + u )2
+
+≤ −4q 2 − 4(p + 1)q + p(p + 1)2 χ 2 .
+Since q = 16(p + 1)2 (1 + pχ 2 ) > 0, we know f (q; p, χ, u ) < 0 if q > q+ . This together
+with (4.2) yields
+d
+dt
+
+u−p v −q dx ≤ (q − rp)
+
+
+u−p v −q dx + μp
+
+
+u−p−1+k v −q dx − q
+
+
+u−p+1 v −q−1 dx
+
+
+(4.3)
+for all ∈ (0, 1) and t > 0. Repeating the procedure in the proof of Lemma 2.4, we conclude the
+desired estimate (4.1). 2
+Next consider the case of k > 2. Correspondingly, there is the following lemma.
+Lemma 4.2. Under the condition of Theorem 1 (ii), we have
+v (x, t) ≥ δ2 for all ∈ (0, 1), x ∈  and t > 0
+with δ2 defined in Lemma 2.5.
+
+(4.4)
+
+842
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+Proof. By means of the same procedure as that in the proof of Lemma 4.1, we can get (4.3).
+Together with the arguments used for the proof of Lemma 2.5, we arrive at the lower
+bound (4.4). 2
+We deal with a spatio-temporal integral estimate on ∇v for all ∈ (0, 1).
+2
+Lemma 4.3. Let n ≥ 2 and k > 2 − n+1
+. Then there exists M4 > 0 such that
+T
+
+|∇v |2 dxds ≤ M4 (1 + T ), T > 0
+
+(4.5)
+
+0 
+
+for all ∈ (0, 1).
+Proof. Multiply (3.1)2 by v and integrate by part to get
+1 d
+2 dt
+
+v 2 dx = −
+
+
+|∇v |2 dx −
+
+
+v 2 dx +
+
+
+|∇v |2 dx −
+
+≤−
+
+
+v u dx
+
+
+v 2 dx +
+
+1
+k
+
+
+
+uk dx +
+
+k−1
+k
+
+
+
+k
+
+v k−1 dx, t > 0
+
+(4.6)
+
+
+
+by Young’s inequality. Applying the Gaglirado–Nirenberg inequality and the Poincaré inequality,
+we have
+v 
+
+k
+
+L k−1 ()
+
+≤ C7 v aW 1,2 () v 1−a
+≤ C8 (∇v aL2 () v 1−a
++ v Ll () )
+Ll ()
+Ll ()
+
+(4.7)
+
+with C7 , C8 > 0, where
+n
+− (k−1)n
+k
+a := l
+.
+1 − n2 + nl
+2
+n
+k
++n
+For k > 2 − n+1
+, there exists l ∈ ( (2−k)
+2(k−1) , n−1 ) such that k−1 a < 2 with a ∈ (0, 1). Combining
+(4.6), (4.7) and (3.8), we obtain
+
+1 d
+2 dt
+
+v 2 dx ≤ −
+
+
+1
+2
+
+|∇v |2 dx −
+
+
+v 2 dx +
+
+
+1
+k
+
+uk dx + C9 , t > 0
+
+(4.8)
+
+
+
+by Young’s equality with C9 > 0. Integrating (4.8) from 0 to T , we conclude (4.5) by (3.5) with
+some M4 > 0 for all ∈ (0, 1). 2
+We proceed to derive another spatio-temporal integral estimate on u for all ∈ (0, 1).
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+843
+
+Lemma 4.4. Under the condition of Theorem 1 (i), there exists γ ∈ (0, k − 1) that
+T
+
+uγ −2 |∇u |2 dxdt ≤ M5 (1 + T ), T > 0
+
+(4.9)
+
+0 
+
+with some M5 > 0 for all ∈ (0, 1).
+Proof. A direct calculation with (3.1)1 and γ ∈ (0, k − 1) shows
+1 d
+γ dt
+
+uγ −1 [u − χ∇ · (
+
+uγ dx =
+
+
+
+
+u
+∇v ) + ru − μuk ]dx
+(1 + u )v
+
+
+
+
+
+
+
+u
+∇u · ∇v dx
+(1 + u )v
+
+uγ −1+k dx, t > 0.
+
+uγ dx − μ
+
++r
+
+γ −1
+
+uγ −2 |∇u |2 dx + χ(γ − 1)
+
+= (1 − γ )
+
+(4.10)
+
+
+
+By Young’s inequality, we have
+γ −1
+
+χ(1 − γ )
+
+
+u
+1−γ
+∇u · ∇v dx ≤
+(1 + u )v
+2
+
+uγ −2 |∇u |2 dx +
+
+γ
+
+(1 − γ )χ 2
+2
+
+
+
+u
+|∇v |2 dx.
+v2
+
+
+(4.11)
+It is known by (4.10) and (4.11) that
+(1 − γ )
+2
+
+uγ −2 |∇u |2 dx ≤
+
+1 d
+γ dt
+
+
+
+uγ dx +
+
+
+u
+|∇v |2 dx
+v2
+
+
+uγ −1+k dx, t > 0.
+
+uγ dx + μ
+
+−r
+
+γ
+
+(1 − γ )χ 2
+2
+
+
+
+(4.12)
+
+
+
+Using Young’s inequality with Lemma 4.1, then
+γ
+
+
+
+u
+1
+|∇v |2 dx ≤ 2
+2
+v
+δ1
+
+uγ |∇v |2 dx ≤ C10
+
+
+2k
+
+uk dx + C10
+
+
+|∇v | k−γ dx
+
+(4.13)
+
+
+
+with C10 > 0. By the Gaglirado–Nirenberg inequality and the Poincaré inequality,
+∇v 
+
+2k
+
+L k−γ ()
+
+≤ C11 ∇v aW 1,k () ∇v 1−a
+Ll ()
+≤ C12 (v aLk () ∇v 1−a
++ ∇v Ll () ),
+Ll ()
+
+(4.14)
+
+844
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+with C11 , C12 > 0, where
+(k−γ )n
+n
+l −
+2k
+a :=
+.
+1 − nk + nl
+n
+2n
+For n ≥ 2 and k ∈ (2 − n2 , 2], taking l ∈ ( (2−k)n
+k , n−1 ) and γ ∈ (0, k − l+n ) ⊂ (0, k − 1), we get
+
+2k
+a < k.
+k−γ
+Together with (4.13), (4.14) and (3.9), we have
+
+u
+|∇v |2 dx ≤ C13 1 +
+2
+v
+γ
+
+
+
+uk dx +
+
+
+|v |k dx
+
+
+(4.15)
+
+
+
+by Young’s inequality with C13 > 0. Combining (4.12), (4.15) with (3.4) and (3.5), we obtain
+1−γ
+2
+
+T
+γ −2
+
+u
+
+1
+|∇u | dxds ≤
+γ
+
+0 
+
+(1 − γ )χ
+γ
+u0 dx +
+
+1
+u (·, t)dx −
+γ
+
+2
+
+γ
+
+
+
+T
+
+γ
+
+u
+|∇v |2 dxds
+v2
+
+2
+
+0 
+
+
+
+T
+
++r
+
+2
+
+T
+
+uγ −1+k dxds
+
+u dxds − μ
+γ
+
+0 
+
+0 
+T
+
+≤ C14 (1 + T ) + C14
+
+|v |k dxds, T > 0
+
+(4.16)
+
+0 
+
+with C14 > 0. In addition, we know by Lemma 3.4 with p̄ = q̄ = k and (3.5) that
+T
+
+T
+
+|v | dxds ≤ K̄ 1 +
+k
+
+0 
+
+
+uk dxds ≤ C15 (1 + T ), T > 0
+
+0 
+
+with C15 > 0. Together with (4.16), this yields the conclusion (4.9).
+
+2
+
+Next, we deal with the estimate on the time derivative of u for all ∈ (0, 1).
+Lemma 4.5. Under the condition of Theorem 1 (i), there exists M6 > 0 such that
+T
+
+0
+
+for all ∈ (0, 1).
+
+d
+
+γ 
+
+ (1 + u ) 2  n+1,2 ∗ ds ≤ M6 (1 + T ), T > 0
+(W0
+())
+dt
+
+(4.17)
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+845
+
+Proof. Let γ ∈ (0, k − 1) and φ ∈ W0n+1,2 (). Then we have from (3.1)1 that
+2
+γ
+
+γ
+d
+(1 + u ) 2 φdx =
+dt
+
+
+
+
+
+γ −2
+=−
+2
+
+γ −4
+
+u (1 + u )
+(1 + u )v
+
+
+
+γ −2
+
+
+
+≤
+
+γ −2
+
+(1 + u ) 2 uk φdx
+1
+
+uγ −2 |∇u |2 dx φL∞ () +
+
+uγ −2 |∇u |2 dx 2 ∇φL2 ()
+
+
+
+
+
+(1 + u )k dx
+
+γ
+2k
+
+
+
+(2 − γ )χ
++
+2δ1
++r
+
+u (1 + u ) 2
+∇u · ∇v φdx
+(1 + u )v
+
+
+
+2−γ
+2
+
+χ
++
+δ1
+
+γ −4
+
+(γ − 2)χ
+∇v · ∇φdx +
+2
+
+(1 + u ) 2 u φdx − μ
+
++r
+
+(1 + u ) 2 ∇u · ∇φdx
+
+
+γ −2
+2
+
+
+
+∇v ) + ru − μuk ]dx
+
+(1 + u )v
+γ −2
+
+(1 + u ) 2 |∇u |2 φdx −
+
+
++χ
+
+u
+
+γ −2
+
+(1 + u ) 2 φ[u − χ∇ · (
+
+|∇v |k dx
+
+1
+k
+
+∇φ
+
+2k
+
+L 2k−2−γ ()
+
+
+1
+
+1
+
+uγ −2 |∇u |2 dx 2
+
+|∇v |2 dx 2 φL∞ ()
+
+
+
+(1 + u )k dx
+
+
+γ
+2k
+
+φ
+
+2k
+L 2k−γ ()
+
++μ
+
+
+
+γ −2+2k
+2k
+
+(1 + u )k dx
+
+φ
+
+2k
+
+L 2−γ ()
+
+(4.18)
+
+
+
+by the Hölder inequality for t > 0. Since W0n+1,2 () → W 1,∞ (), it is known by Young’s
+inequality with (4.18) and the fact (1 + a)b ≤ 2b (1 + a b ) for a, b > 0 that
+
+
+
+
+
+
+γ
+d
+
+(1 + u ) 2 φdx  ≤ C16 1 +
+dt
+
+
+uγ −2 |∇u |2 dx +
+
+
++
+
+uk dx
+
+
+
+|∇v |2 dx φW n+1,2 () , t > 0
+
+|∇v |k dx +
+
+
+(4.19)
+
+0
+
+
+
+with C16 > 0. Integrating (4.19) from 0 to T , we obtain from (3.5), (3.8)–(3.10), (4.5) and (4.9)
+that
+T
+
+0
+
+T
+
+d
+
+γ 
+
+sup
+ (1 + u ) 2  n+1,2 ∗ ds ≤
+(W0
+())
+dt
+φ∈W n+1,2 (),φ
+
+≤1
+n+1,2
+0
+W0
+()
+
+0
+
+
+
+
+
+
+
+
+γ
+d
+
+(1 + u ) 2 φdx ds
+dt
+
+
+T
+
+T
+γ −2
+
+≤ C16 T +
+
+u
+0 
+
+|∇u | dxds +
+2
+
+uk dxds
+0 
+
+846
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+T
+
+T
+
++
+
+|∇v | dxds +
+
+|∇v |2 dxds
+
+k
+
+0 
+
+
+
+0 
+
+≤ M6 (1 + T ), T > 0
+2
+
+with some M6 > 0.
+
+Based on Lemma 3.4, we further prove the following estimates on v for all ∈ (0, 1).
+Lemma 4.6. Let k > 1 and p ∈ (1, k). Then there exists M7 > 0 such that
+T
+
+v t 
+
+p(k−1)
+p−1
+Lp ()
+
+T
+
+ds +
+
+0
+
+p(k−1)
+
+v Wp−1
+2,p () ds ≤ M7 (1 + T ), T > 0
+
+(4.20)
+
+0
+
+for all ∈ (0, 1). Moreover, there exists M8 > 0 such that
+T
+
+ ∇v  p(k−1)
+
+ p−1
+ds ≤ M8 (1 + T ), T > 0
+
+
+v Lp ()
+
+(4.21)
+
+0
+
+for all ∈ (0, 1).
+Proof. By the Hölder inequality with p ∈ (1, k), we have
+up dx ≤
+
+
+
+
+
+ k−p 
+k−1
+
+u dx
+
+
+uk dx
+
+ p−1
+k−1
+
+, t > 0.
+
+
+
+This together with (3.4) indicates
+
+
+up dx
+
+ k−1
+
+p−1
+
+≤
+
+
+
+
+
+ k−p
+u dx
+
+p−1
+
+
+
+uk dx ≤ C17
+
+
+uk dx, t > 0,
+
+
+and hence shows by (3.5) that
+T
+
+u 
+
+p(k−1)
+p−1
+Lp ()
+
+T
+
+ds ≤ C17
+
+0
+
+uk dxds ≤ C18 (1 + T ), T > 0
+0 
+
+with C17 , C18 > 0. Consequently, it follows from (3.10) that
+T
+
+v t 
+0
+
+p(k−1)
+p−1
+Lp ()
+
+T
+
+ds +
+
+v 
+0
+
+p(k−1)
+p−1
+W 2,p ()
+
+T
+
+ds ≤ C18
+
+p(k−1)
+
+u Lp−1
+p () ds ≤ M7 (1 + T ), T > 0
+0
+
+with M7 > 0. By (4.22) and (4.1) (or (4.4)), we conclude (4.21) with some M8 > 0.
+
+2
+
+(4.22)
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+847
+
+We now perform a subsequence extraction procedure to obtain a limit object (u, v), i.e., a very
+weak solution to the problem (1.6).
+Lemma 4.7. Under the condition of Theorem 1 (i), for 0 < γ ≤ k−1
+2 and p ∈ (1, k), there exist
+k
+such that
+u ∈ L1loc ( × (0, ∞)) and v ∈ L2loc ((0, ∞), W 1,2 ()) with some m > k−1
+uγ  uγ ,
+
+in L2loc ([0, ∞); W 1,2 ()),
+
+(4.23)
+
+u  u,
+
+in Lkloc ( × [0, ∞)),
+
+(4.24)
+
+u → u,
+
+p
+a.e. in  × (0, ∞) and Lloc ( × [0, ∞)),
+
+(4.25)
+
+v → v,
+
+1,m
+a.e. in  × (0, ∞) and Lm
+()),
+loc ([0, ∞); W
+
+(4.26)
+
+∇v
+∇v
+
+,
+v
+v
+
+in Lm
+loc ( × (0, ∞)),
+
+(4.27)
+
+1  1
+ ,
+v
+v
+
+in L∞
+loc ( × (0, ∞))
+
+(4.28)
+
+for = j  0.
+Proof. The conclusions (4.23), (4.24) and (4.28) are the direct results from (4.9), (3.5) and (4.1).
+Since W 1,2 () →→ L2 (), we have by the Aubin–Lions lemma with (4.9) and (4.17) that
+γ
+γ
+(1 +u ) 2 → (1 +u) 2 in L2 ( ×(0, T )), and moreover u → u a.e. in  ×(0, T ), as = j  0.
+This together with (4.24) indicates (4.25) by a similar argument as that for [21, Lemma 1.4].
+np
+Since W 2,p () →→ W 1,q () for q < n−p
+, it is known by applying again Aubin–Lions lemma
+(k−1)p
+
+np
+, and moreover
+with (4.20) that v → v in L p−1 ((0, T ), W 1,q ()) for p ∈ (1, k) and q < n−p
+v → v a.e. in  × (0, ∞), as = j  0. A simple calculation shows that there exists p ∈ (1, k)
+np
+k
+k
+1
+such that (k−1)p
+p−1 > k−1 and n−p > k−1 due to k ∈ (2 − n , 2]. This concludes (4.26) and (4.27)
+np
+k
+with m ∈ ( k−1
+, min{ (k−1)p
+p−1 , n−p }).
+
+2
+
+5. Strong convergence of {∇ ln v }∈(0,1)
+
+Obviously, we should establish the strong precompactness of
+T
+0
+
+∇v
+v
+
+
+
+|∇v|2
+
+∈(0,1)
+
+. Inspired by [26],
+
+it is sufficient to show that
+ v 2 dxdt satisfies a required estimate from below for T > 0.
+We begin with the entropy identity
+d
+dt
+
+|∇v|2
+dx − || +
+v2
+
+ln vdx =
+
+
+
+
+u
+dx.
+v
+
+
+By a suitable choice of test functions in (1.11), we will derive a qualified inequality.
+Lemma 5.1. There exists a null set N ⊂ (0, ∞) such that the functions u and v obtained in
+Lemma 4.7 satisfy the inequality
+
+848
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+T
+
+T
+
+|∇v|2
+dxdt ≥ ||T −
+v2
+
+0 
+
+u
+dxdt +
+v
+0 
+
+ln v(x, T )dx −
+
+
+ln v0 dx
+
+(5.1)
+
+
+
+for all T ∈ (0, ∞) \ N .
+Proof. Due to v ∈ L1loc ( × (0, ∞)), we know that the function z(t) :=  ln v(x, t)dx belongs
+to L1loc (0, ∞). Therefore, there exists a null set N ⊂ (0, ∞) such that each T ∈ (0, ∞) \ N is a
+Lebesgue point of z(t), i.e.,
+1
+δ
+
+T +δ
+
+ln v(x, t)dxdt →
+T
+
+
+
+ln(x, T )dx for all T ∈ (0, ∞) \ N as δ  0.
+
+(5.2)
+
+
+
+For T ∈ (0, ∞) \ N and δ ∈ (0, 1), let
+⎧
+⎪
+1,
+t ∈ [0, T ],
+⎪
+⎨
+ζδ (t) := 1 − t−T
+δ , t ∈ (T , T + δ),
+⎪
+⎪
+⎩
+0,
+t ≥ T + δ,
+and denote
+
+ṽ(x, t) :=
+
+1
+v(x,t) ,
+1
+v0 (x) ,
+
+(x, t) ∈  × (0, ∞),
+(x, t) ∈  × (−1, 0].
+
+Now, for δ ∈ (0, 1), h ∈ (0, δ), introduce
+ψ(x, t) := ζδ (t) · (Ah ṽ)(x, t), (x, t) ∈  × (0, ∞),
+with
+t
+
+1
+(Ah ṽ)(x, t) :=
+h
+
+ṽ(x, s)ds, (x, t) ∈  × (0, ∞).
+t−h
+
+2
+1,2 ()),
+By Lemma 4.7 with (4.1), we know that v1 belongs L∞
+loc ( × (0, ∞)) ∩ Lloc ((0, ∞); W
+¯
+and so does ψ. In addition, we also know that ψ is supported in  × [0, T + δ] and
+
+1
+ψt (x, t) = ζδ (t) · (Ah ṽ)(x, t) + ζδ (t) · (ṽ(x, t) − ṽ(x, t − h)), (x, t) ∈  × (0, ∞).
+h
+This indicates ψt ∈ L2loc ( × (0, ∞)). Therefore, we can insert ψ into (1.9) to obtain
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+849
+
+∞
+
+I (δ, h) : = −
+
+ζδ (t)∇v(x, t) · ∇(Ah ṽ)(x, t)dxdt
+0 
+
+∞
+
+∞
+
+ζδ (t)v(x, t)(Ah ṽ)(x, t)dxdt −
+
+=
+0 
+
+ζδ (t)u(x, t)(Ah ṽ)(x, t)dxdt
+0 
+
+∞
+
+ζδ (t)v(x, t)(Ah ṽ)(x, t)dxdt − ||
+
+−
+0 
+∞
+
+1
+ζδ (t)v(x, t) · (ṽ(x, t) − ṽ(x, t − h))dxdt
+h
+
+−
+0 
+
+=: I1 (δ, h) + I2 (δ, h) + I3 (δ, h) + I4 (δ, h) + I5 (δ, h),
+
+(5.3)
+
+where we have used that
+0
+
+1
+ψ(x, 0) = ζδ (0) ·
+h
+
+ṽ(x, s)ds =
+−h
+
+1
+, x∈
+v0 (x)
+
+by the definitions of ζδ (t) and ṽ. Since v0 ∈ W 2,∞ (), it is known by [26, Lemma A.2(a)] with
+∇ ṽ ∈ L2 ( × (−1, T + δ)) that
+∇(Ah ṽ) = Ah (∇ ṽ)  ∇ ṽ = −
+
+∇v
+in L2 ( × (0, T + δ)) as h  0,
+v2
+
+and hence
+T +δ
+
+I (δ, h) →
+
+ζδ (t)
+0
+
+|∇v|2
+dxdt as h  0.
+v2
+
+(5.4)
+
+
+
+Similarly, by [26, Lemma A.2(b)] with ṽ ∈ L∞ ( × (−1, T + δ)),
+
+
+Ah ṽ  ṽ =
+
+1
+in L∞ ( × (0, T + δ)) as h  0,
+v
+
+(5.5)
+
+and then
+T +δ
+
+I1 (δ, h) →
+
+ζδ (t)dxdt as h  0,
+0
+
+(5.6)
+
+
+T +δ
+
+I2 (δ, h) → −
+0
+
+
+
+u
+ζδ (t) dxdt as h  0,
+v
+
+(5.7)
+
+850
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+T +δ
+
+ζδ (t)dxdt as h  0.
+
+I3 (δ, h) → −
+T
+
+(5.8)
+
+
+
+We know
+1
+I5 (δ, h) = −
+h
+
+T +δ
+
+0
+
+ζδ
+h
+
+
+
+ζδ
+0 
+
+
+
+T +δ
+
+1
+h
+
++
+
+h
+
+1
+ζδ (t)dxdt +
+h
+
+v(x, t)
+dxdt
+v0 (x)
+
+v(x, t)
+dxdt
+v(x, t − h)
+
+=: I51 (δ, h) + I52 (δ, h) + I53 (δ, h).
+
+(5.9)
+
+Now, we deal with the last term in (5.9). With the fact x ≥ ln x + 1 for x > 0, we obtain
+1
+I53 (δ, h) ≥
+h
+
+T +δ
+
+
+ζδ (t) ln
+
+h
+T +δ
+
+1
+=
+h
+
+h
+
+−
+
+
+v(x, t)
++ 1 dxdt
+v(x, t − h)
+
+ζδ (t) ln v(x, t)dxdt
+h
+
+
+
+
+
+T +δ−h
+
+1
+h
+
+ζδ (t + h) ln v(x, t)dxdt
+0
+
+
+
+T +δ
+
+1
+=
+h
+
+T +δ
+
+1
+ζδ (t)dxdt +
+h
+
+T +δ−h
+
+ζδ (t)dxdt +
+h
+
+0
+
+
+
+ζδ (t) − ζδ (t + h)
+ln v(x, t)dxdt
+h
+
+
+T +δ
+
+h
+
+1
+−
+h
+
+1
+ζδ (t) ln v(x, t)dxdt +
+h
+0 
+
+ζδ (t) ln v(x, t)dxdt.
+
+(5.10)
+
+T +δ−h 
+
+Combine (5.9) with (5.10) to get
+h
+
+h
+
+1
+I5 (δ, h) ≥ −
+h
+
+1
+ζδ (t)dxdt +
+h
+0 
+
+ζδ
+0 
+
+h
+
+1
+−
+h
+
+1
+ζδ (t) ln v(x, t)dxdt +
+h
+0 
+
+T +δ−h
+
++
+0
+
+
+
+v(x, t)
+dxdt
+v0 (x)
+T +δ
+
+ζδ (t) ln v(x, t)dxdt
+T +δ−h 
+
+ζδ (t) − ζδ (t + h)
+ln v(x, t)dxdt.
+h
+
+(5.11)
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+851
+
+With ζδ (0) = 1, we know
+h
+
+1
+−
+h
+
+ζδ (t)dxdt → −|| as h  0,
+
+(5.12)
+
+0 
+h
+
+1
+h
+
+ζδ (t)
+0 
+
+v(x, t)
+dxdt → || as h  0,
+v0 (x)
+
+(5.13)
+
+h
+
+1
+−
+h
+
+ζδ (t) ln v(x, t)dxdt → −
+0 
+
+ln v0 (x)dx as h  0.
+
+(5.14)
+
+
+
+By the dominated convergence theorem with a simple calculation, we conclude
+T +δ−h
+
+0
+
+ζδ (t) − ζδ (t + h)
+ln v(x, t)dxdt →
+h
+
+T +δ
+
+T
+
+
+
+1
+h
+
+ζδ (t) ln v(x, t)dxdt as h  0,
+
+(5.15)
+
+as h  0.
+
+(5.16)
+
+
+
+T +δ
+
+ζδ (t) ln v(x, t)dxdt → 0
+T +δ−h 
+
+Insert (5.12)–(5.16) into (5.11) to get
+T +δ
+
+lim inf I5 (δ, h) ≥ −
+
+ζδ (t) ln v(x, t)dxdt.
+
+ln v0 (x)dx −
+
+h→0
+
+
+
+T
+
+(5.17)
+
+
+
+Combining (5.3) with (5.4), (5.6)–(5.8) and (5.17) by h  0, we obtain
+T +δ
+
+0
+
+|∇v|2
+ζδ (t) 2 dxdt ≥
+v
+
+T +δ
+
+ζδ (t)dxdt −
+0
+
+
+
+T +δ
+
+0
+
+
+
+u
+ζδ (t) dxdt
+v
+
+
+
+T +δ
+
+ζδ (t)dxdt + || −
+
++
+0
+
+
+
+ln v0 (x)dx
+
+
+T +δ
+
+ζδ (t) ln v(x, t)dxdt.
+
+−
+T
+
+(5.18)
+
+
+
+By the definition of ζδ (t) with the Lebesgue point property of T , we know
+T +δ
+
+1
+ζδ (t)dxdt = −
+
+T +δ
+
+dxdt → −|| as δ  0,
+
+δ
+
+0
+
+
+
+T
+
+
+
+(5.19)
+
+852
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+T +δ
+
+T +δ
+
+1
+ζδ (t) ln v(x, t)dxdt =
+
+−
+
+ln v(x, t)dxdt
+
+δ
+
+T
+
+T
+
+
+
+
+
+ln v(x, T )dx as δ  0.
+
+→
+
+(5.20)
+
+
+
+Applying the monotone convergence theorem to (5.18) with (5.19) and (5.20) by δ  0, we
+conclude (5.1). 2
+Now, we deal with the desired strong convergence result.
+Lemma 5.2. Let { j }j ∈N be taken in Lemma 4.7. Then there exists a subsequence, again denoted
+by { j }j ∈N , such that for each T > 0
+∇v
+∇v
+→
+in L2 ( × (0, T )) as
+v
+v
+
+= j  0.
+
+(5.21)
+
+Proof. We know from (4.26) that ln v → ln v in L1loc ( × (0, ∞)). Upon selecting a subsequence, still denoted by { j }j ∈N , we have a null set N1 ⊂ (0, ∞) such that
+ln v (x, T )dx →
+
+
+ln v(x, T )dx for all T ∈ (0, ∞) \ N1 as = j  0.
+
+(5.22)
+
+
+
+Taking N ⊂ (0, ∞) as in Lemma 5.1, we only need to verify (5.21) for T ∈ (0, ∞) \ (N ∪ N1 ).
+Now, given such T , we know from (4.25) and (4.28) that
+T
+
+T
+
+u
+dxdt →
+v
+0 
+
+u
+dxdt in L1 ( × (0, T )) as j  0.
+v
+
+(5.23)
+
+0 
+
+By Lemma 5.1 with (5.22) and (5.23), we have
+T
+
+T
+
+|∇v|2
+dxdt ≥ ||T −
+v2
+
+0 
+
+u
+dxdt +
+v
+0 
+
+= lim
+
+= j 0
+
+ln v(x, T )dx −
+
+
+ln v0 dx
+
+
+T
+
+
+
+u
+dxdt +
+v
+
+||T −
+0 
+
+
+ln v0 dx .
+
+ln v (x, T )dx −
+
+
+
+
+(5.24)
+In addition, test (3.1)2 by v1 to obtain
+T
+
+0 
+
+|∇v |2
+dxdt = ||T −
+v2
+
+T
+
+u
+dxdt +
+v
+0 
+
+ln v (x, T )dx −
+
+
+ln v0 dx,
+
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+853
+
+which together with (5.24) entails
+T
+
+|∇v|2
+dxdt ≥ lim inf
+= j 0
+v2
+
+0 
+
+T
+
+|∇v |2
+dxdt.
+v2
+
+(5.25)
+
+0 
+
+On the other hand, we get by the lower semicontinuity of the norm in L2 ( × (0, T )) with respect
+to weak convergence that
+T
+
+|∇v|2
+dxdt ≤ lim inf
+= j 0
+v2
+
+0 
+
+T
+
+|∇v |2
+dxdt.
+v2
+
+(5.26)
+
+0 
+
+Consequently, the conclusion (5.21) results from (5.25) and (5.26).
+
+2
+
+6. Global existence and boundedness to very weak solutions
+In this section we begin with proving that the function (u, v) determined in the last two sections just is the global very weak solution of (1.6).
+Proof of Theorem 1. (i) For the case of k ∈ (2 − n1 , 2] with (1.13), we will demonstrate that the
+function (u, v) obtained in Lemma 4.7 is a very weak subsolution of (1.6) in  × (0, T ) for all
+T > 0. Let ϕ satisfy (1.10). Multiplying (3.1)1 by ϕ and integrating by parts, we have for all
+∈ (0, 1) that
+T
+
+−
+
+T
+
+u ϕt −
+0 
+
+T
+
+u0 ϕ(·, 0) =
+
+u ϕ + χ
+0 
+
+
+
+0 
+
+T
+
++r
+
+u
+∇v · ∇ϕ
+(1 + u )v
+
+T
+
+u ϕ−μ
+0 
+
+uk ϕ.
+
+(6.1)
+
+0 
+
+By (4.24), we know
+T
+
+T
+
+−
+
+u ϕt → −
+0 
+
+uϕt ,
+
+(6.2)
+
+uϕ,
+
+(6.3)
+
+uϕ
+
+(6.4)
+
+0 
+
+T
+
+T
+
+u ϕ →
+0 
+
+0 
+
+T
+
+T
+
+u ϕ→r
+
+r
+0 
+
+0 
+
+854
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+as = j  0. In addition, by (4.25) with (4.27),
+T
+
+χ
+0 
+
+u ∇v
+· ∇ϕ → χ
+(1 + u )v
+
+T
+
+u
+
+∇v
+· ∇ϕ as = j  0.
+v
+
+(6.5)
+
+0 
+
+Consequently, we obtain by (6.2)–(6.5) with the Fatou lemma that
+T
+
+T
+
+u ϕ ≤ μ lim inf
+k
+
+μ
+
+uk ϕ
+
+= j 0
+
+0 
+
+0 
+T
+
+T
+
+=
+
+uϕt +
+0 
+
+u0 ϕ(·, 0) +
+0 
+
+
+T
+
++χ
+
+u
+
+uϕ
+
+T
+
+∇v
+· ∇ϕ + r
+v
+
+(6.6)
+
+uϕ.
+
+0 
+
+0 
+
+Take ψ satisfying (1.11). Multiply (3.1)2 by ψ and integrate by parts,
+T
+
+−
+
+T
+
+v ψt −
+0 
+
+T
+
+v0 ψ(·, 0) +
+
+
+T
+
+∇v · ∇ψ +
+0 
+
+v ψ=
+0 
+
+u ψ.
+
+(6.7)
+
+0 
+
+According to (4.26) and (4.24), we get (1.9) by taking = j  0. This together with (6.6)
+indicates that (u, v) is a very weak subsolution of (1.6).
+γ −1
+ϕ, we have
+Taking ϕ in (1.10) and multiplying (1.6)1 by γ u
+T
+
+−
+
+T
+
+u ϕt −
+0 
+
+T
+γ −2
+
+γ
+u0 ϕ(·, 0) = γ (1 − γ )
+
+γ
+
+u
+
+|∇u | ϕ +
+2
+
+0 
+
+
+
+0 
+
+T
+
+γ −1
+
++ χγ (γ − 1)
+0 
+T
+
++ χγ
+0 
+
+u
+∇u ∇v
+ϕ
+·
+(1 + u ) v
+
+γ
+
+u
+∇v
+· ∇ϕ
+(1 + u ) v
+
+T
+
++ rγ
+
+T
+
+uγ −1+k ϕ.
+
+u ϕ − μγ
+γ
+
+0 
+
+uγ ϕ
+
+0 
+
+(6.8)
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+855
+
+By (4.24), we know
+T
+
+T
+
+−
+
+u ϕt → −
+γ
+
+0 
+
+uγ ϕt ,
+
+(6.9)
+
+uγ ϕ,
+
+(6.10)
+
+uγ ϕ,
+
+(6.11)
+
+0 
+
+T
+
+T
+
+uγ ϕ →
+0 
+
+0 
+
+T
+
+T
+
+u ϕ → rγ
+γ
+
+rγ
+0 
+
+0 
+
+T
+
+T
+γ −1+k
+
+−μγ
+
+u
+
+uγ −1+k ϕ
+
+ϕ → −μγ
+
+0 
+
+(6.12)
+
+0 
+
+as = j  0. Combine (4.23) and (5.21) in Lemma 5.2 to get
+T
+
+γ −1
+
+u
+∇u ∇v
+ϕ → χγ (γ − 1)
+·
+(1 + u ) v
+
+χγ (γ − 1)
+0 
+
+T
+
+uγ −1 ∇u ·
+
+∇v
+ϕ
+v
+
+(6.13)
+
+0 
+
+as = j  0. In addition, we know from (4.25) and (4.27) that
+T
+
+γ
+
+χγ
+0 
+
+u
+∇v
+· ∇ϕ → χγ
+1+ u v
+
+T
+
+uγ
+
+∇v
+· ∇ϕ,
+v
+
+(6.14)
+
+0 
+
+as = j  0. Consequently, we obtain from (6.8) with (6.9)–(6.14) and the Fatou lemma that
+T
+
+T
+γ −2
+
+γ (1 − γ )
+
+u
+
+uγ −2 |∇u |2 ϕ
+
+|∇u| ϕ ≤ lim inf γ (1 − γ )
+2
+
+= j 0
+
+0 
+
+0 
+T
+
+T
+
+=−
+
+γ
+u0 ϕ(·, 0) −
+
+u ϕt −
+γ
+
+0 
+
+0 
+
+
+T
+
+− χγ (γ − 1)
+
+uγ ϕ
+
+uγ −1
+∇u · ∇vϕ − χγ
+v
+
+0 
+T
+
+− rγ
+
+γ
+
+u
+∇v · ∇ϕ
+v
+0 
+
+T
+
+uγ −1+k ϕ
+
+u ϕ + μγ
+γ
+
+0 
+
+T
+
+0 
+
+(6.15)
+
+856
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+as = j  0. This together with (6.7) yields that (u, v) is in fact a γ -entropy supersolution
+of (1.6) as well.
+(ii) For the case of k > 2 with r, χ > 0 satisfying (1.14), we can find that the conclusions
+(4.9) and (4.17) for some γ ∈ (0, 12 ) are also valid by repeating the arguments for proving Lemmas 4.4 and 4.5, where Lemmas 4.2 and 4.3 are useful. This implies the corresponding results
+(4.23)–(4.28). Therefore, we can conclude that (u, v) is also a very weak solution of (1.6) by
+using the same procedures as those for the case (i).
+The proof is complete. 2
+Next, we will prove that the global very weak solution to (1.6) is globally bounded for
+n = 2, 3. At first, we establish the following uniform-in-time estimate on  u2 dx for all
+∈ (0, 1), with the initial data and μr suitably small.
+Lemma 6.1. Let (u , v ) be the global very weak solution of the problem (1.6) established in
+Theorem 1 with n = 2, 3. There exist η, λ > 0 such that
+u2 dx ≤ M9 , t > 0,
+
+(6.16)
+
+
+
+provided μr < η and
+
+2
+4
+ u0 dx +  |∇v0 | dx < λ, for all
+
+∈ (0, 1) with M9 > 0.
+
+Proof. Assume n = 3. It follows from (3.1)1 and (4.1) (or (4.4)) that
+1 d
+2 dt
+
+u2 dx =
+
+
+u [u − χ∇ · (
+
+
+≤−
+
+1
+2
+
+|∇u |2 dx +
+
+χ2
+2
+
+
+
+≤−
+
+1
+2
+
+u
+(1 + u )v
+
+∇v ) + ru − μuk ]dx
+
+u2
+|∇v |2 dx + r
+v2
+
+
+|∇u |2 dx − 2
+
+
+u2 dx +
+
+
+u2 dx − μ
+
+
+
+
+χ2
+2 min{δ12 , δ22 }
+
+uk+1 dx
+
+u2 |∇v |2 dx + C19
+
+
+u
+
+(6.17)
+
+
+2k
+
+k+1
+
+by Young’s inequality with positive constant C19 := (r + 2) k−1 μ− k−1 for t > 0. In addition, due
+to |∇v |2 = 2∇v · ∇v + 2|D 2 v |2 and |v |2 ≤ 3|D 2 v |2 , we have from (3.1)2 with the
+convexity of  and Young’s inequality that
+1 d
+2 dt
+
+|∇v |4 dx = 2
+
+
+|∇v |2 ∇v · ∇(v − v + u )dx
+
+
+|∇v |2 |∇v |2 dx − 2
+
+=
+
+
+|D 2 v |2 |∇v |2 dx − 2
+
+
+∇u · ∇v |∇v |2 dx
+
++2
+
+
+|∇v |4 dx
+
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+=−
+
+|∇|∇v |2 |2 dx − 2
+
+|D 2 v |2 |∇v |2 dx − 2
+
+
+
+
+
+−2
+
+857
+
+|∇v |4 dx
+
+
+u ∇v · ∇|∇v |2 dx − 2
+
+
+u v |∇v |2 dx
+
+
+1
+≤−
+2
+
+|∇|∇v |2 |2 dx − 2
+
+
+|∇v |4 dx +
+
+
+7
+2
+
+u2 |∇v |2 dx, t > 0.
+
+
+This together with (6.17) indicates
+d
+dt
+
+
+
+|∇v |4 dx ≤ −4
+
+u2 dx +
+
+
+
+
+
+|∇v |4 dx −
+
+u2 dx +
+
+
++ C20
+
+
+
+
+
+|∇|∇v |2 |2 dx
+
+
+|∇v |6 dx + 2C19 m∗ , t > 0
+
+u3 dx + C20
+
+
+with C20 := 7 +
+
+|∇u |2 dx −
+
+(6.18)
+
+
+
+χ2
+. By the Gaglirado–Nirenberg inequality with the corresponding conmin{δ12 ,δ22 }
+
+stant C21 > 0 and Young’s inequality, we have
+3
+
+3
+
+2
+2
+u3 dx = u 3L3 () ≤ C21 u W
+1,2 () u L2 ()
+
+
+3
+
+3
+
+≤ 3C21 (∇u L2 2 () u L2 2 () + u 3L2 () )
+≤
+
+1
+C20
+
+|∇u |2 dx + 3C21
+
+
+
+
+u2 dx
+
+3
+
+2
+
++ C22
+
+
+
+
+
+u2 dx
+
+3
+
+(6.19)
+
+
+
+3 C 4 . Replacing u by |∇v |2 in (6.19), we know by a similar argument that
+with C22 := 81C20
+21
+
+|∇v |6 dx = |∇v |2 3L3 ()
+
+
+≤
+
+1
+C20
+
+|∇|∇v |2 |2 dx + 3C21
+
+
+
+
+|∇v |4 dx
+
+3
+
+2
+
++ C22
+
+
+
+
+
+|∇v |4 dx
+
+3
+
+.
+
+
+
+(6.20)
+Let F (t) :=  u2 dx +  |∇v |4 dx. We have from (6.18)–(6.20) that
+
+
+3
+
+F  (t) ≤ −4F (t) + 3C20 C21 F (t) 2 + C20 C22 F (t)3 + 2C19 m∗ , t > 0,
+F (0) =  u20 dx +  |∇v0 |4 dx.
+
+Denote
+
+(6.21)
+
+858
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+3
+
+h(s, m∗ ) := −4s + 3C20 C21 s 2 + C20 C22 s 3 + 2C19 m∗ , s > 0.
+
+(6.22)
+
+Then there exists m∗0 > 0 such that h(s, m∗0 ) has the unique positive root s0 . Obviously, F (t) ≡ s0
+satisfies the ODE problem
+
+F  (t) = h(F (t), m∗0 ), t > 0,
+F (0) = s0 .
+
+(6.23)
+
+Now let
+η :=
+with μr < η and
+
+ m∗ k−1
+0
+
+||
+
+ m∗2 
+and λ := min s0 , 0
+||
+
+2
+4
+ u0 dx +  |∇v0 | dx < λ. Then
+
+1
+
+u0 dx < || 2
+
+
+
+
+
+u20 dx
+
+1
+
+2
+
+< m∗0 ,
+
+
+
+and thus
+u dx ≤ m∗ = max
+
+
+
+
+
+
+r 1
+u0 dx, ( ) k−1 || < m∗0
+μ
+
+
+for all ∈ (0, 1). Observe that m∗ < m∗0 implies h(s, m∗ ) < h(s, m∗0 ) for s > 0, and the function h = h(s, m∗ ) has exactly two positive roots 0 < s1 < s0 < s2 . We know from (6.22) that
+h(s, m∗ ) < 0 whenever s ∈ (s1 , s0 ). By (6.21) with F (0) ≤ s0 , this concludes that
+F (t) =
+
+u2 dx +
+
+
+|∇v |4 dx ≤ s0 , t > 0
+
+
+for all ∈ (0, 1) by comparison.
+The case n = 2 can be treated similarly, and even more simply. We omit the details.
+The proof is complete. 2
+Proof of Theorem 2. Based on Lemma 6.1, we obtain the global boundedness of solutions to
+the regularization problem by a similar argument as that in [29] that
+u L∞ () + v L∞ () ≤ C, t > 0
+
+(6.24)
+
+with some C > 0 for all ∈ (0, 1). Consequently, we conclude that the very weak solution (u, v)
+is globally bounded in time as well by taking = j  0. 2
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+859
+
+7. Global boundedness to classical solutions
+In this section we deal with classical solutions to (1.6) with k > 2 ensured by Lemma 2.1, and
+begin with the known estimate below.
+Lemma 7.1. ([27, Lemma 2.3]) Let n ≥ 1, k > 2, and (u, v) be the local classical solution
+nk
+of (1.6). Then there exists M10 > 0 such that for k < m < (n+2−k)
++
+∇vLm () ≤ M10 , t ∈ (0, Tmax ).
+
+(7.1)
+
+Due to the singularity of the sensitivity function in (1.6), we use the energy functional of
+the form E(t) := p1  up dx + q1  |∇v|2q dx with p, q > 1, instead of that for the classical
+d
+Keller–Segel system with logistic source [4]. Firstly, we estimate dt
+E(t).
+
+Lemma 7.2. Let (u, v) be the local classical solution of (1.6). Then for p, q > 1, there exists
+M11 > 0 such that
+1 d
+p dt
+
+up dx +
+
+1 d
+q dt
+
+
+
+|∇v|2q dx ≤ −
+
+
+1
+p
+
+up dx −
+
+1
+q
+
+
+
+−
+
+|∇v|2q dx
+
+
+2q − 2
+q2
+
+
+k−1
+
+v
+
+dx
+
+
+2(q−1) p+k−1
+p+k−3
+
+|∇v|
+
++ M11
+
+ |∇v|  2(p+k−1)
+
+|∇|∇v|q |2 dx + M11
+dx + M11
+
+(7.2)
+
+
+
+for t ∈ (0, Tmax ).
+Proof. Multiply (1.6)1 by up−1 and integrate by parts to know
+1 d
+p dt
+
+u
+up−1 [u − χ∇ · ( ∇v) + ru − μuk ]dx
+v
+
+up dx =
+
+
+
+
+
+
+
+
+up dx − μ
+
++r
+
+
+up+k−1 dx
+
+
+≤ χ 2 (p − 1)
+
+up
+
+|∇v|2
+dx + r
+v2
+
+
+
+≤−
+
+up−1
+∇u · ∇vdx
+v
+
+up−2 |∇u|2 dx + χ(p − 1)
+
+= −(p − 1)
+
+1
+p
+
+
+k−1
+
+v
+
+
+up+k−1 dx
+
+
+ |∇v|  2(p+k−1)
+
+up dx + C23
+
+
+up dx − μ
+
+dx −
+
+μ
+2
+
+up+k−1 dx + C23
+
+
+(7.3)
+
+860
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+by Young’s inequality and (2.13) with some C23 > 0 for t ∈ (0, Tmax ). In addition, noticing
+|∇v|2 = 2∇v · ∇v + 2|D 2 v|2 , we have from (1.6)2 that
+d|∇v|2
+= 2∇v · ∇v − 2|∇v|2 + 2∇u · ∇v
+dt
+= |∇v|2 − 2|D 2 v|2 − 2|∇v|2 + 2∇u · ∇v.
+Testing this by |∇v|2q−2 and integrating by part with  convex, we get
+1 d
+q dt
+
+|∇v|2q dx =
+
+
+|∇v|2q−2 [|∇v|2 − 2|D 2 v|2 − 2|∇v|2 + 2∇u · ∇v]dx
+
+
+|∇v|2q−4 |∇|∇v|2 |2 dx − 2
+
+≤ −(q − 1)
+
+
+−2
+
+|∇v|2q−2 |D 2 v|2 dx
+
+
+|∇v|2q dx + 2
+
+
+|∇v|2q−2 ∇u · ∇vdx, t ∈ (0, Tmax ).
+
+(7.4)
+
+
+
+Apply Young’s inequality to the last term of (7.4) to obtain
+|∇v|2q−2 ∇u · ∇vdx = −2(q − 1)
+
+2
+
+
+u|∇v|2q−4 ∇v · ∇|∇v|2 dx − 2
+
+
+≤
+
+q −1
+2
+
+
+
+|∇v|2q−4 |∇|∇v|2 |2 dx + 2(q − 1)
+
+
+2
++
+n
+
+u2 |∇v|2q−2 dx
+
+
+n
+|∇v|2q−2 |v|2 dx +
+2
+
+
+≤
+
+u|∇v|2q−2 vdx
+
+u2 |∇v|2q−2 dx
+
+
+q −1
+2
+
+|∇v|2q−4 |∇|∇v|2 |2 dx + 2
+
+
+|∇v|2q−2 |D 2 v|2 dx
+
+
+n
++ (2(q − 1) + )
+2
+
+u2 |∇v|2q−2 dx.
+
+
+Together with (7.4), this yields
+1 d
+q dt
+
+|∇v|2q dx ≤ −
+
+2q − 2
+q2
+
+
+
+|∇|∇v|q |2 dx
+
+
+n
+|∇v|2q dx + (2(q − 1) + )
+2
+
+−2
+
+
+u2 |∇v|2q−2 dx
+
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+≤−
+
+2q − 2
+q2
+
+|∇|∇v|q |2 dx − 2
+
+
+μ
++
+2
+
+861
+
+|∇v|2q dx
+
+2(q−1) p+k−1
+p+k−3
+
+up+k−1 dx + C24
+
+
+|∇v|
+
+dx, t ∈ (0, Tmax )
+
+(7.5)
+
+
+
+by Young’s inequality with some C24 > 0. Combining (7.3) with (7.5), we conclude (7.2) with
+M11 = max{C23 , C24 }. 2
+Based on Lemmas 7.2 and 2.5, we can obtain the Lp -boundedness of solutions for p > 1.
+That is the following lemma.
+Lemma 7.3. Under the condition of Theorem 3, there exists p > n with M12 > 0 such that
+up dx ≤ M12 , t ∈ (0, Tmax ).
+
+(7.6)
+
+
+
+Proof. For k > 2 with r, χ > 0 satisfying (1.14), we have from Lemma 2.5 with (7.2) that
+1 d
+p dt
+
+up dx+
+
+1 d
+q dt
+
+
+
+|∇v|2q dx
+
+
+≤−
+
+1
+p
+
+up dx −
+
+1
+q
+
+
+
+|∇v|2q dx −
+
+2q − 2
+q2
+
+
+− 2(p+k−1)
+k−1
+
++ M11 δ2
+
+|∇|∇v|q |2 dx
+
+
+|∇v|
+
+2(p+k−1)
+k−1
+
+2(q−1) p+k−1
+p+k−3
+
+dx + M11
+
+
+
+|∇v|
+
+dt + M11
+
+
+
+(7.7)
+for t ∈ (0, Tmax ). By the Gaglirado–Nirenberg inequality and the Poincaré inequality with (7.1),
+we get
+2(p+k−1)
+
+2(p+k−1)
+
+k−1
+∇v 2(p+k−1)
+
+L
+
+k−1
+
+()
+
+2(p+k−1)
+
+a
+
+q (k−1)q
+≤ C25 |∇v|q W(k−1)q
+1,2 () |∇v|  m
+
+(1−a)
+
+L q ()
+
+2(p+k−1)
+
+≤ C26 (∇|∇v|q L2(k−1)q
+()
+2(p+k−1)(1−a)
+k−1
+
+≤ C26 M10
+
+a
+
+2(p+k−1)
+
+|∇v|q  (k−1)q
+m
+
+∇|∇v|q 
+
+(1−a)
+
+L q ()
+
+2(p+k−1)
+(k−1)q a
+L2 ()
+
+with C25 , C26 > 0, and
+qn
+(k−1)qn
+m − 2(p+k−1)
+a :=
+.
+1 − n2 + qn
+m
+
+2(p+k−1)
+
++ |∇v|q  (k−1)q
+)
+m
+L q ()
+
+2(p+k−1)
+k−1
+
++ M10
+
+(7.8)
+
+862
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+(qn+m)(k−1)
+Let q > (n−2)m
+and m−2
+− (k − 1). Then
+2n
+2 (k − 1) < p <
+n
+
+a ∈ (0, 1) and
+
+2(p + k − 1)
+a < 2.
+(k − 1)q
+
+Therefore, we know from (7.8) by Young’s inequality that
+|∇v|
+
+2(p+k−1)
+k−1
+
+dx ≤ 1
+
+
+
+|∇|∇v|q |2 dx + C 1
+
+(7.9)
+
+
+(p+k−1)a
+
+−
+
+with C 1 := C27 (1 + 1 (k−1)q−(p+k−1)a ) and C27 > 0. Again by the Gaglirado–Nirenberg inequality and the Poincaré inequality with (7.1),
+2(q−1)(p+k−1)
+
+2(q−1)(p+k−1)
+p+k−3
+∇v 2(q−1)(p+k−1)
+
+L
+
+p+k−3
+
+()
+
+(p+k−3)q
+≤ C28 |∇v|q W 1,2
+()
+
+b
+
+2(q−1)(p+k−1)
+
+|∇v|q  m(p+k−3)q
+
+2(q−1)(p+k−1)
+(p+k−3)q
+≤ C29 (∇|∇v|q L2 ()
+
++ |∇v|q 
+
+2(q−1)(p+k−1)
+(p+k−3)q
+m
+L q ()
+
+2(q−1)(p+k−1)
+
+≤ C29 M10 (p+k−3)m
+
+(1−b)
+
+L q ()
+
+b
+
+2(q−1)(p+k−1)
+
+|∇v|q  m(p+k−3)q
+
+(1−b)
+
+L q ()
+
+)
+
+(1−b)
+
+2(q−1)(p+k−1)
+(p+k−3)q
+∇|∇v|q L2 ()
+
+b
+
+2(q−1)(p+k−1)
+
++ M10 (p+k−3)m
+(7.10)
+
+with C28 , C29 > 0, and
+qn
+(p+k−3)qn
+m − 2(q−1)(p+k−1)
+b :=
+.
+1 − n2 + qn
+m
+2nq−n(k−1)−m(k−3)
+Let q > m+2
+. Then
+2 and p >
+m+n
+
+b ∈ (0, 1) and
+
+2(q − 1)(p + k − 1)
+b < 2.
+(p + k − 3)q
+
+Therefore, we know from (7.10) by Young’s inequality that
+|∇v|
+
+2(q−1)(p+k−1)
+(p+k−3)
+
+
+−
+
+dx ≤ 2
+
+|∇|∇v|q |2 dx + C 2
+
+(7.11)
+
+
+(q−1)(q+k−1)b
+
+with C 2 := C30 (1 + 2 (p+k−3)q−(q−1)(q+k−1)b ) and C30 > 0. For k > 3(n+2)
+n+4 , there exists m̂ ∈
+nk
+) such that (3 − k)n − m̂(k − 1) < 0. If q > m̂+2
+,
+then
+the
+interval
+for
+(k, n+2−k
+2
+p ∈ max
+
+ m̂ − 2
+2
+
+(k − 1),
+
+2nq − n(k − 1) − m̂(k − 3)  qn + m̂ − n
+,
+(k − 1)
+m̂ + n
+n
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+− 2(p+k−1)
+k−1
+
+is well-defined. Let 1 , 2 > 0 satisfy 2q−2
+− M11 δ2
+q2
+(7.9) and (7.11) that
+1 d
+p dt
+
+up dx +
+
+1 d
+q dt
+
+
+
+≤−
+
+1 − M11 2 ≥ 0. We obtain by (7.7),
+
+|∇v|2q dx
+
+
+1
+p
+
+1
+q
+
+up dx −
+
+
+−
+
+863
+
+ 2q − 2
+q2
+
+|∇v|2q dx
+
+− 2(p+k−1)
+k−1
+
+− M11 δ2
+
+1 − M11 2
+
+
+
+|∇|∇v|q |2 dx + C31
+
+
+1
+≤−
+p
+
+1
+up dx −
+q
+
+
+|∇v|2q dx + C31
+
+(7.12)
+
+
+
+with some C31 > 0 for t ∈ (0, Tmax ). If q > n + 1, there exists some p > n due to qn+nm̂−n (k −
+1) > n. We complete the proof from (7.12) by the Bernoulli inequality with some M12 > 0. 2
+Proof of Theorem 3. Applying [23, lemma 1.3] to (1.6)2 with (7.6), we have
+t
+
+∇v
+
+L∞ ()
+
+≤ ∇e
+
+t (−1)
+
+v0 
+
+L∞ ()
+
++
+
+∇e(t−s)(−1) uL∞ () ds
+0
+t
+
+≤ 2K3 ∇v0 
+
+L∞ ()
+
++ K2
+
+
+
+−1− n
+1 + (t − s) 2 2p e−λ1 (t−s) uLp () ds
+
+0
+
+≤ C32 , t ∈ (0, Tmax )
+
+(7.13)
+
+with C32 > 0. Again by [23, Lemma 1.3] with (1.6)1 , we know from the Hölder inequality with
+(7.6) and (7.13) that
+t
+
+u
+
+L∞ ()
+
+≤ e
+
+t (−1)
+
+u0 
+
+L∞ ()
+
+u
+e(t−s)(−1) ∇ · ( ∇v)L∞ () ds
+v
+
++χ
+0
+
+t
+
+e(t−s)(−1) uL∞ () ds
+
++ (r + 1)
+0
+
+t
+
+χK4
+≤ u0 L∞ () +
+δ2
+
+− 12 − pn
+
+(1 + (t − s)
+
+)e−λ1 (t−s) u∇vLp () ds
+
+0
+
+t
+
+t
+n
+− 2p
+
++ K1 (r + 1)
+
+(1 + (t − s)
+0
+
+)e
+
+−λ1 (t−s)
+
+∗
+
+e−(t−s) ds
+
+u − uLp () ds + m (r + 1)
+0
+
+864
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+t
+
+χK4
+≤
+δ2
+
+n
+− 12 − 2p
+
+(1 + (t − s)
+
+)e−λ1 (t−s) uLp () ∇vL∞ () ds + C33
+
+0
+
+≤ C34 , t ∈ (0, Tmax )
+with C33 , C34 > 0. This concludes Tmax = ∞ by Lemma 2.1, and thus the classical solution
+(u, v) is globally bounded. 2
+References
+[1] M. Aida, K. Osaka, T. Tsujikawa, A. Yagi, M. Mimura, Chemotaxis and growth system with singular sensitivity
+function, Nonlinear Anal. Real World Appl. 6 (2005) 323–336.
+[2] N. Bellomo, A. Bellouquid, Y. Tao, M. Winkler, Toward a mathematical theory of Keller–Segel models of pattern
+formation in biological tissues, Math. Models Methods Appl. Sci. 9 (2015) 1663–1763.
+[3] T. Black, Global generalized solutions to a parabolic–elliptic Keller–Segel system with singular sensitivity, Discrete
+Contin. Dyn. Syst. Ser. S, https://doi.org/10.3934/dcdss.2020007, in press.
+[4] X.R. Cao, Boundedness in a quasilinear parabolic–parabolic Keller–Segel system with logistic source, J. Math.
+Anal. Appl. 412 (2014) 181–188.
+[5] K. Fujie, Boundedness in a fully parabolic chemotaxis system with singular sensitivity, J. Math. Anal. Appl. 424
+(2015) 675–684.
+[6] K. Fujie, T. Senba, Global existence and boundedness of radial solutions to a two dimensional fully parabolic
+chemotaxis system with general sensitivity, Nonlinearity 29 (2016) 2417–2450.
+[7] K. Fujie, M. Winkler, T. Yokota, Boundedness of solutions to parabolic–elliptic Keller–Segel systems with signaldependent sensitivity, Math. Methods Appl. Sci. 38 (2015) 1212–1224.
+[8] K. Fujie, M. Winkler, T. Yokota, Blow-up prevention by logistic sources in a parabolic–elliptic Keller–Segel system
+with singular sensitivity, Nonlinear Anal. 109 (2014) 56–71.
+[9] E.F. Keller, L.A. Segel, Initiation of slime mold aggregation viewed as an instability, J. Theoret. Biol. 26 (1970)
+399–415.
+[10] T. Hillen, K.J. Painter, A user’s guide to PDE models for chemotaxis, J. Math. Biol. 58 (2009) 183–217.
+[11] J. Lankeit, A new approach toward boundedness in a two-dimensional parabolic chemotaxis system with singular
+sensitivity, Math. Methods Appl. Sci. 39 (2016) 394–404.
+[12] J. Lankeit, M. Winkler, A generalized solution concept for the Keller–Segel system with logarithmic sensitivity:
+global solvability for large nonradial data, NoDEA Nonlinear Differential Equations Appl. 24 (2017) 49.
+[13] H. Matthias, P. Jan, Heat kernels and maximal Lp –Lq estimates for parabolic evolution equations, Comm. Partial
+Differential Equations 22 (1997) 1647–1669.
+[14] T. Nagai, T. Senba, Behavior of radially symmetric solutions of a system related to chemotaxis, Nonlinear Anal. 30
+(1997) 3837–3842.
+[15] T. Nagai, T. Senba, K. Yoshida, Global existence of solutions to the parabolic systems of chemotaxis, RIMS
+Kokyuroku 1009 (1997) 22–28.
+[16] K. Osaki, A. Yagi, Finite dimensional attractors for one-dimensional Keller–Segel equations, Funkcial. Ekvac. 44
+(2001) 441–469.
+[17] K. Osaki, T. Tsujikawa, A. Yagi, M. Mimura, Exponential attractor for a chemotaxis-growth system of equations,
+Nonlinear Anal. 51 (2002) 119–144.
+[18] J.I. Tello, M. Winkler, A chemotaxis system with logistic source, Comm. Partial Differential Equations 32 (2007)
+849–877.
+[19] G. Viglialoro, Very weak global solutions to a parabolic–parabolic chemotaxis-system with logistic source, J. Math.
+Anal. Appl. 439 (2016) 197–212.
+[20] G. Viglialoro, Boundedness properties of very weak solutions to a fully parabolic chemotaxis-system with logistic
+source, Nonlinear Anal. Real World Appl. 34 (2017) 520–535.
+[21] M. Winkler, Chemotaxis with logistic source: very weak global solutions and their boundedness properties, J. Math.
+Anal. Appl. 348 (2008) 708–729.
+[22] M. Winkler, Boundedness in the higher-dimensional parabolic–parabolic chemotaxis system with logistic source,
+Comm. Partial Differential Equations 35 (2010) 1516–1537.
+
+X. Zhao, S. Zheng / J. Differential Equations 267 (2019) 826–865
+
+865
+
+[23] M. Winkler, Aggregation vs. global diffusive behavior in the higher-dimensional Keller–Segel model, J. Differential
+Equations 248 (2010) 2889–2905.
+[24] M. Winkler, Global solutions in a fully parabolic chemotaxis system with singular sensitivity, Math. Methods Appl.
+Sci. 34 (2011) 176–190.
+[25] M. Winkler, Blow-up in a higher-dimensional chemotaxis system despite logistic growth restriction, J. Math. Anal.
+Appl. 384 (2011) 261–272.
+[26] M. Winkler, Larger-data global generalized solutions in a chemotaxis system with tensor-valued sensitivities, SIAM
+J. Math. Anal. 47 (2015) 3092–3115.
+[27] Y.F. Wang, J. Liu, Boundedness in a quasilinear fully parabolic Keller–Segel system with logistic source, Nonlinear
+Anal. Real World Appl. 38 (2017) 113–130.
+[28] C.B. Yang, X.R. Cao, Z.X. Jiang, S.N. Zheng, Boundedness in a quasilinear fully parabolic Keller–Segel system of
+higher dimension with logistic source, J. Math. Anal. Appl. 430 (2015) 585–591.
+[29] X.D. Zhao, S.N. Zheng, Global boundedness to a chemotaxis system with singular sensitivity and logistic source,
+Z. Angew. Math. Phys. 68 (2) (2017), 13 pp.
+
+

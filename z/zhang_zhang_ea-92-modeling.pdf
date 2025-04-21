@@ -1,0 +1,13 @@
+@article{ZHANG1992383,
+title = {Modeling forest fire by a paper-burning experiment, a realization of the interface growth mechanism},
+journal = {Physica A: Statistical Mechanics and its Applications},
+volume = {189},
+number = {3},
+pages = {383-389},
+year = {1992},
+issn = {0378-4371},
+doi = {https://doi.org/10.1016/0378-4371(92)90050-Z},
+url = {https://www.sciencedirect.com/science/article/pii/037843719290050Z},
+author = {Jun Zhang and Y.-C. Zhang and P. Alstrøm and M.T. Levinsen},
+abstract = {We present an experiment on the propagation front of a flameless fire on a thin piece of paper. We find that fire fronts on a piece of paper follow quite well self-affine scaling statistics, with the roughening exponent χ around 0.70, well above the value 12 in the theoretical interface growth model using Gaussian noise. This discrepancy may be due to an anomalously singular behavior of the noise distribution, consistent with some recent studies.}
+}

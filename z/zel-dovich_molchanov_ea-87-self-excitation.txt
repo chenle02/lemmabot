@@ -1,0 +1,361 @@
+Proc. Natl. Acad. Sci. USA
+Vol. 84, pp. 6323-6325, September 1987
+Applied Mathematical and Physical Sciences
+
+Self-excitation of a nonlinear scalar field in a random medium
+YA. B. ZELDOVICHt, S. A. MOLCHANOVt, A. A. RuZMAIKIN§, AND D. D. SOKOLOFFt
+tInstitute of Physical Problems, Academy of Sciences, Moscow, U.S.S.R.; tMoscow State University, Moscow, U.S.S.R.; and §Institute of Terrestrial
+Magnetizm, Ionosphere and Radiowave Propagation, Academy of Sciences, Moscow Region, U.S.S.R.
+
+Downloaded from https://www.pnas.org by GEORGIA INSTITUTE OF TECHNOLOGY SERIALS CONTROL-EBS on June 11, 2023 from IP address 128.61.96.61.
+
+Contributed by Ya. B. Zeldovich, April 29, 1987
+
+ABSTRACT
+We discuss the evolution in time of a scalar
+field under the influence of a random potential and diffusion.
+The cases of a short-correlation in time and of stationary potentials are considered. In a linear approximation and for sufficiently weak diffusion, the statistical moments of the field
+grow exponentially in time at growth rates that progressively
+increase with the order of the moment; this indicates the intermittent nature of the field. Nonlinearity halts this growth and
+in some cases can destroy the intermittency. However, in many
+nonlinear situations the intermittency is preserved: high, persistent peaks of the field exist against the background of a
+smooth field distribution. These widely spaced peaks may
+make a major contribution to the average characteristics of the
+field.
+
+suppression of the growth of high maxima in the solution,
+thus smoothing the intermittency. However, the result
+proves to be less trivial and depends radically on both the
+time behavior of the potential and the form of nonlinearity.
+For the sake of simplicity, put X = 0; i.e., neglect the spatial diffusion of the field. We shall indicate the influence of a
+weak diffusion on the results separately. We consider two
+types of potentials. The first is characterized by a short correlation time
+U(t, X, W) = u + r-1/2,
+dt
+
+where u is the stationary value of the potential, r is a certain
+characteristic time similar to the characteristic turbulent diffusion time in a random flow, w, is the Wiener random process, (wt) = 0, (w') = t, and ( denotes the ensemble average.
+The time is conveniently measured in units of r, the dimensionless Wiener process w, is then obtained r-1/2Wt.
+The value of u - u obviously has the property of white
+noise.
+Another type of potential considered here is that of a stationary potential u = u (x, w) that does not include time dependence. All potentials considered are statistically homogeneous in time and statistically homogeneous and isotropic in
+space.
+(i) Consider first a nonlinearity that is not associated with
+the potential
+
+A model of evolution of a scalar field in a prescribed random
+medium can be formulated in terms of a parabolic equation
+with a random rate of reproduction or extinction, U (the potential, in short):
+a =p
+= U(t, x, u)~p + WAO
+at
+
+p(0, x) = ~p0(x) ¢ 0,
+
+[1]
+
+where a is the diffusion coefficient and co is the random parameter, the potential u is a certain function of t and x for
+every value of co. This problem has important applications in
+biology and chemical kinetics, where the scalar field is usually understood as a concentration (1). Some problems of
+transport of impurities and equations for vector fields (2)
+may be reduced, under certain approximations, to equations
+of type 1. For example, the transport of an impurity by a
+prescribed potential flow is described by the equation
+
+at + div(nv) = wAn,
+
+[2]
+
+at = Up - Ef(c),
+
+[3]
+
+where E is a certain parameter and f(tp) is a given nonlinear
+function that grows sufficiently fast with 'p.
+The random process described by Eq. 3 with potential 2
+can be considered as a one-dimensional diffusion process
+along a line, (p being the coordinate along that line
+
+v = V+/i,
+
+which is equivalent to Eq. 1 when the term Vr.V4i can be
+neglected in comparison with nV4'-e.g., at the early stages
+of evolution of an initially smooth distribution no(x).
+In the linear problem (Eq. 1), near those positions where
+the potential is positive, there occurs self-excitation (exponential growth) of the field that propagates through diffusion. Random behavior of the potential results in intermittency of the field-i.e., in the appearance of concentrated
+structures of (p(t, x) that determine the statistical averages of
+the field (3, 4). These structures should not be confused with
+structures of the caustic type (see, e.g., ref. 5) or with those
+studied by synergetics, whose existence is associated with
+nonlinear effects.
+Here we show how the processes of self-excitation and
+intermittency are affected by nonlinearity, which models the
+back-action of the field on the medium. We emphasize that
+we consider the simplest nonlinearities, which cannot produce structures alone, without random effects. It is natural
+to expect that nonlinear back-action will result primarily in
+
+dtp = (pdw, + (u'p - Ef)dt.
+
+The generating operator of this diffusion process is given by
+L = - 2 +(p
+(udp
+2 d2
+
+Edp
+
+[4]
+
+Thus cp2/2 plays the role of the diffusion coefficient, while
+-(usp - ef) represents the convective velocity. Let us denote by p(t, p, p) the fundamental solution (transition density) of the evolutionary problem posed for operator 4, so that
+p(O, s, cp) = 8(O - sp) and
+ap = L(O)p = L*((p)p,
+
+where the asterisk denotes the adjoint operator.
+Suppose that a limiting stationary density distribution ex6323
+
+6324
+
+Applied Mathematical and Physical Sciences: Zeldovich et aL
+
+ists, r(sp)
+tion:
+
+lim, p(t, (,'p). It obeys the following equa-
+
+L*ir(p) = 0
+
+[5]
+
+with the natural normalization condition f ,ird'p = 1. The
+problem 5 with the operator, adjoint to 4, has solutions. Indeed, the equation
+1d 2
+2 wf2(vo 2
+
+-
+
+d
+
+ir(usp- ED) = 0
+
+has the first integral
+
+1 d
+
+Downloaded from https://www.pnas.org by GEORGIA INSTITUTE OF TECHNOLOGY SERIALS CONTROL-EBS on June 11, 2023 from IP address 128.61.96.61.
+
+- T(P
+2 dp
+
+2
+
+=
+
+P
+Proc.
+NatL Acad Sci. USA 84 (1987)
+
+where diffusion is neglected and the simplification u = 0 is
+adopted. This distribution has two characteristic maxima, at
+the origin and at (p. = (oa/2e2)1/4. Thus, we see the evidence
+of an island intermittency: one part of the space is occupied
+by the field distributed around a high maximum (p. while the
+remaining half is empty. When the average value of u is nonvanishing, the relation between the field and empty regions
+is different and the problem arises of the percolation structure of this distribution, similar to the problem considered in
+ref. 6. A weak diffusion smoothes the 8function-like maximum of distribution 7 but does not affect its intermittent
+character.
+(ii) Now let us introduce nonlinearity into the potential
+term
+
+U(P-2 Ef + C1.
+
+-t g(')u'.
+
+'p
+
+Solutions with cl + 0 are not integrable at 'p = 0 and must be
+rejected. As a result, we obtain that when the function f(p)
+grows at least as sp2, the limiting distribution ir(qp) is given by
+
+i7r(Op = - exp(21U(K f
+where c is the normalization constant.
+Consider f = 'p3 as an example. Then
+
+(2e)u1/2
+ir((p) = r'(2n
+-1)-2(u-) exp(- Eq'2),
+
+[6]
+
+where r is Euler's y function. An important condition of existence of the density ir('p) follows from this as u > 1/2. When
+u < 1/2, the density X concentrates at 'p = 0 and the solution
+decays. When 1/2 < u < 1, the function wr(p) decreases
+monotonically with 'p. In the limit E - 0, which corresponds
+to the transition to the linear problem, we obtain ir -O 0. In
+this limit and for u > 1, this maximum value of the density
+decreases as el/2. It can be shown that r(sp) and all its derivatives vanish at 'p = 0 when the spatial diffusion is taken into
+account, ae + 0. In a statistically space-homogeneous medium without spatial diffusion at large times, the solution is
+distributed over all positions with equal probability and density ir(ep); the values of 'p at different positions are statistically independent. The spatial diffusion results in the establishment of spatial correlations that decay with distance at the
+greater rate the smaller is a.
+Statistical moments of the scalar field are
+
+(0q) r(q + 2u -- 1)E-q12
+-2q/2r(2u 1)
+Note that the distribution 6 for u = 1 coincides with the
+"half" of the Gaussian distribution since 'p 0 in our problem.
+Although the derived distribution contains maxima of arbitrary height, the probability of high maxima is low and in
+general the situation is close to Gaussian statistics; intermittency is absent.
+Consider now a random potential that does not depend on
+time-e.g., the Gaussian one with the average value u and
+the rms deviation a-. At those positions where the potential is
+positive the solution for f = (p3 is obviously distributed as
+(u/E)1/2. At those positions where u < 0 the solution tends to
+zero. For the Gaussian potential the limiting distribution has
+the form
+-
+
+'T(fp) = -5(0 +
+_'p exp
+2
+VP-
+
+2 p4)
+
+2
+
+[7]
+
+In the simplest case, nonlinearity is described by a step function: g = 1 for 'p < 'pm and g = 0 for 'p '. Let us first
+consider the short-correlation potential. For u > '/2, the solution increases exponentially until 'p = 'p,, and remains constant afterward. The case with u < 1/2 is less trivial. In this
+case, a typical field realization decays exponentially at the
+linear stage but the higher moments increase; i.e., sparse
+peaks persist. Those peaks that rise above 'pf are preserved
+at this level. As a result, the following stationary picture
+arises: at randomly scattered points there are maxima of
+height 'pm while the field between them decays exponentially. In the simple example considered, all peaks are as identical as randomly scattered telegraph poles whose positions
+are fixed in time. To remove this restriction and obtain some
+distribution of maxima in height and its evolution in time, it
+is sufficient to consider the function decreasing at infinity.
+Consider, for instance, g = (1 + 'p/'pm.)- To simplify the
+exposition, put u = 0. Then
+,
+
+'p(t, x,c)= {
+
+( poexp(wt - t/2),
+(
+fmwt,
+
+'p
+
+(PM
+
+(P >-
+
+(PM
+
+It is clear that at those positions where the solution has not
+reached the level of 'pm, it decays exponentially in time almost everywhere except at sparse peaks. Meanwhile, at
+those positions where the solution has exceeded the level 'pf
+at the linear stage, it can still exceed this level for a prolonged period but, sooner or later, it decreases to 'm, again
+because of recovery of the one-dimensional Wiener process,
+and begins to decay. Of course, oscillations are possible
+around the level but the larger the number of such oscillations, the lower their probability. As a result, a typical realization decays in time. However, it contains sparse peaks
+against a smooth background and these peaks determine the
+values of averaged quantities; i.e., the intermittency is present.
+
+Indeed, the average value ('p) remains constant in time
+notwithstanding the fact that a typical realization decays.
+This can be seen in the following way. Let the solution reach
+and exceed the level 'm at moment tm-i.e., to exceed unity
+and, say, become equal to two. Since w, is a random process
+with independent increments, we can choose "two" as its
+starting point. Then the probability P that the trajectory does
+not reach "unity" up to moment t is proportional to (t tm)1"2 since, with overwhelming probability, the random
+process concentrates somewhere in a length interval of order
+(t - tm)1/2 in this time. Since the typical realization of the
+process w, is also of order t1/2, the mean value is (p)
+Actually, this fact is true for any deP'pmwtt = constant.
+pendence of g('p) because it follows from the fact that the
+average value of the Ito stochastic integral fg(')'(w,)dwt
+vanishes (7).
+-
+
+Applied Mathematical and Physical Sciences: Zeldovich et aL
+Other statistical moments increase as (ipq)
+
+-
+
+(t-112)qt1/2
+
+_
+
+t(q-1)2. One can expect that this weak, power-law growth
+
+Downloaded from https://www.pnas.org by GEORGIA INSTITUTE OF TECHNOLOGY SERIALS CONTROL-EBS on June 11, 2023 from IP address 128.61.96.61.
+
+can be stabilized by the weak diffusion ae. The resulting distribution of the peaks over heights is of the Gaussian type.
+However, the distribution is far from being Gaussian in general, since between the sparse peaks, whose height is inversely proportional to a power of a, the solution is small,
+being determined by diffusion from widely separated peaks.
+Meanwhile, in the Gaussian distribution a typical realization
+behaves as the average plus or minus the rms deviation. Of
+course, for sufficiently large Xe the diffusion smoothes out
+the peaks and the intermittency disappears.
+For the case of a stationary potential and the step-function
+g(p), we again consider regions with positive and negative
+values of the potential to obtain a limiting distribution of type
+7:
+7T((p) = p8(p) + (1 -PW8o - am),
+
+where p is the probability that the potential has a negative
+value. For more complicated forms of g(p), the limiting distribution arises only when at least weak diffusion is taken
+into account. It also has two maxima that are not 8-functionlike now while the quantity analogous to (p is determined by
+the diffusion coefficient a.
+Thus, for a stationary potential, the island intermittency
+arises independently of the form of the local nonlinear influence.
+(iii) The intermittency is still more pronounced when the
+nonlinear influence has a nonlocal nature-e.g., when the
+nonlinear function in 3 depends on (sp) or (0q) rather than on
+sp. Obviously, this leads to stabilization of (up) or (O)q, respectively. All moments with q < q0 and a typical field realization decay exponentially while moments with q > q0 continue their intermittent growth typical of the linear problem
+(qo is a certain fixed number).
+Thus, the behavior of nonlinear solutions depends radically on the time behavior of the potential and on the form of
+
+Proc. NatL Acad Sd USA 84 (1987)
+
+6325
+
+nonlinearity. In realistic problems, there commonly appears
+a condition of conservation of some moment-e.g., of the
+average value in the problem of the breeding and death of
+bacteria that struggle for food (1) or of the average square
+(the energy) in the problem of radiowave propagation in a
+random medium (8). In the vectorial problem of the hydromagnetic dynamo, the nonlinear influence of the magnetic
+field on the flow is equivalent to the influence on the potential in a scalar problem (9), which makes it reasonable to
+expect that the intermittency of a magnetic field would be
+preserved in a nonlinear regime. Nonlinearity can be of a
+combined nature, combining, say, deterministic nonlinear
+damping of the solution with a nonlinear influence on the
+potential. In this case, the properties of nonlinear solutions
+are determined by a competition of the two nonlinear mechanisms, the first of which tends to suppress the intermittency
+(for a short-correlation potential) while the second of which
+tends to preserve it. A quantitative detailed analysis of this
+competition is a promising field for future studies.
+We are grateful to Dr. A. M. Shukurov for discussions and help.
+1. Zeldovich, Ya. B. (1983) Dokl. Akad. Nauk SSSR 270, 13691372.
+2. Molchanov, S. A., Ruzmaikin, A. A. & Sokoloff, D. D. (1987)
+Dokl. Akad. Nauk SSSR 295, 576-579.
+3. Molchanov, S. A., Ruzmaikin, A. A. & Sokoloff, D. D. (1984)
+Geophys. Astrophys. Fluid Dyn. 30, 241-254.
+4. Zeldovich, Ya. B., Molchanov, S. A., Ruzmaikin, A. A. &
+Sokoloff, D. D. (1985) J. Exp. Theor. Phys. 89, 2061-2072.
+5. Arnold, V. I., Shandarin, S. F. & Zeldovich, Ya. B. (1982)
+Geophys. Astrophys. Fluid Dyn. 20, 11-130.
+6. Zeldovich, Ya. B. (1983) J. Exp. Theor. Phys. Lett. 38, 51-54.
+7. McKean, H. P. (1969) The Stochastic Integral (Academic,
+New York).
+8. Rytov, S. M., Kravtsov, Yu. A. & Tatarskii, V. I. (1978) Introduction to Statistical Radiophysics (Nauka, Moscow), Vol.
+2 (in Russian).
+9. Zeldovich, Ya. B., Ruzmaikin, A. A. & Sokoloff, D. D. (1983)
+Magnetic Fields in Astrophysics (Gordon and Breach, New
+York).
+
+
