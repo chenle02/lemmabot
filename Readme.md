@@ -1,6 +1,8 @@
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 ![Python](https://img.shields.io/badge/python-3.8--3.12-blue)
 
+![LemmaBot Logo](logo.png)
+
 # LemmaBot: Local AI-Powered Research Assistant for PDFs
 **⚠️ Experimental**: This tool is in an experimental stage. APIs and features may change without notice.
 
