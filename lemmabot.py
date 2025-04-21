@@ -265,7 +265,7 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
                 input=doc['text'],
                 model='text-embedding-ada-002'
             )
-            emb = resp['data'][0]['embedding']
+            emb = resp.data[0].embedding
         except Exception as e:
             path = doc.get('path', '<unknown>')
             print(f"\nError embedding chunk for {path}: {e}", file=sys.stderr)
@@ -299,7 +299,7 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
         input=question,
         model=EMBED_MODEL
     )
-    q_emb = np.array(resp['data'][0]['embedding'], dtype=np.float32).reshape(1, -1)
+    q_emb = np.array(resp.data[0].embedding, dtype=np.float32).reshape(1, -1)
     faiss.normalize_L2(q_emb)
     # Perform a broader search then select top_k unique documents
     n_total = faiss_index.ntotal
