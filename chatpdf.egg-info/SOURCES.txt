@@ -1,0 +1,8 @@
+chatpdf.py
+setup.py
+chatpdf.egg-info/PKG-INFO
+chatpdf.egg-info/SOURCES.txt
+chatpdf.egg-info/dependency_links.txt
+chatpdf.egg-info/entry_points.txt
+chatpdf.egg-info/requires.txt
+chatpdf.egg-info/top_level.txt

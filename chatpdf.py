@@ -86,28 +86,48 @@ def index_pdfs(root_dir, output_path):
             if not fname.lower().endswith('.pdf'):
                 continue
             full_path = os.path.join(dirpath, fname)
-            # Read PDF and split by page
+            # Try extracting text per page
+            text_pages = []
             try:
                 reader = PdfReader(full_path)
+                for page in reader.pages:
+                    try:
+                        page_text = page.extract_text() or ''
+                    except Exception:
+                        page_text = ''
+                    if page_text.strip():
+                        text_pages.append(page_text)
             except PdfReadError as e:
                 print(f"⚠️ Skipping unreadable PDF: {full_path} ({e})")
                 continue
-            for page_num, page in enumerate(reader.pages):
-                try:
-                    page_text = page.extract_text() or ''
-                except Exception:
-                    page_text = ''
-                if not page_text.strip():
-                    continue
-                # Chunk this page's text
+            # Fallback to txt file if no page text extracted
+            if not text_pages:
+                txt_path = os.path.splitext(full_path)[0] + '.txt'
+                if os.path.exists(txt_path):
+                    try:
+                        with open(txt_path, 'r', encoding='utf-8') as f:
+                            txt_text = f.read()
+                        if txt_text.strip():
+                            text_pages = [txt_text]
+                            print(f"ℹ️ Using TXT backup for {full_path}")
+                    except Exception as e:
+                        print(f"⚠️ Error reading TXT {txt_path}: {e}")
+            # Skip if still no text
+            if not text_pages:
+                continue
+            # Chunk each page or txt backup text
+            for page_num, page_text in enumerate(text_pages, start=1):
                 for chunk_idx, chunk in enumerate(chunk_text(page_text)):
                     docs.append({
                         'path': full_path,
-                        'page': page_num + 1,
+                        'page': page_num,
                         'chunk': chunk_idx,
                         'text': chunk
                     })
     print(f"Created {len(docs)} chunks.")
+    # Report how many distinct PDFs were indexed
+    unique_paths = set(doc['path'] for doc in docs)
+    print(f"Indexed {len(unique_paths)} PDF files with extractable text.")
     # Embed all chunks
     embeddings = []
     for idx, doc in enumerate(docs, 1):
