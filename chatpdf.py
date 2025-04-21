@@ -12,6 +12,7 @@ import argparse
 import pickle
 
 from dotenv import load_dotenv
+import getpass
 import numpy as np
 import faiss
 import tiktoken
@@ -28,7 +29,13 @@ from PyPDF2.errors import PdfReadError
 
 
 def load_api_key():
+    # Load local .env first, then global config
     load_dotenv()
+    # Load global config from XDG or ~/.config/chatpdf/.env
+    home = os.path.expanduser("~")
+    config_home = os.environ.get("XDG_CONFIG_HOME", os.path.join(home, ".config"))
+    conf_file = os.path.join(config_home, "chatpdf", ".env")
+    load_dotenv(conf_file)
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         print("Error: OPENAI_API_KEY environment variable not set.", file=sys.stderr)
@@ -210,6 +217,26 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
     answer = chat_resp['choices'][0]['message']['content']
     return answer, selected
 
+def auth_login():
+    """Prompt for OpenAI API key and save to global config."""
+    key = getpass.getpass("OpenAI API key: ")
+    if not key:
+        print("Error: no API key provided.", file=sys.stderr)
+        sys.exit(1)
+    # Write to XDG_CONFIG_HOME/chatpdf/.env
+    home = os.path.expanduser("~")
+    config_home = os.environ.get("XDG_CONFIG_HOME", os.path.join(home, ".config"))
+    conf_dir = os.path.join(config_home, "chatpdf")
+    os.makedirs(conf_dir, exist_ok=True)
+    conf_file = os.path.join(conf_dir, ".env")
+    try:
+        with open(conf_file, 'w') as f:
+            f.write(f"OPENAI_API_KEY={key}\n")
+        print(f"Success: API key saved to {conf_file}")
+    except Exception as e:
+        print(f"Error saving API key: {e}", file=sys.stderr)
+        sys.exit(1)
+
 
 def query_index(index_path, question, top_k=5):
     """Load index, retrieve relevant chunks, and ask the LLM."""
@@ -272,6 +299,11 @@ def main():
     parser.add_argument('--version', action='version', version=__version__)
     subparsers = parser.add_subparsers(dest='command')
 
+    # auth subcommand for API key setup
+    parser_auth = subparsers.add_parser('auth', help='Manage OpenAI API key')
+    auth_sub = parser_auth.add_subparsers(dest='auth_cmd')
+    auth_sub.add_parser('login', help='Prompt and save your OpenAI API key')
+    # index subcommand
     parser_index = subparsers.add_parser('index', help='Index PDFs under a directory')
     parser_index.add_argument('root_dir', help='Root directory to search for PDFs')
     parser_index.add_argument('index_prefix', help='Prefix for output index files (without extension)')
@@ -287,10 +319,18 @@ def main():
     parser_repl.add_argument('--temperature', type=float, default=0.2, help='Sampling temperature for chat model')
 
     args = parser.parse_args()
+    # Handle auth commands without requiring API key loaded
+    if args.command == 'auth':
+        if args.auth_cmd == 'login':
+            auth_login()
+        else:
+            parser.print_help()
+        sys.exit(0)
     if not args.command:
         parser.print_help()
         sys.exit(1)
 
+    # Load API key from env or config
     load_api_key()
     if args.command == 'index':
         index_pdfs(args.root_dir, args.index_prefix)
