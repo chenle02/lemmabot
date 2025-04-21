@@ -46,6 +46,30 @@ pip install .
 pip install -e .
 ```
 
+## Configuration
+
+You can customize model choices and chunking parameters via a JSON configuration file.
+ChatPDF looks for configuration in two locations:
+
+- Local: `./.chatpdf.json`
+- Global: `~/.config/chatpdf/config.json` (created by `chatpdf auth login`)
+
+Supported configuration keys:
+- `embedding_model`: OpenAI embedding model name (default: "text-embedding-ada-002").
+- `chat_model`: OpenAI chat model name for Q&A (default: "gpt-3.5-turbo").
+- `chunk_size`: Number of tokens per chunk (default: 500).
+- `chunk_overlap`: Token overlap between chunks (default: 50).
+
+Example `~/.config/chatpdf/config.json`:
+```json
+{
+  "embedding_model": "text-embedding-ada-002",
+  "chat_model": "gpt-4",
+  "chunk_size": 800,
+  "chunk_overlap": 100
+}
+```
+
 ## Usage
 
 1. Index your PDFs (creates a FAISS index and metadata):

@@ -11,24 +11,55 @@ import argparse
 import pickle
 import requests
 from lxml import etree
-from unstructured.partition.text import partition_text
+# Optional semantic tokenizer (only required if --semantic is used)
+try:
+    from unstructured.partition.text import partition_text
+except ImportError:
+    partition_text = None
 
 from dotenv import load_dotenv
 import getpass
+import json
 import numpy as np
 import faiss
 import tiktoken
 
-# OpenAI model constants
+# OpenAI client and PDF reader
 import openai
 from PyPDF2 import PdfReader
 from PyPDF2.errors import PdfReadError
 
-EMBED_MODEL = 'text-embedding-ada-002'
-CHAT_MODEL = 'gpt-3.5-turbo'
+# Load user configuration
+def load_config():
+    """Load configuration from local .chatpdf.json and global ~/.config/chatpdf/config.json."""
+    config = {}
+    # Local config in cwd
+    local_cfg = os.path.join(os.getcwd(), '.chatpdf.json')
+    if os.path.exists(local_cfg):
+        try:
+            with open(local_cfg) as f:
+                config.update(json.load(f))
+        except Exception as e:
+            print(f"⚠️ Warning loading local config {local_cfg}: {e}", file=sys.stderr)
+    # Global config under XDG_CONFIG_HOME or ~/.config/chatpdf/config.json
+    home = os.path.expanduser('~')
+    config_home = os.environ.get('XDG_CONFIG_HOME', os.path.join(home, '.config'))
+    global_cfg = os.path.join(config_home, 'chatpdf', 'config.json')
+    if os.path.exists(global_cfg):
+        try:
+            with open(global_cfg) as f:
+                config.update(json.load(f))
+        except Exception as e:
+            print(f"⚠️ Warning loading global config {global_cfg}: {e}", file=sys.stderr)
+    return config
+
+# Initialize config and model names
+_CONFIG = load_config()
+EMBED_MODEL = _CONFIG.get('embedding_model', 'text-embedding-ada-002')
+CHAT_MODEL = _CONFIG.get('chat_model', 'gpt-3.5-turbo')
 # Token-based chunking parameters
-CHUNK_SIZE = 500
-CHUNK_OVERLAP = 50
+CHUNK_SIZE = _CONFIG.get('chunk_size', 500)
+CHUNK_OVERLAP = _CONFIG.get('chunk_overlap', 50)
 
 
 def load_api_key():
