@@ -3,7 +3,7 @@
 LemMabot: Command-line tool to chat with a collection of local PDF documents using OpenAI APIs.
 """
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 
 import os
 import sys
