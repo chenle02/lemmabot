@@ -2,10 +2,9 @@
 """
 Command-line tool to chat with a collection of local PDF documents using OpenAI APIs.
 """
+
 __version__ = '0.1.0'
-"""
-Command-line tool to chat with a collection of local PDF documents using OpenAI APIs.
-"""
+
 import os
 import sys
 import argparse
@@ -18,14 +17,15 @@ import faiss
 import tiktoken
 
 # OpenAI model constants
+import openai
+from PyPDF2 import PdfReader
+from PyPDF2.errors import PdfReadError
+
 EMBED_MODEL = 'text-embedding-ada-002'
 CHAT_MODEL = 'gpt-3.5-turbo'
 # Token-based chunking parameters
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
-import openai
-from PyPDF2 import PdfReader
-from PyPDF2.errors import PdfReadError
 
 
 def load_api_key():
@@ -41,7 +41,6 @@ def load_api_key():
         print("Error: OPENAI_API_KEY environment variable not set.", file=sys.stderr)
         sys.exit(1)
     openai.api_key = api_key
-
 
 
 def extract_text_from_pdf(path):
@@ -169,6 +168,7 @@ def index_pdfs(root_dir, output_path):
     print(f"\nSaved {len(docs)} document chunks to {docs_file}")
     print(f"Saved FAISS index to {faiss_file}")
 
+
 def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
     """Embed question, retrieve top_k contexts, and return the model's answer."""
     print("Embedding question...")
@@ -216,6 +216,7 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
     )
     answer = chat_resp['choices'][0]['message']['content']
     return answer, selected
+
 
 def auth_login():
     """Prompt for OpenAI API key and save to global config."""
@@ -290,6 +291,7 @@ def repl_chat(index_prefix, top_k=5, temperature=0.2):
             path = ctx.get('path', '<unknown>')
             page = ctx.get('page', 'N/A')
             print(f" [{idx}] {path} (page {page})")
+
 
 def main():
     parser = argparse.ArgumentParser(
