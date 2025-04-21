@@ -92,7 +92,11 @@ In addition to model choice, you can adjust these parameters:
 - `chunk_size` (config file): number of tokens per text chunk (default: 500)
 - `chunk_overlap` (config file): token overlap between chunks (default: 50)
 - `top_k` (CLI flag `--top_k`): number of top document chunks to retrieve (default: 5)
-- `temperature` (CLI flag `--temperature`): sampling temperature for the chat model (default: 0.2)
+- `temperature` (CLI flag `--temperature`): sampling temperature for the chat model (default: 0.2).
+  • Lower values (0.0–0.3) produce more deterministic, focused responses—ideal for factual Q&A.
+  • Medium values (0.4–0.7) balance creativity and accuracy.
+  • Higher values (0.8–1.0) yield more varied or imaginative outputs, but may introduce hallucinations.
+  Typical practice for research–centric answers is 0.2–0.5.
 
 Examples:
 ```bash

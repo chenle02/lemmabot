@@ -360,7 +360,7 @@ def auth_login():
         sys.exit(1)
 
 
-def query_index(index_path, question, top_k=5):
+def query_index(index_path, question, top_k=5, temperature=0.2):
     """Load index, retrieve relevant chunks, and ask the LLM."""
     # Determine filenames
     base, ext = os.path.splitext(index_path)
@@ -372,7 +372,7 @@ def query_index(index_path, question, top_k=5):
     # Load FAISS index
     index = faiss.read_index(faiss_file)
     # Retrieve answer and references using FAISS and ChatCompletion
-    answer, contexts = answer_question(docs, index, question, top_k)
+    answer, contexts = answer_question(docs, index, question, top_k, temperature)
     print("\nAnswer:\n")
     print(answer)
     # Print references
@@ -466,6 +466,7 @@ def main():
     parser_query.add_argument('index_prefix', help='Prefix of the index files (without extension)')
     parser_query.add_argument('question', nargs='+', help='Question to ask')
     parser_query.add_argument('--top_k', type=int, default=5, help='Number of top chunks to use')
+    parser_query.add_argument('--temperature', type=float, default=0.2, help='Sampling temperature for chat model')
 
     parser_repl = subparsers.add_parser('repl', help='Interactive REPL mode')
     parser_repl.add_argument('index_prefix', help='Prefix of the index files (without extension)')
@@ -493,7 +494,7 @@ def main():
                    use_semantic=args.semantic)
     elif args.command == 'query':
         question = ' '.join(args.question)
-        query_index(args.index_prefix, question, args.top_k)
+        query_index(args.index_prefix, question, args.top_k, args.temperature)
     elif args.command == 'repl':
         repl_chat(args.index_prefix, args.top_k, args.temperature)
 
