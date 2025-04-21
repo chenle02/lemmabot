@@ -28,4 +28,10 @@ A CLI tool for indexing and querying your local PDF collection using OpenAI APIs
    ```bash
    python3 chatpdf.py query <index_prefix> "Your question here"
    ```
-   The tool will retrieve relevant chunks and use the LLM to answer your question.
+   This will print the answer and a list of references (file path and page number) for each retrieved chunk.
+
+3. Interactive REPL mode:
+   ```bash
+   python3 chatpdf.py repl <index_prefix>
+   ```
+   Starts a session where you can ask multiple follow-up questions against the same index. Type `exit` or press Ctrl-D to quit.

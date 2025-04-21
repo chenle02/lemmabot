@@ -10,6 +10,14 @@ import pickle
 from dotenv import load_dotenv
 import numpy as np
 import faiss
+import tiktoken
+
+# OpenAI model constants
+EMBED_MODEL = 'text-embedding-ada-002'
+CHAT_MODEL = 'gpt-3.5-turbo'
+# Token-based chunking parameters
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 50
 import openai
 from PyPDF2 import PdfReader
 from PyPDF2.errors import PdfReadError
@@ -43,14 +51,24 @@ def extract_text_from_pdf(path):
         return ""
 
 
-def chunk_text(text, chunk_size=1000, overlap=200):
-    """Split text into overlapping chunks."""
+def chunk_text(text, chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP):
+    """Split text into token-based chunks with overlap."""
+    # Initialize tokenizer for chat model
+    try:
+        encoder = tiktoken.encoding_for_model(CHAT_MODEL)
+    except Exception:
+        encoder = tiktoken.get_encoding("cl100k_base")
+    # Encode to tokens
+    tokens = encoder.encode(text)
     chunks = []
     start = 0
-    length = len(text)
-    while start < length:
-        end = start + chunk_size
-        chunks.append(text[start:end])
+    total = len(tokens)
+    # Slide window over tokens
+    while start < total:
+        end = min(start + chunk_size, total)
+        chunk_tokens = tokens[start:end]
+        chunk_str = encoder.decode(chunk_tokens)
+        chunks.append(chunk_str)
         start += chunk_size - overlap
     return chunks
 
@@ -61,15 +79,28 @@ def index_pdfs(root_dir, output_path):
     print(f"Indexing PDFs under {root_dir}...")
     for dirpath, _, filenames in os.walk(root_dir):
         for fname in filenames:
-            if fname.lower().endswith('.pdf'):
-                full_path = os.path.join(dirpath, fname)
-                text = extract_text_from_pdf(full_path)
-                if not text:
+            if not fname.lower().endswith('.pdf'):
+                continue
+            full_path = os.path.join(dirpath, fname)
+            # Read PDF and split by page
+            try:
+                reader = PdfReader(full_path)
+            except PdfReadError as e:
+                print(f"⚠️ Skipping unreadable PDF: {full_path} ({e})")
+                continue
+            for page_num, page in enumerate(reader.pages):
+                try:
+                    page_text = page.extract_text() or ''
+                except Exception:
+                    page_text = ''
+                if not page_text.strip():
                     continue
-                for i, chunk in enumerate(chunk_text(text)):
+                # Chunk this page's text
+                for chunk_idx, chunk in enumerate(chunk_text(page_text)):
                     docs.append({
                         'path': full_path,
-                        'chunk_index': i,
+                        'page': page_num + 1,
+                        'chunk': chunk_idx,
                         'text': chunk
                     })
     print(f"Created {len(docs)} chunks.")
@@ -107,6 +138,33 @@ def index_pdfs(root_dir, output_path):
     print(f"\nSaved {len(docs)} document chunks to {docs_file}")
     print(f"Saved FAISS index to {faiss_file}")
 
+def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
+    """Embed question, retrieve top_k contexts, and return the model's answer."""
+    print("Embedding question...")
+    resp = openai.Embedding.create(
+        input=question,
+        model=EMBED_MODEL
+    )
+    q_emb = np.array(resp['data'][0]['embedding'], dtype=np.float32).reshape(1, -1)
+    faiss.normalize_L2(q_emb)
+    distances, indices = faiss_index.search(q_emb, top_k)
+    # Gather selected document chunks and their metadata
+    selected = [docs[i] for i in indices[0]]
+    context_texts = [entry['text'] for entry in selected]
+    system_prompt = "You are a helpful assistant that answers questions based on provided document excerpts."
+    user_prompt = "Context:\n" + "\n---\n".join(context_texts) + f"\nQuestion: {question}"
+    print("Querying chat completion...")
+    chat_resp = openai.ChatCompletion.create(
+        model=CHAT_MODEL,
+        messages=[
+            {'role': 'system', 'content': system_prompt},
+            {'role': 'user', 'content': user_prompt}
+        ],
+        temperature=temperature
+    )
+    answer = chat_resp['choices'][0]['message']['content']
+    return answer, selected
+
 
 def query_index(index_path, question, top_k=5):
     """Load index, retrieve relevant chunks, and ask the LLM."""
@@ -119,40 +177,47 @@ def query_index(index_path, question, top_k=5):
         docs = pickle.load(f)
     # Load FAISS index
     index = faiss.read_index(faiss_file)
-    # Embed and normalize question
-    print("Embedding question...")
-    resp = openai.Embedding.create(
-        input=question,
-        model='text-embedding-ada-002'
-    )
-    q_emb = np.array(resp['data'][0]['embedding'], dtype=np.float32)
-    # Normalize query vector for inner-product search
-    q_emb = q_emb.reshape(1, -1)
-    faiss.normalize_L2(q_emb)
-    # Search for nearest neighbors
-    distances, indices = index.search(q_emb, top_k)
-    context = [docs[i]['text'] for i in indices[0]]
-    # Build prompt
-    system_prompt = (
-        "You are a helpful assistant that answers questions based on provided document excerpts."
-    )
-    user_prompt = (
-        "Context:\n" + "\n---\n".join(context) + f"\nQuestion: {question}"
-    )
-    # Ask ChatGPT
-    print("Querying chat completion...")
-    chat_resp = openai.ChatCompletion.create(
-        model='gpt-3.5-turbo',
-        messages=[
-            {'role': 'system', 'content': system_prompt},
-            {'role': 'user', 'content': user_prompt}
-        ],
-        temperature=0.2,
-    )
-    answer = chat_resp['choices'][0]['message']['content']
+    # Retrieve answer and references using FAISS and ChatCompletion
+    answer, contexts = answer_question(docs, index, question, top_k)
     print("\nAnswer:\n")
     print(answer)
+    # Print references
+    print("\nReferences:")
+    for idx, ctx in enumerate(contexts, start=1):
+        path = ctx.get('path', '<unknown>')
+        page = ctx.get('page', 'N/A')
+        print(f"[{idx}] {path} (page {page})")
 
+
+def repl_chat(index_prefix, top_k=5, temperature=0.2):
+    """Interactive REPL mode for querying PDF index."""
+    # Load documents and FAISS index
+    base, ext = os.path.splitext(index_prefix)
+    docs_file = base + '.pkl'
+    faiss_file = base + '.faiss'
+    with open(docs_file, 'rb') as f:
+        docs = pickle.load(f)
+    index = faiss.read_index(faiss_file)
+    print("Entering interactive REPL mode. Type 'exit' or press Ctrl-D to quit.")
+    # REPL loop
+    while True:
+        try:
+            question = input("\nUser> ")
+        except (EOFError, KeyboardInterrupt):
+            print("\nExiting REPL.")
+            break
+        if not question or question.strip().lower() in ('exit', 'quit'):
+            print("Exiting REPL.")
+            break
+        # Get answer and contexts
+        answer, contexts = answer_question(docs, index, question, top_k, temperature)
+        print(f"\nAssistant> {answer}")
+        # Print references
+        print("References:")
+        for idx, ctx in enumerate(contexts, start=1):
+            path = ctx.get('path', '<unknown>')
+            page = ctx.get('page', 'N/A')
+            print(f" [{idx}] {path} (page {page})")
 
 def main():
     parser = argparse.ArgumentParser(
@@ -165,9 +230,14 @@ def main():
     parser_index.add_argument('index_path', help='Path to save the index file (e.g., index.pkl)')
 
     parser_query = subparsers.add_parser('query', help='Query the indexed PDFs')
-    parser_query.add_argument('index_path', help='Path to the index file (e.g., index.pkl)')
+    parser_query.add_argument('index_path', help='Prefix of the index files (without extension)')
     parser_query.add_argument('question', nargs='+', help='Question to ask')
     parser_query.add_argument('--top_k', type=int, default=5, help='Number of top chunks to use')
+
+    parser_repl = subparsers.add_parser('repl', help='Interactive REPL mode')
+    parser_repl.add_argument('index_prefix', help='Prefix of the index files (without extension)')
+    parser_repl.add_argument('--top_k', type=int, default=5, help='Number of top chunks to use')
+    parser_repl.add_argument('--temperature', type=float, default=0.2, help='Sampling temperature for chat model')
 
     args = parser.parse_args()
     if not args.command:
@@ -180,6 +250,8 @@ def main():
     elif args.command == 'query':
         question = ' '.join(args.question)
         query_index(args.index_path, question, args.top_k)
+    elif args.command == 'repl':
+        repl_chat(args.index_prefix, args.top_k, args.temperature)
 
 
 if __name__ == '__main__':
