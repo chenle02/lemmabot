@@ -2,6 +2,10 @@
 """
 Command-line tool to chat with a collection of local PDF documents using OpenAI APIs.
 """
+__version__ = '0.1.0'
+"""
+Command-line tool to chat with a collection of local PDF documents using OpenAI APIs.
+"""
 import os
 import sys
 import argparse
@@ -242,16 +246,18 @@ def repl_chat(index_prefix, top_k=5, temperature=0.2):
 
 def main():
     parser = argparse.ArgumentParser(
+        prog='chatpdf',
         description="Chat with your local PDF collection."
     )
+    parser.add_argument('--version', action='version', version=__version__)
     subparsers = parser.add_subparsers(dest='command')
 
     parser_index = subparsers.add_parser('index', help='Index PDFs under a directory')
     parser_index.add_argument('root_dir', help='Root directory to search for PDFs')
-    parser_index.add_argument('index_path', help='Path to save the index file (e.g., index.pkl)')
+    parser_index.add_argument('index_prefix', help='Prefix for output index files (without extension)')
 
     parser_query = subparsers.add_parser('query', help='Query the indexed PDFs')
-    parser_query.add_argument('index_path', help='Prefix of the index files (without extension)')
+    parser_query.add_argument('index_prefix', help='Prefix of the index files (without extension)')
     parser_query.add_argument('question', nargs='+', help='Question to ask')
     parser_query.add_argument('--top_k', type=int, default=5, help='Number of top chunks to use')
 
@@ -267,10 +273,10 @@ def main():
 
     load_api_key()
     if args.command == 'index':
-        index_pdfs(args.root_dir, args.index_path)
+        index_pdfs(args.root_dir, args.index_prefix)
     elif args.command == 'query':
         question = ' '.join(args.question)
-        query_index(args.index_path, question, args.top_k)
+        query_index(args.index_prefix, question, args.top_k)
     elif args.command == 'repl':
         repl_chat(args.index_prefix, args.top_k, args.temperature)
 

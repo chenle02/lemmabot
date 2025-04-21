@@ -14,6 +14,15 @@ A CLI tool for indexing and querying your local PDF collection using OpenAI APIs
   export OPENAI_API_KEY="your_api_key_here"
   ```
 
+## Installation
+
+Install via pip:
+```bash
+pip install .
+# or in editable mode for development:
+pip install -e .
+```
+
 ## Usage
 
 1. Index your PDFs (creates a FAISS index and metadata):
