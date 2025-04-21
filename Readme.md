@@ -14,25 +14,22 @@ A fast, offline-friendly CLI tool for indexing and querying large collections of
 ## Quickstart
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+# Install ChatPDF (and dependencies)
+pip install .
 
-# Set your OpenAI API key
-export OPENAI_API_KEY="your_api_key_here"
+# Save OpenAI API key securely
+chatpdf auth login
 
 # Index a folder of PDFs
 chatpdf index ./papers myindex
 
-# Ask a question!
+# Ask a one-off question
 chatpdf query myindex "What is the main result in the KPZ paper?"
+```
 
 ## Setup
 
 - Create and activate a Python virtual environment (optional but recommended)
-- Install dependencies:
-  ```bash
-  pip install -r requirements.txt
-  ```
 
 - Set your OpenAI API key:
   - Via environment variable:
