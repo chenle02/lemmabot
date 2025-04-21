@@ -1,0 +1,1969 @@
+Soviet Physics Uspekhi
+
+REVIEWS OF TOPICAL PROBLEMS
+
+Intermittency in random media
+To cite this article: Ya B Zel'dovich et al 1987 Sov. Phys. Usp. 30 353
+
+View the article online for updates and enhancements.
+
+You may also like
+- Stochastic parameter estimation of
+heterogeneity from crosswell seismic data
+based on the Monte Carlo radiative
+transfer theory
+Xiangcui Meng, Shangxu Wang, Genyang
+Tang et al.
+- Array imaging of localized objects in
+homogeneous and heterogeneous media
+Anwei Chai, Miguel Moscoso and George
+Papanicolaou
+- Theory and applications of time reversal
+and interferometric imaging
+Liliana Borcea, George Papanicolaou and
+Chrysoula Tsogka
+
+This content was downloaded from IP address 131.204.254.113 on 08/01/2024 at 20:41
+
+Intermittency in random media
+Ya. B. Zel'dovich, S. A. Molchanov, A. A. Ruzmaikin, and D. D. Sokolov
+M. V. Keldysh Institute of Applied Mathematics, Academy of Sciences of the USSR
+Usp. Fiz. Nauk 152, 3-32 (May 1987)
+Some specific structures in which a growing quantity reaches record high values typically arise
+for instabilities in random media. Despite the rarity of these concentrations, they dominate the
+integral characteristics of the growing quantity (the mean value, the mean square value, etc.).
+The appearance of such structures is called "intermittency." The geometric properties of
+intermittent structures depend strongly on whether the growing quantity is a scalar or a
+vector. The scalar case is illustrated here by the example of an instability which arises in
+problems of chemical kinetics. The vector case is illustrated by the problem of the selfexcitation of a magnetic field in a random flow of a conducting fluid.
+
+CONTENTS
+
+1. Introduction
+2. Disorder and order
+3. Intermittency of a random quantity
+4. Evolution of a random quantity
+5. Random medium
+6. Short-correlation random medium; Wiener processes
+7. Intermittency in a time-varying medium
+8. Fast dynamo
+9. Correlation properties of self-exciting magnetic
+10. Vorticity and strain in the flow of an incompressible
+11. Structure of an intermittent
+field
+References
+
+1. INTRODUCTION
+
+Thermodynamics exerted a great influence in the 19th
+century and the beginning of the 20th. The development of
+thermodynamics and its application to an extremely wide
+range of phenomena (heat engines, chemistry, and much
+more) played a huge role in the development of science and
+technology. The construction of a basis for thermodynamics, as a consequence of a statistical mechanics based on classical mechanics, was a formidable achievement.
+Thermodynamics deals with average quantities. The
+averaging idea has penetrated deeply into other fields also.
+This is the approach which has been taken to describe turbulent flows in hydrodynamics since the time of Reynolds,
+down to the present. This simple and convenient approach to
+complicated phenomena has led to many practical results.
+However, thermodynamics and the average approach
+have their limits. A clear example of the illegitimate application of thermodyamics is the sadly famous "theory of the
+thermal death of the universe." Today we understand quite
+well that in the presence of long-range gravitational forces a
+dismal homogeneous distribution of gas in an infinite space
+is by no means either the state with the maximum entropy at
+the given energy or the final state of evolution.
+The study of fluctuations was added to thermodynamics at the beginning of the century. In a single-phase medium
+with given mean values, the probability density of a fluctuation obeys a Gaussian law P(A)~exp([ — a(A — A ) 2 } ,
+where A is the quantity under consideration (e.g., the number of particles in a given volume), A is its "thermodynamic"
+mean value, and the coefficient a can also be expressed in
+terms of thermodynamic functions and their derivatives.
+Qnw Ph</« lien
+
+Mav19R7
+
+fields
+fluid
+
+353
+355
+357
+358
+358
+360
+361
+363
+364
+366
+367
+369
+
+The first steps taken in statistical mechanics led to a
+velocity distribution of molecules which also obeyed a Gaussian law P(v) ~exp[ — (v — v)2/2kT\. Even earlier, probability theory had derived a Gaussian distribution for the
+sum of many random quantities. These developments created an atmosphere which allowed the deification of the Gaussian distribution. Actually, some very non-Gaussian distributions are quite common in nature. Classical statistical
+physics incorporates phase transitions, some of which are
+associated with a spontaneous symmetry breaking.
+The spontaneous appearance of ordered structures in
+nature—the frost patterns on glass in the winter and the
+regular arrays of convection cells in a liquid or of layers in
+the gems jasper and agate—is surprising and unexplainable
+only from a thermodynamic standpoint. Any sort of living
+matter would seem to violate thermodynamics. The question
+of the decrease in entropy in these processes has a simple
+answer: The increase in the entropy of the system as a whole,
+when heat transfer is taken into account in the condensation
+of hoarfrost or when the combustion of food is taken into
+account in a living organism, is many times greater than the
+entropy decrease accompanying the formation of the structures. However, an understanding and a description of the
+processes by which structures form requires going beyond
+the average description in a fundamental way. In a sense we
+need to go back to the vast number of possible realizations
+over which thermodynamics triumphed and to seek those
+realizations which form an order against the background of
+an overall disorder.
+One might attempt to link ordering effects with the subtle properties of molecules, atoms, and elementary particles,
+
+0038-5670/87/050353-17801.80
+
+© 1987 American Institute of Physics
+
+353
+
+e.g., to relate the reflection asymmetry of a living creature
+with the violation ofTinvariance among the elementary particles. A fundamentally different approach is to explain
+spontaneous order as a game of chance in an ensemble of a
+large number of particles." There is something similar in
+synergetics. Synergetics, however, rests primarily on a study
+of nonlinear processes48 which are described by nonlinear
+equations, and chance is relegated to the role of simply a
+small seed.
+Our purpose in the present paper is to demonstrate the
+appearance of structure in a random medium in transport
+phenomena which are described in a certain stage by linear
+differential equations. Here randomness is the primary
+mechanism for the appearance of the structure, and the nonlinearity, which comes into play later, prevents an unbounded growth of the resulting formations. The structures which
+arise in a random medium are peculiar: They take the form
+of peaks which appear at random places and at random
+times. The intervals between them are characterized by a low
+intensity and a large size.
+The general term for such a picture is "intermittency."
+This term arose in research on the velocity field and temperature spots in a turbulent medium. 3 Intermittency has
+also been studied for hydrodynamic turbulence in connection with that refinement of the Kolmogorov-Obukhov hypothesis which was stimulated by L. D. Landau (see, for
+example, the monograph by Monin and Yaglom4) and in the
+theory of wave propagation in random media.5 Another example is the localization effect in the quantum theory of disordered media, which has been studied comprehensively by
+I. M. Lifshitz and his students.6
+Intermittency has been seen in numerical simulations in
+magnetohydrodynamics7'44 and in the theory of the formation of galaxies, which has been supported by astronomical
+observations of the structure of the universe.8
+From the physical standpoint, intermittency arises as a
+result of a phasing effect of a random medium on a quantity
+being transported in it. For example, in the flow of a conducting fluid with a random velocity field and an embedded
+initial magnetic field one finds places where the flow is most
+effective in amplifying the magnetic field as a result of a
+stretching of magnetic field lines by the flow.9 The appearance of such regions is of course a rare and improbable event.
+However, nearly all the energy of the field which is generated
+is concentrated at these maxima, so they cannot be ignored.
+They dominate the mean values and mean square values.
+The first two moments, however, are not enough to completely characterize a distribution. The principal characteristic of intermittency is specifically the relation between
+successive statistical moments—a relation which is anomalous in comparison with the Gaussian relation. In terms of
+Fourier analysis, intermittency is characterized by not only
+a slow decrease in the Fourier harmonics with increasing
+wave number but also a definite phase relation among them.
+A sum of higher harmonics with random phases would contribute something similar to a Weierstrass function, in other
+words, a fractal curve instead of individual peaks.10 On the
+other hand, a sum of specially phased plane waves will give
+us a<5-function or several <5-functions. By way of comparison
+we might cite the example of an intermittency generated by a
+nonlinearity. The amplitude of electromagnetic oscillations
+in a resonator with a bleaching (nonlinear) element is defini354
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+tely not Gaussian, as was shown in Ref. 11. An interesting
+suggestion was made in that paper: to utilize the multiphoton photoelectric effect to measure the higher moments of
+the distribution of a field amplitude.
+In a medium which is spatially homogeneous in the statistical sense, intermittency is a phenomenon which is manifested extremely rarely: When an instability occurs, e.g.,
+during the self-excitation of a magnetic field, the ratio of the
+mean square values of a field which is and is not concentrated at peaks increases exponentially with time.9'26 In the case
+of a spatially bounded medium it turns out that at a certain
+time the typical distance between high peaks begins to exceed the dimensions of the system. After this time, averages
+taken over space and over the ensemble no longer agree;
+averages over space increase more slowly than averages over
+the ensemble. Thus intermittency in a bounded problem is
+less sharply expressed.12
+A question of major interest is the structure of an intermittent distribution. The formation of high, isolated peaks
+typically occurs asymptotically in time. In space, these
+peaks usually correspond to field spots which are separated
+by vast regions of lower intensity. However, the formation of
+a cellular or reticular structure is possible, and may even be
+typical, as an intermediate asymptotic situation. Such a
+structure would have thin channels of elevated intensity (the
+"rich phase") separated from each other by isolated islands
+of the "poor phase." The structure of the universe is an example of such an intermediate intermittency. 8 In the paper
+below we will be discussing only the remote asymptotic behavior as t^ oo. In this limit the cellular structure of the
+universe is disrupted, and after the matter crowds together a
+new intermittent structure appears. In optics the problem of
+the appearance of structures is frequently examined in the
+case in which light passes through a plate with a random
+profile. This situation corresponds to the evolution of a random initial condition in a determinate medium. At a short
+distance from the surface of the plate, the structure of caustics reappears; with increasing distance, this structure becomes washed out, and the effect of the randomness is gradually erased. Intermittency effects of the nature of intensity
+peaks are also observed in the simpler problem of the propagation of waves in a medium with a random absorption coefficient.5'13 In particular, it turns out that the mean value of
+the light flux which has traversed a large thickness of a random medium is determined not by the typical value of the
+flux which has traversed the medium near some point chosen
+at random but by distinct and very rare bright points (this
+idea was expressed in Ref. 6).
+Intermittency is seen both in observations (Fig. 1) and
+in numerical simulations (Fig. 2).
+The problem of the onset of intermittency is in a sense
+the inverse of the well-known problem of the onset of chaos
+from an ordered motion in a dynamic system which is described by a small number of ordinary differential equations
+(see Ref. 14, for example, regarding this problem).
+At the outset we will be focusing on elementary questions discussion of which will help bring out the nature of
+intermittency and introduce some necessary concepts. We
+will then examine the intermittency phenomenon using the
+example of the transport of a passive scalar and a divergencefree21 vector in a short-correlated random medium, which is
+a topic which can be treated analytically.
+Zel'rlnvirh f>tal
+
+An intermittency generated by a randomness is discussed in application to two physical problems. In the first
+(and simpler) problem, we examine the behavior of a particle in a given random potential. The second problem involves the generation and transport of a vector (a magnetic
+field or a vorticity) in a turbulent flow which is sustained by
+an external source. These different physical problems have a
+profound mathematical similarity in terms of the nature of
+the solutions which arise, which are inhomogeneous in space
+and time, and also in terms of the method by which these
+solutions are found. The particular features of a vector field
+are discussed in §11.
+2. DISORDER AND ORDER
+
+The simplest representation of disorder involves the assumption that all possible elementary events are equally
+probable. This assumption is frequently used in appraising
+situations that one runs into—by flipping a coin—or in examples in courses on probability theory. Even at this level of
+the theory, some nontrivial features arise. For example, if
+two people playing pitch-and-toss toss a coin N times intuition would suggest that the number of times neither of the
+players "takes the winner's seat" would be proportional to
+N, Actually, the number of draw situations is proportional
+not to N but to N'/2, since the number of draws increases by
+a random-walk law.15 The relative number of draws or,
+in other words, changes in leader thus decreases as
+N I/2N~N ~~l/2 as the game proceeds. This case serves as a
+mathematical proof of a piece of folk wisdom: Go ahead and
+play, but do not play to recoup your losses once you fall
+behind.
+The assumption of equiprobability frequently turns out
+to be overly crude in a real situation. For example, these
+arguments would naturally lead us to expect that a person
+who goes down into the subway station at a random time
+would have equal chances to ride off in either of two directions if he takes a seat on the first train which comes by.
+
+FIG. 1. Magnetogram recorded at the Kitt Peak Observatory in 1982
+(from Ref. 49). The typical size of the cells of this network is 30 000 km.
+355
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+FIG. 2. Concentrations of magnetic fields (the hatched regions) according to a numerical simulation.7
+
+Actually, the probability for going in one direction may be
+significantly higher than 1/2. (This effect was apparently
+first pointed out by A. M. Budker.) The reason is a correlation in the motion of the trains. Let us assume that the trains
+move in both directions at equal time intervals Ar, but the
+train going to the left arrives at a time S(^At earlier than the
+train going to the right.3' The probability for riding off to the
+right is then small, of the order of <5?/A/.
+As a rule, a probability, as a measure on some set of
+elementary events, is unknown. The meaningful conclusions
+of the theory arise because we are usually interested in certain functions which are given on this set and whose properties depend only slightly on a probability distribution which
+is not known exactly. This more realistic representation of
+disorder is associated with a Gaussian or normal distribution. A Gaussian disorder is usually caused by the sum of the
+actions of many random factors which are roughly identical
+and which are only weakly dependent, as follows from the
+central-limit theorem.15 This distribution is determined entirely by two nonrandom parameters: the mean value and the
+variance (or the dispersion around the mean).
+In addition to one-dimensional Gaussian quantities one
+frequently deals with Gaussian vectors and infinite-dimensional Gaussian quantities: Gaussian fields. A Gaussian
+field is a set of Gaussian quantities at each spatial point. At
+two points which are spatially far apart, these quantities are
+essentially independent, while at two close points there is a
+strong dependence. The distance over which the correlations
+weaken substantially is called the "correlation length." To
+describe a scalar, uniform Gaussian field <p (x,co), where co is
+a random parameter, it is sufficient to specify the two-point
+correlation function B(x — y) = (<p(x,(o) X<p(y,o))); here
+the angle brackets specify the mean over the ensemble of
+realizations, i.e., over the parameter a>. This function completely determines the Gaussian field. All of the necessary
+characteristics of the field can in principle be expressed in
+terms of this function. Vector and tensor Gaussian fields can
+be constructed in a corresponding way.
+We are now in a position to sketch out an answer to the
+question of just how a disorder can in principle generate an
+Zel'dovich eta/.
+
+355
+
+order. It turns out that a Gaussian field already contains
+elements of order. The general background of a Gaussian
+field is produced by random, disordered variations in a
+quantity q> with an amplitude of the order of B!'2 (0). Rare,
+high peaks stand out against the background of these variations. In general, the isosurfaces near a peak are similar to
+triaxial ellipsoids. With increasing height of a peak (with
+increasing ratio of the height of the peak to the mean square
+deviation) however, an approximate equality of the three
+axes becomes more probable, and the surface becomes more
+nearly spherical. Near the crest these peaks are therefore not
+sharp and instead have the regular shapes of surfaces of revolution, whose meridians are similar in the isotropic case to a
+plot of the function 5(7-), where r=\x —y\ (Ref. 16). One
+can estimate the height of the highest peak in a sphere of a
+given radius, the distance between peaks, and so forth.12'17
+However, the situation with regard to the individual peaks is
+not at all unique. The peaks arise simultaneously with a
+Gaussian probability distribution during the summation of
+many uncorrelated random functions, i.e., under conditions
+corresponding to the central-limit theorem. The isosurfaces
+are smooth, and the function B ( r ) does not have a singularity at the origin if the Fourier coefficients of the expansion
+fall off sufficiently rapidly at large values of the wave vector
+(k)—otherwise, a fractal situation may arise.10
+In cases which are more complicated (nonadditive)
+there is the nontrivial question of the geometric structure of
+the regions of the maximum value of the unknown quantity.
+These regions may be surfaces which are isolated from each
+other or which form a cellular structure. They may also be
+thin filaments which are connected by nodes (a network
+structure) or which consist of separate closed lines (and so
+forth). These extremely important tendencies are seen to an
+even greater extent in the case of vector fields. The field lines
+of a magnetic field do not begin anywhere and do not end
+anywhere, so that in magnetohydrodynamics we might expect to see the appearance of thin tubes in which the field is
+concentrated. Isolated field peaks are evidently forbidden.
+However, let us go back to the Gaussian case.
+Peaks of this sort can of course be seen by observing
+many realizations of a single Gaussian random quantity.
+The existence of peaks is common knowledge, but they do
+not play a significant role in ordinary operations with a
+Gaussian random quantity, e.g., in analyzing experimental
+data by the method of least squares. Ignoring peaks of arbitrary height, we could use the rough assumption that a
+Gaussian quantity has a maximum amplitude three times
+the standard deviation (Gauss's rule). In many problems,
+however, that approach can lead to some serious errors. As
+an example we consider an extremely long pipeline whose
+strength is very nearly constant but which is afflicted by a
+small, Gaussian random error. If the standard deviation of
+the error is many times smaller than the reserve strength of
+the pipeline, then a naive observer might suggest that the
+pipeline would be highly reliable, i.e., that there was only a
+very small probability for its rupture. This is precisely the
+logic which is used in designing pipelines. However, this
+concluson is correct only for a short pipeline. The breakdown of an extremely long pipeline by no means requires
+that the pipeline be damaged in many places: One damaged
+region is quite sufficient. The damage may be caused by a
+very rare deviation which has nothing in common with the
+356
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+standard deviation. The actual length of a pipeline over
+which we would expect, say, ten standard deviations is
+10 000 km if the correlation length along the pipe is of the
+order of a meter. If the distribution is not Gaussian, e.g., if it
+is log-normal [i.e., if the logarithm of a random (nonnegative) quantity has a Gaussian distribution], the situation
+may be greatly aggravated.
+When the probability distribution of a random quantity
+falls off at infinity more slowly than a Gaussian distribution,
+there will naturally be a greater number of high peaks, and
+they will be closer together, i.e., the element of structure
+associated with the peaks is expressed more vividly in such a
+field. A similar enhancement of the role of peaks might be
+caused by a variety of factors, but the most obvious one is
+that now the error begins to be formed not by the effects of
+many independent factors, comparable in intensity, but primarily by the effect of one dominant factor. Going back to
+our pipeline, we easily see that a situation of this sort arises
+when the pipeline passes through a region in which the properties vary quite rapidly and to a large extent. Permafrost, in
+which thawed regions alternate with frozen regions, is an
+example of such a medium. We know that this circumstance
+has a very negative effect on assessments of the reliability of a
+pipeline based on a comparison of the variance with the reserve strength. In this case it becomes necessary to appeal to
+some fundamentally different considerations, of the same
+type as in a study of the conductivity of disordered metallic
+media.
+When the random error which afflicts the measurements has a non-Gaussian tail on its distribution, the use of
+the method of least squares to analyze the results may lead to
+serious errors. In particular, the experimentalist must first
+look over the results and pick out any really wild errors.
+These errors have nothing in common with a Gaussian random error which arises in normal operation, and it would
+therefore be pointless to average these wild errors along with
+a Gaussian error. Picking out the wild errors is not a particularly difficult task when one is processing a comparatively
+small amount of data, in which case the experimentalist is
+continuously monitoring the results. However, in cases in
+which it becomes necessary to trust the entire data processing to a computer the situation becomes more complicated.
+It becomes necessary to develop special methods which are
+protected from the effects of wild errors. Such methods are
+called "robust methods" (Ref. 18, for example).
+It is not difficult to give examples of probability distributions which give rise to peaks of less contrast than those
+provided by a Gaussian distribution. One example is the distribution of the random quantity £ = gp2/(a2 + <p2), where
+the quantity <p is a Gaussian quantity. Obviously, £ may be
+totally devoid of peaks which are substantially greater than
+the standard deviations.
+Random quantities with slowly decaying probability
+distributions are not all that rare in physics. The first example of such a quantity was dreamed up by Cauchy. We consider a light beam which is reflected from a mirror which is
+rotated through some random, uniformly distributed angle.
+We wish to find the point at which the beam reaches a screen.
+The coordinate of this point is a random quantity with a
+distribution which falls off so slowly that no mean value
+exists for it.15 Furthermore, the arithmetic mean of many
+random quantities with a Cauchy distribution has the same
+Zel'doviche/a/.
+
+356
+
+distribution as one quantity by itself. Ambartsumyan 19 has
+shown that the intensity of the radiation from a source which
+is passing through a medium in which there is a random
+distribution of clouds which absorb a random fraction of the
+intensity will have a distribution which falls off very slowly
+and to which the Gaussian averaging concept cannot be applied.
+3. INTERMITTENCY OF A RANDOM QUANTITY
+
+In essentially any experiment a physicist is dealing with
+a random quantity g. Such a quantity is usually assumed to
+be distributed in accordance with a normal Gaussian law,
+which is determined completely by the mean value {£} and
+the variance a2. Most of the values of a random quantity lie
+near the mean, within a region with a dimension of the order
+of the mean square deviation, which is equal to a, i.e., the
+square root of the variance. The quantity £ can take on values which are greatly different from the mean value (£), but
+the probability for such large deviations is extremely small.
+This circumstance is the basis for the success of the method
+of least squares, which is widely used in analyzing experimental data. A Gaussian quantity usually arises as the sum
+of a large number of small random quantities which are distributed approximately identically and which are independent or only weakly dependent. This circumstance is based
+on the central-limit theorem.
+However, let us consider a random quantity of a multiplicative type, i.e., one which is the product of a large number of identically distributed independent random quantities. Let us assume, say, that |},y = 1, ... , N, takes on the
+values 0 and 2 with identical probabilities of 1/2. The random quantity which is equal to the product
+
+We thus see th'at the rate of growth of a moment also increases with increasing;;. In the limit p-> <x> we have yp ->/>.
+We call a random quantity of this very simple type an
+intermittent random quantity. We wish to emphasize that
+this concept is tied to the supposition of a large value of N,
+i.e., a large number of cofactors. Just as a Gaussian quantity
+is a typical characteristic of the sum of a large number of
+random quantities, an intermittent random quantity apparently serves as a characteristic of the product of a large number of cofactors.
+This simple example may appear to be pathological because of the presence of zeros. However, the appearance of
+an intermittency is totally unrelated to the zeros. Let us assume, for example, that the £, are distributed near unity. The
+logarithm of the product
+In £ = In |t + In £ 2 +
+
++ In
+
+is then the sum of a large number of random quantities which
+are concentrated near zero. In the limit of large values of A"
+we thus have lng~Nl/2rj, where 17 is a Gaussian random
+quantity with a zero mean and a unit variance. Consequently, the quantity
+I (TI) ~ exp (A^2r|)
+is distributed log-normally. The quantity 17 takes on values
+in the interval ( — /u<7, /zcr), /Lt~~l, for the most part. At
+rj < 0, g is close to zero; at rj > 0, J" is large, of the order of
+exp(./V I / 2 cr). The mean value of a log-normal quantity is4
+j exp (.V i/2 n ) «p ( — JJL) dr,
+
+> = j I (11)
+
+• exp-
+
+6=
+therefore takes on a zero value for essentially all possible
+realizations |). The only exceptional case is the one realization in which all of the J) take on the value of 2. The probability for this unique realization is extremely low; at large
+values ofN, it is equal to 2 ~ N. On the other hand, £ is very
+large in this realization: 2N.
+The random quantity £ turns out to be distributed in a
+surprising way. It is not at all similar to a Gaussian quantity.
+Essentially all the values of g are zero, except for the one very
+large value. It is this one value, however, which determines
+the mean:
+/t) = sum of all realizations ._ f + Q— . • .-M'i — 2 A _ ^
+number of realizations
+2-v
+The mean square value
+,.-z\
+
+sum of all realizations
+number of realizations
+=2
+
+increases exponentially with increasing N. The subsequent
+moments increase even more rapidly: (£3), (£4), ...,
+(gp) = 2(p ~ ' } N . The growth rate of the moments is
+6
+M = log,(i
+" ^*
+
+VP—
+
+357
+
+p
+
+N
+
+Sov. Phvs. USD. 30 (5), May 1987
+
+(1)
+
+In contrast with an individual realization, this mean value
+increases monotonically and exponentially. Other statistical
+moments also increase exponentially:
+
+<6"> ~ exp -^~- .
+The rate of increase of the pih moment,
+p
+
+= lira In <l >
+
+(2)
+
+A"-* oo
+
+increases without bound with increasing/?.
+This more realistic example thus preserves all the features of intermittency. The contrast between an individual
+realization here and the mean characteristics is not as stark
+as it was in the first example.
+Strictly speaking, it is not entirely correct to calculate
+moments from an asymptotically log-normal distribution.50'5 ' A more correct procedure would be initially to calculate (t*) for any N and then take the limit N— oo. Since
+the integral (J?) is dominated by values rj~p2a2N112, and
+the actual distribution corresponds well to a Gaussian distribution in the region IT/) <CA r l / 2 , where Cis a constant which
+depends on the nature of the distribution, we must require
+that the condition/>2cr2 < C hold, i.e., ihatp2cr2 be sufficiently
+small, if (2) is to be valid. If the individual cofactors |} cannot take on large values with a nonvanishing probability, the
+rate of increase at large values ofp2cr2 must be similar to the
+quantity in (1). We wish to emphasize that this difficulty
+Zel'dovichefa/.
+
+357
+
+does not arise in a calculation of moments of an additive
+quantity. A log-normal distribution for a multiplicative
+quantity is thus not as universal as a normal distribution for
+an additive quantity. In this sense, an analysis of a multiplicative random quantity does not reduce simply to taking its
+logarithm.
+4. EVOLUTION OF A RANDOM QUANTITY
+
+Multiplicative random quantities arise in a natural way
+in evolutionary problems, just as additive random quantities
+arise in analyses of experimental data. In an evolutionary
+problem the time plays the role of N. Random quantities of
+an additive nature may of course also arise in evolutionary
+problems. Let us consider the simple example
+
+where j ( t ) is a random process, say a Gaussian process with
+a variance a2 with a rapid decay of temporal correlations.
+We assume for simplicity that |" is renewed after a time r, i.e.,
+that its values on the time intervals [0,r), [r,2r),... are independent and identically distributed. An integral which gives
+the solution of the equation thus reduces to the sum of independent random quantities, to which the central-limit
+theorem applies at f > r 4):
+1/2J V
+
+where rj is a Gaussian quantity with a zero mean and a unit
+variance.
+In the case (£ ) ^0, the solution approaches its mean
+values (i/>) with increasing t; i.e., a self-averaging occurs. In
+the case (£ ) = 0, we obviously have (iff) = 0, and a solution
+normalized to t l / 2 reduces to a limiting distribution, in this
+case, Gaussian. Relative fluctuations do not grow; in fact
+they are damped in the former case. The formal expression of
+this fact is that the higher moments reduce to the produce of
+lower moments:
+
+small values of TO. Actually, the second term on the right
+side of (4) does not tend to zero or infinity only if a~T~l/2
+in the so-called "approximation of short temporal correlations." In this case, the quantity g ( t ) — (J") is proportional
+to the Brownian (Wiener) random process w,, for which we
+have (w,) = 0 and (w2) = t. We will be appealing to this
+approximation frequently; later on (in §6) we will refine the
+method for taking the limit r-»0.
+5. RANDOM MEDIUM
+
+The phenomenon of intermittency, which consists of
+the appearance of rare but high peaks in the behavior of a
+random quantity, would appear to be extremely degenerate
+and hardly of interest from the standpoint of a normal bookkeeper. However, an improbable event may sometimes be so
+catastrophic that it has a dramatic influence on our life.
+A random medium (or random field) consisting of a
+continuum of random quantities is far richer in terms of rare
+events.
+For example, let us consider a medium 12 characterized
+by a random potential U(x,co). The parameter <y specifies
+the realization of the potential, so that at a fixed a> the potential is an ordinary determinate function of the coordinates.
+Let us assume for definiteness that U has a Gaussian distribution with a zero mean and a variance a2. The potential is a
+random field of an additive type and can be represented as
+the sum of unphased Fourier harmonics which are of such a
+nature that in the limit k->0 the amplitude falls off quite
+rapidly, ensuring the convergence of the Fourier integrals.
+The equilibrium concentration of matter in such a medium, 51
+u
+
+(5)
+
+is no longer Gaussian, because of the nonlinear dependence
+of U. This fact is obvious in the case a/kT^ 1, but it would
+seem natural that under the condition a/kT^ 1 the dependence would be linear:
+<n>
+
+In other words, at large / a description of $ requires no more
+than its mean value and mean square value.
+These means are clearly insufficient to describe an evolutionary equation of the unstable type
+
+Pursuing this point, we seek the value of the potential which
+corresponds to the most likely amount of matter. Since we
+have
+
+(3)
+the maximum of the exponential function corresponds to
+Um^/a = - f f / k T , where Pmax = e\p(a2/2k2T2). In an
+exact analysis of the successive statistical moments,
+
+whose solution is of the multiplicative form
+t/r
+
+<
+J
+
+4 .,,
+
+1*-
+
+(i+l )T
+J
+
+(n) = «„ exp -
+
+i.e.,
+
+paa
+
+In i|:
+
+2fc 2 f 2 '
+
+\l/2
+
+(4)
+
+The solution is therefore an intermittent random quantity. Fluctuations ofi/>(t) grow as exp{rar](t /r)l/2}. More
+precisely, this is the growth behavior of the ratio of two realizations of i/r corresponding to two realizations of rj. The
+mean value of |" and its mean square value can now be characterized by simply the logarithm of if> after a long time.
+We repeat that, strictly speaking, expression (4) is legitimate for use in calculating the mean values {$p) only at
+358
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+however, we find that they become larger as their index />
+increases: (n2} > ( n ) 2 , (n4) > {n2)2
+In other words, the
+successive mean values are by no means determined by the
+most probable value of the potential cr/kT; they are instead
+determined by pll2a/kT. It is thus incorrect, generally
+speaking, to use the linear approximation even at small values of cr/kT. The only way to explain the progressive increase in the moments is on the basis that there are rare and
+Zel'dovichefa/.
+
+358
+
+high peaks in the concentration distribution. In principle, as
+was mentioned back in §2, there can also be high peaks in a
+Gaussian potential, where (UPY/P increases asp112 with
+increasing/;. This growth, however, is incomparably weaker
+than the exponential growth of the moments of the concentration. The important point is something else: A weak intermittency of a potential, which itself might be ignored, turns
+out to be sharply expressed in the concentration distribution
+( 5 ) , which depends on U in a nonlinear way.
+From the concentration properties of U we can also
+(and easily) find the correlation properties of n, which has
+the log-normal distribution ( 5 ) . This problem was recently
+analyzed by Mandel'brot and Salai (private communication) in connection with the problem of the formation of the
+large-scale structure of the universe. The given correlation
+function of the density of matter, p, was used to find the
+correlation function of the number density of galaxies, A,
+under the assumption A = exp ( const -p ). For the spectrum
+pk ~k ~3, which is customarily assumed, it was found that
+the correlation function A is a power-law function of the
+relative distance, in agreement with the observed correlation
+function, which was first constructed by Totsuji and Kihara55 and analyzed by Peebles.56
+The concentration is the solution of a linear equation
+with a random coefficient v:
+div
+
+— nu) = 0,
+
+where, in the mobility approximation, we have v = (x/
+kT)VU, where x is a diffusion coefficient. This result is a
+fundamental distinction between intermittency and the
+structures which have already been studied in synergetics,
+which underlies the processes described by nonlinear equations.
+Scalar linear equations with a random breeding and a
+diffusion are characteristic of several problems in biology
+and in the kinetics of chemical and nuclear reactions.20'21
+Certain nonlinear problems were also studied in Ref. 2 1 . Let
+us examine the phenomenon of intermittency in the example
+of the simple equation
+-^ = K^ + U(a; <a)i|-,
+
+^(x,0) = ^0(x).
+
+(6)
+
+The potential U has a Gaussian distribution with some
+length scale / for the decay of spatial correlations. A solution
+of Eq. (6) can be written25'54 in a form similar to that of the
+solution of the simple diffusion-free equation (3):
+
+where Mx means an average over all the trajectories of the
+Brownian motion £s (x) = (2x)l/2ws (x) which begins at
+the point |"s at the time s = 0 and which arrives at the point x
+at the time s = t.
+For any bounded, nonnegative initial function i/>0(x)
+and for any x > 0, solution ( 7 ) increases as exp [ t • 6<r2 In (xt /
+I 2 ) 1 1 2 ] with a unit probability in the asymptotic region
+t-* oo . More precisely, there exists a limit12
+lim
+
+xz//^) '
+
+(8^
+
+This time dependence is explained on the basis that a
+trajectory which quickly reaches a high maximum of the
+359
+
+Sov. Phvs. USD. 30 (5). Mav 1987
+
+potential makes a definite contribution to solution (7).
+What is the height of this maximum? In a region of size
+R (-» oo ) there are ~ (R //) 3 correlation cells. The probability for reaching a certain U0 in one cell is
+P~exp( — Ug/202) in order of magnitude. From the condition P(R //) 3 ~ 1 we find the estimate
+maxt/~
+
+1/2
+
+For a typical trajectory we would have R /l~ (xt / I 2 ) "2, so
+that the growth would be faster than exponential:
+tf> ~ exp [ t (3a2 In t)''2 ]. Actually, an even greater contribution comes from the atypical and less probable "optimal trajectory" (after I. M. Lifshitz). This is the trajectory which,
+in a time t, moves off to a large distance R /l~xt, canceling
+its small statistical weight by the large factor max U
+(Ref. 12).
+Although the limit (8) does not depend on molecular
+diffusion, in the case x = 0 the solution increases only exponentially, as is clear from (6) (with growth rates which
+differ at different points). The reason is that K influences the
+time (l2/x) at which the superexponential regime is
+reached. Consequently, we find different results, depending
+on the order in which we take the limits (f-» oo, x-*0) or
+(x->0, ?-»oo). Result (8) should not be understood as
+meaning that a diffusion x increases the growth rate of tf>. A
+more detailed study 22 shows that the growth rate of it> decreases with increasing x when following terms in the expansion are taken into account.
+The successive statistical moments of a field behave in a
+superexponential way even in the case x = 0. Specifically,
+we have
+<ip (x, t)) = (exp (pUt)) = exp (pWt*).
+This is also the growth pattern in the case x ^ 0 in the limit
+f — o o (Ref. 12). The moments (i[>p}i/p thus increase far
+more rapidly than the function itself, and they do so in such a
+way that the growth rate increases with the index of the moment. Such a progressive growth of the moments can be explained in terms of the presence of sharp peaks in the solution if>(x,t), i.e., in terms of an intermittency of the
+distribution of i/>. The peaks are present in any realization of
+the solution which corresponds to a definite realization of
+the potential. They lie at rare, high maxima of the potential
+U. By way of comparison we note that peaks are present in
+only certain rare realizations in the evolution of a random
+quantity.
+We have been dealing with an unbounded volume. In a
+bounded volume we would have if>~ exp (max U-t), where
+max [/is a random (e.g., Gaussian) quantity. For a Gaussian
+potential, the moments again increase as exp (p 2 cr 2 t 2 /2). If
+the potential has an upper limit5' U, then we have
+tfr~ (t/>p)i/p exp( Ut ); i.e., there is no intermittency in the
+lowest order. The phenomenon of intermittency in a steadystate potential is thus associated with the presence of nonphysical infinite tails on the potential distribution.
+More physical is the appearance of an intermittency in a
+potential (or medium )whichvarieswiththetimeandwhich
+is in a steady state only on the average. In this case we can
+expect a slower (exponential) growth of the solution, since
+the potential maxima will be present for only a finite time.
+Zel'dovichefa/.
+
+359
+
+6. SHORT-CORRELATION RANDOM MEDIUM; WIENER
+PROCESSES
+
+We turn now to intermittency in a medium which is in a
+steady state only on the average. Our first task is to specify
+the properties of such a medium. This specification is usually
+made in terms of mean and mean square characteristics; e.g.,
+one specifies the dielectric permittivity of a medium or—in
+magnetohydrodynamics—the mean helicity. In more-detailed approaches, a random medium would be characterized by a correlation tensor or even by certain characteristics
+of this tensor. For example, discussions of a Kolmogorov
+turbulence frequently utilize the exponent of an energy spectrum in an inertial interval. Such a description would be
+inadequate for our purposes. Since we are interested in improbable states of a field which is evolving in a random medium, we need to find somehow a description of the corresponding improbable states of the medium. Such a
+description can be constructed most simply in the case of a
+medium with an extreme time variation. We call such media
+"short-correlation" media.
+For definiteness we describe a short-correlation potential U. It is conveniently represented as the limit of potentials
+C/A (t,x) which are constant in t over intervals of length Af:
+(0,Af), (Af,2Ar)
+These potentials are independent on
+different intervals of this series. In the limit Af-»0 we have
+((U (t, x)- (U)) ( U ( f , y) = 26 (t - t') V (x, y).
+
+(U)))
+(9)
+
+Thus, at small values of A? the deviation of the potential
+from its mean value is of the order of (A?)~ 1 / 2 - "Steadystate on the average" means that the function V(x,y) is independent of the time.
+Relation (9) is a characteristic of our potential in terms
+of a correlation tensor. It does not, however, completely determine this potential. Specifically, we can use (9) to calculate correlation functions of the type (U(t^x)U(t2,x) ...
+U(tn,x)), given at one spatial point, since a short-correlation potential is Gaussian in time, under natural limitations.
+However, the higher-order correlations of the potential at
+different spatial points generally do not split up into binary
+correlations, and their calculation does not reduce to expression (9). In more-complicated situations involving a medium which is not a short-correlation medium9 we cannot use
+the Gaussian approximation, even for temporal correlations.
+The representation of a short-correlation potential and
+of other characteristics of a short-correlation medium,
+which is convenient for our purposes, is related to the concepts of white noise and a Wiener process.
+A Wiener process ID, is well known in physics as a description of the Brownian motion of a particle. More precisely, this is a mathematical abstraction of Brownian motion in
+the limit in which the mass of a particle and the time between
+collisions approach zero. The quantity w, represents the coordinate at time t of a Brownian particle which starts at point
+zero at time t = 0. A Wiener process is not a steady-state
+process: Over a time t, a Brownian particle moves a distance
+proportional to t'/2 away from its original position. In a onedimensional space, a Brownian particle returns to the starting point from time to time, despite its departure from its
+starting point in a mean-square sense. In two dimensions,
+360
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+such returns also occur, but they are very rare; a three-dimensional Wiener process involves no such returns. The situation can be understood easily by recalling how the fundamental solutions of the heat-conduction equation are
+constructed in spaces of different dimensionalities:
+f t ( x , t ) = (277-0 1 / 2 exp(-x 2 /2Z>?) on a straight line,
+fi(p,t) = (l/2irt)exp( -p2/2Dt~)
+in a plane, and
+f3(r,t) = ( 277-0 ~ 3 / 2 exp( - r2/2Dt) in a three-dimensional
+space. The probability for a return to a small neighborhood
+of the origin after a time t = t0 is
+
+, t)dt.
+This integral diverges in a power-law fashion on a straight
+line and in a logarithmic fashion in a plane; in three-dimensional space, it converges. The latter circumstance means
+that for sufficiently large t0 returns do not occur in a threedimensional space.
+Since any small fixed time interval is much longer than
+the time between collisions, which approaches zero, the law
+W, + AI — w, = w^, ~ ( A 0 1 / 2 also holds at small values of
+A?. Accordingly, a trajectory of a Wiener process is not differentiable in the classical sense. In today's terms we would
+say that such a trajectory is "fractal." The exponent of 1/2 in
+the expression for w^, is called the "order of a Holder derivative. We recall that an increment in u> Ar is a random quantity. From the standpoint of an expansion of dw, /dt in a Fourier integral, this quantity is white noise and has a flat
+spectrum. White noise— a generalized derivative of a Wiener
+process— is a short-correlation process which, in contrast
+with a Wiener process, is a steady-state process.
+We again recall that a Wiener process describes a real
+Brownian motion only in a certain approximation, as an intermediate asymptotic behavior. Let us consider a Brownian
+particle, a sphere of mass M, which is moving under the
+influence of collisions with spherical molecules of mass m.
+At the times of collisions with the molecules the Brownian
+particle undergoes an abrupt change in momentum; i.e., the
+trajectory of the Brownian particle has one Holder derivative at the times of collisions (but it does not have a genuine
+derivative). Its velocity is a ^-function, while the acceleration and the force are <5-functions. In this approximation the
+velocity spectrum is not flat, and it is not white noise. We
+now make use of the small value of the mass of the molecules,
+m, and we assume that the transit time between collisions of
+a Brownian particle, T, is short. Letting m and T approach
+zero in such a way that in the limit the particle is acted upon
+by a random force which is a steady-state force on the average over time, we find the familiar Langevin problem of the
+motion of a particle of mass M under the influence of a shortcorrelation force — white noise. This force is the sum of a
+large number of uncorrelated 5-functions of low intensity.
+The trajectory of such a particle evidently has 1.5 Holder
+derivatives, while its velocity has half of a Holder derivative
+and is not white noise. Finally, we let the mass of the Brownian particle, M, go to zero. Only in this limit do we obtain a
+Wiener process, which has half of a Holder derivative at all
+points and a white-noise velocity.
+The concept of a Wiener (Brownian) process is naturally associated with diffusion. However, we also intend to
+use a Wiener process to construct a potential describing ranZel'dovich eta/.
+
+360
+
+dom interactions. The non-standard nature of the situation
+is in fact stressed by the terminology: The mathematical concept at which we have arrived in our analysis of the trajectory of a moving particle begins to figure as a coefficient in a
+transport equation! The characteristics (e.g., the velocity)
+of a random medium which is the scene of a transport, a
+diffusion, and the self-excitation of a scalar (an impurity) or
+a vector (a vorticity or a magnetic field) appear in the transport equations as coefficients which are similar to the potential in Schrodinger's equation. In this sense the formulation
+of the problem differs from that of the Langevin problem, in
+which a given random force figures in the equation of motion. In this case the potential serves as a "drive belt" which
+links the energy source (through the characteristics of the
+medium) to the self-exciting impurity.
+We will also use the method of obtaining a short-correlation process from a Wiener process to describe random
+media. We assume that at each spatial point a distinct Wiener process is given, so that the entire set of Wiener processes
+must be characterized as a function of t and x: w,(x). A
+random short-correlation potential is then specified in the
+form
+
+of an intermittency does not depend on the approach taken.
+Without diffusion, i.e., with x = 0, Eq. (6) can be
+solved explicitly:
+t|>(f, x, co) = i|;0 (*) exp j^-— The addition factor e ~ CT'/2 appears in the exponential function because in differentiating a Wiener process which has
+only half of a derivative we need to consider the square of its
+differential and to use the equality (dw, ) 2 = a dt (Ref. 23,
+for example).
+A typical value of a process w, at large t is of the order of
+t 1/2 ; i.e., with a unit probability, solution ( 10) would decay
+as exp( —at/2) at any point. However, there is a small
+probability that the Wiener process will take on values
+which are larger than t l / 2 by an arbitrary amount. Consequently against the background of the general decrease there
+are undoubtedly rare and high peaks in the solution.
+That this is true can be seen by calculating successive
+statistical moments of the solution. Let us assume that the
+initial i/i0 (x ) is distributed in a manner independent of U or is
+a determinate function. Applying the formula
+(exp (pwj) = exp | p2 —J ,
+
+The Wiener processes at different points x and y are
+generally not independent. In order to specify completely
+the random medium we would need to specify this dependence in one way or another. Fortunately, the only important consideration for many of the problems in which we are
+interested is that the dependence is strong for nearby points,
+while it approaches zero for remote points. We can therefore
+resort to the approach of introducing a discrete space, under
+the assumptions that the properties of the random medium
+are constant in the spatial cells of some correlation size and
+are independent in different cells. In this case a Wiener process can be replaced by a finite-dimensional approximation:
+a random walk on a lattice. There are cases in which one also
+resorts to the approach of adopting a discrete time.
+The discussions in the literature usually refer to random
+media in which property (9) holds as being "6-correlated."
+We will speak here in terms of "short-correlation media,"
+bearing in mind the more-detailed description of such a medium which we have just been through.
+In certain cases we will also use a standard Wiener process to describe diffusion processes.
+
+we find
+
+i.e., the rates of the exponential growth, yp/p, increase with
+increasing index of the moment, in proportion to a{ p — 1)/
+2. A typical realization of ip(t,x) thus falls off with increasing t as exp ( — at /2); the mean value (p= 1) is the same as
+(^0); the mean square value increases as exp(u?); the fourth
+moment increases as exp(6uO; etc.
+The increase in the moments is explained by the nontrivial contribution of rate events. In other words, among the
+complete set of realizations of i/» (t,x,a>) there are some which
+grow in time at certain spatial points. As is clear from the
+properties of solutions (10) and from the properties of a
+Wiener process, these rare functions are functions of a temporal growth.
+In a large but finite volume or in the case of a localized
+initial distribution i/>0(x) we are dealing with a sort of deviation from the standard representation of ergodicity, understood as the equality of the mean values over a statistical
+ensemble and of spatial (sample) mean values.
+In contrast with the statistical moments, the sample
+moments in a finite volume V decay with a unit probability:
+
+7. INTERMITTENCY IN A TIME-VARYING MEDIUM
+
+We consider the simple case of a time-varying potential,
+represented as a white noise in time with independent values
+in different spatial cells of some correlation size:
+
+T"
+
+X <!3.r ~ exp ( — p 4- ) .
+/ ... nr.
+
+where w is a Wiener process. Using this generalized potential, we understand Eq. (6) as a time-difference equation. In
+other words, we first take the limit of a zero correlation time
+of the potential, and we then take the limit A? -> 0 in Eq. ( 6 ) .
+Taking the limits in this order corresponds to Ito's approach.23 An alternative approach is that of Stratonovich,24
+which corresponds in the case at hand to taking these limits
+in the opposite order. The conclusion regarding the presence
+361
+
+Sov. Phvs. USD. 30 (5). Mav 1987
+
+'
+
+^ '
+
+The sample moments themselves (in contrast with the statistical moments) are random quantities. Their decay rate,
+Yp = — pcr/2, however, is a determinate quantity. The correction to ft is of order r/t'/2, where e is a normally distributed random quantity with a unit variance.
+The difference between the sample moments and the
+statistical moments can be understood in the following way.
+If there is a localized initial distribution, or if we are dealing
+Zel'dovichefa/.
+
+361
+
+with a bounded volume, high peaks exist for only a finite
+time in most realizations. After a certain time the distance
+between these peaks becomes greater than the size of the
+region occupied by the field, and the peaks are preserved in
+only an exponentially small number of realizations. This low
+probability is high enough that the peaks contribute to the
+statistical mean determined by all realizations. However, the
+spatial mean over a given realization ,up will of course cease
+to sense the peaks as time elapses. The time over which peaks
+die out is of the order of TP ln(Fr 0 ~ 3 ), where rp =27
+cr( p — 1 ) is a time scale of the growth of the moment of the
+given order, and /•„ is the correlation size of the potential. At
+3
+t > TP In (
+) , peaks which substantially influence the
+pih sample moment no longer fit in the given volume.
+As was shown in Ref. 22, an intermittency is also preserved when there is diffusion, at least in the limit of small
+values of x. The growth rate will of course now depend on x.
+In the limit x->Q the quantities jp (x) are continuous, so
+that the curves of yp (x) do not coincide at small values of x.
+With increasing x they vanish at certain values x2, x3, .... It
+turns out that we have 7, (^) =0, y ( x ) <0, and this quantity
+vanishes at a certain x0^x2- The dependence yp (*) f°r integer values ofp can be found explicitly from the moment
+equations. However, already from the fact that forp = 1 we
+have (tf>) = const, and the typical value of ip falls off exponentially at x < x0, it follows that all the (i/> p ) with/j > 1 grow
+exponentially, at least at x < x0. Consequently, at x < x0 the
+intermittency is expressed just as strongly as at x = 0. At
+x > x0, the intermittency is observed only in the higher-order
+statistical moments.
+Constructing a solid theoretical basis for the general
+picture of the behavior of the growth rates as functions of the
+diffusion coefficient x which we have outlined here and in
+the preceding sections is a fairly complicated technical problem,22 some important aspects of which have not yet been
+resolved. The problem does simplify dramatically if we replace the term xk in this equation by some integral operator
+xA which is close to the original term. To construct this
+operator we recall that the diffusion term xk. describes a
+Brownian motion which moves off a distance ( x t ) l / 2 / l (I is
+the quantization step) over a time t. There is a small probability, however, that the Brownian particle can move off to
+any arbitrarily large distance. The integral operator x& describes a random motion of a particle of such a nature that at
+time t the particle is distributed uniformly over a sphere of
+radius ( x t } l l ~ / l and cannot escape from this sphere. In statistical physics, operators of this sort are well known and are
+used, for example, to study the well-known Curie- Weiss
+model.25 We restrict the present analysis to a discrete space
+in which the operator xh. acts in accordance with
+2\(t)
+
+.x'EV(f)
+
+where V(t) is a sphere of radius (xt) l/2 // centered at point
+jc, and N ( t ) is the number of points of the discrete space in
+this sphere. (The Laplacian in a discrete space is defined by
+
+where the summation is over the points of the space which
+are nearest the point x, and TV is the number of such points. )
+We can demonstrate the technique of carrying out cal362
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+culations with the operator xA using the example of finding
+the eigenvalues of the operator
+xA + U (x, co)
+
+with a random, steady-state, Gaussian potential U which is
+given in some fixed region G (these results were derived by
+one of the present authors—S. A. M.—in collaboration with
+L. N. Bogachev).
+We consider the problem
+xAcp,, (x) + U (x, co) qj x (x) =
+
+(x).
+
+(11)
+
+Since the eigenfunction tpA does not depend on the time, the
+left side of this equation can be put in the form
+
+(12)
+
+».
+
+where
+.x'EG
+
+Substituting (12) into ( 1 1 ) , we find the dispersion relation
+.*£ G
+
+With a unit probability, the random function F(A,ta)
+has N first-order poles on the real axis [since, with a probability of the order of unity, all the values of U(x,co ) at different spatial points of the discrete space are also different].
+Consequently, the dispersion relation has, with a unit probability, exactly N real roots. These roots give us the eigenvalues of problem (11), which are of course random numbers.
+The growth rate in the evolutionary problem is determined
+by the maximum value of the potential C/in region G; from
+dispersion relation (13) we can find corrections for small
+values ofx, by which the growth rate differs from C/max .
+Analogous calculations show that in an infinite space
+the solution of the evolutionary equation
+•
+
+• = U(x, w) <p + xAcp
+
+increases in accordance with
+In ip (x, t)
+t
+"
+
+ln „ ,
+
+M \l/2
+
+~l/2
+
+We wish to call attention to the fact that the first term in the
+asymptotic expression (14) is smaller than that in the problem with the actual Laplacian, (8). It corresponds to the
+naive result which would be derived without considering the
+"optimal trajectory" (in the sense in which this term was
+used by I. M. Lifshitz), which moves off to distance xt/l.
+This effect_pf course cannot be described by means of the
+operator a: A. Furthermore, in certain cases in the theory of
+random media we are dealing with only approximate equations. For example, in the one-electron approximation in the
+theory of metals the potential is by no means the actual very
+deep potential of the atomic nuclei but the part of this potential which effectively remains after we allow for the circumstances that the low-lying electronic levels are filled and
+that, by virtue of the Pauli principle, the last electron cannot
+descend very deeply into the potential well. In a detailed
+description, of course, the Pauli principle is not equivalent to
+the introduction of some potential. This statement means
+that in such cases we have no reason to trust the subtle effects
+which stem from the possibility that a random trajectory will
+Zel'dovich eta/.
+
+362
+
+move off to an extremely large distance. For this reason,
+result (14) gives us not the exact value of the growth rate but
+only a lower estimate on it in these cases; this lower estimate
+does not depend on the unreliable details of the construction
+of the equation.
+With regard to calculations on the behavior of the statistical moments in a steady-state medium in this approximation or calculations on the behavior of the actual solution,
+the sample moments, and the statistical moments in a timevarying medium, we note that they are unrelated to anomalously remote excursions of the trajectory. The operator xL
+reproduces all of the properties of diffusion which are known
+in this case. Figure 3 shows the growth rates as functions of
+the viscosity in this approximation.
+These properties of the growth rates are also characteristic of the problem of the transport of vectors in a random
+medium, e.g., of a magnetic field in the turbulent flow of a
+conducting fluid (a turbulent hydromagnetic dynamo). 9
+The primary distinction is that when the diffusion coefficients are sufficiently small a typical realization of the vector
+field may also grow exponentially. In the vector case, the
+peaks in the solution correspond to structural formations of
+the nature of plaits or layers of magnetic lines. The vector
+case is the topic of the following sections of this paper.
+
+field. These equations are reminiscent of a Schrodinger
+equation with a matrix potential; the problem of finding
+growth rates for them in the limit of large magnetic Reynolds numbers is analogous to the problem of finding a spectral edge in the semiclassical approximation.
+The asymptotic-analysis method which we use here is
+based on the circumstance that the growth rates of the magnetic field and of its moments in a three-dimensional random
+flow are equal in the limit of large magnetic Reynolds
+numbers to the growth rates calculated in the total absence
+of magnetic diffusions. 26 We can thus take a Lagrangian approach. In doing so, we reduce the problem to one of studying the evolution of a magnetic field H(f,x) along a
+Lagrangian trajectory
+<
+l t = x+ \ v(s, |,)ds,
+0
+
+which is determined exclusively by a given, divergence-free
+velocity field V(r,x). According to the law of induction, the
+magnetic field changes over a small time A? in the following
+way:
+
+a, (t, It)
+
+8. FAST DYNAMO
+
+The following theorem holds for a random renewing
+flow of a conducting fluid with good ergodic properties9'26:
+An initially weak magnetic field grows exponentially in the
+limit of large magnetic Reynolds numbers. In this limit the
+growth rate does not depend on the magnetic Reynolds number (a fast dynamo). The growth rates of the successive statistical moments increase progressively with the index of the
+moment, in such a way that the fourth moment increases
+more rapidly than the square of the second, and so forth.
+This behavior is evidence of an intermittency in space and
+time of the distribution of the field which is generated.
+Let us calculate explicit expressions for the growth
+rates of a typical realization of the magnetic field and all its
+moments for a flow with short, ^-function temporal correlations in the limit of large magnetic Reynolds numbers. A
+theorem for the existence of a field in such a flow and certain
+estimates of the growth rates of the moments were derived
+previously by Rozovskii.27 We will also derive closed evolutionary equations for the even moments of the magnetic
+
+( i , 7 = 1, 2, 3).
+
+Let us assume that the average flow velocity is zero. The
+short-correlation velocity field can thus be represented conveniently as the limit of velocities f A ~ (AO ~ 1 / 2 , which do
+not depend on the time on intervals of length A? and which
+are independent on different time intervals. In the limit
+A?->0 such a velocity field becomes a white noise with a
+correlation function
+t, x)v}(t',
+
+363
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+y))^(,(t-t')
+
+where / and v are length and velocity scales, and the angle
+brackets mean an average over the distribution of the velocity field.
+The assumption of a 5-correlation of the velocity field is
+equivalent to the situation that each element of the matrix
+Wtj = (dVj /dXj) A; is a Wiener process with a zero mean and
+some variance. We also assume that the velocity field is statistically uniform over space and has an isotropic probability
+distribution. The matrix W,, can then be written as
+WiS =
+
+FIG. 3. Growth rate of a scalar field as a function of the diffusion coefficient. The dashed lines are schematic plots of the growth rate as a function
+of the diffusion coefficient for noninteger moments with 1 <p < 2.
+
+(15)
+
+(16)
+
++
+
+where a and cr are constants, and w and each of the elements
+My are independent Wiener processes with a unit variance.
+That the first term is isotropic is obvious. Each realization of
+the second matrix is, generally speaking, anisotropic. However, the distribution of wfj is isotropic, because it is conserved under an orthogonal transformation. Since the matrix w,j is Gaussian, we can prove this fact by simply
+transforming it with the help of an orthogonal matrix:
+u>tj' = Uie wek UkJ.. We see that the correlation (wijwmn)
+agrees with (wijwmn). A divergence-free velocity field also
+means that the trace of the matrix Wfj vanishes; hence
+Zel'dovichefa/.
+
+363
+
+ed previously28'29 by other methods, in a homogeneous and
+isotropic flow with a longitudinal correlation function
+dVi
+
+2
+
+dx,
+
+for which we have
+
+where wn is the trace of the matrix wtj, the angle brackets
+mean an average over the Wiener process, and the superior
+bar means an average over the distribution of the velocity
+field.
+It might seem that we have to add to expression (16) a
+term of the form eijk wk, where eijk is the unit antisymmetric
+tensor. Since a Wiener process does not change its distribution under spatial reflection, an expression of this sort has an
+isotropic probability distribution, but it is, in contrast with
+Wy, not a tensor but a pseudotensor. The helicity property of
+the flow (Refs. 33 and 35, for example), which is important
+for the generation of magnetic fields, is related to the pseudoscalar part of the correlation function of the velocity field. In
+terms of the matrix Wtj in which we are speaking here, the
+helicity is expressed in terms of correlation functions of the
+type <»>*>.
+We wish to derive an equation for the square of the
+magnetic field on a Lagrangian tajectory. From (15) and
+(16) we find
+
+The quantity 2 W^H/Hj /H2, as a linear combination of Wiener processes, is also a Wiener process with a zero mean and
+a variance 8erV3, calculated with the help of (17). Replacing the second term in parentheses by Sc^Af /3 (by virtue of
+the central-limit theorem and the instantaneous nature of
+the correlations of the Wiener process in comparison with
+Af), and then letting A? go to zero, we find the equation
+which we have been seeking:
+8 \i/2
+
+. 8 a, ,.
+
+A solution of this equation is
+awt -f- -5- a2t .
+
+(18)
+
+After a long time, cr2^!, we can ignore the first random
+term, since w, increases in proportion to t1/2. The rate of
+increase of the magnetic field is therefore
+i lim-
+
+Intf _lt_ 2
+—. 3 a .
+
+(-.00
+
+Letus find the rates of growth of the second moments of
+the modulus of the magnetic field. Raising solution (18) to
+the pth power, averaging over the velocity field, and using
+the expression <exp( pw,)) = exp( p2t/2), we find
+(-00
+
+4o»
+
+2o2
+~
+
+(19)
+
+where p is arbitrary. For the second moment (p = 1) the
+growth rate agrees with the value y^/2 = (3/4 )v/l, calculat364
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+where v and / are a typical velocity amplitude and a length
+scale of the velocity field.
+We have derived the rate of increase of the field and its
+moments along a Lagangian trajectory. It is clear from homogeneity that the growth rates at a given point x will be the
+same.
+It is now a simple matter to see how the magnetic field
+evolves in a short-correlation medium which is time-varying
+on the average. In this case the quantity a is a function of the
+time, so that in (18) we need to replace c^t by
+
+If a falls off sufficiently rapidly with increasing t, the field
+increase may become a power-law increase, and the intermittency may disappear.
+The spatial structure of the moments at vm = 0 is described by the eigenvectors of some operator^,, but the corresponding random magnetic field is, of course, generalized.
+To find the structure of the moments at small but nonzero
+vm we need to analyze the problem in the next approximation. Finding the growth rates and eigenfunctions in two
+successive approximations is a typical procedure for the semiclassical approximation.30
+9. CORRELATION PROPERTIES OF SELF-EXCITING
+MAGNETIC FIELDS
+
+The ability of hydrodynamic motions of a conducting
+fluid to amplify a magnetic field underlies the magnetism of
+celestial objects and is pertinent to research on the dynamics
+of liquid-metal masses in breeder reactors and metallurgical
+installations. The motions are generally random, turbulent
+in nature. The magnetic field which is generated is therefore
+random.
+A process which has been studied quite thoroughly is
+the self-excitation of a mean field—a process with which the
+magnetic fields of the planets, the large-scale fields of the sun
+and similar stars, and the fields of spiral galaxies are
+linked.3135 The random component of the magnetic field has
+recently attracted increased interest in connection with the
+problem of the fine-structure solar magnetic fields (Ref. 36,
+for example) and fluctuations of the galactic magnetic
+field.37'38
+The rate of increase of a fluctuating magnetic field was
+found in the preceding section in the example of a shortcorrelation flow. The spatial structure of the field is intermittent. Finding the quantitative characteristics of this distribution is important for applications. The simplest
+characteristic is the correlation function (H, (t,x)Hj ( t , y ) ) ,
+which is equal to g(r)exp(2y2t), where r = \x — y\ for the
+homogeneous and isotropic case.
+For a given correlation tensor of a homogeneous and
+isotropic, reflection-symmetric, incompressible flow with
+Zel'doviche/a/.
+
+364
+
+short temporal correlations, the problem of finding the correlation function reduces to one of solving a Schrodinger
+equation with a variable mass, but without the square root of
+minus one in front of the time derivative.39 This equation
+was studied numerically in Refs. 38 and 40 and by asymptotic methods30 at Rm = lv/vm > 1 in Refs. 29 and 41. Here is
+the spectrum derived by the asymptotic method:
+
+(ft=0, 1, 2, . . . ) .
+
+(20)
+
+Figure 4 is a sketch of the correlation function corresponding to the first mode. The length scale r{~R ~ 1/2/
+corresponds to the skin thickness, g(r{) =0.82; the correlation function vanishes at r2, and it reaches a minimum at r3.
+These positions r2 and r3 depend on the structural details of
+.B(r), just as we haveg(r 4 );= — R ~ V 4 andr 4 = /—thepoint
+at which the exponential asymptotic behavior sets in.
+We suggest interpreting these characteristic points in
+the following way. We consider the process of folding a loop
+into a figure-eight with a subsequent doubling by means of
+the elementary field-generation process (Refs. 34 and 35, for
+example). The region (r2,r4) corresponds to the scatter in
+the lengths of the loops which are stretched out. The mode
+index corresponds to the number of turns in the figure-eight.
+The point r2 corresponds to the length of the inverted part of
+the figure-eight. The anticorrelation tail is related to the divergence-free condition (the closure of the loops):
+
+There exist a certain number of field lines which emerge
+from the correlation cell and go off to infinity. The relative
+number of these lines can be estimated from the ratio
+
+FIG. 4. a—First mode of the correlation function of the magnetic fields
+excited in a mirror-symmetric short-correlation flow; b, c—sketches of
+concentrations of a field which is being excited (b) during the stretching
+of the plaits and (c) during the folding of the plaits into a figure-eight.
+
+365
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+The fluctuating field which is excited is a set of thin, randomly oriented plaits which form loops which are stretched out
+to a great extent. The typical thickness of a plait can be taken
+to be equal in order of magnitude to IR ~ 1/2. Over length
+scales from IR ~ 1/2 to IR ~ 1/4 the field varies by a factor of
+In Rm /irR ~ l/4, which would be about I0~ 2 for the sun, for
+example, with Rm x I08.
+At sufficiently high magnetic Reynolds numbers, several modes are excited. It is a simple matter to show that the
+critical value for mode k is
+
+i.e.,
+;2B,
+
+1.7. 10*.
+
+Experience in numerical calculations shows that these
+asymptotic estimates are slightly on the low side; we would
+actually have R lm x 102.
+At an even larger value of Rm, the growth rates of the
+first and second modes are essentially equal. At R = 108 we
+have (7, — y 2 )/y,~0.1. In this case we would naturally expect that the correlation function would be the sum of two
+modes with comparable coefficients.
+The second mode is shown in Fig. 5; here
+r, = 1.8*-' /2 /,
+r2~l-Q.\R~l/\
+r,/l = 0.6* ~ I/4,
+g(r,)~0.82, g ( r 3 ) ~ ( - l / 8 ) * ~ 1/4, and g(r4)~R ™ 5/4 .
+We interpret the second mode as a combination of figureeights which have been twisted twice and stretched out, as
+sketched in Fig. 5.
+Let us take a brief look at applications of these results.
+In our galaxy we have Rm ^ 106 (ambipolar diffusion was
+taken into account in the determination of this value 35 ), so
+that we have (7, — y2) /y2 =; 0.2. The second harmonic must
+therefore be represented more weakly. This is the nature of
+the correlation function which was constructed by Dagkesamanskii and Shutenkov38 from observational data. At the
+sun we would have ^ m zz 108-109, and the two modes would
+be excited equally easily. In adddition to the fundamental
+length scale of the turbulence we would expect two other
+special length scales: IR ~ 1/2 and IR ~ 1/4. The first is not
+
+FIG. 5. a—Second mode of the correlation function of the magnetic fields
+excited in a mirror-symmetric short-correlation flow; b—sketch of concentrations of the field which is being excited.
+Zel'dovichefa/.
+
+365
+
+observable from the earth or from earth's orbit; if we take
+/s 104 km as an estimate (this is the length scale of supergranulation), we find IR ~ 1/2 ;= 1 km. The length scale
+IR ~ 1/4 corresponds to a dimension ~ 100 km and is well
+known from observations.36 We wish to stress that both in
+observations and in the theory this length scale is of the order
+of the dimensions of a region of one polarity. The structure of
+these fine-structure elements and the field in them are not
+related to the mean field; i.e., they should not be correlated
+with the phase of the solar cycle. Again, this conclusion is in
+accordance with observations.
+10. VORTICITY AND STRAIN IN THE FLOW
+OF AN INCOMPRESSIBLE FLUID
+
+We have discussed at length the characteristics of intermittency in the language of higher moments. That language,
+however, is not very common in physics. We accordingly
+would like to borrow a simple example from hydrodynamics
+to show what type of physical information can be extracted
+from a knowledge of higher moments. In this specially selected example, the lower moments (the first and second)
+are not very informative.
+We note that the integral of the square of the vorticity is
+identically equal to the integral of the square of the strain
+over a region at whose boundary the velocity of the incompressible fluid vanishes [this is a theorem of D. K. Bobylioff
+(Bobylev) 42>43 ]. For the integrals of the higher orders of the
+vorticity and strain however, there are no such identities.
+Using these integrals one can show just what is it that forms
+concentrated structures—a vortex or a strain—in the flow
+and just what is distributed over the entire volume of the
+fluid. In other words, integrals of higher powers of the vorticity and the strain can be used to characterize the intermittency of a flow.
+Our purpose in the present section of the paper is to
+establish the relationship between intermittency and integrals of the vorticity and the strain. We wish to stress that we
+are talking about properties which are possessed by any solenoidal vector field. We will use hydrodynamic terminology only to keep the discussion specific and to indicate possible applications; we will not make use of either the equations
+of motion of the fluid or the Kelvin-Helmholtz theorem
+(and so forth). The results remain valid in the case of magnetic fields (divergence-free pseudovectors). In this case we
+need to consider the relationship between the integrals of
+powers of the current density and of the tensor (dH,/
+dXj +dHJ/dxi)/2.
+We recall that vorticity is a characteristic of the rotation of any particle of a fluid. In the case of rigid-body rotation at an angular velocity a, the velocity would be
+u = to X r, and the vorticity would be identical at all spatial
+points: curlu = 2to. In the hydrodynamics of an ideal fluid,
+the vorticity is frozen in the fluid in the same sense that a
+magnetic field would be. In two dimensions, this statement
+implies that the material derivative of the vorticity is simply
+equal to zero. In the presence of viscosity, the strain tensor
+D.. = (du,/dXj + drij/dXi )/2 determines the enery dissipation rate, which is (\/2)v\D i } |2, where v is the viscosity of
+the fluid.
+In analyzing the motion of an incompressible fluid it is
+natural to determine the degree of vorticity of the motion. At
+first glance it would seem to be sufficient to compare the
+366
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+mean square values of the vorticity and the strain tensor for
+this purpose (their mean values in the isotropic case are of
+course zero). However, the Bobylioff theorem tells us that
+these quantities are equal to each other, i.e., that all the flows
+of an incompressible fluid are identically vortical in a mean
+square sense, for a given mean square value of the strain. For
+the flows of a compressible fluid, the integral of the square of
+the vorticity is always smaller than the integral of the square
+of the strain tensor.
+Before we examine the integrals of higher powers of the
+vorticity and the strain, we will prove the Bobylioff theorem
+for the case of a differential rotation around the origin of
+coordinates with an angular velocity co = coir2). This motion is two-dimensional; the integration must be carried out
+over the x, y plane. Assuming
+= rotu,
+
+&=
+
+we find
+
+This integral thus vanishes if there is no motion at infinity
+( or at a boundary ). To obtain an identity in the general case
+it is sufficient to show that /I (2) is a divergence. Let us do this.
+On the one hand we have
+O2 _ ,,
+d»;
+dun _ duj
+Kihl
+'
+dxh K:m" dxm '" dxh
+
+diij _
+dxh
+
+dut dui,
+dxh ~^7 '
+
+where we have used
+
+On the other we have
+62 = — (-"•* ri duh \ I dui i .^L \
+4 \dxk~
+
+dxf
+
+I \ dxh T dxt I
+
+1 / dui dui
+dui duk \
+" T ( ~dx^ ~~dx^ + ~dxl ~dx~i / '
+
+By virtue of the incompressibility we have
+d"i
+dxh
+
+flUk _
+il I
+duh \
+dxi ~" dxk \Ui ~Jx~! '
+
+i.e., the difference ifl 2 — S2 is a divergence. For a compressible fluid we easily find
+'-'d 3 r= — \ (div u) 2 d
+
+The mean square vorticity is thus at a maximum for an incompressible fluid.
+It is now a simple matter to verify that the integrals of
+higher powers of the vorticity and the strain are no longer
+related in an identical way. For the difference of the fourth
+powers we have
+
+This integral is generally not equal to zero. We can write
+expressions for the integrals of the difference between the
+2p-th powers without any difficulty: f A(2p) dV = (A(2p) ) .
+Zel'dovich eta/.
+
+366
+
+The meaning of the quantity ( A { 2 p } } is easy to see. If
+this quantity is positive at large p, it will be primarily the
+vorticity which concentrates in regions of a rapid change of
+velocity; in the opposite case, the strain will concentrate
+there. For example, for a differential rotation with an angular velocity co = cu0 exp[ — (r/r0)2]
+we would have
+{A (4) ) = (3/16)«o/"o. Consequently, when the flow of an incompressible fluid is a system of distinct vortices, the quantity (A <4) ) and the other quantities (A{2p) } must be positive.
+If, on the other hand, large volumes of the fluid are displaced
+in a moving fluid, in such a way that comparatively few vortices are formed at their boundary, then it will be primarily
+the strain which is concentrated in regions of a rapid change
+in velocity. At the boundaries of these regions the velocity
+field will be of the form w, = c^x,, and we will have c,, = 0
+by virtue of incompressibility. At those points where a moving volume pushes back a fluid which is at rest, and where
+the fluid closes behind a moving volume, the matrix ctj is
+approximately diagonal, and the strain is much larger than
+the vorticity, as is easily verified. At the lateral surfaces of
+moving volume the flow is approximately a Couette flow
+u = u x ( y ) , in which the squares of the vorticity and the
+strain are the same at each point. Accordingly, in the motion
+of large volumes the condition {A(2p)) <0 will hold. Such a
+motion is unstable since the tangential discontinuity at the
+boundary of the moving volume decays, forming a system of
+vortices in the form of double helices,45 so that the vorticity
+remains concentrated in regions of a rapid change in the
+velocity field, while the strain becomes distributed over the
+entire volume occupied by the flow.
+In general, the quantity ( A ( 2 p ) ) is proportional to co20pV,
+where co0 is the amplitude of the velocity gradient, and V is
+the size of the region occupied by the drop in the velocity
+field. Consequently, averages of different powers of the vorticity and the strain may yield either a positive or a negative
+difference. This statement means that the flow contains a
+hierarchy of formations of various scales, so that the formations of one scale are primarily vortices, while those of another scale move without a rotation of the volume. The sign
+of ( A ( 2 p } ) can of course change in time and depend on the
+Reynolds number.
+The characteristics of the vorticity distribution which
+we have been discussing are also interesting in the particular
+case of turbulence. We are thinking primarily of a uniform
+turbulence in an infinite space (all the integrals are normalized to a unit volume) in which the ergodic condition holds,
+so that the mean values over space and over the ensemble are
+the same. In a finite volume this agreement of mean values
+may be disrupted, but even in this case an analysis of spatial
+mean values, which the quantities ( A ( 2 p ) } are, is of interest.
+In turbulence, the moments (A(2p)} characterize the
+deviation of the turbulence from a Gaussian turbulence, for
+which the higher moments of the velocity field can be expressed in terms of the second moments, so that all the
+(A(2/>) ) are zero. Since in turbulence the mean values of the
+powers of the vorticity and the strain are determined by the
+viscosity, the quantities (A(2p)} characterize the intermittency at the smallest scale. The reader is referred to Ref. 4
+regarding other characteristics of intermittency, which describe it (in particular) in an inertial interval; the characteristics of the intermittency of random magnetic fields excited
+in a turbulence are examined in §8 of the present paper.
+367
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+Yet another characteristic of intermittency is the correlation, which shows whether the vortices are concentrated in
+filaments or layers. The strain apparently tends to concentrate in spots. In order to construct correlations of this sort
+we need to consider different-point moments, for which one
+can in principle derive evolutionary equations by the methods described in §6.
+For a magnetic field, the current density plays the role
+of a vortex. Accordingly, if a quantity of the type (9Al2p) ) is
+positive the implication is that the currents which create the
+magnetic field have a tendency to group into a system of line
+or surface currents. Currents which produce a magnetic
+field with a negative (Al2p) } do not form such structures.
+On the other hand, a magnetic field is the curl of the
+vector potential, which in this sense is analogous to a velocity. The sign of the higher moments which we are considering here will thus help us decide whether the field itself is
+concentrated.
+11. STRUCTURE OF AN INTERMITTENT FIELD
+
+An extreme expression of the idea of an intermittency is
+that the vorticity (or a magnetic field) is concentrated in
+narrow tubes, so that it can be written in the form
+Q = 0>n62 [r - 1 (Z, t)};
+here £(l,t) is a function which specifies the position of the
+filament in space by means of a parameter / (which might be,
+for example, distance along the filament), and / is the time.
+The quantity S2 is a two-dimensional Dirac 5-function in the
+plane perpendicular to the filament at each point, while n is a
+unit vector which runs tangent to the line §. The plane in
+which S2 is specified, like the vector n, evidently rotates from
+point to point and as time elapses.
+In several cases, individual vortices are introduced in
+solving hydrodynamic problems, as a quantization method
+for solving partial differential equations, e.g., in the ChorinOppenheim method. The hydrodynamics of discrete vortices is studied in detail in a comprehensive monograph by
+Gledzer et a/.46
+Agishtein and Migdal47 have suggested to use the concept of a set of discrete vortex filaments as a basis for describing a well-developed hydrodynamic flow. We wish to emphasize that only in the presence of an intermittency do the
+individual vortex (or magnetic) lines become real entities.
+The value of <t> for them is determined by the actual length of
+the process, not by the particular mesh which is allowed by
+the computer available to some investigator.
+It follows from the solenoidal nature of vorticity
+(divO = 0) that the factor 4>, which is a measure of the integral intensity in the given plane (J fldS = 0), should be
+constant along an entire filament. Furthermore, the value of
+4> for each given line should also be independent of the time!
+The stretching of a vortex is a well-known phenomenon: For a given "Lagrangian" particle of a liquid, if the
+viscosity is ignored, the vortex is transformed in proportion
+to the distance of infinitely close points on a line directed
+along the vortex:
+Q (t, 1) = Q0vr6 (t, t),
+where | = |(>-,r) is the equation of motion of a particle with
+the Lagrangian coordinate g, |(0,?) = r. It is this stretching
+Zel'doviche/a/
+
+367
+
+with amplification of a vortex which opposes the damping
+effect of viscosity in a three-dimensional motion, so that it is
+of fundamental importance for turbulence theory. A threedimensional nature of the motion is necessary; ftr is expressed in terms of vx and vy, but the growth of flz depends
+on dv2/dz. Consequently, the two-dimensional approximation is atypical. In the approximation of intermittency, however, the constant $ does not change, even if ft and n are
+directed along z and dv2 /dz is nonzero.
+The apparent contradiction can be resolved in a very
+trivial way: In a region in which there are many approximately parallel lines with an identical vorticity direction the
+mean value is
+Q = <PniJ>,
+where \f> is the mean number of lines per unit area of the cross
+section. An extension along z of an incompressible fluid is
+accompanied by its contraction in the x,y plane: If dv2 /
+dz > 0, then
+dvx
+dx
+
+| &vv _
+' dy ~~
+
+dvz
+aF
+
+,,,
+'
+
+This effect is what causes an increase in the density of lines.
+We might also note that the approximation of separate
+<5-function vortex lines is suitable for calculating the general
+motion of lines and of a fluid, but it is not suitable for calculating the viscous dissipation of energy. Viscosity determines
+the actual thickness of the lines.
+In the magnetic case, the entire discussion is very similar to the original ideas of Faraday. If a magnetic field is
+represented by a system of lines, the magnitude of the field is
+characterized specifically by the density with which these
+lines are packed; this situation corresponds precisely to an
+identical, constant flux along each line. A magnetic force
+tube will, on the average, be stretched and become thinner in
+a turbulent flow; a magnetic viscosity will thicken it. It is
+thus possible that a certain characteristic thickness will be
+established for a given flow and a given magnetic Reynolds
+number.
+If there are many vortex or magnetic tubes, curved and
+tangled, the viscosity will cause them to interact; there is the
+possibility that oppositely directed tubes and closed field
+tubes will reclose and annihilate.
+Today, a hundred years later, individual vortex lines are
+actually being observed in rotating superfluid liquid helium.
+The intensity of each line is specified by a quantum condition; it is proportional to Planck's constant. We thus see
+immediately that this intensity does not depend on the time
+during any motion of a fluid.
+How does viscosity affect vortex lines? It is obvious that
+an isolated line (a straight line stretching from — oo to
++ oo) will acquire a finite thickness, although its integral
+inensity will be conserved.
+Finally, one could ask just why it is the vorticity, rather
+than the velocity itself which is concentrated in tubes (in
+one-dimensional filaments in the approximation described
+above). (We immediately note that a streamline is not Galilean-invariant. ) A property common to both ft and u is the
+condition: divft = 0 and divu = 0. However, a thin submerged jet of a fluid with a given flow is unstable, while an
+isolated straight vortex filament has a certain elasticity and
+is stable.
+368
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+The same can be said of magnetohydrodynamics: It is a
+field (the current is flowing in the azimuthal direction), not
+a current, which is concentrated in a tube. However, it would
+be interesting to see whether there are exceptional conditions under which fluid jets and channels along which a current flows would arise.
+The concept of a turbulent flow consisting of distinct
+vortex filaments is obviously only a very crude approximation of reality. It follows immediately from this concept that
+we need to develop a convenient method for calculations on
+the dynamics of a system of vortices in the typical threedimensional (3D) time-varying case.
+However, this would not exhaust the problem. The fractional exponents in the Kolmogorov laws indicates a fractal
+nature of the vortex filaments. An individual filament may
+be (must be!) fractal when we follow its bends and attempt
+to determine its length. However, the hierarchical pattern of
+the combination of small vortices into isolated, larger, "intermittent" vortices may also be fractal.
+In developing this picture we should recall that parallel
+vortices repel each other. That this is true can be seen easily
+by looking at superfluid helium. For a given angular momentum, the minimum energy corresponds to a rigid-body rotation. The best approximation of rigid-body rotation is a uniform (constant-density) distribution of quantum vortices.
+Such a distribution has a certain elasticity. The dependence
+of the rotation energy on the moment of inertia can be easily
+converted into a dependence of the pressure of the lattice of
+vortices on the density. One can then also find an effective
+transverse sound velocity. Another characteristic feature is
+that a quantum vortex with a doubled angular momentum is
+unstable and decays into two unit vortices.
+Accordingly, there is no determinate process of a coalescence of several vortices into a single vortex. Parallel
+vortices (in addition to turning each other) also repel each
+other. There is no analogy between parallel currents (which
+attract each other) and parallel vortices. Curiously, magnetic plaits (concentrations of magnetic field lines) lie halfway
+between electric current and hydrodynamic vortices in
+terms of the characteristic of the interaction: Magnetic plaits
+do not produce external fields and thus do not interact.
+Returning to vortices, we wish to stress that their moving toward each other (like their conservation, despite the
+viscosity) involves a stretching along a vortex (see the discussion above). As expected, the appearance of a turbulent
+structure is associated with a pumping of energy from a
+large-scale motion and with the work performed by pressure
+forces. A turbulent motion is a typical example of a dissipative structure which is far from equilibrium. Finally, we recall that turbulent motion at the scale with the maximum
+energy can be quite varied. Consider the following: 1) a uniform turbulence behind a lattice; 2) turbulence in a straight
+tube; 3) a fluid between two cylinders (the behavior differs
+markedly, depending on whether the inner or outer cylinder
+is rotating); 4) a convection driven by the heating of a fluid;
+and 5) the same convection, under conditions such that a
+general rotation of the fluid plays an important role, as it
+does, for example, in large-scale atmospheric phenomena.
+Under these extremely varied conditions, the structure of
+the velocity field can also differ, and different approximate
+approaches can be taken toward the actual picture.
+The basic hypotheses of turbulence theory are (1) that
+Zel'doviche/s/.
+
+368
+
+there is a cascade of scales and (2) that the properties of the
+turbulence are always identical at a scale smaller than the
+scale which carries the energy (the maximum scale). These
+hypotheses are very plausible, but they must be supplemented with a quantitative or at least a semiquantitative estimate
+of that ratio of scales over which the specific features of the
+energy-carrying motion are "forgotten," and a universal
+pattern of motion arises.
+Finally, we note the difference between the hydrodynamic and magnetohydrodynamic problems. The hydrodynamic problem is closed and nonlinear. An instantaneous
+vorticity field completely determines the velocity field of an
+incompressible fluid, regardless of whether the vorticity is
+given as a smooth function of the coordinates or as a system
+of <5-function lines.
+In the linear magnetic problem, the behavior of the field
+B can be sought against the background of an independently
+given velocity field. It can thus be seen, in particular, that a
+hybrid problem arises: the behavior of a magnetic field
+against the background of a velocity given by a set of vortex
+lines (ft = ~Lj <!>, S2J). Do magnetic force plaits arise in this
+situation? Will these plaits coincide spatially with vortex
+lines?
+We wish to thank A. M. Yaglom for useful comments.
+"Curiously, the duality and the complementary nature of these approaches was pointed out a long time ago by Democritus, who, on the
+one hand, "understood that if atoms are of the same nature then they will
+not be able to produce different things," ' but who "considered chance to
+be the cause of the regular organization of living things." 2
+21
+An irrotational (potential) vector reduces to the gradient of a scalar.
+-"In real life, of course, this argument will not always hold up. However,
+we are talking only about correlations, of whose existence the reader can
+convince himself personally.
+4l
+This expression also holds under far less restrictive assumptions regarding£. 4 - 52 '"
+"Laws of this sort arise not only in thermodynamics but also in chemical
+kinetics, where an activation energy plays the role of U.
+6
+'In quantum theory, an effective limitation on the potential may result
+from the Pauli principle.
+'Lactantins, Deiradei, Kempten, 1919, p. 105 (Bibliothekder Kirchenvater, Vol. 36).
+Philopones, Scholia in Aristotelem (Coll. C. A. Brandis), Paris, 1836.
+'G. K. Batchelor and A. A. Townsend, Proc. R. Soc. (London) A199,
+238 (1949); G. K. Batchelor, I. D. Howells, and A. A. Townsend, J.
+Fluid Mech. 5, 113, 139 (1959).
+4
+A. S. Monin and A. M. Yaglom, Statistical Fluid Mechanics, MIT Press,
+Cambridge, Mass., 1975 [Russ. original, Nauka, M., 1967].
+5
+S. M. Rytov, Yu. A. Kravtsov, and V. I. TatarskiT, Introduction to Statistical Radiophysics (in Russian), Vol. II, Nauka, M., 1978.
+"I. M. Lifshitz, S. A. Gredeskul, and L. A. Pastur, Introduction to the
+Theory of Disordered Systems (in Russian), Nauka, M., 1982.
+7
+M. Meneguzzi, U. Frisch, and A. Pouquet, Phys. Rev. Lett. 47, 1060
+(1981).
+8
+S. F. Shandarin and Ya. B. Zeldovich, Phys. Rev. Lett. 52, 1488 (1984).
+9
+S. A. Molchanov, A. A. Ruzmaikin, and D. D. Sokolov, Usp. Fiz. Nauk
+145,593 (1985) [Sov. Phys. Usp. 28, 307 (1985)].
+10
+Ya. B. Zel'dovich and D. D. Sokolov, Usp. Fiz. Nauk 146, 493 (1985)
+[Sov. Phys. Usp. 28, 608 (1985)].
+"B. Ya. Zel'dovich and T. I. Kuznetsova, Usp. Fiz. Nauk 106, 47 (1972)
+[Sov. Phys. Usp. 15, 25 (1972)].
+' 2 Ya. B. Zel'dovich, S. A. Molchanov, A. A. Ruzmaikin, and D. D. Sokolov, Zh. Eksp. Teor. Fiz. 89, 2061 (1985) [Sov. Phys. JETP 62, 1188
+(1985)].
+T3
+V. I. Klyatskin, Stochastic Equations and Waves in Random Inhomogeneous Media (in Russian), Nauka, M., 1978.
+14
+Y. Mayer-Kress (ed.), Dimensions and Entropies in Chaotic Systems,
+Springer-Verlag, N. Y., 1985.
+"W. Feller. An Introduction to Probability Theory and Its Applications,
+Wiley, N. Y., 1968 (Russ. transl. of earlier ed., Mir, M., 1965).
+16
+V. P. Nosko, in: Proceedings of a Soviet-Japanese Symposium on Probability Theory, Khabarovsk (in Russian), Novosibirsk, 1969.
+17
+A. Renyi, in: A Trilogy on Mathematics (Russ. transl. ed. B. V. Gnedenko. Mir. M.. 1980).
+2
+
+369
+
+Sov. Phys. Usp. 30 (5), May 1987
+
+18
+
+A. Dold and B. Eckmann (editors), Stability Problems for Stochastic
+Models, Springer-Verlag, N. Y., 1984.
+I9
+V. A. Ambartsumyan, Dokl. Akad. Nauk SSSR 44, 223 (1944).
+20
+A. S. Mikhailov and I. V. Uporov, Usp. Fiz. Nauk 144, 79 (1984) [Sov.
+Phys. Usp. 27, 695 (1984)].
+2l
+Ya. B. Zel'dovich, Dokl. Akad. Nauk SSSR 270, 1369 (1983) [Sov.
+Phys. Dokl. 28,490(1983)].
+22
+Ya. B. Zeldovich, S. A. Molchanov, A. A. Ruzmaikin, and D. D. Sokoloff, "Intermittency, diffusion and generation in a random fluid," in:
+Sov. Sci. Rev., Math., Phys. (ed. S.P. Novikov), Gordon and Breach,
+New York, 1986.
+23
+I. I. Gikhman and A. A. Skorokhod, Introduction to the Theory of
+Random Processes (in Russian), Nauka, M., 1965.
+24
+R. L. Stratonovich, Conditional Markov Processes (in Russian), Izd.
+Mesk. Univ., M., 1966.
+25
+M. Kac, Stability and Phase Transitions (Russ. transl. Mir, M., 1973).
+26
+S. A. Molchanov, A. A. Ruzmaikin, and D. D. Sokoloff, Geophys. Astrophys. Fluid Dyn. 30, 341 (1984).
+27
+B. L. Rozovskil, in: Proceedings of the Fourth International Vil'nyus
+Conference on Probability Theory and Mathematical Statistics, Vol. 4
+(in Russian), Mokslas, Vil'nyus, 1985, p. 256.
+28
+V. G. Novikov, A. A. Ruzmaikin, and D. D. Sokolov, Zh. Eksp. Teor.
+Fiz. 85, 909 (1983) [Sov. Phys. JETP 58, 527 (1983)].
+29
+O. A. Artamonova and D. D. Sokolov, Vestn. Mosk. Univ. Fiz. 27, 8
+(1986).
+30
+V. P. Maslov and M. V. Fedoryuk, Semiclassical Approximation for the
+Equations of Quantum Mechanics (in Russian), Nauka, M., 1976.
+3I
+K. Moffatt, Magnetic Field Generation in Electrically Conducting
+Fluids, Cambridge Univ. Press, 1978 [Russ. transl., Mir, M., 1980].
+32
+E. N. Parker, Cosmical Magnetic Fields: Their Origin and Their Activity,
+Clarendon Press, Oxford, 1979 [Russ. transl., Mir, M., 1982].
+33
+F. Krause and K.-H. Radler, Mean-Field Magnetohydrodynamics and
+Dynamo Theory, Pergamon Press, Oxford, 1980 [Russ. transl., Mir, M.,
+1984].
+34
+S. I. Vamshtein and Ya. B. Zel'dovich, Usp. Fiz. Nauk 106, 431 (1972)
+[Sov. Phys. Usp. 15, 159 (1972)].
+35
+Ya. V. Zel'dovich, A. A. Ruzmaikin, and D. D. Sokoloff, Magnetic
+Fields in Astrophysics, Gordon and Breach, N. Y., 1983.
+36
+J. O. Stenflo, Basic Mechanisms of Solar Activity: Proceedings of Symposium IAU No. 71 (D. Reidel, editor), Dordrecht, 1976, p. 69.
+37
+G. V. Chibisov and V. S. Ptuskin, in: Proceedings of the Seventeenth
+International Cosmic Ray Conference, Vol. 2, Paris, 1980, p. 233.
+38
+R. D. Dagkesamanskii and V. R. Shutenkov, Preprint No. 145 (in Russian), P. N. Lebedev Physics Institute, Academy of Sciences of the
+USSR, Moscow, 1985.
+39
+A. P. Kazantsev, Zh. Eksp. Teor. Fiz. 53, 1806 (1967) [Sov. Phys.
+JETP 26, 1031 (1968)].
+40
+T. B. Maslova, V. G. Novikov, and A. A. Ruzmaikin, Preprint No. 130
+(in Russian), Institute of Applied Mathematics, Academy of Sciences
+of the USSR, Moscow, 1986.
+41
+N. I. Kleeorin, A. A. Ruzmaikin, and D. D. Sokoloff, Plasma Astrophysics, ESA, Sukhumi, 1986.
+42
+D. K. Bobylioff, Math. Ann. 4, 72 (1983).
+43
+R. G. Deissler, Rev. Mod. Phys. 56, 223 (1984).
+44
+U. Frisch, Fluid Dynamics and Climate Dynamics: Corso LXXXVIII,
+Bologna, Italy, 1985, p. 71.
+45
+Ya. B. Zel'dovich and P. I. Kolykhalov, Dokl. Akad. Nauk SSSR 266,
+302 (1982) [Sov. Phys. Dokl. 27, 699 (1982)].
+46
+E. B. Gledzer, F. V. Dolzhanskii, and A. M. Obukhov, Systems of the
+Hydrodynamic Type and Their Applications (in Russian), Nauka, M.,
+1981.
+47
+M. E. Agishtein and A. A. Migdal, Preprint No. 1102 (in Russian),
+Institute of Space Research, Academy of Sciences of the USSR, M.,
+1986.
+48
+A. A. Samarskii, S. P. Kurdyumov, and V. A. Galaktionov (editors),
+Mathematical Modeling: Processes in Nonlinear Media (in Russian),
+Nauka, M., 1986.
+49
+R. G. Giovanelli, Secrets of the Sun, Univ. Press, Cambridge, 1984.
+50
+E. A. Novikov, Prikl. Mat. Mekh. 35,266 (1971) [J. Appl. Math. Mech.
+35,231 (1971)].
+5I
+B. Mandelbrot, Lect. Not. Phys. 12, 333 (1972).
+52
+G. I. Taylor, Proc. London Math. Soc. Ser. 2, 20, 196 (1921).
+"J. L. Lumley, Lect. Not. Phys. 12, 1 (1972); M. Rosenblatt, Lect. Not.
+Phys. 12, 27 (1972).
+54
+I. M. Gel'fand and A. M. Yaglom, Usp. Mat. Nauk 11,77 (1956) [Russ.
+Math. Surv. 11 (1956)].
+"N. Totsuji and T. Kihara, Publ. Astron. Soc. Jpn. 21, 221 (1969).
+56
+P. J. E. Peebles, The Large-Scale Structure of the Universe, Princeton
+Univ. Press, Princeton, N. J., 1980 [Russ. transl., Mir, M., 1983].
+57
+A. F. Andreev and M. Yu. Kagan, Zh. Eksp. Teor. Fiz. 86, 546 (1984)
+[Sov. Phys. JETP 59, 318 (1984)].
+Translated by Dave Parsons
+Zel'dovich eta/.
+
+369
+
+

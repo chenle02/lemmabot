@@ -1,0 +1,1985 @@
+GEOPHYSICS, VOL. 79, NO. 3 (MAY-JUNE 2014); P. T105–T116, 12 FIGS.
+10.1190/GEO2013-0245.1
+
+Modeling acoustic wave propagation in heterogeneous attenuating
+media using decoupled fractional Laplacians
+
+Tieyuan Zhu1 and Jerry M. Harris1
+
+staggered-grid finite-difference approach. The fractional Laplacians are calculated in the spatial frequency domain using a Fourier pseudospectral implementation. We validated our numerical
+results through comparisons with theoretical constant-Q attenuation and dispersion solutions, field measurements from the
+Pierre Shale, and results from 2D viscoacoustic analytical modeling for the homogeneous Pierre Shale. We also evaluated different formulations to show separated amplitude loss and
+dispersion effects on wavefields. Furthermore, we generalized
+our rigorous formulation for homogeneous media to an approximate equation for viscoacoustic waves in heterogeneous media.
+We then investigated the accuracy of numerical modeling in attenuating media with different Q-values and its stability in largecontrast heterogeneous media. Finally, we tested the applicability of our time-domain formulation in a heterogeneous medium
+with high attenuation.
+
+ABSTRACT
+We evaluated a time-domain wave equation for modeling
+acoustic wave propagation in attenuating media. The wave
+equation was derived from Kjartansson’s constant-Q constitutive stress-strain relation in combination with the mass and momentum conservation equations. Our wave equation, expressed
+by a second-order temporal derivative and two fractional Laplacian operators, described very nearly constant-Q attenuation
+and dispersion effects. The advantage of using our formulation
+of two fractional Laplacians over the traditional fractional time
+derivative approach was the avoidance of time history memory
+variables and thus it offered more economic computations.
+In numerical simulations, we formulated the first-order constitutive equations with the perfectly matched layer absorbing
+boundaries. The temporal derivative was calculated with a
+
+proaches commonly use superposition of mechanical elements
+(e.g., Maxwell and standard linear solid [SLS] elements) to describe
+Q behavior, which are known as approximate constant-Q (ACQ)
+models (Liu et al., 1976; Emmerich and Korn, 1987; Carcione,
+2007; Zhu et al., 2013). Nevertheless, the memory and computation
+time requirements, especially for, say, 3D applications, may limit
+these approaches from being widely applied for seismic migration
+and inversion. Instead of such ACQ models, use of a constant-Q
+model (Kjartansson, 1979) in the time-domain wave equation is attractive because it is accurate in producing desirable constant-Q
+behavior at all frequencies in the band. However, rigorous use of
+such a constant-Q model introduces a fractional time derivative, i.e.,
+noninteger (irrational or fractional) power of the time derivative
+(Caputo and Mainardi, 1971; Mainardi and Tomirotti, 1997).
+Solving the fractional wave equation has been quite common in
+mathematics, acoustics, and bioengineering (e.g., Mainardi, 2010;
+
+INTRODUCTION
+Conventional seismic modeling approaches usually ignore attenuation effects on wavefields. In earth media, however, attenuation causes reduced energy and a distorted phase of seismic waves,
+especially when the attenuation is high due to the presence of, for
+example, gas pockets (Dvorkin and Mavko, 2006). To accurately
+characterize wave propagation in real media, attenuation and associated dispersion effects should be taken into account in seismic
+wavefield modeling.
+Over the past three decades, much work has been done to model
+acoustic attenuation effects during wave propagation. Basically,
+these forward-modeling approaches are split into two categories:
+One category implements attenuation in the frequency domain
+by allowing the velocity to be complex (Aki and Richards,
+1980; Liao and McMechan, 1996; Štekl and Pratt, 1998). The other
+introduces Q in a time-domain wave equation. Time-domain ap-
+
+Manuscript received by the Editor 3 July 2013; revised manuscript received 14 December 2013; published online 12 March 2014.
+1
+Stanford University, Department of Geophysics, Stanford, California, USA. E-mail: tyzhu@stanford.edu; jerry.harris@stanford.edu.
+© 2014 Society of Exploration Geophysicists. All rights reserved.
+T105
+
+T106
+
+Zhu and Harris
+
+Treeby and Cox, 2010; Caputo et al., 2011). Recently, this fractional
+calculus was introduced to model seismic wave propagation (Carcione et al., 2002; Carcione, 2009, 2010). Carcione et al. (2002) and
+Carcione (2009) simulate acoustic and elastic waves using the constant-Q wave equation with the fractional time derivative that was
+computed by the Grünwald-Letnikov (GL) approximation (Podlubny, 1999). Nevertheless, it is notable that the fractional time
+derivative of a single variable depends on all the previous values
+of this variable. This property requires a large memory of stressstrain history from time t ¼ 0 (Carcione, 2010). Therefore, in
+numerical simulations we have the expense of memory resources
+even though in some situations it is possible to truncate the operator
+(Podlubny, 1999; Carcione et al., 2002).
+To overcome this memory expense, Lu and Hanyga (2004) introduce a set of secondary internal variables in addition to the primary internal variables to solve fractional differential equations of
+arbitrary order. Nevertheless, additional computational costs are still
+paid. Without introducing extra variables, Chen and Holm (2004)
+propose to use the fractional Laplacian operator to model anomalous attenuation behavior in fractional wave equations for homogeneous media. The fractional Laplacian is easily evaluated in
+the spatial frequency domain using the generalized Fourier approach (Carcione, 2010). As a result, the fractional Laplacian successfully avoids additional memory required by the fractional time
+derivative. Carcione (2010) gives a homogeneous constant-Q wave
+equation using the fractional Laplacian. His formulation captures
+amplitude loss and velocity dispersion in a single term. Separation
+of amplitude loss and dispersion operators in the fractional Laplacian wave equation may be preferable because separated forms are
+more useful in compensating for attenuation loss in inverse problems,
+e.g., reverse time imaging by only reversing sign of the attenuation
+operator and leaving the sign of the dispersion operator unchanged
+(Treeby et al., 2010; Zhu, 2014; Zhu et al., 2014). Zhang et al. (2010)
+also derive the approximate constant-Q wave equation with decoupled amplitude loss and dispersion effects, but their derivation
+using the normalization transform for decoupling amplitude loss
+and dispersion is not clearly described in the abstract.
+Following Treeby and Cox’s (2010) approach, here, we derive a
+time-domain wave equation using the fractional Laplacian to model
+constant-Q behavior. Starting from Kjartansson’s constant-Q constitutive stress-strain relation, we present the formulation for homogeneous media and then generalize to smoothly heterogeneous
+media. This fractional Laplacian based nearly constant-Q (NCQ)
+wave equation introduces separated amplitude loss and phase velocity dispersion operators based on the fractional Laplacian. For
+numerical simulations, perfectly matched layer (PML) absorbing
+boundaries are incorporated with the first-order constant-Q conservation equations. The spatial derivative is computed by a staggeredgrid pseudospectral method while a staggered-grid finite-difference
+approach is used for temporal discretization.
+The paper is organized as follows: The beginning is a review of
+the constant-Q stress-strain relation and a derivation of the fractional time derivative wave equation. Next, we provide detailed derivations of the fractional NCQ wave equation for homogeneous and
+heterogeneous media. Following that, we describe numerical experiments for a model of the homogeneous Pierre Shale to investigate the accuracy of our modeling by comparison with theoretical
+constant-Q solutions and for a two-layer model of heterogeneous
+medium to investigate stability for large-contrast heterogeneous
+
+media. Finally, we test the capability and efficiency of our formulation for heterogeneous media.
+
+CONSTANT-Q AND FRACTIONAL LAPLACIAN
+Constant-Q stress-strain relation and fractional time
+derivative
+Even though there is evidence for frequency-dependent Q from
+field and laboratory data (Kan et al., 1983; Sams et al., 1997; Batzle
+et al., 2006), in this paper we focus on a mathematical and computational frequency-independent Q model, which is considered
+to be a practical approximate Q model for seismology problems
+(McDonal et al., 1958; Aki and Richards, 1980). Kjartansson
+(1979) explicitly gives a linear description of attenuation that
+exhibits the exact constant-Q characteristic. His formulation uses
+fractional derivatives that are based on a relaxation function of
+the form t−2γ , instead of integer power of t. The relaxation function
+is given as
+
+ψ 1−2γ ðtÞ ¼
+
+ −2γ
+M0
+t
+HðtÞ;
+Γð1 − 2γÞ t0
+
+t > 0;
+
+(1)
+
+where M0 ¼ ρ0 c20 cos2 ðπγ∕2Þ is a bulk modulus, ρ0 is the acoustic
+density, Γ is Euler’s gamma function, and t0 is a reference time
+(t0 ¼ 1∕ω0 ). The parameter γ ¼ arctanð1∕QÞ∕π is dimensionless,
+and we know that 0 < γ < 0.5 for any positive value of Q. HðtÞ
+is the Heaviside step function. Note that only three parameters,
+the phase velocity c0 at a reference frequency ω0 and the Q, are
+needed to describe loss mechanisms, rather than several relaxation
+times and the complex modulus in the SLS models (Carcione, 2007).
+In terms of the Caputo’s fractional derivative (Caputo, 1967), the
+isotropic stress-strain (σ-ε) relation may be deduced in the following form:
+
+dε
+¼
+σ ¼ ψ 1−2γ ðtÞ 
+dt
+
+
+
+ 2γ
+∂ ε
+;
+−2γ
+∂t2γ
+t0
+M0
+
+(2)
+
+where the symbol * denotes the convolution operator. The strain ε
+has the fractional order 2γ of the time derivative. According to equation 2, the behavior of the fractional time derivative ∂2γ ε∕∂t2γ depends on the characteristics of the relaxation function ψ 1−2γ ðtÞ.
+Figure 1 shows how ψ 1−2γ ðtÞ varies with Q-values (0.1, 1, 10,
+and 100). When Q is large, the relaxation function ψ 1−2γ ðtÞ decays
+slowly and tends toward the step function. Consequently, the fractional time derivative ∂2γ ε∕∂t2γ approaches ε. When Q is infinite
+(the elastic case), the current stress will be linear with the current
+strain σ ¼ M0 ε.
+When Q tends toward zero (infinite attenuation), the function
+ψ 1−2γ ðtÞ approaches a one-sided delta function and thus the fractional time derivative ∂2γ ε∕∂t2γ reduces to ∂ε∕∂t. When Q lies between zero and infinity, the calculation of the fractional time
+derivative depends on the state of previous time steps; i.e., the current stress must be calculated from the time history of the strain. As
+a result, numerical evaluation of a fractional time derivative operator
+requires large memory and computation time to store and use the
+time history (Carcione et al., 2002; Carcione, 2009; Caputo et al.,
+2011), even if it is possible to truncate its operator based on some
+short memory principle (Podlubny, 1999; Carcione et al., 2002).
+
+A nearly constant-Q wave equation
+
+The fractional Laplacian
+To overcome this memory requirement and the associated
+numerical difficulties, the fractional Laplacian operator ð−∇2 Þα∕2
+is proposed by Chen and Holm (2004) to model power law attenuation behavior instead of the fractional time derivative (∂α ∕∂tα ,
+where α is real). In this case, the fractional Laplacian, calculated
+in the spatial domain, avoids storage of the wavefields from previous time steps. When incorporating this with a Fourier pseudospectral numerical scheme, the fractional Laplacian can be
+implemented without any particular numerical difficulties.
+The Fourier transform of the fractional Laplacian is written as
+(Chen and Holm, 2004)
+F
+
+ð−∇2 Þα∕2 ϕðr; tÞ→kα Φðk; ωÞ;
+
+0 < α < 2;
+
+(3)
+
+where k is the spatial wavenumber, ω is the angular frequency, and
+the symbol F is the Fourier transform operator. The expression
+Φðk; ωÞ is the 2D Fourier transform of the space-time function
+ϕðr; tÞ; i.e.,
+
+Φðk; ωÞ ¼
+
+Z ∞Z ∞
+−∞
+
+−∞
+
+ϕðr; tÞe−iðωt−krÞ drdt:
+
+(4)
+
+From equation 3, we see that the−1inverse Fourier transform F−1 is
+F
+also well defined as kα Φðk; ωÞ→ ð−∇2 Þα∕2 ϕðr; tÞ. More detailed
+descriptions of the fractional Laplacian can be found in Gorenflo
+and Mainardi (1998), Hanyga (2001), Chen and Holm (2004),
+and Carcione (2010).
+
+A constant-Q wave equation using
+the fractional Laplacian
+For homogeneous acoustic media, the linear first-order momentum conservation equation can be written as
+
+∂
+1
+υ ¼ ∇σ;
+∂t
+ρ0
+
+(5)
+
+central-difference approximations for the time discretization and
+Fourier method to compute the spatial derivative. Recently, Carcione (2009) extends its derivation to build the elastic wave equation with constant-Q. In the following, we will replace the fractional
+time derivative with the fractional Laplacian operator.
+The dispersion relation for fractional wave equation 7 can be obtained by substituting the plane wave solution expðiωt − ik~ · rÞ,
+where k~ is the complex wavenumber vector, ω is the angular frequency, and r is the spatial coordinate vector:
+
+ω2
+2γ ~ 2
+¼ ðiÞ2γ ω−2γ
+0 ω k :
+c2
+
+ω2
+−2γ
+~ 2γþ2 þ ðiωÞc2γ−1 ω−2γ sinðπγÞk~ 2γþ1 :
+≈ c2γ
+0 ω0 cosðπγÞk
+0
+0
+c2
+(9)
+Equation 9 approximates equation 8; thus, we refer to it as a NCQ
+dispersion relation. Figure 2 shows how well the attenuation and
+dispersion in equation 9 (dashed line) approximate to the exact constant-Q attenuation and dispersion (see Appendix A) in equation 8
+(solid line) using different Q values (2, 10, and 100). The other media parameters used in Figure 2 are listed in the first example of the
+numerical experiments section. One can see that the differences increase with decreasing Q value, even though they match very well
+for relatively high Q values (low attenuation).
+In homogeneous media, velocity c0 and Q are independent of
+the space variable. We can apply 2D inverse spatial and temporal
+Fourier transform (see the notation in equation 4) to equation 9,
+resulting in the fractional Laplacian k~ 2γþ2 → ð−∇2 Þγþ1 and
+k~ 2γþ1 → ð−∇2 Þγþ1∕2 ; thus, we obtain the NCQ wave equation
+for homogeneous media:
+2
+Q = 0.1
+Q=1
+
+(6)
+
+Q = 10
+
+1.5
+
+1−2γ
+
+(t)
+
+Q = 100
+1
+
+Ψ
+
+where σ is the stress field, ε is the strain field, and υ ¼ ðυx ; υy ; υz Þ is
+the acoustic particle velocity vector.
+Combining equation 2, the stress-strain relation, with equations 5
+and 6, the first-order conservation equations, the fractional wave
+equation with constant density ρ0 is obtained:
+
+∂2−2γ σ
+¼ c2 ω0−2γ ∇2 σ;
+∂t2−2γ
+
+(8)
+
+The attenuation and phase dispersion are derived in Appendix A.
+After some calculations (see Appendix B), we obtain a new
+dispersion relation as
+
+and the strain-velocity equation is
+
+∂
+ε ¼ ∇ · υ;
+∂t
+
+T107
+
+0.5
+
+(7)
+
+where ∇2 is the Laplacian operator and c2 ¼ M0 ∕ρ0 ¼
+c20 cos2 ðπγ∕2Þ. The exponent 2 − 2γ is the fractional order of the
+time derivative, the so-called fractional time derivative. It is evident
+that equation 7 reduces to the classical acoustic wave equation as
+γ → 0 (Q → ∞), and the diffusion equation as γ → 1∕2 (Q → 0).
+This fractional wave equation is also well-known as the Caputo’s
+wave equation. Carcione et al. (2002) successfully solve the
+fractional time wave equation using Grünwald-Letnikow and
+
+0
+−1
+
+0
+
+1
+
+2
+Time (s)
+
+3
+
+4
+
+5
+
+Figure 1. The relaxation function ψ 1−2γ ðtÞ varying with the previous time t in the constant-Q model. The curves denote values
+of Q ¼ 0.1 (solid), 1 (dash), and 10 (triangle), and 100 (circle).
+Note that when Q is small, the curve approximates a one-sided delta
+function. In contrast, when Q is large, the dependence becomes
+more flat (toward a step function).
+
+Zhu and Harris
+
+T108
+
+1 ∂2 σ
+∂
+¼ ηð−∇2 Þγþ1 σ þ τ ð−∇2 Þγþ1∕2 σ;
+2
+2
+∂t
+c ∂t
+
+(10)
+
+where the coefficients are
+−2γ
+2γ−1 −2γ
+η ¼ −c2γ
+ω0 sinðπγÞ:
+0 ω0 cosðπγÞ; τ ¼ −c0
+
+(11)
+
+Note that equation 10 essentially serves the same purpose as equation 7, the fractional time wave equation. When Q is infinite (no
+attenuation), i.e., γ ¼ 0, our fractional Laplacian equation 10 reduces exactly to the familiar acoustic wave equation. Numerical stability analysis of equation 10 is shown in Appendix C.
+
+Freezing-unfreezing theory for heterogeneous media
+In smoothly heterogeneous media c0 ðrÞ and QðrÞ are assumed to
+vary smoothly in space. Using the locality principle (freezing-unfreezing) of the pseudodifferential operator (Stein [1993], p. 230),
+we now adapt the fractional NCQ wave equation for homogeneous
+media (equation 10) to describe propagation in heterogeneous media. The locality principle allows us to replace the constant parameters appearing in the pseudodifferential operator in equation 10 by
+the variable parameters. The detailed derivation is shown in Appendix D. The fractional NCQ wave equation for smoothly heterogeneous media is then obtained:
+
+
+
+1 ∂2 σðr; tÞ
+∂
+2
+γðrÞ
+2
+γðrÞ−1∕2
+¼ ρ0 ðrÞ ηðrÞð−∇ Þ þ τðrÞ ð−∇ Þ
+∂t
+c2 ðrÞ ∂t2
+
+
+1
+×∇·
+∇σðr;tÞ ;
+(12)
+ρ0 ðrÞ
+where the coefficients vary in space as follows:
+2γðrÞ
+
+ηðrÞ ¼ −c0
+
+−2γðrÞ
+
+ðrÞω0
+
+2γðrÞ−1
+
+τðrÞ ¼ −c0
+
+cos½πγðrÞ;
+
+−2γðrÞ
+
+ðrÞω0
+
+b)
+
+2.8
+2.6
+
+Velocity (km/s)
+
+1000
+
+Q=2
+800
+
+2.4
+
+Q = 10
+
+2.2
+Q = 100
+
+2.0
+
+α (dB/km)
+
+a)
+
+600
+400
+
+1.8
+
+(16)
+
+Numerical implementation
+Modeling wave propagation using the first-order conservation
+equations has previously been implemented in the finite-difference
+time-domain approach (Zhu et al., 2013). It is easy to implement the
+PML boundary to absorb waves leaving the domain of interest (Berenger, 1994). The temporal derivative is solved with the staggeredgrid finite-difference approach. The first-order spatial derivatives
+are calculated by the staggered-grid pseudospectral method that
+is known to reduce spatial numerical dispersion and nonphysical
+ringing (Özdenvar and McMechan, 1996; Carcione, 1999). Here,
+the fractional Laplacian is calculated by taking the spatial Fourier
+transform, as defined in equation 3. Thus, in homogeneous media,
+the computational form of the fractional Laplacians in equation 17
+is written as
+
+ð−∇2 Þγ εðr; tÞ ¼ F−1 fk2γ F½εðr; tÞg;
+ð−∇2 Þγ−1∕2
+
+
+
+
+∂
+∂
+εðr; tÞ ¼ F−1 k2γ−1 F
+εðr; tÞ ;
+∂t
+∂t
+
+(18)
+
+(19)
+
+where the symbols F and F−1 are the Fourier transform and inverse
+Fourier transform operators, respectively. This result highlights the
+advantage of the derived fractional Laplacian operators; in the spatial frequency domain, the fractional Laplacian is easily calculated. Whereas in
+smoothly heterogeneous media (γðrÞ is slowly
+varying in space), equations 18 and 19 will be
+Q=2
+approximately satisfied. In our implementation,
+we use the average value of γðrÞ to approximate
+the fractional power terms γðrÞ in equations 18
+and 19.
+Q = 10
+
+200
+
+1.6
+1.4
+0
+
+∂
+εðr; tÞ ¼ ∇ · υðr; tÞ;
+∂t
+
+where equation 17 replaces equation 2 as the constitutive stressstrain relation; σðr; tÞ is the stress field; υðr; tÞ is the particle velocity vector; εðr; tÞ is the strain field at position r at time t; and cðrÞ
+and ρ0 ðrÞ are the spatial acoustic velocity and density, respectively.
+Again, equation 17 reduces to the lossless constitutive stress-strain
+relation when γ → 0 (Q → ∞).
+
+(14)
+
+To avoid calculating the spatial derivatives of the medium parameters in the wave equation 12, we solve instead the equivalent firstorder conservation equations with the additional of an external body
+force f:
+
+(15)
+
+
+
+∂
+σðr;tÞ ¼ M0 ðrÞ ηðrÞð−∇2 ÞγðrÞ þτðrÞ ð−∇2 ÞγðrÞ−1∕2 εðr;tÞ;
+∂t
+(17)
+
+(13)
+
+sin½πγðrÞ:
+
+∂υðr; tÞ
+1
+¼
+∇σðr; tÞ þ f;
+∂t
+ρ0 ðrÞ
+
+NUMERICAL EXPERIMENTS
+
+Q = 100
+50
+
+100 150 200
+Frequency (Hz)
+
+250
+
+300
+
+0
+0
+
+50
+
+100 150 200
+Frequency (Hz)
+
+250
+
+300
+
+Figure 2. Comparisons of the approximate dispersion in equation 9 (dashed line) with
+the exact constant-Q dispersion (see Appendix A) in equation 8 (solid line). We calculate these curves using different values of Q; i.e., Q ¼ 2, 10, and 100. The smaller
+the Q values, the larger the errors.
+
+Attenuation and dispersion
+To illustrate the utility of the proposed viscoacoustic wave equation to correctly model
+constant-Q attenuation and dispersion, we compare in the first example the numerical results
+
+A nearly constant-Q wave equation
+with laboratory measured data and Kjartanssan constant-Q theoretical data in a homogeneous medium. McDonal et al. (1958) use measured data of Pierre Shale in Colorado to find an approximate
+constant-Q behavior with the attenuation coefficient α ¼ 0.12f
+dB∕kft ≈ 0.0453f neper∕km, where f is the frequency in hertz.
+From Carcione (2009), the quality factor of Pierre Shale rock is Q ¼
+32 and the P-wave acoustic velocity is about 2164 m∕s at the reference frequency 100 Hz. For a homogeneous lossy medium, we
+choose a typical shale density of 2.2 g∕cm3 . The simulations are
+performed in 2D with a 512 × 512 grid, 1.0-m spacing in the xand z-directions, and a time step of 0.23 × 10−3 s. A Ricker wavelet
+source with 100-Hz center frequencies is located at (256 m, 256 m)
+in simulations.
+The attenuation coefficient α and the phase velocity are
+calculated by the amplitude spectral ratio in decibels/meter and
+the phase change at each frequency (Buttkus, 2000; Treeby and
+Cox, 2010):
+
+
+αðωÞ ¼ −20 log10
+
+cðωÞ ¼
+
+
+A2
+∕d;
+A1
+
+ωd
+;
+ϕ1 − ϕ2
+
+T109
+
+the underestimation of small attenuation values at lower frequencies
+by our NCQ model. Similar observations are made by Wuenschel (1965).
+To illustrate the effects of separated amplitude loss and phase
+dispersion operators on wavefields, we conduct simulations with
+different partial formulations of equation 10. For example, if
+one only considers the phase dispersion effects and ignores the amplitude loss effects, the dispersion-dominated wave equation will be
+
+1 ∂2 σ
+¼ ηð−∇2 Þγþ1 σ:
+c2 ∂t2
+
+(22)
+
+Similarly, the loss-dominated wave equation that contains the
+amplitude loss effects will be
+
+1 ∂2 σ
+∂
+¼ ∇2 σ þ τ ð−∇2 Þγþ1∕2 σ:
+∂t
+c2 ∂t2
+
+(23)
+
+(20)
+
+(21)
+
+where A1;2 are the amplitude spectra at two receivers, ϕ1;2 are phase
+spectra, and d is the propagation distance in meters. To keep
+the simulation free from numerical artifacts (e.g., numerical
+dispersion), we placed two receivers at 20 and 70 m from the
+source. The geometric spreading for 2D problem is corrected by
+pﬃﬃﬃ
+the factor r.
+Figure 3 shows the accuracy of calculated attenuation and
+dispersion for the Pierre Shale model. The experimental data from
+McDonal et al. (1958) are represented by diamond points. The solid
+lines in Figure 3 give the theoretical attenuation and dispersion
+based on equations A-4 and A-5. The open circles denote the calculated attenuation and dispersion values extracted from our
+numerical simulations at two receivers. They appear to fit well with
+the theoretical values as well as the experimental data. In Figure 3b,
+the calculated phase velocity drops rapidly below 40 Hz and cannot
+fit this portion of the theoretical results well. The difference is due to
+
+The second term in equation 23 describes attenuation of the constant-Q model. We assume the reference velocity c0 ¼ 2164 m∕s is
+defined at high frequency, say, 1500 Hz. We simulate wavefields
+using the model with Q ¼ 10. Figure 4 shows four wavefields at
+130 ms: (a) acoustic (lossless), (b) loss-dominated (equation 23),
+(c) dispersion-dominated (equation 22), and (d) viscoacoustic
+(lossy), respectively. Compared to the acoustic wavefield, Figure 4b
+shows significantly reduced amplitude due to the loss while weak
+energy before the reference wavefront indicated by the red dots in
+Figure 4 is the result of the acausal attenuation term in equation 23.
+The dispersive acoustic wavefield in Figure 4c has delayed phase
+but comparable amplitude; the viscoacoustic wavefield in Figure 4d
+has reduced amplitude and delayed phase.
+
+Distance (m)
+−200
+
+−100
+
+Acoustic
+−200
+
+a)
+
+0
+
+100
+
+200
+
+Loss dominated
+
+b)
+
+b)
+
+a)
+
+Velocity (km/s)
+
+150
+
+α (dB/km)
+
+100
+
+50
+
+0
+0
+
+Distance (m)
+
+−100
+
+100
+200
+Frequency (Hz)
+
+300
+
+2.2
+2.15
+
+0
+
+100
+
+2.1
+2.05
+0
+
+200
+100
+200
+Frequency (Hz)
+
+300
+
+Figure 3. (a) Attenuation and (b) phase velocity with frequency for
+Pierre Shale with Q ¼ 32. The numerical attenuation coefficients
+and phase velocity (circles) are computed using equations 20
+and 21. The theoretical constant-Q values (solid lines) are computed
+using equations A-4 and A-5. The experimental results (diamond
+points) are from McDonal et al. (1958).
+
+c)
+Dispersion dominated
+
+d)
+Viscoacoustic
+
+Figure 4. Four wavefield parts split by the dashed lines are generated by: acoustic (a), loss dominated (b), dispersion dominated (c),
+and viscoacoustic (d), respectively. The red dots indicate the reference acoustic wavefront (no attenuation). The simulation configuration is the same as that in the first example. The medium
+parameters are c0 ¼ 2164 m∕s and Q ¼ 10.
+
+Zhu and Harris
+
+T110
+
+Accuracy over long distances
+To test the accuracy of our numerical results of this NCQ wave
+equation over long distances (more attenuation), we increase our
+model size to a 2048 × 3584 grid to capture wavefields over the
+longer distance. The mesh spacing in the x- and z-directions is
+1.0 m, respectively. Other parameters are the same as the previous
+experiment. We compare numerical results at receivers located at
+500, 1500, and 3000 m from the source with the corresponding analytical solutions for a 2D homogeneous Pierre Shale medium
+(Figure 5). The 2D analytical solution is obtained by convolving
+the constant-Q Green’s function with the source function (Carcione,
+2007). We evaluated the accuracy of numerical solutions using the
+root-mean-square (rms) errors, which is defined by
+nt
+X
+
+ðdnj − daj Þ2 ∕
+
+j¼1
+
+a)
+
+nt
+X
+
+ðdaj Þ2 ;
+
+Distance (m)
+−400
+
+−400
+
+(24)
+
+1.5
+
+Pressure
+
+0
+
+200
+
+400
+
+a) Q = 100
+
+b) Q = 30
+
+c) Q = 10
+
+d) Q = 4
+
+−200
+
+Analytical solution
+Numerical solution
+
+1
+
+0
+
+200
+
+0.5
+0
+
+400
+−0.5
+−1
+0.2
+
+0.24
+
+0.28
+0.32
+Time (s)
+
+0.36
+
+0.4
+
+b)
+0.06
+
+Analytical solution
+Numerical solution
+
+0.04
+
+Figure 6. Four snapshot parts corresponding to four Q values:
+(a) 100, (b) 30, (c) 10, and (d) 4. A point source located at the center
+of the model. Snapshots are recorded at 200 ms in homogeneous
+attenuating media.
+
+a)
+
+0
+
+−0.02
+
+5
+0
+
+0
+RMS = 2.3e – 4
+
+−10
+0.1
+
+−0.04
+
+c)
+
+10
+
+10
+
+0.02
+
+0.6
+
+b)
+
+Amplitude
+
+Pressure
+
+−200
+
+j¼1
+
+Distance (m)
+
+E¼
+
+where nt is the number of time samples of the seismic trace, dnj is
+the calculated value of the numerically simulated trace at sample j,
+and the superscript a denotes the corresponding analytical value.
+We found that the rms error deceases with offset, 1.3 × 10−3 at
+500 m (Figure 5a), 3.2 × 10−3 at 1500 m (Figure 5b), and
+7.1 × 10−3 at 3000 m (Figure 5c). Numerical solutions agree with
+the analytical solutions very well at these distances.
+
+0.65
+
+0.7
+
+0.75
+Time (s)
+
+0.8
+
+0.85
+
+0.9
+
+0.15
+
+0.2
+
+c)
+
+RMS = 1.3e – 3
+
+−5
+0.1
+
+0.15
+
+0.2
+
+d)
+2
+
+0.1
+
+6
+
+Analytical solution
+Numerical solution
+
+Pressure
+
+4
+
+Amplitude
+
+× 10–3
+1
+0
+0
+
+2
+
+RMS = 4.7e – 3
+
+−1
+0.1
+
+0
+
+0.15
+Time (s)
+
+0.2
+
+RMS = 1.1e – 1
+
+−0.1
+0.1
+
+0.15
+Time (s)
+
+0.2
+
+−2
+Analytical
+−4
+1.3
+
+Numerical
+1.35
+
+1.4
+
+1.45
+Time (s)
+
+1.5
+
+1.55
+
+1.6
+
+Figure 5. Comparison of numerical solutions (circles) with the
+Green’s function analytical solutions (solid line). The receivers
+are at (a) 500, (b) 1500, and (c) 3000 m from the source.
+
+Figure 7. Comparison between simulated seismograms (circles)
+and analytical seismograms (solid line) corresponding to four Q values: (a) 100, (b) 30, (c) 10, and (d) 4 at point (0.5, 0.7) km from a
+source (0.5, 0.5) km. They show excellent agreement, and the last
+smallest Q ¼ 4 value shows a little derivation.
+
+A nearly constant-Q wave equation
+
+Accuracy in different Q media
+
+snapshots taken at 200 ms in the NCQ wave equation with
+Q = (a) 100, (b) 30, (c) 10, and (d) 4. We can see decreased amplitudes and delayed phases with decreasing Q values. We do not
+simulate for Q < 4 because the simulation is unstable at this distance. Figure 7 compares the analytical and numerical solutions
+
+This section investigates the accuracy of the wave equation for
+different Q media. The velocity model is homogeneous as above.
+The source is located at the center of the model (0.5, 0.5) km. We
+place a receiver at the location of (0.5, 0.7) km. Figure 6 shows
+
+1000
+
+0
+
+1500
+
+0
+
+0
+
+500
+
+500
+
+500
+
+1000
+
+c)
+1500
+1
+0
+At horizontal 500 m
+
+−1
+0
+
+1000
+
+1000
+
+1500
+
+Amplitude
+
+Distance (m)
+
+500
+
+Distance (m)
+
+b)
+
+Distance (m)
+0
+
+Amplitude
+
+a)
+
+T111
+
+1500
+
+500
+
+500
+
+f)
+
+1500
+
+0
+
+0
+
+0
+
+500
+
+500
+
+500
+
+1000
+
+1
+0
+At horizontal 500 m
+
+−1
+0
+
+1000
+
+1000
+
+1500
+
+1500
+
+500
+
+1000
+
+1500
+
+h)
+0
+
+500
+
+500
+
+0
+
+500
+
+1000
+
+1500
+
+500
+
+0
+At horizontal 500 m
+
+0
+
+1000
+
+1500
+
+1500
+
+NCQ
+
+1500
+
+1
+
+−1
+
+1000
+
+1000
+Distance (m)
+
+At horizontal 1000 m
+
+j)
+Amplitude
+
+500
+
+1500
+
+0
+−1
+
+Amplitude
+
+Distance (m)
+
+0
+0
+
+1000
+
+1
+
+0
+
+g)
+
+1500
+
+1500
+Amplitude
+
+1000
+
+Amplitude
+
+Distance (m)
+
+500
+
+1000
+Distance (m)
+
+At horizontal 1000 m
+
+−1
+
+e)
+0
+
+1500
+
+0
+
+0
+
+d)
+
+1000
+
+1
+
+1000
+
+1500
+
+1000
+Distance (m)
+
+1500
+
+0
+At horizontal 1000 m
+
+−1
+
+SLS
+
+500
+
+1
+
+0
+
+500
+
+NCQ
+
+SLS
+
+Figure 8. Snapshots at 224 ms. A two-layer model with velocities of 1800 m∕s in the top layer and 3600 m∕s in the bottom layer, and a
+Q value of 30 in the top and 100 in the bottom is used. The interface is at a depth of 800 m. First row: homogeneous Q model with two-layer
+velocity: (a) computed by solving the NCQ wave equation, (b) computed by solving the viscoacoustic (SLS) wave equation, and (c) comparison
+of traces at horizontal 500 and 1000 m between (a) NCQ (circle line) and (b) SLS (solid line). Second row: homogeneous velocity model with
+two-layer Q: (d) computed by solving the NCQ wave equation, (e) computed by solving the SLS wave equation, and (f) comparison of traces at
+horizontal 500 and 1000 m between (d) NCQ (circle line) and (e) SLS (solid line). Third row: two-layer velocity and Q models: (g) computed
+by solving the NCQ wave equation, (h) computed by solving the SLS wave equation, and (j) comparison of traces at horizontal 500 m and
+1000 m between (g) NCQ (circle line) and (h) SLS (solid line). The dotted line indicates the difference.
+
+Zhu and Harris
+
+T112
+
+the solutions is compared with SLS solutions, which are roughly
+accurate to model constant-Q behavior in simulation over a short
+distance, as Zhu et al. (2013) show.
+We test three scenarios: (1) two-layer velocity model with homogeneous Q ¼ 30, (2) two-layer Q model with homogeneous P-wave
+velocity ¼ 1800 m∕s, and (3) two-layer velocity and Q models.
+Figure 8 shows the snapshots at 280 ms using the proposed
+NCQ wave equation and the viscoacoustic wave equation based
+on the SLS model (Zhu et al., 2013). The first row shows the effects
+of velocity discontinuities on the wavefields. The two numerical
+results agree with each other, as shown in Figure 8c. The second
+row shows the effects of Q discontinuities on the wavefields.
+One can see that the weak reflection is due to Q contrast, as shown
+in the second row of Figure 8. In the third row, we show simulations
+using velocity and Q contrasts. Overall, the solution by NCQ in
+Figure 8g matches that by the SLS in Figure 8h very well. These
+comparisons demonstrate that numerical simulations using the proposed NCQ wave equation in such large contrast velocity and Q
+models are stable and practically accurate.
+
+corresponding to the Q values in Figure 6. We found that the smaller
+Q value results in the larger error, which is consistent with the observation in Figure 2. The corresponding rms error values are
+2.3 × 10−4 , 1.3 × 10−3 , 4.7 × 10−3 , and 1.1 × 10−1 , respectively.
+
+Stability in large-contrast heterogeneous media
+To demonstrate the stability of simulations in media with large
+contrasts, we design a two-layer model with P-wave velocity of
+1800 m∕s in the top layer and 3600 m∕s in the bottom layer
+and a Q value of 30 in the top and 100 in the bottom. The interface
+is at a depth of 800 m. The source function is a Ricker wavelet with
+25-Hz center frequency located at (968 m, 520 m) in the simulation.
+We discretize model in a 200 × 200 grid with 8.0 m spacings in the
+x- and z-directions. The time step is 0.8 × 10−3 s. The accuracy of
+
+VP
+(km/s)
+3.5
+
+a)
+0
+
+1
+
+b)
+
+Q
+0
+
+300
+
+50
+
+250
+
+SYNTHETIC MODEL EXAMPLE
+
+3.4
+
+50
+
+Figure 9 shows the P-wave velocity and Q models. The density
+model is constant of 2.2 g∕cm3 . Zone #4 in the model represents a
+3.2
+100
+100
+high attenuation reservoir (Q ¼ 30). The model is discretized in a
+200
+3
+mesh with 200 × 600 grid points. The space is equally sampled in x
+3.1
+and z at 0.5 m. A PML absorbing boundary with 20 grid points is
+150
+150
+150
+3
+implemented at four sides. An explosive source with a 200-Hz
+4
+center-frequency Ricker wavelet is chosen for simulation. The time
+5
+2.9
+200
+200
+step is 0.014 ms. The source is located at a 90-m horizontal distance
+100
+2.8
+and at 110-m depth. Receivers are in the left well of 0.5 m horizon250
+250
+tal distance. They are distributed from depths of 5–292.5 m with
+2.7
+50
+space 2.5 m.
+2.6
+Figure 10 shows the snapshots at 20 and 45 ms, respectively. To
+0 20 40 60 80
+0 20 40 60 80
+illustrate the attenuation effects on the wavefield, we show the
+Distance (m)
+Distance (m)
+acoustic cases (Figure 10a and 10b) as reference. The arrow labeled
+3-4 indicates reflections from the interface of zones #3 and #4.
+Figure 9. (a) Heterogeneous velocity and (b) Q model for
+simulation.
+Figure 10c and 10d show the constant-Q viscoacoustic cases.
+Figure 10c shows overall reduced reflection amplitude compared with acoustic reflections. Reflections from the interface at the bottom of
+c)
+d)
+a)
+b)
+the high attenuation zone (arrow 4-5) suffer from
+0
+0
+0
+0
+significantly reduced energy because the wave
+propagates through zone #4. These observations
+50
+50
+50
+50
+are more visible in the seismograms shown in
+3-4
+Figure 11.
+100
+100
+100
+100
+To check the efficiency and accuracy of the
+NCQ wave equation, we also ran SLS modeling
+150
+150
+150
+150
+4-5
+using a single SLS, which is considered to be reasonably accurate in practical applications (Zhu
+et al., 2013). All simulations were run on an Intel
+200
+200
+200
+200
+workstation (Xeon X5650 2.66 GHz). The
+acoustic simulation takes 226 s. The running
+250
+250
+250
+250
+time for the proposed NCQ algorithm and the
+SLS algorithm is 303 and 368 s, respectively.
+0 20 40 60 80
+0 20 40 60 80
+0 20 40 60 80
+0 20 40 60 80
+It may appear surprising that the present NCQ
+Distance (m)
+Distance (m)
+Distance (m)
+Distance (m)
+algorithm is more computationally efficient than
+the single SLS modeling algorithm that is considFigure 10. Snapshots at 20 and 45 ms. (a and b) Acoustic and (c and d) NCQ. Arrow 3-4
+ered as the most efficient viscoelastic modeling
+indicates reflections from the top of the high attenuation reservoir zone #4, and label 4-5
+approach (Zhu et al., 2013). The reason is that the
+represents reflections from the bottom of the high attenuation reservoir.
+3.3
+
+Distance (m)
+
+Distance (m)
+
+Distance (m)
+
+Distance (m)
+
+Depth (m)
+
+Depth (m)
+
+2
+
+A nearly constant-Q wave equation
+SLS modeling algorithm requires more computer time in solving
+memory-variable equations at each time step.
+Figure 12 shows a comparison of simulated traces between our
+proposed NCQ wave equation and the SLS wave equation. The two
+agree with each other very well in details, even later-arriving
+reflections.
+
+DISCUSSION
+The fractional Laplacian NCQ wave equation is an alternative to
+the fractional time wave equation. Theoretically, the NCQ wave
+equation is able to model approximately constant-Q behavior when
+Q is not very small, a feature that is further verified by numerical
+simulations. For smaller Q values, the rms errors of simulations
+compared with the analytical solutions become large. We found that
+numerical simulation becomes unstable when Q < 4. We conclude
+that this NCQ wave equation is highly accurate in Q environments
+
+a)
+
+Time (ms)
+0
+
+50
+
+100
+
+150
+
+Recever depth (m)
+
+50
+
+100
+
+150
+
+200
+
+T113
+
+for most seismic applications. On the other hand, the advantage of
+solving the fractional Laplacian wave equation is computational efficiency in comparison with the fractional time wave equation.
+Computing the fractional Laplacian is accomplished without using
+and storing the previous time wavefields required by the fractional
+time derivative via GL approximation (e.g., Carcione et al., 2002).
+A synthetic example also indicates that the proposed NCQ wave
+equation is more efficient than other SLS modeling approaches
+(Zhu et al., 2013).
+To obtain the NCQ wave equation for heterogeneous media, we
+used the locality principle for pseudodifferential operators, which is
+valid for smoothly heterogeneous media. However, it may not hold
+for high-contrast heterogeneous media, of which the gradient in
+velocity and Q is large. Fortunately, from limited numerical tests,
+we found that numerical simulations are stable for reasonably large
+contrast heterogeneous velocity variations and Q variations.
+We only consider the average γðrÞ to approximate the spatial
+varying γðrÞ in the fractional Laplacian terms when using the Fourier method. To the best of the authors’ knowledge, numerical methods for spatially varying γðrÞ using the Fourier method are still not
+reported in the literature. Alternatively, finite-difference approximations for the spatial varying γðrÞ in the fractional Laplacian terms
+may be used but are still at an early stage of development (Lin et al.,
+2009). The finite-difference implementation is untested on practical
+problems. Future research is needed to investigate this topic.
+Compared to the constant-Q wave equation by Carcione (2010),
+our NCQ wave equation with two fractional Laplacian operators
+can model amplitude loss and phase dispersion effects separately.
+Treeby et al. (2010) report that the inherent separation of loss and
+dispersion effects in their lossy wave equation is beneficial for attenuation compensation in medical imaging. Similarly, in our wave
+equation, the back-propagation in seismic inversion/migration can
+be done by reversing the sign of the loss operator in a way that
+
+250
+0.02
+
+0.04
+
+Time (s)
+0.06
+
+0.08
+
+0.1
+SLS
+
+b)
+
+NCQ
+
+Time (ms)
+0
+
+50
+
+100
+
+0
+
+150
+
+50
+
+100
+
+100
+
+3-4
+Depth (m)
+
+Recever depth (m)
+
+50
+
+150
+
+150
+
+200
+200
+
+4-5
+
+250
+
+250
+
+300
+
+Figure 11. Synthetic data calculated by (a) acoustic and (b) NCQ.
+Due to the different attenuation area, reflections at interface 3-4 are
+less attenuated and reflections at interface 4-5 experience significant
+loss.
+
+Figure 12. Comparison of two seismograms calculated by the proposed NCQ wave equation (red line) and the SLS model (black
+line). Partial traces are shown in every other 10 trace.
+
+Zhu and Harris
+
+T114
+
+naturally compensates for the amplitude loss. The back-propagation
+has been successfully demonstrated in applications of Q reversetime migration (Zhu, 2014; Zhu et al., 2014). It appears that the
+present work has potential applications to seismic inversion/migration with attenuation compensation.
+
+So, the required dispersive phase velocity and attenuation are the
+same as the constant-Q model given by Kjartansson (1979); that is,
+
+
+cp ¼ c0
+
+We have derived a NCQ viscoacoustic wave equation in the time
+domain using the fractional Laplacian. The advantage of using our
+fractional Laplacian formulation over the traditional fractional time
+derivative approach is avoidance of storing the time history of variables, and thus it is more economic in computational costs. In addition, our viscoacoustic wave equation has two fractional
+Laplacian operators to describe separated amplitude loss and phase
+dispersion effects, respectively. We provided a detailed formulation
+of this viscoacoustic wave equation for homogeneous media and
+smoothly heterogeneous media. We discussed the stability condition of the viscoacoustic wave equation. We also gave the first-order
+conservation equations for numerical simulation.
+Numerical results demonstrate that the proposed viscoacoustic
+wave equation models the approximate constant-Q attenuation
+and dispersion. Modeling with the proposed wave equation is accurate in typical Q environments and stable in large contrast heterogeneous velocity and Q media. We believe that this fractional
+viscoacoustic wave equation is promising for use in accurate wavefield modeling for attenuating media.
+
+ACKNOWLEDGMENTS
+We are thankful to the editors, J. Carcione and F. Liu, and three
+anonymous reviewers whose comments improved the quality of the
+paper. We thank B. Treeby and B. Cox for their open source code
+(www.k-wave.org) that helped start our work quickly. The work is
+financially supported by the Stanford Wave Physics Laboratory.
+
+APPENDIX A
+
+kR ¼
+
+ω
+ω ω
+¼
+c p c 0 ω0
+
+(A-1)
+
+for all frequencies of interest that satisfy condition γj lnðω∕ω0 Þj ≪1
+(Kjartansson, 1979). The imaginary wavenumber is
+
+
+kI ¼ − tan
+
+
+πγ ω
+:
+2 cp
+
+(A-2)
+
+ γ
+ω
+iω
+:
+¼c
+ω0
+k~
+
+
+πγ ω
+α ¼ tan
+;
+2 cp
+
+(A-5)
+
+APPENDIX B
+APPROXIMATE DISPERSION ANALYSIS
+Because i2γ ¼ cosðπγÞ þ i sinðπγÞ, the right-hand side of equation 8 can be split into parts as follows:
+
+ω2
+¼ ω0−2γ cosðπγÞω2γ k~ 2 þ iω0−2γ sinðπγÞω2γ k~ 2 :
+c2
+
+(B-1)
+
+2γ
+Upon multiplication by c2γ
+0 ∕c0 on the right side, and using the
+approximation kR ≈ ω∕c0 , where kR is purely real (see equation A-2), the dispersion relation becomes
+
+ω2
+−2γ
+2γ ~ 2
+2γ −2γ
+2γ ~ 2
+¼ c2γ
+0 ω0 cosðπγÞkR k þ ic0 ω0 sinðπγÞkR k :
+c2
+(B-2)
+Because kI ∕kR ¼ tanðπγ2 Þ ≪ 1 for weak attenuation, expanding k~ 2γ
+~ 2γ
+into real and imaginary parts k2γ
+R ≈ k ð1 − i2γkI ∕kR Þ then gives
+
+ω2
+−2γ
+~ 2γþ2
+¼ c2γ
+0 ω0 cosðπγÞð1 − i2γkI ∕kR Þk
+c2
+þ ic2γ ω−2γ sinðπγÞ½1 − i2γkI ∕kR k~ 2γþ2 ;
+0
+
+(B-3)
+
+þ i tanðπγÞ½1 − 2γkI ∕kR ∕ tanðπγÞg:
+
+(B-4)
+
+We also have 2γkI ∕kR ∕ tanðπγÞ ≪ 1 and 2γkI ∕kR tanðπγÞ ≪ 1, and
+the dispersion relation is further simplified to
+
+ω2
+−2γ
+~ 2γþ2 þ ðiωÞc2γ−1 ω−2γ sinðπγÞk~ 2γþ1 :
+≈ c2γ
+0 ω0 cosðπγÞk
+0
+0
+c2
+(B-5)
+APPENDIX C
+STABILITY ANALYSIS
+
+From equation 8, we can obtain the complex velocity of the constant-Q model:
+
+vc ¼
+
+(A-4)
+
+−2γ
+~ 2γþ2 f½1 þ 2γkI ∕kR tanðπγÞ
+¼ c2γ
+0 ω0 cosðπγÞk
+
+Taking the square root of equation 8 and using the definition of
+the complex wavenumber k~ ¼ ω∕cp − iα ¼ kR þ ikI , we can obtain the real wavenumber:
+
+
+
+ω
+ω
+≈
+1 − γ ln
+;
+c0
+ω0
+
+;
+
+where the velocity c0 is given at a reference frequency ω0. For a
+constant-Q, the attenuation coefficient α is linear with frequency
+ω and the phase velocity cp is slightly dependent on frequency.
+
+0
+
+CONSTANT-Q PHASE VELOCITY
+AND ATTENUATION
+
+−γ
+
+γ
+
+
+
+CONCLUSIONS
+
+
+
+ω
+ω0
+
+(A-3)
+
+To derive the stability criterion of the NCQ wave equation, we
+apply a generalized Fourier transform on the left side of the wave
+equation (equation 10) and use the central finite-difference for the
+second-order time derivative. The forward stress field σ nþ1 will be
+written as the current stress σ n and the previous stress σ n−1 fields
+
+A nearly constant-Q wave equation
+
+σ nþ1 ¼ 2σ n − σ n−1 þ Δt2 c20 ηk2γþ2 σ n
+þ Δtc20 τk2γþ1 ðσ n − σ n−1 Þ:
+
+(C-1)
+
+Then, the equation is expressed in a matrix form
+
+ nþ1  
+σ
+2 þ aΔt2 þ bΔt
+¼
+n
+1
+σ
+
+ n 
+σ
+−1 − bΔt
+;
+σ n−1
+0
+(C-2)
+
+where a ¼ c20 ηk2γþ2 and b ¼ c20 τk2γþ1 . We analyze the stability
+condition of the NCQ wave equation using the eigenvalue method,
+in which the eigenvalues of the matrix must be less than or equal to
+1 in magnitude for stable simulation (Gazdag, 1981). Solving the
+eigenvalues λ of matrix A and assuming λ ≤ 1, the stability condition of NCQ wave equation is
+
+Δt ≤ −
+
+bþ
+
+pﬃﬃﬃ γ
+pﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+2 ω0
+−2a tanðπγÞ
+pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ :
+þ
+¼
+γþ1
+c0 k
+a
+cosðπγÞ
+ðc0 kÞ
+(C-3)
+
+To guarantee that the solution is stable for all waves, c0 ¼ cmax is
+the maximum velocity, k ¼ kNy ¼ π∕Δx is the Nyquist spatial
+wavenumber, and γ ¼ 1∕π tan−1 ð1∕Qmin Þ. As γ ¼ 0, it becomes
+the stability condition of the acoustic wave equation (Gazdag,
+1981):
+
+pﬃﬃﬃ
+2Δx
+Δt ≤
+.
+πcmax
+
+(C-4)
+
+To our best knowledge, the stability condition in equation C-3 is
+slightly stricter than equation C-4. In other words, attenuation
+(1∕Qmin ) has a limited effect on the stability condition.
+
+APPENDIX D
+CONSTANT-Q WAVE EQUATION
+IN HETEROGENEOUS MEDIA
+In homogeneous media (c0 and γ are constant with position), the
+NCQ wave equation (equation 10) is written as
+
+
+
+1 ∂2
+2 Þγ þ τ ∂ ð−∇2 Þγ−1∕2 ∇2 σðr; tÞ:
+σðr;
+tÞ
+¼
+ηð−∇
+∂t
+c2 ∂t2
+(D-1)
+If we write equation D-1 in the first-order mass-momentum conservation equations 15 and 16, we get the constitutive equation as
+follows:
+
+σðr; tÞ ¼ Lεðr; tÞ;
+
+∂
+2 γ−1∕2
+L ¼ M0 ηð−∇ Þ þ τ ð−∇ Þ
+:
+∂t
+
+(D-2)
+
+
+
+2 γ
+
+(D-3)
+
+In smoothly heterogeneous media, we localize the pseudodifferential operator L at local point r0 . All parameters related to
+velocity c0 and γ are constant at fixed point r0 . We have the same
+
+T115
+
+pseudodifferential operator L as equation D-3. It is reasonable to
+suppose that the L we want should be well approximated by
+Lðr0 Þ when r is near r0 ; thus, we unfreeze the localized point r0
+to general spatial r and define the pseudodifferential operator LðrÞ,
+
+
+
+∂
+LðrÞ ¼ M0 ðrÞ ηðrÞð−∇2 ÞγðrÞ þ τðrÞ ð−∇2 ÞγðrÞ−1∕2 :
+∂t
+(D-4)
+This generalized pseudodifferential operator from homogeneous to
+heterogeneous parameters is also called the freezing-unfreezing
+principle that appears in the literature in the context of hyperbolic
+and elliptic partial differential equations (Stein [1993], p. 230).
+Plugging equation D-4 into equation D-2, and the massmomentum conservation equations 15 and 16, we have the approximate heterogeneous second-order wave equation:
+
+
+
+1 ∂2 σðr;tÞ
+2 ÞγðrÞ þ τðrÞ ∂ ð−∇2 ÞγðrÞ−1∕2
+¼
+ρ
+ðrÞ
+ηðrÞð−∇
+0
+∂t
+c2 ðrÞ ∂t2
+
+
+1
+×∇·
+∇σðr;tÞ :
+(D-5)
+ρ0 ðrÞ
+
+REFERENCES
+Aki, K., and P. G. Richards, 1980, Quantitative seismology: Theory and
+methods, vol. 1: W. H. Freeman.
+Batzle, M. L., D. H. Han, and R. Hofmann, 2006, Fluid mobility and frequency-dependent seismic velocity-direct measurements: Geophysics, 71,
+no. 1, N1–N9, doi: 10.1190/1.2159053.
+Berenger, J. P., 1994, A perfectly matched layer for the absorption of electromagnetic waves: Journal of Computational Physics, 114, 185–200, doi:
+10.1006/jcph.1994.1159.
+Buttkus, B., 2000, Spectral analysis and filter theory in applied geophysics:
+Springer.
+Caputo, M., 1967, Linear model of dissipation whose Q is almost frequency
+independent — II: Geophysical Journal of the Royal Astronomical Society, 13, 529–539, doi: 10.1111/j.1365-246X.1967.tb02303.x.
+Caputo, M., J. M. Carcione, and F. Cavallini, 2011, Wave simulation in biologic media based on the Kelvin-Voigt fractional-derivative stress-strain
+relation: Ultrasound in Medicine and Biology, 37, 996–1004, doi: 10
+.1016/j.ultrasmedbio.2011.03.009.
+Caputo, M., and F. Mainardi, 1971, A new dissipation model based on
+memory mechanism: Pure and Applied Geophysics, 91, 134–147, doi:
+10.1007/BF00879562.
+Carcione, J. M., 1999, Staggered mesh for the anisotropic and viscoelastic
+wave equation: Geophysics, 64, 1863–1866, doi: 10.1190/1.1444692.
+Carcione, J. M., 2007, Wave fields in real media: Theory and numerical simulation of wave propagation in anisotropic, anelastic, porous and electromagnetic media, 2nd ed.: Elsevier.
+Carcione, J. M., 2009, Theory and modeling of constant-Q P- and S-waves
+using fractional time derivatives: Geophysics, 74, no. 1, T1–T11, doi: 10
+.1190/1.3008548.
+Carcione, J. M., 2010, A generalization of the Fourier pseudospectral
+method: Geophysics, 75, no. 6, A53–A56, doi: 10.1190/1.3509472.
+Carcione, J. M., F. Cavallini, F. Mainardi, and A. Hanyga, 2002, Timedomain seismic modeling of constant-Q wave propagation using fractional derivatives: Pure and Applied Geophysics, 159, 1719–1736, doi:
+10.1007/s00024-002-8705-z.
+Chen, W., and S. Holm, 2004, Fractional Laplacian time-space models for
+linear and nonlinear lossy media exhibiting arbitrary frequency power-law
+dependency: Journal of the Acoustical Society of America, 115, 1424–
+1430, doi: 10.1121/1.1646399.
+Dvorkin, J. P., and G. Mavko, 2006, Modeling attenuation in reservoir and
+nonreservoir rock: The Leading Edge, 25, 194–197, doi: 10.1190/1
+.2172312.
+Emmerich, H., and M. Korn, 1987, Incorporation of attenuation into time
+domain computations of seismic wave fields: Geophysics, 52, 1252–
+1264, doi: 10.1190/1.1442386.
+
+T116
+
+Zhu and Harris
+
+Gazdag, J., 1981, Modeling of the acoustic wave equation with transform
+methods: Geophysics, 46, 854–859, doi: 10.1190/1.1441223.
+Gorenflo, R., and F. Mainardi, 1998, Random walk models for spacefractional diffusion processes: Fractional Calculus & Applied Analysis,
+1, 167–191.
+Hanyga, A., 2001, Multi-dimensional solutions of space-fractional diffusion
+equations: Proceedings of the Royal Society of London, Series A, 457,
+2993–3005, doi: 10.1098/rspa.2001.0849.
+Kan, T. K., M. L. Batzle, and J. E. Gaiser, 1983, Attenuation measured from
+VSP: Evidence of frequency-dependent Q: 53rd Annual International
+Meeting, SEG, Expanded Abstracts, 589–590.
+Kjartansson, E., 1979, Constant-Q wave propagation and attenuation:
+Journal of Geophysical Research, 84, 4737–4748, doi: 10.1029/
+JB084iB09p04737.
+Liao, Q., and G. A. McMechan, 1996, Multifrequency viscoacoustic modeling and inversion: Geophysics, 61, 1371–1378, doi: 10.1190/1
+.1444060.
+Lin, R., F. Liu, V. Anh, and I. Turner, 2009, Stability and convergence of a
+new explicit finite-difference approximation for the variable-order nonlinear fractional diffusion equation: Applied Mathematics and Computation,
+212, 435–445, doi: 10.1016/j.amc.2009.02.047.
+Liu, H. P., D. L. Anderson, and H. Kanamori, 1976, Velocity dispersion due
+to anelasticity: Implication for seismology and mantle composition:
+Geophysical Journal of the Royal Astronomical Society, 47, 41–58,
+doi: 10.1111/j.1365-246X.1976.tb01261.x.
+Lu, J. F., and A. Hanyga, 2004, Numerical modeling method for wave propagation in a linear viscoelastic medium with singular memory: Geophysical
+Journal International, 159, 688–702, doi: 10.1111/j.1365-246X.2004
+.02409.x.
+Mainardi, F., 2010, Fractional calculus and waves in linear viscoelasticity:
+An introduction to mathematical models: World Scientific.
+Mainardi, F., and M. Tomirotti, 1997, Seismic pulse propagation with constant-Q and stable probability distributions: Annali di Geofisica, 40,
+1311–1328.
+McDonal, F. J., F. A. Angona, R. L. Mills, R. L. Sengbush, R. G. Van
+Nostrand, and J. E. White, 1958, Attenuation of shear and com-
+
+pressional waves in Pierre shale: Geophysics, 23, 421–439, doi: 10
+.1190/1.1438489.
+Özdenvar, T., and G. A. McMechan, 1996, Causes and reduction of numerical artifacts in pseudo-spectral wavefield extrapolation: Geophysical
+Journal International, 126, 819–828, doi: 10.1111/j.1365-246X.1996
+.tb04705.x.
+Podlubny, I., 1999, Fractional differential equations: Academic Press.
+Sams, M. S., J. P. Neep, M. H. Worthington, and M. S. King, 1997, The
+measurement of velocity dispersion and frequency-dependent intrinsic attenuation in sedimentary rocks: Geophysics, 62, 1456–1464, doi: 10
+.1190/1.1444249.
+Stein, E., 1993, Harmonic analysis: Real-variable methods, orthogonality,
+and oscillatory integrals: Princeton University Press.
+Štekl, I., and R. G. Pratt, 1998, Accurate viscoelastic modeling by frequency
+domain ﬁnite-difference using rotated operators: Geophysics, 63, 1779–
+1794, doi: 10.1190/1.1444472.
+Treeby, B. E., and B. T. Cox, 2010, Modeling power law absorption and
+dispersion for acoustic propagation using the fractional Laplacian: Journal
+of the Acoustical Society of America, 127, 2741–2748, doi: 10.1121/1
+.3377056.
+Treeby, B. E., E. Z. Zhang, and B. T. Cox, 2010, Photoacoustic tomography
+in absorbing acoustic media using time reversal: Inverse Problems, 26,
+115003, doi: 10.1088/0266-5611/26/11/115003.
+Wuenschel, P. C., 1965, Dispersive body waves — An experimental study:
+Geophysics, 30, 539–551, doi: 10.1190/1.1439620.
+Zhang, Y., P. Zhang, and H. Zhang, 2010, Compensating for viscoacoustic
+effects in reverse-time migration: 80th Annual International Meeting,
+SEG Expanded Abstracts, 3160–3164.
+Zhu, T., 2014, Time-reverse modelling of acoustic wave propagation in attenuating media: Geophysical Journal International, doi: 10.1093/gji/
+ggt519.
+Zhu, T., J. M. Carcione, and J. M. Harris, 2013, Approximating constant-Q
+seismic propagation in the time domain: Geophysical Prospecting, 61,
+931–940, doi: 10.1111/1365-2478.12044.
+Zhu, T., J. M. Harris, and B. Biondi, 2014, Q-compensated reverse time
+migration: Geophysics, 79, no. 3, doi: 10.1190/geo2013-0344.1.
+
+

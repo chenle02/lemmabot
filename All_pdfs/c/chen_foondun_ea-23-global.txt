@@ -1,0 +1,2522 @@
+Global solution for superlinear stochastic heat equation on Rd
+under Osgood-type conditions
+Le Chen∗
+
+Mohammud Foondun†
+
+Jingyu Huang‡
+
+Mickey Salins§
+
+arXiv:2310.02153v1 [math.PR] 3 Oct 2023
+
+Wednesday 4th October, 2023
+
+Abstract
+We study the stochastic heat equation (SHE) on Rd subject to a centered Gaussian noise
+that is white in time and colored in space.The drift term is assumed to satisfy an Osgoodtype condition and the diffusion coefficient may have certain related growth. We show that
+there exists random field solution which do not explode in finite time. This complements and
+improves upon recent results on blow-up of solutions to stochastic partial differential equations.
+Keywords. Global solution; Stochastic heat equation; Reaction-diffusion; Dalang’s condition;
+superlinear growth; Osgood-type conditions.
+
+Contents
+1 Introduction
+
+1
+
+2 Some preliminaries
+
+7
+
+3 Proof of Theorem 1.6
+
+14
+
+4 An explosion example—the proof of Theorem 1.7
+
+17
+
+A Appendix
+
+19
+
+1
+
+Introduction
+
+In this paper, we study the following superlinear stochastic heat equation (SHE) on Rd :
+
+ ∂u(t, x) = 1 ∆u(t, x) + b (u(t, x)) + σ (u(t, x)) Ẇ (t, x) , t > 0, x ∈ Rd ,
+∂t
+2
+
+u(0, ·) = u0 (·),
+
+(1.1)
+
+∗
+Department of Mathematics and Statistics, Auburn University, Auburn, Alabama, USA. Email:
+le.chen@auburn.edu.
+†
+Department of Mathematics and Statistics, University of Strathclyde, Glasgow, UK. Email:
+mohammud.foondun@strath.ac.uk.
+‡
+School of Mathematics, University of Birmingham, Birmingham, UK. Email: j.huang.4@bham.ac.uk.
+§
+Department of Mathematics and Statistics, Boston University, Boston, Massachusetts, USA. Email:
+msalins@bu.edu.
+
+1
+
+where both b and σ are locally Lipschitz continuous, vanish at zero, and may have superlinear
+growth at infinity. The noise Ẇ is a centered Gaussian noise which is white in time and colored in
+space with the following covariance structure
+h
+i
+E Ẇ (s, y)Ẇ (t, x) = δ(t − s)f (x − y) ,
+(1.2)
+
+where δ is the Dirac delta measure and f is a nonnegative and nonnegative-definite function on
+Rd . The case when f = δ0 refers to the space-time white noise. We note that f induces an inner
+product
+ZZ
+hϕ, ψiH =
+
+R2d
+
+ϕ(y)ψ(z)f (y − z)dydz
+
+(1.3)
+
+for ϕ, ψ ∈ Cc∞ (Rd ), i.e., smooth functions with compact supports in Rd , and define the Hilbert
+space H to be the completion of Cc∞ (Rd ) under this inner product.
+The solution to (1.1) is understood in the mild formulation:
+Z tZ
+pt−s (x − y)b(u(s, y))dyds
+u(t, x) = (pt ∗ u0 )(x) +
+0
+Rd
+(1.4)
+Z tZ
+pt−s (x − y)σ(u(s, y))W (ds, dy) ,
++
+0
+
+Rd
+
+where the stochastic integral is the Walsh integral [Wal86; Dal+09], pt (x) = (2πt)−d/2 exp −|x|2 /2t
+is the heat kernel, and “∗” denotes the convolution in the spatial variable.
+
+
+
+For the one-dimensional deterministic ordinary differential equation
+dv
+= b(v(t))
+dt
+
+with b ≥ 0 and v(0) = c > 0,
+
+(1.5)
+
+the Osgood condition [Osg98] characterizes finite time explosion. Solutions explode in finite time if
+and only if the following finite Osgood condition holds:
+Z ∞
+1
+du < +∞.
+(1.6)
+b(u)
+c
+Rt 1
+du(s). After a change of variable, we
+This can be seen by rewriting (1.5) as follows t = 0 b(u(s))
+obtain
+Z v(t)
+1
+t=
+ds.
+v(0) b(s)
+This shows that (1.6) is both necessary and sufficient for blow-up of solutions to (1.5). The Osgood condition does not fully characterize finite time explosion for deterministic partial differential
+equations as demonstrated by the famous example provided by Fujita [Fuj66].
+Finite time explosion for stochastic partial differential equations (SPDEs) with superlinear b
+and σ have only recently gained some attention. The case of a bounded spatial domain has received more attention. Bonder and Groisman [FG09] demonstrated that if b satisfies (1.6), then
+a one-dimensional stochastic heat equation with additive space-time white noise will always explode. Dalang, Khoshnevisan, and Zhang [DKZ19] established that for the same equation but with
+multiplicative space-time white noise, global solutions exist if b grows no faster than u log u and σ
+grow slower than u(log u)1/4 . Foondun and Nualart [FN21] showed that, analogous to deterministic
+ordinary differential equations, the Osgood condition (1.6) on b characterizes finite time explosion
+2
+
+for the stochastic heat equation with additive noise on bounded domains in any spatial dimension.
+In other words, the additive-noise stochastic heat equation with bounded initial data will explode
+in finite time if and only if b satisfies (1.6). In contrast, Salins [Sal22b] demonstrated that if b does
+not satisfy condition (1.6), i.e., b satisfies the following infinite Osgood condition holds:
+Z ∞
+1
+du = +∞ for all c > 0,
+(1.7)
+b(u)
+c
+then to guarantee the existence of global solutions (i.e., solutions of all time), one can allow σ
+to grow superlinearly as long as it satisfies an appropriate Osgood-type assumption. Shang and
+Zhang [SZ22] studied a superlinear stochastic heat equation on a bounded domain driven by a
+Brownian motion (namely, space-independent white noise).
+Finite time explosion for the superlinear stochastic wave equations has been investigated in [FN22]
+and [MS21], which proved sufficient conditions for finite time explosion and those for global solutions, respectively. In both works, the compact support property, which is inherited from the
+fundamental solution of the wave equation, plays a crucial role.
+The question of finite time explosion for the stochastic heat equation on unbounded spatial
+domains is more complicated because solutions to the stochastic heat equation can be unbounded
+in space in the sense that P (supx |u(t, x)| = +∞) = 1 for any t > 0. Shang and Zhang [SZ21] showed
+that if b grows like u log(u) and if σ is bounded and Lipschitz, then there exist global solutions
+to the stochastic heat equation on R. Salins [Sal22a] proved an Osgood-type assumption on b,
+allowing for faster growth than u log u, implies the existence of global solutions when σ ≡ 1. Chen
+and Huang [CH23] investigated the existence of global solutions to the stochastic heat equation
+defined on an unbounded spatial domain under assumptions that guarantee that the solutions are
+bounded in space. The current paper is a major improvement over the results of [CH23], examining
+scenarios where solutions remain spatially bounded, while allowing for more general assumptions
+that accommodate faster growth of the superlinear b and σ terms.
+For the stochastic noise, one commonly assumes the following strengthened Dalang’s condition:
+Z
+fb(ξ)dξ
+−d
+:=
+Υα
+(2π)
+< ∞ , for some 0 < α < 1,
+(1.8)
+2 1−α
+Rd (1 + |ξ| )
+R
+where fb(ξ) is the Fourier transform of f , namely, fb(ξ) = Ff (ξ) = Rd f (x)e−ix·ξ dx. When α = 0,
+it reduces to a weaker Dalang’s condition [Dal99]:
+Z
+fb(dξ)
+< +∞ for some and hence for all β > 0.
+(1.9)
+Υ(β) := (2π)−d
+2
+Rd β + |ξ|
+In order to get slightly stronger results, instead of condition (1.8), we make the following slightly
+weaker assumption on the noise:
+Assumption 1.1. There exists α ∈ (0, 1] such that
+Z
+2
+1−α
+lim sup s
+e−s|ξ| fb(ξ)dξ < +∞.
+s↓0
+
+(1.10)
+
+Rd
+
+One can show that the strengthened Dalang’s condition (1.8) implies Assumption 1.1. In the
+one-dimensional space-time white noise setting, Assumption 1.1 is satisfied with α = 1/2 but the
+strengthened Dalang’s condition (1.8) is satisfied only when α ∈ (0, 1/2).
+Regarding the drift term b and the diffusion coefficient σ, we make the following Osgood-type
+assumptions following [Sal22c].
+3
+
+Assumption 1.2. Assume that
+1. Both b and σ are locally Lipschitz continuous;
+2. b(0) = 0 and σ(0) = 0;
+3. There exists a positive, increasing function h : [0, ∞) → [0, ∞) such that:
+(a) (Superlinear growth) R+ ∋ u → u−1 h(u) is non-decreasing with lim u−1 h(u) ≥ exp (1/α);
+u→0
+Z ∞
+1
+(b) (Osgood-type condition of the infinite type)
+du = +∞;
+h(u)
+1
+(c) For all u ∈ R, |b(u)| ≤ h(|u|);
+
+(d) For all u ∈ R, it holds that
+
+1−α/2
+
+|σ(u)| ≤ |u|
+
+α/2
+
+(h(|u|))
+
+
+
+log
+
+
+
+h(|u|)
+|u|
+
+−1/2
+
+;
+
+(1.11)
+
+where the constant α in parts (a) and (d) is given in Assumption 1.1.
+Remark 1.3. In [Sal22b], Salins assumed that |σ(u)| ≤ |u|1−γ (h(|u|))γ for some γ < α/2 (where
+the paper uses the notation 1 − η = α). Our proof is based on exponential tail estimates; see
+Lemma 2.4 below. The condition on σ, given by (1.11), allows for a faster growth rate for σ than
+that in [Sal22b]. The arguments based on the exponential tail estimates can also be applied in the
+finite domain setting.
+Let us introduce some notation. For p ≥ 1, set
+Vp := Lp (Rd ) ∩ L∞ (Rd ) and
+
+
+
+k·kVp := max k·kLp (Rd ) , k·kL∞ (Rd ) .
+
+To guarantee that solutions to (1.1) remain bounded in space, we make the following assumption
+on the initial data.
+Assumption 1.4. The initial data u0 ∈ Vp for some p ≥ 2.
+Remark 1.5. The space of bounded Lp (Rd )-functions, namely, Vp , is monotone increasing with
+respect to p, i.e., φ ∈ Vp implies that φ ∈ Vq for all q ≥ p ≥ 1; see Lemma 2.1 below. In
+Assumption 1.4, we require p ≥ 2 because we need to apply the Burkholder-Davis-Gundy (BDG)
+inequality in Banach space; see Appendix.
+The aim of this present paper is to prove the following theorem:
+Theorem 1.6. Suppose that the noise satisfies Assumption 1.1 with some α ∈ (0, 1], the initial
+condition satisfies Assumption 1.4 for some p ≥ (2 + d)/α, and that b(·) and σ(·) satisfy Assumption 1.2. Then, we have the following:
+1. There exists a unique mild solution u(t, x) to (1.1) for all (t, x) ∈ (0, +∞) × Rd .
+2. Moreover, if f satisfies the strengthened Dalang’s condition (1.8) with
+ some α ∈ (0, 1], then the
+solution u(t, x) is Hölder continuous: u ∈ C α/2−, α− (0, T ] × Rd a.s., where C α1 −, α2 − (D)
+denotes the Hölder continuous function on the space-time domain D with exponents α1 − ǫ
+and α2 − ǫ in time and space, respectively, for any small ǫ > 0.
+4
+
+The conditions that b(0) = 0, σ(0) = 0 and u0 ∈ V p guarantee that the solution to (1.1)
+remains in V p almost surely. This allows us to perform a localization procedure on the solution.
+We can prove that solution cannot explode in finite time by proving that a sequence of hitting
+times τn ↑ +∞.
+Our main result—Theorem 1.6—provides the optimal condition on the drift term b, which can
+be seen from the following theorem:
+Theorem 1.7. Let b : R → R be a locally Lipschitz continuous, nondecreasing and convex function
+that vanishes at zero (b(0) = 0). Suppose that σ(·) vanishes at zero and is bounded, namely,
+σ(0) = 0 and supu∈R |σ(u)| ≤ K. Under the noise assumption—Assumption 1.1, if b satisfies the
+finite Osgood condition (1.6), then for any p ≥ 2, there exists some nonnegative initial condition
+u0 (·) ∈ Vp to (1.1) such that solutions to (1.1) will explode in finite time with positive probability.
+Remark 1.8. Theorem 1.7 might hold true in certain cases without the condition that σ is bounded.
+However, having this restriction simplifies its proof and is sufficient to demonstrate the optimality
+of our condition on b(·). Determining the optimal condition on the diffusion coefficient σ is still an
+open problem, which will be left for further study.
+Remark 1.9. It is interesting to note that the conclusion of Theorem 1.7 cannot hold for any
+initial condition. Indeed, we can take σ to be identically zero, so that (1.1) becomes deterministic.
+Then, for a class of small initial conditions, one can then produce non-trivial solutions which does
+not explode in finite time. Indeed if we choose b(u) = up with p ≥ 1 + 2/d, then the solutions
+will not explode provided we choose the initial condition to be small enough. See [QS19] for more
+information on this and other blow-up results for non-linear PDEs . In the proof of Theorem 1.7,
+it will be clear that one needs to take the initial condition large enough in a suitable sense for the
+solution to blow-up.
+In order to introduce some examples, we use the following notation for the repeated logarithm
+function: log(u, 1) := log(u) and for k ≥ 2, log(u, k) := log (log u, k − 1).
+Example 1.10. Examples of superlinear Osgood-type h functions include h(u) = u log(u), h(u) =
+u log(u) log(u, 2), h(u) = u log(u) log(u, 2) log(u, 3), and so on, as listed in the first column of the
+tables in Table 1. In particular, we have two special cases:
+R
+R
+2
+• Since Rd e−s|ξ| dξ = (2π)d Rd p2s (y)dy = (π/s)d/2 , we see that when d = 1, Assumption 1.1
+is satisfied with α = 1/2. Therefore, in case of the spatial dimension one and Ẇ is space-time
+white noise, we can take α = 1/2 in (1.11). In particular, we have the concrete examples
+listed in Table 1a.
+R
+• If f (0) < ∞, or equivalently, Rd fb(ξ)dξ < +∞, then α = 1. In this case, the growth rates
+for σ and some typical h are listed in Table 1b.
+In general, for α ∈ (0, 1] given in Assumption 1.1, the function h with repeated logarithms and the
+corresponding growth bound for σ are listed in Table 1c.
+
+In [CH23], it is demonstrated that there exists a global solution when b(u) grows as fast as
+u log(u) and σ(u) grows as fast as u (log u)α/2 . This paper utilizes a method motivated by [DKZ19],
+which studied the setting of a bounded one-dimensional domain. Our new result is stronger than
+the previous ones because we can allow b to grow faster than u log u as long as b is dominated by
+an Osgood-type h. We believe that the methods used in [CH23] cannot easily be extended to deal
+with b growing faster than u log u.
+5
+
+Interestingly, there remains a specific scenario where the method used in [CH23] yields a stronger
+result than Theorem 1.6 of the current paper. Specifically, when b grows no faster than u log u and
+σ grows as u(log u)α/2 , the main result of [CH23] can be used to prove that solutions never explode.
+Based on our current strategy of using stopping time arguments and exponential estimates, we can
+let σ grow like (see Table 1c with K = 1)
+u [log(u)]α/2 [log(u, 2)]−1/2 .
+However, if α < 1, then we cannot achieve u(log u)α/2 growth for σ. This suggests that both
+approaches to this problem are useful. In the case where α = 1, our result allows for b and σ that
+both grow faster than those in [CH23].
+h(u) ∼
+
+σ(u) can grow as fast as
+
+u log(u)
+
+u(log u)1/4 (log(u, 2))−1/2
+
+u log(u) log(u, 2)
+
+u(log u)1/4 (log(u, 2))−1/4
+
+u log(u) log(u, 2) log(u, 3)
+
+u(log u)1/4 (log(u, 2))−1/4 (log(u, 3))1/4
+
+(a) The case when d = 1 and the noise is the space-time white noise: α = 1/2.
+
+h(u) ∼
+
+σ(u) can grow as fast as
+
+u log(u)
+
+u(log u)1/2 (log(u, 2))−1/2
+
+u log(u) log(u, 2)
+
+u(log u)1/2
+
+u log(u) log(u, 2) log(u, 3)
+
+u(log u)1/2 (log(u, 3))1/2
+
+(b) The case when the noise has a bounded correlation function, i.e., f (0) < ∞: α = 1.
+
+h(u) ∼
+
+u
+
+K
+Y
+
+log(u, k)
+
+σ(u) can grow as fast as
+u (log(u, 2))−1/2
+
+k=1
+
+K
+Y
+
+(log(u, k))α/2
+
+k=1
+
+(c) The general case: α ∈ (0, 1] with K ≥ 1.
+
+Table 1: The growth rate of σ is listed in the second column. The h’s in the first column are typical
+examples that satisfy the Osgood condition (see part 3-(b) of Assumption 1.2). The growth rate of
+σ is listed in the second column.
+
+This paper is organized as follows. In Section 2, we introduce some notation and establish some
+technical results. Our main result—Theorem 1.6—is proved in Section 3. Theorem 1.7 is proved in
+Section 4. Finally, we recall the Burkholder-Davis-Gundy inequality for the martingale in Banach
+space in the Appendix A.
+
+6
+
+2
+
+Some preliminaries
+
+In the following, k·kLp refers to k·kLp (Rd ) with p ∈ [1, ∞] and kXkp := E (|X|p )1/p .
+We will often use the following simple but useful property of Vp , which shows that the space Vp
+is monotone in p.
+Lemma 2.1. If 1 ≤ p ≤ r < ∞, then Vp ⊆ Vr ⊆ Lr (Rd ) and for any v ∈ Vp ,
+kvkLr ≤ kvkVr ≤ kvkVp .
+
+(2.1)
+
+Proof. The proof is straightforward. Let r ∈ [p, +∞). Then notice that kvkrLr =
+
+R
+r−p
+r
+which is less than Rd |v(x)|p dx supx∈Rd |v(x)|r−p = kvkpLp kvkL
+∞ ≤ kvkV .
+p
+
+R
+
+r
+Rd |v(x)| dx,
+
+Lemma 2.2. Assume that b and σ in (1.1) satisfy Assumption 1.2. For any p ≥ 1, if v ∈ Vp , then
+the compositions f (v) ∈ Vp and σ(v) ∈ Vp . Moreover,
+
+
+kb(v)kVp ≤ h kvkVp
+
+
+
+and
+
+1−α/2
+h
+kσ(v)kVp ≤ kvkVp
+
+α/2
+
+kvkVp
+
+h(kvkVp )
+
+log
+
+kvkVp
+
+!!−1/2
+
+. (2.2)
+
+Proof. We first prove the L∞ (Rd ) norm. We claim that
+kb(v)kL∞ ≤ h (kvkL∞ )
+
+and
+
+1−α/2
+kσ(v)kL∞ ≤ kvkL∞ h (kvkL∞ )α/2
+
+
+
+log
+
+
+
+h(kvkL∞ )
+kvkL∞
+
+−1/2
+
+.
+
+(2.3)
+
+Since |b (v(x))| ≤ |h(v(x))| for all x ≥ 0, the first inequality in (2.3) is proved by taking supremum
+on both sides of this inequality proves. As for the second inequality in (2.3), since x 7→ h(x)
+x is
+h(x)
+nondecreasing, without loss of generality we may assume that g(x) := x is differentiable. By
+α/2
+Assumption 1.2, we see that the function F (x) := √g(x)
+is nondecreasing for x ≥ 0 since
+log(g(x))
+
+
+
+g(x)−1+α/2 g′ (x)
+
+1
+× log (g(x)) −
+F (x) =
+3/2
+α
+2α [log (g(x))]
+′
+
+
+
+≥ 0.
+
+This proves the second inequality in (2.3).
+The interesting part of the proof is showing that the Lp (Rd ) norm is bounded. To this end,
+observe that
+
+
+p
+
+Z
+Z
+h (|v(x)|) p
+p
+p
+p h (|v(x)|)
+p
+|v(x)|
+|b (v(x)) | dx ≤
+kb(v)kLp =
+dx ≤ kvkLp sup
+,
+|v(x)|
+|v(x)|
+Rd
+Rd
+x∈Rd
+where the first inequality is obtained by using the bound on b given in Assumption 1.2. From the
+assumption that v 7→ h(v)
+v is increasing, the above display is bounded by
+≤ kvkpLp
+
+
+
+h (kvkL∞ )
+kvkL∞
+
+p
+
+≤ kvkpVp
+
+7
+
+h(kvkVp )
+kvkVp
+
+!p
+
+.
+
+(2.4)
+
+Therefore, we can conclude that kb(v)kLp ≤ h(kvkVp ). Combining this with the first relation in (2.3)
+proves the first inequality in (2.2). The argument for the case of σ is similar and one needs to use
+Assumption 1.2 and the following inequality:
+kσ(v)kpLp ≤
+
+Z
+
+p
+
+Rd
+
+|v(x)|
+
+
+
+h (|v(x)|)
+|v(x)|
+
+αp/2  
+−p/2
+h(|v(x)|)
+dx.
+log
+|v(x)|
+
+(2.5)
+
+The rest of the arguments are the same as those for b.
+Lemma 2.3. (1) Let p ≥ 1. If for some T, M > 0, Ψ : R+ × Rd → R satisfies sup kΨ(t, ·)kVp ≤
+t∈[0,T ]
+
+M < ∞, then
+
+Z tZ
+0
+
+Rd
+
+pt−s (· − y)Ψ(s, y)dyds
+
+Vp
+
+≤ tM.
+
+(2.6)
+
+(2) Let Φ : Ω × R+ × Rd → R be an adapted and jointly measurable random field. Suppose that
+p ≥ 2. If for any T > 0, there exists a constant M > 0 such that supt∈[0,T ] kΦ(t, ·)kVp ≤ M a.s.,
+then for all k > max{(2 + d)/α, p}, there exists a constant C > 0 depending only on (d, α, p), but
+not on (T, M, k), such that
+!
+Z Z
+k
+t
+
+E
+
+sup
+
+0
+
+t∈[0,T ]
+
+Rd
+
+pt−s (· − y)Φ(s, y)W (ds, dy)
+
+≤ C k kk/2 T (αk−d)/2 (1 + T d/2 )M k .
+
+Vp
+
+(2.7)
+
+Proof. Part (1) is obtained by an application of the Minkowski inequality. Part (2) will be
+proved in three steps. Denote the stochastic integral by Z(t, x). By the factorization lemma
+(see [da-prato.zabczyk:14:stochastic]), for β ∈ (0, α),
+Z Z
+sin (βπ/2) t
+(t − r)−1+β/2 Y (r, z)pt−r (x − z)dzdr,
+Z(t, x) =
+π
+d
+0
+R
+Z rZ
+(r − s)−β/2 pr−s (z − y)Φ(s, y)W (ds, dy).
+Y (r, z) =
+0
+
+(2.8)
+(2.9)
+
+Rd
+
+In the following, we use C to denote a generic constant that does not depend on T , M , k and p,
+whose value may change at each appearance.
+Step I. In this step, we will show that for all k > max ((2 + d)/β, p), p ≥ 2, and T > 0, it holds
+that
+!
+sup
+
+E
+
+(t,x)∈[0,T ]×Rd
+
+|Z(t, x)|k
+
+≤ C k kk/2 M k T (αk−d)/2 .
+
+(2.10)
+
+k
+, for arbitrary t > 0 and x ∈ Rd ,
+By Hölder inequality with exponents k and k−1
+k
+
+|Z(t, x)| ≤ C
+
+k
+
+Z t Z
+0
+
+Rd
+
+(t − s)
+
+(β/2−1)k
+k−1
+
+|pt−s (x − y)|
+
+k
+k−1
+
+dyds
+
+k−1 Z t Z
+0
+
+Rd
+
+|Y (s, y)|k dyds.
+
+We use the fact that
+1
+
+k
+
+d
+− 2(k−1)
+
+|pt−s (x − y)| k−1 = pt−s (x − y)|pt−s (x − y)| k−1 ≤ C(t − s)
+
+8
+
+pt−s (x − y),
+
+along with the fact that pt−s (·) is a density to bound the above expression by
+k
+
+|Z(t, x)| ≤
+
+Z t
+0
+
+(t − s)
+
+(β/2−1)k
+d
+− 2(k−1)
+k−1
+
+ds
+
+k−1 Z t Z
+
+|Y (s, y)|k dyds.
+
+⇐⇒
+
+2+d
+.
+β
+
+Rd
+
+0
+
+Notice that
+d
+(β/2 − 1)k
+−
+> −1
+k−1
+2(k − 1)
+
+k>
+
+Hence, if we choose k > (2 + d)/β, then the first integral is finite and
+k
+
+|Z(t, x)| ≤ Ct
+
+βk d
+− 2 −1
+2
+
+Z tZ
+0
+
+Rd
+
+|Y (s, y)|k dyds.
+
+(2.11)
+
+Hence,
+E
+
+k
+
+sup
+(t,x)∈[0,T ]×Rd
+
+|Z(t, x)|
+
+!
+
+βk
+
+d
+
+≤ CT 2 − 2 −1
+
+Z T
+0
+
+dr
+
+Z
+
+Rd
+
+
+
+dz E |Y (r, z)| k .
+
+Now, for Y (r, z), by the Burkholder-Davis-Gundy inequality, we see that
+Z r ZZ
+2
+dydy ′ (r − s)−β f (y − y ′ ) pr−s (y) kΦ(s, z − y)kk
+ds
+kY (r, z)kk ≤ 8k
+R2d
+
+0
+
+×pr−s (y ′ ) Φ(s, z − y ′ ) k .
+
+(2.12)
+
+Then by the Minkowski inequality, we see that
+Z
+
+Rd
+
+Z
+
+
+E |Y (r, z)|k dz ≤C k kk/2
+
+Rd
+
+Z r
+
+ds
+
+ZZ
+
+R2d
+
+0
+
+dydy ′ (r − s)−β f (y − y ′ )
+′
+
+′
+
+× pr−s (y)pr−s (y ) kΦ(s, z − y)kk Φ(s, z − y ) k
+k k/2
+
+≤C k
+
+Z r
+
+ds
+
+ZZ
+
+R2d
+
+0
+
+!k/2
+
+dz
+
+dydy ′ (r − s)−β f (y − y ′ )
+′
+
+′
+
+× pr−s (y)pr−s (y ) kΦ(s, · − y)kk Φ(s, · − y ) k Lk/2
+k k/2
+
+≤C k
+
+Z r
+0
+
+ds
+
+ZZ
+
+R2d
+
+!k/2
+
+dydy ′ (r − s)−β f (y − y ′ )
+
+× pr−s (y)pr−s (y ) kkΦ(s, ·)kk k2Lk
+′
+
+!k/2
+
+,
+
+where in the last inequality we applied the Hölder inequality. If k ≥ p, then we can use the Fubini
+theorem and the assumption on Φ(·, ◦) to obtain that
+
+Z
+k
+k
+kkΦ(s, ·)kk kLk = E
+|Φ(s, z)| dz
+Rd
+
+9
+
+≤E
+≤E
+
+Z
+
+p
+
+Rd
+
+
+
+|Φ(s, z)| dz
+!
+
+sup kΦ(s, ·)kkVp
+
+s∈[0,T ]
+
+k−p
+kΦ(s)kL
+∞
+
+≤ M k,
+
+for all s ∈ [0, T ], Hence,
+Z
+
+Rd
+
+Z r Z Z
+
+
+k
+k k/2
+k
+E |Y (r, z)| dz ≤C k M
+ds
+
+′
+
+R2d
+
+0
+
+
+
+−β
+
+dydy (r − s)
+
+k/2
+.
+f (y − y )pr−s (y)pr−s (y )
+′
+
+′
+
+By the Plancherel theorem, we see that
+Z r
+Z r ZZ
+Z
+2
+′
+−β
+′
+′
+−d
+−β
+dydy (r − s) f (y − y )pr−s (y)pr−s (y ) =(2π)
+e−(r−s)|ξ| fb(ξ)dξ
+ds (r − s)
+ds
+R2d
+Rd
+0
+Z0 r
+Z
+2
+=(2π)−d
+e−s|ξ| fb(ξ)dξ.
+ds s−β
+Rd
+
+0
+
+R
+2
+By Assumption 1.1 and the fact that the function s → Rd e−s|ξ| fb(ξ)dξ is non-increasing, we see
+that for some universal constant C > 0,
+Z
+2
+e−s|ξ| fb(ξ)dξ ≤ Cs−(1−α) , for all s > 0.
+Rd
+
+Hence,
+Z r
+0
+
+ds
+
+ZZ
+
+R2d
+
+dydy ′ (r − s)−β f (y − y ′ )pr−s (y)pr−s (y ′ ) ≤ C
+
+Z r
+
+s−β+α−1 ds = Cr α−β .
+
+(2.13)
+
+0
+
+Thus, we have that
+Z
+
+Rd
+
+
+
+E |Y (r, z)|k dz ≤ C k kk/2 M k r (α−β)k/2 .
+
+(2.14)
+
+Finally, if k > max ((2 + d)/β, p), by putting (2.14) back into (2.11), we prove the claim in (2.10).
+Step II. In this step, we will show that for all k > max ((2 + d)/β, 2), p ≥ 2, and T > 0, it holds
+that
+!
+sup kZ(t, ·)kkLp
+
+E
+
+≤ C k kk/2 M k T αk/2 .
+
+t∈[0,T ]
+
+(2.15)
+
+By the Minkowski inequality and the Hölder inequality, we see that for t ∈ [0, T ],
+kZ(t, ·)kLp ≤
+=
+≤
+
+Z t
+
+−1+β/2
+
+Z
+
+dz pt−r (z) kY (r, · − z)kLp
+
+0
+
+dr (t − r)
+
+0
+
+(t − r)−1+β/2 kY (r, ·)kLp dr
+
+Z t
+
+Z t
+0
+
+(t − r)
+
+Rd
+
+k
+(−1+β/2)
+k−1
+
+dr
+
+ k−1
+Z t
+k
+0
+
+10
+
+kY (r, ·)kkLp dr
+
+1/k
+
+.
+
+If k > (2 + d)/β, the above dr–integral is finite and hence,
+!
+Z T 
+
+k
+k −1+βk/2
+E sup kZ(t, ·)kLp ≤C T
+E kY (r, ·)kkLp dr.
+t∈[0,T ]
+
+(2.16)
+
+0
+
+
+
+To estimate E kY (r, ·)kkLp , if we assume that k, p ≥ 2, then we can apply the BDG inequality in
+Lemma A.4 to get
+
+
+E kY (r, ·)kkLp
+
+k/2 
+ p # 2p
+Z t "Z Z Z
+2
+k
+
+
+(t − s)−β pt−s (x − y)pt−s (x − y ′ )Φ(s, y)Φ(s, y ′ )f (y − y ′ )dydy ′
+≤C k k 2 E 
+dx ds 
+0
+
+Rd
+
+R2d
+
+
+"Z
+Z t
+−β
+k k2 
+(t − s)
+=C k E 
+k
+
+k
+2
+
+≤C k E
+k
+
+k
+2
+
+≤C k E
+
+Z Z
+
+pt−s (y)pt−s (y ′ )Φ(s, x − y)Φ(s, x − y ′ )f (y − y ′ )dydy ′
+
+p
+
+0
+
+Rd
+
+"Z Z Z
+t
+
+−β
+
+pt−s (y)pt−s (y ) Φ(s, · − y)Φ(s, · − y ) Lp/2 f (y − y )dydy ds
+
+−β
+
+pt−s (y)pt−s (y ) kΦ(s, ·)k2Lp f (y − y ′ )dydy ′ ds
+
+0
+
+"Z Z Z
+t
+0
+
+R2d
+
+R2d
+
+(t − s)
+(t − s)
+
+R2d
+
+′
+
+′
+
+′
+
+′
+
+k/2 #
+
+′
+
+2
+
+#2
+
+p
+
+dx
+
+k/2 #
+
+k/2 
+
+ds 
+
+.
+
+Then based on the assumption that kΦ(s, ·)kLp ≤ M a.s., and thanks to (2.13), we see that
+
+
+E kY (r, ·)kkLp ≤ C k kk/2 M k r (α−β)k/2 .
+Combining the above estimate with (2.16) proves (2.15).
+
+Step III. Finally, combining the results from the previous two steps shows that if k > max ((2 + d)/β, p)
+and p ≥ 2, then for all T > 0,
+!
+!
+
+
+E sup kZ(t, ·)kkVp ≤E sup kZ(t, ·)kkLp + kZ(t, ·)kkL∞
+t∈[0,T ]
+
+t∈[0,T ]
+
+k
+
+≤C E
+
+sup
+t∈[0,T ]
+
+kZ(t, ·)kkLp
+
+!
+
+k
+
++C E
+
+
+
+≤C k kk/2 M k T (αk−d)/2 + T αk/2 .
+
+sup
+t∈[0,T ]
+
+kZ(t, ·)kkL∞
+
+!
+
+This completes the proof of Lemma 2.3.
+
+We next give the exponential estimates for the stochastic integral in the previous lemma, which
+will be used in the proof of our main theorem. The space-time white noise case has been considered
+by Athreya, et al. [AJM21]; see also [Mue91; CR04; Kho14].
+Lemma 2.4 (Exponential estimates). Assume that Φ : Ω × R+ × Rd → R be an adapted and jointly
+measurable random field and p ≥ 2. If for any T ≥ 0, there exists a constant M = M (T, p) ≥ 0
+such that
+sup kΦ(t, ·)kVp ≤ M,
+
+t∈[0,T ]
+
+11
+
+a.s.,
+
+then, there exists a constant C > 0 independent of M and T such that for any δ > 0,
+!
+Z tZ
+
+
+2
+−2 −α
+(2.17)
+> δ ≤ C 1 + T −d/2 e−Cδ M T
+G(t − s, x − y)Φ(s, y)W (ds, dy)
+P sup
+t∈[0,T ]
+
+Rd
+
+0
+
+Vp
+
+where α is from Assumption 1.1.
+RtR
+Proof. Denote Z(t, x) := 0 Rd G(t − s, x − y)Φ(s, y)W (ds, dy). Fix an arbitrary λ > 0. From
+Taylor series, we see that
+"
+#
+!#
+"
+∞
+X
+λk
+k
+E sup kZ(t, ·)kVp .
+=
+E exp λ sup kZ(t, ·)kVp
+k!
+t∈[0,T ]
+t∈[0,T ]
+k=0
+
+We claim that
+"
+
+E exp λ sup kZ(t, ·)kVp
+t∈[0,T ]
+
+!#
+
+
+
+≤ 1+T
+
+d/2
+
+
+
+T
+
+−d/2
+
+∞
+X
+λk C k M k T kα/2 kk/2
+k=0
+
+k!
+
+.
+
+(2.18)
+
+Indeed, the above inequality (2.18) follows from the moment estimates in part (2) of Lemma 2.3
+for k > max (p, (d + 2)/α). If k ≤ max (p, (d + 2)/α), one can use the Jensen inequality and then
+pick the leading constant big enough. This proves the claim in (2.18).
+In order to transform the
+√ summation in (2.18) into an exponential form, we apply Stirling’s
+k
+approximation k! ∼ (k/e) 2πk to see that
+1 p k
+kk/2
+× Γ (k/2 + 1) ∼ √
+e/2 ,
+k!
+2
+
+which implies that for some universal constant Θ > 0,
+Θk+1
+kk/2
+≤
+,
+k!
+Γ (k/2 + 1)
+
+for all k = 0, 1, 2, · · · .
+
+Therefore, from (2.18), we see that
+!#
+"
+E exp λ sup kZ(t, ·)kVp
+t∈[0,T ]
+
+∞
+
+ X
+Θk C k λk M k T kα/2
+≤ 1 + T −d/2 Θ
+Γ (k/2 + 1)
+k=0
+
+
+
+= 1 + T −d/2 Θ exp Θ2 C 2 λ2 M 2 T α [1 + Erf (ΘCλM T α)] ,
+
+where Erf(·) is the error function and the equality can be found, e.g., in Formula 7.2.6 in [Olv+10].
+Notice that Erf (x) ≤ 1. Hence, we have that
+!#
+"
+
+
+
+−d/2
+exp Θ2 C 2 λ2 M 2 T α ,
+(2.19)
+≤ 2Θ 1 + T
+E exp λ sup kZ(t, ·)kVp
+t∈[0,T ]
+
+Finally, we can derive the exponential tail estimates by the Chebyshev inequality: for any λ > 0,
+!
+P
+
+sup kZ(t, ·)kVp > δ
+
+t∈[0,T ]
+
+12
+
+=P
+
+!
+
+
+sup exp λ kZ(t, ·)kVp > exp(λδ)
+
+t∈[0,T ]
+
+"
+
+≤ exp (−λδ) E exp λ sup kZ(t, ·)kVp
+
+
+
+
+t∈[0,T ]
+
+!#
+
+
+≤ 2Θ 1 + T −d/2 exp Θ2 C 2 λ2 M 2 T α − λδ
+!
+
+2
+
+
+2
+δ
+δ
+= 2Θ 1 + T −d/2 exp Θ2 C 2 M 2 T α λ −
+−
+2Θ2 C 2 M 2 T α
+4Θ2 C 2 M 2 T α
+
+
+
+
+δ2
+≤ 2Θ 1 + T −d/2 exp − 2 2 2 α ,
+4Θ C M T
+which proves Lemma 2.4.
+In the next theorem, we generalize Theorem 1.6 of [CH23] from the original Dalang condition (1.9) to the weaker condition—Assumption (1.1). Part (1) of Theorem 2.5 originates from the
+moment formula in [CH19]. Part (2) of Theorem 2.5 shows that if the initial condition u0 ∈ Vp
+with p ≥ 1, then for the equation (1.1) with both b and σ being globally Lipschitz and vanishing
+at zero, i.e., b(0) = σ(0) = 0, the solution u(t, ·) ∈ Vp for any t > 0, a.s.
+Theorem 2.5 (Moment formulas under Lipschitz condition). Assuming Assumption 1.1, and that
+both b and σ are globally Lipschitz continuous with Lipschitz coefficients Lb and Lσ , respectively.
+Then we have:
+(1) For any p ≥ 2,
+
+
+
+
+ku(t, x)kp ≤ C(τ + J+ (t, x)) exp Ct max p1/α L2/α
+,
+σ , Lb
+
+where J+ (t, x) := (pt ∗ |u0 |)(x),
+
+τ :=
+
+(2.20)
+
+|b(0)| |σ(0)|
+∨
+,
+Lb
+Lσ
+
+and the constant C does not depend on (t, x, p, Lb , Lσ ).
+(2) If u0 ∈ L∞ (Rd ) ∩ Lp (Rd ) and assume that σ(0) = b(0) = 0, then for all t > 0 and p > 2+d
+α ,
+sup
+(s,x)∈[0,t]×Rd
+
+u(s, x)
+p
+
+
+
+
+,
+L
+,
+≤ ku0 kL∞ + C ku0 kLp (Lb + Lσ ) exp Ct max p1/α L2/α
+b
+σ
+
+where the constant C does not depend on (t, x, p, Lb , Lσ ).
+Proof. Comparing the proofs of parts (b) and (c) of Theorem 1.6 of [CH23], we see that one only
+needs to prove part (1) of the theorem, the proof of which follows a similar argument of that used
+in part (b) of Theorem 1.6 (ibid.). The proof of part (2) remains unchanged from that of part (c)
+of Theorem 1.6 (ibid.), and so it will not be repeated here. Proceeding now to part (1), according
+to the proof of part (b) of Theorem 1.6 (ibid.),
+√
+ku(t, x)kp ≤ 3J+ (t, x)H8pL2σ ,L2 (t; 1)1/2 ,
+b
+
+13
+
+where the notation Ha,b (t; 1) is introduced in Section 2.2 in [CH23]. An upper bound of Ha,b (t; 1)
+is given in Lemma 2.1 in [CH23], i.e.,
+
+
+b
+1
+1
+lim sup log Ha,b (t; 1) ≤ inf β > 0 : aΥ(2β) + 2 <
+2β
+2
+t→∞ t
+ 
+
+
+
+1
+1
+b
+≤ max inf β > 0 : aΥ(2β) <
+<
+, inf β > 0 :
+.
+4
+2β 2
+4
+For the first argument in the above maximum, we want to find β such that
+1
+(2π)d
+
+Z
+
+Notice that
+
+fb(ξ)
+1
+.
+dξ <
+2
+2β
++
+|ξ|
+4a
+d
+R
+
+Z ∞Z
+fb(ξ)
+1
+2
+e−2βs e−s|ξ| fb(ξ)dξds
+dξ =
+2
+d
+2β
++
+|ξ|
+(2π)
+d
+d
+R
+0
+R
+Z 1/β Z
+Z ∞Z
+1
+1
+2
+−2βs −s|ξ|2 b
+=
+e
+e
+f
+(ξ)dξds
++
+e−2βs e−s|ξ| fb(ξ)dξds
+d
+(2π)d 0
+(2π)
+d
+d
+R
+1/β R
+
+1
+(2π)d
+
+Z
+
+=: I1 + I2 .
+
+According to Assumption 1.1,
+I1 ≤ C
+
+Z 1/β
+
+sα−1 ds =
+
+0
+
+C
+,
+βα
+
+and similarly,
+I2 =
+Therefore,
+
+Z
+
+−(2β+|ξ|2 ) β1
+
+e
+Rd
+
+2β + |ξ|2
+
+1
+fb(ξ)dξ ≤
+2β
+
+Z
+
+e
+Rd
+
+C
+f (ξ)dξ ≤
+β
+
+−|ξ|2 × β1 b
+
+ α−1
+1
+C
+= α.
+β
+β
+
+
+
+
+
+
+
+1
+b
+1
+, inf β > 0 : 2 <
+≤ C max a1/α , b1/2 < ∞ .
+max inf β > 0 : aΥ(2β) <
+4
+2β
+4
+
+
+Finally, replacing a and b by 8pL2σ and L2b , respectively, proves part (1).
+
+3
+
+Proof of Theorem 1.6
+
+Now we are ready to prove the main result – Theorem 1.6.
+Proof of Theorem 1.6. The proof follows the same strategy as that in [Sal22c]. First we define the
+cutoff functions for b and σ:
+
+
+n
+n
+n
+n
+
+
+b(−3 ) if u < −3
+σ(−3 ) if u < −3
+bn (u) := b(u)
+and σn (u) := σ(u)
+if |u| ≤ 3n
+if |u| ≤ 3n , respectively.
+
+
+ n
+ n
+b(3 )
+if u > 3n
+σ(3 )
+if u > 3n
+14
+
+Since both bn (·) and σn (·) are globally Lipschitz continuous, by part (2) of Theorem 2.5, for
+p ≥ (2 + d)/α, there is a unique Vp –valued solution solving
+Z tZ
+Z
+pt−s (x − y)bn (un (s, y))dyds
+pt (x − y)u0 (y)dy +
+un (t, x) =
+0
+Rd
+Rd
+Z tZ
+pt−s (x − y)σn (un (s, y))W (ds, dy).
++
+0
+
+Rd
+
+Denote the following sequence of stopping times
+o
+n
+τn := inf t > 0 : kun (t, ·)kVp > 3n .
+
+(3.1)
+
+It is easy to check that the solutions are consistent in the sense that un (t, x) = um (t, x) for all
+t < τn whenever n < m. We can define a local mild solution to (1.1) by setting
+u(t, x) := un (t, x)
+
+when t < τn .
+
+This local mild solution will exist until the explosion time τ∞ := supn τn . A local solution is called
+a global solution if τ∞ = ∞ with probability one.
+We build the deterministic sequence
+an := min
+
+
+
+Θ3n+1 1
+,
+h (3n+1 ) n
+
+
+
+,
+
+(3.2)
+
+with
+constant Θ ∈ (0, 1/3) to be determined later. Just like in [Sal22c], the Osgood condition
+R ∞ the
+1
+1 h(u) du = +∞ guarantees that
+∞
+X
+an = +∞.
+n=1
+
+Our goal is to show that the tripling times are bounded below by this deterministic sequence
+τn+1 − τn ≥ an for all large n, which implies that there is a global solution. To this end, we derive
+the following moment estimates.
+Claim: There exist constants C > 0 and q > 1, both independent of n, such that
+P (τn+1 − τn < an ) ≤ Cn−q ,
+
+for all n ∈ N.
+
+(3.3)
+
+Indeed, as mentioned previously, each τn is well-defined and the solution u(τn , ·) ∈ Vp . Therefore,
+we can restart the process at time τn . For all t > 0 and x ∈ Rd , define
+Z
+pt (x − y)u(τn , y)dy,
+Un (t, x) :=
+Rd
+Z tZ
+pt−s (x − y)b(u(τn + s, y))1{s∈[0,τn+1 −τn ]} dyds,
+In (t, x) :=
+0
+Rd
+Z tZ
+:=
+pt−s (x − y)σ(u(τn + s, y))1{s∈[0,τn+1 −τn ]} W ((τn + ds), dy) .
+Zn (t, x)
+0
+
+Rd
+
+Then for all t ∈ [0, τn+1 − τn ],
+u(τn + t, x) = Un (t, x) + In (t, x) + Zn (t, x)
+15
+
+(3.4)
+
+Furthermore, the presence of the indicator function 1{s∈[0,τn+1 −τn ]} in the definitions of In (t, x) and
+Zn (t, x) guarantees that the integrands are bounded in Vp –norm.
+Because pt (·) is a probability density, it follows from Young’s inequality for convolutions that
+for any t > 0,
+kUn (t, ·)kVp ≤ ku(τn , ·)kVp = 3n .
+
+(3.5)
+
+Because of the definition of the stopping time τn in (3.1) and Lemma 2.2, we see that
+b(u(τn + s, y))1{s∈[0,τn+1 −τn ]} V ≤ h(3n+1 ).
+
+(3.6)
+
+p
+
+Therefore, Lemma 2.3 with M = h(3n+1 ) guarantees that for t ∈ [0, τn+1 − τn ],
+kIn (t, ·)kVp ≤ th(3n+1 ).
+
+(3.7)
+
+In particular, if t ∈ [0, an ∧ (τn+1 − τn )], then by the definition of an in (3.2), we have that
+|In (t, ·)| ≤ an h(3n+1 ) ≤ 3n .
+
+(3.8)
+
+The event {τn+1 − τn < an } can only occur if ku(τn + t, ·)kVp > 3n+1 for some t ∈ (0, an ). But
+because kUn (t, ·)kVp and kIn (t, ·)kVp are each less than 3n if t ∈ [0, an ∧ (τn+1 − τn )], the Vp –norm
+can only triple in this short amount of time if the stochastic term satisfies
+sup
+t∈[0,an+1 ∧(τn+1 −τn )]
+
+kZn (t, ·)kVp > 3n .
+
+Because of the definition of the stopping time τn , (3.1) and Lemma 2.2, the V –norm of the integrand
+of the stochastic integral is bounded with probability one by
+−1/2
+ 
+
+h(3n+1 )
+(n+1)(1−α/2)
+n+1 α/2
+(3.9)
+σ(u(τn + s, y))1{s∈[0,τn+1 −τn ]} V ≤ 3
+h(3
+)
+log
+p
+3n+1
+Using the exponential estimate (2.17) with
+T = an ,
+
+n
+
+δ=3 ,
+
+and
+
+(n+1)(1−α/2)
+
+M =3
+
+we have that
+P (τn+1 − τn < an ) ≤ P
+
+
+
+n+1
+
+h 3
+
+α/2
+
+sup kZn (t, ·)kVp ≥ 3n
+
+t∈[0,an ]
+
+
+
+log
+
+
+
+h(3n+1 )
+3n+1
+
+−1/2
+
+,
+
+!
+
+ n+1  
+
+)
+
+
+C32(n+1) log h(3
+3n+1
+−d/2
+
+
+ n+1 α
+exp −
+≤ C 1 + an
+h(3
+)
+α
+2(n+1)
+an
+3
+3n+1
+
+
+
+exp −CΘ−α |log (an /Θ)|
+≤ C 1 + a−d/2
+n
+
+≤ CanCΘ
+
+−α −d/2
+
+.
+
+The second-to-last inequality in the above display is a consequence of the definition of an and (3.2),
+Θ3n+1
+−α − d/2 and choose Θ ∈ (0, 1/3) small
+which guarantees that an ≤ h(3
+n+1 ) . Now set q := CΘ
+enough so that q > 1. Then we obtain that
+P (τn+1 − τn < an ) ≤ Caqn .
+16
+
+(3.10)
+
+From the definition of an in (3.2), we also know that an ≤ 1/n. Therefore,
+P (τn+1 − τn < an ) ≤ Cn−q .
+
+(3.11)
+
+This proves the claim in (3.3).
+Finally, we can prove the main result. From the claim in (3.3),
+∞
+X
+
+n=1
+
+P (τn+1 − τn < an ) ≤ C
+
+∞
+X
+
+n−q < +∞.
+
+(3.12)
+
+n=1
+
+By the Borel-Cantelli Lemma, with P
+probability one there exists a random N (ω) such that for all
+n ≥ N (ω), τn+1 − τn ≥ an . Because
+an = +∞ this implies that
+
+
+P sup τn = +∞ = 1
+(3.13)
+n
+
+proving that the solutions cannot explode in finite time. This completes the proof of Theorem 1.6.
+
+4
+
+An explosion example—the proof of Theorem 1.7
+
+Proof of Theorem 1.7. We will prove this theorem via contradiction. Fix an arbitrary p ≥ 2. We
+assume that the conclusion is false, namely, for all u0 ∈ Vp ,
+ku(t, ·)kVp < ∞,
+
+a.s. for all t > 0,
+
+(4.1)
+
+and seek a contradiction. For this purpose, it suffices to consider the initial condition of the following
+form, where p1 (x) is the heat kernel from (1.4),
+u0 (x) = Θ p1 (x),
+
+for some Θ > 0.
+
+(4.2)
+
+It is clear that u0 ∈ Vp . The proof consists of the following two steps.
+Step 1. In this step, we claim that under (4.1), there exists Θ0 > 0 such that
+
+P Y1/2 ≥ 2L > 0, for all L > 0 and Θ ≥ Θ0 .
+
+(4.3)
+
+Yt = Y0 + Dt + Mt
+
+(4.4)
+
+Indeed, let t ∈ (0, 1). Multiply p1−t (x) on both sides of (1.4) and integrate over x to obtain
+where
+
+Z
+
+a.s. for all t ∈ (0, 1],
+
+u(t, x)p1−t (x)dx with Y0 = (p1 ∗ u0 )(0) = Θ (4π)−d/2 ,
+Z tZ
+p1−s (y)b (u(s, y)) dsdy, and
+Dt :=
+0
+Rd
+Z tZ
+:=
+p1−s (y)σ (u(s, y)) W (ds, dy).
+Mt
+Yt :=
+
+Rd
+
+0
+
+Rd
+
+17
+
+The boundedness assumption on σ ensures that Mt is a martingale. Assumption in (4.1) guarantees
+that Yt is well defined since
+0 ≤ Yt ≤ ku(t, ·)kL∞ ≤ ku(t, ·)kVp < ∞,
+
+a.s. for all t > 0.
+
+(4.5)
+
+Note that the nonnegativity of Yt comes from the comparison principle (see [GM94; CH19] and
+references therein), which requires conditions such as σ(0) = 0 and b(0) = 0. However, we will show
+that Xt := E(Yt ) will blow up in at t = 1/2 provided that Θ is large enough, which then implies
+the claim in (4.3).
+It remains to show the blow-up of Xt . By treating p1−s (y)dydP as a probability measure on
+Rd × Ω, we can apply Jensen’s inequality to see that
+ Z t
+ Z
+Z t
+ds b (E [Ys ]) ,
+dy p1−s (y)u(s, y)
+=
+ds b E
+E (Dt ) ≥
+Rd
+
+0
+
+0
+
+from which we obtain the following integral inequality
+Z t
+−d/2
+b(Xs )ds.
+Xt ≥ Θ(4π)
++
+0
+
+Hence, by the finite Osgood condition (1.6), for some Y0 > 0, Xt blows up in finite time. By
+increasing the value of Θ whenever necessary, one can ensure that X1/2 = ∞. This completes the
+proof of the claim in (4.3).
+Step 2. Notice that Yt in (4.4) can be equivalently written as
+Yt = Y1/2 + Dt∗ + Mt∗
+
+a.s. for all t ∈ (1/2, 1],
+
+(4.6)
+
+where the initial condition Y1/2 is finite a.s. thanks to (4.5),
+Dt∗ :=
+
+Z t Z
+1/2
+
+Rd
+
+p1−s (y)b (u(s, y)) dsdy
+
+and
+
+Mt∗ :=
+
+Z t Z
+1/2
+
+Rd
+
+p1−s (y)σ (u(s, y)) W (ds, dy).
+
+Step 2-1. As in Step 1, the boundedness assumption on σ guarantees that {Mt∗ : t ≥ 1/2} is a
+martingale. We claim that
+!
+!
+L2
+∗
+, a.s. for all L > 0,
+(4.7)
+P
+inf Mt ≤ −L F1/2 ≤ exp −
+t∈[1/2,1]
+2Cf kσk2L∞
+where
+ZZ
+Z 1
+dy1 dy2 p1−s (y1 )p1−s (y2 )f (y1 − y2 ) < ∞.
+(4.8)
+ds
+Cf :=
+1/2
+
+R2d
+
+First note that Assumption 1.1 guarantees the finiteness of the constant Cf . Let λ > 0 be some
+constant to be chosen later. Since {exp (−λMt∗ ) : t ≥ 1/2} is a submartingale, by Doob’s submartingale inequality, we see that
+#
+!
+"
+!
+P
+
+inf
+
+t∈[1/2,1]
+
+= E exp
+
+Mt∗ ≤ −L F1/2
+
+
+
+=P
+
+sup e−λMt > eλL F1/2
+∗
+
+t∈[1/2,1]
+
+ZZ
+Z
+λ2 1
+− λL +
+dy1 dy2
+ds
+2 1/2
+R2d
+18
+
+≤ e−λL E e−λM1 F1/2
+∗
+
+!
+
+× p1−s (y1 )p1−s (y2 )σ(u(s, y1 ))σ (u(s, y2 )) f (y1 − y2 ) F1/2
+
+
+1
+2
+2
+≤ exp −λL + Cf λ kσkL∞ ,
+2
+
+
+a.s.,
+
+(4.9)
+
+where in the last inequality we have used the fact that f is nonnegative. Optimizing the constant
+λ in (4.9) proves the claim in (4.7).
+Step 2-2. Consider the following deterministic equation,
+Z t  
+b
+b Ybs ds, for t ≥ 1/2.
+Yt = L +
+1/2
+
+Since b(·) satisfies the finite Osgood condition (1.6), when L > 0 is large enough, the solution to
+the above equation will explode before time 1. In the following, we fix this constant L.
+Next for all t ∈ [1/2, 1], another application of Jensen’s inequality with respect to the measure
+p1−s (y)dy to in the term Dt∗ in (4.6) shows that
+Yt ≥
+
+Y1/2 + Mt∗
+
+
+
++
+
+Z t
+
+b (Ys ) ds,
+
+1/2
+
+a.s. for all t ∈ (1/2, 1].
+
+Choose and fix arbitrary constant Θ > Θ0 . We claim that
+
+P(ΩL ) > 0 with ΩL := Y1/2 + Mt∗ ≥ L : for all t ∈ [1/2, 1] .
+
+Indeed, by the claims in (4.3) and (4.7), we see that
+
+
+
+
+∗
+inf Mt > −L
+P(ΩL ) ≥ P Y1/2 ≥ 2L ∩
+t∈[1/2,1]
+
+
+
+∗
+= P Y1/2 ≥ 2L P
+inf Mt > −L Y1/2 ≥ 2L
+t∈[1/2,1]
+!!
+
+L2
+> 0.
+≥ P Y1/2 ≥ 2L 1 − exp −
+2Cf kσk2L∞
+Therefore,
+Yt ≥ L +
+
+Z t
+
+1/2
+
+b(Ys )ds,
+
+a.s. on ΩL for all t ∈ [1/2, 1].
+
+Since b(·) is nondecreasing, we see that Ybt provides a sub-solution to Yt in the sense that Yt ≥ Ybt
+a.s. on ΩL for all t ∈ [1/2, 1]. Hence, with positive probability, i.e., a.s. on ΩL with P(ΩL ) > 0,
+Y1 ≥ Yb1 = ∞, which contradicts with (4.5). This completes the proof of Theorem 1.7.
+
+A
+
+Appendix
+
+In this appendix, we give a result about the Burkholder-Davis-Gundy inequality for the martingales
+taking values in a Banach space (typically Lp (Rd ) in our setting). We begin by introducing some
+standard concepts, which can be found in, e.g., [Ond04] or Section 2.2 of [Zha10].
+19
+
+Definition A.1 (Definition 3.1 of [Ond04]). A Banach space X is said to be 2-smooth provided
+there exist an equivalent norm k·k and a constant C ≥ 2 such that for all x, y ∈ X,
+kx + yk2 + kx − yk2 ≤ 2kxk2 + Ckyk2 .
+
+Definition A.2 (Definition 2.3 of [Ond04]). Let H be a separable Hilbert space and X a separable
+Banach space, B ∈ L(H, X) be an operator from H to X, and ξi , i = 1, 2, 3, . . . , be a sequence
+of independent standard Gaussian random variables, and {ek : k = 1, 2,P
+3, . . . } be one orthonormal
+∞
+basis of H. Then B is called a radonifying operator if the series
+k=1 B(ek )ξk converges in
+2
+L (Ω, X). The space of radonifying operators are denoted by γ (H, X), which is a Banach space
+with the radonifying norm
+ 
+1/2
+2
+∞
+X
+kBkγ := E 
+B(ek )ξk 
+.
+k=1
+
+X
+
+We have the following two facts (see, e.g., Example 2.9 of [Zha10] for details):
+
+1. The Banach space X = Lp (Rd ) for all p ∈ [2, ∞) is 2-smooth and separable;
+
+2. For any B ∈ γ H, Lp Rd , it holds that
+kBkγ ≤ Cp k kBkH kLp .
+
+(A.1)
+
+The following result about BDG inequality for martingales with values in Banach space, is from
+Theorem 1.1 in [Sei10].
+Theorem A.3. Let X be a 2-smooth and separable Banach space with norm k · kX , W be a
+cylindrical Q-Wiener process (Q is the covariance operator) on a real separable Hilbert space H
+and U = range Q1/2 . Then, there exists a constant Π < ∞, depending only on (X, k·kX ), such
+that
+1/2
+Z τ
+Z t
+√
+2
+kψ(s)kγ ds
+, for all k > 2,
+(A.2)
+sup
+ψ(s)dW (s)
+≤Π k
+0≤t≤τ
+
+0
+
+0
+
+X k
+
+k
+
+where τ is a stopping time and ψ is any progressively measurable γ(U, X)-valued stochastic process
+satisfying
+Z t
+kψ(s)k2γ ds < ∞ for all t ≥ 0 a.s.
+0
+
+Since the Walsh integral can be written using the setup of H-valued process and the cylindrical
+Wiener process on H, we can apply Theorem A.3 with X = Lp (Rd ), p ≥ 2, and combine (A.1)
+and (A.2) to get the following lemma:
+
+Lemma A.4. Let p ≥ 2 be fixed and H be the Hilbert space introduced in (1.3). Assume that
+ψ : Ω × R+ × Rd × Rd → R be an adapted and jointly measurable random field such that
+1. for each (s, x) ∈ R+ × Rd , ψ(s, ·, x) ∈ H;
+
+2. for each s > 0, kψ(s, ·, ◦)kH ∈ Lp (Rd ).
+
+Then, for all k > 2 and t > 0, it holds that
+Z tZ
+ψ(s, y, ◦)W (ds, dy)
+0
+
+Rd
+
+Lp k
+
+√
+≤C k
+
+Z t
+0
+
+kkψ(s, ·, ◦)kH k2Lp ds
+
+1/2
+
+,
+
+(A.3)
+
+k
+
+where the constant C does not depend on k. Note that inequality (A.3) is nontrivial only when the
+right-hand side of the inequality is finite.
+20
+
+Acknowledgments
+L. C. is partially supported by the NSF grant DMS-2246850 and by a collaboration grant (#959981)
+from the Simons foundation. M.S. is partially supported by a collaboration grant from the Simon’s
+foundation (#962543).
+
+References
+[AJM21]
+
+Siva Athreya, Mathew Joseph, and Carl Mueller. “Small ball probabilities and a support
+theorem for the stochastic heat equation”. In: Ann. Probab. 49.5 (2021), pp. 2548–2572.
+doi: 10.1214/21-aop1515.
+
+[CR04]
+
+Sandra Cerrai and Michael Röckner. “Large deviations for stochastic reaction-diffusion
+systems with multiplicative noise and non-Lipschitz reaction term”. In: Ann. Probab.
+32.1B (2004), pp. 1100–1139. doi: 10.1214/aop/1079021473.
+
+[CH19]
+
+Le Chen and Jingyu Huang. “Comparison principle for stochastic heat equation on Rd ”.
+In: Ann. Probab. 47.2 (2019), pp. 989–1035. doi: 10.1214/18-AOP1277.
+
+[CH23]
+
+Le Chen and Jingyu Huang. “Superlinear stochastic heat equation on Rd ”. In: Proc.
+Amer. Math. Soc. 151.9 (2023), pp. 4063–4078. doi: 10.1090/proc/16436.
+
+[Dal+09]
+
+Robert Dalang, Davar Khoshnevisan, Carl Mueller, David Nualart, and Yimin Xiao. A
+minicourse on stochastic partial differential equations. Vol. 1962. Held at the University of Utah, Salt Lake City, UT, May 8–19, 2006, Edited by Khoshnevisan and Firas
+Rassoul-Agha. Springer-Verlag, Berlin, 2009, pp. xii+216. isbn: 978-3-540-85993-2.
+
+[Dal99]
+
+Robert C. Dalang. “Extending the martingale measure stochastic integral with applications to spatially homogeneous s.p.d.e.’s”. In: Electron. J. Probab. 4 (1999), no. 6, 29.
+doi: 10.1214/EJP.v4-43.
+
+[DKZ19]
+
+Robert C. Dalang, Davar Khoshnevisan, and Tusheng Zhang. “Global solutions to
+stochastic reaction-diffusion equations with super-linear drift and multiplicative noise”.
+In: Ann. Probab. 47.1 (2019), pp. 519–559. doi: 10.1214/18-AOP1270.
+
+[FG09]
+
+Julian Fernández Bonder and Pablo Groisman. “Time-space white noise eliminates
+global solutions in reaction-diffusion equations”. In: Phys. D 238.2 (2009), pp. 209–
+215. doi: 10.1016/j.physd.2008.09.005.
+
+[FN21]
+
+Mohammud Foondun and Eulalia Nualart. “The Osgood condition for stochastic partial
+differential equations”. In: Bernoulli 27.1 (2021), pp. 295–311. doi: 10.3150/20-BEJ1240.
+
+[FN22]
+
+Mohammud Foondun and Eulalia Nualart. “Non-existence results for stochastic wave
+equations in one dimension”. In: J. Differential Equations 318 (2022), pp. 557–578. doi:
+10.1016/j.jde.2022.02.038.
+
+[Fuj66]
+
+Hiroshi Fujita. “On the blowing up of solutions of the Cauchy problem for ut = ∆u +
+u1+α ”. In: J. Fac. Sci. Univ. Tokyo Sect. I 13 (1966), 109–124 (1966).
+
+[GM94]
+
+Christel Geiß and Ralf Manthey. “Comparison theorems for stochastic differential equations in finite and infinite dimensions”. In: Stochastic Process. Appl. 53.1 (1994), pp. 23–
+35. doi: 10.1016/0304-4149(94)90055-8.
+
+21
+
+[Kho14]
+
+Davar Khoshnevisan. Analysis of stochastic partial differential equations. Vol. 119. Published for the Conference Board of the Mathematical Sciences, Washington, DC; by the
+American Mathematical Society, Providence, RI, 2014, pp. viii+116. isbn: 978-1-47041547-1. doi: 10.1090/cbms/119.
+
+[MS21]
+
+Annie Millet and Marta Sanz-Solé. “Global solutions to stochastic wave equations with
+superlinear coefficients”. In: Stochastic Process. Appl. 139 (2021), pp. 175–211. doi:
+10.1016/j.spa.2021.05.002.
+
+[Mue91]
+
+Carl Mueller. “On the support of solutions to the heat equation with noise”. In: Stochastics Stochastics Rep. 37.4 (1991), pp. 225–245. doi: 10.1080/17442509108833738.
+
+[Olv+10]
+
+Frank W. J. Olver, Daniel W. Lozier, Ronald F. Boisvert, and Charles W. Clark.
+NIST handbook of mathematical functions. With 1 CD-ROM (Windows, Macintosh and
+UNIX). U.S. Department of Commerce, National Institute of Standards and Technology, Washington, DC; Cambridge University Press, Cambridge, 2010, pp. xvi+951. isbn:
+978-0-521-14063-8.
+
+[Ond04]
+
+Martin Ondreját. “Uniqueness for stochastic evolution equations in Banach spaces”. In:
+Dissertationes Math. (Rozprawy Mat.) 426 (2004), p. 63. doi: 10.4064/dm426-0-1.
+
+[Osg98]
+
+dy
+= f (x, y)
+W. F. Osgood. “Beweis der Existenz einer Lösung der Differentialgleichung dx
+ohne Hinzunahme der Cauchy-Lipschitz’schen Bedingung”. In: Monatsh. Math. Phys.
+9.1 (1898), pp. 331–345. doi: 10.1007/BF01707876.
+
+[QS19]
+
+Pavol Quittner and Philippe Souplet. Superlinear parabolic problems. Blow-up, global existence and steady states, Second edition of [ MR2346798]. Birkhäuser/Springer, Cham,
+2019, pp. xvi+725. isbn: 978-3-030-18220-5; 978-3-030-18222-9. doi: 10.1007/978-3-030-18222-9.
+
+[Sal22a]
+
+Michael Salins. “Existence and uniqueness of global solutions to the stochastic heat
+equation with superlinear drift on an unbounded spatial domain”. In: Stoch. Dyn. 22.5
+(2022), Paper No. 2250014, 30. doi: 10.1142/S0219493722500149.
+
+[Sal22b]
+
+Michael Salins. “Global solutions for the stochastic reaction-diffusion equation with
+super-linear multiplicative noise and strong dissipativity”. In: Electron. J. Probab. 27
+(2022), Paper No. 12, 17. doi: 10.1214/22-ejp740.
+
+[Sal22c]
+
+Michael Salins. “Global solutions to the stochastic reaction-diffusion equation with superlinear accretive reaction term and superlinear multiplicative noise term on a bounded
+spatial domain”. In: Trans. Amer. Math. Soc. 375.11 (2022), pp. 8083–8099. doi: 10.1090/tran/8763.
+
+[Sei10]
+
+Jan Seidler. “Exponential estimates for stochastic convolutions in 2-smooth Banach
+spaces”. In: Electron. J. Probab. 15 (2010), no. 50, 1556–1573. doi: 10.1214/EJP.v15-808.
+
+[SZ21]
+
+Shijie Shang and Tusheng Zhang. “Global well-posedness to stochastic reaction-diffusion
+equations on the real line R with superlinear drifts driven by multiplicative space-time
+white noise”. In: preprint arXiv:2106.02879 (2021).
+
+[SZ22]
+
+Shijie Shang and Tusheng Zhang. “Stochastic heat equations with logarithmic nonlinearity”. In: J. Differential Equations 313 (2022), pp. 85–121. doi: 10.1016/j.jde.2021.12.033.
+
+[Wal86]
+
+John B. Walsh. “An introduction to stochastic partial differential equations”. In: École
+d’été de probabilités de Saint-Flour, XIV—1984. Vol. 1180. 1986, pp. 265–439. doi:
+10.1007/BFb0074920.
+
+[Zha10]
+
+Xicheng Zhang. “Stochastic Volterra equations in Banach spaces and stochastic partial
+differential equation”. In: J. Funct. Anal. 258.4 (2010), pp. 1361–1425. doi: 10.1016/j.jfa.2009.11.
+
+22
+
+

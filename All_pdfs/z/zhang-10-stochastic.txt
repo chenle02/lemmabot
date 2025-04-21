@@ -1,0 +1,6990 @@
+Journal of Functional Analysis 258 (2010) 1361–1425
+www.elsevier.com/locate/jfa
+
+Stochastic Volterra equations in Banach spaces and
+stochastic partial differential equation
+Xicheng Zhang a,b,∗
+a Department of Mathematics, Huazhong University of Science and Technology, Wuhan, Hubei 430074, PR China
+b School of Mathematics and Statistics, The University of New South Wales, Sydney, 2052, Australia
+
+Received 12 March 2009; accepted 10 November 2009
+Available online 18 November 2009
+Communicated by Paul Malliavin
+
+Abstract
+In this paper, we study the existence-uniqueness and large deviation estimate for stochastic Volterra
+integral equations with singular kernels in 2-smooth Banach spaces. Then we apply them to a large class
+of semilinear stochastic partial differential equations (SPDE), and obtain the existence of unique maximal
+strong solutions (in the sense of SDE and PDE) under local Lipschitz conditions. Moreover, stochastic
+Navier–Stokes equations are also investigated.
+© 2009 Elsevier Inc. All rights reserved.
+Keywords: Stochastic Volterra equation; Large deviation; Stochastic Navier–Stokes equation
+
+Contents
+1.
+2.
+
+Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1362
+Preliminaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1365
+2.1. Gronwall’s inequality of Volterra type . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1365
+2.2. Itô’s integral in 2-smooth Banach spaces . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1370
+2.3. A criterion for Laplace principles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1372
+
+* Address for correspondence: Department of Mathematics, Huazhong University of Science and Technology, Wuhan,
+Hubei 430074, PR China.
+E-mail address: XichengZhang@gmail.com.
+
+0022-1236/$ – see front matter © 2009 Elsevier Inc. All rights reserved.
+doi:10.1016/j.jfa.2009.11.006
+
+1362
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+3.
+
+Abstract stochastic Volterra integral equations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1375
+3.1. Global existence and uniqueness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1375
+3.2. Path continuity of solutions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1380
+3.3. Local existence and uniqueness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1384
+3.4. Continuous dependence of solutions with respect to data . . . . . . . . . . . . . . . . . . . . 1389
+4. Large deviation for stochastic Volterra equations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1392
+5. Semilinear stochastic evolutionary integral equations . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1400
+6. Semilinear stochastic partial differential equations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1404
+7. Application to stochastic Navier–Stokes equations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1411
+7.1. Unique maximal strong solution for SNSEs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1411
+7.2. Non-explosion and large deviation for 2D SNSEs . . . . . . . . . . . . . . . . . . . . . . . . . 1414
+Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1423
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1423
+
+1. Introduction
+The aims of this paper are three folds: First of all, we prove the existence and uniqueness of
+solutions with continuous paths for stochastic Volterra integral equations with singular kernels
+in a 2-smooth Banach space. Secondly, the large deviation principles (abbrev. LDP) of Freidlin–
+Wentzell’s type for stochastic Volterra equations are established under small perturbations of
+multiplicative noises. Thirdly, we apply them to several classes of semilinear stochastic partial
+differential equations (abbrev. SPDE). Compared with the well-known results on SPDEs, the
+main contributions of the present paper are that we can prove the existence and uniqueness of
+strong solutions (in the sense of SDE and PDE) for SPDEs, and give a unified treatment for the
+LDPs to a large class of SPDEs.
+In finite-dimensional space, stochastic Volterra integral equations with regular kernels and
+driven by Brownian motions were first studied by Berger and Mizel [3]. Later, Protter [52] studied stochastic Volterra equations driven by general semimartingales. Using the Skorohod integral,
+Pardoux and Protter [47] also investigated stochastic Volterra equations with anticipating coefficients. The study of stochastic Volterra equations with singular kernels can be found in [14,16,
+65,36,44], etc. Recently, the present author [68] studied the approximation of Euler’s type and
+the LDP of Freidlin–Wentzell’s type for stochastic Volterra equations with singular kernels. In
+particular, the kernels in [68] can be used to deal with fractional Brownian motion kernels as
+well as fractional order integral kernels. The study of LDP for stochastic Volterra equations is
+also referred to [44,36].
+Since the work of Freidlin and Wentzell [21], the theory of small perturbation large deviations
+for stochastic differential equations (abbrev. SDE) has been studied extensively (cf. [2,62], etc.).
+In the classical method, to establish such an LDP for SDE, one usually needs to discretize the
+time variable and then prove various necessary exponential continuity and tightness for approximation equations in different spaces by using comparison principle. However, such verifications
+would become rather complicated and even impossible in some cases, e.g., stochastic evolution
+equations with multiplicative noises.
+Recently, Dupuis and Ellis [19] systematically developed a weak convergence approach to the
+theory of large deviation. The central idea is to prove some variational representation formula for
+the Laplace transform of bounded continuous functionals, which will lead to proving a Laplace
+principle which is equivalent to the LDP. In particular, for Brownian functionals, an elegant vari-
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1363
+
+ational representation formula has been established by Boué and Dupuis [5] and Budhiraja and
+Dupuis [10]. A simplified proof was given by the present author [67]. This variational representation has already been proved to be very effective for various finite and infinite-dimensional
+stochastic dynamical systems even with irregular coefficients (cf. [54,55,11,68,56], etc.). One
+of the main advantages of this argument is that one only needs to make some simple moment
+estimates (see Section 4 below).
+On the other hand, it is well known that in the deterministic case, many PDE problems of
+parabolic and hyperbolic types can be written as Volterra type integral equations in Banach
+spaces by using the corresponding semigroup and the variation-of-constants formula (cf. [22,
+28,48]). An obvious merit of this procedure is that the unbounded operators in PDEs no longer
+appear and the analysis is entirely analogous to the ODE case. Thus, one naturally expects to take
+the same advantages for SPDEs in Banach spaces. However, it is not all Banach spaces in which
+stochastic integrals are well defined. One can only work in a class of 2-smooth Banach spaces.
+The definition of stochastic integrals in 2-smooth Banach spaces and related properties such as
+Burkholder–Davis–Gundy’s (abbrev. BDG) inequality, Girsanov’s theorem, stochastic Fubini’s
+theorem and the distribution of stochastic integrals can be found in [43,6,7,45], etc. Thus, similar to the deterministic case, we can develop a parallel theory in 2-smooth Banach spaces for
+SPDEs. It should be emphasized that besides the usual SPDEs driven by multiplicative Brownian
+noises, a class of stochastic evolutionary integral equations appearing in viscoelasticity and heat
+conduction with memory (cf. [53]) can also be written as abstract stochastic Volterra equations
+in Banach spaces.
+In the past three decades, the theory of general SPDEs has been developed extensively
+by numerous authors mainly based on two different approaches: semigroup method based on
+the variation-of-constants formula (cf. [64,15,6–8,66], etc.) and variation method based on
+Galerkin’s finite-dimensional approximation (cf. [46,35,58,34,41,51,69,26], etc.). A new regularization method is given in [71]. An overview for the classification and applications of SPDEs
+are referred to the recent book of Kotelenez [33]. In the author’s knowledge, most of the wellknown results are primarily concentrated on the mild or weak solutions, even measure-valued
+solutions. Such notions of solutions naturally appear in the study of SPDEs driven by the space–
+time white noises, and in this case one cannot obtain any differentiability of solutions with respect
+to the spatial variable.
+Nevertheless, when one considers an SPDE driven by the spatial regular and time white noises,
+it is reasonable to require the existence of spatial regular solutions or classical solutions in the
+sense of PDE. For linear SPDEs, such regular solutions are relatively easy and well known (cf.
+[35,58,20], etc.). However, for non-linear SPDEs, there seems to be few results (cf. [34,39,67,
+71]). A major difficulty to prove the spatial regularity of solutions is that one cannot use the
+usual bootstrap method in the theory of PDE since there is no differentiability of solutions with
+respect to the time variable. The present author [67] solved this problem by using a non-linear
+interpolation result due to Tartar [63]. Obviously, for the regularity theory of SPDEs, by using
+Sobolev’s embedding theorem (cf. [1]), it is natural to consider the Lp -solutions of SPDEs. This
+is also why we need to work in 2-smooth Banach spaces. It should be noticed that the Lp -theory
+for SPDEs has been established in [6–8,34,17,18,66], etc. But, there are few results to deal with
+the Lp -strong solution in the sense of PDE. In the present paper, we shall prove a general result
+about the existence of strong solutions in the sense of both SDE and PDE (see Theorem 6.6
+below).
+We now describe the structure of this paper: In Section 2, we prepare some preliminaries for
+later use, and divide it into three subsections. In Section 2.1, we prove a Gronwall’s lemma of
+
+1364
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Volterra type under rather weak assumptions on kernel functions. Moreover, two simple examples
+are provided to show this lemma. In Section 2.2, we recall the Itô integral in 2-smooth Banach
+spaces and Burkholder–Davies–Gundy’s inequality as well as Kolmogorov’s continuity criterion
+of random fields in random intervals. In Section 2.3, we recall a criterion of Laplace principle
+established by Budhiraja and Dupuis [5,10] (see also [70]).
+In Section 3, using the Gronwall inequality of Volterra type in Section 2.1, we first prove
+the existence and uniqueness of solutions for stochastic Volterra equations in 2-smooth Banach
+spaces under global Lipschitz conditions and singular kernels. Next, in Section 3.2, we study the
+regularity of solutions under slightly stronger assumptions on kernels. Moreover, a BDG type of
+inequality for stochastic Volterra type integral is also proved. In Section 3.3, employing the usual
+localizing method, we prove the existence of a unique maximal solution for stochastic Volterra
+equation under local Lipschitz conditions. Lastly, in Section 3.4, we discuss the continuous dependence of solutions with respect to the coefficients.
+In Section 4, using the weak convergence method, we prove the Freidlin–Wentzell large deviation principle for the small perturbations of stochastic Volterra equations under a compactness
+assumption and some uniform non-explosion conditions for the controlled equations. We also
+refer to [38,56] for the application of weak convergence approach in the LDPs of stochastic
+evolution equations (the case of evolution triple). In the proof of Section 4, we need to use the
+Yamada–Watanabe Theorem in infinite-dimensional space, which has been established by Ondreját [45] (see also [57] for the case of evolution triple). We want to say that although Ondreját
+only considered the case of convolution semigroup, their proofs are also adapted to more general
+stochastic Volterra equations. Moreover, since we are considering the path continuous solution,
+the proof in [45] can be simplified.
+In Section 5, a simple application in a class of semilinear stochastic evolutionary integral
+equations is presented, which has been studied in [13,4,31], etc., for additive noises. Such type
+of stochastic evolution equations appears in viscoelasticity, heat conduction in materials with
+memory, and electrodynamics with memory [53].
+In Section 6, we apply our general results to a large class of semilinear stochastic evolution
+equations driven by multiplicative Brownian noises. A basic result in semigroup theory states
+that if f is a Hölder continuous function in Banach space X, then
+t
+Tt−s f (s) ds is continuous in D(L),
+
+t →
+0
+
+where Tt is an analytic semigroup and L is the generator of Tt . We will use this result to prove
+the existence of strong solutions (in the sense of PDE) for semilinear SPDEs. The corresponding
+LDPs are also obtained (see also [61,49,11,56,38], etc., for the study of LDPs of stochastic
+evolution equations). More applications can be found in an uncompressed version [72].
+In Section 7, we prove the existence and uniqueness of local Lp -strong solutions for stochastic Navier–Stokes equations (SNSE) in any dimensional case. In the two-dimensional case, we
+also obtain the non-explosion of solutions. Moreover, the LDPs for two-dimensional SNSEs
+are established in the case of both Dirichlet boundary and periodic boundary. We remark that
+the Lp -solutions for SNSEs have been studied by Brzeźniak and Peszat [9] (bounded domain) and Mikulevicius and Rozovskii [40] (the whole space). The large deviation result for
+two-dimensional SNSEs with additive noise was proved by Chang [12] using Girsanov’s transformation. In [60], the authors also used the weak convergence method to prove the large
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1365
+
+deviation estimate for two-dimensional SNSEs with multiplicative noises. But, they worked
+in the L2 -space and only for weak solutions. Here we can do it for strong solutions in Lp space.
+We conclude this introduction by making the following C ONVENTION: Throughout this paper,
+the letter C with or without subscripts will denote a positive constant, whose value may change
+from one place to another. Moreover, we also use the notation E1  E2 to denote E1  C · E2 ,
+where C > 0 is an unimportant constant.
+2. Preliminaries
+2.1. Gronwall’s inequality of Volterra type
+Let  := {(t, s) ∈ R2+ : s  t}. We first recall the following result due to Gripenberg [27,
+Theorem 1 and p. 88].
+Lemma 2.1. Let κ :  → R+ be a measurable function. Assume that for any T > 0,
+t
+t →
+
+κ(t, s) ds ∈ L∞ (0, T )
+
+0
+
+and
+ ·+
+
+
+
+
+
+lim sup κ(· + , s) ds 
+
+ ∞
+↓0
+·
+
+< 1.
+
+L (0,T )
+
+Define
+t
+r1 (t, s) := κ(t, s),
+
+rn+1 (t, s) :=
+
+κ(t, u)rn (u, s) du,
+
+n ∈ N.
+
+(2.1)
+
+s
+
+Then for any T > 0, there exist constants CT > 0 and γ ∈ (0, 1) such that
+ ·
+
+
+
+
+
+ rn (·, s) ds 
+
+ ∞
+
+ CT nγ n ,
+
+∀n ∈ N.
+
+(2.2)
+
+L (0,T )
+
+0
+
+In particular, the series
+r(t, s) :=
+
+∞
+
+n=1
+
+converges for almost all (t, s) ∈ , and
+
+rn (t, s)
+
+(2.3)
+
+1366
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+t
+r(t, s) − k(t, s) =
+
+t
+k(t, u)r(u, s) du =
+
+s
+
+r(t, u)k(u, s) du
+
+(2.4)
+
+s
+
+and for any T > 0,
+t
+t →
+
+r(t, s) ds ∈ L∞ (0, T ).
+
+(2.5)
+
+0
+
+The function r defined by (2.3) is called the resolvent of κ. All the functions κ in Lemma 2.1
+will be denoted by K . In what follows, we shall denote by K0 the subclass of K with the
+property that
+ ·+
+
+
+
+
+
+lim sup κ(· + , s) ds 
+ ∞
+↓0 
+·
+
+= 0.
+
+L (0,T )
+
+We also denote by K>1 the set of all nonnegative measurable functions κ on  with the property
+that for any T > 0 and some β = β(T ) > 1,
+t
+t →
+
+κ β (t, s) ds ∈ L∞ (0, T ).
+
+(2.6)
+
+0
+
+It is clear that K>1 ⊂ K0 ⊂ K and for any κ1 , κ2 ∈ K0 (resp. K>1 ) and C1 , C2  0,
+C1 κ1 + C2 κ2 ∈ K0
+
+(resp. K>1 ).
+
+Let 0  h ∈ L1loc (R+ ). If κ(t, s) = h(s), then κ ∈ K0 and
+ t
+r(t, s) = h(s) exp
+
+
+h(u) du ;
+
+s
+
+if κ(t, s) = h(t − s), then κ ∈ K0 and
+r(t, s) = a(t − s) :=
+
+∞
+
+
+an (t − s),
+
+n=1
+
+where
+t
+a1 (t) = h(t),
+
+an+1 (t) :=
+
+h(t − s)an (s) ds.
+0
+
+(2.7)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1367
+
+When 0  h ∈ L1 (R+ ), a classical result due to Paley and Wiener (cf. [42, p. 207, Theorem 5.2])
+says that
+∞
+a ∈ L (R+ )
+1
+
+if and only if
+
+h(t) dt < 1.
+
+(2.8)
+
+0
+
+In this case, â(s) = ĥ(s)/(1 − ĥ(s)), where the hat denotes the Laplace transform, i.e.:
+∞
+ĥ(s) :=
+
+e−st h(t) dt,
+
+s  0.
+
+0
+
+We want to say that (2.8) is useful in the study of large time asymptotic behavior of solutions for
+Volterra equations. An important extension to nonintegrable convolution kernel can be found in
+[59,29] (see also [27]). A simple example is provided in Example 3.2 below.
+We now prove the following Gronwall’s lemma of Volterra type (see also [28, Lemma 7.1.1]
+for a case of special convolution kernel).
+Lemma 2.2. Let κ ∈ K and rn and r be defined respectively by (2.1) and (2.3). Let f, g : R+ →
+R+ be two measurable functions satisfying that for any T > 0 and some n ∈ N,
+t
+t →
+
+rn (t, s)f (s) ds ∈ L∞ (0, T )
+
+(2.9)
+
+r(t, s)g(s) ds < +∞.
+
+(2.10)
+
+0
+
+and for almost all t ∈ (0, ∞),
+t
+0
+
+If for almost all t ∈ (0, ∞),
+t
+f (t)  g(t) +
+
+κ(t, s)f (s) ds,
+
+(2.11)
+
+r(t, s)g(s) ds.
+
+(2.12)
+
+0
+
+then for almost all t ∈ (0, ∞),
+t
+f (t)  g(t) +
+0
+
+1368
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Proof. First of all, if we define
+t
+h(t) := g(t) +
+
+r(t, s)g(s) ds,
+0
+
+then by (2.4) and (2.10)
+t
+h(t) = g(t) +
+
+κ(t, s)h(s) ds
+
+for a.a. t ∈ (0, ∞).
+
+0
+
+Thus, by (2.11) we have
+t
+f (t) − h(t) 
+
+
+
+κ(t, s) f (s) − h(s) ds
+
+for a.a. t ∈ (0, ∞).
+
+(2.13)
+
+0
+
+Set f˜(t) := f (t) − h(t) and define
+f˜∗ (t) := ess sup f˜(s),
+
+t > 0,
+
+s∈[0,t]
+
+and
+τ0 := inf t > 0: f˜∗ (t) > 0 .
+Clearly, t → f˜∗ (t) is non-decreasing and
+f˜(t)  0 for a.a. t ∈ [0, τ0 ).
+
+(2.14)
+
+We want to prove that
+τ0 = +∞.
+Iterating inequality (2.13), we have
+f˜(t) 
+
+t
+0
+
+rn (t, s)f˜(s) ds 
+
+t
+rn (t, s)f (s) ds,
+
+∀n ∈ N.
+
+0
+
+By (2.9), one knows that f˜∗ (T ) < +∞ for any T > 0. Moreover, for almost all t > 0,
+(2.14)
+
+f˜(t) 
+
+t
+τ0
+
+˜∗
+
+rn (t, s)f˜(s) ds  f (t)
+
+t
+rn (t, s) ds,
+τ0
+
+∀n ∈ N.
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1369
+
+Suppose τ0 < +∞. Then, for any T > τ0 , we have
+ ·
+
+
+
+
+
+0 < f˜∗ (T )  f˜∗ (T ) ·  rn (·, s) ds 
+
+ ∞
+
+L (τ0 ,T )
+
+τ0
+
+as n → ∞, which is impossible. So, τ0 = +∞.
+
+(2.2)
+
+−→ 0
+
+2
+
+The following two examples show that (2.12) is sensitive to κ ∈ K .
+Example 2.3. For C0 > 0, set
+C0
+,
+κC0 (t, s) := √
+2
+t − s2
+
+s < t.
+
+It is clear that
+t
+
+
+
+κC0 (t, u) du = C0 (π/2) − arcsin(s/t) .
+
+s
+
+From this, one sees that
+
+
+κC0 ∈
+/K,
+if C0  2/π;
+c
+κC0 ∈ K ∩ K0 , if 0 < C0 < 2/π .
+
+Consider the following Volterra equation
+t
+x(t) =
+
+κC0 (t, s)x(s) ds,
+
+t  0.
+
+0
+
+If C0 = 1, there are at least two solutions x(t) ≡ 0 and x(t) = t; if C0 = π2 , there are infinitely
+many solutions x(t) ≡ constant; if 0 < C0 < 2/π , by Lemma 2.2 there is only one solution
+x(t) ≡ 0 in L∞
+loc (R+ ).
+Example 2.4. For C0 > 0 and α, β ∈ [0, 1), set
+α,β
+
+κC0 (t, s) :=
+
+C0
+,
+(t − s)α s β
+
+s < t.
+
+It is clear that
+t
+u
+
+α,β
+κC0 (t, s) ds = C0 t 1−α−β
+
+1
+u/t
+
+1
+ds.
+(1 − s)α s β
+
+(2.15)
+
+1370
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+From this, one sees that
+⎧
+α,β
+⎪
+/K,
+⎪
+⎪ κC0 ∈
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪ κCα,β
+∈
+/K,
+⎪
+⎪
+⎨ 0
+
+if α + β > 1 and C0 > 0;
+1
+if α + β = 1 and C0 
+0
+
+⎪
+⎪
+⎪
+α,β
+⎪
+⎪
+κC0 ∈ K ∩ K0c ,
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎩ κ α,β ∈ K ,
+C0
+
+1
+if α + β = 1 and C0 <
+0
+
+1
+ds;
+(1 − s)α s β
+1
+ds;
+(1 − s)α s β
+
+if α + β < 1 and C0 > 0.
+
+>1
+
+Consider the following Volterra equation
+t
+x(t) =
+
+α,β
+
+kC0 (t, s)x(s) ds,
+
+t  0.
+
+0
+
+If α + β < 1, by Lemma 2.2 there is only one solution x(t) ≡ 0 in L∞
+loc (R+ ); if α = β = C0 =
+√
+1/2, there are at least two solutions x(t) ≡ 0 and x(t) = t.
+2.2. Itô’s integral in 2-smooth Banach spaces
+Throughout this paper, we shall fix a stochastic basis (Ω, F , P ; (Ft )t0 ), i.e., a complete
+probability space with a family of right-continuous filterations. In what follows, without special
+declarations, all expectations E are taken with respect to the probability measure P .
+Let {W k (t): t  0, k ∈ N} be a sequence of independent one-dimensional standard Brownian
+motions on (Ω, F , P ; (Ft )t0 ). Let l 2 be the usual Hilbert space of all square summable real
+number sequences, {ek , k ∈ N} the usual orthonormal basis of l 2 . Let X be a separable Banach
+space, and L(l 2 ; X) the set of all bounded linear operators from l 2 to X. For an operator B ∈
+L(l 2 ; X), we also write
+B = (B1 , B2 , . . .) ∈ XN ,
+
+Bk = Bek .
+
+Definition 2.5. An operator B ∈ L(l 2 ; X) is called radonifying if
+the series
+
+
+
+Bek · W k (1) converges in L2 (Ω; X).
+
+k
+
+We shall denote by L2 (l 2 ; X) the space of all radonifying operators, and write for B ∈ L2 (l 2 ; X),
+2 1/2
+ 
+B L2 (l 2 ;X) := EBek · W k (1)X
+.
+
+(2.16)
+
+Here and below, we use the convention that the repeated indices will be summed.
+The following proposition is well known, and a detailed proof was given in [45, Proposition 2.5].
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1371
+
+Proposition 2.6. The space L2 (l 2 ; X) with norm (2.16) is a separable Banach space.
+In order to introduce the stochastic integral of an X-valued measurable (Ft )-adapted process
+with respect to W , in the sequel, we assume that X is 2-smooth (cf. [50]), i.e., there exists a
+constant CX  2 such that for all x, y ∈ X,
+x + y 2X + x − y 2X  2 x 2X + CX y 2X .
+Let now s → B(s) be an L2 (l 2 ; X)-valued measurable and (Ft )-adapted process with
+T
+
+
+
+B(s)2
+
+L2 (l 2 ;X)
+
+ds < +∞ a.s., ∀T > 0.
+
+0
+
+One can define the Itô stochastic integral (cf. [45, Section 3])
+t
+t → It (B) :=
+
+t
+B(s) dW (s) =
+
+0
+
+Bk (s) dW k (s) ∈ X
+0
+
+such that t → It (B) is an X-valued continuous local (Ft )-martingale. Moreover, let τ be any
+(Ft )-stopping time, then
+t∧τ
+
+t
+B(s) dW (s) =
+
+0
+
+1{s<τ } · B(s) dW (s).
+0
+
+The following BDG inequality for It (B) holds (cf. [45, Section 5]).
+Theorem 2.7. For any p > 0, there exists a constant Cp > 0 depending only on p such that
+ t
+p 
+ T
+p/2
+
+
+2
+
+
+
+B(s) 2 ds
+E sup  B(s) dW (s)
+.
+ Cp E
+L2 (l ;X)
+
+t∈[0,T ]
+
+
+0
+
+X
+
+(2.17)
+
+0
+
+The following two typical examples of 2-smooth Banach spaces are usually met in applications.
+Example 2.8. Let X be a separable Hilbert space. Clearly, X is 2-smooth. In this case, L2 (l 2 ; X)
+consists of all Hilbert–Schmidt operators of mapping l 2 into X, and
+B L2 (l 2 ;X) =
+
+ ∞
+
+k=1
+
+1/2
+Bek 2X
+
+.
+
+1372
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Example 2.9. Let (E, E, μ) be a measure space, H a separable Hilbert space. For p  2, let
+Lp (E, μ; H) be the usual H-valued Lp -space over (E, E, μ). Then X = Lp (E, μ; H) is 2smooth (cf. [50,6]). In this case, by BDG’s inequality for Hilbert valued martingale we have
+
+B 2L (l 2 ;X) = E
+
+2/p
+
+
+Bk (x) · W k (1)p μ(dx)
+H
+
+2
+
+
+
+
+E
+
+2/p
+
+p
+EBk (x) · W k (1)H μ(dx)
+
+E
+
+2/p
+  ∞
+p/2
+
+2
+Bk (x)
+ Cp
+μ(dx)
+H
+
+E
+
+k=1
+
+= Cp B 2Lp (E,μ;l 2 ⊗H) .
+
+(2.18)
+
+Hence,
+
+
+
+
+
+
+Lp E, μ; l 2 ⊗ H → L2 l 2 ; X = L2 l 2 ; Lp (E, μ; H) .
+We also recall the following Kolmogorov’s continuity criterion, which can be derived directly
+by Garsia’s inequality (cf. [64]).
+Theorem 2.10. Let {X(t), t  0} be an X-valued stochastic process, and τ a bounded random
+time. Suppose that for some C0 , p > 0 and δ > 1,
+
+p
+
+E X(t) − X(s) · 1{s,t∈[0,τ ]} X  C0 |t − s|δ .
+Then there exist constants C1 > 0 and a ∈ (0, (δ − 1)/p) independent of C0 and a continuous
+version X̃ of X such that
+p
+
+
+E
+
+sup
+
+s=t∈[0,τ ]
+
+X̃(t) − X̃(s) X
+|t − s|ap
+
+ C1 · C0 .
+
+2.3. A criterion for Laplace principles
+It is well known that there exists a Hilbert space so that l 2 ⊂ U is Hilbert–Schmidt with
+embedding operator J and {W k (t), k ∈ N} is a Brownian motion with values in U, whose covariance operator is given by Q = J ◦ J ∗ . For example, one can take U as the completion of l 2
+with respect to the norm generated by scalar product
+
+
+
+
+
+
+h, h U :=
+
+ ∞
+1
+ hk h 2
+k
+
+k=1
+
+k2
+
+,
+
+h, h ∈ l 2 .
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1373
+
+For T > 0 and a Banach space B, we denote by B(B) the Borel σ -field, and by CT (B) the
+space of all continuous functions from [0, T ] to B, which is endowed with the uniform norm.
+Define
+
+2T :=
+
+·
+h=
+
+
+
+
+2
+ḣ(s) ds: ḣ ∈ L 0, T ; l
+2
+
+(2.19)
+
+0
+
+with the norm
+ T
+h 2 :=
+
+
+
+ḣ(s)22 ds
+
+1/2
+
+l
+
+T
+
+,
+
+0
+
+where the dot denotes the generalized derivative. Let μ be the law of the Brownian motion W
+in CT (U). Then
+
+
+CT (U), 2T , μ
+forms an abstract Wiener space.
+For T , N > 0, set
+DN := h ∈ 2T : h 2  N
+T
+
+and
+
+ATN :=
+
+
+h : [0, T ] → l 2 is a continuous and (Ft )-adapted
+.
+process, and for almost all ω, h(·, ω) ∈ DN
+
+(2.20)
+
+It is well known that with respect to the weak convergence topology in 2T (cf. [32]),
+DN is metrizable as a compact Polish space.
+
+(2.21)
+
+Let S be a Polish space. A function I : S → [0, ∞] is given.
+Definition 2.11. The function I is called a rate function if for every a < ∞, the set {f ∈ S:
+I (f )  a} is compact in S.
+Let {Z : CT (U) → S,  ∈ (0, 1)} be a family of measurable mappings. Assume that there is
+a measurable map Z0 : 2T → S such that:
+(LD)1 For any N > 0, if a family {h ,  ∈ (0, 1)} ⊂ ATN (as random variables in DN ) converges
+k
+in distribution to h ∈ ATN , then for some subsequence k , Zk (· + h√(·)
+) converges in
+k
+distribution to Z0 (h) in S.
+(LD)2 For any N > 0, if {hn , n ∈ N} ⊂ DN weakly converges to h ∈ 2T , then for some subsequence hnk , Z0 (hnk ) converges to Z0 (h) in S.
+
+1374
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+For each f ∈ S, define
+I (f ) :=
+
+1
+inf
+h 22 ,
+2 {h∈2T : f =Z0 (h)}
+T
+
+(2.22)
+
+where inf ∅ = ∞ by convention. Then under (LD)2 , I (f ) is a rate function. In fact, assume that
+I (fn )  a. By the definition of I (fn ), there exists a sequence hn ∈ 2 such that Z0 (hn ) = fn and
+1
+1
+hn 22  a + .
+2
+n
+T
+By the weak compactness of D2a+2 , there exist a subsequence nk (still denoted by n) and h ∈ 2T
+such that hn weakly converges to h and
+h 22  lim hn 22  2a.
+T
+
+n→∞
+
+T
+
+Hence, by (LD)2 we have
+
+
+lim Z0 (hnk ) − Z0 (h)S = 0
+
+k→∞
+
+and
+
+
+I Z0 (h)  a.
+We recall the following result due to [5,10] (see also [67, Theorem 4.4]).
+Theorem 2.12. Under (LD)1 and (LD)2 , {Z ,  ∈ (0, 1)} satisfies the Laplace principle with the
+rate function I (f ) given by (2.22). More precisely, for each real bounded continuous function g
+on S:
+ 
+
+g(Z )
+= − inf g(f ) + I (f ) .
+lim  log Eμ exp −
+→0
+f ∈S
+
+
+(2.23)
+
+In particular, the family of {Z ,  ∈ (0, 1)} satisfies the large deviation principle in (S, B(S))
+with the rate function I (f ). More precisely, let ν be the law of Z in (S, B(S)), then for any
+A ∈ B(S):
+− inf o I (f )  lim inf  log ν (A)  lim sup  log ν (A)  − inf I (f ),
+f ∈A
+
+→0
+
+→0
+
+f ∈Ā
+
+where the closure and the interior are taken in S, and I (f ) is defined by (2.22).
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1375
+
+3. Abstract stochastic Volterra integral equations
+In this section, we consider the following stochastic Volterra integral equation in 2-smooth
+Banach space X:
+t
+X(t) = g(t) +
+
+
+
+A t, s, X(s) ds +
+
+0
+
+t
+
+
+
+B t, s, X(s) dW (s),
+
+(3.1)
+
+0
+
+where g(t) is an X-valued measurable and (Ft )-adapted process, and
+A :  × Ω × X → X ∈ M × B(X)/B(X)
+and
+
+
+ 
+
+B :  × Ω × X → L2 l 2 ; X ∈ M × B(X)/B L2 l 2 ; X .
+Here and below,  := {(t, s) ∈ R2+ : s  t}, and M denotes the progressively measurable σ field on  × Ω generated by the sets E ∈ B() × F with properties: 1E (t, s, ·) ∈ Fs for all
+(t, s) ∈ , and s → 1E (t, s, ω) is right continuous for any t ∈ R+ and ω ∈ Ω.
+We start with the global existence and uniqueness of solutions for Eq. (3.1) under global
+Lipschitz conditions and singular kernels.
+3.1. Global existence and uniqueness
+In this subsection, we make the following global Lipschitz and linear growth conditions on
+the coefficients:
+(H1) For some p  2 and any T > 0,
+t
+ess sup
+
+t∈[0,T ]
+
+p
+
+ 
+κ1 (t, s) + κ2 (t, s) · Eg(s)X ds < +∞,
+
+0
+
+where κ1 and κ2 are from (H2) and (H3) below.
+(H2) There exists κ1 ∈ K0 such that for all (t, s) ∈ , ω ∈ Ω and x ∈ X,
+
+
+
+
+A(t, s, ω, x)  κ1 (t, s) · x X + 1
+X
+and
+
+
+B(t, s, ω, x)2
+
+L2 (l 2 ;X)
+
+ κ1 (t, s) ·
+
+
+
+
+x 2X + 1 .
+
+(H3) There exists κ2 ∈ K0 such that for all (t, s) ∈ , ω ∈ Ω and x, y ∈ X,
+
+
+A(t, s, ω, x) − A(t, s, ω, y)  κ2 (t, s) · x − y X
+X
+
+1376
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+and
+
+
+B(t, s, ω, x) − B(t, s, ω, y)2
+
+L2 (l 2 ;X)
+
+ κ2 (t, s) · x − y 2X .
+
+We now prove the following basic existence and uniqueness result.
+Theorem 3.1. Assume that (H1)–(H3) hold. Then there exists a unique measurable (Ft )-adapted
+process X(t) such that for almost all t  0,
+t
+X(t) = g(t) +
+
+
+
+A t, s, X(s) ds +
+
+t
+
+
+
+B t, s, X(s) dW (s),
+
+P -a.s.,
+
+(3.2)
+
+
+
+t
+p
+p
+p
+
+
+
+
+
+
+
+
+
+E X(t) X  CT ,p,κ1 E g(t) X + ess sup
+κ1 (t, s) · E g(s) X ds
+
+(3.3)
+
+0
+
+0
+
+and for any T > 0 and some CT ,p,κ1 > 0,
+
+t∈[0,T ]
+
+0
+
+for almost all t ∈ [0, T ], where p is from (H1). Moreover, if
+t
+t →
+
+κ1 (t, s) ds ∈ L∞ (R+ ),
+
+(3.4)
+
+0
+
+then for almost all t  0,
+p
+
+EX(t)  Cp,κ
+
+
+1
+
+p
+
+Eg(t) +
+
+t
+
+ u
+
+X
+
+t
+
+X
+
+p
+
+κ̃1 (t, s) · Eg(s)X ds
+
+0
+
++
+
+rκ̃1 (t, u) ·
+0
+
+ 
+p
+
+
+
+κ̃1 (u, s) · E g(s) X ds du ,
+
+(3.5)
+
+0
+
+where κ̃1 = C̃p,κ1 · κ1 , rκ̃1 is defined by (2.3) in terms of κ̃1 , and Cp,κ1 , C̃p,κ1 are constants only
+depending on p, κ1 .
+Proof. We use Picard’s iteration to prove the existence. Let X1 (t) := g(t) and define recursively
+for n ∈ N,
+t
+Xn+1 (t) = g(t) +
+0
+
+
+
+A t, s, Xn (s) ds +
+
+t
+0
+
+
+
+B t, s, Xn (s) dW (s).
+
+(3.6)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1377
+
+Fix T > 0 below. By (H2), BDG’s inequality (2.17) and Hölder’s inequality we have
+p
+
+p
+
+EXn+1 (t)  Eg(t) + E
+X
+
+ t
+
+X
+
+ 
+
+A t, s, Xn (s)  ds
+X
+
+p
+
+0
+
+ t
+p
+
+
+
+
+
+
++ E B t, s, Xn (s) dW (s)
+
+
+
+X
+
+0
+
+p
+
+ Eg(t) + E
+
+ t
+
+X
+
+
+
+
+κ1 (t, s) · Xn (s)X + 1 ds
+
+p
+
+0
+
+ t
++E
+
+ 
+
+B t, s, Xn (s) 2
+
+p
+2
+
+ds
+L (l 2 ;X)
+2
+
+0
+
+p
+
+ Eg(t) +
+
+t
+
+X
+
+p
+
+
+κ1 (t, s) · E Xn (s)X + 1 ds ·
+
+0
+
+t
++
+
+ t
+
+p−1
+κ1 (t, s) ds
+
+0
+
+p
+
+
+κ1 (t, s) · E Xn (s)X + 1 ds ·
+
+0
+
+ t
+
+ p −1
+2
+
+κ1 (t, s) ds
+0
+
+p
+
+ Eg(t)X + CT ,p · CT + CT ,p
+
+t
+
+
+p
+κ1 (t, s) · EXn (s)X ds,
+
+0
+
+t
+p−1
+(p−2)/2
+where CT := ess supt∈[0,T ] | 0 κ1 (t, s) ds| and CT ,p := CT + CT
+.
+Set
+fm (t) :=
+
+
+p
+sup EXn (t)X .
+
+n=1,...,m
+
+Then
+p
+ 
+
+fm (t)  CT ,p,κ1 Eg(t)X + 1 +
+
+t
+κ̃1 (t, s) · fm (s) ds,
+0
+
+where κ̃1 = CT ,p,κ1 · κ1 and the constant CT ,p,κ1 is independent of m.
+Let rκ̃1 be defined by (2.3) in terms of κ̃1 . Note that by (2.4)
+t
+0
+
+p
+
+rκ̃1 (t, s) · Eg(s)X ds −
+
+t
+0
+
+p
+
+κ̃1 (t, s) · Eg(s)X ds
+
+(3.7)
+
+1378
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+
+
+t  t
+
+p
+
+rκ̃1 (t, u)κ̃1 (u, s) du · Eg(s)X ds
+
+=
+s
+
+0
+
+ u
+
+t
+=
+
+rκ̃1 (t, u)
+0
+
+
+
+p
+
+
+κ̃1 (u, s) · E g(s) X ds du.
+
+0
+
+Hence, by Lemma 2.2 and (H1), we obtain that for almost all t ∈ [0, T ],
+
+p
+sup EXn (t)X =
+
+n∈N
+
+
+lim fm (t)  CT ,p,κ1
+
+p
+
+Eg(t) +
+
+t
+
+X
+
+m→∞
+
+p
+
+rκ̃1 (t, s) · Eg(s)X ds
+
+
+
+0
+
+
+ CT ,p,κ1
+
+p
+
+Eg(t) +
+
+t
+
+X
+
+p
+
+κ̃1 (t, s) · Eg(s)X ds
+
+0
+
+ u
+
+t
++
+
+rκ̃1 (t, u)
+0
+
+ 
+p
+
+κ̃1 (u, s) · Eg(s)X ds du
+
+(3.8)
+
+0
+
+
+
+(2.5)
+
+ CT ,p,κ1
+
+p
+
+Eg(t) + ess sup
+X
+
+t∈[0,T ]
+
+t
+
+
+p
+
+
+
+κ1 (t, s) · E g(s) ds .
+X
+
+0
+
+On the other hand, set
+Zn,m (t) := Xn (t) − Xm (t)
+and
+
+2
+f (t) := lim sup EZn,m (t)X .
+n,m→∞
+
+As the above calculations, by (H3) we have
+ t
+2
+  
+2
+
+
+
+ 
+
+
+
+
+A t, s, Xn (s) − A t, s, Xm (s) ds 
+E Zn+1,m+1 (t) X  E
+
+
+
+X
+
+0
+
+ t
+2
+  
+
+
+
+
+
+
+B t, s, Xn (s) − B t, s, Xm (s) dW (s)
++ E
+
+
+0
+
+t
+
+0
+
+
+2
+κ2 (t, s) · EZn,m (s)X ds.
+
+X
+
+(3.9)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1379
+
+By (3.9), (H1) and using Fatou’s lemma, we get
+t
+f (t) 
+
+κ2 (t, s) · f (s) ds.
+0
+
+By Lemma 2.2 again, we have for almost all t ∈ [0, T ],
+
+2
+f (t) = lim sup EZn,m (t)X = 0.
+n,m→∞
+
+Hence, there exists an X-valued (Ft )-adapted process X(t) such that for almost all t ∈ [0, T ],
+
+2
+lim EXn (t) − X(t)X = 0.
+
+n→∞
+
+Taking limits for (3.6), one finds that (3.2) holds.
+Moreover, estimate (3.3) follows from (3.9). Note that when (3.4) is satisfied, the constant
+CT ,p in (3.7) is independent of T . Hence, estimate (3.5) is direct from (3.8). The uniqueness
+follows by similar calculations as above. 2
+Example 3.2. Let for δ > 0,
+h(s) :=
+
+e−δs
+s log2 s
+
+,
+
+t > s  0.
+
+It is easy to see that h ∈ L1 (R+ ). Consider the following stochastic Volterra equation:
+t
+t
+
+
+
+
+X(t) = x0 log(t ∧ 1) + h(t − s)A X(s) ds +
+0
+
+
+
+h(t − s)B X(s) dW (s),
+
+0
+
+where A : X → X and B : X → L2 (l 2 ; X) are global Lipschitz continuous functions. By elementary calculations, one finds that
+t
+sup
+t0
+
+0
+
+e−δ(t−s) |log(s ∧ 1)|
+(t − s) log2 (t − s)
+
+ds < +∞.
+
+So, (H1)–(H3) are satisfied with p = 2. Moreover, by (2.8) and (3.5), one finds that if δ is large
+enough, then for any T > 0,
+2
+
+sup EX(t)X < +∞.
+
+tT
+
+We remark that in this example, X(0) = ∞.
+
+1380
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+3.2. Path continuity of solutions
+In this subsection, in addition to (H2) and (H3), we also assume that:
+(H1) The process t → g(t) is continuous and (Ft )-adapted, and for any p  2 and T > 0,
+E
+
+!
+
+p "
+
+sup g(t)X < +∞.
+
+t∈[0,T ]
+
+(H4) For all s < t < t  , ω ∈ Ω and x ∈ X,
+ 
+
+
+
+ 
+
+A t , s, ω, x − A(t, s, ω, x)  λ t  , t, s · x X + 1
+X
+and
+
+ 
+
+
+ 
+
+B t , s, ω, x − B(t, s, ω, x)2 2  λ t  , t, s · x 2 + 1 ,
+X
+L (l ;X)
+2
+
+where λ is a positive measurable function satisfying that for any T > 0 and some
+γ = γ (T ), C = C(T ) > 0,
+t
+
+
+γ
+
+
+λ t  , t, s ds  C t  − t  ,
+
+0  t < t  T .
+
+(3.10)
+
+0
+
+Theorem 3.3. Assume that (H1) and (H2)–(H4) hold, and the kernel function κ1 in (H2) belongs
+to K>1 . Then there exists a unique X-valued continuous (Ft )-adapted process X(t) such that
+P -a.s., for all t  0,
+t
+X(t) = g(t) +
+
+
+
+A t, s, X(s) ds +
+
+0
+
+t
+
+
+
+B t, s, X(s) dW (s)
+
+(3.11)
+
+0
+
+and for any p  2 and T > 0,
+E
+
+!
+
+p "
+
+sup X(t)X < +∞.
+
+t∈[0,T ]
+
+(3.12)
+
+Moreover, if for some δ > 0 and any p  2, T > 0,
+  
+p
+δp
+
+Eg t  − g(t)X  CT ,p t  − t  ,
+then, t → X(t) admits a Hölder continuous modification and for any p  2, T > 0 and some
+a > 0,
+p
+
+
+E
+
+sup
+
+t=t  ∈[0,T ]
+
+X(t  ) − X(t) X
+|t  − t|ap
+
+ CT ,p,a .
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1381
+
+Proof. First of all, for any p  2 and T > 0, by (H1) and (3.3) we have
+p
+
+ess sup EX(t)X < +∞.
+
+(3.13)
+
+t∈[0,T ]
+
+Set
+t
+J (t) :=
+
+
+
+B t, s, X(s) dW (s)
+
+0
+
+and write for 0  t < t   T ,
+ 
+J t  − J (t) =
+
+t
+
+ 
+
+
+
+B t , s, X(s) − B t, s, X(s) dW (s)
+
+0
+
+t 
++
+
+ 
+ 
+
+
+B t  , s, X(s) dW (s) =: J1 t  , t + J2 t  , t .
+
+t
+
+In view of κ1 ∈ K>1 , (2.6) holds for some β > 1. Fix p  2β ∗ (β ∗ := β/(β − 1)). By BDG
+inequality (2.17), (H2) and Hölder’s inequality, we have
+  p
+E J 2 t  , t  X  E
+
+ t 
+
+2
+
+ 
+
+κ1 t  , s · X(s)X + 1 ds
+
+p
+2
+
+t
+
+ t 
+
+
+
+β
+k1 t  , s ds
+
+p
+
+ t 
+
+2β
+
+E
+
+t
+
+ ∗
+
+
+X(s)2β + 1 ds
+
+ p∗
+2β
+
+X
+
+t
+
+(2.6) 
+
+ p −1
+ t  − t  2β ∗
+
+t
+
+
+
+p
+ p
+ 
+ (3.13) 
+EX(s)X + 1 ds  t  − t  2β ∗ ,
+
+t
+
+and by (H4) and Minkowski’s inequality,
+  p
+E J 1 t  , t  X  E
+
+ t
+
+2
+
+ 
+
+λ t  , t, s · X(s)X + 1 ds
+
+p
+2
+
+0
+
+ t
+
+
+p  2
+
+  
+
+λ t  , t, s · EX(s)X p + 1 ds
+
+0
+(3.13)
+
+ t
+
+
+
+0
+
+
+
+λ t  , t, s ds
+
+p
+2
+
+(3.10) 
+
+ γp
+ t  − t  2 .
+
+p
+2
+
+1382
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Hence, for all 0  t < t   T ,
+p 
+  
+ γp 
+ p
+EJ t  − J (t)X  t − t   2 + t − t   2β ∗ .
+Similarly, we may prove that for all 0  t < t   T and p  β ∗ ,
+ t 
+p
+t
+
+
+γp 
+p
+
+
+
+ 
+
+
+E A t , s, X(s) ds − A t, s, X(s) ds   t − t   + t − t   β ∗ .
+
+
+0
+
+X
+
+0
+
+The desired conclusions follow from Theorem 2.10.
+
+2
+
+We conclude this subsection by proving a lemma, which will be used frequently later. We put
+it here since the proof is similar to Theorem 3.3.
+Lemma 3.4. Let τ be an (Ft )-stopping time and
+
+
+ 
+
+G :  × Ω → L2 l 2 ; X ∈ M /B L2 l 2 ; X .
+Assume that for all 0  s < t < t  and ω ∈ Ω,
+
+
+G(t, s, ω)2
+
+ κ(t, s) · f 2 (s, ω),
+
+ 
+
+
+
+G t , s, ω − G(t, s, ω)2 2  λ t  , t, s · f 2 (s, ω),
+L (l ;X)
+L2 (l 2 ;X)
+2
+
+(3.14)
+(3.15)
+
+where κ ∈ K>1 and for any T > 0 and some α > 1 and γ > 0,
+t
+
+γ
+
+
+
+λα t  , t, s ds  CT t  − t  ,
+
+∀0  t < t   T ,
+
+0
+
+and (s, ω) → f (s, ω) is a positive measurable process with
+ T∧τ
+E
+
+
+f p (s) ds < +∞,
+
+∀p  2.
+
+0
+
+t
+Then t → J (t) := 0 G(t, s) dW (s) ∈ X admits a continuous modification on [0, τ ), and for any
+T > 0 and p large enough
+ t
+p 
+ T∧τ
+
+
+
+
+
+p
+E
+sup  G(t, s) dW (s)
+f (s) ds ,
+ CT E
+
+t∈[0,T ∧τ ]
+
+
+0
+
+X
+
+where the constant CT is independent of f and τ .
+
+0
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1383
+
+Proof. Fix T > 0 and write for 0  t < t   T ,
+ 
+J t  − J (t) =
+
+t 
+
+
+
+G t  , s dW (s) +
+
+t
+
+ 
+ 
+=: J1 t  , t + J2 t  , t .
+
+t
+
+  
+
+G t , s − G(t, s) dW (s)
+
+0
+
+In view of κ ∈ K>1 and (2.6), by BDG’s inequality (2.17) and Hölder’s inequality we have, for
+some β > 1 and p  2β ∗ (β ∗ = β/(β − 1)),
+
+
+p
+ t ∧τ 
+
+  
+p
+
+
+
+EJ1 t , t · 1{t  ,t∈[0,τ )} X  E
+G t  , s dW (s)
+
+
+
+X
+
+t∧τ
+
+ 
+
+p/2
+
+t  ∧τ
+
+ E
+
+   2
+G t , s 
+
+L2 (l 2 ;X)
+
+ds
+
+t∧τ
+
+ t ∧τ
+
+(3.14)
+
+ E
+
+
+
+κ t  , s · f 2 (s) ds
+
+p/2
+
+t∧τ
+
+ t 
+
+
+
+κ β t  , s ds
+
+
+
+p
+
+ 
+t  ∧τ
+
+2β
+
+·E
+
+t
+
+f
+
+2β ∗
+
+ p∗
+2β
+
+(s) ds
+
+t∧τ
+
+
+ p −1
+ t  − t  2β ∗ · E
+
+ T∧τ
+
+
+f p (s) ds
+
+0
+
+and for p  2α ∗ (α ∗ = α/(α − 1)),
+  
+p
+EJ1 t  , t · 1{t  ,t∈[0,τ )} X  E
+
+ t∧τ
+
+  
+G t , s − G(t, s)2
+
+p/2
+
+L2 (l 2 ;X)
+
+ds
+
+0
+(3.15)
+
+ t∧τ
+
+ E
+
+
+
+λ t  , t, s · f 2 (s) ds
+
+p/2
+
+0
+
+ t
+
+
+
+
+λα t  , t, s ds
+
+p
+
+·E
+
+0
+
+
+ γp
+ t  − t  2α · E
+
+ t∧τ
+
+2α
+
+f
+0
+
+ T∧τ
+
+
+p
+
+f (s) ds .
+0
+
+2α ∗
+
+ p∗
+2α
+
+(s) ds
+
+1384
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Hence, for any p  2(α ∗ ∨ β ∗ ) and 0  t < t   T ,
+( p −1)∧ γp
+p 
+  
+
+2α · E
+E J t  − J (t) · 1{t  ,t∈[0,τ )} X  t  − t  2β ∗
+
+ T∧τ
+
+
+p
+
+f (s) ds .
+0
+
+2
+
+The desired result now follows by Theorem 2.10.
+3.3. Local existence and uniqueness
+In this subsection, we assume that:
+
+(H2) For any R > 0, there exists κ1,R ∈ K>1 such that for all (t, s) ∈ , ω ∈ Ω and x ∈ X with
+x X  R,
+
+
+
+
+A(t, s, ω, x) + B(t, s, ω, x)2 2  κ1,R (t, s).
+L (l ;X)
+X
+2
+
+(H3) For any R > 0, there exists κ2,R ∈ K0 such that for all (t, s) ∈ , ω ∈ Ω and x, y ∈ X
+with x X , y X  R,
+
+
+A(t, s, ω, x) − A(t, s, ω, y)  κ2,R (t, s) · x − y X
+X
+and
+
+
+B(t, s, ω, x) − B(t, s, ω, y)2
+
+L2 (l 2 ;X)
+
+ κ2,R (t, s) · x − y 2X .
+
+(H4) For any R > 0, there exists a measurable function λR satisfying that for any T > 0 and
+some γ , C > 0,
+t
+
+
+γ
+
+
+λR t  , t, s ds  C t  − t  ,
+
+0  t < t  T ,
+
+0
+
+such that for all s < t < t  , ω ∈ Ω and x ∈ X with x X  R,
+
+ 
+
+ 
+
+
+
+
+A t , s, ω, x − A(t, s, ω, x) + B t  , s, ω, x − B(t, s, ω, x)2 2  λR t  , t, s .
+X
+L (l ;X)
+2
+
+We first introduce the following notion of local solutions.
+Definition 3.5. Let τ be an (Ft )-stopping time, and {X(t); t ∈ [0, τ )} an X-valued continuous
+(Ft )-adapted process. The pair of (X, τ ) is called a local solution of Eq. (3.1) if P -a.s., for all
+t ∈ [0, τ ),
+t
+X(t) = g(t) +
+0
+
+
+
+A t, s, X(s) ds +
+
+t
+0
+
+
+
+B t, s, X(s) dW (s);
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1385
+
+(X, τ ) is called a maximal solution of Eq. (3.1) if
+
+
+lim X(t, ω)X = +∞
+
+t↑τ (ω)
+
+on ω: τ (ω) < +∞ , P -a.s.
+
+We call (X, τ ) a non-explosion solution of Eq. (3.1) if
+P ω: τ (ω) < +∞ = 0.
+Remark 3.6. The stochastic integral in the above definition is defined on [0, τ ) by
+t
+
+
+
+B t, s, X(s) dW (s) = lim
+
+t∧τ
+ n
+
+
+
+B t, s, X(s) dW (s),
+
+n→∞
+
+0
+
+t < τ,
+
+0
+
+where τn := inf{t > 0: X(t) X > n}  τ as n → ∞.
+We now prove the following main result in this section.
+Theorem 3.7. Under (H1) –(H4) , there exists a unique maximal solution (X, τ ) for Eq. (3.1) in
+the sense of Definition 3.5.
+Proof. For n ∈ N, let χn be a positive smooth function on R+ with χn (s) = 1, s  n, and
+χn (s) = 0, s  n + 1. Define
+
+
+An (t, s, ω, x) := A(t, s, ω, x) · χn x X ,
+
+
+Bn (t, s, ω, x) := B(t, s, ω, x) · χn x X .
+It is easy to see that for An and Bn , (H2) holds with κ1,n+1 , (H4) holds with λn+1 , and (H3)
+holds with some κ3,n ∈ K0 . Thus, by Theorem 3.3 there exists a unique continuous (Ft )-adapted
+process Xn (t) such that for any p  2 and T > 0,
+E
+
+!
+
+p "
+
+sup Xn (t)X  CT ,p,n
+
+t∈[0,T ]
+
+and
+t
+Xn (t) = g(t) +
+0
+
+
+
+An t, s, Xn (s) ds +
+
+t
+
+
+
+Bn t, s, Xn (s) dW (s).
+
+(3.16)
+
+0
+
+We have the following claim:
+Let τ be any stopping time. The uniqueness holds for (3.16) on [0, τ ).
+We remark that when τ = T is non-random, it follows from Theorem 3.1. Let Xi (t), i = 1, 2, be
+two X-valued continuous (Ft )-adapted processes and satisfy on [0, τ ),
+
+1386
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+t
+Xi (t) = g(t) +
+
+
+
+An t, s, Xi (s) ds +
+
+t
+
+0
+
+
+
+Bn t, s, Xi (s) dW (s),
+
+i = 1, 2.
+
+0
+
+Set
+Z(t) := X1 (t) − X2 (t).
+Since κ3,n ∈ K0 , as the calculations in (3.7), by BDG’s inequality (2.17) and (H3) for An and Bn ,
+we have
+
+p
+EZ(t) · 1{t<τ } X
+ t∧τ
+
+
+
+κ3,n (t, s) · Z(s)X ds
+
+E
+
+p
+
+ t∧τ
++E
+
+0
+
+0
+
+ t
+
+p
+
+=E
+
+
+
+κ3,n (t, s) · 1{s<τ } · Z(s)X ds
+
+0
+
+t
+
+
+2
+
+κ3,n (t, s) · Z(s)X ds
+ t
+
++E
+
+p
+2
+
+2
+
+κ3,n (t, s) · 1{s<τ } · Z(s)X ds
+
+p
+2
+
+0
+
+
+p
+κ3,n (t, s) · EZ(s) · 1{s<τ } X ds.
+
+0
+
+By Lemma 2.2, we get
+
+p
+EZ(t) · 1{t<τ } X = 0 for almost all t ∈ [0, T ],
+which implies by the arbitrariness of T and the continuities of Xi (t), i = 1, 2,
+X1 (·)|[0,τ ) = X2 (·)|[0,τ ) .
+The claim is proved.
+Now, for n ∈ N, define the stopping times
+
+
+τn := inf t > 0: Xn (t)X > n
+and
+
+
+σn := inf t > 0: Xn+1 (t)X > n .
+By the above claim, we have
+Xn (·)|[0,τn ∧σn ) = Xn+1 (·)|[0,τn ∧σn ) ,
+
+(3.17)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1387
+
+which implies
+τn  σn  τn+1 ,
+
+a.s.
+
+Hence, we may define
+τ (ω) := lim τn (ω)
+n→∞
+
+and for all t < τ (ω),
+X(t, ω) := Xn (t, ω),
+
+if t < τn (ω).
+
+Clearly, (X, τ ) is a maximal solution of Eq. (3.1) in the sense of Definition 3.5.
+We next prove the uniqueness. Let (X̃, τ̃ ) be another maximal solution of Eq. (3.1) in the
+sense of Definition 3.5. Define the stopping times
+
+
+τ̃n := inf t > 0: X̃(t)X > n
+and
+τ̂n := τn ∧ τ̃n ,
+
+τ̂ := τ ∧ τ̃ .
+
+It is clear that
+τ̂n  τ̂
+
+a.s. as n → ∞,
+
+and
+t
+1[0,τ̂n ) (t) · X̃(t) = 1[0,τ̂n ) (t) · g(t) + 1[0,τ̂n ) (t) ·
+
+
+
+A t, s, X̃(s) ds
+
+0
+
+t
++ 1[0,τ̂n ) (t) ·
+
+
+
+B t, s, X̃(s) dW (s)
+
+0
+
+t
+= 1[0,τ̂n ) (t) · g(t) + 1[0,τ̂n ) (t) ·
+
+
+
+An t, s, X̃(s) ds
+
+0
+
+t
++ 1[0,τ̂n ) (t) ·
+
+
+
+Bn t, s, X̃(s) dW (s).
+
+0
+
+By the above claim again, we have
+X(·)|[0,τ̂n ) = X̃(·)|[0,τ̂n ) .
+
+1388
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+So
+X(·)|[0,τ̂ ) = X̃(·)|[0,τ̂ ) .
+By the definition of maximal solution we must have τ̂ = τ = τ̃ .
+
+2
+
+We have the following simple criterion of non-explosion.
+Theorem 3.8. Assume that (H1) , (H2) and (H4) hold, and κ1 in (H2) belongs to K>1 . Then
+there is no explosion for Eq. (3.1).
+Proof. Let (X, τ ) be a maximal solution of Eq. (3.1). Define
+
+
+τn := inf t > 0: X(t)X  n .
+By BDG’s inequality (2.17) and Hölder’s inequality, and using the same method as estimating
+(3.17), we have, for any T > 0 and some β > 1 and p  2β ∗ (β ∗ = β/(β − 1)),
+p
+
+
+p
+EX(t) · 1{tτ }   Eg(t) + E
+n
+
+X
+
+X
+
+ t∧τ
+p
+ n
+ 
+
+A t, s, X(s)  ds
+X
+0
+
+ t∧τ
+p
+  n 
+
+
+
+
++ E
+B t, s, X(s) dW (s)
+
+
+
+X
+
+0
+
+p
+
+ Eg(t) + E
+
+ t∧τ
+ n
+
+
+
+
+κ1 (t, s) · X(s)X + 1 ds
+
+X
+
+p
+
+0
+
+ t∧τ
+ n
+ 
+
+B t, s, X(s) 2
++E
+
+p
+2
+
+L2 (l 2 ;X)
+
+ds
+
+0
+
+p
+
+ Eg(t) + E
+X
+
+ t∧τ
+ p∗
+ n
+β
+β ∗
+
+
+X(s) + 1 ds
+X
+
+0
+
+ t∧τ
+ p∗
+ n
+2β
+2β ∗
+
+
+X(s) + 1 ds
++E
+X
+
+0
+
+
+
+p
+
+ CT ,p Eg(s) + 1 +
+
+t
+
+X
+
+n
+
+0
+
+where the constant CT ,p is independent of n.
+
+
+
+p
+EX(s) · 1{sτ }  ds ,
+X
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1389
+
+By Gronwall’s inequality, we obtain
+
+p
+sup EX(t) · 1{tτn } X  CT ,p .
+
+t∈[0,T ]
+
+Using this estimate, as in the proofs of Theorem 3.3 and Lemma 3.4, we can prove that for any
+T > 0 and p  2,
+sup E
+
+!
+sup
+
+ "
+
+X(t)p  CT ,p .
+X
+
+t∈[0,T ∧τn ]
+
+n∈N
+
+Hence,
+lim P {τn  T } = lim P
+
+n→∞
+
+#
+
+n→∞
+
+ lim E
+n→∞
+
+!
+
+sup
+
+$
+
+
+X(t)  n
+X
+
+sup
+
+ "
+
+X(t)p /np
+
+t∈[0,T ∧τn ]
+
+X
+
+t∈[0,T ∧τn ]
+
+ lim CT ,p /np = 0,
+n→∞
+
+which produces the non-explosion, i.e., P {τ < ∞} = 0.
+
+2
+
+Remark 3.9. One cannot directly prove
+
+p
+sup EX(t ∧ τn )X < +∞,
+
+∀t  0,
+
+n∈N
+
+to obtain the non-explosion, because it does not in general make sense to write
+t∧τ
+ n
+
+
+
+B t ∧ τn , s, X(s) dW (s).
+
+0
+
+3.4. Continuous dependence of solutions with respect to data
+In this subsection, we study the continuous dependence of solutions for Eq. (3.1) with respect
+to the coefficients.
+Let {(gm , Am , Bm ), m ∈ N} be a sequence of coefficients associated to Eq. (3.1). Assume that
+for each m ∈ N, (gm , Am , Bm ) satisfies (H1) –(H4) with the same κ1,R , κ2,R and λR as (g, A, B),
+and for each p  2,
+lim
+
+
+p
+sup Egm (t) − g(t)X = 0
+
+m→∞ t∈[0,T ]
+
+and for each T , R > 0,
+
+(3.18)
+
+1390
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+t
+lim
+
+sup
+
+m→∞ t∈[0,T ], x
+
+X R
+
+t
+lim
+
+sup
+
+m→∞ t∈[0,T ], x
+
+X R
+
+
+
+Am (t, s, x) − A(t, s, x) ds = 0,
+X
+
+(3.19)
+
+0
+
+
+
+Bm (t, s, x) − B(t, s, x)2
+
+L2 (l 2 ;X)
+
+ds = 0.
+
+(3.20)
+
+0
+
+Let (Xm , τm ) (resp. (X, τ )) be the unique maximal solution associated with (gm , Am , Bm ) (resp.
+(g, A, B)). For each R > 0 and m ∈ N, define
+ 
+
+
+τmR := inf t > 0: X(t)X , Xm (t)X > R .
+Suppose that for each t > 0,
+lim sup P τmR < t = 0.
+
+R→∞ m
+
+Then we have:
+Theorem 3.10. For each t > 0 and  > 0,
+
+
+lim P Xm (t) − X(t)X   = 0.
+
+m→∞
+
+Proof. For R > 0 and m ∈ N, set
+
+
+R
+Zm
+(t) := Xm (t) − X(t) · 1{tτmR } .
+Then
+R
+R
+R
+R
+R
+R
+Zm
+(t) = J1,m
+(t) + J2,m
+(t) + J3,m
+(t) + J4,m
+(t) + J5,m
+(t),
+
+where
+
+
+R
+J1,m
+(t) := 1{tτmR ] · gm (t) − g(t) ,
+R
+t∧τ
+ m
+
+ 
+
+
+
+Am t, s, Xn (s) − Am t, s, X(s) ds,
+
+R
+(t) := 1{tτmR ] ·
+J2,m
+0
+
+R
+t∧τ
+ m
+
+ 
+
+
+
+Am t, s, X(s) − A t, X(s) ds,
+
+R
+J3,m
+(t) := 1{tτmR ] ·
+0
+
+R
+t∧τ
+ m
+
+ 
+
+
+
+Bm t, s, Xm (s) − Bm t, s, X(s) dW (s),
+
+R
+J4,m
+(t) := 1{tτmR ] ·
+0
+
+(3.21)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1391
+
+R
+t∧τ
+ m
+
+ 
+
+
+
+Bm t, s, X(s) − B t, s, X(s) dW (s).
+
+R
+J5,m
+(t) := 1{tτmR ] ·
+0
+
+Fix T > 0. Clearly, for any p  2 and t ∈ [0, T ],
+ R
+p
+
+p
+EJ1,m
+(t)X  sup Egm (t) − g(t)X =: J1,m .
+t∈[0,T ]
+
+R (t), by (H3) and Hölder’s inequality we have, for p large enough (κ
+For J2,m
+2,R ∈ K>1 )
+
+
+p
+EJ R (t)  E
+
+R
+ t∧τ
+ m
+
+
+
+κ2,R (t, s) · Xm (s) − X(s)X ds
+
+X
+
+2,m
+
+p
+
+0
+
+ t
+
+
+p
+
+ t
+
+β
+
+β
+κ2,R (t, s) ds
+
+·E
+
+0
+
+t
+C
+
+ R β ∗
+Z (s) ds
+
+ p∗
+β
+
+X
+
+m
+
+0
+
+ R p
+EZm
+(s)X ds.
+
+0
+R (t), we have
+For J3,m
+
+
+p
+EJ R (t)  E
+
+
+
+X
+
+3,m
+
+R
+t∧τ
+ m
+
+
+
+Am (t, s, x) − A(t, s, x) ds
+X
+
+sup
+
+x X R
+
+0
+
+
+
+
+t
+sup
+
+p
+
+sup
+
+t∈[0,T ] x X R
+
+
+
+Am (t, s, x) − A(t, s, x) ds
+X
+
+p
+
+0
+
+R
+=: J3,m
+.
+
+Similarly, by BDG’s inequality (2.17) we have, for p large enough
+
+p
+EJ R (t)  C
+
+t
+
+X
+
+4,m
+
+ R p
+EZm
+(s)X ds
+
+0
+
+and
+p
+
+EJ R (t)  Cp
+5,m
+
+X
+
+
+
+t
+sup
+
+sup
+
+t∈[0,T ] x X R
+
+
+
+Bm (t, s, x) − B(t, s, x)2
+
+L2 (l 2 ;X)
+
+0
+
+p
+2
+
+ds
+
+R
+=: J5,m
+.
+
+1392
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Combining the above calculations, we get
+ R p
+R
+R
+(t)X  J1,m + J3,m
++ J5,m
++C
+EZm
+
+t
+
+ R p
+EZm
+(s)X ds.
+
+0
+
+By Gronwall’s inequality and (3.18)–(3.20) we get, for any R > 0 and p large enough
+ R p
+lim EZm
+(t)X = 0.
+
+m→∞
+
+Hence
+
+
+
+
+P Xm (t) − X(t)X    P Xm (t) − X(t)X · 1{tτmR }   + P τmR < t
+ R p p
+ EZm
+(t)X / + P τmR < t .
+First letting m → ∞ and then R → ∞, we then get the desired limit by (3.21).
+
+2
+
+4. Large deviation for stochastic Volterra equations
+In this section, we study the large deviation of small perturbations for stochastic Volterra
+equations and work in the finite time interval [0, T ].
+In what follows, we fix a densely defined closed linear operator L on X for which
+Sφ := λ ∈ C: 0 < φ  |arg λ|  π ⊂ ρ(L),
+
+(4.1)
+
+and for some C  1,
+
+
+(λ − L)−1 
+
+L(X)
+
+
+
+C
+,
+1 + |λ|
+
+λ ∈ Sφ ,
+
+where ρ(L) denotes the resolvent set of L. The above operator L is also called sectorial (cf. [28,
+p. 18]). It is well known that L generates an analytic semigroup
+Tt = e−Lt ,
+
+t  0.
+
+Moreover, we also assume that L−1 is a bounded linear operator on X, i.e.,
+0 ∈ ρ(L).
+Thus, for any α ∈ R, the fractional power Lα is well defined (cf. [28,48]). For α > 0, we define
+the fractional Sobolev space Xα by
+ 
+Xα := D Lα
+with the norm
+
+
+x Xα := Lα x X .
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1393
+
+For α < 0, Xα is defined as the completion of X with respect to the above norm. It is clear that
+Xα is still 2-smooth, and B ∈ L2 (l 2 ; Xα ) if and only if Lα B ∈ L2 (l 2 ; X), i.e.,
+
+
+B L2 (l 2 ;Xα ) = Lα B L (l 2 ;X) .
+
+(4.2)
+
+2
+
+We recall the following well-known properties about Tt for later use (cf. [28, pp. 24–27] or
+[48, p. 74]).
+Proposition 4.1.
+(i) Tt : X → Xα for each t > 0 and α > 0.
+(ii) For each t > 0, α ∈ R and every x ∈ Xα , Tt Lα x = Lα Tt x.
+(iii) For some δ > 0 and each t, α > 0, the operator Lα Tt is bounded in X and
+
+ α
+L Tt x   Cα t −α e−δt x X ,
+X
+
+∀x ∈ X.
+
+(iv) Let α ∈ (0, 1] and x ∈ Xα , then
+Tt x − x X  Cα t α x Xα .
+(v) For any 0  β < α,
+β
+
+β
+
+x Xβ  Cα,β x 1− α x Xα α ,
+
+∀x ∈ Xα .
+
+In addition to (H2) , (H3) and (H4) , in this section we assume that g and A, B are nonrandom, and:
+(H1) For some δ > 0,
+
+
+
+ 
+g(t) − g t    CT t − t  δ ,
+X
+
+t, t  ∈ [0, T ],
+
+and for some α > 0,
+
+
+sup g(t)X < +∞.
+
+t∈[0,T ]
+
+α
+
+(H2) For the same α as in (H1) and any R > 0, there exists a kernel function κα,R ∈ K0 such
+that for all (t, s) ∈  and x ∈ X with x X  R,
+
+
+A(t, s, x)
+
+Xα
+
+2
+
++ B(t, s, x)L (l 2 ;X α )  κα,R (t, s).
+2
+
+2
+
+Remark 4.2. If the κα,R in (H2) belongs to K>1 , then (H2) implies (H2) in view of Xα → X.
+
+1394
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Consider the following small perturbation of stochastic Volterra equation (3.1)
+t
+X (t) = g(t) +
+
+
+
+√
+A t, s, X (s) ds + 
+
+0
+
+t
+
+
+
+B t, s, X (s) dW (s),
+
+(4.3)
+
+0
+
+where  ∈ (0, 1). By Theorem 3.7, there exists a unique maximal solution (X , τ ) for Eq. (4.3).
+Below, we fix T > 0 and work in the finite time interval [0, T ], and assume that for each  ∈
+(0, 1),
+τ > T ,
+
+a.s.
+
+By Yamada–Watanabe’s theorem (cf. [45,57]), there exists a measurable mapping
+Φ : CT (U) → CT (X)
+such that
+
+
+X (t, ω) = Φ W (·, ω) (t).
+It should be noticed that although the equation considered in [45] is a little different from
+Eq. (3.1), the proof is still adapted to our more general equation.
+We now fix a family of processes {h ,  ∈ (0, 1)} in ATN (see (2.20) for the definition of ATN ),
+and put
+
+
+h (·, ω)
+(t).
+X  (t, ω) := Φ W (·, ω) + √
+
+Here, we have used a little confused notations X and X  , but they are clearly different. By
+Girsanov’s theorem (cf. [45, Section 7]), X  (t) solves the following stochastic Volterra equation
+(also called control equation):
+t
+X  (t) = g(t) +
+
+
+
+A t, s, X  (s) ds +
+
+0
+
++
+
+√
+
+
+t
+
+t
+
+
+
+B t, s, X  (s) ḣ (s) ds
+
+0
+
+
+
+B t, s, X  (s) dW (s).
+
+(4.4)
+
+0
+
+Although h is defined only on [0, T ], we can extend it to R+ by setting ḣ(t) = 0 for t > T so
+that Eq. (4.4) can be considered on R+ . We shall always use this extension below. Let τ  be the
+explosion time of Eq. (4.4). For n ∈ N, define
+
+
+τn := inf t  0: X  (t)X > n .
+Then τn  τ  as n → ∞. We have:
+
+(4.5)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1395
+
+Lemma 4.3. For any α0 ∈ (0, α), there is an a > 0 such that for p sufficiently large
+X  (t  ) − X  (t) Xα 
+
+
+sup E
+
+p
+
+sup
+
+0
+
+|t  − t|ap
+
+t=t  ∈[0,T ∧τn ]
+
+∈(0,1)
+
+ CN,n,T ,p,κα,n ,α0 .
+
+Proof. Note that
+ 
+
+X (t) · 1{tτ  } 
+n
+
+
+
+ g(t)
+
+Xα
+
+t∧τ
+ n
+
+Xα
+
+ 
+
+A t, s, X  (s) 
+
++
+
+Xα
+
+ds
+
+0
+t∧τn
+
+
+
++
+
+
+ 
+
+B t, s, X  (s) ḣ (s)
+
+
+ t∧τ
+
+ n
+
+
+
+√ 
+
+
+
+ds
++
+
+B
+t,
+s,
+X
+(s)
+dW
+(s)
+
+
+Xα
+
+
+
+0
+
+0
+
+=: J1 (t) + J2 (t) + J3 (t) + J4 (t).
+By (H2) and (4.5) we have
+
+p
+EJ2 (t)  Cn E
+
+
+ t∧τ
+ n
+
+p
+ Cn,T ,p,κα,n
+
+κα,n (t, s) ds
+0
+
+and by Hölder’s inequality
+
+p
+EJ3 (t)  E
+
+
+ t∧τ
+ n
+
+ 
+
+B t, s, X  (s) ḣ (s)
+
+p
+Xα
+
+ds
+
+0
+
+ t∧τ
+ n
+ 
+
+B t, s, X  (s) 
+E
+
+L2 (l 2 ;Xα )
+
+
+
+· ḣ (s) 2 ds
+
+p
+
+l
+
+0
+
+ t∧τ
+p
+ n
+2
+ 
+
+2
+B t, s, X  (s)  2
+N E
+ds
+L (l ;X )
+p
+2
+
+α
+
+2
+
+0
+
+ CN,n,T ,p,κα,n ,
+where we have used that h ∈ ATN .
+Similarly, by BDG’s inequality (2.17) and (H2) we have
+
+p
+EJ4 (t)  Cp E
+
+
+ t∧τ
+ n
+ 
+
+B t, s, X  (s) 2
+
+p
+2
+
+ds
+L (l 2 ;X )
+
+0
+
+2
+
+α
+
+ Cn,T ,p,κα,n .
+
+Xα
+
+1396
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Combining the above calculations, we get
+sup
+
+
+p
+sup EX  (t) · 1{tτn } X  CN,n,T ,p,κα,n ,
+α
+
+∈(0,1) t∈[0,T ]
+
+p  2.
+
+(4.6)
+
+Moreover, as in the proofs of Theorem 3.3 and Lemma 3.4, by (H1) , (H2) and (H4) , for
+some β3 > 1 and p  2β3∗ (β3∗ := β3 /(β3 − 1)), we have that for any 0  t < t   T ,
+  
+p
+δp 
+ γp 
+ p∗ 
+
+
+sup E X  t  − X  (t) · 1{t  ,tτn } X  CT ,p,n t − t   + t − t   2 + t − t   2β3 .
+
+∈(0,1)
+
+Thus, by (v) of Proposition 4.1 and (4.6), for any α0 ∈ (0, α) and p large enough we have
+  
+p
+
+sup E X  t  − X  (t) · 1{t  ,tT ∧τn } X
+
+∈(0,1)
+
+α0
+
+δp 
+ γp 
+ p 1− α0
+
+α .
+ CN,n,T ,p,κα,n ,α0 t − t   + t − t   2 + t − t   2β ∗
+The desired estimate now follows by Theorem 2.10.
+
+2
+
+In order to obtain the tightness of the laws of {X  ,  ∈ (0, 1)} in CT (X), we assume that:
+(C1) L−1 is a compact operator on X.
+(C2) limn→∞ sup∈(0,1) P {ω: τn (ω) < T } = 0.
+Note that (C2) implies
+P ω: τ  (ω) > T = 1.
+We now prove the following key lemma for the large deviation principle of Eq. (4.3).
+Lemma 4.4. Under (C1) and (C2), there exist subsequence k ↓ 0, a probability space (Ω̃, F̃ , P̃ )
+and a sequence {(h̃k , X̃ k , W̃ k )}k∈N as well as (h, X h , W̃ ) defined on this probability space and
+taking values in DN × CT (X) × CT (U) such that:
+(i) (h̃k , X̃ k , W̃ k ) has the same law as (hk , X k , W ) for each k ∈ N;
+(ii) (h̃k , X̃ k , W̃ k ) → (h, X h , W̃ ) in DN × CT (X) × CT (U), P̃ -a.s. as k → ∞;
+(iii) (h, X h ) uniquely solves the following Volterra equation:
+t
+X (t) = g(t) +
+h
+
+
+
+A t, s, X h (s) ds +
+
+0
+
+In particular, (LD)1 in Section 2.3 holds.
+
+t
+0
+
+
+
+B t, s, X h (s) ḣ(s) ds.
+
+(4.7)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1397
+
+Proof. Let α0 ∈ (0, α) and a > 0 be as in Lemma 4.3. For R > 0, set
+
+
+
+KR := x ∈ CT (X): sup x(t)X +
+t∈[0,T ]
+
+x(t) − x(s) Xα0
+
+sup
+
+|t − s|a
+
+s=t∈[0,T ]
+
+
+R .
+
+By (C1), Xα0 → X is compact (cf. [28, p. 29, Theorem 1.4.8]). Thus, by Ascoli–Arzelà’s theorem
+(cf. [30]), the set KR is compact in CT (X). For any δ > 0, by (C2) we can choose n sufficiently
+large such that
+sup P ω: τn (ω) < T  δ.
+
+∈(0,1)
+
+By Lemma 4.3 and Chebyschev’s inequality, for any R > n we have
+P X  (·) ∈
+/ KR = P X  (·) ∈
+/ KR , τn  T + P X  (·) ∈
+/ KR , τn < T
+
+
+X  (t) − X  (s) Xα0
+P
+sup
+
+R
+−
+n
++ P τn < T
+|t − s|a
+s=t∈[0,T ∧τn ]
+
+E
+
+X  (t) − X  (s) Xα 
+p
+
+sup
+
+s=t∈[0,T ∧τn ]
+
+0
+
+|t − s|ap
+
+/(R − n)p + δ
+
+ CN,n,T ,p,κα,n ,α0 /(R − n)p +   .
+Therefore, for R large enough we have
+sup P X  (·) ∈
+/ KR  2δ.
+∈(0,1)
+
+Thus, by the compactness of DN (see (2.21)), the laws of (h , X  , W ) in DN × CT (X) × CT (U)
+is tight. By Skorohod’s embedding theorem (cf. [30]), the conclusions (i) and (ii) hold.
+We now prove (iii). Note that by (i) (cf. [45, Section 8])
+t
+X̃ (t) = g(t) +
+k
+
+0
+
++
+
+√
+k
+
+t
+
+
+
+A t, s, X̃ k (s) ds +
+
+t
+
+
+
+B t, s, X̃ k (s) h̃˙ k (s) ds
+
+0
+
+
+
+B t, s, X̃ k (s) dW̃ k (s)
+
+0
+
+=: g(t) + J1k (t) + J2k (t) + J3k (t),
+
+P̃ -a.s.
+
+Set
+
+
+τ̃nk := inf t  0: X̃ k (t)X > n .
+
+1398
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Then for any δ > 0, by (i) and (C2) there exists an n large enough such that
+sup P̃ τ̃nk < T = sup P̃
+
+k∈N
+
+k∈N
+
+= sup P
+k∈N
+
+#
+#
+
+$
+
+
+sup X̃ k (s)X > n
+
+s∈[0,T )
+
+$
+
+
+sup X k (s)X > n
+
+s∈[0,T )
+
+= sup P τnk < T  δ.
+k∈N
+
+Hence, for any δ  > 0, by BDG’s inequality (2.17) and (H2) we have
+
+
+P̃ J3k (t)X  δ   P̃ J3k (t)  δ  ; τ̃nk  T + P̃ τ̃nk < T
+EP̃ J3k (t) · 1{tτ̃nk } 2X
+
++δ
+δ 2
+ t∧τ̃ k
+k · Cn EP̃ ( 0 n κ1,n (t, s) ds)
+
++δ
+δ 2
+k · Cn,t
+
++ δ.
+δ 2
+
+
+Thus, we get
+
+
+lim P̃ J3k (t)X  δ  = 0.
+
+k→∞
+
+Let Ji (t), i = 1, 2, be the corresponding terms in Eq. (4.7). In order to prove that X h solves
+Eq. (4.7), it is now enough to show that for any t ∈ [0, T ] and y ∈ X∗ ,
+
+
+lim X Jik (t) − Ji (t), y X∗ = 0,
+
+k→∞
+
+i = 1, 2, P̃ -a.s.
+
+Observe that
+  k
+ 
+X J (t) − J2 (t), y ∗   y X∗ ·
+2
+X
+
+t
+
+
+ 
+
+
+
+ B t, s, X̃ k (s) − B t, s, X h (s) h̃˙ k (s) ds
+X
+
+0
+
+ t
+
+
+
+ 
+ ˙ k
+ 
+
+
+h
++  X B t, s, X (s) h̃ (s) − ḣ(s) , y X∗ ds 
+
+
+0
+k
+k
+=: y X∗ · J21
+(t) + J22
+(t).
+
+By the weak convergence of h̃k to h in DN , we have
+k
+(t) = 0.
+lim J22
+
+k→∞
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1399
+
+Noting that by (ii), for almost all ω̃ ∈ Ω̃ and some K(ω̃) ∈ N,
+
+
+n(ω̃) := sup X h (s, ω̃)X ∨ sup
+s∈[0,T ]
+
+
+
+sup X̃ k (s, ω̃)X < +∞,
+
+kK(ω̃) s∈[0,T ]
+
+we have, by Hölder’s inequality and (H3)
+
+
+
+
+k
+J21
+(t, ω̃)  h̃k (ω̃)2 ·
+T
+
+ t
+
+ 
+
+
+
+B t, s, X̃ k (s, ω̃) − B t, s, X h (s, ω̃) 2
+
+L2 (l 2 ;X)
+
+1/2
+ds
+
+0
+
+ t
+N·
+
+
+2
+κ2,n(ω̃) (t, s) · X̃ k (s, ω̃) − X h (s, ω̃)X ds
+
+1/2
+
+0
+(ii)
+
+→ 0 as k → ∞,
+where we have used h̃k (ω̃) ∈ DN .
+Similarly, we have
+
+
+lim J1k (t) − J1 (t)X = 0,
+
+k→∞
+
+P̃ -a.s.
+
+Combining the above estimates, we find that X h solves Eq. (4.7).
+
+2
+
+Let I (f ) be defined by
+I (f ) :=
+
+1
+inf
+h 22 ,
+2 {h∈2T : f =Xh }
+T
+
+f ∈ CT (X),
+
+(4.8)
+
+where X h is defined by Eq. (4.7). In order to identify I (f ), we assume that:
+(C3) For any N ∈ N,
+sup
+
+
+
+sup X h (t)X < +∞.
+
+h∈DN t∈[0,T ]
+
+Similar to the proof of Lemma 4.4, we can prove that:
+Lemma 4.5. Under (C3), (LD)2 in Section 2.3 holds.
+Thus, by Theorem 2.12 we have proven:
+Theorem 4.6. Assume that (H1) –(H2) , (H2) –(H4) and (C1)–(C3) hold. Then, {X ,  ∈ (0, 1)}
+satisfies the large deviation principle in CT (X) with the rate function I (f ) given by (4.8).
+
+1400
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Remark 4.7. Conditions (C2) and (C3) are satisfied if (H1) , (H2) and (H4) hold, and κ1 in (H2)
+belongs to K>1 . In fact, we can prove as in the proof of Theorem 3.8
+sup sup E
+n∈N ∈(0,1)
+
+  p "
+X (t)  CT ,p,κ ,
+
+!
+sup
+
+t∈[0,T ∧τn ]
+
+X
+
+1
+
+which then implies (C2). Condition (C3) is more direct in this case.
+5. Semilinear stochastic evolutionary integral equations
+In this section, we consider the following semilinear stochastic evolutionary integral equation:
+t
+X(t) = x0 −
+
+t
+a(t − s)LX(s) ds +
+
+0
+
+
+
+Φ s, X(s) ds +
+
+0
+
+t
+
+
+
+Ψ s, X(s) dW (s),
+
+(5.1)
+
+0
+
+where a : R+ → R+ is a measurable function, and
+Φ : R+ × Ω × X → X ∈ M × B(X)/B(X)
+and
+
+
+ 
+
+Ψ : R+ × Ω × X → L2 l 2 ; X ∈ M × B(X)/B L2 l 2 ; X .
+Here and below, M stands for the progressively measurable σ -algebra over R+ × Ω.
+Consider first the following deterministic integral equation:
+t
+x(t) = x0 −
+
+a(t − s)Lx(s) ds.
+
+(5.2)
+
+0
+
+The solution of this equation is called the resolvent of (a, L), and denoted by St x0 = x(t). Note
+that in general
+St+s = St ◦ Ss .
+We make the following assumptions:
+(S1) The resolvent {St : t  0} is of analyticity type (ω0 , θ0 ) in the sense of [53, Definition 2.1],
+where ω0 ∈ R and θ0 ∈ (0, π/2].
+(S2) For any R > 0, there exist CR > 0 and β ∈ [0, 1) such that for all s > 0, ω ∈ Ω and x, y ∈ X
+with x X , y X  R,
+
+
+
+
+Φ(s, ω, x) + Ψ (s, ω, x)2 2 
+L (l ;X)
+X
+2
+
+and
+
+CR
+,
+(s ∧ 1)β
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1401
+
+
+
+Φ(s, ω, x) − Φ(s, ω, y) 
+X
+
+CR
+x − y X,
+(s ∧ 1)β
+
+
+Ψ (s, ω, x) − Ψ (s, ω, y)2 2  CR
+x − y 2X .
+L2 (l ;X)
+(s ∧ 1)β
+(S3) For all s > 0, ω ∈ Ω and x ∈ X, it holds that
+
+
+Φ(s, ω, x) 
+X
+
+
+C 
+1+ x X ,
+β
+(s ∧ 1)
+
+2
+
+C 
+Ψ (s, ω, x) 2 
+1 + x 2X .
+L2 (l ;X)
+(s ∧ 1)β
+The following property of analytic resolvent {St : t > 0} is crucial for the proof of Theorem 5.2 below (cf. [53, Corollary 2.1]).
+Proposition 5.1. Let St be an analytic resolvent of type (ω0 , θ0 ). Then for any T > 0,
+St L(X;X)  CT
+
+(5.3)
+
+Ṡt L(X;X)  CT t −1 ,
+
+(5.4)
+
+sup
+
+t∈[0,T ]
+
+and for any t ∈ (0, T ],
+
+where the dot denotes the operator derivative and · L(X;X) denotes the norm of bounded linear
+operators.
+By a solution of Eq. (5.1) we mean that X(t) satisfies the following stochastic Volterra equation:
+t
+X(t) = St x0 +
+
+
+
+St−s Φ s, X(s) ds +
+
+0
+
+t
+
+
+
+St−s Ψ s, X(s) dW (s).
+
+(5.5)
+
+0
+
+Let us define
+A(t, s, ω, x) := St−s Φ(s, ω, x),
+
+B(t, s, ω, x) := St−s Ψ (s, ω, x).
+
+We have:
+Theorem 5.2. Under (S1) and (S2), there exists a unique maximal solution (X, τ ) for Eq. (5.5)
+in the sense of Definition 3.5. Moreover, if (S3) holds, then τ = +∞, a.s.
+Proof. First of all, it is easy to see by (5.3) that (H2) and (H3) hold with
+κ1,R (t, s) = κ2,R (t, s) =
+
+CR
+∈ K>1 .
+(s ∧ 1)β
+
+1402
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+For 0  s < t < t  , ω ∈ Ω and x ∈ X with x X  R, we have
+
+ 
+
+A t , s, ω, x − A(t, s, ω, x)
+X
+
+
+
+= (St  −s − St−s )Φ(s, ω, x)X 
+CR
+
+(s ∧ 1)β
+
+t  −s
+
+
+t−s
+
+CR
+St  −s − St−s L(X;X)
+(s ∧ 1)β
+
+(5.4)
+
+CR
+Ṡr L(X;X) dr 
+(s ∧ 1)β
+
+
+ 
+t −s
+CR
+log
+=
+(s ∧ 1)β
+t −s
+
+t  −s
+
+
+1
+dr
+r
+
+t−s
+
+and
+ 
+
+
+B t , s, ω, x − B(t, s, ω, x)2
+
+
+L (l 2 ;X)
+2
+
+ 
+
+CR
+2 t −s
+log
+.
+(s ∧ 1)β
+t −s
+
+Note that the following elementary inequality holds for any γ ∈ (0, 1),
+log(1 + s)  Cs γ ,
+
+∀s > 0.
+
+Therefore, for 0  s < t < t  , ω ∈ Ω and x ∈ X with x X  R,
+
+ 
+
+ 
+
+
+A t , s, ω, x − A(t, s, ω, x) + B t  , s, ω, x − B(t, s, ω, x)2 2
+L2 (l ;X)
+X
+
+
+
+γ
+
+γ
+
+
+(t − t)
+CR (t − t)
+1+
+=: λR t  , t, s .
+
+β
+γ
+γ
+(s ∧ 1) (t − s)
+(t − s)
+Thus, we find that (H4) holds if γ ∈ (0, (1 − β)/2).
+C
+Lastly, if (S3) is satisfied, it is clear that (H2) holds with κ1 (t, s) = (s∧1)
+β ∈ K>1 , and (H4)
+also holds from the above calculations. The non-explosion then follows from Theorem 3.8. 2
+We now turn to the small perturbation of Eq. (5.5) and assume that Φ and Ψ are non-random.
+Consider
+t
+X (t) = St x0 +
+
+
+
+√
+St−s Φ s, X (s) ds + 
+
+0
+
+t
+
+
+
+St−s Ψ s, X (s) dW (s).
+
+0
+
+In order to use Theorem 4.6 to get the LDP for {X ,  ∈ (0, 1)}, we also assume:
+(S4) Let {St : t  0} be an analytic resolvent of type (ω0 , θ0 ). Assume that for some ω1 > ω0 ,
+0 < θ1 < θ0 , C > 0 and α1 > 0,
+
+
+
+
+â(λ)  C |λ − ω1 |α1 + 1 −1 ,
+
+
+
+∀λ ∈ C with arg(λ − ω) < θ1 ,
+
+where â denotes the Laplace transform of a. Moreover, we also assume that
+
+(5.6)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+r
+
+t
+
+
+
+a(r + s) − a(s) ds  CT |r|δ ,
+
+a(s) ds +
+0
+
+1403
+
+(5.7)
+
+0
+
+where r, t ∈ [0, T ] and T , δ > 0.
+We have:
+Theorem 5.3. Under (S1)–(S4) and (C1), for any x0 ∈ D(L), {X ,  ∈ (0, 1)} satisfies the large
+deviation principle in CT (X) with the rate function I (f ) given by (4.8).
+Proof. From the proof of Theorem 5.2, it is enough to check (H1) and (H2) . By (5.6) and [53,
+p. 57, Theorem 2.2 (ii)], we have
+
+
+LSt L(X;X)  Ceω1 t 1 + t −α1 ,
+
+∀t > 0,
+
+which together with (v) of Proposition 4.1 yields that for any α ∈ (0, 1) and T > 0,
+ α 
+ L St 
+
+L(X;X)
+
+
+
+ CT 1 + t −α1 ·α ,
+
+∀t ∈ (0, T ].
+
+Thus, (H2) holds by choosing α < 1−β
+α1 , where β is from (S3).
+
+For (H1) , since x0 ∈ D(L) = X1 , by (5.3) we have
+LSt x0 X = St Lx0 X  C Lx0 X .
+On the other hand, by the resolvent equation (5.2) and (5.7) we have, for any 0  t < t   T ,
+t
+S x0 − S t x0 X 
+t
+
+
+ 
+
+a t − s − a(t − s) · LSs x0 X ds
+
+0
+
+t 
++
+
+ 
+
+a t − s  · LSs x0 X ds
+
+t
+
+
+δ
+ CT Lx0 X · t  − t  .
+The proof is thus complete by Theorem 4.6 and Remark 4.7.
+
+2
+
+Example 5.4. Let a be a completely monotonic kernel function, i.e.,
+∞
+a(t) =
+0
+
+e−st dρ(s),
+
+t > 0,
+
+(5.8)
+
+1404
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+∞
+where s → ρ(s) is non-decreasing and such that 1 dρ(s)/s < ∞. Then the resolvent {St :
+t  0} associated with a is of analyticity type (0, θ ) for some θ ∈ (0, π/2) (cf. [53, p. 55, Example 2.2]), i.e., (S1) holds. For (S4), besides (5.8) and (5.7), we also assume that for some
+C, α1 > 0,
+−α1
+
+C(1 + λ)
+
+∞
+
+
+e−λt · a(t) dt < +∞,
+
+∀λ > 0,
+
+(5.9)
+
+0
+
+which implies by [53, p. 221, Lemma 8.1(v)] that (5.6) holds. In particular,
+aα (t) =
+
+t α−1
+,
+(α)
+
+α ∈ (0, 1],
+
+is completely monotonic and satisfies (5.7) and (5.9), where  denotes the usual Gamma function.
+Moreover, for the kernel function aα , if
+1<α<2−
+
+2φ
+< 2,
+π
+
+where φ comes from (4.1), then St is analytic (cf. [53, p. 55, Example 2.1]). Notice that in [53],
+−L is considered. In this case, (5.6) and (5.7) clearly hold since âα (λ) = λ−α , Re λ > 0.
+6. Semilinear stochastic partial differential equations
+When a = 1 in Eq. (5.1), one sees that Eq. (5.1) contains a class of semilinear SPDEs. However, it cannot deal with the equation like stochastic Navier–Stokes equation. In this section, we
+shall discuss strong solutions of a large class of semilinear SPDEs by using the properties of
+analytic semigroups.
+Consider the following semilinear stochastic partial differential equation:
+
+
+
+
+
+dX(t) = −LX(t) + Φ t, X(t) dt + Ψ t, X(t) dW (t),
+
+X(0) = x0 .
+
+We introduce the following assumptions on the coefficients:
+(M1) For some α ∈ (0, 1),
+Φ : R+ × Ω × Xα → X ∈ M × B(Xα )/B(X)
+and
+
+
+
+ 
+Ψ : R+ × Ω × Xα → L2 l 2 ; X α2 ∈ M × B(Xα )/B L2 l 2 ; X α2 .
+(M2) For any R > 0, there exist CR > 0 and β ∈ [0, 1) with
+α+β <1
+
+(6.1)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1405
+
+such that for all s > 0, ω ∈ Ω and x, y ∈ Xα with x Xα , y Xα  R,
+
+
+
+
+Φ(s, ω, x) + Ψ (s, ω, x)2 2
+
+L (l ;X α )
+X
+2
+
+2
+
+CR
+(s ∧ 1)β
+
+and
+
+
+Φ(s, ω, x) − Φ(s, ω, y) 
+X
+
+
+Ψ (s, ω, x) − Ψ (s, ω, y)2
+
+L2 (l 2 ;X α )
+
+
+
+2
+
+CR
+x − y Xα ,
+(s ∧ 1)β
+CR
+x − y 2Xα .
+(s ∧ 1)β
+
+(M3) For all s > 0, ω ∈ Ω and x ∈ Xα , it holds that
+
+
+Φ(s, ω, x) 
+X
+
+
+C 
+1 + x Xα ,
+β
+(s ∧ 1)
+2
+
+
+C 
+Ψ (s, ω, x) 2
+1 + x 2Xα .
+
+L2 (l ;X α )
+β
+(s ∧ 1)
+2
+By a mild solution of equation (6.1), we mean that X(t) solves the following stochastic Volterra
+integral equation:
+t
+X(t) = Tt x0 +
+
+
+
+Tt−s Φ s, X(s) ds +
+
+0
+
+t
+
+
+
+Tt−s Ψ s, X(s) dW (s).
+
+(6.2)
+
+0
+
+Theorem 6.1. Under (M1) and (M2), for any x0 ∈ Xα (α is from (M1)), there exists a unique
+maximal solution (X, τ ) for Eq. (6.2) so that:
+(i) t → X(t) ∈ Xα is continuous on [0, τ ) almost surely;
+(ii) limt↑τ X(t) Xα = +∞ on {ω: τ (ω) < +∞};
+(iii) it holds that, P -a.s., on [0, τ ),
+t
+X(t) = Tt x0 +
+
+
+
+Tt−s Φ s, X(s) ds +
+
+0
+
+t
+
+
+
+Tt−s Ψ s, X(s) dW (s).
+
+0
+
+Moreover, if (M3) holds, then τ = +∞, a.s.
+Proof. We first consider the following stochastic Volterra integral equation
+t
+Y (t) = L Tt x0 +
+α
+
+
+
+L Tt−s Φ s, L−α Y (s) ds +
+
+t
+
+α
+
+0
+
+0
+
+
+
+Lα Tt−s Ψ s, L−α Y (s) dW (s).
+
+(6.3)
+
+1406
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Define
+g(t) := Lα Tt x0 ,
+
+
+
+A(t, s, ω, y) := Lα Tt−s Φ s, ω, L−α y ,
+
+
+B(t, s, ω, y) := Lα Tt−s Ψ s, ω, L−α y .
+Let us verify (H1) –(H4) . Clearly, (H1) holds since x0 ∈ Xα .
+By (iii) of Proposition 4.1 and (M2), for all t > s > 0, ω ∈ Ω and x, y ∈ X with x X , y X 
+R we have
+
+
+
+
+A(t, s, ω, x) + B(t, s, ω, x)2 2
+L2 (l ;X)
+X
+ 
+
+
+
+
+1 
+Φ s, ω, L−α x  + Ψ s, ω, L−α x 2 2
+
+α)
+L
+X
+(l
+;X
+α
+2
+(t − s)
+2
+CR
+,
+
+(t − s)α (s ∧ 1)β
+and
+
+
+A(t, s, ω, x) − A(t, s, ω, y)
+X
+
+
+
+
+1 
+−α
+Φ s, ω, L x − Φ s, ω, L−α y 
+
+X
+(t − s)α
+
+ −α
+CR
+CR
+L x − L−α y  =
+
+x − y X,
+X
+α
+β
+α
+(t − s) (s ∧ 1)
+(t − s)α (s ∧ 1)β
+as well as
+
+
+B(t, s, ω, x) − B(t, s, ω, y)2
+
+L2 (l 2 ;X)
+
+
+
+
+
+1 
+Ψ s, ω, L−α x − Ψ s, ω, L−α y 2 2
+
+L2 (l ;X α )
+α
+(t − s)
+2
+CR
+
+x − y 2X .
+(t − s)α (s ∧ 1)β
+Hence, if we take
+κ1,R (t, s) = κ2,R (t, s) :=
+
+CR
+∈ K>1 ,
+(t − s)α (s ∧ 1)β
+
+then (H2) and (H3) hold.
+Let 0 < γ < 1 − (α + β). By (iv) of Proposition 4.1 and (M2) we have
+
+ 
+
+A t , s, ω, x − A(t, s, ω, x)
+
+ X −α 
+α
+
+
+= (Tt −t − 1)L Tt−s Φ s, ω, L x X
+
+γ 
+
+
+ t  − t Lα+γ Tt−s Φ s, ω, L−α x  
+X
+
+CR (t  − t)γ
+(t − s)α+γ (s ∧ 1)β
+
+(6.4)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1407
+
+and
+
+ 
+
+B t , s, ω, x − B(t, s, ω, x)2
+
+L2 (l 2 ;X)
+
+
+
+2
+ (Tt  −t − 1)Lα Tt−s Ψ s, ω, L−α x 
+
+L2 (l 2 ;X)
+
+
+γ 
+
+2
+ t  − t Lα+γ /2 Tt−s Ψ s, L−α x L (l 2 ;X)
+2
+
+
+
+(t  − t)γ 
+CR (t  − t)γ
+L α2 Ψ s, L−α x 2 2 
+
+.
+L2 (l ;X)
+(t − s)α+γ
+(t − s)α+γ (s ∧ 1)β
+So, if we take
+
+
+λR t  , t, s :=
+
+CR (t  − t)γ
+,
+(t − s)α+γ (s ∧ 1)β
+
+then (H4) holds.
+Hence, by Theorem 3.7 there is a unique maximal solution (Y, τ ) for Eq. (6.3) in the sense of
+Definition 3.5. Set
+X(t) = L−α Y (t).
+It is easy to see that (X, τ ) is a unique maximal solution for Eq. (6.2), which satisfies (i), (ii)
+and (iii) in the theorem.
+Lastly, if (M3) is satisfied, then as estimating (6.4), for the above A and B, (H2) holds with
+some κ1 ∈ K>1 , and also (H4) holds. So, by Theorem 3.8 we have τ = ∞ a.s. 2
+Remark 6.2. The solution (X, τ ) in Theorem 6.1 is clearly a local solution of Eq. (6.2) in X.
+However, it may be not a maximal solution in X because it may happen that
+
+
+lim X(t, ω)X < +∞ on ω: τ (ω) < +∞ .
+
+t↑τ (ω)
+
+Next, we study the large deviation estimate for Eq. (6.1), and assume that Φ and Ψ are nonrandom. Consider the following small perturbation of Eq. (6.1):
+
+
+
+
+√ 
+dX (t) = −LX (t) + Φ t, X (t) dt + Ψ t, X (t) dW (t),
+
+X (0) = x0 .
+
+(6.5)
+
+In order to apply Theorem 4.6 to this situation, we need the non-explosion assumptions as (C2)
+and (C3). For a family of processes {h ,  ∈ (0, 1)} in ATN (see (2.20) for the definition of ATN ),
+consider
+t
+X (t) = Tt x0 +
+
+
+0
+
++
+
+√
+
+t
+
+0
+
+
+
+Tt−s Φ s, X  (s) ds +
+
+t
+0
+
+
+
+Tt−s Ψ s, X  (s) dW (s),
+
+
+
+Tt−s Ψ s, X  (s) ḣ (s) ds
+
+1408
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+and for h ∈ 2T (see (2.19))
+t
+X (t) = Tt x0 +
+h
+
+t
+
+
+
+Tt−s Φ s, X h (s) ds +
+
+0
+
+
+
+Tt−s Ψ s, X h (s) ḣ(s) ds.
+
+0
+
+Below, for n ∈ N we define
+
+
+τn := inf t > 0: X  (t)X > n .
+α
+
+Our large deviation principle can be stated as follows:
+Theorem 6.3. Assume (M1) and (M2). Let x0 ∈ Xδ for some 1  δ > α, where α is from (M1).
+We also assume that D(L) = X1 ⊂ X is compact, and
+lim
+
+sup P ω: τn (ω) < T = 0
+
+(6.6)
+
+sup
+
+
+
+sup X h (t)X < +∞.
+
+(6.7)
+
+n→∞ ∈(0,1)
+
+and for any N > 0,
+
+h∈DN t∈[0,T ]
+
+α
+
+Then {X ,  ∈ (0, 1)} satisfies the large deviation principle in CT (Xα ) with the rate function
+I (f ) given by
+I (f ) :=
+
+1
+inf
+h 22 ,
+2 {h∈2T : f =Xh }
+T
+
+f ∈ CT (Xα ).
+
+(6.8)
+
+Proof. By Theorem 4.6, it only needs to check (H1) and (H2) for Eq. (6.3). Since x0 ∈ Xδ
+with δ > α, by (iv) of Proposition 4.1, (H1) holds with δ  = δ − α and α  ∈ (0, δ − α). As the
+calculations given in (6.4), one finds that (H2) holds with α  ∈ (0, 1 − α − β). 2
+Remark 6.4. If (M3) is satisfied, one can see that (6.6) and (6.7) hold by Remark 4.7.
+Below we study the existence of strong solutions for Eq. (6.1). For this aim, in addition to
+(M1) and (M2) with β = 0, we also assume:
+(M4) For any R, T > 0, there exist δ > 0 and α  > 1 such that for all s, s  ∈ [0, T ], ω ∈ Ω and
+x ∈ Xα with x Xα  R,
+
+  
+
+Φ s , ω, x − Φ(s, ω, x)  CT ,R |s  − s|δ ,
+X
+2
+
+Ψ (s, ω, x) 2
+ CT ,R .
+L2 (l ;X α  )
+
+(6.9)
+(6.10)
+
+2
+
+Let us recall the following result (cf. [28, Theorem 3.2.2] or [48, p. 114, Theorem 3.5]).
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1409
+
+Lemma 6.5. Let [0, T ]  s → f (s) ∈ X be a Hölder continuous function. Then
+t
+t →
+
+
+
+Tt−s f (s) ds ∈ C [0, T ]; X1 .
+
+0
+
+Using this lemma, we can prove the following result.
+Theorem 6.6. Assume that (M1), (M2) and (M4) hold. For any x0 ∈ X1 , let (X, τ ) be the unique
+maximal solution of Eq. (6.2) in Theorem 6.1. Then:
+(i) t → X(t) ∈ X1 is continuous on [0, τ ) a.s.;
+(ii) it holds that in X,
+t
+X(t) = x0 −
+
+t
+LX(s) ds +
+
+0
+
+
+
+Φ s, X(s) ds +
+
+0
+
+t
+
+
+
+Ψ s, X(s) dW (s)
+
+0
+
+for all t ∈ [0, τ ), P -a.s.
+We shall call (X, τ ) the unique maximal strong solution of Eq. (6.1).
+Proof. For n ∈ N, set
+
+
+τn := inf t > 0: X(t)X > n
+α
+
+and
+
+
+G(t, s) := Tt−s Ψ s, X(s) .
+Then by (iii) and (iv) of Proposition 4.1 we have
+
+
+G(t, s)2
+
+L2 (l 2 ;X1 )
+
+
+
+ 
+2
+1
+ 2
+
+,
+ Ψ s, X(s)
+L2 (l ;Xα  /2 )
+2−α
+(t − s)
+
+and in view of α  > 1,
+
+  
+
+
+2
+(t  − t)(α −1)/2 
+ 2
+G t , s − G(t, s)2 2
+
+
+.
+ )/2 Ψ s, X(s)
+L2 (l ;X1 )
+L2 (l ;Xα  /2 )
+(3−α
+(t − s)
+
+Hence, by Lemma 3.4 and (6.10),
+t
+t →
+
+
+
+Tt−s Ψ s, X(s) dW (s) ∈ X1
+
+0
+
+admits a continuous modification on [0, τn ).
+
+1410
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Moreover, starting from (6.3), as in the proof of Theorem 3.3, there exists an a > 0 such that
+for p sufficiently large
+
+E
+
+X(t  ) − X(t) Xα
+|t  − t|ap
+p
+
+sup
+
+t=t  ∈[0,T ∧τn ]
+
+
+ Cn,T ,p .
+
+Thus, by (M2) and (M4) we know that
+
+
+s → Φ s, X(s) ∈ X is Hölder continuous on [0, T ∧ τn ] P -a.s.
+Therefore, by Lemma 6.5 we have
+t
+t →
+
+
+
+
+
+Tt−s Φ s, X(s) ds ∈ C [0, T ∧ τn ], X1 ,
+
+P -a.s.
+
+0
+
+Noting that x0 ∈ X1 and
+t
+1{tτn } · X(t) = 1{tτn } · Tt x0 + 1{tτn } ·
+
+
+
+Tt−s Φ s, X(s) ds
+
+0
+
+t
++ 1{tτn } ·
+
+
+
+Tt−s Ψ s, X(s) dW (s),
+
+∀t  0, P -a.s.,
+
+0
+
+by τn  τ , we therefore have that t → X(t) ∈ X1 is continuous on [0, τ ) P -a.s.
+Lastly, by stochastic Fubini’s theorem (cf. [45, Section 6]) we have
+t
+
+t
+LX(s) ds =
+
+0
+
+ t s
+LTs x0 ds +
+
+0
+
+
+
+LTs−r Φ r, X(r) dr ds
+
+0 0
+
+ t s
++
+
+
+
+LTs−r Ψ r, X(r) dW (r) ds
+
+0 0
+
+t t
+= x0 − Tt x0 +
+
+
+
+LTs−r Φ r, X(r) ds dr
+
+0 r
+
+t t
++
+
+
+
+LTs−r Ψ r, X(r) ds dW (r)
+
+0 r
+
+t
+= x0 − Tt x0 +
+0
+
+ 
+
+
+
+Φ r, X(r) − Tt−r Φ r, X(r) dr
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+t
++
+
+1411
+
+ 
+
+
+
+Ψ r, X(r) − Tt−r Ψ r, X(r) dW (r)
+
+0
+
+t
+= x0 − X(t) +
+
+t
+
+
+
+Φ s, X(s) ds +
+
+0
+
+
+
+Ψ s, X(s) dW (s)
+
+0
+
+on {t  τn }. The proof is thus complete by letting n → ∞.
+
+2
+
+7. Application to stochastic Navier–Stokes equations
+7.1. Unique maximal strong solution for SNSEs
+Let O be a bounded smooth domain in Rd (d  2), or the whole space Rd , or d-dimensional
+torus Td . Let
+
+d
+Wm,p (O) := W m,p (O) ,
+
+m,p
+
+W0
+
+ m,p
+d
+(O) := W0 (O)
+
+and
+ ∞
+d
+C∞
+0,σ (O) := u ∈ C0 (O) : div(u) = 0 .
+m,p
+
+m,p
+
+Notice that Wm,p (Rd ) = W0 (Rd ) and Wm,p (Td ) = W0 (Td ).
+p
+p
+p
+d
+Let Lσ (O) be the closure of C∞
+0,σ (O) with respect to the norm in L (O) := (L (O)) . Let
+P2 be the orthonormal projection from L2 (O) to L2σ (O). It is well known that P2 can be exp
+tended to a bounded linear operator from Lp (O) to Lσ (O) (cf. [23]) so that for every u ∈ Lp (O),
+u = Pp u + ∇π,
+
+ p
+d
+π ∈ Lloc (O) .
+
+The stokes operator is defined by
+Ap u := −Pp u,
+
+p
+
+D(Ap ) := H2 ∩ Lpσ (O),
+
+(7.1)
+
+where
+p
+
+1,p
+
+H2 := W2,p (O) ∩ W0 (O) = D(I − p )
+and p is the Laplace operator on Lp (O).
+p
+It is well known that (Ap , D(Ap )) is a sectorial operator on Lσ (O) (cf. [24]). It should be
+d
+d
+noticed that when O = R or T , since the projection Pp can commute with ∇ (cf. [37, p. 84]),
+we have
+Ap u = −Pp u = −u,
+
+u ∈ D(Ap ).
+p
+
+That is, the stokes operator is just the restriction of −p on W2,p (O) ∩ Lσ (O), where O = Rd
+or Td .
+
+1412
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Below, we write
+Lp := I + Ap
+and
+ α/2 
+Hpα := D Lp .
+Giga [25] proved that for α ∈ [0, 1],
+
+
+Hpα = Lpσ (O), D(Ap ) α = Hpα ∩ Lpσ (O),
+p
+
+(7.2)
+
+p
+
+where Hα = [Lp (O), H2 ]α and [·,·]α stands for the complex interpolation space between two
+Banach spaces. In particular, the following embedding results hold (cf. [48]): for p > 1 and
+0  α  < 12 < α  1,
+u Hp   u 1,p  u Hp ,
+2α
+
+2α
+
+u ∈ Hpα ,
+
+(7.3)
+
+and for q  p, k − dq < 2α − pd ,
+H2α → Wk,q (O),
+
+p
+
+(7.4)
+
+Hpα → Cb (O).
+
+(7.5)
+
+and for α > pd ,
+
+In what follows, we fix
+p > d,
+
+1
+< α < 1,
+2
+
+(7.6)
+
+and consider the following stochastic Navier–Stokes equation with Dirichlet boundary (only for
+bounded smooth domain):
+⎧
+
+
+
+
+
+
+
+
+⎪
+⎨ du(t) = u(t) + u(t) · ∇ u(t) + ∇π(t) dt + F t, u(t) dt + Ψ t, u(t) dW (t),
+u(t, ·)|∂ O = 0,
+div u(t) = 0,
+(7.7)
+⎪
+⎩
+u(0, x) = u0 (x),
+where u and π are unknown functions, and
+p
+
+p
+
+F : R+ × H2α → H0
+are two measurable functions.
+
+p
+
+and Ψ : R+ × H2α → Hpα
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1413
+
+Assume that:
+(N1) For each T , R > 0, there exist δ > 0 and CT ,R,δ > 0 such that for all t, s ∈ [0, T ] and
+p
+u, v ∈ H2α with u Hp , v Hp  R,
+2α
+
+2α
+
+
+
+
+F (t, u) − F (s, v) p  CT ,R,δ |t − s|δ + u − v
+
+
+
+H2α .
+p
+
+H0
+
+(N2) For each T , R > 0, there exist α  > 1 and CT ,R > 0 such that for all t ∈ [0, T ] and
+p
+u, v ∈ H2α with u Hp , v Hp  R,
+2α
+
+2α
+
+
+
+Ψ (t, u) − Ψ (t, v)
+
+p
+
+L2 (l 2 ;Hα )
+
+ CT ,R u − v Hp
+
+2α
+
+and
+
+
+Ψ (t, u)
+
+p
+
+L2 (l 2 ;Hα  )
+
+ CT ,R .
+
+(7.8)
+
+Set
+
+
+Φ(t, u) := u + Pp (u · ∇)u + F (t, u).
+
+(7.9)
+
+Then Eq. (7.7) can be written as the following abstract form:
+
+
+du(t) = −Lp u(t) + Φ(t, u) dt + Ψ (t, u) dW (s),
+
+u(0) = u0 .
+p
+
+(7.10)
+
+Theorem 7.1. Let p > d and 12 < α < 1. Under (N1) and (N2), for any u0 ∈ H2 , there exists a
+unique maximal strong solution (u, τ ) for Eq. (7.10) so that:
+p
+
+(i) t → u(t) ∈ H2 is continuous on [0, τ ) a.s.;
+(ii) limt↑τ u(t) Hp = ∞ on {τ < +∞};
+2α
+
+p
+
+p
+
+(iii) it holds that in Lσ (O) = H0 ,
+t
+u(t) = u0 +
+
+
+
+
+−Lp u(s) + Φ s, u(s) ds +
+
+0
+
+t
+= u0 +
+
+t
+
+
+
+Ψ s, u(s) dW (s)
+
+0
+
+
+
+
+
+Ap u(s) + Pp u(s) · ∇ u(s) ds
+
+0
+
+t
++
+0
+
+for all t ∈ [0, τ ), P -a.s.
+
+
+
+
+F s, u(s) ds +
+
+t
+0
+
+
+
+Ψ s, u(s) dW (s),
+
+1414
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+p
+
+Proof. In view of (7.6), (7.3) and (7.5), for any u, v ∈ H2α we have
+
+
+
+
+
+Pp (u · ∇)u − (v · ∇)v  p  (u · ∇)u − (v · ∇)v p
+Lσ
+
+L
+
+
+
+ u − v L∞ · ∇u Lp + v L∞ · ∇(u − v)Lp
+ u − v Hp · u Hp + v Hp · u − v Hp .
+2α
+
+2α
+
+2α
+
+2α
+
+Thus, by (N1) and (N2), it is easy to see that (M2) and (M4) hold for the above Φ and Ψ . The
+result now follows by Theorem 6.6. 2
+7.2. Non-explosion and large deviation for 2D SNSEs
+In this subsection, we study the non-explosion and large deviation for SNSE in the case of
+two dimensions. For this aim, in addition to (N1) and (N2), we also suppose that:
+p
+
+(N3) For any T > 0, there exists CT > 0 such that for all t ∈ [0, T ] and u ∈ H2 ,
+
+
+
+F (t, u) 2  CT u
+
+
+
+H0
+
+H21 + 1 ,
+
+H0
+
+H2α + 1
+
+
+
+
+F (t, u) p  CT u
+
+p
+
+
+
+and for i = 0, 1,
+
+
+Ψ (s, u)
+
+
+
+ CT 1 + u H2 ,
+i
+
+
+
+
+Ψ (s, u) 2 p  CT 1 + u p ,
+H
+L (l ;H )
+L2 (l 2 ;H2i )
+2
+
+α
+
+2α
+
+where p and α satisfy (7.6).
+We have the following result, the proof will be given in Lemma 7.7 below.
+Theorem 7.2. Let p > d and 12 < α < 1. Assume that (N1)–(N3) hold. Let (u, τ ) be the unique
+maximal solution of Eq. (7.11) in Theorem 7.1. Then τ = +∞ a.s.
+We now consider the small perturbation for 2D stochastic Navier–Stokes equation:
+
+
+
+
+√ 
+du (t) = −Lp u (t) + Φ t, u (t) dt + Ψ t, u (t) dW (t),
+
+u (0) = u0
+
+as well as the control equation:
+
+
+
+
+
+
+
+√ 
+du (t) = −Lp u (t) + Φ t, u (t) + Ψ t, u (t) ḣ (t) dt + Ψ t, u (t) dW (t),
+u (0) = u0 ,
+where h ∈ ATN (see (2.20) for the definition of ATN ), and T > 0 is fixed below.
+
+(7.11)
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1415
+
+Let (u , τ  ) be the unique maximal strong solution of Eq. (7.11) with the properties:
+
+
+lim u (t)Hp = +∞ on τ  < ∞ ,
+
+t↑τ
+
+2α
+
+p
+
+and t → u (t) ∈ H2 is continuous on [0, τ  ).
+Before proving the non-explosion result (Lemma 7.7), we first prepare a series of lemmas.
+Lemma 7.3. There exists a constant CT > 0 such that for any t ∈ [0, T ] and u ∈ H22 ,
+
+
+
+
+1
+u, −L2 u + Φ(s, u) H2  − u 2H2 + CT u 2H2 + 1 ,
+0
+2
+1
+0
+
+
+
+
+2
+4
+L2 u, −L2 u + Φ(s, u) H2  C u H2 u H2 + CT 1 + u 2H2
+0
+
+0
+
+1
+
+(7.12)
+(7.13)
+
+1
+
+and
+
+
+
+Φ(t, u) p  CT 1 + u
+H0
+
+H21
+
+ 
+
+· 1 + u Hp .
+2α
+
+(7.14)
+
+Proof. Let u ∈ H22 . Noting that
+
+
+
+
+
+1
+u, P2 (u · ∇)u H2 = u, (u · ∇)u L2 =
+0
+2
+
+
+
+2
+
+u(x) · ∇ u(x) dx = 0,
+
+O
+
+by (N3) and Young’s inequality we have
+
+
+
+
+
+
+
+1
+u, −L2 u + Φ(s, u) H2 = − u 2H2 + u, u + F (t, u) H2  − u 2H2 + CT u 2H2 + 1 .
+0
+0
+2
+1
+1
+0
+
+Thus, (7.12) is proved.
+For (7.13), noting that by Gagliado–Nirenberge’s inequality (cf. [22, p. 24 Theorem 9.3])
+and (7.2)
+u 2L∞  u H2 · u H2  u H2 · u H2 ,
+2
+
+0
+
+2
+
+0
+
+by Young’s inequality we have
+ 
+
+
+2
+1
+L2 u, P2 (u · ∇)u H2  u 2H2 + P2 (u · ∇)u H2
+0
+0
+4
+2
+
+
+1
+2
+ u 2H2 + C (u · ∇)uL2
+4
+2
+1
+ u 2H2 + C u 2L∞ · ∇u 2L2
+4
+2
+1
+ u 2H2 + C u H2 · u H2 · u 2H2
+0
+2
+4
+2
+1
+1
+ u 2H2 + C u 2H2 · u 4H2 ,
+2
+2
+0
+1
+
+
+
+1416
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+and by (N3)
+
+
+
+
+
+1
+L2 u, F (s, u) H2  u 2H2 + CT 1 + u 2H2 .
+0
+2
+2
+1
+
+Thus, (7.13) holds.
+Let
+p<q <
+
+d
+1 + pd − 2α
+
+q∗ =
+
+,
+
+qp
+.
+q −p
+
+By Hölder’s inequality we have
+(7.4)
+
+
+Pp (u · ∇)u p  u · ∇u Lp  u q ∗ · ∇u Lq  u 2 · u p .
+L
+H
+H
+H
+2α
+
+1
+
+0
+
+2
+
+Estimate (7.14) now follows by (N3).
+Below, set for n ∈ N,
+
+
+
+τn := inf t  0: u (t)Hp > n .
+2α
+
+Lemma 7.4. There exists a constant CT > 0 such that for all  ∈ (0, 1) and n ∈ N,
+
+E
+
+!
+sup
+
+  2 "
+u (s) 2 + E
+H0
+
+s∈[0,T ∧τn ]
+
+ T∧τn
+
+  2
+u (s) 2 ds  CT .
+H1
+
+0
+
+Proof. By Itô’s formula we have
+  2
+u (t) 2 = u0 2 2 + 2
+H
+H
+0
+
+t
+
+ 
+
+
+u (s), −L2 u (s) + Φ s, u (s) H2 ds
+0
+
+0
+
+0
+
+t
++2
+
+ 
+
+
+
+u (s), Ψ s, u (s) ḣ (s) H2 ds
+0
+
+0
+
+√ 
++2 
+
+t
+
+ 
+
+
+u (s), Ψk s, u (s) H2 dW k (s)
+0
+
+k 0
+
+  
+
+Ψk s, u (s) 2 2 ds
+t
+
++
+
+k 0
+
+H0
+
+=: u0 2H2 + J1 (t) + J2 (t) + J3 (t) + J4 (t).
+1
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1417
+
+Set
+f (t) := E
+
+!
+sup
+
+  2 "
+u (s) 2 .
+H0
+
+s∈[0,t∧τn ]
+
+First of all, noting that by (7.12)
+t
+J1 (t)  −
+
+  2
+u (s) 2 + CT
+
+t
+
+H1
+
+0
+
+  2
+
+u (s) 2 + 1 ds,
+H0
+
+0
+
+we have
+
+E
+
+!
+sup
+
+s∈[0,t∧τn ]
+
+
+ t∧τ
+
+ n
+t
+"
+  2
+
+
+
+
+f (s) + 1 ds.
+J1 (s) + E
+u (s) H2 ds  CT
+1
+
+0
+
+0
+
+By (N3) and Young’s inequality we have
+
+E
+
+!
+sup
+
+s∈[0,t∧τn ]
+
+
+ t∧τ
+
+ n
+"
+   
+  
+  
+
+
+
+
+
+
+u (s) H2 · Ψ s, u (s) L (l 2 ;H2 ) · ḣ (s) l 2 ds
+J2 (s)  2E
+2
+
+0
+
+0
+
+0
+
+ t∧τ
+ n
+  2    2
+u (s) 2 · Ψ s, u (s) 
+ 2N E
+
+L2 (l 2 ;H20 )
+
+H0
+
+0
+
+1
+ f (t) + CN E
+4
+
+
+
+ t∧τ
+ n
+  2 
+
+1 + u (s)H2 ds
+0
+
+0
+
+1
+ f (t) + CN
+4
+
+t
+
+
+
+1 + f (s) ds.
+
+0
+
+Similarly, we also have
+t
+" 1
+
+
+E
+sup J3 (s)  f (t) + C
+1 + f (s) ds
+4
+s∈[0,t∧τn ]
+!
+
+0
+
+and
+E
+
+!
+sup
+
+s∈[0,t∧τn ]
+
+t
+"
+
+
+1 + f (s) ds.
+J4 (s)  C
+0
+
+1/2
+ds
+
+1418
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Combining the above calculations we get
+
+t∧τ
+ n
+
+  2
+u (s) 2 ds  2 u0 2 2 + CN + CN
+
+f (t) + 2E
+
+H1
+
+t
+
+H0
+
+0
+
+
+
+1 + f (s) ds.
+
+0
+
+2
+
+The desired estimate follows by Gronwall’s inequality.
+Set for n ∈ N,
+
+t∧τ
+ n
+
+  2   2
+u (s) 2 · u (s) 2 ds + t
+
+ηn (t) :=
+
+H1
+
+H0
+
+0
+
+t
+=
+
+  2    2
+u (s) 2 · u (s) 2 · 1[0,τ  ] (s) ds + t
+H1
+
+H0
+
+n
+
+0
+
+and
+θn (t) := inf s  0: ηn (s)  t .
+Clearly, t → ηn (t) is a continuous and strictly increasing function, and the inverse function of
+t → θn (t) is just given by ηn . Moreover, since ηn (t) > t, we have
+θn (t) < t.
+Lemma 7.5. For any K > 0, there exists a constant CK,N > 0 such that for all  ∈ (0, 1) and
+n ∈ N,
+E
+
+!
+
+  2 "
+u (s) 2  CK,N .
+
+sup
+
+s∈[0,θn (K)∧τn ]
+
+H1
+
+Proof. Consider the following evolution triple
+H22 ⊂ H21 ⊂ H20 .
+By Itô’s formula (cf. [58]), we have
+  2
+u (t) 2 = u0 2 2 + 2
+H
+H
+1
+
+t
+
+
+
+
+
+L2 u (s), −L2 u (s) + Φ s, u (s) H2 ds
+0
+
+1
+
+0
+
+t
++2
+
+
+
+
+
+
+L2 u (s), Ψ s, u (s) ḣ (s) H2 ds
+0
+
+0
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+√ 
++2 
+k
+
+t
+
+1419
+
+ 
+
+
+u (s), Ψk s, u (s) H2 dW k (s)
+1
+
+0
+
+  
+
+Ψk s, u (s) 2 2 ds
++
+t
+
+H1
+
+k
+
+0
+
+=: u0 2H2 + J1 (t) + J2 (t) + J3 (t) + J4 (t).
+1
+
+Set
+f (t) := E
+
+!
+ 
+2 "
+sup u θn (s) ∧ τn H2 = E
+
+!
+
+1
+
+s∈[0,t]
+
+sup
+
+  2 "
+u (s) 2 .
+
+s∈[0,θn (t)∧τn ]
+
+H1
+
+For J1 (t), by (7.13) we have, for t ∈ [0, K],
+
+
+J1 θn (t) ∧ τn 
+
+θn 
+(t)∧τn
+
+
+2 
+    2   4
+
+C u (s)H2 · u (s)H2 + CK 1 + u (s)H2 ds
+0
+
+1
+
+1
+
+0
+θn (t)
+
+ 
+
+u s ∧ τ  2 2 dη (s) + CK
+
+C
+
+n
+
+n
+
+H1
+
+0
+
+t
+=C
+
+  
+
+u θ (s) ∧ τ  2 2 ds + CK ,
+n
+
+n
+
+H1
+
+0
+
+where the last step is due to the substitution of variable formula. So,
+
+E
+
+!
+
+
+"
+sup J1 θn (s) ∧ τn  C
+
+s∈[0,t]
+
+t
+f (s) ds + CK .
+0
+
+Using the same trick as used in Lemma 7.4 and by (N3), we also have
+!
+
+
+" 1
+E sup Ji θn (s) ∧ τn  f (t) + CN,K
+2
+s∈[0,t]
+
+t
+
+
+
+f (s) + 1 ds,
+
+0
+
+Thus, we get
+t
+f (t)  2 u0 2H2 + CN,K
+1
+
+
+
+f (s) + 1 ds,
+
+0
+
+which yields the desired estimate by Gronwall’s inequality.
+
+2
+
+i = 2, 3, 4.
+
+1420
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Set for M > 0,
+ 
+
+ζn (M) := inf t  0: u t ∧ τn H2  M .
+1
+
+Lemma 7.6. For any M > 0 and q  2, there exists a constant CT ,M,N > 0 such that for all
+ ∈ (0, 1) and n ∈ N,
+E
+
+  q &
+u (t) p  CT ,M,N .
+
+%
+sup
+
+H2α
+
+t∈[0,T ∧τn ∧ζn (M)]
+
+Proof. Set for t ∈ [0, T ],
+ξn (t) := t ∧ τn ∧ ζn (M)
+and for q  2,
+f (t) := E
+
+%
+sup
+
+  q &
+u (t) p .
+H2α
+
+t  ∈[0,ξn (t)]
+
+Note that
+t
+u (t) = Tt u0 +
+
+
+
+
+Tt−s Φ s, u (s) ds +
+
+0
+
++
+
+√
+
+
+t
+
+t
+
+
+
+Tt−s Ψ s, u (s) ḣ (s) ds
+
+0
+
+
+
+Tt−s Ψ s, u (s) dW (s).
+
+0
+1
+By (iii) of Proposition 4.1, Hölder’s inequality and Lemma 7.14, we have, for q > 1−α
+,
+
+ t 
+q 
+
+   
+
+
+E
+sup  Tt  −s Φ s, u (s) ds 
+ p
+t  ∈[0,ξn (t)]
+
+
+H2α
+
+0
+
+
+E
+
+ t 
+sup
+
+t  ∈[0,ξn (t)]
+
+0
+
+   
+1
+Φ s, u (s)  p ds
+H0
+(t  − s)α
+
+q 
+
+
+ ξn (t)
+   q
+Φ s, u (s)  p ds
+E
+H0
+
+0
+
+
+ ξn (t)
+t
+  q  
+  q 
+
+
+
+1 + u (s)H2 · 1 + u (s)Hp ds  CM
+f (s) + 1 ds.
+ E
+
+(7.14)
+
+1
+
+2α
+
+0
+
+0
+
+On the other hand, set
+
+
+G(t, s) := Tt−s Ψ s, u (s) .
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1421
+
+Then by (iii) and (iv) of Proposition 4.1, we have
+
+
+G(t, s)2 p 
+
+
+
+C 
+Ψ s, u (s) 2 2 p
+L2 (l ;Hα )
+α
+(t − s)
+
+H2α
+
+and for γ ∈ (0, (1 − α)/2),
+
+  
+G t , s − G(t, s)2 p 
+H2α
+
+
+
+|t  − t|γ 
+Ψ s, u (s) 2 2 p .
+L2 (l ;Hα )
+(t − s)α+2γ
+
+Therefore, using Lemma 3.4 for q large enough, we get
+ t 
+q 
+
+
+ 
+
+
+E
+sup
+ G t , s dW (s)
+ p
+t  ∈[0,T ∧ξn (t)]
+
+
+H2α
+
+0
+
+
+ T ∧ξ
+ n (t)
+   q
+Ψ s, u (s) 
+ CT E
+
+
+p
+
+L2 (l 2 ;Hα )
+
+ds
+
+0
+
+t
+
+(N3)
+
+ CT
+
+
+
+f (s) + 1 ds.
+
+0
+
+Similarly, we have
+ t
+q 
+
+
+   
+
+
+E
+sup
+ Tt−s Ψ s, u (s) ḣ (s) ds 
+
+ p
+
+
+t ∈[0,T ∧ξn (t)]
+
+
+H2α
+
+0
+
+t
+ CT ,N
+
+
+
+f (s) + 1 ds.
+
+0
+
+Combining the above calculations, we obtain
+t
+f (t)  CT ,M,N
+
+f (s) ds + CT ,M,N ,
+0
+
+which yields the desired estimate by Gronwall’s inequality.
+
+2
+
+Lemma 7.7. It holds that
+lim
+
+sup P ω: τn (ω)  T = 0.
+
+n→∞ ∈(0,1)
+
+(7.15)
+
+1422
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+Proof. First of all, for any M, K > 0 we have
+P ζn (M) < T  P ζn (M) < T ; θn (K)  T + P θn (K) < T
+#
+$
+ 
+
+= P sup u t ∧ τn H2 > M; θn (K)  T
+1
+
+t∈[0,T )
+
++P
+P
+E
+
+sup ηn (s) > K
+
+s∈[0,T )
+
+#
+!
+
+#
+
+$
+
+sup
+
+$
+  
+u (t) 2 > M + P η (T ) > K
+
+sup
+
+  2 " 2
+
+
+u (t) 2 /M + E η (T ) /K.
+
+t∈[0,θn (K)∧τn ]
+
+t∈[0,θn (K)∧τn )
+
+n
+
+H1
+
+n
+
+H1
+
+Hence, by Lemmas 7.4 and 7.5 we have
+lim sup P ζn (M) < T = 0.
+
+M→∞ n,
+
+Secondly, we also have
+P τn < T  P τn < T ; ζn (M)  T + P ζn (M) < T .
+
+(7.16)
+
+For the first term, by Lemma 7.6 we have
+P τn < T ; ζn (M)  T = P
+P
+P
+E
+
+#
+#
+
+$
+
+
+sup u (t)Hp > n; ζn (M)  T
+2α
+
+t∈[0,T )
+
+sup
+
+#
+
+$
+  
+u (t) p  n; ζ  (M)  T
+
+t∈[0,T ∧τn ]
+
+sup
+
+!
+
+n
+
+H2α
+
+$
+  
+u (t) p  n
+
+s∈[0,T ∧ζn (M)∧τn ]
+
+H2α
+
+  q " q CT ,M,N
+u (t) p /n 
+,
+H2α
+nq
+s∈[0,T ∧ζn (M)∧τn ]
+sup
+
+where CT ,M,N is independent of  and n. The desired limit now follows by taking limits
+for (7.16), first n → ∞, then M → ∞. 2
+Thus, using Theorem 6.3 we get:
+p
+
+Theorem 7.8. Let O = T2 or a bounded smooth domain in R2 . Under (N1)–(N3), for u0 ∈ H2 ,
+p
+{u ,  ∈ (0, 1)} satisfies the large deviation principle in CT (H2α ) with the rate function I (f )
+given by
+I (f ) :=
+
+1
+inf
+h 22 ,
+2 {h∈2T : f =uh }
+T
+
+ p 
+f ∈ CT H2α ,
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1423
+
+where uh solves the following equation:
+t
+uh (t) = u0 +
+0
+
+t
++
+0
+
+t
+uh (s) ds +
+
+
+
+
+Pp uh (s) · ∇ uh (s) ds
+
+0
+
+
+
+F s, uh (s) ds +
+
+t
+
+
+
+Ψ s, uh (s) ḣ(s) ds.
+
+0
+
+Acknowledgments
+The author would like to thank Professor Benjamin Goldys for providing him an excellent
+environment to work in the University of New South Wales. His work is supported by ARC
+Discovery grant DP0663153 of Australia and NSFs of China (Nos. 10971076; 10871215).
+References
+[1] R.A. Adams, Sobolev Space, Academic Press, 1975.
+[2] R. Azencott, Grandes déviations et applications, in: Lecture Notes in Math., vol. 779, Springer-Verlag, New York,
+1980, pp. 1–176.
+[3] M. Berger, V. Mizel, Volterra equations with Itô integrals, I and II, J. Integral Equations 2 (1980) 187–245, 319–337.
+[4] S. Bonaccorsi, M. Fantozzi, Large deviation principle for semilinear stochastic Volterra equations, Dynam. Systems
+Appl. 13 (2) (2004) 203–219.
+[5] M. Boué, P. Dupuis, A variational representation for certain functionals of Brownian motion, Ann. Probab. 26 (4)
+(1998) 1641–1659.
+[6] Z. Brzeźniak, Stochastic partial differential equations in M-type 2 Banach spaces, Potential Anal. 4 (1) (1995) 1–45.
+[7] Z. Brzeźniak, On stochastic convolution in Banach spaces and applications, Stochastics Stochastics Rep. 61 (3–4)
+(1997) 245–295.
+[8] Z. Brzeźniak, S. Peszat, Space-time continuous solutions to SPDE’s driven by a homogeneous Wiener process,
+Studia Math. 137 (3) (1999) 261–299.
+[9] Z. Brzeźniak, S. Peszat, Strong local and global solutions to stochastic Navier–Stokes equations, in: Infinite Dimensional Stochastic Analysis, Proceedings of the Colloquium of the Royal Netherlands Academy of Sciences,
+Amsterdam, 1999, North-Holland, Amsterdam, 2000, pp. 85–98.
+[10] A. Budhiraja, P. Dupuis, A variational representation for positive functionals of infinite dimensional Brownian
+motion, Probab. Math. Statist. 20 (1) (2000) 39–61, Acta Univ. Wratislav. No. 2246.
+[11] A. Budhiraja, P. Dupuis, V. Maroulas, Large deviations for infinite dimensional stochastic dynamical systems, Ann.
+Probab. 36 (4) (2008) 1390–1420.
+[12] M.-H. Chang, Large deviation for Navier–Stokes equations with small stochastic perturbation, Appl. Math. Comput. 76 (1996) 65–93.
+[13] P. Clément, G. Da Prato, Some results on stochastic convolutions arising in Volterra equations perturbed by noise,
+Atti Accad. Naz. Lincei Cl. Sci. Fis. Mat. Natur. Rend. Lincei (9) Mat. Appl. 7 (3) (1996) 147–153.
+[14] L. Coutin, L. Decreusefond, Stochastic Volterra equations with singular kernels, in: Stochastic Analysis and Mathematical Physics, in: Progr. Probab., vol. 50, Birkhäuser Boston, Boston, MA, 2001, pp. 39–50.
+[15] G. Da Prato, J. Zabczyk, Stochastic Equations in Infinite Dimensions, Cambridge University Press, Cambridge,
+1992.
+[16] L. Decreusefond, Regularity properties of some stochastic Volterra integrals with singular kernel, Potential Anal. 16
+(2002) 139–149.
+[17] L. Denis, L. Stoica, A general analytical result for non-linear SPDE’s and applications, Electron. J. Probab. 9 (2004)
+674–709.
+[18] L. Denis, A. Matoussi, L. Stoica, Lp estimates for the uniform norm of solutions of quasilinear SPDE’s, Probab.
+Theory Related Fields 133 (4) (2005) 437–463.
+[19] P. Dupuis, R.S. Ellis, A Weak Convergence Approach to the Theory of Large Deviations, Wiley, New York, 1997.
+
+1424
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+[20] F. Flandoli, Regularity Theory and Stochastic Flows for Parabolic SPDEs, Stochastic Monogr., vol. 9, Gordon and
+Breach Publishers, 1995.
+[21] M.I. Freidlin, A.D. Wentzell, On small random perturbations of dynamical system, Russian Math. Surveys 25 (1970)
+1–55.
+[22] A. Friedman, Partial Differential Equations, Holt, Reihart and Winston, New York, 1969.
+[23] D. Fujiwara, H. Morimoto, An Lr -theorem of the Helmholtz decomposition of vector fields, J. Fac. Sci. Univ. Tokyo
+Sect. IA Math. 24 (1977) 685–700.
+[24] Y. Giga, Analyticity of the semigroup generated by the stokes operator in Lr spaces, Math. Z. 178 (1981) 297–329.
+[25] Y. Giga, Domains of fractional powers of the Stokes operator in Lr spaces, Arch. Ration. Mech. Anal. 89 (3) (1985)
+251–265.
+[26] B. Goldys, M. Röckner, X. Zhang, Martingale solutions and Markov selections for stochastic partial differential
+equations, Stochastic Process. Appl. 119 (5) (2009) 1725–1764.
+[27] G. Gripenberg, On the resolvents of nonconvolution Volterra kernels, Funkcial. Ekvac. 23 (1980) 83–95.
+[28] D. Henry, Geometric Theory of Semilinear Parabolic Equations, Lecture Notes in Math., vol. 840, Springer-Verlag,
+1980.
+[29] G.S. Jordan, R.L. Wheeler, A generalization of the Wiener–Lévy theorem applicable to some Volterra equations,
+Proc. Amer. Math. Soc. 57 (1) (1976) 109–114.
+[30] O. Kallenberg, Foundations of Modern Probability, second edition, Springer-Verlag, New York, Berlin, 2001.
+[31] A. Karczewska, C. Lizama, Stochastic Volterra equations driven by cylindrical Wiener process, J. Evol. Equ. 7 (2)
+(2007) 373–386.
+[32] A. Kolmogorov, S. Fomin, Elements of the Theory of Functions and Functional Analysis, Graylock, Rochester,
+1957.
+[33] P. Kotelenez, Stochastic Ordinary and Stochastic Partial Differential Equations: Transition from Microscopic to
+Macroscopic Equations, Stoch. Model. Appl. Probab., vol. 58, Springer-Verlag, New York, 2008, x+458 pp.
+[34] N.V. Krylov, An analytic approach to SPDEs, in: Stochastic Partial Differential Equations, Six Perspectives, in:
+Math. Surveys Monogr., vol. 64, American Mathematical Society, Providence, 1999, pp. 185–242.
+[35] N.V. Krylov, B.L. Rozovskii, Stochastic evolution equations, J. Soviet Math. (1979) 71–147 (in Russian); transl. in:
+16 (1981) 1233–1277.
+[36] E.H. Lakhel, Large deviation for stochastic Volterra equation in the Besov–Orlicz space and application, Random
+Oper. Stoch. Equ. 11 (4) (2003) 333–350.
+[37] P.L. Lions, Mathematical Topics in Fluid Mechanics, vol. I: Incompressible Models, Oxford Lecture Ser. Math.
+Appl., Clarendon Press, Oxford, 1996.
+[38] W. Liu, Large deviations for stochastic evolution equations with small multiplicative noise, Appl. Math. Optim.,
+doi:10.1007/s00245-009-9072-2, in press.
+[39] R. Mikulevicius, B. Rozovskii, A note of Krylov’s Lp -theory for systems of SPDEs, Electron. J. Probab. 6 (2001)
+1–35.
+[40] R. Mikulevicius, B.L. Rozovskii, Stochastic Navier–Stokes equations for turbulent flows, SIAM J. Math.
+Anal. 35 (5) (2004) 1250–1310.
+[41] R. Mikulevicius, B.L. Rozovskii, Martingale problems for stochastic PDE’s, in: Stochastic Partial Differential Equations, Six Perspectives, in: Math. Surveys Monogr., vol. 64, AMS, Providence, 1999, pp. 185–242.
+[42] R. Miller, Nonlinear Volterra Integral Equations, W.A. Benjamin, Inc. Publishers, California, 1971.
+[43] A.L. Neidhardt, Stochastic Integrals in 2-Uniformly Smooth Banach Spaces, University of Wisconsin, 1978.
+[44] D. Nualart, C. Rovira, Large deviation for stochastic Volterra equation, Bernoulli 6 (2000) 339–355.
+[45] M. Ondreját, Uniqueness for stochastic evolution equations in Banach spaces, Dissertationes Math. (Rozprawy
+Mat.) 426 (2004), 63 pp.
+[46] E. Pardoux, Equations aux dérivées partielles stochastiques non lineaires monotones: Etude de solutions fortes
+de type Itô, Thése Doct. Sci. Math. Univ. Paris Sud., 1975.
+[47] E. Pardoux, P. Protter, Stochastic Volterra equations with anticipating coefficients, Ann. Probab. 18 (1990) 1635–
+1655.
+[48] A. Pazy, Semi-Groups of Linear Operators and Applications, Springer-Verlag, Berlin, 1985.
+[49] S. Peszat, Large deviation estimates for stochastic evolution equations, Probab. Theory Related Fields 98 (1994)
+113–136.
+[50] G. Pisier, Probabilistic methods in the geometry of Banach spaces, in: Probability and Analysis, Varenna, in: Lecture
+Notes in Math., vol. 1206, Springer-Verlag, Berlin, 1985, pp. 167–241.
+[51] C. Prévôt, M. Röckner, A Concise Course on Stochastic Partial Differential Equations, Lecture Notes in Math.,
+vol. 1905, Springer-Verlag, Berlin, 2007, vi+144 pp.
+
+X. Zhang / Journal of Functional Analysis 258 (2010) 1361–1425
+
+1425
+
+[52] P. Protter, Volterra equations driven by semimartingales, Ann. Probab. 13 (1985) 519–530.
+[53] J. Prüss, Evolutionary Integral Equations and Applications, Monogr. Math., Birkhäuser, 1993.
+[54] J. Ren, X. Zhang, Schilder theorem for the Brownian motion on the diffeomorphism group of the circle, J. Funct.
+Anal. 224 (1) (2005) 107–133.
+[55] J. Ren, X. Zhang, Freidlin–Wentzell’s large deviations for homeomorphism flows of non-Lipschitz SDEs, Bull.
+Malays. Math. Sci. Soc. (2) 129 (8) (2005) 643–655.
+[56] J. Ren, X. Zhang, Freidlin–Wentzell’s large deviations for stochastic evolution equations, J. Funct. Anal. 254 (2008)
+3148–3172.
+[57] M. Röckner, B. Schmuland, X. Zhang, Yamada–Watanabe theorem for stochastic evolution equations in infinite
+dimensions, Eur. Phys. J. B 11 (2(54)) (2008) 247–259.
+[58] B.L. Rozovskii, Stochastic Evolution Systems: Linear Theory and Applications to Nonlinear Filtering, Math. Appl.
+(Soviet Ser.), vol. 35, Kluwer Academic Publishers, 1990.
+[59] D.F. Shea, S. Wainger, Variants of the Wiener–Lévy theorem, with application to stability problems for some
+Volterra integral equations, Amer. J. Math. 97 (1975) 312–343.
+[60] S.S. Sritharan, P. Sundar, Large deviations for the two-dimensional Navier–Stokes equations with multiplicative
+noise, Stochastic Process. Appl. 116 (11) (2006) 1636–1659.
+[61] R.B. Sower, Large deviations for a reaction-diffusion equation with non-Gaussian perturbations, Ann. Probab. 20 (1)
+(1992) 504–537.
+[62] D.W. Stroock, An Introduction to the Theory of Large Deviations, Springer-Verlag, New York, 1984.
+[63] L. Tartar, Interpolaiton non linéarie et régularité, J. Funct. Anal. 9 (1972) 469–489.
+[64] J.B. Walsh, An introduction to stochastic partial differential equations, in: Lecture Notes in Math., vol. 1180,
+Springer-Verlag, 1986, pp. 266–437.
+[65] Z. Wang, Existence-uniqueness of solutions to stochastic Volterra equations with singular kernels and non-Lipschitz
+coefficients, Statist. Probab. Lett. 78 (9) (2008) 1062–1071.
+[66] X. Zhang, Lp -theory of semi-linear SPDEs on general measure spaces and applications, J. Funct. Anal. 239 (1)
+(2006) 44–75.
+[67] X. Zhang, Regularities for semilinear stochastic partial differential equations, J. Funct. Anal. 249 (2) (2007) 454–
+476.
+[68] X. Zhang, Euler schemes and large deviations for stochastic Volterra equations with singular kernels, J. Differential
+Equations 224 (2008) 2226–2250.
+[69] X. Zhang, On stochastic evolution equations with non-Lipschitz coefficients, Stoch. Dyn. (2009), in press.
+[70] X. Zhang, A variational representation for random functionals on abstract Wiener spaces, J. Math. Kyoto
+Univ. 49 (3) (2009) 475–490.
+[71] X. Zhang, Smooth solutions of non-linear stochastic partial differential equations, http://aps.arxiv.org/abs/
+0801.3883.
+[72] X. Zhang, Stochastic Volterra equations in Banach spaces and stochastic partial differential equations, http://arxiv.
+org/abs/0812.0834.
+
+

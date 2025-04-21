@@ -1,0 +1,6812 @@
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+https://doi.org/10.1007/s40072-023-00310-z
+
+Parabolic stochastic PDEs on bounded domains with rough
+initial conditions: moment and correlation bounds
+David Candil1 · Le Chen2 · Cheuk Yin Lee3
+Received: 7 March 2023 / Revised: 4 August 2023 / Accepted: 30 August 2023 /
+Published online: 29 September 2023
+© The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2023
+
+Abstract
+We consider nonlinear parabolic stochastic PDEs on a bounded Lipschitz domain
+driven by a Gaussian noise that is white in time and colored in space, with Dirichlet or
+Neumann boundary condition. We establish existence, uniqueness and moment bounds
+of the random field solution under measure-valued initial data ν. We also study the
+two-point correlation function of the solution and obtain explicit upper and lower
+bounds. For C 1,α -domains with Dirichlet condition, the initial data ν is not required
+to be a finite measure and the moment bounds can be improved under the weaker
+condition that the leading eigenfunction of the differential operator is integrable with
+respect to |ν|. As an application, we show that the solution is fully intermittent for
+sufficiently high level λ of noise under the Dirichlet condition, and for all λ > 0 under
+the Neumann condition.
+Keywords Parabolic Anderson model · Stochastic heat equation ·
+Dirichlet/Neumann boundary conditions · Lipschitz domain · Intermittency ·
+Two-point correlation · Rough initial conditions
+Mathematics Subject Classification 60H15 · 35R60
+
+B Cheuk Yin Lee
+
+cylee@math.nthu.edu.tw
+David Candil
+david.candil@epfl.ch
+Le Chen
+le.chen@auburn.edu
+
+1
+
+Institut de Mathématiques, École Polytechnique Fédérale de Lausanne, Station 8, 1015
+Lausanne, Switzerland
+
+2
+
+Department of Mathematics and Statistics, Auburn University, 203 Parker Hall, Auburn,
+Alabama 36849, United States
+
+3
+
+Department of Mathematics, National Tsing Hua University, No. 101, Section 2, Kuang-Fu Road,
+300044 Hsinchu, Taiwan
+
+123
+
+1508
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1 Introduction and main results
+In this paper, we study nonlinear parabolic stochastic partial differential equations
+(SPDEs) on a bounded Lipschitz domain U in Rd . By a domain we refer to a connected
+open subset of Rd . Consider a second-order differential operator
+L =−
+
+
+
+d
+
+∂
+∂
+ai j (x)
+,
+∂ xi
+∂x j
+
+(1.1)
+
+i, j=1
+
+where [ai j (x)]i, j is a real-valued symmetric matrix that is Hölder continuous on U
+with some exponent 0 < γ ≤ 1 and uniformly elliptic, i.e., there exists a positive
+finite constant C such that
+C −1 |ξ |2 ≤
+
+d 
+d
+
+
+ai j (x)ξi ξ j ≤ C|ξ |2
+
+for all x ∈ U and ξ ∈ Rd ,
+
+(1.2)
+
+i=1 j=1
+
+
+where |ξ | := ξ12 + · · · + ξd2 . We consider operators of the form (1.1) because our
+approach in this paper is based on heat kernel estimates for operators in divergence
+form (see Sect. 3.3 below). We consider the following SPDE with (vanishing) Dirichlet
+boundary condition:
+⎧
+∂
+⎪
+⎨ ∂t u(t, x) + L u(t, x) = λ σ (t, x, u(t, x)) Ẇ (t, x), t > 0, x ∈ U ,
+u(0, ·) = ν(·),
+x ∈ U,
+⎪
+⎩
+u(t, x) = 0,
+t > 0, x ∈ ∂U ,
+
+(1.3)
+
+as well as the same equation with (vanishing) Neumann boundary condition:
+⎧
+∂
+⎪
+⎨ ∂t u(t, x) + L u(t, x) = λ σ (t, x, u(t, x)) Ẇ (t, x), t > 0, x ∈ U ,
+u(0, ·) = ν(·),
+x ∈ U,
+⎪
+⎩∂
+u(t,
+x)
+=
+0,
+t
+> 0, x ∈ ∂U ,
+∂n
+
+(1.4)
+
+where n is the outward normal to the boundary ∂U of U .
+We make the following assumption on the noise and correlation function:
+Assumption 1.1 The noise Ẇ is a centered and spatially homogeneous Gaussian noise
+that is white in time with the covariance given by
+E Ẇ (t, x)Ẇ (s, y) = δ(t − s) f (x − y),
+
+(1.5)
+
+where δ is the delta function and f is a nonnegative and nonnegative definite function
+on Rd . We assume that there exist constants 0 < C f < ∞ and 0 < β < 2 ∧ d such
+that
+−β
+≤ f (x − y) ≤ C f |x − y|−β
+for all x, y ∈ U .
+(1.6)
+C −1
+f |x − y|
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1509
+
+For example, f may be taken as the Riesz kernel f (x − y) = |x − y|−β . In both
+Eqs. (1.3) and (1.4), λ > 0 is a constant parameter representing the level or intensity
+of the noise.
+We need some regularity and cone conditions on the diffusion coefficient σ , which
+is given by the following assumption:
+Assumption 1.2 We assume that σ : (0, ∞)×U ×R → R in both Eqs. (1.3) and (1.4)
+is a non-random function such that σ (t, x, 0) = 0 for all (t, x) ∈ (t, ∞) × U and
+there exists a constant L σ > 0 such that
+|σ (t, x, u) − σ (t, x, v)| ≤ L σ |u − v|
+
+for all t > 0, x ∈ U and u, v ∈ R. (1.7)
+
+In particular, Assumption 1.2 implies that
+|σ (t, x, u)| ≤ L σ |u|
+
+for all t > 0, x ∈ U and u, v ∈ R.
+
+(1.8)
+
+Besides, we will need the other side of condition (1.8) in order to derive some lower
+bounds later: there exists a constant lσ > 0 such that
+σ (t, x, u) ≥ lσ |u|
+
+for all t > 0, x ∈ U and u ∈ R.
+
+(1.9)
+
+Our results will also cover the important case—the parabolic Anderson model (PAM)
+[5]:
+σ (t, x, u) = u
+for all t > 0, x ∈ U and u ∈ R.
+(1.10)
+In this case, our results hold with L σ = lσ = 1.
+We assume that the initial condition ν is a non-random, locally finite, signed Borel
+measure on U . Denote |ν| := ν+ + ν− , where μ = μ+ − μ− is the corresponding Jordan decomposition of μ with μ± being two nonnegative Borel measures with disjoint
+support. The exact blow-up rate of the locally finite measure near the boundary will
+be controlled via an integrability condition by the leading eigenfunction; see (1.14).
+Initial conditions of this type will be called rough initial conditions. An important
+example is the Dirac delta measure, which plays an important role in the studying the
+long-time asymptotics of the solution; see, e.g., [1] and [16].
+For stochastic heat equations on Rd , the probabilistic moment bounds and the
+two-point correlation function, both under rough initial conditions, have been studied
+in [7–10, 14]. As for bounded domains, Foondun and Nualart [24] considered the
+stochastic heat equation on an interval (0, L) with space-time white noise and either
+Dirichlet or Neumann boundary condition, and studied the moments and intermittency
+properties of the solutions. Nualart [33] and Guerngar and Nane [26] extended the
+results in [24] to fractional stochastic heat equations with colored noise, but only to
+the case when the domain is the unit ball in Rd plus a Dirichlet boundary condition. In
+all these works [24, 26, 33], the initial conditions are assumed to be a bounded function.
+Important initial data, such as the Dirac delta measure, have not been properly studied.
+One of the main objectives/contributions of this paper is to study the moments and
+correlation function of the solution of parabolic SPDEs (1.3) and (1.4) under rough
+initial conditions with a uniformly elliptic operator L on a bounded domain U ⊂ Rd .
+
+123
+
+1510
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Fig. 1 Various bounded domains on R2 : Fig. 1.1–1.4 are Lipschitz domains (either convex or not); Fig. 1.5
+is a typical example of the non-Lipschitz domain where there is a cusp
+
+For the parabolic Anderson model (i.e., σ (t, x, u) = u) on Rd , Chen and Kim [14]
+have shown that the two-point correlation function can be expressed as
+E[u(t, x)u(t, x)] = λ−2
+
+Rd ×Rd
+
+ν(dy) ν dy
+
+
+
+K t, x − y, x − y , y − y
+
+
+
+(1.11)
+for some kernel function K; see also [9] for the space-time white noise case with d = 1.
+Under the conditions (1.8) and (1.9) for σ , the correlation function also admits upper
+and lower bounds of the same form as the right-hand side of (1.11). By establishing
+sharp upper and lower bounds for the kernel K, one can then obtain sharp bounds for the
+correlation function. The formula (1.11) is established in [14] by using a convolutiontype operator . It is natural to ask if one can obtain similar formula and bounds for the
+correlation function in the case of bounded domains. The convolution-type operator
+on a bounded domain U ⊂ Rd has been considered by Candil in [4], where this
+operator is used to study the localization error between the solution of the stochastic
+heat equation on U and the solution of the same equation on Rd .
+In [33], it is mentioned that the extension of the moment estimates from the unit
+ball—a smooth, convex and bounded domain—to other bounded domains is not
+straightforward. One may expect that some geometric and regularity conditions on
+the domain would be required. The majority of our results below work for a general
+Lipschitz domain (see examples in Fig. 1(1.1–1.4). Convexity of the domain will be
+only required for the lower bounds of the moments in case of the Neumann boundary
+conditions. Domains with more regularity than the Lipschitz condition on the domain,
+such as the C 1,α -domain (α > 0), will allow us to obtain sharper upper moment
+bounds under Dirichlet boundary condition. See Table 2 below for a summary of our
+results.
+For the Neumann boundary condition, there have not been many results except
+those in [22, 24, 29], which are concerned with the stochastic heat equation driven
+by the space-time white noise on an interval (0, L) in one spatial dimension. In the
+Neumann case, they prove that full intermittency occurs for all levels λ > 0 of noise.
+This suggests the formation of tall peaks for the solutions even when the noise level
+is small. However, the precise intermittency behavior has not been well studied for
+general domains under the Neumann boundary condition.
+Another main contribution of the paper is about the weak conditions, namely, the
+rough initial conditions, that we impose on the initial data ν. When U = Rd , i.e.,
+the boundary is at |x| → ∞, and in case of L = − 21 , the rough initial condition
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1511
+
+refers to locally finite (signed) measure on Rd that satisfies the following integrability
+condition:
+e−a|x| |ν|(dx) < ∞, for all a > 0,
+2
+
+Rd
+
+(1.12)
+
+which is equivalent to the solution to the homogeneous heat equation exists for all
+time:
+( pt ∗ |ν|)(x) :=
+
+Rd
+
+(2π t)−d/2 e−
+
+|x−y|2
+2t
+
+|ν|(dy) < ∞, for all t > 0 and x ∈ Rd .
+(1.13)
+
+Initial conditions of this type were studied in [8, 12, 13]; see also [15]. When the
+domain U is bounded, we will show that the integrability condition (1.12) should be
+replaced by
+1 (y) |ν|(dy) < ∞,
+
+(1.14)
+
+U
+
+where 1 (·) is the eigenfunction corresponding to the leading eigenvalue of the operator L. In particular, for the Neumann boundary condition case (see Theorems 1.4
+and 1.5), since 1 (x) is a constant function that does not vanish at the boundary, condition (1.14) is equivalent to |μ|(U ) < ∞, i.e., |μ| is a finite measure on the domain
+U . In case of the Dirichlet boundary condition (see Theorem 1.7 and Corollary 1.9),
+condition (1.14) allows locally finite measure with certain growth rate near the boundary. For specific domains, condition (1.14) can be made more explicit; see examples
+in Table 1.
+In order to obtain precise moment results and allow rough initial conditions, we
+start by considering in Lemmas 4.3 and 4.4 the following heat kernel integral:
+
+U2
+
+G(t, x, y)G t, x , y
+
+
+
+f y−y
+
+
+
+dy dy .
+
+By using the heat kernel estimates in Proposition 3.6, we find that the sharp bound for
+this integral is e−2μ1 t (1 ∧ t)−β/2 . In particular, the factor of (1 ∧ t)−β/2 improves the
+estimates in [33]. Furthermore, we consider the convolution-type integral of the heat
+kernel
+
+U2
+
+G(t − s, x, z)G(t − s, x , z ) f (z − z )G(s, z, y)G(s, z , y ) dz dz
+
+−β/2
+and obtain optimal bounds with a similar factor of 1∧ (t−s)s
+. Also, based on these
+t
+optimal bounds and the convolution-type operator as considered in [4], we extend
+the two-point correlation formula (1.11) and related bounds in Proposition 6.2, and
+establish explicit upper and lower bounds for the kernel function in Propositions 6.5
+
+123
+
+123
+Example 2.4
+
+i=1
+
+
+xi (1 − xi ) |ν|(dx) < ∞
+
+Box: (0, 1)d
+(0,1)d
+
+Example 2.3
+
+Example 2.2
+
+Example 2.1
+
+References
+
+(R2 − |x|) (|x| − R1 ) |ν|(dx) < ∞
+
+R1 <|x|<R2
+
+d
+
+(1 − |x|) |ν|(dx) < ∞
+
+x(1 − x) |ν|(dx) < ∞
+
+1 (y) |ν|(dy) < ∞
+
+|x|<1
+
+0
+
+1
+
+U
+
+Annulus in R2 : R1 < |x| < R2
+
+Ball in Rd : |x| < 1
+
+Interval: (0, 1)
+
+Domain U
+
+Table 1 Simplification of Condition (1.14) for specific domains in case of Dirichlet boundary conditions and L =
+
+1512
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1513
+
+and 6.7. In Theorem 1.5, we use these kernel bounds to obtain sharp bounds for the twopoint correlation function. In case of C 1,α -domains with Dirichlet boundary condition,
+we improve the above bounds, in Lemma 7.1 and Proposition 7.2, by including a factor
+which contains 1 (x) 1 (x ) 1 (y) 1 (y ).
+As some applications of our moment bounds, in Theorems 2.5 and 2.8, we establish
+the full intermittency property for sufficiently large λ under the Dirichlet boundary
+condition, and for all λ > 0 under the Neumann boundary condition. This extends
+significantly the results in [24]. We also apply our moment bounds to study the L 2 energy of the solution as a function of the parameter λ. This property has been studied
+in [22] and [29] on (0, L) in the large λ regime, i.e., as λ → ∞, under the Neumann
+boundary condition. In this paper, we study this property in both large and small λ
+regimes and for a general bounded domain with Neumann boundary condition. We
+find that, at a fixed time, when λ > 0 is small, the L 2 -energy of the solution on U has
+the exponential rate exp(Cλ2 ), which is different from the rate exp(Cλ4/(2−β) ) when
+λ is large (see Theorem 2.8 and Corollary 2.10).
+Remark 1.3 Since the domain U is bounded, it is natural to study the SPDE in (1.3)
+or (1.4) under the framework of infinite-dimensional stochastic differential equations
+as in Da Prato and Zabczyk [17]; see also Cerrai [6] and Prévôt and Röckner [37].
+However, in order to obtain sharper pointwise estimates of the probabilistic moments
+with both t > 0 and x ∈ U fixed, and in order to demonstrate how the geometric
+and analytic properties of the boundary ∂U affect the solution especially through the
+initial conditions, we adopt the random field approach in this paper. The random field
+approach was pioneered by Walsh [43] and extended by Dalang [18]; see [19] for a
+comparison of the two approaches.
+Before we state our main results, let us first introduce some notations. Throughout
+the paper, G D and G N denote the Dirichlet and Neumann heat kernel, respectively.
+We use G to denote either G D or G N when we do not need to distinguish the two
+cases. We use · p to denote the L p ()-norm. Moreover, a ∧ b = min{a, b} for any
+a, b ∈ R.
+1.1 Main results
+Our first theorem concerns the existence and uniqueness of random field solution (see
+Definition 3.2 below) and the p-th moment bounds of the solution. For any c > 0, set
+Jc (t, x) :=
+
+2
+1
+−c |x−y|
+t
+e
+|ν|(dy).
+d/2
+U 1∧t
+
+(1.15)
+
+It is clear that Jc (t, x) < ∞ for all t > 0 and x ∈ U if and only if |ν|(U ) < ∞, i.e.,
+|ν| is a finite Borel measure on U . Let μ1 be the smallest positive eigenvalue of the
+operator L with Dirichlet boundary condition on U , and 1 be the corresponding
+eigenfunction such that
+
+L 1 (x) = μ1 1 (x), x ∈ U ,
+(1.16)
+x ∈ ∂U ,
+1 (x) = 0,
+
+123
+
+1514
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+with 1 chosen to be positive and usually normalized
+1 L 2 (U ) = 1; see Sect. 3.3.
+We use the following convention for the constants μ, c, and c in Theorems 1.4, 1.5,
+and 1.7. In case of Dirichlet (resp. Neumann) boundary condition, we set μ = μ1 ,
+c = c1 , c = c2 (resp. μ = 0, c = c3 , c = c4 ) as the constants given by (3.6)
+(resp. (3.7) and (3.8)) in Proposition 3.6 below.
+Theorem 1.4 If U is a bounded Lipschitz domain, the noise Ẇ satisfies Assumption 1.1
+and σ satisfies Assumption 1.2, then there exists a random field solution to (1.3) with
+Dirichlet boundary condition (and (1.4) with Neumann boundary condition, respectively). Moreover:
+(i) If ν has a bounded density, then for all T > 0 and all p ≥ 2,
+sup sup u(t, x) p < ∞.
+
+(1.17)
+
+0<t≤T x∈U
+
+(ii) If ν is a signed Borel measure with |ν|(U ) < ∞, then there exists a positive finite
+constant C such that for all t > 0, x ∈ U and all p ≥ 2,
+
+u(t, x) p ≤ Ce
+
+2
+
+4
+
+4
+2−β
+
+t C pλ2 L 2σ +C p 2−β λ 2−β L σ
+
+
+−μ
+
+Jc (t, x).
+
+(1.18)
+
+In both cases, the solution is unique among all random field solutions such that for
+each T > 0, there exists C T < ∞ such that
+u(t, x) 2 ≤ C T Jc (t, x) for all (t, x) ∈ (0, T ] × U .
+
+(1.19)
+
+Parts (i) and (ii) of Theorem 1.4 are proved in Sects. 4 and 5, respectively.
+The next result is about the upper and lower bounds for the two-point correlation
+of the solution. We need a few more notations: for x ∈ U , denote
+dist(x, ∂U ) := inf {|x − y| : y ∈ ∂U } , Uε := {x ∈ U : dist(x, ∂U ) > ε} , (1.20)
+and accordingly,
+2
+1
+−c |x−y|
+t
+e
+|ν|(dy).
+d/2
+Uε 1 ∧ t
+
+Jc,ε (t, x) :=
+
+(1.21)
+
+Theorem 1.5 (Two-point correlation) Suppose that U is a bounded Lipschitz domain
+and the initial data ν is a finite nonnegative measure on U . Assume that the noise Ẇ
+satisfies Assumption 1.1 and σ satisfies Assumption 1.2. Let u be the solution to (1.3)
+with Dirichlet boundary condition or (1.4) with Neumann boundary condition.
+(i) Assume (1.10) or the nonnegativity of the solution, namely, u(t, x) ≥ 0 a.s. for all
+(t, x) ∈ (0, ∞) × U . Then there exists a positive finite constant C such that for
+all t > 0 and x, x ∈ U ,
+
+
+E u(t, x)u(t, x ) ≤ Ce
+
+123
+
+
+
+4
+
+4
+2−β
+
+2t Cλ2 L 2σ +Cλ 2−β L σ
+
+
+−μ
+
+Jc (t, x)Jc (t, x ).
+
+(1.22)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1515
+
+(ii) Assume (1.9) or (1.10). Then, in case of Dirichlet boundary condition, there exists
+0 < ε0 < 1 such that for all 0 < ε ≤ ε0 , there exists C = C(ε) > 0 with
+limε→0 C(ε) = 0 such that for all t > 0 and x, x ∈ Uε ,
+
+E(u(t, x)u(t, x )) ≥ Ce
+
+4
+
+4
+2−β
+
+2t Cλ2 lσ2 +Cλ 2−β lσ
+
+e−16c
+
+|x−x |2
+t
+
+
+−μ
+
+J12c ,ε (t, x)J12c ,ε (t, x ).
+
+(1.23)
+
+In case of Neumann boundary condition, if the heat kernel lower bound (3.8) below
+holds (which is the case, for example, when U is a smooth, convex domain and
+L = − ; see Proposition 3.6 below), then there exists a constant C > 0 such
+that (1.23) holds with ε = 0 for all t > 0 and x, x ∈ U .
+Theorem 1.5 is proved at the end of Sect. 6.
+Remark 1.6 (Nonnegativity and comparison principle) The condition u ≥ 0 a.s. in
+Theorem 1.5 should be interpreted as u(t, x) ≥ 0 a.s. for all t > 0 and x ∈ U . It is
+generally believed that under condition (1.8), if the initial condition is nonnegative,
+then the solution to the stochastic heat equation (SHE) is nonnegative or even strictly
+positive, which is indeed a consequence of the well-known sample-path comparison
+principle for SHE. In particular, Mueller [31] established the sample-path comparison
+principle for the case of SHE on [0, 1] with Neumann boundary conditions and spacetime white noise. Later, Shiga [41] proved the case of SHE on R with space-time white
+noise. The case of SHE on [0, 1] with Dirichlet boundary conditions was proved by
+Mueller and Nualart [32]. The case of SHE on R with a fractional Laplace, space-time
+white noise, and rough initial conditions was established in [13] and the case of SHE
+on Rd with rough initial data and with a noise that is white in time and homogeneously
+colored in space was proved in [12]. The sample-path comparison principle under the
+settings of the current paper is left as a future project.
+The last set of results focus on the case of C 1,α -domains with the Dirichlet boundary
+condition and some variations. Note that C 1,α -domains are a special case of Lipschitz
+domains. We need to introduce some notations:
+1 (x)
+(t, x) := 1 ∧
+1 ∧ t 1/2
+
+|x−y|2
+
+e−c t
+and Jc∗ (t, x) :=
+(t, y)
+|ν|(dy),
+1 ∧ t d/2
+U
+
+(1.24)
+
+where 1 is the leading eigenfunction. In this case, we are able to improve the previous
+results by giving a new condition (1.25) below, namely 1 ∈ L 1 (U , |ν|), which is
+weaker than the above condition |ν|(U ) < ∞ in Theorem 1.4 for existence and all
+moments of solutions with measure-valued initial data. This new integrability condition indicates the rate of blow-up for the initial data which is allowed near the boundary
+∂U (see Examples 2.1–2.4 and Remark 1.8 below), and hence ν is not necessarily a
+finite measure. Moreover, because
+
+
+= 0 and Jc∗ (t, x) ≤ Jc (t, x),
+(t, x)
+x∈∂U
+
+123
+
+1516
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+the bounds in (1.26), (1.28) and (1.29) below strengthen the previous bounds (1.18),
+(1.22) and (1.23), respectively, especially near the boundary of the domain. Indeed,
+(1) for any t > 0 fixed, when x is close to the boundary of U , the term (t, x) in (1.18)
+and (1.22) plays the dominant role in pushing the moments to zero;
+(2) for any x ∈ U fixed, since (·, ·) ≤ 1, when t → 0, the term Jc∗ (t, x)
+( pt ∗ |ν|)(x) defines the behavior of the moments. Here, pt (x) is the heat kernel
+on Rd and “∗” refers to the spatial convolution; see (1.13).
+Theorem 1.7 Let U be a bounded C 1,α -domain for some α > 0 with the Dirichlet
+boundary condition at ∂U . Assume that the noise Ẇ satisfies Assumption 1.1 and
+σ satisfies Assumption 1.2. If the initial condition ν is any locally finite and signed
+measure that satisfies the following integrability condition
+1 L 1 (U , |ν|) =
+
+1 (y) |ν|(dy) < ∞,
+
+(1.25)
+
+U
+
+where 1 (·) is the leading eigenfunction of the differential operator L on the domain
+U , then we have the following:
+(i) There exists a random field solution to (1.3). The solution has the property that for
+some C < ∞, for all t > 0 and x ∈ U ,
+
+u(t, x) p ≤ Ce
+
+2
+
+4
+
+4
+2−β
+
+t C pλ2 L 2σ +C p 2−β λ 2−β L σ
+
+
+−μ1
+
+∗
+(t, x),
+(t, x)J2c
+1 /3
+
+(1.26)
+
+where μ1 and c1 are the constants in Proposition 3.6 below. Moreover, the solution
+is unique among all random field solutions such that for each T > 0, there exists
+C T < ∞ such that
+u(t, x) 2 ≤ C T (t, x)Jc∗ (t, x) for all (t, x) ∈ (0, T ] × U .
+
+(1.27)
+
+(ii) Assume (1.10) or the nonnegativity of the solution, namely, u(t, x) ≥ 0 a.s. for all
+(t, x) ∈ (0, ∞) × U . Then for all t > 0 and x, x ∈ U ,
+E(u(t, x)u(t, x ))
+
+≤ Ce
+
+4
+2−β
+
+4
+
+2t Cλ2 L 2σ +Cλ 2−β L σ
+
+
+−μ1
+
+∗
+∗
+(t, x)J2c
+(t, x ).
+(t, x)(t, x )J2c
+1 /3
+1 /3
+(1.28)
+
+(iii) Assume (1.9) or (1.10). Then, there exists C̄ > 0 such that for all t > 0 and
+x, x ∈ U ,
+
+
+E(u(t, x)u(t, x )) ≥ C̄e
+
+2t
+
+e−16c2
+
+123
+
+4
+4
+2−β
+C̄λ2 lσ2 +C̄λ 2−β lσ
+−μ1
+
+|x−x |2
+t
+
+
+
+∗
+∗
+(t, x)(t, x )J12c
+(t, x)J12c
+(t, x ).
+2
+2
+
+(1.29)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1517
+
+Remark 1.8 Condition (1.25) holds if and only if
+Jc∗ (t, x) < ∞ for all c > 0, t > 0 and x ∈ U .
+which is the consequence of the following bounds:
+cD 2
+
+((c0 D)−1 ∧ 1)e− t
+≤ Jc∗ (t, x) ≤
+
+1 L 1 (U , |ν|)
+
+1 L 1 (U , |ν|)
+1 ∧ t (d+1)/2
+
+for all t > 0 and x ∈ U ,
+
+(1.30)
+
+where D := sup{|x − y|, x, y ∈ U } and we have used the fact that 1 (·) is bounded
+(see Remark 3.7). The proof of (1.30) is straightforward and is left as an exercise for
+interested readers.
+In fact, Theorem 1.7 can easily be extended for Cartesian products of bounded
+C 1,α -domains to allow some Lipschitz domains; see Example 2.1 below.
+Corollary 1.9 Let U be a bounded domain in the following Cartesian product form:
+U = U1 × U2 × · · · × Um ⊆ Rd , with m ≥ 1, Ui ⊆ Rdi , di ≥ 1, and
+
+m
+
+
+di = d.
+
+i=1
+
+Assume that each Ui is a bounded C 1,αi -domain for some αi > 0. Let Li be a uniformly
+elliptic differential operator on Ui of the form (1.1) satisfying the condition (1.2).
+Consider the SPDE (1.3) with L = L1 + · · · + Lm on U with the Dirichlet boundary
+condition. Suppose σ satisfies Assumption 1.2 and the initial measure ν on U satisfies
+the following integrability condition
+m
+
+U i=1
+
+Ui
+1 (x i )|ν|(dx) < ∞,
+
+(1.31)
+
+Ui
+i
+where U
+1 (x i ) is the eigenfunction corresponding to the leading eigenvalue μi of the
+∗
+Dirichlet operator Li on Ui . Let Jc (t, x) be defined as in (1.24) but with  replaced
+by
+
+∗
+
+ (t, x) :=
+
+m
+
+i=1
+
+
+
+Ui
+(xi )
+1 ∧ 1 1/2
+1∧t
+
+
+.
+
+(1.32)
+
+m
+i
+Then, the statements (i) and (ii) in Theorem 1.7 above hold with μ1 = i=1
+μU
+i ,
+which is the leading eigenvalue of the Dirichlet operator L , and with  defined
+in (1.24) replaced by  ∗ defined above in (1.32).
+Theorem 1.7 and Corollary 1.9 are proved at the end of Sect. 7. Finally, Table 2
+below summarizes the main results of this paper.
+
+123
+
+123
+
+‡ Hold(s) on U for  > 0;
+
+Smooth and convex
+
+† Hold(s) on U ;
+
+∗ Better estimates near ∂U
+
+(1.23): ‡
+
+(1.18) and (1.22): †
+
+(1.26) and (1.28): †, ∗
+
+Lipschitz
+
+C 1,α or their products
+(1.29): †, ∗
+
+Lower bound
+
+Domain
+
+Dirichlet
+Upper bound
+
+(1.18) and (1.22): †
+
+Neumann
+Upper bound
+
+(1.23): †
+
+Lower bound
+
+Table 2 Summary of the main results and the qualitative differences across domains of increasing regularity/conditions (progressing from the first to the third row)
+
+1518
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1519
+
+1.2 Outline of the paper
+The rest of the paper is organized as follows. In Sect. 2, we first give some concrete
+examples and apply our moment bounds to establish the full intermittency of the
+solution and discuss its L 2 -energy. Then in Sect. 3, we give some preliminaries which
+include the definition of the mild solution in Sect. 3.1, the cone condition for the domain
+in Sect. 3.2, and the heat kernel estimates for the Eqs. (1.3) and (1.4) in Sect. 3.3. Then
+in Sects. 4, resp. 5, we derive the moment bounds in case of bounded, resp. rough,
+initial conditions, and prove the two cases in Theorem 1.4. The two-point correlation
+function is studied in Sect. 6, where Theorem 1.5 is proved. The case of bounded
+C 1,α -domains with Dirichlet condition is studied in Sect. 7, at the end of which we
+prove Theorem 1.7 and Corollary 1.9.
+
+2 Examples and applications
+In this Section, we give some examples of our main results and apply our moment
+bounds to study the intermittency property and the L 2 -energy of the solutions.
+2.1 Rough initial conditions under Dirichlet boundary condition
+In this part, we give a few examples to illustrate Theorem 1.7 and Corollary 1.9.
+Example 2.1 (Interval for d = 1) Consider the stochastic heat Eq. (1.3) with L =
+−∂ 2 /∂ x 2 on an interval U = (0, L) with Dirichlet boundary condition. This is a
+smooth, and hence C 1,α domain. The first eigenvalue is μ1 = (π/L)2 and the corresponding eigenfunction is 1 (x) = (2/L)1/2 sin(π x/L). In this case, (t, x) defined
+in (1.24) reduces to (see Fig. 2(2.1))
+ (t, x) = 1 ∧
+
+(2/L)1/2 sin (π x/L)
+,
+√
+1∧ t
+
+(2.1)
+
+and condition (1.25) becomes
+L
+
+sin(π x/L) |ν|(dx) < ∞
+
+L
+
+⇐⇒
+
+0
+
+x(L − x) |ν|(dx) < ∞.
+
+(2.2)
+
+0
+
+Due to the dissipative or cooling-down effect of the Dirichlet boundary condition,
+one can inject, at time zero, more heat flow into the domain from the boundary. For
+example, the following nonnegative measures with compact support satisfies (2.2) or
+equivalently (1.25):
+ν(dx) =
+
+1(0,L) (x)
+[sin(π x/L)]
+
+β
+
+dx or ν(dx) =
+
+1(0,L) (x)
+
+[x(L − x)]β
+
+dx, with β < 2.
+
+(2.3)
+
+123
+
+1520
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Fig. 2 Some plots of the function (t, x) in case of d = 1 in Fig. 2.1 with L = 2, x ∈ [0, 2] and t ∈ [0, 3]
+and (t, r ) in case of d ≥ 2 in Fig. 2.2 with d = 4, r ∈ [0, 1] and t ∈ [0, 3]. The normalization constant
+Cd for the plot in Fig. 2.2 is chosen to be the one in (7.8) so that max(t,r )∈(0,∞)×(0,1) (t, r ) = 1
+
+But since examples in (2.3) neither have bounded densities nor are finite measures on
+the domain being considered, both parts of Theorem 1.4 fail to apply for such initial
+conditions.
+
+Example 2.2 (Unit ball in Rd ) Consider the stochastic heat Eq. (1.3) with L = −
+on the unit disk U = B(0, 1) in Rd , d ≥ 2, with Dirichlet boundary condition. The first eigenvalue is μ1 = z 02 , where z 0 is the first positive zero of
+the Bessel function J(d−2)/2 (·), and the corresponding eigenfunction is 1 (x) =
+1
+(2−d)/2 J
+(d−2)/2 (z 0 |x|); see Remark 7.4 below for more details. In this case,
+Cd |x|
+(t, x) defined in (1.24) reduces to (see Fig. 2(2.2) with r = |x|)
+(t, x) = 1 ∧
+
+|x|(2−d)/2 J(d−2)/2 (z 0 |x|)
+.
+√
+Cd 1 ∧ t
+
+(2.4)
+
+Similarly to the previous example, we claim that the following locally finite nonnegative measure on Rd with compact support
+ν(dx) =
+
+1 B(0,1) (x)
+dx,
+β
+|x| 0 (1 − |x|)β1
+
+with β0 < 2 and β1 < 2,
+
+satisfies condition (1.25). Indeed,
+|x|(2−d)/2 J(d−2)/2 (z 0 |x|)
+
+0≤
+
+|x|β0 (1 − |x|)β1
+≤ Cd × C × I ,
+B(0,1)
+
+123
+
+dx = Cd
+0
+
+1 r (2−d)/2 J
+(d−2)/2 (z 0 r )
+dr
+β1
+β0 −1
+
+r
+
+(1 − r )
+
+(2.5)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1521
+
+where
+r (2−d)/2 J(d−2)/2 (z 0 r )
+< ∞ and I :=
+r ∈(0,1)
+1−r
+
+1
+
+C := max
+
+0
+
+dr
+< ∞.
+r β0 −1 (1 − r )β1 −1
+
+Note that the above maximum is finite thanks to Lemma 7.3 below. By the same reason,
+condition (1.25) in this case reduces to
+(1 − |x|) |ν|(dx) < ∞.
+
+(2.6)
+
+B(0,1)
+
+Example 2.3 (Annular domain in R2 ) Consider the stochastic heat Eq. (1.3) with L =
+− on the following annulus with Dirichlet boundary condition.1 :
+
+
+U = x ∈ R2 : R1 < |x| < R2 , 0 < R1 < R2 < +∞.
+Note that U is a nonconvex, but smooth, bounded domain. The leading eigenvalue is
+μ1 = z 02 , where z 0 is the first positive zero of the cross-product Bessel functions
+J0 (R1 z)Y0 (R2 z) − Y0 (R1 z)J0 (R2 z) = 0,
+
+(2.7)
+
+where J0 (·) and Y0 (·) are the Bessel functions of the first and second kind of order
+zero, respectively. The corresponding eigenfunction is
+1 (x) = C Z (|x|)
+
+with Z (r ) := J0 (R1 z 0 )Y0 (r z 0 ) − Y0 (R1 z 0 )J0 (r z 0 );
+
+see Fig. 3(3.1) for a plot of
+that
+ν(dx) =
+
+(2.8)
+
+1 (x). Similarly to the previous example (2.2), we claim
+
+|x|β0 1U (x)
+(R2 − |x|)β2 (|x| − R1 )β1
+
+dx, with βi < 2, i = 1, 2, and β0 ∈ R,
+(2.9)
+
+satisfies condition (1.25). Indeed,
+0<
+
+1 (x)|x|
+β2
+
+U (R2 − |x|)
+
+β0 dx
+
+(|x| − R1 )β1
+
+= 2π
+
+R2
+
+Z (r )r β0 +1 dr
+
+R1
+
+(R2 − r )β2 (r − R1 )β1
+
+≤ 2π × C × I ,
+
+where
+
+C :=
+
+Z (r )
+< ∞ and I :=
+r ∈(R1 ,R2 ) (R2 − r ) (r − R1 )
+
+r β0 +1 dr
+
+R2
+
+max
+
+R1
+
+β2 −1
+
+(R2 − r )
+
+(r − R1 )β1 −1
+
+< ∞.
+
+1 The explicit form of the fundamental solution can be found, e.g., in [36, Section 4.1.2 on p. 418].
+
+123
+
+1522
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Fig. 3 Some plots of the leading eigenfunction 1 (x) with x ∈ R2 both in case of the annular domain in
+Fig. 3.1 where R1 = 1 and R2 = 3 and of the rectangular domain in Fig. 3.2 where L = 2
+
+Note that the finiteness of the above constant C is due to the fact that R1 and R2 are
+both simple zeros of Z (r ); see Lemma 7.5 below. By the same reason, in this case,
+condition (1.25) can be equivalently written as
+
+R1 <|x|<R2
+
+(R2 − |x|) (|x| − R1 ) |ν|(dx) < ∞.
+
+Example 2.4 (Rectangular domain in Rd with d ≥ 2) Consider the stochastic heat
+Eq. (1.3) with L = − on the rectangular domain U = (0, L)d ⊆ Rd , d ≥ 2
+and L > 0, with Dirichlet boundary condition. Note that for d ≥ 2, U has corners
+and hence, is not a C 1,α –domain, but only a Lipschitz domain. The first eigenvalue is
+μ1 = d × (π/L)2 and the corresponding (normalized) eigenfunction is given by (see
+Fig. 3(3.2) for a plot)
+d/2
+1 (x) = (2/L)
+
+d
+
+
+sin
+
+πx 
+
+i=1
+
+i
+
+L
+
+,
+
+for x = (x1 , . . . , xd ) ∈ (0, L)d .
+
+Similar to Example 2.1, by Corollary 1.9,  ∗ (t, x) defined in (1.32) reduces to
+ ∗ (t, x) =
+
+
+d 
+
+(2/L)1/2 sin (π xi /L)
+,
+1∧
+√
+1∧ t
+i=1
+
+(2.10)
+
+and condition (1.31) becomes
+
+(0,L)d
+
+|ν|(dx)
+
+d
+
+i=1
+
+sin
+
+πx 
+i
+
+L
+
+<∞
+
+⇐⇒
+
+(0,L)d
+
+|ν|(dx)
+
+d
+
+
+(xi (L − xi )) < ∞.
+
+i=1
+
+(2.11)
+Locally finite measures similar to (2.3) can be constructed component-wise.
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1523
+
+Other Lipschitz domains can be considered as an application of Corollary 1.9 as
+well. For example, for the cylinder domain
+
+
+U = (x1 , x2 , x3 ) ∈ R3 : x12 + x22 < 1 and 0 < x3 < 1 ,
+as an easy exercise (which is left for the interested readers), condition (1.31) becomes
+
+R3
+
+
+1 − x12 − x22 x3 (1 − x3 ) |ν|(dx) < ∞.
+
+2.2 Intermittency
+Following [23] and Definition III.1.1 of [5], we say that u is weakly intermittent if, for
+all x ∈ U ,
+1
+log E(|u(t, x)|2 ) > 0 and
+t→∞ t
+1
+lim sup log E(|u(t, x)| p ) < ∞ for all p ≥ 2,
+t→∞ t
+lim sup
+
+(2.12)
+(2.13)
+
+and u is fully intermittent (or simply intermittent) if (2.12) can be strengthened to
+lim inf
+t→∞
+
+1
+log E(|u(t, x)|2 ) > 0.
+t
+
+(2.14)
+
+The following two theorems extend the corresponding results in [24] and [33].
+Recall that μ1 is the first eigenvalue of the operator L with Dirichlet boundary
+condition. Also, recall the definitions of Jc (t, x) and Jc,ε (t, x) in (1.15) and (1.21),
+respectively. The following theorem provides moment bounds for the solution and
+shows that full intermittency occurs when λ is sufficiently large, but not when λ is
+small.
+Theorem 2.5 Let U ⊂ Rd be a bounded Lipschitz domain. Let u be the solution
+to (1.3) with Dirichlet boundary condition. Suppose (1.8) holds. Suppose ν ≥ 0 and
+ν(U ) < ∞. Then, there exist positive finite constants C, c and c such that for all
+p ≥ 2, λ > 0, t > 0, x ∈ U ,
+
+
+4
+2
+4
+2 L 2 +c p 2−β λ 2−β L 2−β −μ
+
+pt
+cpλ
+1
+σ
+σ
+p
+E(|u(t, x)| p ) ≤ C p Jc1 (t, x) e
+.
+
+(2.15)
+
+Moreover, if (1.10) or (1.9) holds, then there exists 0 < ε0 < 1 such that for all
+c depending on ε such that
+0 < ε ≤ ε0 , there exist positive finite constants C, c and 
+for all p ≥ 2, λ > 0, t > 0, x ∈ Uε ,
+E(|u(t, x)| ) ≥ C
+p
+
+p
+
+
+
+4
+4
+ p pt cλ2 lσ2 +cλ 2−β lσ2−β −μ1
+J12c2 ,ε (t, x) e
+.
+
+(2.16)
+
+123
+
+1524
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Consequently, if 0 < ν(Uε ) ≤ ν(U ) < ∞, then there exist 0 < λ0 < λ1 < ∞ such
+that u is fully intermittent on Uε when λ > λ1 , but not when λ < λ0 as
+lim sup
+t→∞
+
+1
+log E(|u(t, x)|2 ) < 0,
+t
+
+where
+
+
+4
+2
+4
+λ0 := sup λ > 0 : 2cλ2 L 2σ + 2 2−β c λ 2−β L σ2−β ≤ μ1 ,
+
+
+4
+4
+λ1 = λ1 (ε) := inf λ > 0 : cλ2 lσ2 + 
+cλ 2−β lσ2−β ≥ μ1 .
+Proof The upper bound (2.15) follows from Theorem 1.4. The lower bound follows
+from Theorem 1.5 and Jensen’s inequality E(|u(t, x)| p ) ≥ E(|u(t, x)|2 ) p/2 .
+It remains to prove the last statement of full intermittency. First, since ν(U ) < ∞,
+
+p
+1
+p
+log Jc1 (t, x) ≤ lim sup
+− log(1 ∧ t d/2 ) + log ν(U ) = 0.
+t
+t→∞ t
+
+lim sup
+t→∞
+
+Then, (2.15) implies that for all x ∈ U and λ > 0,
+
+
+4
+2
+4
+1
+log E(|u(t, x)| p ) ≤ p cpλ2 L 2σ + c p 2−β λ 2−β L σ2−β − μ1 ,
+t
+
+lim sup
+t→∞
+
+(2.17)
+
+which proves (2.13). Moreover, ν(Uε ) > 0 implies log ν(Uε ) > −∞, hence
+2
+1
+log J12c2 ,ε (t, x)
+t
+
+
+2
+− log(1 ∧ t d/2 ) − 4c2 sup |x − y|2 + log ν(Uε ) = 0.
+≥ lim inf
+t→∞ t
+x,y∈U
+
+lim inf
+t→∞
+
+If λ > λ1 , then it follows from (2.16) that for all x ∈ Uε ,
+
+
+4
+4
+1
+log E(|u(t, x)|2 ) ≥ 2 cλ2 lσ2 + 
+cλ 2−β lσ2−β − μ1 > 0,
+t→∞ t
+
+lim inf
+
+which proves (2.14). Hence, u is fully intermittent on Uε . On the other hand, by (2.17),
+lim sup
+t→∞
+
+1
+log E(|u(t, x)|2 )
+t
+
+
+
+4
+2
+4
+≤ 2 2cλ2 L 2σ + 2 2−β c λ 2−β L σ2−β − μ1 < 0, when λ < λ0 ,
+
+which completes the proof of Theorem 2.5.
+Similarly, we get the following result from Theorem 1.7 for C 1,α -domains.
+
+123
+
+
+
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1525
+
+Theorem 2.6 Let U ⊂ Rd be a bounded C 1,α -domain, where α > 0. Let u be the
+solution to (1.3) with Dirichlet boundary condition. Suppose (1.8) holds. Suppose
+ν ≥ 0 and 1 ∈ L 1 (U , ν). Then, there exist positive finite constants C, c and c such
+that for all p ≥ 2, λ > 0, t > 0, x ∈ U ,
+
+
+4
+2
+4
+2 L 2 +c p 2−β λ 2−β L 2−β −μ
+
+pt
+cpλ
+1
+σ
+σ
+p
+∗
+E(|u(t, x)| p ) ≤ C p  p (t, x) J2c
+(t, x) e
+.
+1 /3
+(2.18)
+c
+Moreover, if (1.10) or (1.9) holds, then there exist positive finite constants C, c and 
+such that for all p ≥ 2, λ > 0, t > 0, x ∈ U ,
+
+
+p
+
+E(|u(t, x)| ) ≥ C 
+p
+
+p
+
+4
+
+4
+2−β
+
+ p pt cλ2 lσ2 +cλ 2−β lσ
+∗
+(t, x) J12c
+(t, x) e
+2
+
+
+−μ1
+
+.
+
+(2.19)
+
+Consequently, if 0 <
+1 L 1 (U , ν) < ∞, then there exist 0 < λ0 < λ1 < ∞ such that
+u is fully intermittent on U when λ > λ1 , but not when λ < λ0 , where
+
+
+4
+2
+4
+λ0 := sup λ > 0 : 2cλ2 L 2σ + 2 2−β c λ 2−β L σ2−β ≤ μ1 ,
+
+
+4
+4
+λ1 := inf λ > 0 : cλ2 lσ2 + 
+cλ 2−β lσ2−β ≥ μ1 .
+As in [24, 26, 33], it is not clear whether the solution is intermittent if λ ∈ [λ0 , λ1 ]
+in Theorems 2.5 and 2.6 above. Instead, we propose the following conjecture for future
+investigation.
+Conjecture 2.7 Under the settings of either Theorem 2.5 or Theorem 2.6, there exists
+λ∗ ∈ [λ0 , λ1 ] such that when λ > λ∗ , the solution u(t, x) to (1.3) is fully intermittent;
+when λ < λ∗ , the solution has all p-th moments ( p ≥ 2) bounded in time and is not
+fully intermittent.
+Theorem 2.8 Let U ⊂ Rd be a convex bounded Lipschitz domain. Let u be the solution
+to (1.4) with Neumann boundary condition. Suppose (1.8) holds. Suppose ν ≥ 0 and
+ν(U ) < ∞. Then, there exist positive finite constants C, c and c such that for all
+p ≥ 2, λ > 0, t > 0, x ∈ U ,
+
+4 
+2
+4
+2 L 2 +c p 2−β λ 2−β L 2−β
+
+pt
+cpλ
+σ
+σ
+p
+.
+E(|u(t, x)| p ) ≤ C p Jc3 (t, x) e
+
+(2.20)
+
+c
+Moreover, if (1.10) or (1.9) holds, then there exist positive finite constants C, c and 
+such that for all p ≥ 2, λ > 0, t > 0, x ∈ U ,
+E(|u(t, x)| p ) ≥ C
+
+p
+
+
+4 
+4
+ p pt cλ2 lσ2 +cλ 2−β lσ2−β
+J12c4 (t, x) e
+.
+
+(2.21)
+
+Consequently, if 0 < ν(U ) < ∞, then u is fully intermittent on U for all λ > 0.
+
+123
+
+1526
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Proof The proof of (2.20) and (2.21) is similar to that of Theorem 2.5. Finally, (2.20)
+and (2.21) imply that
+lim inf
+t→∞
+
+
+4 
+4
+1
+log E(|u(t, x)|2 ) ≥ 2 cλ2 lσ2 + 
+cλ 2−β lσ2−β > 0
+t
+
+and
+lim sup
+t→∞
+
+
+4 
+2
+4
+1
+log E(|u(t, x)| p ) ≤ p cpλ2 L 2σ + c p 2−β λ 2−β L σ2−β < ∞
+t
+
+for all p ≥ 2 and all λ > 0. Hence, u is fully intermittent for all λ > 0.
+
+
+
+
+2.3 L2 (U)-energy of solution
+Following [24, 29, 30], the L 2 -energy of the solution u at time t > 0 is defined as
+
+Et (λ) = E
+
+1/2
+|u(t, x)| dx
+2
+
+,
+
+U
+
+and the excitation index (at infinity) is defined as
+lim
+
+λ→∞
+
+log log Et (λ)
+log λ
+
+provided the limit exists. Note that, for ε ≥ 0,
+Vol(Uε ) × inf E(|u(t, x)|2 ) ≤ Et2 (λ) ≤ Vol(U ) × sup E(|u(t, x)|2 ).
+x∈Uε
+
+x∈U
+
+As a result of Theorems 2.5 and 2.8, we see that the solution is intermittent for λ
+large under Dirichlet or Neumann boundary condition, and the energy of the solution
+behaves like
+Et (λ) ∼ CeCtλ
+
+4
+2−β
+
+for λ large.
+
+Under Neumann boundary condition, the solution remains intermittent even when
+λ > 0 is small. However, in this case, the energy of the solution has a different
+exponential rate in λ than the one above, namely,
+2
+
+Et (λ) ∼ CeCtλ
+
+for λ > 0 small.
+
+In other words, the excitation index “at zero” is different. We obtain the following
+corollaries:
+Corollary 2.9 Let u be the solution of (1.3) with Dirichlet boundary condition.
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1527
+
+(1) If the conditions of Theorem 2.5 hold, then for all t > 0,
+lim
+
+λ→∞
+
+log log Et (λ)
+4
+=
+.
+log λ
+2−β
+
+(2) Moreover, if the conditions of Theorem 2.6 hold, then for all t > 0,
+Et∗ (λ) :=
+
+
+E
+
+dx
+|u(t, x)|
+| 1 (x)|2
+U
+
+1/2
+
+2
+
+<∞
+
+and
+4
+log log Et∗ (λ)
+=
+.
+λ→∞
+log λ
+2−β
+lim
+
+Note that Et (λ) ≤ CEt∗ (λ) for some constant C.
+Corollary 2.10 Let u be the solution of (1.4) with Neumann boundary condition and
+the conditions in Theorem 2.8 hold. Then for any t > 0,
+lim
+
+λ→∞
+
+4
+log log Et (λ)
+=
+and
+log λ
+2−β
+
+lim
+
+λ→0+
+
+log log Et (λ)
+= 2.
+log λ
+
+3 Preliminaries
+3.1 Mild solutions
+Let Ẇ be a centered and spatially homogeneous Gaussian noise that is white in time
+defined on a complete probability space (, F , P) with covariance given in (1.5).
+Remark 3.1 Let f be any spatially homogeneous correlation correlation function on
+Rd ; see (1.5). When restricted on the domain {x − y : x, y ∈ U }, f (·) is still a nonnegative definite function. Indeed, for any test function φ defined on U ,
+
+U2
+
+=
+
+φ(x) f (x − y)φ(y)dxdy
+R2d
+
+(φ(x)1U (x)) f (x − y) (φ(y)1U (y)) dxdy ≥ 0.
+
+Let B(U ) denote the Borel σ -algebra on U ⊆ Rd . Let {Wt (A); t ≥ 0, A ∈ B(U )}
+be the martingale measure associated to the noise Ẇ in the sense of Walsh [43]. Let
+{Ft , t ≥ 0} be the underlying filtration generated by W and augmented by the σ -field
+N generated by all P-null sets in F, namely,
+Ft = σ {Ws (A) : 0 ≤ s ≤ t, A ∈ B(U )} ∨ N .
+
+123
+
+1528
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Definition 3.2 A process u = {u(t, x); t > 0, x ∈ U } is called a random field solution
+to (1.3) (or (1.4), respectively) if:
+(i) u is adapted, i.e., for each t > 0 and x ∈ U , u(t, x) is Ft -measurable;
+(ii) u is jointly measurable with respect to B((0, ∞) × U ) × F ;
+(iii) for each t > 0 and x ∈ U ,
+
+E
+
+t
+
+dy dy G(t − s, x, y)σ (s, y, u(s, y)) f (y − y )
+
+G(t − s, x, y )σ (s, y , u(s, y )) < ∞;
+ds
+
+U2
+
+0
+
+(3.1)
+
+(iv) u satisfies
+t
+
+u(t, x) = J (t, x)+λ
+0
+
+G(t −s, x, y)σ (s, y, u(s, y))W (ds, dy) a.s. (3.2)
+U
+
+for each t > 0 and x ∈ U , where G = G D (or G = G N , respectively), and J (t, x)
+is the solution to the homogeneous equation, namely,
+J (t, x) :=
+
+G(t, x, y)ν(dy).
+
+(3.3)
+
+U
+
+Note that in (iii) above, the condition (3.1) ensures that the Walsh stochastic integral
+t
+0
+
+G(t − s, x, y)σ (s, y, u(s, y))W (ds, dy)
+U
+
+is well-defined and the square of its ·
+
+2 -norm is equal to the expression in (3.1).
+
+3.2 Regularities and geometric properties of the domain
+The definition of the Lipschitz domain is standard; see e.g. Section 1.2.1 of [25].
+Definition 3.3 A bounded domain U ⊂ Rd is called a Lipschitz domain if there exist
+positive constants K U and r0 such that for every q ∈ ∂U , there exist a Lipschitz
+function Fq : Rd−1 → R satisfying |Fq (x) − Fq (x)| ≤ K U |x − x| for all x, x ∈
+Rd−1 and an orthonormal coordinate system with origin q such that if z = (x, y),
+x ∈ Rd−1 , y ∈ R, in this coordinate system, then
+
+
+U ∩ B(q, r0 ) = B(q, r0 ) ∩ z = (x, y) : y > Fq (x)
+and
+
+
+∂U ∩ B(q, r0 ) = B(q, r0 ) ∩ z = (x, y) : y = Fq (x) ,
+where B(q, r0 ) is the open ball centered at q of radius r0 . We call K U the Lipschitz
+constant of U and r0 the localization radius of U .
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1529
+
+U
+δ
+x
+
+y
+
+ξx
+C (y, ξx , δ)
+
+Fig. 4 Illustration for the δ-cone property in Definition 3.4
+
+Definition 3.4 (Definition 2.4.1 of [27]) For δ > 0, we say that U has the δ-cone
+property if, for every x ∈ ∂U , there exists a unit vector ξx ∈ Rd such that for all
+y ∈ U ∩ B(x, δ), we have C (y, ξx , δ) ⊂ U , where C (y, ξ, δ) is the δ-cone defined
+by
+
+
+C (y, ξ, δ) := z ∈ Rd : 0 < |z − y| < δ and (z − y) · ξ ≥ |z − y| cos(δ) . (3.4)
+See Fig. 4 for an illustration.
+It is clear that if U has the δ-cone property, then it also has the δ -cone property for
+0 < δ ≤ δ. It is known that for a bounded domain U ⊂ Rd , it is a Lipschitz domain if
+and only if it has the δ-cone property for some δ > 0; see, e.g., [27, Theorem 2.4.7] or
+[25, Theorem 1.2.2.2]. In particular, according to the above definitions, one can easily
+see that if U is a Lipschitz domain, then it satisfies the δ-cone condition with
+δ = arctan(1/K U ) ∧ r0 .
+
+(3.5)
+
+The δ-cone property gives us a convenient way to handle the Lipschitz domain.
+Example 3.5 Any C 1,α -domain with α > 0 is a Lipschitz domain; see, e.g., [35].
+The unit ball in Rd is a smooth domain and also a C 1,α -domain. U = (−1, 1)d is a
+Lipschitz domain but not a C 1,α -domain for any α > 0. Domains with cusps are not
+Lipschitz domain; see Fig. 1(1.5).
+3.3 Heat kernel estimates
+Recall that L is the operator defined in divergence form (1.1) satisfying the uniformly
+elliptic condition (1.2). It is known that the operator L with Dirichlet boundary
+condition on U has a discrete spectrum with a sequence of positive eigenvalues 0 <
+μ1 ≤ μ2 ≤ . . . such that the first eigenvalue μ1 is simple and its eigenfunction 1 can
+be chosen to be positive and
+1 L 2 (U ) = 1; see, e.g., [20]. Moreover, we have the
+following heat kernel estimates under Dirichlet and Neumann boundary conditions.
+Proposition 3.6 Let U ⊂ Rd be a bounded Lipschitz domain. Then the following
+estimates hold.
+
+123
+
+1530
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+(i) Dirichlet heat kernel estimates: There exist positive finite constants c1 , c2 , C1 , C2
+and 0 < a2 ≤ 1 ≤ a1 such that for all t > 0 and x, y ∈ U ,
+
+C2 1 ∧
+
+1 (x)
+1 ∧ t a2 /2
+
+
+1∧
+
+1 (y)
+1 ∧ t a2 /2
+
+
+
+e−μ1 t −c2 |x−y|2
+t
+e
+1 ∧ t d/2
+
+≤ G D (t, x, y)
+
+
+ −μ1 t
+2
+e
+1 (x)
+1 (y)
+−c1 |x−y|
+t
+1
+∧
+e
+.
+≤ C1 1 ∧
+1 ∧ t a1 /2
+1 ∧ t a1 /2 1 ∧ t d/2
+
+(3.6)
+
+Moreover, if U is a bounded C 1,α -domain with α > 0, then (3.6) holds with
+a1 = a2 = 1.
+(ii) Neumann heat kernel estimates: there exist positive finite constants c3 and C3 such
+that for all t > 0 and x, y ∈ U ,
+G N (t, x, y) ≤ C3
+
+2
+1
+−c3 |x−y|
+t
+e
+.
+1 ∧ t d/2
+
+(3.7)
+
+In addition, if U is a smooth convex domain and L = − , then there exist positive
+finite constants c4 and C4 such that for all t > 0 and x, y ∈ U ,
+G N (t, x, y) ≥ C4
+
+2
+1
+−c4 |x−y|
+t
+e
+.
+1 ∧ t d/2
+
+(3.8)
+
+Proof The Dirichlet case is proved in [38] (see Theorem 2.1 and Remark 1 on p.123).
+For the Neumann case, the upper bound in (3.7) can be found in Theorem 3.2.9 of [20],
+where we note that the extension property referred in that theorem (ibid.) is satisfied
+by the Lipschitz domain (see either Proposition 1.7.9 of [20] or Theorem 1.4.3.1 of
+[25]). The lower bound in (3.8) follows from [40, Theorem 3.1 and Examples 3.3];
+see also [39].
+
+
+Remark 3.7 In the Dirichlet boundary condition case, by [38, (1.2)], there exists a
+finite constant c0 > 1 such that for all z ∈ U ,
+c0−1 [dist(z, ∂U )]a1 ≤
+
+a2
+1 (z) ≤ c0 [dist(z, ∂U )] ,
+
+(3.9)
+
+where a1 and a2 are constants from part (i) of Proposition 3.6.
+Remark 3.8 In general, Theorem 3.1 of [40] states that the following conditions are
+equivalent:
+• The two-sided bound (3.7) and (3.8) holds for the Neumann heat kernel on U , that
+is, for all t > 0 and x, y ∈ U ,
+C4
+
+2
+2
+1
+1
+−c4 |x−y|
+−c3 |x−y|
+t
+t
+e
+≤
+G
+(t,
+x,
+y)
+≤
+C
+e
+;
+N
+3
+1 ∧ t d/2
+1 ∧ t d/2
+
+• The parabolic Harnack inequality holds;
+
+123
+
+(3.10)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1531
+
+• The domain U has the volume doubling property and the Poincaré inequality holds.
+The results of the present paper under the Neumann boundary condition, especially
+the lower bound results, remain valid for U satisfying any one of the above equivalent
+conditions.
+In the rest of the paper, the lower case constants c1 , c2 , c3 , c4 are reserved for the
+constants given by Proposition 3.6 above.
+Before the end of this subsection, we prove that the Lipschitz domain U satisfies the
+lower bound in (3.11) below. The following lemma may well be buried in the literature.
+Since its proof is short, it will be given below. Let Vol(A) denote the volume (or ddimensional Lebesgue measure) of any measurable set A in Rd .
+Lemma 3.9 Suppose that U is a bounded Lipschitz domain in Rd . Then, there exists
+positive finite constants C and C such that for all y ∈ U and r > 0,
+C(1 ∧ r )d ≤ Vol(U ∩ B(y, r )) ≤ C (1 ∧ r )d .
+
+(3.11)
+
+Proof The upper bound is trivial since Vol(U ∩ B(y, r )) ≤ Vol(U )∧Vol(B(y, r )). We
+only need to prove the lower bound. It is known that the Lipschitz domain U satisfies
+the δ-cone property with δ given in (3.5).
+We first consider the case of 0 < r < δ. If dist(y, ∂U ) > r , then B(y, r ) ⊂ U and
+Vol(U ∩ B(y, r )) = Vol(B(y, r )) = Vd r d ≥ Vd (1 ∧ r )d ,
+where Vd = π d/2 / (d/2 + 1). If dist(y, ∂U ) ≤ r , then y ∈ B(x, δ) for some
+x ∈ ∂U , and by the δ-cone property, we can find a unit vector ξ = ξx ∈ Rd such that
+C (y, ξ, δ) ⊂ U . It follows that
+Vol(U ∩ B(y, r )) ≥ Vol(C (y, ξ, δ) ∩ B(y, r ))
+= Vol{z ∈ Rd : 0 < |z − y| < r and (z − y) · ξ ≥ |z − y| cos δ}
+= Cd,δ Vd r d ,
+where Cδ,d ∈ (0, 1]. Therefore, when r ∈ (0, δ), Vol(U ∩ B(y, r )) ≥ Cd,δ Vd (1 ∧ r )d .
+Finally, the case of r ≥ δ follows from the previous case because
+Vol(U ∩ B(y, r )) ≥ Vol(U ∩ B(y, δ)) ≥ Cd,δ Vd δ d ≥ Cd,δ Vd δ d (1 ∧ r )d .
+This implies the desired lower bound with C = Cd,δ Vd (1 ∧ δ)d .
+
+
+
+
+Next, we need to replace U in (3.11) above by a subset of U with some specific
+properties. Take 0 < ε1 < 1 such that Uε1 = ∅ (see (1.20)) and let
+ε0 = ε1 ∧ (δ/2).
+
+(3.12)
+
+m
+By the compactness of U , find and fix a finite collection of open balls {B(yi , ε0 )}i=1
+m
+with centers y1 , . . . , ym ∈ ∂U such that i=1 B(yi , ε0 ) ⊃ U \Uε0 /2 . Then, for any
+x ∈ U , we have one of the following cases:
+
+123
+
+1532
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+ε0 yi
+
+x
+
+V (x)
+ξyi
+
+x
+
+V (x)
+
+ε0/2
+
+U
+Uε
+Uε0/2
+Fig. 5 Illustration for the two cases of V (x) in (3.13)
+
+m
+(1) If x ∈ i=1
+B(yi , ε0 ), choose the smallest i such that B(yi , ε0 )  x. Then, by the
+δ-cone property of U , we have C (x, ξ yi , ε0 /2) ⊂ U .
+m
+(2) If x ∈
+/ i=1
+B(yi , ε0 ), then dist(x, ∂U ) > ε0 /2 and thus B(x, ε0 /2) ⊂ U .
+Accordingly, we define (see Fig. 5 for an illustration)
+
+V (x) =
+
+C (x, ξ yi , ε0 /2) in case (1),
+B(x, ε0 /2)
+in case (2).
+
+(3.13)
+
+The next lemma will be used later together with the heat kernel estimates to derive
+the lower bounds in Lemmas 5.1 and 5.2 below.
+Lemma 3.10 Let U ⊂ Rd be a bounded Lipschitz domain with the δ-cone property.
+Let ε0 ∈ (0, 1) and V (x) ⊂ U , for x ∈ U , be defined by (3.12) and (3.13) above.
+Then, for each ε ∈ (0, ε0 ] there exists cε > 0 with limε→0 cε = 0 such that for all
+x ∈ Uε , we have
+d(z) := dist(z, ∂U ) ≥ cε for all z ∈ V (x)
+
+(3.14)
+
+Vol(V (x) ∩ B(x, r )) ≥ C(1 ∧ r )d for all r > 0,
+
+(3.15)
+
+and
+
+where C > 0 is a constant depending on d and ε0 .
+Proof Let ε ∈ (0, ε0 ]. We first prove (3.14). On the one hand, for each i and x ∈
+Uε ∩ B(yi , ε0 /2), by the δ-cone property of U , we have C (x, ξ yi , ε0 /2) ⊂ U , which
+implies that
+
+
+
+
+dist C (x, ξ yi , ε0 /2), ∂U := inf |z − y| : z ∈ C (x, ξ yi , ε0 /2), y ∈ ∂U > 0.
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1533
+
+Since the function x → dist(C (x, ξ yi , ε0 /2), ∂U ) is continuous on the compact set
+Uε ∩ B(yi , ε0 /2), we can find cε,i > 0 such that dist(C (x, ξ yi , ε0 /2), ∂U ) ≥ cε,i for
+all x ∈ Uε ∩ B(yi , ε0 /2).
+m
+On the other hand, for x ∈ Uε \ i=1
+B(yi , ε0 /2), we have B(x, ε0 /2) ⊂ U , and
+hence
+dist(B(x, ε0 /2), ∂U ) > 0.
+Then,
+mby the continuity of x → dist(B(x, ε0 /2), ∂U ) and the compactness of
+Uε \ i=1
+B(yi ,
+ε0 /2), we can find cε,0 > 0 such that dist(B(x, ε0 /2), ∂U ) ≥ cε,0
+m
+for all x ∈ Uε \ i=1
+B(yi , ε0 /2).
+Therefore, by taking cε = min{cε,i : 0 ≤ i ≤ m}, we get that dist(V (x), ∂U ) ≥ cε .
+Also, note that for 1 ≤ i ≤ m, we have 0 < cε,i ≤ ε, so cε → 0 as ε → 0. This
+proves (3.14).
+As for (3.15), if V (x) = C (x, ξ yi , ε0 /2) in case (1) of (3.13), then
+Vol(V (x) ∩ B(x, r )) = Vol(C (x, ξ yi , ε0 /2) ∩ B(x, r ))
+= Vol{z ∈ Rd : 0 ≤ |z − x| < (ε0 /2) ∧ r and (z − x)
+· ξ yi ≥ |z − x| cos(ε0 /2)}
+= Cd,ε0 ((ε0 /2) ∧ r )d ≥ Cd,ε0 (ε0 /2)d (1 ∧ r )d .
+If V (x) = B(x, ε0 /2) in case (2) of (3.13), then
+Vol(V (x) ∩ B(x, r )) = Vol(B(x, (ε0 /2) ∧ r )) = Cd ((ε0 /2) ∧ r )d
+≥ Cd (ε0 /2)d (1 ∧ r )d .
+This shows (3.15) and completes the proof of Lemma 3.10.
+
+
+
+
+4 Bounded initial condition case
+In this section, we give some computations to show how the noise interacts with the
+differential operator. Let us first give a general definition, which is not only restricted
+to the heat equation.
+Definition 4.1 Let U be a general domain in Rd and let G(t, x, y) be the fundamental
+solution to the corresponding partial differential equation. Let f be a nonnegative,
+nonnegative definite function. Let h U
+0 (t) be a locally integrable function defined on
+R+ := [0, ∞). Define formally the following functions:
+K λU (t) :=
+
+∞
+
+
+λ2n h U
+n (t)
+
+(4.1a)
+
+n=0
+
+123
+
+1534
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+where
+
+
+U
+U
+hU
+(t)
+:=
+k
+∗
+h
+n
+n−1 (t) for n ≥ 1 and,
+
+(4.1b)
+
+k U (t) := sup
+
+(4.1c)
+
+x,x ∈U
+
+U2
+
+G(t, x, y)G(t, x , y ) f (y − y ) dy dy .
+
+These functions depend on the fundamental solution G. When it is clear from the
+context, the superscript U will be omitted.
+In the above, “∗" is the standard convolution in the time variable:
+t
+
+h ∗ k(t) =
+
+h(t − s)k(s)ds.
+
+0
+
+For n ≥ 1, we will also denote by k ∗n the n-th convolution power of k, i.e., k ∗1 = k
+and
+t
+
+k ∗(n+1) (t) =
+
+k ∗n (t − s)k(s)ds.
+
+0
+
+Remark 4.2 In [14] and [12], the kernel function k(t) is defined as
+k(t) =
+
+Rd
+
+f (z)G(t, z)dz,
+
+where G(t, x) is the heat kernel on Rd . This is consistent to (4.1c) (up to a factor of
+2):
+k R (t) = sup
+d
+
+x,x ∈Rd
+
+= sup
+
+x,x ∈Rd
+
+= sup
+
+x,x ∈Rd
+
+R2d
+
+R2d
+
+Rd
+
+G(t, x − y)G(t, x − y ) f (y − y )dydy
+G(t, x − y)G(t, x − y + z) f (z)dzdy
+
+G(2t, x − x − z) f (z)dz =
+
+Rd
+
+G(2t, z) f (z)dz.
+
+The following two lemmas provide estimates for k U (t) in the case of the Dirichlet
+and Neumann heat kernel, respectively. In particular, for the case of L = − , our
+lower and upper bounds generalize (3.3) and (3.5) of [33] from U being an open ball
+to more general domains.
+Lemma 4.3 If U is a bounded Lipschitz domain, then we have the following integral
+estimates for the Dirichlet heat kernel:
+(i) There exists a positive finite constant C such that for all t > 0, for all x, x ∈ U ,
+
+U ×U
+
+123
+
+G D (t, x, y)G D (t, x , y ) f (y − y ) dy dy ≤ Ce−2μ1 t (1 ∧ t)−β/2 . (4.2)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1535
+
+(ii) There exists 0 < ε0 < 1 such that for any 0 < ε ≤ ε0 , there exists a positive
+finite
+√
+constant Cε such that for all t > 0, for all x, x ∈ Uε with |x − x | ≤ t,
+G D (t, x, y)G D (t, x , y ) f (y − y ) dy dy ≥ Cε e−2μ1 t (1∧t)−β/2 . (4.3)
+
+U ×U
+
+Proof
+(i) Let I be the left-hand side of (4.2), By (1.6) and the upper bound in (3.6),
+I ≤ Ce
++
+
+−2μ1 t
+
+
+U2
+
+1
+U2 t
+
+d/2
+
+e
+
+|y − y |−β dy dy 1{t≥1}
+
+−c1 |x−y|
+t
+
+2
+
+1
+t d/2
+
+e
+
+|
+−c1 |x −y
+t
+
+2
+
+|y − y |
+
+−β
+
+
+dy dy 1{t<1} .
+
+The first integral is a finite constant since β < d. For the second integral, we can
+enlarge the domain of integration to Rd × Rd and use the Plancherel theorem to
+get the upper bound
+C
+
+Rd
+
+e−i(x−x )·ξ e
+
+− c2 t|ξ |2
+1
+
+|ξ |β−d dξ ≤ C
+
+Rd
+
+e
+
+− c2 t|ξ |2
+1
+
+|ξ |β−d dξ = C t −β/2 .
+
+The last equality can be obtained by scaling. This proves the upper bound (4.2).
+(ii) We now turn to the proof
+√ of the lower bound (4.3). Let t > 0 and x, x ∈ Uε be
+such that |x − x | ≤ t. By (1.6), we have
+I ≥ Ce−2μ1 t
++
+
+
+
+U ×U
+
+G D (t, x, y)G D (t, x , y )|y − y |−β dy dy 1{t≥1}
+Uε ×Uε
+
+−β
+G D (t, x, y)G D (t, x , y )|y − y | dy dy 1{t<1} .
+(4.4)
+
+We estimate the two integrals separately. Since U is bounded, sup y,y ∈U |y − y | ≤
+M < ∞. By the lower bounds in (3.6) and (3.9), the first integral in (4.4) is bounded
+below by
+C22 (1 ∧ (c0−1 εa1 ))4 e−2c2 M M −β Vol(Uε ) 1{t≥1} = Cε 1{t≥1} .
+2
+
+2
+
+By the lower bound in (3.6), the second integral in (4.4) is bounded below by
+
+V (x)×V (x )
+
+C22 (1 ∧
+
+1 (x))(1 ∧
+
+1 (y))(1 ∧
+
+1 (x ))(1 ∧
+
+1 (y ))
+
+1
+× d e−2c2 1{|x−y|≤√t, |x −y |≤√t} |y − y |−β dy dy 1{t<1} .
+t
+
+(4.5)
+
+123
+
+1536
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+√
+√
+√
+√
+Since |x − x | ≤ t, we have |y − y | ≤ 3 t on the set {|x − y| ≤ t, |x − y | ≤ t}.
+By (3.9) and Lemma 3.10, for 0 < ε ≤ ε0 , (4.5) is bounded below by
+√
+C22 (1 ∧ (c0−1 εa1 ))2 (1 ∧ (c0−1 cεa1 ))2 t −d e−2c2 (3 t)−β
+√
+√
+× Vol(V (x) ∩ B(x, t)) × Vol(V (x ) ∩ B(x , t)) 1{t<1}
+≥ Cε t −β/2 1{t<1} .
+With this, we complete the proof of Lemma 4.3.
+
+
+
+
+Lemma 4.4 If U is a bounded Lipschitz domain, then we have the following integral
+estimates for the Neumann heat kernel:
+(i) There exists a positive finite constant C1 such that for all t > 0, for all x, x ∈ U ,
+
+U2
+
+G N (t, x, y)G N (t, x , y ) f (y − y ) dy dy ≤ C1 (1 ∧ t)−β/2 .
+
+(4.6)
+
+(ii) If (3.8) holds, then there exists a positive
+finite constant C2 such that for all t > 0,
+√
+for all x, x ∈ U with |x − x | ≤ t,
+
+U2
+
+G N (t, x, y)G N (t, x , y ) f (y − y ) dy dy ≥ C2 (1 ∧ t)−β/2 .
+
+(4.7)
+
+The proof of Lemma 4.4 follows the same strategy as that of Lemma 4.3. We will
+leave it to the interested readers.
+Lemmas 4.3 and 4.4 suggest the study of the following functions.
+λ (t) and 
+h n (t) be defined as (4.1a) and (4.1b), respectively, except
+Definition 4.5 Let K
+U
+U
+that h 0 (t) and k (t) in (4.1c) be replaced, respectively, by
+
+k(t) = (1 ∧ t)−ρ with ρ ∈ (0, 1),
+h 0 (t) ≡ 1 and 
+
+(4.8)
+
+namely,
+λ (t) :=
+K
+
+∞
+
+
+
+λ2n
+h n (t) := 
+k ∗n ∗ 1 (t) for n ≥ 1.
+h n (t) and 
+
+n=0
+
+Before proceeding to the next lemma, we recall some useful formulas and inequalities:
+• From the Beta integral (see, e.g., [34]), we have that for all t > 0, n ≥ 2, and
+r0 , r1 , . . . , rn > −1,
+t
+
+s1
+
+ds1
+0
+
+0
+
+n
+
+sn−1
+
+ds2 · · ·
+0
+
+dsn (t − s1 )r0 (s1 − s2 )r1 . . . (sn−1 − sn )rn−1 snrn
+
+n
+i=0 (1 + ri )
+n
+t n+ i=0 ri .
+=
+(n + i=0 ri + 1)
+
+123
+
+(4.9)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1537
+
+• For any a > 0, there exist positive finite constants C and c depending on a such
+that
+cn (n!)a ≤ (an + 1) ≤ C n (n!)a ,
+
+for all integers n ≥ 0.
+
+(4.10)
+
+This inequality can be easily verified using Stirling’s formula; see (68) of [2].
+• The following result is proved in [2, Lemma A.1] and [3, Lemma 5.2]: For any
+a > 0, there exist positive finite constants C1 , C2 , C3 , C4 depending on a such
+that for all x > 0,
+C1 exp(C2 x
+
+1/a
+
+∞
+
+xn
+)≤
+≤ C3 exp(C4 x 1/a ).
+(n!)a
+
+(4.11)
+
+n=0
+
+λ (t) and 
+h n (t) be defined as in Definition 4.5. Then:
+Lemma 4.6 Let λ > 0. Let K
+(i) The function t → 
+h n (t) is nondecreasing for each n ≥ 0.
+(ii) There exist positive finite constants C1 and C2 depending only on ρ such that for
+all t > 0, for all integers n ≥ 1,
+((1 − ρ)/2)n t n
+
+n
+
+k=0
+
+
+C1k t −kρ
+C2k t −kρ
+≤
+h n (t) ≤ t n
+. (4.12)
+1−ρ
+(n − k)!(k!)
+(n − k)!(k!)1−ρ
+n
+
+k=0
+
+(iii) There exist positive finite constants C3 , . . . , C8 depending only on ρ such that for
+all t > 0,
+ 
+ 
+2 
+2 
+λ (t) ≤ C6 exp t C7 λ2 + C8 λ 1−ρ .
+C3 exp t C4 λ2 + C5 λ 1−ρ
+≤K
+(4.13)
+
+1/ p
+2n
+λ
+(t)
+<
+∞.
+(iv) For any p ≥ 1 and t > 0, it holds that ∞
+h
+n
+n=0
+Proof
+(i) Obviously, 
+h 0 is nondecreasing. Suppose 
+h n is nondecreasing. Then
+t
+
+
+h n+1 (t) =
+
+t
+
+(1 ∧ (t − s))−ρ 
+h n (s)ds =
+
+0
+
+(1 ∧ s)−ρ 
+h n (t − s)ds,
+
+0
+
+which is also nondecreasing (see also the proof of Lemma 2.6 of [14]).
+(ii) By expanding 
+h n (t) recursively, we see that
+t
+
+
+h n (t) =
+
+s1
+
+ds1
+0
+
+0
+
+sn−1
+
+ds2 · · ·
+
+dsn
+0
+
+n
+
+
+(1 ∧ (si−1 − si ))−ρ ,
+
+i=1
+
+where s0 = t. Note that
+1
+(1 + x −ρ ) ≤ (1 ∧ x)−ρ ≤ 1 + x −ρ for all x ≥ 0.
+2
+
+(4.14)
+
+123
+
+1538
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+So, in order to prove (4.12), it suffices to prove that
+(1 − ρ)n t n
+
+n
+
+k=0
+
+
+C1k t −kρ
+C2k t −kρ
+∗
+n
+≤
+h
+(t)
+≤
+t
+,
+n
+(n − k)!(k!)1−ρ
+(n − k)!(k!)1−ρ
+n
+
+where
+h ∗n (t) =
+
+(4.15)
+
+k=0
+
+t
+
+s1
+
+ds1
+0
+
+0
+
+sn−1
+
+ds2 · · ·
+
+dsn
+0
+
+n
+
+
+
+1 + (si−1 − si )−ρ .
+
+i=1
+
+We observe that
+n
+
+
+(1 + (si−1 − si )−ρ ) =
+
+n
+
+
+
+
+k
+
+
+(si j −1 − si j )−ρ ,
+
+k=0 1≤i 1 <i 2 <···<i k ≤n j=1
+
+i=1
+
+where we have used the convention that when k = 0 the summation and product inside
+gives one. Then, by (4.9), we have
+h ∗n (t) =
+=
+
+n
+
+
+
+
+t
+
+ds1
+
+k=0 1≤i 1 <i 2 <···<i k ≤n 0
+n  
+k
+
+k=0
+
+s1
+0
+
+sn−1
+
+ds2 . . .
+
+dsn
+0
+
+k
+
+
+si j −1 − si j
+
+−ρ
+
+j=1
+
+n
+(1 − ρ)
+t n−kρ .
+k (n − kρ + 1)
+(4.16)
+
+By the recursion identity of the Gamma function (z + 1) = z(z), we have
+
+
+ n−k
+k(1 − ρ) + j .
+(n − kρ + 1) =  k(1 − ρ) + 1
+j=1
+
+Because 0 < ρ < 1, for all 0 ≤ j ≤ n, it holds that (1 − ρ)(k + j) < k(1 − ρ) + j <
+k + j and hence,
+(1 − ρ)n−k
+
+n!
+n!
+ (k(1 − ρ) + 1) ≤  (n − kρ + 1) ≤
+ (k(1 − ρ) + 1) .
+k!
+k!
+
+Also, by (4.10), ck (k!)1−ρ ≤ (k(1 − ρ) + 1) ≤ C k (k!)1−ρ . Hence, it follows that
+(1 − ρ)n−k ck
+
+n!
+n!
+≤ (n − kρ + 1) ≤ C k
+.
+ρ
+(k!)
+(k!)ρ
+
+(4.17)
+
+Putting this back into (4.16), we get (4.15) with C1 = C −1 (2 − ρ) and C2 =
+c−1 (1 − ρ)−1 (1 − ρ). Hence, (4.12) follows.
+As for part (iii), using (4.12), interchanging the order of summation and applying (4.11) yield (4.13). Finally, for part (iv), after an application of the sub-additivity
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1539
+
+of the function x → x 1/ p to the far right-hand side of (4.12), one can carry out the
+same arguments as the proof of the upper bound of (4.13) to show that the series in
+question converges. This completes the proof of Lemma 4.6.
+
+
+The above lemma plays the same role as, e.g., Lemma A.2 of [11] where the kernel
+function k(t) takes the form of (t − s)−ρ . In that case, the computations can be made
+explicit by using the Mittag-Leffler function. Indeed, Lemma 4.6 can be rephrased as
+the Gronwall-type lemma below.
+Lemma 4.7 (Gronwall-type Lemma) Let λ ∈ R+ , ρ ∈ (0, 1), 
+k(t) = (1 ∧ t)−ρ and
+b : R+ → R+ be a nonnegative function. Suppose that H : R+ → R+ is a locally
+integrable nonnegative function such that for all t ≥ 0,
+t
+
+
+k(t − s)H (s)ds.
+
+(4.18)
+
+
+k ∗n ∗ b (t).
+λ2n 
+
+(4.19)
+
+H (t) ≤ b(t) + λ2
+0
+
+Then
+H (t) ≤ b(t) +
+
+∞
+
+n=1
+
+Remark 4.8 The following variation will not be used in this paper but it is worth noting
+that if b(t) ≥ 0 and “≤” in (4.18) is replaced by “≥” (resp. “=”), then we will obtain
+the conclusion (4.19) with “≤” replaced by “≥” (resp. “=”). This can be shown by
+the same proof below.
+Proof of Lemma 4.7 Using (4.18) inductively, we get that for any t ≥ 0, for any N ≥ 1,
+H (t) ≤ b(t) +
+
+N
+−1
+
+
+
+
+
+k ∗n ∗ b (t) + λ2N 
+λ2n 
+k ∗N ∗ H (t).
+
+n=1
+
+Similarly to the proof of Lemma 4.6(ii), we can use (4.9) to deduce that
+
+k ∗N (t) ≤
+
+N  
+
+N (1 − ρ)k
+k=0
+
+Then, by (4.17) and the bound
+
+k
+
+(N − kρ)
+
+t N −1−kρ .
+
+N
+N
+k ≤ 2 , we have
+
+
+
+
+k ∗N ∗ H (t) ≤
+
+t
+0
+
+H (t − s)
+
+N
+
+k=0
+
+N
+C
+s N −1−kρ ds.
+(N !)1−ρ
+
+Since 0 < ρ < 1, if N is large enough, then N − 1 − kρ ≥ N − 1 − N ρ
+= N (1 − ρ) − 1 > 0 for all k ≤ N , and hence
+
+
+N
+ t
+(λ2 C)
+N −1
+N (1−ρ)−1
+k ∗N ∗ H (t) ≤
+N
+t
++
+t
+H (t − s)ds.
+λ2N 
+(N !)1−ρ
+0
+
+123
+
+1540
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Since H is locally integrable, λ2N (
+k ∗N ∗ H )(t) → 0 as N → ∞ and (4.19)
+follows.
+
+
+4.1 Proof of part (i) of Theorem 1.4
+Now we are ready to prove Theorem 1.4 for the case where the initial data is bounded.
+Proof of Theorem 1.4 (the bounded initial data case) Here we assume that the initial
+condition ν is absolutely continuous with respect to the Lebesgue measure with a
+bounded density g, namely, ν(dx) = g(x)dx and g ∈ L ∞ (U ). The proof follows a
+standard Picard iteration scheme. Let u 0 (t, x) = J (t, x) (see (3.3)) and for n ≥ 1,
+t
+
+u n (t, x) = J (t, x) + λ
+
+G(t − s, x, y)σ (s, y, u n−1 (s, y))W (ds, dy).
+U
+
+0
+
+By Burkholder’s inequality and Minkowski’s inequality, for all p ≥ 2, n ≥ 2,
+sup ||u n (s, x) − u n−1 (s, x)||2p
+
+0<s≤t
+
+≤ C p L 2σ λ2
+
+t
+
+ds
+U2
+
+0
+
+G(t − s, x, y) f (y − y )G(t − s, x, y )
+
+× sup ||u n−1 (s, z) − u n−2 (s, z)||2p dy dy ,
+z∈U
+
+where C p is a constant depending only on p. By Lemma 4.3 (for the Dirichlet case)
+or Lemma 4.4 (for the Neumann case),
+G(t − s, x, y) f (y − y )G(t − s, x, y ) dy dy
+
+sup
+x∈U
+
+U2
+−2μ(t−s)
+
+≤ Ce
+
+(1 ∧ (t − s))−β/2 ,
+
+where μ = μ1 in the Dirichlet case and μ = 0 in the Neumann case. Let
+Hn (t) := e2μt
+
+sup
+
+(s,x)∈(0,t]×U
+
+||u n (s, x) − u n−1 (s, x)||2p .
+
+It follows that for all n ≥ 2,
+t
+
+Hn (t) ≤ a
+
+Hn−1 (s)(1 ∧ (t − s))−β/2 ds,
+
+0
+
+where a = C p C L 2σ λ2 , and for n = 1,
+H1 (t) ≤ a ||g||2L ∞ (U )
+
+123
+
+t
+0
+
+e2μs (1 ∧ (t − s))−β/2 ds.
+
+(4.20)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1541
+
+For any t ∈ [0, T ] with T fixed, using the notation in Definition 4.5 with ρ = β/2,
+k ∗
+h 0 )(t) for some constant C T , and
+the above bound can be written as H1 (t) ≤ C T a(
+n
+
+we have Hn (t) ≤ C T a h n (t) for all n ≥ 0. Hence, we can apply Lemma 4.6(iv) with
+
+1/2
+p = 2 to see that ∞
+n=1 Hn (t) < ∞. This implies that u n (t, x) converges to some
+p
+u(t, x) in L () which satisfies (3.2) and (1.17).
+For the uniqueness, suppose that u and 
+u are two mild solutions satisfying (1.17)
+with p = 2. By Burkholder’s inequality with p = 2 and similar calculations to those
+above, we get that
+H (t) ≤ Cλ2 L 2σ
+
+t
+
+H (s)(1 ∧ (t − s))−β/2 ds, for all t > 0,
+
+0
+
+where H (t) := sup(s,x)∈(0,t]×U ||u(s, x) − ũ(s, x)||22 . The condition (1.17) implies
+that H is locally bounded. Then we can apply the Gronwall-type Lemma 4.7 with
+b(t) ≡ 0 to see that H (t) ≡ 0, i.e., u(t, x) = 
+u (t, x) a.s. This completes the proof of
+Theorem 1.4 in the case where the initial measure has a bounded density.
+
+
+
+5 The p-th moment bounds and rough initial data
+Our next task is to establish more bounds for the convolution-type integrals of the heat
+kernels. Specifically, we seek optimal upper and lower bounds for the integral:
+
+U ×U
+
+G(t − s, x, z)G(t − s, x , z ) f (z − z )G(s, z, y)G(s, z , y ) dz dz .
+
+The following identity plays a key role in the estimation of the above integral: for all
+0 < s < t and v, w ∈ Rd ,
+
+
+
+
+
+
+
+
+2
+|v − t−s
+|v − w|2
+|w|2
+|v|2
+t w|
+exp −C
+= exp −C
+exp −C
+exp −C
+.
+t −s
+s
+t
+(t − s)s/t
+(5.1)
+This identity can be verified by direct calculations; see [14, p.657]. It can also be
+interpreted as an expression for the density of the Brownian bridge in terms of a
+conditional density; see [4, Chapter 6].
+Lemma 5.1 If U is a bounded Lipschitz domain, then we have the following integral
+estimates:
+(i) There exists a finite constant C such that for all 0 < s < t, for all x, x , y, y ∈ U ,
+e−2μ1 (t−s) −c1 |x−z|2 +|x −z |2 e−2μ1 s −c1 |z−y|2 +|z −y |2
+t−s
+s
+e
+e
+f (z − z ) dz dz
+d
+1 ∧ sd
+U ×U 1 ∧ (t − s)
+
+
+(t − s)s −β/2
+e−2μ1 t −c1 |x−y|2 +|x −y |2
+t
+1
+∧
+≤C
+e
+.
+1 ∧ td
+t
+(5.2)
+
+123
+
+1542
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+(ii) If U is convex, then there exists 0 < ε0 < 1 such that for all 0 < ε ≤ ε0 , there exists
+a positive finite constant
+Cε such that for all√0 < s < t, for all x, x , y, y ∈ Uε
+√
+with |x − x | ≤ (t − s)s/t and |y − y | ≤ (t − s)s/t,
+
+U ×U
+
+≥ Cε
+
+ D (s, z, z , y, y ) f (z − z ) dz dz
+ D (t − s, x, x , z, z )G
+G
+e−2μ1 t −c2 |x−y|2 +|x −y |2
+t
+e
+1 ∧ td
+
+
+
+(t − s)s −β/2
+1∧
+.
+t
+
+(5.3)
+
+Proof
+(i) Denote the left-hand side of (5.2) by I . By (1.6),
+I ≤ C f C14 e−2μ1 t
+
+
+e
+
+−c1
+
+1
+(1 ∧ (t − s)d )(1 ∧ s d )
+
+|x−z|2 |x −z |2 |z−y|2 |z −y |2
++ s
+t−s + t−s + s
+
+U2
+
+
+−c1
+
+|y−x|2 |y −x |2
++ t
+t
+
+
+
+|z − z |−β dz dz
+
+
+
+= C f C14 e−2μ1 t e
+1
+×
+(1 ∧ (t − s)d )(1 ∧ s d )
+
+
+e
+
+−c1
+
+t−s
+2
+2
+|(z−x)− t−s
+t (y−x)| + |(z −x )− t (y −x )|
+(t−s)s/t
+(t−s)s/t
+
+U2
+
+
+
+|z − z |−β dz dz .
+
+For the last equality, we have applied the identity (5.1) with v = z − x and
+w = y − x, and also with v = z − x and w = y − x . Set τ = (t − s)s/t.
+We claim that there exists a finite constant C such that for all a, a ∈ Rd , for all
+τ > 0,
+
+
+I :=
+
+e
+
+−c1
+
+|z−a|2 |z −a |2
++ τ
+τ
+
+
+
+U2
+
+|z − z |−β dz dz ≤ C(1 ∧ τ )d−β/2 .
+
+(5.4)
+
+Indeed, if τ ≥ 1, then (5.4) holds since β < d. If τ < 1, then by the Plancherel
+theorem,
+
+
+I ≤
+
+Rd ×Rd
+
+= Cτ d
+≤ Cτ d
+
+123
+
+Rd
+Rd
+
+e
+
+−c1
+
+|z−a|2 |z −a |2
++ τ
+τ
+
+e−i(a−a )·ξ e
+e
+
+− c2 τ |ξ |2
+1
+
+
+
+− c2 τ |ξ |2
+1
+
+|z − z |−β dz dz
+|ξ |β−d dξ
+
+|ξ |β−d dξ = C τ d−β/2 ,
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1543
+
+where the last equality can be obtained by a scaling argument. This verifies (5.4)
+and hence the following:
+
+
+I ≤ Ce
+
+−2μ1 t
+
+e
+
+−c1
+
+|y−x|2 |y −x |2
++ t
+t
+
+
+
+
+
+(t − s)s −β/2
+h(s, t) 1 ∧
+,
+t
+
+where
+h(s, t) :=
+
+
+
+(t − s)d s d
+1
+1
+∧
+.
+(1 ∧ (t − s)d )(1 ∧ s d )
+td
+
+It can be verified by straightforward calculations that if t − s < 1 and s < 1, then
+h(s, t) ≤ t −d ; otherwise, h(s, t) ≤ 1. Therefore, we obtain the upper bound (5.2).
+(ii) To prove the√lower bound (4.3), let 0 < s√< t and x, x , y, y ∈ Uε be such that
+|x − x | ≤ (t − s)s/t and |y − y | ≤ (t − s)s/t. Denote the left-hand side
+of (4.3) by I˜. By (1.6), (3.6), (3.9) and (5.1), we have that
+−c2
+e−2μ1 t
+
+e
+I ≥ Cε
+d
+d
+(1 ∧ (t − s) )(1 ∧ s )
+
+× (1 ∧
+
+2
+1 (z)) (1 ∧
+
+2
+1 (z )) e
+
+
+
+|y−x|2 |y −x |2
++ t
+t
+
+
+
+−c2
+
+
+U ×U
+
+dzdz
+
+t−s
+2
+2
+|(z−x)− t−s
+t (y−x)| + |(z −x )− t (y −x )|
+1∧τ
+1∧τ
+
+
+
+|z − z |−β
+
+=: A, with τ = (t − s)s/t.
+
+Now, we consider the following two cases: τ ≥ 1 and τ < 1. In the rest of the
+proof, the constant Cε above will be used to denote a generic constant that depends
+on ε, whose value may change at each appearance.
+Case 1. Suppose τ ≥ 1. Observe that (1∧(t−s)d )(1∧s d ) ≤ 1∧t d and (1∧τ )−β/2 = 1.
+Also, by sup y,y ∈D |y − y | ≤ M < ∞ and (3.9), we see that
+
+
+2
+
+|
++ |y −x
+e−2μ1 t −c2 |y−x|
+t
+t
+e
+A ≥ Cε
+1 ∧ td
+
+= Cε
+
+e−2μ1 t −c2
+e
+1 ∧ td
+
+
+
+2
+
+|y−x|2 |y −x |2
++ t
+t
+
+
+
+(1 ∧ (c0−1 εa1 ))4 e−2c2 M M −β dz dz
+2
+
+
+
+Uε ×Uε
+
+(1 ∧ τ )−β/2 ,
+
+which proves (5.3).
+Case 2. Suppose τ < 1. In this case, 1 ∧ τ = τ . Notice that
+(z − x) −
+
+s
+t −s
+t −s
+(y − x) = z − a, where a := x +
+y,
+t
+t
+t
+
+and a is defined similarly. The convexity assumption on U ensures that both a and a
+are in Uε . By Lemma 3.10, for 0 < ε ≤ ε0 ,
+
+
+2
+
+|
+−c2 |y−x|
++ |y −x
+e−2μ1 t
+t
+t
+e
+A ≥ Cε
+(1 ∧ (t − s)d )(1 ∧ s d )
+
+2
+
+
+
+123
+
+1544
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+×
+
+E(a)×E(a )
+
+e−2c2 1{|z−a|≤√τ , |z −a |≤√τ } |z − z |−β dz dz .
+
+√
+√
+√
+√
+Since |x −x | ≤ τ and
+, we have |a −a | ≤ τ . Hence, |z −z | ≤ 3 τ
+√ |y − y | ≤ τ√
+on the set {|z − a| ≤ τ , |z − a | ≤ τ }. Also, by (3.15), it follows that
+
+
+2
+
+|
+−c2 |y−x|
++ |y −x
+e−2μ1 t
+t
+t
+e
+A ≥ Cε
+(1 ∧ (t − s)d )(1 ∧ s d )
+
+2
+
+
+
+τ d−β/2 .
+
+To finish the proof, it remains to show that the following bound holds for some constant
+c > 0:
+τd
+c
+.
+(5.5)
+≥
+d
+d
+(1 ∧ (t − s) )(1 ∧ s )
+1 ∧ td
+Indeed, for t ≤ 2, we can use the bound
+τd
+1
+1
+1
+.
+= d =
+≥
+(t − s)d s d
+t
+2 ∧ td
+2(1 ∧ t d )
+For t > 2, consider the following two cases. If s < t/2, then t − s > t/2 > 1 and
+hence
+τd
+(t − s)d
+1
+1
+τd
+=
+≥ d = d
+=
+.
+(1 ∧ (t − s)d )(1 ∧ s d )
+sd
+td
+2
+2 (1 ∧ t d )
+If s ≥ t/2, which is > 1, then
+τd
+τd
+sd
+1
+1
+=
+.
+= d ≥ d = d
+d
+d
+d
+(1 ∧ (t − s) )(1 ∧ s )
+(t − s)
+t
+2
+2 (1 ∧ t d )
+This proves (5.5) and completes the proof of the lower bound (5.3).
+
+
+
+
+Lemma 5.2 If U is a bounded Lipschitz domain, then we have the following integral
+estimates:
+(i) There exists a positive finite constant C such that for all 0 < s < t, for all
+x, x , y, y ∈ U ,
+
+U ×U
+
+ N (s, z, z , y, y ) f (z − z ) dz dz
+ N (t − s, x, x , z, z )G
+G
+
+2
+−y |2
+C
+−c3 |x−y| +|x
+t
+≤
+e
+1 ∧ td
+
+
+
+(t − s)s −β/2
+1∧
+.
+t
+
+(5.6)
+
+(ii) If U is convex and (3.8) holds, then there exists a positive finite √
+constant C such
+that for all 0 < s < t, for all x, x , y, y ∈ U with |x − x | ≤ (t − s)s/t and
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+|y − y | ≤
+
+1545
+
+√
+(t − s)s/t,
+
+U ×U
+
+ N (s, z, z , y, y ) f (z − z ) dz dz
+ N (t − s, x, x , z, z )G
+G
+
+2
+−y |2
+C
+−c4 |x−y| +|x
+t
+≥
+e
+1 ∧ td
+
+
+
+(t − s)s −β/2
+1∧
+.
+t
+
+(5.7)
+
+The proof of Lemma 5.2 is similar to that of Lemma 5.1, which will be left to interested
+readers.
+Lemma 5.3 Let 0 < ρ < 1. Define 
+h 0 (t) ≡ 1 and for n ≥ 1
+t
+
+
+h n (t) :=
+
+s1
+
+ds1
+
+ds2 . . .
+
+0
+
+0
+
+sn−1
+0
+
+
+n 
+
+(s j−1 − s j )s j −ρ
+1∧
+dsn
+,
+s j−1
+
+(5.8)
+
+j=1
+
+where we use the convention that s0 = t. Then, for all t > 0, for all integers n ≥ 0,
+n
+
+2−n
+h n (t) ≤ 21+ρ 
+h n (t) ≤ 
+h n (t),
+
+(5.9)
+
+where 
+h n (t) is as defined in Lemma 4.6. Moreover, for any λ > 0, there exists positive
+finite constants C3 , . . . , C8 such that
+∞
+ 
+ 
+
+2 
+2 
+≤
+λ2n
+C3 exp t C4 λ2 + C5 λ 1−ρ
+h n (t) ≤ C6 exp t C7 λ2 + C8 λ 1−ρ .
+n=0
+
+(5.10)
+Proof The estimate (5.9) can be deduced using Lemma 4.17 of [4]. For completeness,
+we provide a direct proof. We prove (5.9) by induction. Clearly, it holds for n = 0.
+Suppose it holds for some n ≥ 0. Since (t − s)s/t ≥ s/2 for s ∈ [0, t/2] and
+(t − s)s/t ≥ (t − s)/2 for s ∈ [t/2, t], we have
+t
+
+
+h n+1 (t) =
+
+1∧
+
+0
+
+(t − s)s
+t
+t/2
+
+≤ 2ρ (21+ρ )n
+
+−ρ
+
+
+h n (s) ds
+
+(1 ∧ s)−ρ 
+h n (s) ds
+
+0
+
++ 2ρ (21+ρ )n
+
+t
+
+(1 ∧ (t − s))−ρ 
+h n (s) ds
+
+t/2
+
+= 2ρ
+
+t
+t/2
+
+(1 ∧ (t − s))−ρ 
+h n (t − s) ds + 2ρ
+
+t
+
+(1 ∧ (t − s))−ρ 
+h n (s) ds.
+
+t/2
+
+123
+
+1546
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Since t − s ≤ s for s ∈ [t/2, t], and 
+h n (·) is nondecreasing by Lemma 4.6, we see
+that
+t
+
+
+h n+1 (t) ≤ 2ρ (21+ρ )n
+
+(1 ∧ (t − s))−ρ 
+h n (s) ds
+
+t/2
+t
+
++ 2ρ (21+ρ )n
+≤ 21+ρ (21+ρ )n
+
+t/2
+t
+
+(1 ∧ (t − s))−ρ 
+h n (s) ds
+(1 ∧ (t − s))−ρ 
+h n (s) ds
+
+0
+
+h n+1 (t),
+≤ (21+ρ )n+1
+where we have applied (4.14) in the last step. This proves the upper bound of (5.9).
+On the other hand, for the lower bound, it holds clearly for n = 0. For general n ≥ 1,
+by the bound (t − s)s/t ≤ t − s for all s ∈ [0, t], the induction hypothesis and (4.14),
+we have
+t
+
+
+h n+1 (t) ≥ 2−n
+
+(1 ∧ (t − s))−ρ 
+h n (s) ds
+
+0
+
+≥2
+
+t
+
+−n−1
+
+
+1 + (t − s)−ρ 
+h n (s) ds
+
+0
+
+= 2−(n+1)
+h n+1 (t).
+
+
+
+Finally, (5.10) follows clearly from (5.9) and (4.13). This proves Lemma 5.3.
+
+Recall the following form of Burkholder’s inequality [28, Theorem B.1]: For any
+p ∈ [2, ∞) and any continuous L 2 -martingale {Mt , t ≥ 0},
+p/2
+
+E(|Mt | p ) ≤ (4 p) p/2 E(Mt
+
+),
+
+(5.11)
+
+where Mt denotes the quadratic variation of Mt .
+5.1 Proof of part (ii) of Theorem 1.4
+Now we are ready to prove the second part of Theorem 1.4.
+Proof of Theorem 1.4 (the rough initial data case) We first assume the Dirichlet boundary condition. Let u 0 (t, x) = J (t, x) and
+t
+
+u n (t, x) = J (t, x) + λ
+0
+
+G(t − s, x, y)σ (s, y, u n−1 (s, y))W (ds, dy) for n ≥ 1.
+U
+
+Let a = 8 pλ2 L 2σ C, where C is the constant in (5.2). We claim that, for all n ≥ 0,
+u n (t, x) p ≤
+
+√
+
+2e
+
+−μ1 t
+
+Jc1 (t, x)
+
+ n
+
+i=0
+
+123
+
+1/2
+ai 
+h i (t)
+
+for allt > 0, x ∈ U ,
+
+(5.12)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1547
+
+where 
+h n (t) is defined in (5.8). By Proposition 3.6, (5.12) holds for n = 0. Suppose
+that (5.12) is true for some n ≥ 0. By Burkholder’s inequality (5.11) and Minkowski’s
+inequality, we get that
+u n+1 (t, x) 2p ≤ 2J 2 (t, x) + 8 pλ2 L 2σ In (t, x),
+where
+t
+
+In (t, x) :=
+
+ds
+U2
+
+0
+
+dy dy G D (t − s, x, y)G D (t − s, x, y ) f (y − y )
+
+u n (s, y) p u n (s, y ) p .
+By the induction hypothesis,
+t
+
+In (t, x) ≤ 2
+
+dy dy f (y − y )G D (t − s, x, y)G D (t − s, x, y )
+ n
+
+
+i
+× |J (s, y)| |J (s, y )|
+a h i (s)
+ds
+
+0
+
+U2
+
+n
+
+
+t
+
+i=0
+
+≤2
+
+ai
+
+i=0
+
+×
+
+ds 
+h i (s)
+
+0
+
+U2
+
+U2
+
+dy dy f (y − y )G D (t − s, x, y)G D (t − s, x, y )
+
+|ν|(dz)|ν|(dz )G D (s, y, z)G D (s, y, z ).
+
+Now interchange the order of the two double integrals and apply Lemma 5.1(i) to get
+that
+In (t, x) ≤ 2
+
+n
+
+i=0
+
+t
+
+ai
+
+ds 
+h i (s)
+
+0
+
+U2
+
+e−2μ1 t −c1 |x−z|2 +|x−z |2
+t
+e
+×C
+1 ∧ td
+n
+
+−2μ1 t 2
+= 2Ce
+Jc1 (t, x)
+ai
+i=0
+
+= 2Ce−2μ1 t Jc21 (t, x)
+
+n
+
+
+|ν|(dz)|ν|(dz )
+
+
+(t − s)s −β/2
+1∧
+t
+
+
+t
+(t − s)s −β/2 
+ds 1 ∧
+h i (s)
+t
+0
+
+ai 
+h i+1 (t).
+
+i=0
+
+Recall that a = 8 pλ2 L 2σ C. Hence,
+u n+1 (t, x) 2p ≤ 2e−2μ1 t Jc21 (t, x) + 16 pλ2 L 2σ Ce−2μ1 t Jc21 (t, x)
+
+n
+
+
+ai 
+h i+1 (t)
+
+i=0
+
+123
+
+1548
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+= 2e−2μ1 t Jc21 (t, x)
+
+n+1
+
+
+ai 
+h i (t).
+
+i=0
+
+This proves (5.12).
+Next, we prove that u n (t, x) is a Cauchy sequence in L p (). Let u −1 (t, x) = 0.
+By Burkholder’s inequality (5.11) and Minkowski’s inequality,
+||u m (t, x) − u n (t, x)||2p
+≤ 4 pλ2 L 2σ
+
+t
+
+ds
+U2
+
+0
+
+dy dy G D (t − s, x, y)G D (t − s, x, y ) f (y − y )
+
+× u m−1 (s, y) − u n−1 (s, y) p u m−1 (s, y ) − u n−1 (s, y ) p .
+Then, similarly to the above, we can show by induction that, for all 0 ≤ n < m,
+
+u m (t, x) − u n (t, x) p ≤
+
+√
+
+
+2e
+
+−μ1 t
+
+Jc1 (t, x)
+
+m
+
+
+1/2
+ai 
+h i (t)
+
+for all t > 0 and x ∈ U .
+
+i=n+1
+
+By Lemma 5.3,
+∞
+
+
+ai 
+h i (t) ≤ C6 e
+
+
+
+2
+t C7 a+C8 a 2−β
+
+< ∞.
+
+i=0
+
+This implies that u n (t, x) is a Cauchy sequence in L p (), and hence converges in
+L p () to some u(t, x) which satisfies (3.2). In particular, by (5.12) and Lemma 5.3,
+we have
+u(t, x) p ≤
+
+√
+
+2e
+
+−μ1 t
+
+Jc1 (t, x)
+
+∞
+
+
+
+≤
+
+√
+
+2C6 Jc1 (t, x)e
+
+1
+2t
+
+1/2
+(8 pλ2 L 2σ C)i 
+h i (t)
+
+i=0
+2
+
+2
+
+4
+
+4
+2−β
+
+8C7 C pλ2 L 2σ +C8 (8C) 2−β p 2−β λ 2−β L σ
+
+
+−μ1
+
+.
+
+For uniqueness, suppose that u(t, x) and 
+u (t, x) are mild solutions of (1.3) satisfying (1.19). Let T > 0. Then, for all t ∈ (0, T ], for all x ∈ U ,
+u(t, x) − 
+u (t, x) 22 ≤ λ2 L 2σ
+
+t
+
+ds
+0
+
+U2
+
+dy dy G D (t − s, x, x, y1 , y1 ) f (y − y )
+
+× u(s, y) − 
+u (s, y) 2 u(s, y ) − 
+u (s, y ) 2 .
+(5.13)
+We claim that there exists C T < ∞ such that for all n ≥ 1, for all t ∈ (0, T ] and all
+x ∈ U,
+(5.14)
+h n (t),
+u(t, x) − 
+u (t, x) 22 ≤ 4C T2 Jc2 (t, x)(λL σ )2n
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1549
+
+where 
+h n is defined in Lemma 5.3. We prove this claim by induction. First, consider
+n = 1. Using the condition that u and 
+u both satisfy (1.19), we get that
+u(t, x) − 
+u (t, x) 22
+≤ 4C T2 λ2 L 2σ
+= 4C T2 λ2 L 2σ
+
+t
+
+ds
+U2
+
+0
+U2
+
+t
+
+×
+
+ds
+0
+
+U2
+
+ − s1 , x, x, y1 , y1 ) f (y − y )Jc (s, y)Jc (s, y )
+dy dy G(t
+
+|ν|(dz)|ν|(dz )
+
+ − s1 , x, x, y1 , y1 ) f (y − y )
+dy dy G(t
+
+2
+−z |2
+1
+−c |y−z| +|y
+s
+e
+.
+1 ∧ sd
+
+Then, by Lemma 5.1(i),
+
+
+(t − s)s −β/2
+e−2μ1 (t−s) 1 ∧
+ds
+t
+0
+
+t
+(t − s)s −β/2
+2 2
+2
+≤ 4C T Jc (t, x)(λL σ )
+1∧
+ds.
+t
+0
+
+u(t, x) − 
+u (t, x) 22 ≤ 4C T2 λ2 L 2σ Jc2 (t, x)
+
+t
+
+This proves (5.14) for n = 1. Assume that (5.14) holds for some n ≥ 1. We apply
+u (s, y ) 2 on the
+the induction hyposthesis to u(s, y) − 
+u (s, y) 2 and u(s, y ) − 
+right-hand side of (5.13) to get
+
+u(t, x) − 
+u (t, x) 22 ≤ 4C T2 (λL σ )2(n+1)
+×
+
+U2
+
+t
+
+ds 
+h n (s)
+
+0
+
+ − s1 , x, x, y1 , y1 ) f (y − y )Jc (s, y)Jc (s, y ).
+dy dy G(t
+
+Then, by similar calculations to those in the n = 1 case, we obtain
+
+
+(t − s)s −β/2
+
+ds
+h n (s) 1 ∧
+t
+0
+= 4C T2 Jc2 (t, x)(λL σ )2(n+1)
+h n+1 (t).
+
+||u(t, x) − 
+u (t, x)||22 ≤ 4C T2 Jc2 (t, x)(λL σ )2(n+1)
+
+t
+
+
+2n
+This proves the claim (5.14). Finally, by Lemma 5.3, we have ∞
+n=0 (λL σ ) h n (t) <
+2n
+
+∞, which implies that (λL σ ) h n (t) → 0 as n → ∞. Hence, by (5.14), u(t, x) =
+
+u (t, x) a.s.
+The case of the Neumann boundary condition can be proved in the same way except
+that Lemma 5.2 (i) is applied in place of Lemma 5.1 (i). This completes the proof of
+part (ii) of Theorem 1.4.
+
+
+
+123
+
+1550
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+6 The two-point correlation function
+6.1 A general formula for the two-point correlation function
+The authors in [14] have defined and studied the space-time convolution-type operator
+“ ” for the heat kernel in the whole space Rd , where the heat kernel G(t, x, y) can
+be written as G(t, x − y). However, when the domain is not the whole space Rd , for
+example when it is a bounded domain, this translation invariant property is no longer
+true and one has to keep the fundamental solution in the form of three parameters. This
+natural generalization of the operator “ ” for fundamental solutions from those with
+two parameters to those with three has been carried out by the first author’s thesis; see
+[4, Chapter 5]. Here, let us first briefly recall this generalization.
+For two measurable functions k1 , k2 : R+ × U 4 → R, we define
+(k1
+
+k2 )(t, x, x , y, y )
+t
+
+=
+
+ds
+U2
+
+0
+
+dz dz k1 (t − s, x, x , z, z )k2 (s, z, z , y, y ) f (z − z )
+
+(6.1)
+
+whenever the multiple integral is well-defined. For h : R+ × U 2 → R, we define
+k1 h = k1 h, where h(t, x, x , y, y ) := h(t, x, x ).
+Remark 6.1 In [14], where U = Rd , the operator “ ” is defined by
+(k1
+
+t
+
+dz dz k1 t − s, x − z, x − z ; y − (z − z )
+Rd ×Rd
+0
+
+× k2 (s, z, z ; y) f y − (z − z )
+
+k2 )(t, x, x ; y) =
+
+ds
+
+
+
+for measurable functions ki : R+ × R3 → R, i = 1, 2. The prototype of the function
+k is k(t, x, x ; y) = G(t, x − y)G(t, x − y), which corresponds to (and actually
+equals to) J (t, x)J (t, x ) when the initial condition is ν = δ y . But when there is
+a lack of space invariance, one has to write this function k as k(t, x, x , y, y ) =
+G(t, x, y)G(t, x , y ). Indeed, introducing one more parameter in the definition of the
+convolution operator “ " makes the associative property much more straightforward:
+Provided that one can apply Fubini’s theorem to interchange of the order of integration,
+one gets that for any measurable functions k1 , k2 , k3 : R+ × U 4 → R,
+(k1
+
+(k2
+
+k3 ))(t, x, x , y, y ) = ((k1
+
+k2 ) k3 )(t, x, x , y, y ).
+
+(6.2)
+
+Therefore, it makes sense to write k1 k2 k3 without parentheses to specify the order.
+Moreover, for any n ≥ 1, we define k n by k n := k · ·!· k".
+ntimes
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1551
+
+ x, x , y, y ) = G(t, x, y)G(t, x , y ).
+Now we apply this operator to the function G(t,
+For any λ > 0 and x, x , y, y ∈ U , define formally the function Kλ by
+Kλ (t, x, x , y, y ) :=
+
+∞
+
+
+ n (t, x, x , y, y ).
+λ2n G
+
+(6.3)
+
+n=1
+
+ D when G = G D is the Dirichlet heat kernel,
+Specifically, we will write KλD and G
+λ
+
+and write K N and G N when G = G N is the Neumann heat kernel. Upper and lower
+bounds for KλD and KλN will be proved later in Propositions 6.5 and 6.7. In particular,
+the upper bounds there imply the convergence of the series in (6.3).
+The connection between the two-point correlation function and the function Kλ is
+given by the next proposition.
+Proposition 6.2 Let U be a bounded Lipschitz domain and u(t, x) be the solution
+of (1.3) or (1.4). Recall that J (t, x) is the solution to the homogeneous equation;
+see (3.3). Let J(t, x, x ) = J (t, x)J (t, x ).
+(i) If σ (t, x, u) = u for all t > 0, x ∈ U and u ∈ R, then
+E(u(t, x)u(t, x )) = J(t, x, x ) +
+
+∞
+
+
+n
+λ2n (G
+
+J)(t, x, x , 0, 0).
+
+(6.4)
+
+n=1
+
+(ii) If there exists a constant lσ > 0 such that σ (t, x, u) ≥ lσ |u| for all t > 0, x ∈ U ,
+u ∈ R, then
+E(u(t, x)u(t, x )) ≥ J(t, x, x ) +
+
+∞
+
+n
+(λlσ )2n (G
+
+J)(t, x, x , 0, 0).
+
+(6.5)
+
+n=1
+
+(iii) If σ (t, x, u) ≤ L σ u for all t > 0, x ∈ U , u ∈ [0, ∞) and u(t, x) ≥ 0 a.s. for all
+t > 0 and x ∈ U , then
+E(u(t, x)u(t, x )) ≤ J(t, x, x ) +
+
+∞
+
+n
+(λL σ )2n (G
+
+J)(t, x, x , 0, 0).
+
+(6.6)
+
+n=1
+
+Moreover, for any a > 0, we have
+J(t, x, x ) +
+
+∞
+
+n=1
+
+n
+a 2n (G
+
+J)(t, x, x , 0, 0) = a −2
+
+U2
+
+Ka (t, x, x , y, y )ν(dy)ν(dy ).
+
+(6.7)
+Remark 6.3 Note that case (i) in the above proposition covers the important special
+case—the Anderson model. In this case, the two-point correlation function enjoys an
+explicit formula, having an equality in (6.4). For the nonlinear case, one needs to either
+introduce a cone condition, σ (t, x, u) ≥ lσ |u|, for the lower bounds as in case (ii) or
+assume the nonnegativity of solution for the upper bounds as in case (iii).
+
+123
+
+1552
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Proof of Proposition 6.2 Let u 0 (t, x) = J (t, x). For n ≥ 1, let
+t
+
+u n (t, x) = J (t, x) + λ
+
+G(t − s, x, y)σ (s, y, u n−1 (s, y))W (ds, dy).
+U
+
+0
+
+Let ρn (t, x, x ) := E(u n (t, x)u n (t, x )). From the proof of Theorem 1.4, we have
+u n (t, x) → u(t, x) in L 2 () as n → ∞, and u(t, x) satisfies (3.2). It follows that
+ρn (t, x, x ) → ρ(t, x, x ) as n → ∞, where ρ(t, x, x ) = E(u(t, x)u(t, x )).
+(i) Suppose that σ (t, x, u) = u for all u ∈ R. Then, we have
+E(u n (t, x)u n (t, x ))
+t
+
+= J(t, x, x ) + λ2
+
+ds
+0
+
+U2
+
+dy dy G(t − s, x, y) f (y − y )G(t − s, x , y )E[u n−1 (s, y)u n−1 (s, y )]
+
+ ρn−1 )(t, x, x , 0, 0).
+= J(t, x, x ) + λ2 (G
+Iterating this, we get
+ ρn−1 )(t, x, x , 0, 0)
+ρn (t, x, x ) = J(t, x, x ) + λ2 (G
+= J(t, x, x ) +
+
+n
+
+
+m
+λ2m (G
+
+J)(t, x, x , 0, 0).
+
+m=1
+
+Then, we let n → ∞ to get (6.4). Note that this also implies that the series
+∞
+
+
+n
+λ2n G
+
+
+J (t, x, x , 0, 0)
+
+n=1
+
+is convergent for any λ > 0, t > 0 and x, x ∈ U .
+(ii) Suppose that σ (t, x, u) ≥ lσ |u| for all t > 0, x ∈ U and u ∈ R. We have
+ρn (t, x, x ) = J(t, x, x )
+t
+
++ λ2
+
+ds
+0
+
+U2
+
+dy dy G(t − s, x, y) f (y − y )G(t − s, x , y )
+
+× E[σ (s, y, u n−1 (s, y))σ (s, y , u n−1 (s, y ))].
+For any s ≥ 0 and y, y ∈ U ,
+E[σ (s, y, u n−1 (s, y))σ (s, y , u n−1 (s, y ))] ≥ lσ2 E(|u n−1 (s, y)u n−1 (s, y )|)
+≥ lσ2 E(u n−1 (s, y)u n−1 (s, y )).
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1553
+
+It follows that
+ρn (t, x, x )
+≥ J(t, x, x ) + (λ lσ )2
+t
+
+dy dy G(t − s, x, y) f (y − y )G(t − s, x , y )ρn−1 (s, y, y )
+
+ n ρn−1 (t, x, x , 0, 0).
+= J(t, x, x ) + (λ lσ )2 G
+ds
+
+0
+
+U2
+
+By induction,
+ρn (t, x, x ) ≥ J(t, x, x ) +
+
+n
+
+
+
+J (t, x, x , 0, 0).
+
+m
+(λ lσ )2m G
+
+m=1
+
+Then, we let n → ∞ to get (6.5).
+(iii) Suppose σ (t, x, u) ≤ L σ u for all t > 0, x ∈ U and u ∈ [0, ∞). By the nonnegativity assumption of the solution, we see that
+ρ(t, x, x )
+= E(u(t, x)u(t, x ))
+t
+
+= J(t, x, x ) + λ2
+
+ds
+U2
+
+0
+
+dy dy G(t − s, x, y) f (y − y )G(t − s, x , y )
+
+× E[σ (s, y, u(s, y))σ (s, y , u(s, y ))]
+≤ J(t, x, x ) + (λL σ )2
+
+t
+
+ds
+0
+
+dy dy G(t − s, x, y) f (y − y )G(t − s, x , y )E[u(s, y)u(s, y )]
+
+ ρ (t, x, x , 0, 0).
+= J(t, x, x ) + (λL σ )2 G
+U2
+
+Iterating this, we get,
+ρ(t, x, x ) ≤ J(t, x, x ) +
+
+n−1
+
+m=1
+
+n
++ (λL σ )2n G
+
+m
+(λL σ )2m G
+
+
+J (t, x, x , 0, 0)
+
+
+ρ (t, x, x , 0, 0).
+
+Finally, we let n → ∞ to complete the proof of part (iii).
+It remains to prove (6.7). Recall that |ν|(U ) < ∞. By Proposition 6.5(i) or 6.7(i),
+for any t > 0 and x, x ∈ U ,
+
+U2
+
+Ka (t, x, x , y, y )|ν|(dy)|ν|(dy ) < ∞.
+
+123
+
+1554
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Then, by the definition (6.3) of Ka and Fubini’s theorem,
+a −2
+=
+
+U2
+∞
+
+
+Ka (t, x, x , y, y )ν(dy)ν(dy )
+
+a 2n−2
+U2
+
+n=1
+
+ n (t, x, x , y, y )ν(dy)ν(dy ).
+G
+
+We compare the right-hand side above with (6.7). For n = 1,
+
+U2
+
+ x, x , y, y )ν(dy)ν(dy ) = J(t, x, x ).
+G(t,
+
+ n=G
+ (n−1)
+For n ≥ 2, by expressing G
+tion, we have
+
+U2
+
+ n (t, x, x , y, y )ν(dy)ν(dy )
+G
+
+=
+
+=
+
+ and interchanging the order of integraG
+
+U2
+U2
+t
+
+ds
+0
+
+ z, z , y, y )
+ (n−1) (t − s, x, x , z, z ) f (z − z )G(s,
+dz dz G
+
+ds
+0
+
+t
+
+ν(dy)ν(dy )
+
+
+ (n−1)
+= G
+
+U2
+
+ (n−1) (t − s, x, x , z, z ) f (z − z ) J(s, z, z )
+dz dz G
+
+J (t, x, x , 0, 0).
+
+This proves (6.7) and completes the proof of Proposition 6.2.
+
+
+
+
+6.2 Estimation of the resolvent kernel functions K
+From Proposition 6.2, we see that it is possible to estimate the two-point correlation
+function once we have some useful bounds for Kλ . Therefore, our goal is to establish
+explicit upper and lower bounds for Kλ . To this end, we first prove a lemma which
+strengthens Lemma 3.10.
+Lemma 6.4 Let U ⊂ Rd be a bounded Lipschitz domain with the δ-cone property.
+Let 0 < ε0 < 1 be defined by (3.12), and recall that, for each x ∈ U , V (x) is
+the subset of U defined in (3.13). Then, there is a positive constant C such that the
+following property holds: For any ε ∈ (0, ε0 ], for any x ∈ Uε , for any r , s such that
+0 < r ≤ s ≤ ε0 /2, for any z ∈ V (x) ∩ B(x, s), we have
+Vol(V (x) ∩ B(x, s) ∩ B(z, r )) ≥ C(1 ∧ r )d .
+
+123
+
+(6.8)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1555
+
+Proof First, suppose that case (2) in (3.13) holds. Then for all z ∈ B(x, s) and 0 <
+r ≤ s ≤ ε0 /2, we have
+V (x) ∩ B(x, s) ∩ B(z, r ) = B(x, s) ∩ B(z, r ).
+This intersection clearly contains a ball of radius r /3, and hence has volume which is
+bounded from below by C(r /3)d .
+Suppose that case (1) in (3.13) holds. Let
+C1 = {y ∈ Rd : 0 < |y| < 1 and y · ξ > |y| cos(ε0 /2)}.
+Note that C1 is a bounded convex domain, so it satisfies the δ̄-cone property for some
+δ̄ > 0 by Proposition 2.4.4 of [27]. By scaling and translation, we see that
+
+
+Vol(V (x) ∩ B(x, s) ∩ B(z, r )) = s d Vol C1 ∩ B((z − x)/s, r /s)
+with (z − x)/s ∈ C1 and 0 < r /s ≤ 1. So, it suffices to prove the existence of a
+constant C > 0 such that
+Vol(C1 ∩ B(w, r )) ≥ Cr d , for all w ∈ C1 and r ∈ (0, 1].
+
+(6.9)
+
+To prove (6.9), we first consider the case that 0 < r ≤ δ̄. If dist(w, ∂C1 ) ≥ δ̄, then
+B(w, r ) ⊂ C1 and hence
+Vol(C1 ∩ B(w, r )) = C1r d .
+If dist(w, ∂C1 ) < δ̄, then w ∈ C1 ∩ B(v, δ̄) for some v ∈ ∂C1 . By the δ̄-cone property
+of C1 , we can find a unit vector η = ηv ∈ Rd such that C (w, η, δ̄) ⊂ C1 . Then,
+Vol(C1 ∩ B(w, r ))
+≥ Vol(C (w, η, δ̄) ∩ B(w, r ))
+= Vol{y ∈ Rd : 0 < |y − w| < r and (y − w) · η ≥ |y − w| cos(ε0 /2)}
+≥ C2r d .
+Finally, consider the case that δ̄ < r ≤ 1. We have C1 ∩ B(w, r ) ⊃ C1 ∩ B(w, δ̄).
+Then, by the first case that we just proved,
+Vol(C1 ∩ B(w, r )) ≥ (C1 ∧ C2 )δ̄ d ≥ (C1 ∧ C2 )δ̄ d r d .
+
+
+
+This completes the proof of Lemma 6.4.
+Now, we are ready to establish upper and lower bounds for KλD and KλN .
+Proposition 6.5 Let U be a bounded Lipschitz domain. Then:
+
+123
+
+1556
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+(i) There exist positive finite constants C, c, c such that for all t > 0, for all
+x, x , y, y ∈ U ,
+
+
+2
+
+|
++ |x −y
+Cλ2 −c1 |x−y|
+t
+t
+KλD (t, x, x , y, y ) ≤
+e
+1 ∧ td
+
+2
+
+
+
+e
+
+
+
+4
+2t cλ2 +c λ 2−β −μ1
+
+.
+
+(6.10)
+
+(ii) For all ε > 0 small, there exist positive finite constants C, c, 
+c depending on ε
+such that for all t > 0, for all x, x , y, y ∈ Uε ,
+
+
+KλD (t, x, x , y, y ) ≥
+
+2
+
+|
++ |x −y
+Cλ2 −16c2 |x−x |2 −12c2 |x−y|
+t
+t
+t
+e
+e
+1 ∧ td
+
+2
+
+
+
+e
+
+
+
+4
+2t cλ2 +
+cλ 2−β −μ1
+
+(6.11)
+
+c → 0 as ε → 0.
+and C → 0, c̄ → 0 and 
+We first make a few remarks:
+Remark 6.6
+(1) Under the conditions of Proposition 6.2, for the delta initial condition ν = δ y , we
+have
+(λlσ )−2 KλD (t, x, x , y, y) ≤ E(u(t, x)u(t, x )) ≤ (λL σ )−2 KλD (t, x, x , y, y).
+(2) Proposition 6.5 applies to all bounded Lipschitz domains. But in case of C 1,α domains, we will improve the bounds (6.10) and (6.11) in Proposition 7.2 so that
+the moment estimates will be consistent with Dirichlet condition at the boundary,
+namely,
+lim
+
+x or x →∂U
+
+E(u(t, x)u(t, x )) = 0.
+
+(3) In case of U = Rd , the factor exp(−c|x − x |2 /t) in (6.11) also appears in the
+lower bound in Lemma 2.7 of [14]. We think that a sharp upper bound for KλD
+would have this extra exponential factor as well.
+Proof of Proposition 6.5
+(i). We claim that, for all n ≥ 1, t > 0 and x, x , y, y ∈ U ,
+−2μ1 t −c
+1
+ Dn (t, x, x , y, y ) ≤ C n e
+e
+G
+d
+1∧t
+
+
+
+|x−y|2 |x −y |2
++ t
+t
+
+
+
+h n−1 (t),
+
+(6.12)
+
+where 
+h n (t) is the iterated integral defined in Lemma 5.3. We prove this by induction. For n = 1, this follows from the upper bound in (3.6). Assume that (6.12)
+holds for some n ≥ 1. Then, by the induction hypothesis, the upper bound in (3.6)
+and Lemma 5.1(i),
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1557
+
+ (n+1) (t, x, x , y, y )
+G
+D
+t
+
+=
+
+ds
+U2
+
+0
+t
+
+≤ Cn
+
+ Dn (s, z, z , y, y ) f (z − z ) dz dz
+ D (t − s, x, x , z, z )G
+G
+
+ds 
+h n−1 (s)
+
+0
+−2μ1 s
+
+|z−y|2 +|z −y |2
+
+ D (t − s, x, x , z, z ) e
+s
+dz dz G
+e−c1
+f (z − z ) dz dz
+2
+1 ∧ sd
+U
+
+
+
+
+t
+−2μ1 t −c |x−y|2 + |x −y |2
+(t − s)s −β/2
+1
+t
+t
+n+1 e
+
+≤C
+e
+ds
+h n−1 (s) 1 ∧
+1 ∧ td
+t
+
+ 0
+2 |x −y |2
++ t
+e−2μ1 t −c1 |x−y|
+t
+
+= C n+1
+e
+h n (t).
+d
+1∧t
+This proves the claim (6.12). Then, by Lemmas 5.3 and 4.6,
+KλD (t, x, x , y, y ) =
+
+∞
+
+
+ Dn (t, x, x , y, y )
+λ2n G
+
+n=1
+
+≤ Cλ
+
+2e
+
+≤Cλ
+
+−2μ1 t −c
+1
+
+1∧t
+2e
+
+
+
+e
+d
+
+−2μ1 t −c
+1
+
+1 ∧ td
+
+e
+
+|x−y|2 |x −y |2
++ t
+t
+
+
+
+
+
+∞
+
+
+(Cλ2 )n−1
+h n−1 (t)
+
+n=1
+
+|x−y|2 |x −y |2
++ t
+t
+
+ 
+e
+
+4
+
+
+
+t cλ2 +c λ 2−β
+
+.
+
+This proves the upper bound (6.10).
+ n (t, x, x , y,
+(ii). To prove the lower bound (6.11), we need to derive lower bounds for G
+D
+y ) for each n ≥ 1. Let t > 0 and x, x , y, y ∈ Uε . First, by the lower bounds
+in (3.6) and (3.9),
+−2μ1 t −c
+2
+ D (t, x, x , y, y ) ≥ Cε2 e
+e
+G
+d
+1∧t
+
+
+
+|x−y|2 |x −y |2
++ t
+t
+
+
+.
+
+For n = 2, we have
+ D2 (t, x, x , y, y ) ≥
+G
+
+t/2
+
+ds
+t/4
+
+dz dz
+√
+[V (x)∩B(x, t)]2
+
+ D (t − s, x, x , z, z ) f (z − z )G
+ D (s, z, z , y, y ),
+×G
+where V (x) ⊂ U is defined in (3.13). By (3.6), for t/4 < s < t/2, we have
+ D (t − s, x, x , z, z ) ≥ C22 (1 ∧
+G
+
+
+
+1 (x)) 1 ∧ 1 (x ) (1 ∧
+−z |2
+e−2μ1 (t−s) −c2 |x−z|2 +|x
+t/2
+e
+×
+d
+1 ∧ (t − s)
+
+1 (z))
+
+1∧
+
+1 (z )
+
+
+
+123
+
+1558
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+and
+ D (s, z, z , y, y ) ≥ C22 (1 ∧
+G
+×
+
+For z, z ∈ V (x) ∩ B(x,
+ity, we have
+
+√
+
+1 (z))
+
+1∧
+
+1 (z )
+
+
+
+(1 ∧
+
+1 (y))
+
+1∧
+
+1 (y )
+
+
+
+−y |2
+e−2μ1 s −c2 |z−y|2 +|z
+t/4
+e
+.
+1 ∧ sd
+
+t), by the triangle inequality and Cauchy–Schwarz inequal-
+
+|x − z|2 + |x − z |2 ≤ |x − z|2 + 2(|x − x|2 + |x − z |2 )
+≤ 2|x − x |2 + 3t
+and
+|z − y|2 + |z − y |2 ≤ 2(|z − x|2 + |x − y|2 )
++ 3(|z − x|2 + |x − x |2 + |x − y |2 )
+≤ 5t + 2|x − y|2 + 3|x − y |2 + 3|x − x |2 .
+By applying the bounds above, (3.9) and Lemma 3.10, we get that
+−2μ1 t
+
+ D2 (t, x, x , y, y ) ≥ Cε4 e
+G
+e−16c2
+1 ∧ td
+
+|x−x |2
+t
+
+e−12c2
+
+|x−y|2 +|x −y |2
+t
+
+t 1−β/2 .
+
+ (n+1) in its full integral form, we have
+For n ≥ 2, expanding G
+D
+ (n+1) (t, x, x , y, y )
+G
+D
+t
+
+≥
+
+s1
+
+ds1
+0
+
+×
+×
+
+0
+U2
+
+U2
+
+× ··· ×
+×
+
+123
+
+U2
+
+sn−2
+
+ds2 · · ·
+
+sn−1
+
+dsn−1
+0
+
+dsn
+0
+
+ D (t − s1 , x, x , z 1 , z 1 ) f (z 1 − z 1 )
+dz 1 dz 1 G
+ D (s1 − s2 , z 1 , z 1 , z 2 , z 2 ) f (z 2 − z 2 )
+dz 2 dz 2 G
+
+U2
+
+ D (sn−2 − sn−1 , z n−2 , z n−2 , z n−1 , z n−1 ) f (z n−1 − z n−1 )
+dz n−1 dz n−1 G
+
+ D (sn , z n , z n , y, y ).
+ D (sn−1 − sn , z n−1 , z n−1 , z n , z n ) f (z n − z n )G
+dz n dz n G
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1559
+
+Then, we derive a lower bound by integrating on the smaller intervals
+
+$
+#
+1 t t
+,
+s1 ∈ 1 −
+,
+4n 2 2
+
+$
+#
+1 t
+t
+, s1 −
+,
+s2 ∈ 1 −
+2n 2
+8n
+#
+$
+
+2 t
+s3 ∈ 1 −
+, s2 − (s1 − s2 ) ,
+2n 2
+..
+.
+
+#
+$
+n−1 t
+, sn−1 − (sn−2 − sn−1 ) .
+sn ∈ 1 −
+2n
+2
+
+(6.13)
+
+Let 0 < ε0 < 1 be given by (3.12). For each ε ∈ (0, ε0 ) and x ∈ Uε , recall the subset
+V (x) ⊂ U defined by (3.13). Consider
+z 1 , z 1 ∈ A1
+z 2 ∈ A2
+z 2 ∈ A2
+
+%
+:= V (x) ∩ B(x, (t − s1 )/(5n) ∧ (ε0 /2)),
+√
+√
+:= V (x) ∩ B(x, s1 − s2 ∧ (ε0 /2)) ∩ B(z 1 , s1 − s2 ∧ (ε0 /2)),
+√
+√
+:= V (x) ∩ B(x, s1 − s2 ∧ (ε0 /2)) ∩ B(z 1 , s1 − s2 ∧ (ε0 /2)),
+..
+.
+
+z n ∈ An
+z n ∈ An
+
+%
+%
+:= V (x) ∩ B(x, sn−1 − sn ∧ (ε0 /2)) ∩ B(z n−1 , sn−1 − sn ∧ (ε0 /2)),
+%
+%
+:= V (x) ∩ B(x, sn−1 − sn ∧ (ε0 /2)) ∩ B(z n−1 , sn−1 − sn ∧ (ε0 /2)).
+
+Note that by (6.13), we have (t − s1 )/(5n) ≤ t/(8n) ≤ s1 − s2 ≤ s2 − s3 ≤
+· · · ≤ sn−1 − sn , which ensures that for 2 ≤ i ≤ n, both z i−1 and z i−1 lie in
+√
+V (x) ∩ B(x, si−1 − si ∧ (ε0 /2)). Then, by Lemma 6.4, for 2 ≤ i ≤ n,
+%
+Vol(Ai ) ∧ Vol(Ai ) ≥ C( si−1 − si ∧ (ε0 /2))d ≥ C(ε0 /2)d ((si−1 − si ) ∧ 1)d/2 .
+By Lemma 3.10 and (3.9), we have
+&
+Vol(A1 ) ≥ C
+1∧
+
+t − s1
+∧ (ε0 /2)
+5n
+
+−1 a1
+1 (z) ≥ 1 ∧ (c0 ε )
+
+d
+≥ C(ε0 /2)d (5n)−d/2 ((t − s1 ) ∧ 1)d/2 ,
+
+for all z ∈ V (x).
+
+Also, on A1 × A1 , we have f (z 1 − z 1 ) ≥ C(((t − s1 )/n) ∧ 1)−β/2 , and on Ai × Ai ,
+where 2 ≤ i ≤ n, we have f (z i − z i ) ≥ C((si−1 − si ) ∧ 1)−β/2 . Then, by the lower
+bound in (3.6) and the inequalities
+|z n − z n−1 |2 + |z n − z n−1 |2 ≤ 2(sn−1 − sn ),
+|z n − y|2 + |z n − y |2 ≤ 5(sn−1 − sn ) + 2|x − y|2 + 3|x − y |2 + 3|x − x |2 ,
+
+123
+
+1560
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+we have
+
+An ×An
+
+ D (sn , z n , z n , y, y )
+ D (sn−1 − sn , z n−1 , z n−1 , z n , z n ) f (z n − z n )G
+dz n dz n G
+β
+
+≥ Cε4 e−2μ1 sn−1 (1 ∧ (sn−1 − sn ))− 2
+
+3|x−x |2 +3|x−y|2 +3|x −y |2 +5sn−1
+1
+−c2
+sn
+e
+.
+1 ∧ td
+
+For i = 2, . . . , n − 1, by |z i − z i−1 |2 + |z i − z i−1 |2 ≤ 2(si−1 − si ), we have
+
+Ai ×Ai
+
+ D (si−1 − si , z i−1 , z i−1 , z i , z i ) f (z i − z i )
+dz i dz i G
+β
+
+≥ Cε2 e−2μ1 (si−1 −si ) (1 ∧ (si−1 − si ))− 2 .
+For i = 1, by the inequality
+|z 1 − x|2 + |z 1 − x |2 ≤ 3(t − s1 ) + 2|x − x |2 ,
+we have
+
+A1 ×A1
+
+ D (t − s1 , x, x , z 1 , z 1 ) f (z 1 − z 1 )
+dz 1 dz 1 G
+
+ β
+t − s1 − 2
+1∧
+.
+n
+
+|2
+Cε2 −2μ1 (t−s1 ) −2c2 |x−x
+t−s1
+≥ d/2
+e
+e
+n
+
+Combining these estimates and using (4.14), we get that
+ (n+1) (t, x, x , y, y )
+G
+D
+e
+≥ Cε2(n+1)
+
+−2μ1 t
+
+1 ∧ td
+
+×
+
+t
+s1 − 8n
+1 t
+(1− 2n
+)2
+
+··· ×
+×
+
+
+
+t
+2
+1 t
+(1− 4n
+)2
+
+ds1
+
+
+1+
+
+t − s1
+n
+
+
+
+β
+ds2 1 + (s1 − s2 )− 2 ×
+
+sn−2 −(sn−3 −sn−2 )
+t
+(1− n−2
+2n ) 2
+
+sn−1 −(sn−2 −sn−1 )
+t
+(1− n−1
+2n ) 2
+
+− β 
+2
+
+s2 −(s1 −s2 )
+2 t
+(1− 2n
+)2
+
+e
+
+|
+−2c2 |x−x
+t−s
+
+2
+
+1
+
+
+
+β
+ds3 1 + (s2 − s3 )− 2 × · · ·
+
+
+
+β
+dsn−1 1 + (sn−2 − sn−1 )− 2
+
+
+
+2
+2 +3|x −y |2 +5t
+β
+−c 3|x−x | +3|x−y|
+t/4
+dsn 1 + (sn−1 − sn )− 2 e 2
+.
+
+Let I denote the above multiple integral for s1 , . . . , sn . By (6.13), we have si−1 − si ≥
+t
+i t
+i−1 t
+i t
+t
+8n and si−1 − (1 − 2n ) 2 ≥ (1 − 2n ) 2 − (1 − 2n ) 2 = 4n for 2 ≤ i ≤ n. Fixing
+1 t t
+s1 ∈ 1 − 4n 2 , 2 , by the change of variables sn → sn−1 −sn , sn−1 → sn−2 −sn−1 ,
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1561
+
+. . . , s2 → s1 − s2 , we have
+ $ #
+$
+#
+
+t
+t
+n−1 t
+⊃
+,
+,
+sn ∈ sn−2 − sn−1 , sn−1 − 1 −
+2n
+2
+8n 4n
+..
+.
+#
+
+ $ #
+$
+t
+2 t
+t
+s3 ∈ s 1 − s 2 , s 2 − 1 −
+⊃
+,
+,
+2n 2
+8n 4n
+ $ #
+$
+#
+
+t
+t
+t
+1 t
+, s1 − 1 −
+⊃
+,
+.
+s2 ∈
+8n
+2n 2
+8n 4n
+It follows that
+I ≥ e−10c2 e−16c2
+
+|x−y|2 +|x −y |2
+
+|x−x |2
+t
+
+t
+e−12c2
+
+
+
+− β 
+
+t
+t
+2
+2
+4n
+t − s1
+− β2
+× ···
+×
+ds1 1 +
+ds2 1 + s2
+×
+t
+1 t
+n
+(1− 4n
+)2
+8n
+
+
+
+
+t
+t
+4n
+4n
+− β2
+−β
+×
+×
+dsn−1 1 + sn−1
+dsn 1 + sn 2
+t
+8n
+
+t
+8n
+
+=: e−10c2 e−16c2
+
+|x−x |2
+t
+
+e−12c2
+
+|x−y|2 +|x −y |2
+t
+
+n
+
+
+Ii .
+
+i=1
+
+The above ds2 · · · dsn integrals can be evaluated explicitly, which is equal to
+n
+
+i=2
+
+⎞n−1
+
+⎛
+t
+Ii = ⎝
++
+8n
+
+ β
+ β
+t 1− 2
+t 1− 2
+− 8n
+4n
+⎠
+1 − β2
+
+≥c
+
+n−1
+
+ − β n−1
+ n−1 
+2
+t
+t
+.
+1+
+n
+n
+
+As for the ds1 integral, we have that
+
+I1 ≥
+
+t
+2
+1 t
+(1− 4n
+)2
+
+
+ds1
+
+
+1+
+
+t − t/2
+n
+
+− β 
+2
+
+t
+≥c
+n
+
+ − β 
+2
+t
+.
+1+
+n
+
+
+
+Therefore, we see that
+ n 
+ −β/2 n
+t
+t
+e
+e
+1+
+I ≥ cn n −β/2 e
+n
+n
+ n−kβ/2
+n
+|x−y|2 +|x −y |2 
+|x−x |2
+t
+n!
+t
+= cn n −β/2 e−10c2 e−16c2 t e−12c2
+.
+k!(n − k)! n
+2
+−10c2 −16c2 |x−xt |
+
+2
+−y |2
+−12c2 |x−y| +|x
+t
+
+k=0
+
+123
+
+1562
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+β/2
+
+By Stirling’s formula, n n n ≥ C n (k!)n!
+that
+kβ/2
+
+for all k = 0, 1, . . . , n and n ≥ 2. It follows
+−2μ1 t
+
+ (n+1) (t, x, x , y, y ) ≥ Cε2(n+1) cn e
+G
+e−16c2
+D
+1 ∧ td
+n
+
+t n−kβ/2
+.
+(n − k)!(k!)1−β/2
+
+|x−x |2
+t
+
+e−12c2
+
+|x−y|2 +|x −y |2
+t
+
+k=0
+
+Finally, recalling the definition of KλD , interchanging the order of summation, and
+using (4.11), we get that
+KλD (t, x, x , y, y )
+= λ2
+
+∞
+
+
+(n+1)
+
+
+λ2n G
+D
+
+(t, x, x , y, y )
+
+n=0
+∞
+
+e−2μ1 t −16c2 |x−x |2 −12c2 |x−y|2 +|x −y |2  2 2 n 
+t −kβ/2
+t
+t
+e
+e
+(C
+cλ
+t)
+ε
+1 ∧ td
+(n − k)!(k!)1−β/2
+n=0
+k=0
+
+
+4
+−2μ1 t
+2
+2
+−y |2 t K λ2 +K λ 2−β
+2
+2e
+−16c2 |x−xt | −12c2 |x−y| +|x
+t
+≥ Cε Cλ
+e
+e
+e
+.
+1 ∧ td
+n
+
+≥ Cε2 λ2
+
+
+
+
+The proof of Proposition 6.5 is complete.
+Proposition 6.7 Let U be a bounded Lipschitz domain. Then:
+
+(i) There exist positive finite constants C, c, c such that for all t > 0, for all
+x, x , y, y ∈ U ,
+
+
+2
+
+|
++ |x −y
+Cλ2 −c3 |x−y|
+t
+t
+KλN (t, x, x , y, y ) ≤
+e
+1 ∧ td
+
+2
+
+
+
+
+
+e
+
+
+
+4
+
+t cλ2 +c λ 2−β
+
+.
+
+(6.14)
+
+(ii) If U is convex (or if (3.8) holds), then there exist positive finite constants C, c, 
+c
+such that for all t > 0, for all x, x , y, y ∈ U ,
+
+
+2
+
+|
++ |x −y
+Cλ2 −16c4 |x−x |2 −12c4 |x−y|
+t
+t
+t
+e
+e
+KλN (t, x, x , y, y ) ≥
+1 ∧ td
+
+Proof The proof is similar to that of Lemma 6.5.
+
+2
+
+
+
+
+
+e
+
+4
+
+t cλ2 +
+cλ 2−β
+
+
+.
+
+(6.15)
+
+
+
+6.3 Proof of Theorem 1.5
+Proof of Theorem 1.5 The correlation bounds (1.22) and (1.23) under Dirichlet condition (or Neumann condition, respectively) follows immediately from Propositions 6.2
+and 6.5 (or 6.2 and 6.7, respectively).
+
+
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1563
+
+7 The case of bounded C 1,˛ -domains with Dirichlet condition and
+some variations
+In the case of C 1,α -domains, one can expect better moment estimates under Dirichlet
+boundary condition because the heat kernel estimates in (3.6) hold with a1 = a2 =
+1. This implies that the Dirichlet heat kernel estimates in (3.6) are
+ sharp, yielding
+
+1 (x)
+matching upper and lower bounds with the same factor 1 ∧ 1∧t 1/2 1 ∧ 1∧t1 (y)
+1/2 .
+7.1 Better estimates for the resolvent kernel K
+In this part, we study the case of bounded C 1,α -domains with Dirichlet boundary
+condition. For the points x, x , y, y that are close to ∂U , the lemma below provides
+more precise estimate than what one gets from the upper bound in Lemma 5.1.
+Lemma 7.1 If U is a bounded C 1,α -domain for some α > 0, then there exists a positive
+finite constant C such that for all t > 0, for all x, x , y, y ∈ U ,
+t
+
+dz dz (t − s, x)(t − s, x )(t − s, z)(t − s, z )
+
+ds
+0
+
+U2
+−2μ
+(t−s)
+1
+e
+
+e−c1
+1 ∧ (t − s)d
+
+|x−z|2 +|x −z |2
+t−s
+
+× f (z − z )(s, z)(s, z )(s, y)(s, y )
+
+e−2μ1 s − 2c1 |z−y|2 +|z −y |2
+s
+e 3
+1 ∧ sd
+
+e−2μ1 t − 2c1 |x−y|2 +|x −y |2
+t
+≤ C(t, x)(t, x )(t, y)(t, y )
+e 3
+1 ∧ td
+
+t
+(t − s)s −β/2
+1∧
+ds,
+t
+0
+
+(7.1)
+
+where (t, x) is as defined in (1.24).
+Proof We first derive the following bound: for all s, r > 0 and v, w ∈ U ,
+c1 |v−w|2
+r
+
+(s, v)(r , w)e− 6
+
+≤ C0 (s, w).
+
+(7.2)
+
+Since U is a C 1,α -domain for some α > 0, (3.9) holds with a1 = a2 = 1. By (3.9)
+and the triangle inequality,
+2
+1 (v) ≤ c0 (dist(w, ∂U ) + |v − w|) ≤ c0
+
+1 (w) + c0 |v − w|.
+
+It follows that
+1 (v)
+(s, v) = 1 ∧
+≤1∧
+1 ∧ s 1/2
+
+
+
+c02
+
+1 (w) + c0 |v − w|
+1 (w)
+
+1 (w)
+·
+1 ∧ s 1/2
+
+
+
+123
+
+1564
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+
+
+c0 |v − w|
+(s, w).
+≤ c02 +
+1 (w)
+Thus,
+
+
+
+c0 |v − w|
+1 (w)
+(s, v)(r , w) ≤ c02 +
+1∧
+(s, w)
+1 ∧ r 1/2
+1 (w)
+
+
+c0 |v − w|
+(s, w).
+≤ c02 +
+1 ∧ r 1/2
+Moreover, since the function xe−x is bounded, we have
+
+
+2
+c
+c0 |v − w| − c1 |v−w|2
+− 61 |v−w|
+2
+r
+6
+r
+(s, w)
+≤ c0 + c0 |v − w| +
+e
+(s, v)(r , w)e
+r 1/2
+≤ C0 (s, w),
+2
+
+where C0 is a finite constant depending on c0 , c1 and the diameter of U . This
+proves (7.2).
+In order to prove the lemma, we split the integral over [0, t] into the sum of the
+integral over [t/2, t] and the integral over [0, t/2]. Denote these two integrals by I1
+and I2 , respectively. By (7.2), we have the following two bounds
+c1 |x−z|2
+t−s
+
+(t − s, x)(s, z)e− 3
+(t − s, x )(s, z )e
+
+c
+−z |2
+− 31 |x t−s
+
+≤ C0 (s, x),
+≤ C0 (s, x ).
+
+These bounds and (t − s, z)(t − s, z ) ≤ 1 imply that
+I1 ≤ C02
+×
+
+t
+
+ds (s, x)(s, x )(s, y)(s, y )
+
+t/2
+
+dz dz
+U2
+
+e−2μ1 (t−s) − 2c1 |x−z|2 +|x −z |2
+e−2μ1 s − 2c1 |z−y|2 +|z −y |2
+3
+t−s
+s
+e
+f
+(z
+−
+z
+)
+e 3
+.
+1 ∧ (t − s)d
+1 ∧ sd
+
+Then, using the bound (s, x) ≤ (t/2, x) ≤
+Lemma 5.1, we obtain
+
+√
+2(t, x) for t/2 ≤ s ≤ t and
+
+e−2μ1 t − 2c1 |x−y|2 +|x −y |2
+t
+e 3
+I1 ≤ C(t, x)(t, x )(t, y)(t, y)
+1 ∧ td
+
+
+t
+(t − s)s −β/2
+1∧
+ds.
+t
+t/2
+For I2 , we use the bounds
+c1 |z−y|2
+s
+
+(t − s, z)(s, y)e− 6
+
+123
+
+≤ C0 (t − s, y),
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+c1 |z −y |2
+s
+
+(t − s, z )(s, y )e− 6
+
+1565
+
+≤ C0 (t − s, y ),
+
+and (s, z)(s, z ) ≤ 1 to get that
+I2 ≤ C02
+×
+
+t/2
+
+ds (t − s, x)(t − s, x )(t − s, y)(t − s, y )
+
+0
+
+dz dz
+U2
+
+e−2μ1 (t−s) −c1 |x−z|2 +|x −z |2
+e−2μ1 s −c1 |z−y|2 +|z −y |2
+t−s
+2s
+e
+f
+(z
+−
+z
+)
+e
+.
+1 ∧ (t − s)d
+1 ∧ sd
+
+For 0 ≤ s ≤ t/2, we apply the identity (5.1) with t and s replaced by t = t + s and
+s = 2 s respectively, and with v = z − x and w = y − x. This gives
+e−c1
+
+|x−z|2 +|x −z |2
+t−s
+
+= e−c1
+≤e
+
+e−c1
+
+|z−y|2 +|z −y |2
+2s
+
+|x−y|2 +|x −y |2
+t+s
+2
+
+−y |
+− 31 |x−y| +|x
+t
+2c
+
+e−c1
+2
+
+e
+
+|(z−x)− t −s (y−x)|2 +|(z −x )− t −s (y −x )|2
+t
+t
+τ
+
+−c1
+
+|(z−x)− t −s (y−x)|2 +|(z −x )− t −s (y −x )|2
+t
+t
+τ
+
+,
+
+where τ = (t − s )s /t . It is easy to see that for 0 ≤ s ≤ t/2,
+
+(1 ∧ τ )
+
+d−β/2
+
+≤2
+
+d
+
+(t − s)s
+1∧
+t
+
+d−β/2
+.
+
+Hence,
+we can follow the proof of Lemma 5.1(i) and use the bound (t − s, x) ≤
+√
+2(t, x) for 0 ≤ s ≤ t/2 to deduce that
+e−2μ1 t − 2c1 |x−y|2 +|x −y |2
+t
+I2 ≤ C (t, x)(t, x )(t, y)(t, y)
+e 3
+1 ∧ td
+
+t/2 
+(t − s)s −β/2
+1∧
+ds.
+t
+0
+The proof of Lemma 7.1 is complete.
+
+
+
+
+We can now strengthen the bounds (6.10) and (6.11) for KλD (t, x, x , y, y ) in the
+case of bounded C 1,α -domains. Note that (t, x) = 0 for all x ∈ ∂U , hence (7.3)
+and (7.4) below provide more precise estimates than (6.10) and (6.11) for x, x , y, y
+that are close to ∂U .
+Proposition 7.2 If U is a bounded C 1,α -domain for some α > 0. Then:
+
+123
+
+1566
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+(i) There exist positive finite constants C, c, c such that for all t > 0 and x, x , y, y ∈
+U,
+KλD (t, x, x , y, y ) ≤
+
+Cλ2
+(t, x)(t, x )(t, y)(t, y )
+1 ∧ td 
+
+
+2c
+
+×e
+
+− 31
+
+|x−y|2 |x −y |2
++ t
+t
+
+4
+
+e
+
+2t cλ2 +c λ 2−β −μ1
+
+
+
+(7.3)
+.
+
+(ii) There exist positive finite constants C̄, c̄, c̃ such that for all t > 0, for all
+x, x , y, y ∈ U ,
+C̄λ2
+(t, x)(t, x )(t, y)(t, y )
+1 ∧ td
+
+
+
+
+KλD (t, x, x , y, y ) ≥
+
+×e
+
+−16c2 |x−xt |
+
+2
+
+e
+
+−12c2
+
+|x−y|2 |x −y |2
++ t
+t
+
+e
+
+4 −μ
+1
+
+2t c̄λ2 +c̃λ 2−β
+
+
+
+.
+(7.4)
+
+Proof
+(i). Similarly to the proof of Proposition 6.5(i), the upper bound (7.3) can be proved
+by applying Lemmas 7.1, 5.3 and 4.6.
+(ii). To prove the lower bound (7.4), we claim that for each n ≥ 0,
+ (n+1) (t, x, x , y, y )
+G
+D
+≥ C n+1 (t, x)(t, x )(t, y)(t, y )
+t n−kβ/2
+e−2μ1 t −16c2 |x−x |2 −12c2 |x−y|2 +|x −y |2 
+t
+t
+e
+e
+.
+×
+1 ∧ td
+(n − k)!(k!)1−β/2
+n
+
+(7.5)
+
+k=0
+
+Indeed, for n = 0, (7.5) follows from Proposition 3.6(i). For n ≥ 1, we can prove (7.5)
+by modifying the proof in Proposition 6.5(ii) and we outline the major changes as
+follows. Instead of V (x) defined in (3.13), we now consider
+
+C (x + (ε0 /4)ξ yi , ξ yi , ε0 /4) in case (1) of (3.13),
+
+V (x) =
+B(x, ε0 /4)
+in case (2) of (3.13),
+(x) ⊂ V (x) ⊂ U and there exists δ0 > 0 such that for all x ∈ U , for all
+so that V
+(x), dist(z, ∂U ) ≥ δ0 . Hence, (3.9) implies that
+z∈V
+inf
+
+inf
+
+(x)
+x∈U z∈V
+
+−1
+1 (z) ≥ c0 δ0 > 0.
+
+For any x ∈ U , define x̃ by
+
+x̃ =
+
+123
+
+x + (ε0 /4)ξ yi in case (1) of (3.13),
+x
+in case (2) of (3.13).
+
+(7.6)
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1567
+
+Then, as in Lemma 6.4, we can show that there exists C0 > 0 such that for all t > 0,
+(x) ∩ B(x̃, s),
+for all x ∈ U , for all 0 ≤ r ≤ s ≤ ε0 /4, for all z ∈ V
+(x) ∩ B(x̃, s) ∩ B(z, r )) ≥ C0 (1 ∧ r )d .
+Vol(V
+
+(7.7)
+
+For n = 1, similarly to the proof in Proposition 6.5(ii), we have
+ D2 (t, x, x , y, y )
+G
+t/2
+
+
+
+
+
+dz dz G D (t − s, x, x , z, z ) f (z − z )G D (s, z, z , y, y )
+√
+(x)∩B(x̃, t)]2
+[V
+e−2μ1 t −16c2 |x−x |2 −12c2 |x−y|2 +|x −y |2
+t
+t
+e
+e
+≥ C(t, x)(t, x )(t, y)(t, y )
+(1 ∧ t d )2
+≥
+
+ds
+
+t/4
+
+×
+
+t/2
+
+dz dz (1 ∧
+√
+(x)∩B(x̃, t)]2
+[V
+
+ds
+t/4
+
+2
+1 (z)) (1 ∧
+
+2
+−β
+1 (z )) |z − z | .
+
+Then, by using (7.6) and (7.7), we obtain (7.5) for n = 1.
+For n ≥ 2, we first restrict the integrals of s1 , s2 , s3 , . . . , sn to the smaller
+1 t t
+1 t
+t
+2 t
+, (1 − 2n
+) 2 , 2 , (1 − 2n
+) 2 , s1 − 8n
+) 2 , s2 − (s1 − s2 ) , . . . ,
+intervals (1 − 4n
+t−s1
+n−1 t
+t
+(1 − 2n ) 2 , sn−1 − (sn−1 − sn−1 ) , respectively, so that 5n ≤ 8n
+≤ s1 − s2 ≤
+s2 − s3 ≤ · · · ≤ sn−1 − sn . We can then modify the proof of Proposition 6.5(ii) by
+considering
+z 1 , z 1 ∈ A1
+z 2 ∈ A2
+z 2 ∈ A2
+
+%
+(x) ∩ B(x̃, (t − s1 )/(5n) ∧ (ε0 /4)),
+:= V
+√
+√
+(x) ∩ B(x̃, s1 − s2 ∧ (ε0 /4)) ∩ B(z 1 , s1 − s2 ∧ (ε0 /4)),
+:= V
+√
+√
+(x) ∩ B(x̃, s1 − s2 ∧ (ε0 /4)) ∩ B(z 1 , s1 − s2 ∧ (ε0 /4)),
+:= V
+..
+.
+
+z n ∈ An
+z n ∈ An
+
+%
+%
+(x) ∩ B(x̃, sn−1 − sn ∧ (ε0 /4)) ∩ B(z n−1 , sn−1 − sn ∧ (ε0 /4)),
+:= V
+%
+%
+(x) ∩ B(x̃, sn−1 − sn ∧ (ε0 /4)) ∩ B(z n−1 , sn−1 − sn ∧ (ε0 /4)).
+:= V
+
+Then, along the lines of the proof of Proposition 6.5(ii), we can deduce (7.5) using (7.6)
+and (7.7) above.
+Finally, recall that
+KλD (t, x, x , y, y ) = λ2
+
+∞
+
+
+(n+1)
+
+
+λ2n G
+D
+
+(t, x, x , y, y ).
+
+n=0
+
+By using (7.5), interchanging the order of summation, and using (4.11), we can obtain
+the lower bound (7.4) as in the proof of Proposition 6.5(ii). This completes the proof
+of Proposition 7.2.
+
+
+
+123
+
+1568
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+7.2 Proof of Theorem 1.7
+Proof of Theorem 1.7 In Remark 1.8, we have seen that ν satisfies condition (1.25) if
+∗
+and only if J2c
+(t, x) < ∞ for all t > 0 and x ∈ U . The proof of the existence, p-th
+1 /3
+moment bounds and uniqueness of the solution is similar to the proof of Theorem 1.4
+in Sect. 5, with the use of Lemma 7.1 instead of Lemma 5.1 (i). The correlation bounds
+follow immediately from Propositions 6.2 and 7.2.
+
+
+7.3 Proof of corollary 1.9
+Proof of Corollary 1.9 Note that the Dirichlet kernel kernel for L on U =
+given by
+
+G UD (t, x, y) =
+
+m
+
+
+m
+
+i=1 Ui is
+
+G UDi (t, xi , yi )
+
+i=1
+
+for t > 0 and x = (x1 , . . . , xm ), y = (y1 , . . . , ym ) ∈ U , where G UDi (t, xi , yi ) is the
+Dirichlet heat kernel for Li on the C 1,αi -domain Ui . This and Proposition 3.6 applied
+to each G UDi (t, xi , yi ) imply the following heat kernel estimate
+G UD (t, x, y) ≤ C1  ∗ (t, x) ∗ (t, y)
+
+e−μ1 t −c1 |x−y|2
+t
+e
+1 ∧ t d/2
+
+with suitable constants C1 and c1 , where  ∗ is as defined in (1.32) and μ1 is the
+sum of the leading eigenvalues of the Dirichlet operators Li . By the proof of (7.2) in
+Lemma 7.1, for each i, we have
+
+
+Ui
+(vi )
+1 ∧ 1 1/2
+1∧s
+
+
+
+Ui
+(wi )
+1 ∧ 1 1/2
+1∧r
+
+
+e
+
+c |vi −wi |2
+r
+
+− 61
+
+
+≤ C0,i
+
+Ui
+(wi )
+1 ∧ 1 1/2
+1∧s
+
+
+
+for all s, r > 0 and vi , wi ∈ Ui , where C0,i is a constant. Taking products over
+i ∈ {1, . . . , m} gives
+c1 |v−w|2
+r
+
+ ∗ (s, v) ∗ (r , w)e− 6
+
+≤ C0  ∗ (s, w)
+
+m
+C0,i . Then, the same proof of
+for all s, r > 0 and v, w ∈ U , where C0 = i=1
+Lemma 7.1 shows that the estimate (7.1) holds with every  replaced by  ∗ . This
+implies that the estimate (7.3) also holds with every  replaced by  ∗ . Using these
+estimates, the statements (i) and (ii) in Theorem 1.7 with  replaced by  ∗ can
+be proved for the product domain the same way they are proved in Theorem 1.7.
+
+
+Condition (1.31) ensures that Jc∗ (t, x) < ∞ for all t > 0 and x ∈ U .
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1569
+
+7.4 Some auxiliary results related to examples in Sect. 2.1
+Lemma 7.3 For ν > −1, let Jν (·) be the Bessel function of first kind and of order ν
+and let z 0 be any positive zero of Jν (·). Then,
+r −ν Jν (r z 0 )
+< ∞.
+1−r
+r ∈(0,1)
+sup
+
+−ν
+
+Jν (r z 0 )
+, which is a continuous function on (0, 1). By Eq. 10.7.3
+Proof Set f (r ) = r 1−r
+ν
+of [34], we see that limr →0 f (r ) = (ν)−1 z20 < ∞. Because all zeros of Jν (·)
+are simple (see Section 10.21 ibid), we see that limr →1 f (r ) = −z 0 Jν (z 0 ) < ∞.
+Therefore, f (r ) is a continuous function on [0, 1], from which the desired result
+follows.
+
+
+
+Remark 7.4 In the setting of Example 2.2, the leading eigenfunction is given by
+1 (x) =
+
+1
+|x|(2−d)/2 J(d−2)/2 (z 0 |x|) ,
+Cd
+
+where z 0 is the first positive zero of the Bessel function J(d−2)/2 (x), and Cd is some
+normalization constant. One may refer to §34.2 in Chapter III of [42] for the case
+d = 2 and Section H in Chapter 2 of [21] for the general case d ≥ 3. In particular,
+the leading eigenfunction 1 (x) corresponds to Fklm (x) in Theorem 2.66 (ibid.) with
+k = 0, l = 1 and m = 1. Here are a few comments:
+(1) The multiplicity for the leading eigenvalue z 0 is one since dk = 1; see Corollary
+2.55 (ibid.).
+(2) Y01 (x) in Theorem 2.66 (ibid.) is a constant function.
+(3) In Fig. 2(2.2), we have chosen the following normalization constant:
+(d−2)/2
+
+Cd = lim r (2−d)/2 J(n−2)/2 (z 0 r ) = 2−d/2 d  (1 + d/2)−1 z 0
+r →0
+
+,
+
+(7.8)
+
+where the limit is due to [34, Eq. 10.7.3 on p. 223], so that max|x|≤1 (1, x) = 1.
+The following Lemma is used in Example 2.3.
+Lemma 7.5 R1 and R2 are two simple zeros for Z (r ) defined in Example 2.3.
+Proof It is straightforward to check that R1 and R2 are two zeros of Z (r ). To show that
+they are simple, one needs to prove that Z (r ) = 0 for r = R1 and R2 . By Eq. 10.6.3
+of [34], we see that
+z 0−1 Z (r ) = J0 (R1 z 0 )Y0 (r z 0 ) − J0 (r z 0 )Y0 (R1 z 0 )
+= −J0 (R1 z 0 )Y1 (r z 0 ) + J1 (r z 0 )Y0 (R1 z 0 ).
+
+123
+
+1570
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+Table 3 Three cases in the proof of Lemma 7.5
+(a) Case 1.
+J0
+
+J1
+
+Y0
+
+Y1
+
+(b) Case 2.
+J0
+
+J1
+
+Y0
+
+Y1
+
+(c) Case 3.
+J0
+
+J1
+
+Y0
+
+Y1
+
+R1 z 0
+
+= 0
+
+—
+
+=0
+
+= 0
+
+R1 z 0
+
+=0
+
+= 0
+
+= 0
+
+—
+
+R1 z 0
+
+= 0
+
+—
+
+= 0
+
+—
+
+R2 z 0
+
+= 0
+
+—
+
+=0
+
+= 0
+
+R2 z 0
+
+=0
+
+= 0
+
+= 0
+
+—
+
+R2 z 0
+
+= 0
+
+—
+
+= 0
+
+—
+
+By setting r = R1 and applying Eq. 10.5.2 (ibid.), we have that
+z 0−1 Z (R1 ) = −J0 (R1 z 0 )Y1 (R1 z 0 ) + J1 (R1 z 0 )Y0 (R1 z 0 ) =
+
+2
+= 0,
+π R1 z 0
+
+which proves that R1 is a simple zero of Z (r ).
+Let F(z) denote the function in (2.7). By setting r = R2 , we have
+z 0−1 Z (R2 ) = −J0 (R1 z 0 )Y1 (R2 z 0 ) + J1 (R2 z 0 )Y0 (R1 z 0 ).
+
+(7.9)
+
+Because J02 (z) + Y02 (z) > 0 for all z > 0 (see, e.g., Eq. 10.9.30 ibid), we see that if
+Y0 (R1 z 0 ) = 0, then J0 (R1 z 0 ) = 0. Because all zeros of Yν (·) are simple, we see that
+Y1 (R1 z 0 ) = −Y0 (R1 z 0 ) = 0. But since z 0 is a zero of F(z), i.e.,
+0 = J0 (R1 z 0 )Y0 (R2 z 0 ) − J0 (R2 z 0 )Y0 (R1 z 0 ) = J0 (R1 z 0 )Y0 (R2 z 0 ).
+Hence Y0 (R2 z 0 ) = 0, which further implies that both J0 (R2 z 0 ) = 0 and Y1 (R2 z 0 ) =
+−Y0 (R2 z 0 ) = 0. This proves Case 1 in Table 3a. Applying the same arguments with
+Y0 (R1 z 0 ) = 0 replaced by Y0 (R2 z 0 ) = 0, J0 (R1 z 0 ) = 0, and J0 (R2 z 0 ) = 0, we see
+that only three cases can happen, which are listed in the following Table 3:
+Cases 1 and 2: From the expression of Z (R2 ) in (7.9), we see that in these two cases,
+Z (R2 ) = 0.
+Case 3: Since both Y0 (R1 z 0 ) and Y0 (R2 z 0 ) are nonzero, and since F(z 0 ) = 0, we see
+that
+J0 (R1 z 0 ) =
+
+Y0 (R1 z 0 )J0 (R2 z 0 )
+.
+Y0 (R2 z 0 )
+
+This and Eq. 10.5.2 (ibid.) imply that
+Y0 (R1 z 0 )
+(−J0 (R2 z 0 )Y1 (R2 z 0 ) + J1 (R2 z 0 )Y0 (R2 z 0 ))
+Y0 (R2 z 0 )
+Y0 (R1 z 0 ) 2
+= 0.
+=
+Y0 (R2 z 0 ) π R2 z 0
+
+z 0−1 Z (R2 ) =
+
+Therefore, combining the above three cases, we have proved that R2 is a simple zero
+of Z (r ).
+
+
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1571
+
+Acknowledgements C. Y. Lee is partially supported by Taiwan’s National Science and Technology Council grant NSTC111-2115-M-007-015-MY2. L. Chen is partially supported by NSF DMS-2246850 and a
+collaboration grant from Simons Foundation (959981). The authors would also like to thank the anonymous
+referee for the careful reading and helpful suggestions, which have greatly improved the quality of the paper.
+
+References
+1. Amir, Gideon, Corwin, Ivan, Quastel, Jeremy: Probability distribution of the free energy of the continuum directed random polymer in 1+1 dimensions. Commun. Pure Appl. Math. 64(4), 466–537 (2011).
+https://doi.org/10.1002/cpa.20347
+2. Balan, Raluca M., Conus, Daniel: Intermittency for the wave and heat equations with fractional noise
+in time. Ann. Probab. 44(2), 1488–1534 (2016). https://doi.org/10.1214/15-AOP1005
+3. Balan, Raluca M., Jolis, Maria, Quer-Sardanyons, Lluís: Intermittency for the hyperbolic Anderson
+model with rough noise in space. Stochastic Process. Appl. 127(7), 2316–2338 (2017). https://doi.org/
+10.1016/j.spa.2016.10.009
+4. Candil, D.J.-M.: Localization errors of the stochastic heat equation. In: EPFL Ph.D. Thesis (2022), p.
+221. https://doi.org/10.5075/epfl-thesis-7742
+5. Carmona, R.A., Molchanov, S.A.: Parabolic Anderson problem and intermittency. Mem. Amer. Math.
+Soc. 108(518), 8-#x0002B;125 (1994). https://doi.org/10.1090/memo/0518
+6. Cerrai, S.: Second order PDE’s in finite and infinite dimension. In: Vol. 1762. A Probabilistic Approach.
+Springer, Berlin (2001) pp. x+330. ISBN: 3-540-42136-X. https://doi.org/10.1007/b80743
+7. Chen, Le., Dalang, Robert C.: Moments and growth indices for the nonlinear stochastic heat equation with rough initial conditions. Ann. Probab. 43(6), 3006–3051 (2015). https://doi.org/10.1214/14AOP954
+8. Chen, Le., Dalang, Robert C.: Moments, intermittency and growth indices for the nonlinear fractional
+stochastic heat equation. Stoch. Partial Differ. Equ. Anal. Comput. 3(3), 360–397 (2015). https://doi.
+org/10.1007/s40072-015-0054-x
+9. Chen, Le., Yaozhong, Hu., Nualart, David: Two-point correlation function and Feynman-Kac formula for the stochastic heat equation. Potential Anal. 46(4), 779–797 (2017). https://doi.org/10.1007/
+s11118-016-9601-y
+10. Chen, Le., Yaozhong, Hu., Nualart, David: Nonlinear stochastic time-fractional slow and fast diffusion
+equations on Rd . Stoch. Process. Appl. 129(12), 5073–5112 (2019). https://doi.org/10.1016/j.spa.
+2019.01.003
+11. Chen, L., Hu, Y., Nualart, D.: Regularity and strict positivity of densities for the nonlinear stochastic
+heat equation. Mem. Amer. Math. Soc. 273(1340), 5-#x0002B;102 (2021). https://doi.org/10.1090/
+memo/1340
+12. Chen, Le., Huang, Jingyu: Comparison principle for stochastic heat equation on Rd . Ann. Probab.
+47(2), 989–1035 (2019). https://doi.org/10.1214/18-AOP1277
+13. Chen, Le., Kim, Kunwoo: On comparison principle and strict positivity of solutions to the nonlinear
+stochastic fractional heat equations. Ann. Inst. Henri Poincaré Probab. Stat. 53(1), 358–388 (2017).
+https://doi.org/10.1214/15-AIHP719
+14. Chen, Le., Kim, K.: Nonlinear stochastic heat equation driven by spatially colored noise: moments
+and intermittency. Acta Math. Sci. Ser. B (Engl. Ed.) 39(3), 645–668 (2019). https://doi.org/10.1007/
+s10473-019-0303-6
+15. Conus, Daniel, et al.: Initial measures for the stochastic heat equation. Ann. Inst. Henri Poincaré Probab.
+Stat. 50(1), 136–153 (2014). https://doi.org/10.1214/12-AIHP505
+16. Corwin, I.: The Kardar–Parisi–Zhang equation and universality class. Random Matrices Theory Appl.
+1(1), 1130001 (2012). https://doi.org/10.1142/S2010326311300014
+17. Da Prato, G., Zabczyk, J.: Stochastic equations in infinite dimensions. In: Second. Vol. 152. Cambridge
+University Press, Cambridge (2014), pp. xviii+493. ISBN: 978-1-107-05584-1. https://doi.org/10.
+1017/CBO9781107295513
+18. Dalang, Robert C.: Extending the martingale measure stochastic integral with applications to spatially
+homogeneous spde’s. Electron. J. Probab. 4(6), 29 (1999). https://doi.org/10.1214/EJP.v4-43
+19. Dalang, Robert C., Quer-Sardanyons, Lluís: Stochastic integrals for spde’s: a comparison. Expos.
+Math. 29(1), 67–109 (2011). https://doi.org/10.1016/j.exmath.2010.09.005
+
+123
+
+1572
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+20. Davies, E.B.: Heat Kernels and Spectral Theory. Vol. 92. Cambridge University Press, Cambridge
+(1990), pp. x+197. ISBN: 0-521-40997-7
+21. Folland, G.B.: Introduction to Partial Differential Equations. Second. Princeton University Press,
+Princeton, NJ (1995), pp. xii+324. ISBN: 0-691-04361-2
+22. Foondun, Mohammud: Remarks on non-linear noise excitability of some stochastic heat equations.
+Stoch. Process. Appl. 124(10), 3429–3440 (2014). https://doi.org/10.1016/j.spa.2014.04.015
+23. Foondun, Mohammud, Khoshnevisan, Davar: Intermittence and nonlinear parabolic stochastic partial
+differential equations. Electron. J. Probab. 14(21), 548–568 (2009). https://doi.org/10.1214/EJP.v14614
+24. Foondun, Mohammud, Nualart, Eulalia: On the behaviour of stochastic heat equations on bounded
+domains. ALEA Lat. Am. J. Probab. Math. Stat. 12(2), 551–571 (2015)
+25. Grisvard, P.: Elliptic Problems in Nonsmooth Domains. Vol. 24. Pitman, Advanced Publishing Program,
+Boston, MA (1985), pp. xiv+410. ISBN: 0-273-08647-2
+26. Guerngar, Ngartelbaye, Nane, Erkan: Moment bounds of a class of stochastic heat equations driven
+by space-time colored noise in bounded domains. Stoch. Process. Appl. 130(10), 6246–6270 (2020).
+https://doi.org/10.1016/j.spa.2020.05.009
+27. Henrot, A., Pierre, M.: Variation et Optimisation de Formes. Vol. 48. Une analyse géométrique. [A
+geometric analysis]. Springer, Berlin (2005), pp. xii+334. ISBN: 978-3-540-26211-4; 3-540-26211-3.
+https://doi.org/10.1007/3-540-37689-5
+28. Khoshnevisan, D.: Analysis of Stochastic Partial Differential Equations. Vol. 119. In: Published for
+the Conference Board of the Mathematical Sciences, Washington, DC; by the American Mathematical Society, Providence, RI (2014), pp. viii+116. ISBN: 978-1-4704-1547-1. https://doi.org/10.1090/
+cbms/119
+29. Khoshnevisan, Davar, Kim, Kunwoo: Non-linear noise excitation and intermittency under high disorder. Proc. Am. Math. Soc. 143(9), 4073–4083 (2015). https://doi.org/10.1090/S0002-9939-201512517-8
+30. Liu, Wei, Tian, Kuanhou, Foondun, Mohammud: On some properties of a class of fractional stochastic
+heat equations. J. Theor. Probab. 30(4), 1310–1333 (2017). https://doi.org/10.1007/s10959-016-06846
+31. Mueller, Carl: On the support of solutions to the heat equation with noise. Stoch. Stoch. Rep. 37(4),
+225–245 (1991). https://doi.org/10.1080/17442509108833738
+32. Mueller, Carl, Nualart, David: Regularity of the density for the stochastic heat equation. Electron. J.
+Probab. 13(74), 2248–2258 (2008). https://doi.org/10.1214/EJP.v13-589
+33. Nualart, E.: Moment bounds for some fractional stochastic heat equations on the ball. Electron. Commun. Probab. 23, 1–12 (2018). https://doi.org/10.1214/18-ECP147
+34. Olver, Frank W.J., et al.: NIST handbook of mathematical functions. With 1 CD-ROM (Windows,
+Macintosh and UNIX). U.S. Department of Commerce, National Institute of Standards and Technology,
+Washington, DC; Cambridge University Press, Cambridge (2010), pp. xvi+951. ISBN: 978-0-52114063- 8
+35. El Ouhabaz, M., Wang, F.-Y.: Sharp estimates for intrinsic ultracontractivity on C 1,α- domains.
+Manuscr. Math. 122(2), 229–244 (2007). https://doi.org/10.1007/s00229-006-0065-z
+36. Polyanin, A.D., Nazaikinskii, V.E.: Handbook of Linear Partial Differential Equations for Engineers
+and Scientists. Second. CRC Press, Boca Raton, FL (2016), pp. xxxiv+1609. ISBN: 978- 1-4665-81456. https://doi.org/10.1201/b19056
+37. Prévôt, Claudia, Röckner, Michael: A Concise Course on Stochastic Partial Differential Equations.
+Vol. 1905. Springer, Berlin (2007), pp. vi+144. ISBN: 978-3-540-70780-6; 3-540-70780-8
+38. Riahi, Lotfi: Estimates for Dirichlet heat kernels, intrinsic ultracontractivity and expected exit time on
+Lipschitz domains. Commun. Math. Anal. 15(1), 115–130 (2013)
+39. Saloff-Coste, Laurent: A note on Poincaré, Sobolev, and Harnack inequalities. Int. Math. Res. Not. 2,
+27–38 (1992). https://doi.org/10.1155/S1073792892000047
+40. Saloff-Coste, Laurent: The heat kernel and its estimates. Probab. Approach Geom. 57, 405–436 (2010).
+https://doi.org/10.2969/aspm/05710405
+41. Shiga, Tokuzo: Two contrasting properties of solutions for one-dimensional stochastic partial differential equations. Canad. J. Math. 46(2), 415–437 (1994). https://doi.org/10.4153/CJM-1994-0228
+42. Trèves, François: Basic linear partial differential equations, p. xvii+470. Academic Press, Harcourt
+Brace Jovanovich, New York-London (1975)
+
+123
+
+Stochastics and Partial Differential Equations: Analysis and Computations (2024) 12:1507–1573
+
+1573
+
+43. Walsh, John B.: An Introduction to Stochastic Partial Differential Equations. In: École d’été de probabilités de Saint-Flour, XIV–1984. Vol. 1180. (1986), pp. 265-439. https://doi.org/10.1007/BFb0074920
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps
+and institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under
+a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted
+manuscript version of this article is solely governed by the terms of such publishing agreement and applicable
+law.
+
+123
+
+

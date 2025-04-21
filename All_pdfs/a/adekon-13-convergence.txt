@@ -1,0 +1,7886 @@
+The Annals of Probability
+2013, Vol. 41, No. 3A, 1362–1426
+DOI: 10.1214/12-AOP750
+© Institute of Mathematical Statistics, 2013
+
+CONVERGENCE IN LAW OF THE MINIMUM OF A BRANCHING
+RANDOM WALK
+B Y E LIE A ÏDÉKON1
+Eindhoven University of Technology
+We consider the minimum of a super-critical branching random walk.
+Addario-Berry and Reed [Ann. Probab. 37 (2009) 1044–1079] proved the
+tightness of the minimum centered around its mean value. We show that a
+convergence in law holds, giving the analog of a well-known result of Bramson [Mem. Amer. Math. Soc. 44 (1983) iv+190] in the case of the branching
+Brownian motion.
+
+1. Introduction. We consider a branching random walk defined as follows.
+The process starts with one particle located at 0. At time 1, the particle dies and
+gives birth to a point process L. Then, at each time n ∈ N, the particles of generation n die and give birth to independent copies of the point process L, translated to
+their position. If T is the genealogical tree of the process, we see that T is a Galton–
+Watson tree, and we denote by |x| the generation of the vertex x ∈ T (the ancestor
+is the only particle at generation 0). For each x ∈ T, we denote by V (x) ∈ R its
+position on the real line. With this notation, (V (x), |x| = 1) is distributed as L.
+The collection of positions (V (x), x ∈ T) defines our branching random walk.
+We assume that we are in the boundary case (in the sense of [8])
+
+
+(1.1) E
+
+
+
+1 > 1,
+
+E
+
+|x|=1
+
+
+
+
+
+e−V (x) = 1,
+
+E
+
+|x|=1
+
+
+
+
+
+V (x)e−V (x) = 0.
+
+|x|=1
+
+Every branching random walk satisfying mild assumptions
+can be reduced to this
+
+case by some
+renormalization. We assume that |x|=1 1 < ∞ almost surely, but
+
+we allow E[ |x|=1 1] = ∞. We are interested in the minimum at time n
+
+
+
+
+Mn := min V (x), |x| = n ,
+where min ∅ := ∞. Writing for y ∈ R ∪ {±∞}, y+ := max(y, 0), we introduce
+the random variables
+(1.2)
+
+X :=
+
+
+
+e−V (x) ,
+
+X̃ :=
+
+|x|=1
+
+
+
+V (x)+ e−V (x) .
+
+|x|=1
+
+We assume throughout the remainder of the paper, including in the statements of
+theorems and lemmas, etc., that:
+Received December 2010; revised February 2012.
+1 Supported in part by the Netherlands Organisation for scientific Research (NWO).
+
+MSC2010 subject classifications. 60J80, 60F05.
+Key words and phrases. Minimum, branching random walk, killed branching random walk.
+
+1362
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+• the distribution of L is nonlattice;
+• we have
+
+E
+
+(1.3)
+(1.4)
+
+
+
+2 −V (x)
+
+V (x) e
+
+1363
+
+
+
+< ∞,
+
+|x|=1
+
+
+
+E X(ln+ X)2 < ∞,
+
+E[X̃ ln+ X̃] < ∞.
+
+These assumptions are discussed after Theorem 1.1. Under (1.1),
+the mini
+mum Mn goes to infinity, as it can be easily seen from the fact that |u|=n e−V (u)
+goes to zero [22]. The law of large numbers for the speed of the minimum goes
+back to the works of Hammersley [16], Kingman [19] and Biggins [6], and we
+know that Mnn converges almost surely to 0 in the boundary case. The second order was recently found separately by Hu and Shi [17], and Addario-Berry and
+Reed [1], and is proved to be equal to 32 ln n in probability, though there exist
+almost sure fluctuations (Theorem 1.2 in [17]). In [1], the authors computed the
+expectation of Mn to within O(1), and showed, under suitable assumptions, that
+the sequence of the minimum is tight around its mean. Through recursive equations, Bramson and Zeitouni [11] obtained the tightness of Mn around its median,
+when assuming some properties on the decay of the tail distribution. In the particular case where the step distribution is log-concave, the convergence in law of Mn
+around its median was proved earlier by Bachmann [4]. The aim of this paper is to
+get the convergence of the minimum Mn centered around 32 ln n for a general class
+of branching random walks. This is the analog of the seminal work from Bramson [10], to which our approach bears some resemblance. To state our result, we
+introduce the derivative martingale, defined for any n ≥ 0 by
+Dn :=
+
+(1.5)
+
+
+
+V (x)e−V (x) .
+
+|x|=n
+
+From [7] (and Proposition A.3 in Appendix A), we know that the martingale converges almost surely to some limit D∞ , which is strictly positive on the set of
+nonextinction of T. Notice that under (1.1), the tree T has a positive probability to
+survive.
+T HEOREM 1.1.
+(1.6)
+
+There exists a constant C ∗ ∈ (0, ∞) such that for any real x,
+lim P Mn ≥
+
+n→∞
+
+
+3
+∗ x
+ln n + x = E e−C e D∞ .
+2
+
+R EMARK 1. We can see our theorem as the analog of the result of Lalley and
+Sellke [21] in the case of the branching Brownian motion: the minimum converges
+to a random shift of the Gumbel distribution.
+R EMARK 2. We assumed the number of children to be finite almost surely.
+We think that this assumption is superfluous, but our proof does not seem to work
+
+1364
+
+E. AÏDÉKON
+
+without this assumption; see equation (5.3). The condition of nonlattice distribution is necessary since it is hopeless to have a convergence in law around 32 ln n in
+general. We do not know if an analogous result holds in the lattice case. If (1.3)
+does not hold, we can expect, under suitable conditions, to have still a convergence
+in law, but centered around κ ln n for some constant κ = 3/2. This comes from the
+different behavior of the probability to remain positive for one-dimensional random walks with infinite variance. Finally, condition (1.4) appears naturally for
+D∞ not being identically zero; see [7], Theorem 5.2.
+The proof of the theorem is divided into three steps. First, we look at the tail
+distribution of the minimum Mnkill of the branching random walk killed below
+zero, that is, Mnkill := min{V (x), V (xk ) ≥ 0, ∀0 ≤ k ≤ |x|}, where xk denotes the
+ancestor of x at generation k.
+P ROPOSITION 1.2.
+
+There exists a constant C1 > 0 such that
+3
+lim sup lim sup ez P Mnkill < ln n − z − C1 = 0.
+2
+z→∞ n→∞
+
+This allows us to get the tail distribution of Mn in a second stage.
+P ROPOSITION 1.3.
+
+We have
+ez
+3
+lim sup lim sup P Mn < ln n − z − C1 c0 = 0,
+2
+z→∞ n→∞ z
+
+where C1 is the constant in Proposition 1.2, and c0 > 0 is defined in (2.13).
+Looking at the set of particles that cross a high level A > 0 for the first time, we
+then deduce the theorem for the constant C ∗ = C1 c0 .
+The paper is organized as follows. Section 2 introduces a useful and well-known
+tool, the many-to-one lemma. Then, Sections 3, 4 and 5 contain, respectively, the
+proofs of Propositions 1.2, 1.3 and Theorem 1.1. A sum-up of the notation used in
+the paper can be found in Appendix D.
+Throughout the paper, (ci )i≥0 denote positive constants. We say thatan ∼ bn
+as n → ∞ if limn→∞ bann = 1. We write E[f, A] for E[f 1A ], and we set ∅ := 0,
+∅ := 1.
+2. The many-to-one lemma. For a ∈ R, we denote by Pa the probability distribution associated to the branching random walk starting from a, and
+Ea the corresponding expectation. Under (1.1), there exists a centered random
+walk (Sn , n ≥ 0) such that for any n ≥ 1, a ∈ R and any measurable function
+g : Rn → [0, ∞),
+(2.1)
+
+Ea
+
+
+
+|x|=n
+
+
+
+
+
+
+
+g V (x1 ), . . . , V (xn )
+
+
+
+= Ea eSn −a g(S1 , . . . , Sn ) ,
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+1365
+
+where, under Pa , we have S0 = a almost surely. We will write P and E instead of P0 and E0for brevity. In particular, under (1.3), S1 has a finite variance
+σ 2 := E[S12 ] = E[ |x|=1 V (x)2 e−V (x) ]. Equation (2.1) is called in the literature
+the many-to-one lemma and can be seen as a consequence of Proposition 2.2 below.
+2.1. Lyons’s change of measure. We introduce the additive martingale
+(2.2)
+
+Wn :=
+
+
+
+e−V (u) .
+
+|u|=n
+
+comes from the branching property together with
+The fact that Wn is a martingale
+
+the assumption that E[ |x|=1 e−V (x) ] = 1. From [22], we know that Wn converges
+almost surely as n → ∞ to 0 under our assumption (1.1). For any n ≥ 0, let Fn
+denote the
+σ -algebra generated by the positions (V (x), |x| ≤ n) up to time n, and
+
+F∞ := n≥0 Fn . For any a ∈ R, the Kolmogorov extension theorem guarantees
+that there exists a probability measure P̂a on F∞ such that for any n ≥ 0,
+(2.3)
+
+P̂a |Fn = ea Wn • Pa |Fn .
+
+We will write P̂ instead of P̂0 . We associate to the probability P̂a the expectation Êa .
+
+We introduce the point process L̂ with Radon–Nykodim derivative i∈L e−V (i)
+with respect to the law of L, and we consider the following process. At time 0,
+the population is composed of one particle w0 located at V (w0 ) = 0. Then, at
+each step n, particles of generation n die and give birth to independent point processes distributed as L, except for the particle wn which generates a point process
+distributed as L̂. The particle wn+1 is chosen among the children of wn with probability proportional to e−V (x) for each child x of wn . This defines a branching
+random walk B̂ with a marked ray (wn )n≥0 , which we call the spine. On the space
+of marked branching random walks, let Fˆn be the σ -algebra generated by the positions (V (x), |x| ≤ n) and the marked ray (or spine) (wk , k ≤ n) up to time n. Then,
+
+B̂ is measurable with respect to Fˆ∞ := n≥0 Fˆn . We call B the natural projection
+of B̂ on the space of branching random walks without marked rays; in other words
+B is obtained from B̂ by forgetting the identity of the spine. In particular, B is
+measurable with respect to F∞ . Notice that B is a branching random walk with
+immigration. We use the notation a + B̂ or a + B to denote the branching random
+walk which positions are translated by a.
+P ROPOSITION 2.1 ([22]).
+tribution of a + B .
+
+Under P̂a , the branching random walk has the dis-
+
+Hence we will identify from now on our branching random walk under P̂a to the
+marked branching random walk a + B̂ . Notice that by doing so, we introduce in our
+
+1366
+
+E. AÏDÉKON
+
+branching random walk a marked particle, the spine, and we extend the probability
+P̂a to Fˆ∞ . We stress that in the filtration (Fn , n ≥ 0), we do not know the identity
+of the spine. For  ≥ 1, we call (w ) the siblings of the spine at generation :
+they are the vertices which share the same parent as w . We will often use the
+σ -algebra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(2.4)
+
+Ĝ := σ wj , V (wj ), (wj ), V (u) u∈(wj ) , j ∈ [1, ] ,
+
+(2.5)
+
+Ĝ∞ := σ wj , V (wj ), (wj ), V (u) u∈(wj ) , j ≥ 1
+
+
+
+associated to the positions of the spine and its siblings, respectively, up to time 
+and up to time ∞.
+(i) For any |x| = n, we have
+
+P ROPOSITION 2.2 ([22]).
+
+P̂a {wn = x|Fn } =
+
+(2.6)
+
+e−V (x)
+.
+Wn
+
+(ii) The process of the positions of the spine (V (wn ), n ≥ 0) under P̂a has the
+distribution of the centered random walk (Sn , n ≥ 0) under Pa .
+This change of probability was used in [22]. We refer to [23] for the case of the
+Galton–Watson tree, to [13] for the analog for the branching Brownian motion and
+to [7] for spine decompositions in various types of branching. Before closing this
+section, we collect some elementary facts about centered random walks with finite
+variance. We recall that we deal with nonlattice random walks.
+There exists a constant α1 > 0 such that for any x ≥ 0 and n ≥ 1,
+
+
+
+
+Px min Sj ≥ 0 ≤ α1 (1 + x)n−1/2 .
+
+(2.7)
+
+j ≤n
+
+There exists a constant α2 > 0 such that for any b ≥ a ≥ 0, x ≥ 0 and n ≥ 1,
+
+
+(2.8)
+
+
+
+Px Sn ∈ [a, b], min Sj ≥ 0 ≤ α2 (1 + x)(1 + b − a)(1 + b)n−3/2 .
+j ≤n
+
+Let 0 < λ < 1. There exists a constant α3 = α3 (λ) > 0 such that for any b ≥ a ≥ 0,
+x, y ≥ 0 and n ≥ 1
+
+
+Px Sn ∈ [y + a, y + b], min Sj ≥ 0, min Sj ≥ y
+j ≤n
+
+(2.9)
+
+
+
+λn≤j ≤n
+
+≤ α3 (1 + x)(1 + b − a)(1 + b)n−3/2 .
+
+n
+= 0. There exists
+Let (an , n ≥ 0) be a nonnegative sequence such that limn→∞ na1/2
+a constant α4 > 0 such that for any a ∈ [0, an ] and n ≥ 1
+
+
+
+(2.10)
+
+
+
+P Sn ∈ [a, a + 1], min Sj ≥ 0, min Sj ≥ a ≥ α4 n−3/2 .
+j ≤n
+
+n/2<j ≤n
+
+Equation (2.7) is Theorem 1a, page 415 of [14]. Equations (2.8) and (2.9) are, for
+example, Lemmas 2.2 and 2.4 in [3]. Equation (2.10) is Lemma 4.3 of [2]: even if
+the uniformity in a ∈ [0, an ] is not stated there, it follows directly from the proof.
+
+1367
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+2.2. A convergence in law for the one-dimensional random walk. We recall
+that (Sn )n≥0 is a nonlattice centered random walk under P, with finite variance
+E[S12 ] = σ 2 ∈ (0, ∞). We introduce its renewal function R(x) which is zero if
+x < 0, 1 if x = 0 and for x > 0,
+(2.11)
+
+R(x) :=
+
+ 
+
+P Sk ≥ −x, Sk <
+
+k≥0
+
+
+
+min
+
+0≤j ≤k−1
+
+Sj .
+
+If Hn denotes the nth strict descending ladder height (where by strict descending
+ladder height, we mean any Sk such that Sk < min0≤j ≤k−1 Sj ), then we observe
+that for x ≥ 0,
+R(x) =
+
+(2.12)
+
+
+
+P(Hn ≥ −x),
+
+n≥0
+
+which is E[number of strict descending ladder heights which are ≥ −x]. Similarly, we define R− (x) as the renewal function associated to −S. Since E[S1 ] = 0
+and E[S12 ] < ∞, we have that E[|H1 |] < ∞; see Theorem 1, Section XVIII.5,
+page 612 in [14]. Then the renewal theorem [14], page 360, implies that there
+exists c0 > 0, such that
+(2.13)
+
+lim
+
+x→∞
+
+R(x)
+= c0 .
+x
+
+Moreover, there exist C− , C+ > 0 such that
+(2.14)
+
+
+
+C+
+P min Si ≥ 0 ∼ √ ,
+1≤i≤n
+n
+
+(2.15)
+
+
+
+C−
+P max Si ≤ 0 ∼ √
+1≤i≤n
+n
+
+as n → ∞ (Theorem 1a, Section XII.7, page 415 of [14]).
+L EMMA 2.3. Let (rn )n≥0 and (λn )n≥0 be two sequences of numbers, respecn
+tively, in R+ and in (0, 1) and such that, respectively, limn→∞ nr1/2
+= 0, and
+0 < lim infn→∞ λn ≤ lim supn→∞ λn < 1. Let F : R+ → R be a Riemann integrable function. We suppose that there existsa nonincreasing function F : R+ → R
+such that |F (x)| ≤ F (x) for any x ≥ 0 and x≥0 xF (x) < ∞. Then, as n → ∞,
+
+
+E F (Sn − y), min Sk ≥ 0, min Sk ≥ y
+(2.16)
+
+uniformly in y ∈ [0, rn ].
+
+k∈[0,n]
+
+k∈[λn n,n]
+
+
+
+√
+
+C− C+ π −3/2
+√
+F (x)R− (x) dx
+∼
+n
+x≥0
+σ 2
+
+1368
+
+E. AÏDÉKON
+
+P ROOF. Let ε > 0. Since |F (x)| ≤ F (x) and F is nonincreasing, we have for
+any integer M ≥ 1,
+
+
+E F (Sn − y) , min Sk ≥ 0, min Sk ≥ y, Sn ≥ y + M
+k∈[λn n,n]
+
+k∈[0,n]
+
+≤
+
+
+
+
+
+
+
+
+
+F (j )P min Sk ≥ 0, min Sk ≥ y, Sn ∈ [y + j, y + j + 1) .
+k∈[λn n,n]
+
+k∈[0,n]
+
+j ≥M
+
+For j ≥ 1, we have by (2.9) and the fact that lim supn→∞ λn < 1,
+
+
+
+
+P min Sk ≥ 0, min Sk ≥ y, Sn ∈ [y + j, y + j + 1) ≤ c1
+k∈[λn n,n]
+
+k∈[0,n]
+
+This yields that
+
+
+
+
+
+E F (Sn − y) , min Sk ≥ 0, min Sk ≥ y, Sn ≥ y + M ≤
+k∈[λn n,n]
+
+k∈[0,n]
+
+j
+n3/2
+
+.
+
+c1 
+F (j )j,
+n3/2 j ≥M
+
+which
+is less than εn−3/2 for M ≥ 1 large enough by the assumption that
+
+x≥0 xF (x) dx < ∞. Therefore, we can restrict to F with compact support. By
+approximating F by scale functions (F is Riemann integrable by assumption), we
+only prove (2.16) for F (x) = 1{x∈[0,a]} , where a ≥ 0. Let a ≥ 0 be a fixed constant
+in the remainder of the proof. We have for such F ,
+
+
+E F (Sn − y), min Sk ≥ 0, min Sk ≥ y
+k∈[λn n,n]
+
+k∈[0,n]
+
+
+
+
+
+
+
+= P min Sk ≥ 0, min Sk ≥ y, Sn ≤ y + a .
+k∈[λn n,n]
+
+k∈[0,n]
+
+Let
+φy,a,n (x) := Px
+
+
+
+
+
+min
+
+k∈[0,(1−λn )n]
+
+Sk ≥ y, S(1−λn )n ≤ y + a .
+
+For F (x) = 1{x∈[0,a]} , applying the Markov property at time λn n (we assume
+that λn n is an integer for simplicity), we obtain that
+
+
+E F (Sn − y), min Sk ≥ 0, min Sk ≥ y
+(2.17)
+
+
+
+k∈[0,n]
+
+k∈[λn n,n]
+
+
+
+
+
+= E φy,a,n (Sλn n ), min Sk ≥ 0 .
+k∈[0,λn n]
+
+We estimate φy,a,n (x). Reversing time, we notice that
+(2.18) φy,a,n (x) = P
+
+
+
+
+
+(−Sk ) ≥ −S(1−λn )n − (x − y) ≥ −a .
+
+min
+
+k∈[0,(1−λn )n]
+
+We introduce the strict descending ladder heights and times (H− , T− ) of −S
+defined by H0− := 0, T0− := 0, and for any  ≥ 0,
+
+
+
+
+−
+:= min k ≥ T− + 1 : (−Sk ) < H− ,
+T+1
+−
+:= −ST − .
+H+1
++1
+
+1369
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+Since E[S1 ] = 0 (and σ > 0), we have T− < ∞ for any  ≥ 0 almost surely.
+
+Similarly to equation (2.12), we have now R− (x) = ≥0 P(H− ≥ −x). Splitting
+the right-hand side of (2.18), depending on the value of the time  for which H− =
+mink∈[0,(1−λn )n] (−Sk ), we then have
+φy,a,n (x) =
+
+  −
+P T ≤ (1 − λn )n, H− ≥ −S(1−λn )n − (x − y) ≥ −a,
+≥0
+
+(2.19)
+
+
+
+(−Sk ) ≥ H− .
+
+min
+
+k∈[T− ,(1−λn )n]
+
+By the strong Markov property at time T− , we see that for any h ∈ [−a, 0] and
+t ∈ [0, (1 − λn )n)],
+
+
+P H− ≥ −S(1−λn )n − (x − y) ≥ −a,
+
+
+
+
+
+
+(−Sk ) ≥ H− H− , T− = (h, t)
+
+min
+
+k∈[T− ,(1−λn )n]
+
+= 1{h≥−a} P
+
+
+
+(−Sj ) ≥ 0,
+
+min
+
+j ∈[0,(1−λn )n−t]
+
+
+
+
+
+−S(1−λn )n−t ∈ (x − y) − a − h, (x − y) .
+Let ψ(x) := xe−x /2 1{x≥0} . By Theorem 1 of [12] and equation (2.15), we
+check that
+2
+
+
+
+1{h≥−a} P
+
+
+
+(−Sj ) ≥ 0, −S(1−λn )n−t ∈ (x − y) − a − h, (x − y)
+
+min
+
+
+
+j ∈[0,(1−λn )n−t]
+
+= 1{h≥−a}
+
+
+
+C−
+x
++ 1{h≥−a} o n−1
+(h + a)ψ √
+σ (1 − λn )n
+σ (1 − λn )n
+
+uniformly in x ∈ R, t ≤ n1/2 , h ∈ [−a, 0] and y ∈ [0, rn ]. Here we used the fact
+that lim supn→∞ λn < 1. We mention that the cut-off t ≤ n1/2 is arbitrary since the
+statement is valid for any t = o(n). To deal with t ∈ [n1/2 , (1 − λn )n], we see that
+
+
+1{h≥−a} P
+
+min
+
+(−Sj ) ≥ 0,
+
+j ∈[0,(1−λn )n−t]
+
+
+
+−S(1−λn )n−t ∈ (x − y) − a − h, (x − y)
+
+
+
+
+−1
+
+= 1{h≥−a} O(h + a + 1) (1 − λn )n − t + 1
+
+again by Theorem 1 of [12]. The last equation is valid uniformly in x, y ∈ R,
+t ∈ [0, (1 − λn )n] and h ∈ [−a, 0]. Going back to (2.19), this implies that, for any
+
+1370
+
+E. AÏDÉKON
+
+x ∈ R and y ∈ [0, rn ],
+
+
+
+
+φy,a,n (x) = o n−1 +
+×
+
+ 
+
+x
+C−
+ψ √
+σ (1 − λn )n
+σ (1 − λn )n
+
+
+E H− + a 1{H − ≥−a,T − ≤n1/2 }
+
+
+≥0
+
+ 
+
++ O(1)
+
+E
+
+≥0
+
+where we used the fact that
+constant. Observe that
+ 
+
+
+
+
+
+H− + a + 1
+−
+1 −
+,
+1/2
+(1 − λn )n − T− + 1 {H ≥−a,T ∈(n ,(1−λn )n]}
+
+
+−
+≥0 P(H ≥ −a) = R− (a) = O(1) since a is a
+
+
+
+E H− + a 1{H − ≥−a,T − >n1/2 } ≤ a
+
+
+≥0
+
+
+
+ 
+
+
+
+P H− ≥ −a, T− > n1/2 = o(1)
+
+≥0
+
+as n → ∞ by dominated convergence. Therefore,
+
+
+
+
+φy,a,n (x) = o n−1 +
++ O(1)
+
+  −
+
+C−
+x
+E H + a 1{H − ≥−a}
+ψ √
+
+σ (1 − λn )n
+σ (1 − λn )n ≥0
+
+ 
+
+E
+
+≥0
+
+
+
+H− + a + 1
+−
+1 −
+.
+1/2
+(1 − λn )n − T− + 1 {H ≥−a,T ∈(n ,(1−λn )n]}
+
+We want to show that the last term is o(n−1 ) as well. We observe that
+
+
+H− + a + 1
+−
+1 −
+E
+1/2
+(1 − λn )n − T− + 1 {H ≥−a,T ∈(n ,(1−λn )n]}
+≤ (a + 1)E
+
+1
+
+{H− ≥−a,T− ∈(n1/2 ,(1−λn )n]}
+(1 − λn )n − T− + 1
+
+
+
+
+
+.
+
+
+
+Since ≥0 P(H− ≥ −a, T− = k) ≤ P(Sk ∈ [0, a], minj ≤k Sj ≥ 0), we obtain
+by (2.8) that
+ 
+
+
+
+P H− ≥ −a, T− = k ≤ α2 (1 + a)2 k −3/2 ,
+
+≥0
+
+which yields that
+ 
+
+H− + a + 1
+−
+1 −
+E
+1/2
+(1 − λn )n − T− + 1 {H ≥−a,T ∈(n ,(1−λn )n]}
+≥0
+≤ α2 (1 + a)3
+
+(1−λ
+n )n
+k= n1/2 +1
+
+k −3/2
+
+
+
+
+
+1
+= o n−1
+(1 − λn )n − k + 1
+
+1371
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+as we require. Therefore,
+
+
+
+
+φy,a,n (x) = o n−1 +
+
+  −
+
+x
+C−
+ψ √
+E H + a 1{H − ≥−a}
+
+σ (1 − λn )n
+σ (1 − λn )n ≥0
+
+uniformly in x ≥ 0 and y ∈ [0, rn ]. By (2.7), we know that P(mink∈[0,n] Sk ≥ 0) ≤
+α1 n−1/2 . It follows from equation (2.17) that
+
+
+E F (Sn − y), min Sk ≥ 0,
+k∈[0,n]
+
+
+
+
+
+= o n−3/2 +
+×
+
+ 
+
+min
+
+k∈[(1−λn )n,n]
+
+Sk ≥ y
+
+
+
+
+
+
+
+Sλ n
+C−
+E ψ √ n
+, min Sk ≥ 0
+σ (1 − λn )n
+σ (1 − λn )n k∈[0,λn n]
+
+
+E H− + a 1{H − ≥−a} .
+
+
+≥0
+
+We know (see [9]) that Sn /(σ n1/2 ) conditioned on mink∈[0,n] Sk being nonnegative converges to the Rayleigh distribution. Therefore,
+
+
+Sλ n
+lim E ψ √ n
+n→∞
+σ (1 − λn )n
+
+
+
+min Sk ≥ 0 =
+
+
+
+
+
+ψ x
+
+k∈[0,λn n]
+
+x≥0
+
+λn
+ψ(x) dx
+1 − λn
+
+
+
+
+= λn (1 − λn )
+
+π
+.
+2
+
+
+
+
+
+In view of (2.14), we get that, as n → ∞,
+
+
+Sλ n
+C+ (1 − λn ) π
+√
+.
+E ψ √ n
+, min Sk ≥ 0 ∼
+2
+n
+σ (1 − λn )n k∈[0,λn n]
+We end up with
+
+
+E F (Sn − y), min Sk ≥ 0, min Sk ≥ y
+k∈[0,n]
+
+
+
+
+
+= o n−3/2 +
+
+C− C+
+σ n3/2
+
+
+
+
+
+k∈[λn n,n]
+
+
+π   −
+E H + a 1{H − ≥−a}
+
+2 ≥0
+
+
+
+uniformly in y ∈ [0, rn ]. We recall that ≥0 P(H− ≥ −a) = R− (a) by definition
+and we took F (x) = 1[0,a] (x). By Fubini’s theorem, it follows that
+ 
+
+
+
+E H− + a 1{H − ≥−a} =
+
+≥0
+
+which completes the proof. 
+
+
+
+
+x≥0
+
+F (x)R− (x) dx,
+
+1372
+
+E. AÏDÉKON
+
+3. The minimum of a killed branching random walk. It turns out to be
+useful to study first the killed branching random walk. Let
+
+
+Tkill := u ∈ T : V (uk ) ≥ 0, ∀0 ≤ k ≤ |u|
+
+
+
+be the set of individuals that stay above 0. We investigate the behavior of the minimal position
+
+
+
+
+Mnkill := min V (u), |u|kill = n ,
+
+(3.1)
+
+where we write |u|kill to say that u ∈ Tkill and |u| = n. If Mnkill < ∞; that is, if
+the killed branching random walk survives until time n, we denote by mkill,(n) a
+vertex chosen uniformly in the set {u : |u|kill = n, V (u) = Mnkill } of the particles
+that achieve the minimum. It will be convenient to use the following notation: for
+z ≥ 0,
+(3.2)
+
+an (z) := 32 ln n − z,
+
+(3.3)
+
+In (z) := an (z) − 1, an (z) ,
+
+
+
+
+
+and for z ≥ 0, 0 ≤ k ≤ n and λ ∈ (0, 1),
+
+0, 
+if 0 ≤ k ≤ λn,
+
+(3.4)
+dk (n, z, λ) :=
+if λn < k ≤ n.
+max an (z + 1), 0 ,
+We will see later that, as n → ∞, conditionally on being in In (z), a particle that
+achieves the minimum at time n did not cross the curve k → dk (n, z + L, λ) with
+probability tending to 1 when the constant L goes to ∞ [and λ is any constant in
+(0, 1)]. The section is devoted to the proof of the following proposition.
+P ROPOSITION 3.1. For any ε > 0, there exist a real A ≥ 0 and an integer
+N ≥ 1 such that for any n ≥ N and z ∈ [A, (3/2) ln(n) − A],
+
+
+
+
+ez P Mnkill ∈ In (z) − C2 ≤ ε,
+where C2 is some positive constant.
+C2
+C OROLLARY 3.2. Let C1 := 1−e
+−1 . For any ε > 0, there exist a real A ≥ 0
+and an integer N ≥ 1 such that for any n ≥ N and z ∈ [A, (3/2) ln(n) − A],
+
+
+
+
+
+ez P Mnkill < 32 ln n − z − C1 ≤ ε.
+Proposition 1.2 immediately follows from Corollary 3.2. Assuming that Proposition 3.1 holds, let us see how it implies the corollary.
+P ROOF OF C OROLLARY 3.2. Let ε > 0. We have by equation (2.1), for any
+integer n ≥ 1 and any real r ≥ 0,
+ 
+
+E
+
+|u|kill =n
+
+
+
+
+
+
+
+1{V (u)≤r} = E eSn , Sn ≤ r, min Sj ≥ 0
+0≤j ≤n
+
+
+
+
+
+≤ er P Sn ≤ r, min Sj ≥ 0 .
+0≤j ≤n
+
+1373
+
+MINIMUM OF A BRANCHING RANDOM WALK
+2
+
+By (2.8), we have P(Sn ≤ r, min0≤j ≤n Sj ≥ 0) ≤ c2 (1+r)
+. We deduce that
+n3/2
+
+
+
+
+P Mnkill ≤ r ≤ c(r)n−3/2
+
+(3.5)
+
+with c(r) := c2 er (1 + r)2 . Let A1 and N1 be as in Proposition 3.1. We have for
+n ≥ N1 and z ∈ [A1 , (3/2) ln(n) − A1 ],
+
+
+
+
+P Mnkill ∈ In (z) − C2 e−z ≤ εe−z .
+Summing this equation over z + k such that z + k ∈ [A1 , (3/2) ln(n) − A1 ], we
+get that for any n ≥ N1 and z ∈ [A1 , (3/2) ln(n) − A1 ],
+
+
+
+
+
+
+P Mnkill ∈ rn,z , an (z) − C2 e−z
+
+an (z+A
+ 1 )
+
+e−k ≤ εe−z
+
+an (z+A
+ 1 )
+
+k=0
+
+e−k
+
+k=0
+
+≤
+
+ε
+e−z ,
+−1
+1−e
+
+where rn,z := an (z) − an (z + A1 ) ≤ A1 . By (3.5), we get that
+
+
+
+P Mnkill < an (z) − C2 e−z
+
+an (z+A
+ 1 )
+
+e−k ≤
+
+k=0
+
+ε
+e−z + c(A1 + 1)n−3/2 .
+1 − e−1
+
+
+
+Let A2 ≥ A1 large enough such that k>A2 −A1 e−k ≤ ε, and c(A1 + 1) ≤ εeA2 .
+Then, for any n ≥ N1 and z ∈ [A1 , (3/2) ln(n) − A2 ],
+
+
+
+
+P Mnkill < an (z) −
+
+
+−1
+
+C2
+e−z ≤ ε 1 − e−1
++ 1 e−z + εeA2 n−3/2
+−1
+1−e
+
+
+≤ ε 1 − e−1
+
+−1
+
+
+
++ 1 e−z + εe−z ,
+
+which completes the proof. 
+3.1. Tightness of the minimum. Our aim is now to prove Proposition 3.1. In
+other words, we want to estimate the probability of the event {Mnkill ∈ In (z)}. The
+first lemma gives information on the path of particles located in In (z).
+L EMMA 3.3. Let 0 < λ < 1. There exist constants c3 , c4 > 0 such that for any
+n ≥ 1, L ≥ 0, x ≥ 0 and z ≥ 0,
+
+
+
+
+Px ∃u ∈ Tkill : |u| = n, V (u) ∈ In (z), min V (uk ) ∈ In (z + L)
+(3.6)
+
+k∈[λn,n]
+
+≤ c3 (1 + x)e−c4 L e−x−z .
+
+P ROOF. Let E be the event in (3.6), and write dk = dk (n, z + L, λ) as defined
+in (3.4). Considering the time when the minimum mink∈[λn,n] V (uk ) is reached,
+
+1374
+
+E. AÏDÉKON
+
+
+
+we observe that E ⊂ k∈[λn,n] Ek where we define Ek :=
+any u ∈ T with |u| = n,
+
+
+
+|u|=n Ek (u) and for
+
+
+
+
+
+Ek (u) := V (u ) ≥ d , ∀0 ≤  ≤ n, V (u) ∈ In (z), V (uk ) ∈ In (z + L) .
+Similarly, let
+
+
+
+
+
+Ek (S) := S ≥ d , ∀0 ≤  ≤ n, Sn ∈ In (z), Sk ∈ In (z + L) .
+We notice that Px (Ek ) ≤ Ex [
+In particular,
+
+
+
+Sn −x 1
+Ek (S) ] by (2.1).
+|u|=n 1Ek (u) ] which is Ex [e
+
+
+
+
+
+Px (Ek ) ≤ n3/2 e−x−z Px Ek (S) .
+
+(3.7)
+
+We need to estimate Px (Ek (S)). By the Markov property at time k,
+
+
+
+
+
+
+
+
+Px Ek (S) ≤ Px S ≥ d , ∀0 ≤  ≤ k, Sk ∈ In (z + L)
+
+
+× P Sn−k ∈ [L − 1, L + 1],
+
+min
+
+∈[0,n−k]
+
+
+
+S ≥ −1 .
+
+For the second term of the right-hand side, we know from (2.8) that there exists
+a constant c5 > 0 such that
+
+
+P Sn−k ∈ [L − 1, L + 1],
+(3.8)
+
+
+
+min
+
+∈[0,n−k]
+
+S ≥ −1
+
+≤ c5 (n − k + 1)−3/2 (1 + L).
+
+To bound the first term, our argument depends on the value of k. Suppose that
+λ+1
+2 n ≤ k ≤ n. We have by (2.9),
+
+(3.9)
+
+
+
+
+
+Px S ≥ d , ∀0 ≤  ≤ k, Sk ∈ In (z + L) ≤ c6
+
+(1 + x)
+.
+n3/2
+
+If λn ≤ k < λ+1
+2 n, we simply write
+
+
+Px S ≥ d , ∀0 ≤  ≤ k, Sk ∈ In (z + L)
+
+
+
+
+
+≤ Px Sk ∈ In (z + L), min S ≥ 0
+
+(3.10)
+
+∈[0,k]
+
+−3/2
+
+≤ c7 (1 + x) ln(n)n
+
+by (2.8). From (3.8), (3.9) and (3.10), there exists a constant c8 > 0 such that
+
+
+
+
+ln(n)
+Px Ek (S) ≤ c8 (1 + x)(1 + L)n−3/2 a −1/2 + √
+n
+k∈[λn,n−a]
+
+for any a ≥ 1. By (3.7), this yields that
+(3.11)
+
+
+
+ln(n)
+Px (Ek ) ≤ c8 (1 + x)(1 + L)e−x−z a −1/2 + √
+.
+n
+k∈[λn,n−a]
+
+1375
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+It remains to bound Px (Ek ) for n − a < k ≤ n. We observe that
+
+
+
+
+Px (Ek ) ≤ Px ∃|u| = k : V (u ) ≥ d , ∀0 ≤  ≤ k, V (u) ∈ In (z + L) .
+By an application of (2.1), we have
+
+
+
+
+
+Px (Ek ) ≤ n3/2 e−x−z−L Px S ≥ d , ∀0 ≤  ≤ k, Sk ∈ In (z + L) ,
+which is ≤ c9 e−x−z−L (1 + x) by (2.9) [for k ≥ (1 + λ)n/2, e.g.]. It follows that,
+for a ∈ [1, (1 − λ)n/2],
+
+
+(3.12)
+
+Px (Ek ) ≤ c9 (1 + a)(1 + x)e−x−z−L .
+
+k∈[n−a,n]
+
+Equations (3.11) and (3.12) yield that, for any n ≥ 1, z, L ≥ 0 and a ∈ [1,
+(1 − λ)n/2],
+Px (E) ≤
+
+
+
+Px (Ek )
+
+k∈[λn,n]
+
+(3.13)
+
+
+
+
+
+ln(n)
+≤ (1 + x)e−x−z c8 (1 + L) a −1/2 + √
++ c9 (1 + a)e−L .
+n
+Notice that (3.6) holds if L > (3/2) ln n since the left-hand side is 0. If L ≤
+(3/2) ln n, take a = max(1, αeβL ) with α, β > 0 small enough and use (3.13) to
+complete the proof. 
+We deduce the following corollary.
+C OROLLARY 3.4.
+
+We have for any z, x ≥ 0 and any integer n ≥ 1,
+
+
+
+
+Px Mnkill ≤ an (z) ≤ c10 (1 + x)e−x−z .
+Recall that an (z) := 32 ln n − z, In (z) := [an (z) − 1, an (z)) and dk (n, z + L, λ)
+is defined in (3.4).
+D EFINITION 3.5.
+|u| = n,
+
+For u ∈ T, we say that u ∈ Znz,L if
+
+V (u) ∈ In (z)
+
+and
+
+V (uk ) ≥ dk (n, z + L, 1/2)
+
+∀k ≤ n
+
+(see Figure 1).
+Notice that if u ∈ Znz,L , then necessarily u ∈ Tkill . In words, u ∈ Znz,L means that
+a particle is located around 32 ln n − z, and did not cross the curve k → dk (n, z +
+L, 1/2). We deduce from Lemma 3.3 that for any ε > 0, there exists L0 > 0 such
+that for any n ≥ 1, L ≥ L0 and z ≥ 0,
+(3.14)
+
+
+
+
+
+P ∃u ∈ Tkill : |u| = n, u ∈
+/ Znz,L , V (u) ∈ In (z) ≤ εe−z .
+
+Equivalently, with high probability, any particle of the killed branching random
+walk located around 32 ln n − z stayed above the curve k → dk (n, z + L, 1/2).
+We show now that P(Mnkill ≤ 32 ln n − z) has an exponential decay as z → ∞.
+Corollary 3.4 gives an upper bound. The following lemma gives a lower bound.
+
+1376
+
+E. AÏDÉKON
+
+F IG . 1.
+
+Path of a vertex in Znz,L .
+
+L EMMA 3.6. There exists c11 > 0 such that for any n ≥ 1 and z ∈
+[0, (3/2) ln n − 1]
+
+
+
+
+P Mnkill < 32 ln n − z ≥ c11 e−z .
+P ROOF. The proof relies on a second moment argument. Let z ∈
+[0, (3/2) ln n − 1] and n ≥ 1. For 1 ≤ k ≤ n, let
+⎧
+n
+⎪
+if 1 ≤ k ≤ ,
+⎨ k 1/12 ,
+(n)
+2
+ek = ek :=
+n
+⎪
+⎩ (n − k)1/12 ,
+if < k ≤ n
+2
+and write for brevity dk = dk (n, z, 1/2). In order to have good bounds in our second moment argument, we will restrict to “good” vertices which do not have “too
+many” descendants. This leads us to the following definition. We say that |u| = n
+is a z-good vertex if u ∈ Znz,0 and
+(3.15)
+
+
+
+
+
+
+
+ 
+
+e−(V (v)−dk ) 1 + V (v) − dk + ≤ Be−ek
+
+∀1 ≤ k ≤ n,
+
+v∈(uk )
+
+where (y) stands for the set of siblings of y, that is, the particles x = y which
+share the same parent as y in the tree T. The number B > 0 is a constant that we
+will fix later on. The reason for such a definition becomes clear in the computation
+of the second moment in (3.18). Such conditions on the behavior of the children off
+the path of the spine in a second moment argument are not new, and were already
+used in [15].
+Remember the probability measure P̂ that we introduced in Section 2.1, which
+is associated to the expectation Ê. We recall that wn is the spine at generation n,
+and we know from Proposition 2.2(ii) that (V (wk ), k ≥ 0) under P̂ has the law
+
+1377
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+of the centered random walk (Sk , k ≥ 0) under P. By (2.10) with an = (3/2) ln n,
+there exists c13 > 0 such that P̂(wn ∈ Znz,0 ) ≥ 2c13 n−3/2 . Then, by Lemma C.1,
+we can choose B > 0 such that for any n ≥ 1 and z ∈ [0, (3/2) ln n − 1],
+P̂(wn is a z-good vertex) ≥ c13 n−3/2 .
+Let Goodn be the number of z-good vertices at generation n. We have by definition
+of the measure P̂ then Proposition 2.2(i),
+
+
+
+1 
+1{u is a z-good vertex} = Ê eV (wn ) , wn is a z-good vertex .
+E[Goodn ] = Ê
+Wn |u|=n
+On the event that wn ∈ Znz,0 , we have that V (wn ) ≥ (3/2) ln(n) − z − 1. Therefore,
+E[Goodn ] ≥ n3/2 e−z−1 P̂(wn is a z-good vertex) ≥ c13 e−z−1 .
+
+(3.16)
+
+We look at the second moment. We use again Proposition 2.2(i) to see that
+
+
+
+
+E (Goodn )2 = Ê eV (wn ) Goodn , wn is a z-good vertex
+≤ n3/2 e−z Ê[Goodn , wn is a z-good vertex]
+since V (wn ) ≤ (3/2) ln(n) − z when wn ∈ Znz,0 . Let Yn be the number of vertices u
+such that u ∈ Znz,0 . We notice that Yn ≥ Goodn , hence
+
+
+E (Goodn )2 ≤ n3/2 e−z Ê[Yn , wn is a z-good vertex].
+We decompose Yn along the spine. We get
+Yn = 1{w ∈Z z,0 } +
+n
+
+n
+
+n
+
+
+
+
+Yn (u),
+
+k=1 u∈(wk )
+
+where Yn (u) is the number of vertices v which are descendants of u and such that
+v ∈ Znz,0 . Therefore,
+!
+
+
+
+E (Goodn )2 ≤ n3/2 e−z P̂(wn is a z-good vertex)
+(3.17)
++
+
+ 
+n
+
+
+Ê
+
+k=1
+
+"
+
+Yn (u), wn is a z-good vertex
+
+.
+
+u∈(wk )
+
+Recall from (2.5) that Ĝ∞ is the σ -algebra generated by the spine and its siblings.
+Recall that the branching random walk rooted at u ∈ (wk ) has the same law
+under P and P̂. For u ∈ (wk ), we have Yn (u) = 0 if there exists j ≤ |u| such that
+V (uj ) < dj . Otherwise, we have by (2.1),
+
+
+Ê Yn (u)|Ĝ∞ = EV (u)
+
+ 
+
+
+
+|v|=n−k
+
+
+
+1{V (vj )≥dk+j ,∀0≤j ≤n−k,V (v)∈In (z)}
+
+= e−V (u) EV (u) eSn−k , Sj ≥ dk+j , ∀0 ≤ j ≤ n − k, Sn−k ∈ In (z) .
+
+1378
+
+E. AÏDÉKON
+
+Consequently,
+
+
+
+
+Ê Yn (u)|Ĝ∞ ≤ n3/2 e−z−V (u) PV (u) Sj ≥ dk+j , ∀0 ≤ j ≤ n − k, Sn−k ∈ In (z)
+
+
+
+
+
+
+=: n3/2 e−z−V (u) p V (u), k, n, z ,
+the latter inequality consisting of the definition of p(V (u), k, n, z). Hence, equation (3.17) gives that
+
+
+E (Goodn )2
+≤n
+
+!
+
+3/2 −z
+
+P̂(wn is a z-good vertex)
+
+e
+
+(3.18)
++ n3/2 e−z
+
+ 
+n
+
+
+Ê
+
+k=1
+
+
+
+
+
+e−V (u) p V (u), k, n, z ,
+
+u∈(wk )
+
+"
+
+wn is a z-good vertex
+
+.
+
+We want to bound p(r, k, n, z) for r ∈ R. We have to split the cases k ≤ n/2 and
+n/2 < k ≤ n. Suppose first that k ≤ n/2. Then p(r, k, n, z) = 0 if r < 0. If r ≥ 0,
+we apply (2.9) to see that for any n ≥ 1, k ≤ n/2, r ≥ 0 and z ≥ 0,
+p(r, k, n, z) ≤ c14 (r + 1)n−3/2 .
+This implies that, for any n ≥ 1, k ≤ n/2, r ≥ 0 and z ≥ 0,
+n/2  
+
+
+
+
+k=1
+
+
+
+e−V (u) p V (u), k, n, z , wn is a z-good vertex
+
+Ê
+
+
+
+u∈(wk )
+
+≤ c14 n−3/2
+
+n/2  
+
+k=1
+
+≤ c14 Bn
+
+
+
+
+
+u∈(wk )
+
+n/2
+
+
+−3/2
+
+
+
+e−V (u) 1 + V (u)+ , wn is a z-good vertex
+
+Ê
+
+e−ek P̂(wn is a z-good vertex),
+
+k=1
+
+where the last inequality comes from the property (3.15) satisfied by a good vertex.
+When n/2 < k ≤ n, we simply write p(r, k, n, z) ≤ 1 and we get
+ 
+
+n
+
+
+Ê
+
+k= n/2+1
+
+≤
+
+−V (u) 
+
+e
+
+
+
+
+
+p V (u), k, n, z , wn is a z-good vertex
+
+u∈(wk )
+n
+
+
+k= n/2+1
+
+Ê
+
+ 
+u∈(wk )
+
+−V (u)
+
+e
+
+
+
+, wn is a z-good vertex
+
+1379
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+=n
+
+n
+
+
+−3/2 z+1
+
+e
+
+Ê
+
+k= n/2+1
+
+≤ Bn
+
+−3/2 z+1
+
+e
+
+n
+
+
+ 
+
+−(V (u)−dk )
+
+e
+
+
+
+, wn is a z-good vertex
+
+u∈(wk )
+
+e−ek P̂(wn is a z-good vertex)
+
+k= n/2+1
+
+by (3.15). Going back to (3.18), we deduce that for any z ≥ 0 and n ≥ 1,
+#
+
+
+
+E (Goodn )2 ≤ n3/2 e−z 1 + c15
+
+n
+
+
+$
+
+e−ek P̂(wn is a z-good vertex)
+
+k=1
+
+≤ c16 n
+
+3/2 −z
+
+e P̂(wn is a z-good vertex).
+
+Now, observe that P̂(wn is a z-good vertex) ≤ P̂(wn ∈ Znz,0 ) ≤ c17 n−3/2 by Definition 3.5 and equation (2.9). Hence
+
+
+E (Goodn )2 ≤ c18 e−z .
+
+(3.19)
+
+E[Goodn ]
+By the Paley–Zygmund inequality, we have P(Goodn ≥ 1) ≥ E[(Good
+2 which
+n) ]
+−z
+is greater than c19 e by (3.16) and (3.19). We conclude by observing that if
+Goodn ≥ 1, then Mnkill < 32 ln n − z. 
+2
+
+3.2. Proof of Proposition 3.1. Corollary 3.4 and Lemma 3.6 already give the
+right rate of decay, but we want to strengthen it into an asymptotic as z → ∞. We
+recall that mkill,(n) is chosen uniformly among the particles in Tkill that achieve
+the minimum. We introduced the notation Znz,L in Definition 3.5. By (3.14), we
+have that with high probability mkill,(n) ∈ Znz,L whenever Mnkill ∈ In (z), where L
+is a large constant. The first step of the proof is to give a representation of the
+probability P(Mnkill ∈ In (z), mkill,(n) ∈ Znz,L ) in terms of the spine decomposition
+presented in Section 2.1. Recall that the notation |u|kill = n is a short way to say
+that u ∈ Tkill and |u| = n.
+L EMMA 3.7.
+
+For any z ≥ 0, L ≥ 0, and n ≥ 1, we have
+
+
+P Mnkill ∈ In (z), mkill,(n) ∈ Znz,L
+
+(3.20)
+
+
+
+ eV (wn ) 1
+
+{V (wn )=Mnkill }
+= Ê 
+, wn ∈ Znz,L .
+|u|kill =n 1{V (u)=Mnkill }
+
+P ROOF.
+
+
+We observe that
+
+
+
+
+P Mnkill ∈ In (z), mkill,(n) ∈ Znz,L = E
+
+|u|=n
+
+
+
+1{u=mkill,(n) ,u∈Z z,L }
+n
+
+
+
+|u|=n 1{V (u)=Mnkill ,u∈Znz,L }
+=E
+.
+
+|u|kill =n 1{V (u)=Mnkill }
+
+1380
+
+E. AÏDÉKON
+
+Using the measure P̂, it follows from Proposition 2.2(i) that
+
+
+|u|=n 1{V (u)=Mnkill ,u∈Znz,L }
+E
+
+|u|kill =n 1{V (u)=Mnkill }
+
+
+
+
+
+eV (wn )
+= Ê 
+1{V (w )=M kill ,w ∈Z z,L } ,
+n
+n
+n
+n
+|u|kill =n 1{V (u)=Mnkill }
+which completes the proof. 
+We now study our branching random walk under P̂, which we identified with
+the branching random walk B̂ by the mean of Proposition 2.1. For b ≤ n integers
+and z ≥ 0, we define the event En (z, b) ∈ Fˆn by
+%
+
+(3.21) En (z, b) := ∀k ≤ n − b, ∀v ∈ (wk ),
+
+&
+
+min
+
+u≥v,|u|kill =n
+
+V (u) ≥ an (z) ,
+
+where, as before, (wk ) denotes the set of siblings of wk . On the event En (z, b) ∩
+{Mnkill ∈ In (z)}, we are sure that any particle located at the minimum separated
+from the spine after the time n − b. The following lemma will be proved in Section 3.3.
+L EMMA 3.8. Let η > 0 and L ≥ 0. There exist A > 0 and B ≥ 1 such that for
+any integers n ≥ b ≥ B and any real z ≥ A,
+(3.22)
+
+
+
+c
+
+
+
+P̂ En (z, b) , wn ∈ Znz,L ≤ ηn−3/2 .
+
+Let, for x ≥ 0, L ≥ 0 and any integer b ≥ 1
+ V (wb )−L
+e
+1{V (wb )=Mb }
+FL,b (x) := Êx 
+,
+
+(3.23)
+
+|u|=b 1{V (u)=Mb }
+
+
+
+min V (wk ) ≥ −1, V (wb ) ∈ [L − 1, L) .
+
+k∈[0,b]
+
+We stress that Mb which appears in the definition of FL,b (x) is the minimum at
+time b of the nonkilled branching random walk. Then define
+√ 
+C− C+ π
+√
+CL,b :=
+(3.24)
+FL,b (x)R− (x) dx,
+x≥0
+σ 2
+where C− , C+ and R− (x) were defined in Section 2.2. We recall that, by Proposi1{V (wb )=Mb }
+tion 2.2(ii), the spine has the law of (Sn )n≥0 . In (3.23), we see that 
+1{V (u)=M }
+|u|=b
+
+b
+
+is smaller than 1, and eV (wb )−L ≤ 1. Hence, |FL,b (x)| ≤ P(Sb ≤ L − x) =: F (x)
+
+1381
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+
+
+which is nonincreasing in x, and x≥0 F (x)x dx = 12 E[(L − Sb )2 1{Sb ≤L} ] < ∞.
+Moreover, changing the starting point from x to 0, we observe that
+FL,b (x)
+ V (wb )−L
+
+e
+1{V (wb )=Mb }
+1{mink∈[0,b] V (wk )≥−x−1,V (wb )∈[−x+L−1,−x+L)} .
+= e Ê 
+x
+
+|u|=b 1{V (u)=Mb }
+
+The fraction in the expectation is smaller than 1. Using the identity |1E − a1F | ≤
+1 − a + |1E − 1F | for a ∈ (0, 1), this yields that for x ≥ 0, ε > 0 and any y ∈
+[x, x + ε],
+FL,b (y) − FL,b (x)
+
+
+≤ ey E 1{mink∈[0,b] Sk ≥−y−1,Sb +y−L∈[−1,0)}
+
+
+− ex−y 1{mink∈[0,b] Sk ≥−x−1,Sb +x−L∈[−1,0)}
+
+≤ ey 1 − e−ε
+
+
+
++ ey E[1{mink∈[0,b] Sk +x+1∈[−ε,0)} + 1{Sb +x−L∈[−1−ε,−1)∪(−ε,0]} ]
+from which we deduce that x → FL,b (x) is Riemann integrable. Therefore, FL,b
+satisfies the conditions of Lemma 2.3 for any L ≥ 0 and integer b ≥ 1.
+We want to prove that the expectation in (3.20) behaves like e−z with some
+constant factor, as z → ∞. By Lemma 3.8, we can restrict to the event En (z, b).
+The next lemma shows that the expectation on this event is then equivalent to
+CL,b e−z .
+L EMMA 3.9. Let L ≥ 0 and η > 0. Let A and B be as in Lemma 3.8. For any
+integer b ≥ B, we can find a constant H > 0 such that for n large enough, and
+z ∈ [A, (3/2) ln(n) − L − H ],
+(3.25)
+
+ eV (wn ) 1
+
+{V (wn )=Mnkill }
+ez Ê 
+, wn ∈ Znz,L , En (z, b) − CL,b ≤ 3η.
+|u|kill =n 1{V (u)=Mnkill }
+
+P ROOF. Let L, η, A, B be as in the lemma. Throughout the proof, b is a fixed
+integer which is greater than B. We denote by Ê(3.25) the expectation in (3.25). Recall that under P̂, our process is identified with B̂ . Applying the branching property
+at the vertex wn−b to B̂ , we have for any n ≥ b and z ≥ 0,
+
+
+
+
+
+
+Ê(3.25) = Ê F kill V (wn−b ) , V (w ) ≥ d , ∀ ≤ n − b, En (z, b) ,
+where d := d (n, z + L, 1/2) [see (3.4)] and F kill is defined for x ≥ 0 by
+F
+(3.26)
+
+kill
+
+ eV (wb ) 1
+{V (wb )=Mbkill }
+(x) := Êx 
+, min V (wk ) ≥ an (z + L + 1),
+|u|kill =b 1{V (u)=Mbkill } k∈[0,b]
+
+
+
+V (wb ) ∈ In (z) .
+
+1382
+
+E. AÏDÉKON
+
+Notice that F kill (x) ≤ n3/2 e−z P̂x (mink∈[0,b] V (wk ) ≥ an (z + L + 1), V (wb ) ∈
+In (z)). Hence
+
+
+
+
+
+
+Ê(3.25) − Ê F kill V (wn−b ) , V (w ) ≥ d , ∀ ≤ n − b
+
+
+
+
+
+
+= Ê F kill V (wn−b ) , V (w ) ≥ d , ∀ ≤ n − b, (En )c
+
+
+
+
+≤ n3/2 e−z Ê P̂V (wn−b ) min V (wk ) ≥ an (z + L + 1), V (wb ) ∈ In (z)
+
+
+
+k∈[0,b]
+
+
+
+× 1{V (w )≥d ,∀≤n−b}∩(En )c ,
+where we wrote En for En (z, b). By the Markov property, the term
+
+
+
+
+Ê P̂V (wn−b ) min V (wk ) ≥ an (z + L + 1), V (wb ) ∈ In (z)
+
+
+
+k∈[0,b]
+
+× 1{V (w )≥d ,∀≤n−b},(En )c
+
+
+
+is equal to P̂(wn ∈ Znz,L , (En (z, b))c ) which is at most ηn−3/2 when z ≥ A and
+n ≥ b by Lemma 3.8 and our choice of A and B. Therefore, for any n ≥ b and
+z ≥ A,
+
+
+
+
+
+
+Ê(3.25) − Ê F kill V (wn−b ) , V (w ) ≥ d , ∀ ≤ n − b ≤ ηe−z .
+
+(3.27)
+
+Recall the definition of FL,b in (3.23). We would like to replace F kill (x) by
+n3/2 e−z FL,b (x − an (z + L)). We notice that
+
+
+
+
+n3/2 e−z FL,b x − an (z + L)
+
+
+
+
+eV (wb ) 1{V (wb )=Mb }
+= Êx 
+, min V (wk ) ≥ an (z + L + 1), V (wb ) ∈ In (z) .
+|u|=b 1{V (u)=Mb } k∈[0,b]
+We observe that the only difference with (3.26) is that the branching random walk
+1{V (w )=M kill }
+1{V (wb )=Mb }
+b
+b
+
+−
+| is at most 1 and
+1
+|u|=b 1{V (u)=Mb }
+|u|kill =b {V (u)=M kill }
+
+is not killed anymore. Since | 
+
+b
+
+is equal to zero if no particle touched the barrier 0, we have that, for any H ≥ 0
+such that H ≤ an (z + L),
+
+
+1{V (wb )=M kill }
+1{V (wb )=Mb }
+b
+−
+≤ 1{∃|u|≤b : V (u)≤an (z+L+H )} .
+1
+kill
+|u|=b 1{V (u)=Mb }
+|u| =b {V (u)=M kill }
+b
+
+Consequently,
+
+
+
+
+
+F kill (x) − n3/2 e−z FL,b x − an (z + L)
+
+
+≤ Êx eV (wb ) 1{∃|u|≤b : V (u)≤an (z+L+H )} ,
+min V (wk ) ≥ an (z + L + 1), V (wb ) ∈ In (z)
+
+k∈[0,b]
+
+
+
+1383
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+
+
+≤ n3/2 e−z Êx 1{∃|u|≤b : V (u)≤an (z+L+H )} ,
+min V (wk ) ≥ an (z + L + 1), V (wb ) ∈ In (z)
+
+
+
+k∈[0,b]
+
+
+
+= n3/2 e−z GH x − an (z + L)
+with for any y ≥ 0,
+GH (y) := P̂y
+
+
+
+
+
+∃|u| ≤ b : V (u) ≤ −H
+
+∩
+
+%
+
+
+&
+
+min V (wk ) ≥ −1, V (wb ) ∈ [L − 1, L) .
+
+k∈[0,b]
+
+We do not write the dependency on L and b ≥ B because they are fixed in this
+proof and so are considered as constants. This shows that, for any z ≥ 0, n ≥ 1 and
+H ∈ [0, an (z + L)],
+
+
+
+
+
+
+
+
+
+
+Ê F kill V (wn−b ) − n3/2 e−z FL,b V (wn−b ) − an (z + L) 1{V (w )≥d ,∀≤n−b}
+
+
+
+
+
+
+≤ n3/2 e−z Ê GH V (wn−b ) − an (z + L) 1{V (w )≥d ,∀≤n−b} .
+√
+
+
+
+We choose H such that C− C√+ π y≥0 GH (y)R− (y) dy ≤ η/2. We can check that
+σ 2
+the function GH satisfies the conditions of Lemma 2.3 as we did for FL,b . By
+Lemma 2.3, this yields that
+
+
+
+
+
+
+
+
+
+
+Ê F kill V (wn−b ) − n3/2 e−z FL,b V (wn−b ) − an (z + L) 1{V (w )≥d ,∀≤n−b}
+≤ ηe−z
+for n large enough and z ∈ [0, (3/2) ln n − L − H ]. The cut-off at (3/2) ln(n) −
+L − H is here only to ensure that H ≤ an (z + L). Combined with (3.27), we get
+that for n large enough, and z ∈ [A, (3/2) ln(n) − L − H ],
+
+
+
+
+
+
+Ê(3.25) − n3/2 e−z Ê FL,b V (wn−b ) − an (z + L) , V (w ) ≥ d ,
+∀0 ≤  ≤ n − b
+
+(3.28)
+≤ 2ηe−z .
+
+Recall the definition of CL,b in (3.24). We apply again Lemma 2.3 to see that
+
+
+
+
+
+
+CL,b
+n3/2
+as n → ∞ uniformly in z ∈ [0, (3/2) ln(n) − L]. Consequently, we have for n large
+enough and z ∈ [0, (3/2) ln(n) − L],
+Ê FL,b V (wn−b ) − an (z + L) , V (w ) ≥ d , ∀0 ≤  ≤ n − b ∼
+
+
+
+
+
+
+
+n3/2 e−z Ê FL,b V (wn−b ) − an (z + L) , V (w ) ≥ d , ∀0 ≤  ≤ n − b − e−z CL,b
+≤ ηe−z .
+The lemma follows from (3.28). 
+
+1384
+
+E. AÏDÉKON
+
+We now have the tools to prove Proposition 3.1.
+P ROOF OF P ROPOSITION 3.1. Let Ê(3.25) be the expectation in the left-hand
+side of (3.25). We introduce for any L ≥ 0 and any integer b ≥ 1,
+−
+CL,b
+:= lim inf lim inf ez Ê(3.25) ,
+z→∞ n→∞
+
++
+:= lim sup lim sup ez Ê(3.25) .
+CL,b
+z→∞
+
+n→∞
+
+In particular, taking the limits in n → ∞ then z → ∞ in (3.25), we have, for any
+L ≥ 0, η > 0 and b ≥ B(L, η) [with B(L, η) as in Lemma 3.8],
+−
++
+CL,b − 3η ≤ CL,b
+≤ CL,b
+≤ CL,b + 3η.
+
+(3.29)
+
+−
+and
+Notice that En (z, b) (hence Ê(3.25) ) is increasing in b. This implies that CL,b
++
+−
++
+CL,b are both increasing in b. For any L ≥ 0, let CL and CL be, respectively, the
+−
++
+and CL,b
+when b → ∞. By (3.29), we
+(possibly zero or infinite) limits of CL,b
+have for any L ≥ 0 and η > 0,
+
+lim sup CL,b − 3η ≤ CL− ≤ CL+ ≤ lim inf CL,b + 3η.
+b→∞
+
+b→∞
+
+Letting η go to 0, this yields that CL,b has a limit as b → ∞, that we denote by
+C(L) = CL− = CL+ , this for any L ≥ 0. Similarly, we see that Ê(3.25) is increasing
+in L. This gives that C(L) admits a limit as L → ∞, that we denote by C2 . Beware
+that at this stage, we do not know whether C2 ∈ (0, ∞). Let ε > 0. By (3.14), there
+exists L0 ≥ 0 such that for any L ≥ L0 , z ≥ 0 and n ≥ 1,
+
+
+
+
+/ Znz,L , Mnkill ∈ In (z) ≤ εe−z .
+P mkill,(n) ∈
+By Lemma 3.7, this yields that for L ≥ L0 , z ≥ 0 and any n ≥ 1,
+ eV (wn ) 1
+
+
+{V (wn )=Mnkill }
+kill
+z,L
+P Mn ∈ In (z) − Ê 
+, wn ∈ Zn
+≤ εe−z .
+|u|kill =n 1{V (u)=Mnkill }
+
+
+Take again η > 0 and L ≥ L0 , and let B = B(L, η) ≥ 1 and A = A(L, η) > 0 as in
+Lemma 3.8. We have
+ eV (wn ) 1
+
+{V (wn )=Mnkill }
+z,L
+c
+Ê 
+, wn ∈ Zn , En (z, b)
+|u|kill =n 1{V (u)=Mnkill }
+
+
+
+
+
+≤ n3/2 e−z P̂ wn ∈ Znz,L , En (z, b)c ≤ ηe−z
+for any n ≥ b ≥ B and z ≥ A. Consequently, for any L ≥ L0 , n ≥ b ≥ B and
+z ≥ A,
+ eV (wn ) 1
+
+
+
+{V (wn )=Mnkill }
+P Mnkill ∈ In (z) − Ê 
+, wn ∈ Znz,L , En (z, b) ≤ (ε + η)e−z .
+|u|kill =n 1{V (u)=Mnkill }
+
+1385
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+By Lemma 3.9, we get that for L ≥ L0 , b ≥ B(L, η), n large enough and z ∈
+[A(L, η), (3/2) ln(n) − L − H (L, η, b)],
+
+
+
+
+ez P Mnkill ∈ In (z) − CL,b ≤ (ε + 4η).
+
+(3.30)
+
+We stress that CL,b depends actually on η and ε through the choice of L0 and
+B(L, η). By (3.30) and Corollary 3.4, we know that for L ≥ L0 and b ≥ B(L, η),
+we have CL,b ≤ c10 + ε + 4η. Taking the limit b → ∞, this implies that for any
+L ≥ L0 , we have C(L) ≤ c10 + ε + 4η. Taking the limit L → ∞, we deduce that
+C2 ≤ c10 + ε + 4η hence C2 is finite. Let L > L0 such that |C2 − C(L)| ≤ η
+and b ≥ B(L) such that |CL,b − C(L)| ≤ η. Then, by (3.30), we have for n large
+enough and z ∈ [A(L, η), (3/2) ln(n) − L − H (L, η, b)],
+
+
+
+
+ez P Mnkill ∈ In (z) − C2 ≤ ε + 6η ≤ 2ε
+if we take η := ε/6. It remains to show that C2 > 0. We see that, necessarily,
+lim sup lim sup ez P Mnkill <
+z→∞
+
+n→∞
+
+3
+C2
+= 0.
+log n − z −
+2
+1 − e−1
+
+We know then that C2 > 0 by the lower bound obtained in Lemma 3.6. 
+3.3. Proof of Lemma 3.8. We present here the postponed proof of Lemma 3.8.
+P ROOF OF L EMMA 3.8. We follow the same strategy as for Lemma 3.6. Let
+η > 0. To avoid superfluous notation, we prove the lemma for L = 0 (the general
+case works similarly). Recall the definition of En (z, b) in (3.21). We want to show
+that P̂(En (z, b)c , wn ∈ Znz,0 ) ≤ ηn−3/2 when b and z are large enough. Let dk =
+dk (n, z, 1/2) as defined in (3.4) and
+⎧
+n
+⎪
+⎨ k 1/12 ,
+if 0 ≤ k ≤ ,
+2
+(3.31)
+ek = ek(n) :=
+n
+⎪
+⎩ (n − k)1/12 ,
+if < k ≤ n.
+2
+We recall that |u| = n is a z-good vertex if u ∈ Znz,0 and
+
+
+
+
+
+
+ 
+
+e−(V (v)−dk ) 1 + V (v) − dk + ≤ Be−ek
+
+∀1 ≤ k ≤ n
+
+v∈(uk )
+
+with B such that, for n ≥ 1 and z ≥ 0,
+(3.32)
+
+
+
+
+
+P̂ wn ∈ Znz,0 , wn is not a z-good vertex ≤
+
+η
+n3/2
+
+;
+
+see Lemma C.1. Recall that (wk ) is the set of siblings of wk and Ĝ∞ is defined
+in (2.5). Recall the law of the branching random walk under P̂ which we identified
+with B̂ by the mean of Proposition 2.1. For En (z, b) to happen, every sibling of
+
+1386
+
+E. AÏDÉKON
+
+the spine at generation less than n − b must have all its descendants at time n at
+position greater than an (z). In other words,
+
+
+(3.33)
+
+c
+
+P̂ En (z, b) , wn is a z-good vertex
+'
+
+= Ê 1 −
+
+n−b
+(
+
+(
+
+
+
+
+)
+
+
+
+1 − kill
+k,n V (u), z , wn is a z-good vertex
+
+,
+
+k=1 u∈(wk )
+kill
+where kill
+k,n (V (u), z) := PV (u) (Mn−k < an (z)) is the probability that the killed
+branching random walk rooted at u has its minimum greater than an (z) at time
+n − k. By Corollary 3.4, we see that if |u| ≤ n/2 [hence an (z) = an−|u| (z) + O(1)],
+then
+
+
+
+
+
+
+
+
+
+−z−V (u)
+.
+kill
+k,n V (u), z ≤ c20 1 + V (u)+ e
+
+On the event that wn is a z-good vertex, we have for k ≤ n/2 (hence dk =
+
+1/12
+0), u∈(wk ) (1 + V (u)+ )e−V (u) ≤ Be−ek = Be−k . Using the inequality x ≥
+e(x−1)/2 for x close enough to 1, we deduce that there exists A0 ≥ 0 such that for
+z ≥ A0 , n ≥ 1 and 1 ≤ k ≤ n/2, on the event that wn is a z-good vertex, we have
+(
+
+
+
+
+
+
+
+
+
+−z −k
+1 − kill
+k,n V (u), z ≥ exp −c21 e e
+
+1/12 
+
+u∈(wk )
+
+with c21 := c20 B/2. This yields that
+n/2
+(
+
+(
+
+
+
+
+
+1 − kill
+k,n V (u), z ≥ exp
+
+!
+−z
+
+−c21 e
+
+k=1 u∈(wk )
+
+n/2
+
+
+"
+−k 1/12
+
+e
+
+
+
+
+
+≥ exp −c22 e−z .
+
+k=1
+
+Therefore, there exists A1 > A0 such that for any z ≥ A1 and n ≥ 1,
+n/2
+(
+
+(3.34)
+
+(
+
+
+
+
+
+
+
+1/2
+1 − kill
+.
+k,n V (u), z ≥ (1 − η)
+
+k=1 u∈(wk )
+
+If k > n/2, we simply observe that if Mkill ≤ x, a fortiori M ≤ x. Since Wn
+[defined in (2.2)] is a martingale, we have 1 = E[W ] ≥ E[e−M ] ≥ e−x P(M ≤ x)
+for any  ≥ 1 and x ∈ R. We get that
+
+
+
+
+
+
+
+
+an (z) −V (u)
+e
+.
+kill
+k,n V (u), z ≤ P Mn−|u| < an (z) − V (u) ≤ e
+−(V (u)−dk ) for n/2 < k ≤ n. On the event that
+We rewrite it kill
+k,n (V (u), z) ≤ e
+−c23 e−ek =
+wn is a z-good vertex, we get that u∈(wk ) (1 − kill
+k,n (V (u), z)) ≥ e
+
+e−c23 (n−k)
+
+1/12
+
+for k greater than some constant b1 . Consequently, for any b ≥ b1 ,
+
+n−b
+(
+
+(
+
+k= n/2+1 u∈(wk )
+
+
+
+
+
+
+
+−c23
+1 − kill
+k,n V (u), z ≥ e
+
+n−b
+
+−(n−k)1/12
+k= n/2+1 e
+
+.
+
+1387
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+This yields that there exists B ≥ 1 such that for any b ≥ B and any n ≥ 1, we have
+n−b
+(
+
+(3.35)
+
+(
+
+
+
+
+
+
+
+1/2
+1 − kill
+.
+k,n V (u), z ≥ (1 − η)
+
+k= n/2+1 u∈(wk )
+
+In view of (3.34) and (3.35), we have for b ≥ B, z ≥ A1 and n ≥ 1,
+n−b
+(
+
+(
+
+
+
+
+
+
+
+1 − kill
+k,n V (u), z ≥ (1 − η).
+
+k=1 u∈(wk )
+
+Plugging it into (3.33) yields that
+
+
+c
+
+
+
+P̂ En (z, b) , wn is a z-good vertex ≤ ηP̂(wn is a z-good vertex)
+
+
+
+
+≤ ηP̂ wn ∈ Znz,0 .
+It follows from (3.32) that
+
+
+c
+
+
+
+ 
+
+
+
+
+
+P̂ En (z, b) , wn ∈ Znz,0 ≤ η P̂ wn ∈ Znz,0 + n−3/2 .
+Recall that the spine behaves as a centered random walk. Then apply (2.9) to see
+that P̂(wn ∈ Znz,0 ) ≤ c24 n−3/2 , which completes the proof of the lemma. 
+4. Tail distribution of the minimum of the BRW. We prove a slightly
+stronger version of Proposition 1.3.
+P ROPOSITION 4.1. Let C1 be as in Proposition 1.2 and c0 as in (2.13).
+For any ε > 0, there exist N ≥ 1 and A > 0 such that for any n ≥ N and
+z ∈ [A, (3/2) ln n − A],
+ez
+3
+P Mn < ln n − z − C1 c0 ≤ ε.
+z
+2
+We introduce some notation. To go from the tail distribution of Mnkill to the one
+of Mn , we have to control excursions inside the negative axis that can appear at the
+beginning of the branching random walk. For any real r, we define the set
+%
+
+S r := u ∈ T : min V (uk ) > V (u) ≥ −r
+
+(4.1)
+
+&
+
+k≤|u|−1
+
+(see Figure 2). Notice that S r = ∅ when r < 0. Let for |v| ≥ 1,
+ξ(v) :=
+
+(4.2)
+
+ 
+
+
+
+←  −(V (w)−V (←
+v ))
+e
+,
+
+1 + V (w) − V v
+
++
+
+w∈(v)
+←
+
+where v denotes the parent of v [and y+ := max(y, 0)]. Notice that ξ(v) is
+stochastically smaller than X + X̃ as defined in (1.2). To avoid some extra integrability conditions, we are led to consider vertices u ∈ S r which behave “nicely,”
+
+1388
+
+E. AÏDÉKON
+
+F IG . 2.
+
+The set S r .
+
+meaning that ξ(uk ) is not too big along the path {u1 , . . . , u|u| = u}. Hence, for any
+real r ≥ 0, we introduce
+(4.3)
+
+
+
+
+
+T r := u ∈ T : ∀1 ≤ k ≤ |u| : ξ(uk ) < e(V (uk−1 )+r)/2 .
+
+For any integer k ≥ 0, we denote by Skr , respectively, Tkr , the set S r ∩ {|u| = k},
+respectively, T r ∩ {|u| = k}. Finally, for any integer n ≥ 1, any z ≥ 0 and any
+u ∈ T, define
+(4.4)
+
+⎧
+⎪
+⎨ 1,
+
+if ∃v ≥ u : |v| = n, min V (v ) ≥ V (u),
+
+⎩
+
+and V (v) < an (z),
+otherwise
+
+Bnz (u) :=
+⎪
+
+0,
+
+∈[|u|,n]
+
+(see Figure 3). Notice that Bnz (u) = 0 if |u| > n. In words, Bnz (u) = 1 if there
+exists a descendant of u which stays above V (u) and is below level an (z) at time n.
+Observe that if Mn < an (z), then necessarily we can find such vertices u and v. The
+first subsection controls the set S r . Proposition 1.3 is then proved in Section 4.2.
+4.1. The branching random walk at the beginning. We will see that P(Mn <
+3
+ln
+n − z) is comparable to the probability that there exists u ∈ S z such that
+2
+Bnz (u) = 1. The lemmas in this section are used to give an asymptotic of this probability. As usual, we will use a second moment argument. Lemmas 4.2 and 4.3
+give bounds, respectively, on the first moment and second moment of the number
+of such vertices u. We recall that Mnkill is the minimum at time n of the branching
+random walk killed below zero. For any integers n ≥ 1, k ∈ [0, n], and any reals
+x, r, we recall that
+(4.5)
+
+
+
+
+
+kill
+kill
+k,n (x, r) := Px Mn−k < an (r) .
+
+By Corollary 3.2, there exists N0 ≥ 1 and A0 ≥ 0 such that for any n ≥ N0 , k ≤
+n1/2 and r ∈ [A0 , (3/2) ln(n) − A0 ],
+(4.6)
+
+er kill
+k,n (0, r) − C1 ≤ ε,
+
+1389
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+F IG . 3.
+
+Particles in S z−A such that Bnz (u) = 1.
+
+where we used the fact that k = o(n), thus ln(n − k) = ln(n) + o(1) [the same
+statement holds when replacing n1/2 by any sequence o(n)]. Moreover, we know
+by Corollary 3.4 that for any integers n ≥ 1, k ∈ [0, n] and any reals x, r ≥ 0,
+(4.7)
+
+n
+n−k+1
+
+−x−r
+kill
+k,n (x, r) ≤ c25 (1 + x)e
+
+3/2
+
+.
+
+L EMMA 4.2. (i) Fix ε > 0 and let C1 be the constant in Proposition 1.2. There
+exists A ≥ 0 such that for all n sufficiently large, and all z ∈ [A, (3/2) ln(n) − A],
+(4.8)
+
+ez
+E
+R(z − A)
+
+ 
+
+
+
+Bnz (u)1{|u|≤n1/2 }
+
+− C1 ≤ ε.
+
+u∈S z−A
+
+(ii) There exists a constant c such that for any n ≥ 1 and any z ∈ [0, (3/2) ln(n)],
+E
+
+
+
+u∈S z
+
+
+
+Bnz (u)1{|u|>n1/2 }
+
+(iii) Uniformly in A ≥ 0 and n ≥ 1, we have
+
+
+E
+
+
+
+≤ ce−z .
+
+
+Bnz (u)1{|u|≤n/2} = o(z)e−z
+
+u∈S z−A ∩(T z−A )c
+
+as z → ∞, where the set (T z−A )c denotes the complement of the set T z−A in the
+set of vertices of T.
+R EMARK .
+
+In (i) and (ii), we could replace n1/2 by na with a ∈ (0, 1).
+
+1390
+
+E. AÏDÉKON
+
+Let k ≤ n. By the Markov property at time k, we have
+
+P ROOF OF L EMMA 4.2.
+ 
+
+(4.9)
+
+
+
+E
+
+ 
+
+=E
+
+Bnz (u)
+
+u∈Skz−A
+
+
+
+
+
+kill
+k,n 0, z + V (u)
+
+u∈Skz−A
+
+with kill
+k,n as defined in (4.5). We want to apply equation (4.6) to r = z + V (u). We
+observe that z+V (u) ∈ [A, z] when u ∈ S z−A . Hence, equation (4.6) holds for n ≥
+N0 , k ≤ n1/2 and r = z + V (u), with u ∈ S z−A0 and z ∈ [A0 , (3/2) ln(n) − A0 ]. It
+follows from (4.9) that for n ≥ N0 , k ≤ n1/2 and z ∈ [A0 , (3/2) ln(n) − A0 ],
+(4.10)
+
+ 
+
+
+
+ 
+
+Bnz (u) − C1 E
+
+ez E
+
+z−A0
+
+e−V (u)
+
+
+
+≤ εE
+
+z−A0
+
+u∈Sk
+
+ 
+
+
+
+e−V (u) .
+
+z−A0
+
+u∈Sk
+
+u∈Sk
+
+From the definition of Skz−A and (2.1), we observe that, for any integer k, and any
+z ≥ A ≥ 0,
+(4.11)
+
+ 
+
+
+
+e−V (u) = P(Sk ≥ A − z, Sk < S , ∀0 ≤  < k − 1).
+
+E
+
+u∈Skz−A
+
+Summing over k ≥ 0 yields that
+(4.12)
+
+E
+
+ 
+
+
+
+e−V (u) = R(z − A).
+
+u∈S z−A
+
+In particular, summing equation (4.10) over k ≤ n1/2 gives that for n ≥ N0 and
+z ∈ [A0 , (3/2) ln(n) − A0 ],
+z
+
+ 
+
+eE
+
+
+
+Bnz (u)1{|u|≤n1/2 }
+
+ 
+
+− C1 E
+
+u∈S z−A0
+
+(4.13)
+
+−V (u)
+
+e
+
+
+
+1{|u|≤n1/2 }
+
+z−A
+u∈Sk 0
+
+≤ εR(z − A0 ).
+
+Using the fact that P(Sk ≥ −x, Sk < min0≤j ≤k−1 Sj ) = P((−Sk ) ≤ x,
+min0≤j ≤k−1 (−Sj ) ≥ 0), we have by (2.8), for any integer k ≥ 0 and any real
+x ≥ 0,
+
+
+(4.14)
+
+P Sk ≥ −x, Sk <
+
+
+
+min
+
+0≤j ≤k−1
+
+Sj ≤ α2 (1 + x)2 (1 + k)−3/2 .
+
+Therefore, we have for n greater than some N1 and x ∈ [0, (3/2) ln(n)],
+
+
+P(Sk ≥ −x, Sk < S , ∀0 ≤  < k − 1) ≤ ε.
+
+k>n1/2
+
+Going back to (4.11) with A = A0 , and summing over k > n1/2 , we obtain that for
+n ≥ N1 and z ∈ [A0 , (3/2) ln(n) − A0 ],
+E
+
+ 
+
+u∈S z−A0
+
+−V (u)
+
+e
+
+
+
+1{|u|>n1/2 } ≤ ε.
+
+1391
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+In view of (4.13) and (4.12), this yields that for any n ≥ max(N0 , N1 ) and any
+z ∈ [A0 , (3/2) ln(n) − A0 ],
+ 
+
+
+
+
+
+
+
+Bnz (u)1{|u|≤n1/2 } − C1 R(z − A0 ) ≤ ε R(z − A0 ) + C1 .
+
+ez E
+
+u∈S z−A0
+
+Since R(x) ≥ 1 for any x ≥ 0, this completes the proof of (i). Let us prove (ii). The
+notation c denotes a constant whose value can change from line to line. Using (4.9)
+with A = 0, we find that
+(4.15) E
+
+
+u∈S z
+
+
+
+n/2
+
+
+Bnz (u)1{n/2≥|u|>n1/2 } =
+
+k= n1/2 +1
+
+
+
+E
+
+
+
+
+
+
+kill
+k,n 0, z + V (u) .
+
+u∈Skz
+
+Equation (4.7) yields that
+
+
+
+
+E
+
+u∈S z
+
+(4.16)
+
+Bnz (u)1{n/2≥|u|>n1/2 }
+n/2
+
+
+−z
+
+≤ c25 e
+
+n
+n−k+1
+
+k= n1/2 +1
+
+3/2  
+
+E
+
+−V (u)
+
+
+
+e
+
+.
+
+u∈Skz
+
+Equations (4.11) and (4.14) imply that
+
+
+
+
+E
+
+u∈S z
+
+Bnz (u)1{n/2≥|u|>n1/2 }
+n/2
+
+
+≤ c25 α2 e−z (1 + z)2
+
+(4.17)
+
+k= n1/2 +1
+
+n
+n−k+1
+
+3/2
+
+(1 + k)−3/2
+
+≤ ce−z
+for any n ≥ 1 and any z ∈ [0, (3/2) ln(n)]. We deal now with vertices u ∈ S z such
+that |u| > n/2, and split the case depending on whether V (u) is greater or smaller
+n
+). Using the fact that Bnz (u) ≤ 1, we get
+than −z + 32 ln( n−|u|+1
+
+
+E
+
+u∈S z
+
+(4.18)
+
+
+
+Bnz (u)1{|u|>n/2}
+
+
+≤E
+
+
+
+Bnz (u)1{|u|>n/2,V (u)≥−z+(3/2) ln(n/(n−|u|+1))}
+
+u∈S z
+
+
+
++E
+
+u∈S z
+
+
+
+1{|u|>n/2,V (u)<−z+(3/2) ln(n/(n−|u|+1))} .
+
+1392
+
+E. AÏDÉKON
+
+We bound the first term of the right-hand side. Equation (4.7) shows that
+E
+
+
+
+
+
+Bnz (u)1{|u|>n/2,V (u)≥−z+(3/2) ln(n/(n−|u|+1))}
+
+u∈S z
+n
+
+
+≤ c25 e−z
+
+n
+n−k+1
+
+k= n/2+1
+
+×E
+
+
+
+3/2
+
+−V (u)
+
+e
+
+
+
+1{V (u)≥−z+(3/2) ln(n/(n−k+1))} .
+
+u∈Skz
+
+From (2.1), we observe that
+
+
+E
+
+−V (u)
+
+e
+
+
+
+1{V (u)≥−z+(3/2) ln(n/(n−k+1))}
+
+u∈Skz
+
+= P Sk ≥ −z +
+
+n
+3
+ln
+, Sk < S , ∀0 ≤  < k − 1 ,
+2
+n−k+1
+
+n
+which is 0 if −z + 32 ln( n−k+1
+) ≥ 0. Using (4.14), we see that
+
+E
+
+
+
+
+
+Bnz (u)1{|u|>n/2,V (u)≥−z+(3/2) ln(n/(n−|u|+1))}
+
+u∈S z
+n
+
+
+≤ ce−z
+
+k= n/2+1
+
+n
+n−k+1
+× max z −
+
+3/2
+
+(1 + k)−3/2
+
+2
+n
+3
+ln
+,1 .
+2
+n−k+1
+
+n
+Since z ≤ 32 ln(n), we get that max(z − 32 ln( n−k+1
+), 1) ≤ 1 + 32 ln(n − k + 1).
+Consequently,
+
+E
+
+
+
+
+
+Bnz (u)1{|u|>n/2,V (u)≥−z+(3/2) ln(n/(n−|u|+1))}
+
+u∈S z
+n
+
+
+≤ ce−z
+
+k= n/2+1
+
+1
+n−k+1
+
+3/2 
+
+2
+
+1 + ln(n − k + 1) ≤ ce−z .
+
+Finally, let us consider the last term of (4.18). Equation (2.1) implies that, for any k,
+
+
+E
+
+u∈Skz
+
+(4.19)
+
+
+
+1{|u|>n/2,V (u)<−z+(3/2) ln(n/(n−|u|+1))}
+
+
+= E eSk 1{Sk ∈[−z,−z+(3/2) ln(n/(n−k+1))),Sk <S ,∀0≤<k−1}
+
+
+≤ E eSk 1{Sk <−z+(3/2) ln(n/(n−k+1)),Sk <S ,∀0≤<k−1} .
+
+1393
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+We notice that
+
+
+E eSk 1{Sk <−z+(3/2) ln(n/(n−k+1)),Sk <S ,∀0≤<k−1}
+≤
+
+
+
+e−y+1 P(Sk ≥ −y, Sk < S , ∀0 ≤  < k − 1)1{y>z−(3/2) ln(n/(n−k+1))} ,
+
+y≥0
+
+which, in view of (4.14) leads to
+
+
+E eSk 1{Sk <−z+(3/2) ln(n/(n−k+1)),Sk <S ,∀0≤<k−1}
+≤ α2
+
+
+
+e−y+1 (1 + y)2 (1 + k)−3/2 1{y>z−(3/2) ln(n/(n−k+1))}
+
+y≥0
+
+≤ ce−z
+
+n
+n−k+1
+
+3/2
+
+≤ ce−z
+
+1
+n−k+1
+
+3/2
+
+max z −
+
+2
+n
+3
+ln
+, 1 (1 + k)−3/2
+2
+n−k+1
+
+2
+3
+ln(n − k + 1)
+2
+
+1+
+
+for k ∈ [n/2, n] and z ≤ 32 ln(n). Going back to (4.19), it yields that
+
+
+E
+
+
+
+1{|u|>n/2,V (u)<−z+(3/2) ln(n/(n−|u|+1))}
+
+u∈S z
+
+≤ ce
+
+n
+
+
+−z
+
+1
+n−k+1
+
+k= n/2+1
+
+3/2
+
+1+
+
+2
+3
+ln(n − k + 1)
+2
+
+−z
+
+≤ ce .
+
+
+Finally, by (4.18), E[ u∈S z Bnz (u)1{|u|>n/2} ] ≤ ce−z which, combined with (4.17),
+proves (ii). We prove now (iii). We have by the Markov property at time k,
+
+
+E
+
+
+
+
+
+
+
+Bnz (u)
+
+=E
+
+u∈Skz−A ∩(T z−A )c
+
+
+
+
+
+
+
+kill
+k,n 0, z + V (u) ,
+
+u∈Skz−A ∩(T z−A )c
+
+where kill
+k,n is defined in (4.5). By (4.7), this implies that
+
+
+E
+(4.20)
+
+
+
+
+
+Bnz (u)1{|u|≤n/2}
+
+u∈S z−A ∩(T z−A )c
+−z
+
+
+
+≤ c26 e E
+
+
+
+−V (u)
+
+e
+
+
+
+1{|u|≤n/2} .
+
+u∈S z−A ∩(T z−A )c
+
+At this stage, we make use of the measure P̂, introduced in Section 2.1. We recall
+that under P̂, we identified our branching randomly with B̂ . By definition of P̂ then
+
+1394
+
+E. AÏDÉKON
+
+Proposition 2.2(i), we have for any k ≤ n/2,
+
+
+
+
+E
+
+−V (u)
+
+
+
+e
+
+u∈Skz−A ∩(T z−A )c
+
+(4.21)
+
+
+
+1
+= Ê
+Wk
+
+
+
+
+−V (u)
+
+
+
+e
+
+u∈Skz−A ∩(T z−A )c
+
+
+
+= P̂ wk ∈ Skz−A ∩ T z−A
+
+c 
+
+.
+
+∈ T z−A by definition. For
+
+The right-hand side is equal to 0 when k 
+= 0 since w0
+k ≥ 1, we observe that 1{wk ∈(T z−A )c } ≤ k=1 1{ξ(w )≥e(V (w−1 )+z−A)/2 } . It follows
+that
+
+
+
+
+P̂ wk ∈ Skz−A ∩ T z−A
+
+c 
+
+≤
+
+k
+
+
+
+
+
+P̂ wk ∈ S z−A , ξ(w ) ≥ e(V (w−1 )+z−A)/2 .
+
+=1
+
+Together with equations (4.20) and (4.21), this gives that
+
+
+
+
+
+
+E
+
+Bnz (u)1{|u|≤n/2}
+
+u∈S z−A ∩(T z−A )c
+−z
+
+≤ c26 e
+
+n/2
+n/2 
+
+
+
+
+
+P̂ wk ∈ S z−A , ξ(w ) ≥ e(V (w−1 )+z−A)/2 .
+
+=1 k=
+
+In order to prove (iii), it is enough to show that
+(4.22)
+
+ 
+
+
+
+P̂ wk ∈ S z−A , ξ(w ) ≥ e(V (w−1 )+z−A)/2 = o(z)
+
+≥1 k≥
+
+uniformly in A ≥ 0 as z → ∞. The left-hand side of (4.22) is 0 if z < A. Therefore,
+we will assume that z ≥ A. For k ≥ , notice that if wk ∈ S z−A , then necessarily
+minj ≤ V (wj ) ≥ A − z, V (wk ) ≥ A − z and V (wk ) < min≤j ≤k−1 V (wj ) [in particular, k is a ladder epoch for the random walk started at V (w )]. This implies
+that
+
+
+P̂ wk ∈ S z−A , ξ(w ) ≥ e(V (w−1 )+z−A)/2
+
+
+
+
+
+≤ P̂ ξ(w ) ≥ e(V (w−1 )+z−A)/2 , min V (wj ) ≥ A − z,
+j ≤
+
+A − z ≤ V (wk ) <
+
+
+
+min V (wj ) .
+
+≤j ≤k−1
+
+Summing over k ≥ , we get
+ 
+
+P̂ wk ∈ S z−A , ξ(w ) ≥ e(V (w−1 )+z−A)/2
+
+k≥
+
+
+
+
+
+≤ Ê 1{ξ(w )≥e(V (w−1 )+z−A)/2 } 1{minj ≤ V (wj )≥A−z}
+×
+
+
+k≥
+
+
+
+1{A−z≤V (wk )<min≤j ≤k−1 V (wj )} .
+
+1395
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+By the Markov property at time , we recognize in the term
+
+
+1{A−z≤V (wk )<min≤j ≤k−1 V (wj )}
+
+k≥
+
+the number of strict descending ladder heights above level A − z when starting
+from V (w ). Consequently,
+ 
+
+P̂ wk ∈ S z−A , ξ(w ) ≥ e(V (w−1 )+z−A)/2
+
+
+
+k≥
+
+
+
+
+
+
+
+≤ Ê 1{ξ(w )≥e(V (w−1 )+z−A)/2 } 1{minj ≤ V (wj )≥A−z} R z − A + V (w ) .
+We know from (2.13) that there exists c27 > 0 such that R(x) ≤ c27 (1 + x)+ for
+any real x. Thus, R(z − A + V (w )) ≤ c27 (1 + z − A + V (w−1 ))+ + c27 (V (w ) −
+V (w−1 ))+ . Also, we obviously have minj ≤ V (wj ) ≤ minj ≤−1 V (wj ). This
+yields that
+ 
+
+
+
+
+
+
+
+P̂ wk ∈ S z−A , ξ(w ) ≥ e(V (w−1 )+z−A)/2 ≤ c27 f () + g() ,
+
+k≥
+
+where
+
+
+
+
+
+
+
+
+
+
+
+f () := Ê 1{ξ(w )≥e(V (w−1 )+z−A)/2 } 1{minj ≤−1 V (wj )≥A−z} 1 + z − A + V (w−1 ) ,
+
+
+g() := Ê 1{ξ(w )≥e(V (w−1 )+z−A)/2 } 1{minj ≤−1 V (wj )≥A−z} V (w ) − V (w − 1) + .
+Equation (4.22) boils down to
+
+
+
+(4.23)
+
+
+
+f () + g() = o(z).
+
+≥1
+
+Let (ξ, ) be a generic random variable independent of all the random variables
+used so far, and distributed as (ξ(w1 ), V (w1 )) (under P̂). Using the Markov property at time  − 1 in f (), we get
+
+
+
+
+
+
+f () = Ê 1{ξ ≥e(V (w−1 )+z−A)/2 } 1{minj ≤−1 V (wj )≥A−z} 1 + z − A + V (w−1 ) .
+Summing over  (and replacing  − 1 by ) yields that
+
+
+
+
+f () = Ê
+
+≥1
+
+
+
+
+
+
+
+1{V (w )+z−A≤2 ln(ξ )} 1{minj ≤ V (wj )≥A−z} 1 + z − A + V (w ) .
+
+≥0
+
+By Lemma B.2(i), there exists c28 > 0 such that for any x ≥ 0
+
+
+Ê
+
+
+
+
+
+
+
+1{V (w )+z−A≤x} 1{minj ≤ V (wj )≥A−z} 1 + z − A + V (w )
+
+≥0
+
+≤ (1 + x)
+
+ 
+
+P̂ V (w ) + z − A ≤ x, min V (wj ) ≥ A − z
+j ≤
+
+≥0
+
+
+
+≤ c28 (1 + x)2 1 + min(x, z − A)
+
+
+
+
+≤ c28 (1 + x)2 1 + min(x, z) .
+
+
+
+
+
+1396
+
+E. AÏDÉKON
+
+We deduce that, with the notation of (1.2),
+
+
+
+
+
+
+
+
+f () ≤ c28 Ê (1 + 2 ln+ ξ )2 1 + min(2 ln+ ξ, z)
+
+≥1
+
+ 
+
+2 
+
+≤ c28 E X 1 + 2 ln+ (X + X̃)
+
+(4.24)
+
+
+
+1 + min 2 ln+ (X + X̃), z
+
+
+
+= o(z)
+under (1.4) by Lemma B.1(ii). We now consider g(). We have similarly
+
+
+
+
+g() = Ê +
+
+≥1
+
+
+
+
+
+1{V (w )+z−A≤2 ln(ξ )} 1{minj ≤ V (wj )≥A−z} .
+
+≥0
+
+From Lemma B.2(i), we get
+
+
+
+
+
+
+
+
+g() ≤ c28 Ê + (1 + 2 ln+ ξ ) 1 + min(2 ln+ ξ, z)
+
+≥1
+
+ 
+
+
+
+
+
+≤ c28 E X̃ 1 + 2 ln+ (X + X̃) 1 + min 2 ln+ (X + X̃), z
+
+(4.25)
+
+
+
+= o(z)
+by Lemma B.1(ii). Equations (4.24) and (4.25) imply (4.23), and so complete the
+proof of (ii). 
+Equations (4.9), (4.7) and (4.12) imply that for any n ≥ 1 and
+
+R EMARK .
+z ≥ 0,
+
+
+
+(4.26)
+
+
+
+E
+
+u∈S z
+
+Bnz (u)1{|u|≤n1/2 }
+
+≤ c25 23/2 R(z)e−z .
+
+We compute the second moment in the following lemma.
+L EMMA 4.3. There exists a constant c29 > 0 such that for any z ≥ A ≥ 0, and
+any integer n ≥ 1,
+
+
+(4.27)
+where U :=
+
+
+
+P ROOF.
+
+E U 2 − E[U ] ≤ c29 e−z e−A ,
+z
+u∈S z−A ∩T z−A Bn (u)1{|u|≤n/2} .
+
+Let U be as in the lemma. We observe that
+
+
+U −U =
+2
+
+u=v
+
+It follows that
+
+
+Bnz (u)Bnz (v)1{u,v∈S z−A } 1{u,v∈T z−A } 1{|u|,|v|≤n/2} .
+
+
+
+E U2 − U = E
+
+u=v
+
+
+
+≤ 2E
+
+
+
+Bnz (u)Bnz (v)1{u,v∈S z−A } 1{u,v∈T z−A } 1{|u|,|v|≤n/2}
+
+
+u=v,|u|≥|v|
+
+
+
+Bnz (u)Bnz (v)1{u,v∈S z−A } 1{u∈T z−A } 1{|u|≤n/2}
+
+.
+
+1397
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+For |u| ≥ |v|, and u = v, notice that Bnz (u) depends on the branching random walk
+rooted at u, whereas Bnz (v)1{u,v∈S z−A } 1{u∈T z−A } is independent of it [even if v is a
+(strict) ancestor of u]. Therefore, by the branching property,
+
+
+E U2 − U
+
+
+
+
+
+≤ 2E
+
+u=v,|u|≥|v|
+
+
+ z
+kill
+|u|,n 0, z + V (u) Bn (v)1{u,v∈S z−A } 1{u∈T z−A } 1{|u|≤n/2}
+
+
+
+,
+
+kill
+−z−V (u)
+where kill
+k,n is defined in (4.5). By (4.7), we have |u|,n (z + V (u)) ≤ c26 e
+for |u| ≤ n/2. This gives that
+
+
+
+
+
+
+
+E U 2 − U ≤ c26 e−z E
+
+u=v,|u|≥|v|
+
+(4.28)
+
+n/2 
+
+
+≤ c26 e−z
+
+E
+
+e−V (u) Bnz (v)1{u,v∈S z−A } 1{u∈T z−A } 1{|u|≤n/2}
+
+
+
+
+e−V (u)
+
+v=u,|v|≤k
+
+u∈Skz−A ∩T z−A
+
+k=1
+
+
+
+
+
+Bnz (v)1{v∈S z−A } .
+
+The weight e−V (u) hints at a change of measure from P to P̂. For any k ∈ [0, n/2],
+we have by Proposition 2.2(i),
+
+
+
+
+E
+
+−V (u)
+
+e
+
+u∈Skz−A ∩T z−A
+
+(4.29)
+
+
+
+
+v=u,|v|≤k
+
+
+
+= Ê 1{wk ∈S z−A ∩T z−A }
+
+Bnz (v)1{v∈S z−A }
+
+
+
+v=wk ,|v|≤k
+
+Bnz (v)1{v∈S z−A }
+
+.
+
+We have to split the cases depending on the location of the vertex v with respect to
+wk . We say that u  v if neither v nor u is an ancestor of the other. If v = wk and
+|v| ≤ k, then either v  u, or v = w for some  < k. In view of (4.28) and (4.29),
+the lemma will be proved once the following two estimates are shown:
+(4.30)
+
+n/2  
+
+
+Ê
+
+k=1
+
+(4.31)
+
+vwk
+
+
+
+Bnz (v)1{v∈S z−A } , wk ∈ S z−A ∩ T z−A
+
+n/2 k−1
+
+ 
+Ê Bnz (w ), w ∈ S z−A , wk ∈ S z−A ∩ T z−A ≤ c32 e−A .
+k=1 =0
+
+Proof of equation (4.30). Decomposing the sum
+that for any k ∈ [1, n/2],
+(4.32)
+
+≤ c31 e−A ,
+
+
+vwk
+
+Bnz (v)1{v∈S z−A } =
+
+k
+
+
+
+
+
+
+
+
+=1 x∈(w ) v≥x
+
+vwk along the spine, we see
+
+Bnz (v)1{v∈S z−A } .
+
+1398
+
+E. AÏDÉKON
+
+The branching random walk rooted at x ∈ (w ) has the same law under P and P̂.
+Recall the definition of Ĝ∞ in (2.5). We have for  ≤ n/2 and x ∈ (w ),
+Ê
+
+
+
+
+
+Bnz (v)1{v∈S z−A } Ĝ∞
+
+
+
+= Ê
+
+v≥x
+
+v≥x
+
+
+
+kill
+|v|,n 0, z + V (v) 1{v∈S z−A } Ĝ∞
+
+
+
+with the notation of (4.5), and (4.7) implies that
+(4.33) Ê
+
+
+
+
+
+Bnz (v)1{v∈S z−A } Ĝ∞
+
+−z
+
+≤ c26 e Ê
+
+
+
+v≥x
+
+−V (v)
+
+e
+
+
+
+1{v∈S z−A } Ĝ∞ .
+
+v≥x
+
+We observe now that if v ≥ x and v ∈ S z−A , then min|x|≤j ≤|v|−1 V (vj ) > V (v) ≥
+A − z. Therefore, by the Markov property,
+
+
+Ê
+
+−V (v)
+
+e
+
+
+
+1{v∈S z−A } Ĝ∞ ≤ EV (x)
+
+v≥x
+
+
+
+−V (v)
+
+e
+
+
+
+1{minj ≤|v|−1 V (vj )>V (v)≥A−z} .
+
+v∈T
+
+By (2.1) and the definition of the renewal function R(x) in (2.11), we observe that
+EV (x)
+
+
+
+−V (v)
+
+e
+
+
+
+
+
+
+
+1{minj ≤|v|−1 V (vj )>V (v)≥A−z} = e−V (x) R z − A + V (x) .
+
+v∈T
+
+Going back to (4.33), we get that for any  ≤ n/2 and x ∈ (w ),
+Ê
+
+
+
+
+
+Bnz (v)1{v∈S z−A } Ĝ∞
+
+
+
+
+
+≤ c26 e−z e−V (x) R z − A + V (x) .
+
+v≥x
+
+In view of (4.32), we obtain that
+n/2  
+
+
+Ê
+
+k=1
+
+vwk
+
+
+
+Bnz (v)1{v∈S z−A } , wk ∈ S z−A ∩ T z−A
+
+−z
+
+≤ c26 e
+
+(4.34)
+
+ 
+k
+
+
+Ê
+
+k≥1 =1
+
+
+
+
+
+e−V (x) R z − A + V (x) ,
+
+x∈(w )
+
+
+
+wk ∈ S z−A ∩ T z−A .
+We look at R(z − A + V (x)) for x ∈ (w ). If V (x) ≤ V (w−1 ) and z − A +
+V (w−1 ) ≥ 0, we have
+
+
+
+
+
+
+
+
+
+
+
+
+R z − A + V (x) ≤ R z − A + V (w−1 ) ≤ c27 1 + z − A + V (w−1 ) .
+If V (x) > V (w−1 ) and z − A + V (w−1 ) ≥ 0, we write that
+
+
+
+
+
+
+R z − A + V (x) ≤ c27 1 + z − A + V (x)
+
+
+
+
+
+
+
+
+≤ c27 1 + z − A + V (w−1 ) 1 + V (x) − V (w − 1) .
+
+1399
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+Therefore, for any  ≤ k, we have on the event that wk ∈ S z−A ,
+
+
+
+
+e−V (x) R z − A + V (x)
+
+x∈(w )
+
+
+ 
+
+
+
+
+
+
+
+ −V (w
+
+
+
+ 
+
+1 + V (x) − V (w−1 ) + e−V (x)
+
+≤ c27 1 + z − A + V (w−1 )
+
+x∈(w )
+
+= c27 1 + z − A + V (w−1 ) e
+
+−1 )
+
+ξ(w )
+
+by definition (4.2). On the event that wk ∈ S z−A ∩ T z−A , we conclude that
+
+
+
+
+
+
+
+
+
+
+e−V (x) R z − A + V (x) ≤ c27 e(z−A)/2 1 + z − A + V (w−1 ) e−V (w−1 )/2 .
+
+x∈(w )
+
+Therefore, we have by (4.34),
+n/2  
+
+
+
+
+Ê
+
+vwk
+
+k=1
+
+(4.35)
+
+Bnz (v)1{v∈S z−A } , wk ∈ S z−A ∩ T z−A
+
+≤ c26 c27 e−(z+A)/2
+
+k
+
+
+
+
+
+Ê 1 + z − A + V (w−1 ) e−V (w−1 )/2 ,
+
+k≥1 =1
+
+wk ∈ S z−A .
+Proposition 2.2(ii) says that
+
+
+
+
+Ê z − A + V (w−1 ) + 1 e−V (w−1 )/2 , wk ∈ S z−A
+
+
+
+
+= E e−S−1 /2 (1 + z − A + S−1 ), min Sj > Sk ≥ A − z .
+j ≤k−1
+
+We observe that
+k
+
+
+
+E e−S−1 /2 (1 + z − A + S−1 ), min Sj > Sk ≥ A − z
+
+k≥1 =1
+
+=
+
+
+
+j ≤k−1
+
+ 
+
+−S−1 /2
+
+E e
+
+(1 + z − A + S−1 )
+
+
+
+
+
+1{minj ≤k−1 Sj >Sk ≥A−z} .
+
+k≥
+
+≥1
+
+Since
+
+
+1{minj ≤k−1 Sj >Sk ≥A−z}
+
+k≥
+
+≤ 1{minj ≤−1 Sj ≥A−z}
+
+
+k≥
+
+1{minj ∈[−1,k−1] Sj >Sk ≥A−z} ,
+
+1400
+
+E. AÏDÉKON
+
+we deduce by the Markov property at time  − 1 that
+k
+
+
+
+E e−S−1 /2 (1 + z − A + S−1 ), min Sj > Sk ≥ A − z
+
+k≥1 =1
+
+≤
+
+
+
+j ≤k−1
+
+ 
+
+E e−S−1 /2 (1 + z − A + S−1 )R(S−1 + z − A), min Sj ≥ A − z
+
+≥1
+
+≤ c27
+
+j ≤−1
+
+ 
+
+
+
+E e−S−1 /2 (1 + z − A + S−1 )2 , min Sj ≥ A − z .
+j ≤−1
+
+≥1
+
+Using this bound in (4.35) yields that
+n/2  
+
+
+Ê
+
+vwk
+
+k=1
+
+
+
+Bnz (v)1{v∈S z−A } , wk ∈ S z−A ∩ T z−A
+
+2 −(z+A)/2
+≤ c26 c27
+e
+
+(4.36)
+
+ 
+
+E e−S−1 /2 (1 + z − A + S−1 )2 ,
+
+≥1
+
+
+
+min Sj ≥ A − z .
+
+j ≤−1
+
+By Lemma B.2(iii), we have
+ 
+
+
+
+E e−S−1 /2 (1 + z − A + S−1 )2 , min Sj ≥ A − z ≤ c33 e(z−A)/2 .
+j ≤−1
+
+≥1
+
+Consequently, by (4.36)
+n/2  
+
+
+Ê
+
+k=1
+
+vwk
+
+
+
+Bnz (v)1{v∈S z−A } , wk ∈ S z−A ∩ T z−A
+
+≤ c34 e−(z+A)/2 e(z−A)/2
+= c34 e−A .
+
+Equation (4.30) follows.
+Proof of equation (4.31). We have
+n/2 k−1
+
+ 
+Ê Bnz (w ), w ∈ S z−A , wk ∈ S z−A ∩ T z−A
+k=1 =0
+
+(4.37)
+
+=
+
+n/2−1
+n/2
+
+
+=0
+
+=
+
+n/2−1
+
+=0
+
+
+
+Ê Bnz (w ), w ∈ S z−A , wk ∈ S z−A ∩ T z−A
+
+k=+1
+
+'
+
+Ê
+
+Bnz (w )1{w ∈S z−A }
+
+n/2
+
+k=+1
+
+)
+
+1{wk ∈S z−A ∩T z−A } .
+
+
+
+1401
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+Let t be the first time t after  such that V (wt ) < V (w ). If k >  and wk ∈ S z−A ,
+then V (wk ) < V (w ), which means that necessarily k ≥ t . Moreover, if k ≥ t
+and wk ∈ T z−A , then wt ∈ T z−A . Thus, for any  ≥ 0,
+n/2
+
+
+n/2
+
+
+1{wk ∈S z−A ∩T z−A } =
+
+1{wk ∈S z−A ∩T z−A }
+
+k=t
+
+k=+1
+
+≤ 1{wt ∈T z−A ,t ≤n/2}
+
+
+
+
+1{mint ≤j <k V (wj )>V (wk )≥A−z} .
+
+k≥t
+
+We observe that Bnz (w ) is a function of the branching random walk killed below V (w ) and therefore is independent of the subtree rooted at wt . As a result,
+applying the branching property, we get that for any  ∈ [0, n/2],
+'
+
+Ê
+
+Bnz (w )1{w ∈S z−A }
+
+n/2
+
+
+)
+
+1{wk ∈S z−A ∩T z−A }
+
+k=+1
+
+
+
+≤ Ê Bnz (w )1{w ∈S z−A } 1{wt ∈T z−A ,t ≤n/2}
+
+
+
+
+
+
+
+1{mint ≤j <k V (wj )>V (wk )≥A−z}
+
+k≥t
+
+
+
+
+
+= Ê Bnz (w )1{w ∈S z−A } 1{wt ∈T z−A ,t ≤n/2} R z − A + V (wt ) .
+
+
+By equation (4.37), we deduce that
+n/2 k−1
+
+ 
+Ê Bnz (w ), w ∈ S z−A , wk ∈ T z−A
+k=1 =0
+
+≤
+
+n/2−1
+
+
+
+
+
+
+
+
+Ê Bnz (w )1{w ∈S z−A } 1{wt ∈T z−A ,t ≤n/2} R z − A + V (wt ) .
+
+
+=0
+
+We have V (wt ) < V (w ). Since R is a nondecreasing function, we obtain that
+n/2 k−1
+
+ 
+Ê Bnz (w ), w ∈ S z−A , wk ∈ S z−A ∩ T z−A
+
+(4.38)
+
+k=1 =0
+
+≤
+
+n/2−1
+
+=0
+
+
+
+
+
+
+
+Ê Bnz (w )1{w ∈S z−A } 1{wt ∈T z−A ,t ≤n/2} R z − A + V (w ) .
+
+
+Recall from (2.4) that Ĝ is the σ -algebra generated by the spine and its siblings
+up to time . The Markov property at time  shows that
+
+
+
+
+
+
+˜ kill
+Ê Bnz (w ), wt ∈ T z−A , t ≤ n/2|Ĝ = 1{w ∈T z−A } 
+,n,A z + V (w )
+
+
+
+
+˜ kill
+≤
+,n,A z + V (w ) ,
+
+1402
+
+E. AÏDÉKON
+
+where, if τ0− := min{j ≥ 0 : V (wj ) < 0}, then for any integers n ≥ 1,  ≤ n/2, any
+A, r ≥ 0, we defined
+ −
+kill
+(r+V (wj −1 )−A)/2
+˜ kill
+,
+
+,n,A (r) := P̂ τ ≤ (n/2) − , Mn− < an (r), ξ(wj ) ≤ e
+0
+
+
+
+∀1 ≤ j ≤ τ0− .
+We deduce that, for any n ≥ 1, any  < n/2, any z ≥ A ≥ 0,
+
+
+
+
+
+
+Ê Bnz (w )1{w ∈S z−A } 1{wt ∈T z−A ,t ≤n/2} R z − A + V (w )
+
+
+
+
+
+
+
+
+
+
+
+
+˜ kill
+≤ Ê 1{w ∈S z−A } R z − A + V (w ) 
+,n,A z + V (w )
+
+
+
+
+
+
+
+
+
+
+˜ kill
+= Ê 1{minj < V (wj )>V (w )≥A−z} R z − A + V (w ) 
+,n,A z + V (w ) .
+By Proposition 2.2(ii), this implies that
+
+
+
+
+
+
+Ê Bnz (w )1{w ∈S z−A } 1{wt ∈T z−A ,t ≤n/2} R z − A + V (w )
+
+(4.39)
+
+
+
+
+
+˜ kill
+≤ E 1{minj < Sj >S ≥A−z} R(z − A + S )
+,n,A (z + S ) .
+
+˜ kill (r) for  < n/2. We have to decompose along the spine.
+Let us estimate 
+,n,A
+kill < a (r), and τ − ≤ n/2 − , then there must be some j <
+Notice that if Mn−
+n
+0
+τ0− ≤ n/2 −  and x ∈ (wj ) such that there exists a line of descent from x
+which stays above 0 and ends below an (r) at time n − . Therefore, for any n ≥ 1,
+ < n/2 and A, r ≥ 0,
+˜ kill
+
+,n,A (r)
+≤
+
+n/2−
+
+
+Ê
+
+ 
+
+j =1
+
+
+
+
+
+(r+V (wj −1 )−A)/2
+kill
+, j ≤ τ0−
++j,n V (x), r , ξ(wj ) ≤ e
+
+x∈(wj )
+
+with the notation of (4.5). By (4.7), we get that
+−r
+˜ kill
+
+,n,A (r) ≤ c35 e
+
+n/2−
+
+
+(4.40)
+
+Ê
+
+j =1
+
+ 
+
+
+
+
+1 + V (x)+ e−V (x) ,
+
+x∈(wj )
+
+
+
+ξ(wj ) ≤ e(r+V (wj −1 )−A)/2 , j ≤ τ0− .
+We observe that
+
+ 
+
+
+
+1 + V (x)+ e−V (x)
+
+x∈(wj )
+
+
+
+
+
+≤ 1 + V (wj −1 )+ e−V (wj −1 )
+×
+
+ 
+
+
+
+x∈(wj )
+
+
+
+ 
+
+1 + V (x) − V (wj −1 ) + e−(V (x)−V (wj −1 ))
+
+
+= 1 + V (wj −1 )+ e−V (wj −1 ) ξ(wj )
+
+
+
+1403
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+by definition (4.2). We deduce from (4.40) that
+˜ kill
+
+,n,A (r)
+n/2−
+
+
+−r
+
+≤ c35 e
+
+j =1
+
+
+
+
+
+
+
+Ê e−V (wj −1 ) 1 + V (wj −1 ) e(r+V (wj −1 )−A)/2 , j ≤ τ0− .
+
+It follows that, for any n ≥ 1,  < n/2 and A, r ≥ 0,
+−A −(r−A)/2
+˜ kill
+
+e
+,n,A (r) ≤ c35 e
+
+ 
+−S
+
+Ee
+
+j −1 /2
+
+j ≥1
+
+(1 + Sj −1 ), j ≤ τ0−
+
+= c36 e−A e−(r−A)/2 ,
+by Lemma B.2(ii). Going back to (4.39), we obtain that for any n ≥ 1,  < n/2,
+z ≥ A ≥ 0,
+
+
+
+
+
+
+Ê Bnz (w )1{w ∈S z−A } 1{wt ∈T z−A ,t ≤n/2} R z − A + V (w )
+
+
+−A 
+
+E 1{minj < Sj >S ≥A−z} R(z − A + S )e−(S +z−A)/2 .
+
+≤ c36 e
+
+Equation (4.38) yields that for any n ≥ 1, and z ≥ A ≥ 0,
+n/2 k−1
+
+ 
+Ê Bnz (w ), w ∈ S z−A , wk ∈ S z−A ∩ T z−A
+k=1 =0
+−A
+
+≤ c36 e
+
+
+
+E
+
+−(S +z−A)/2
+
+1{minj < Sj >S ≥A−z} R(z − A + S )e
+
+
+
+.
+
+≥0
+
+Applying Lemma B.2(iii) implies (4.31) and thus completes the proof of the
+lemma. 
+4.2. Proof of Proposition 4.1. We can now prove Proposition 4.1.
+P ROOF OF P ROPOSITION 4.1.
+by (2.1),
+
+
+
+
+P ∃u ∈ T : V (u) ≤ −r ≤
+
+Let ε > 0. For any r ≥ 0, we observe that
+ 
+
+E
+
+n≥0
+
+|u|=n
+
+
+
+1{V (u)≤−r,V (uk )>−r,∀k<n}
+
+ 
+=
+E eSn , Sn ≤ −r, Sk > −r, ∀k < n
+n≥0
+
+≤ e−r .
+Therefore
+
+
+
+
+P ∃u ∈ T : V (u) ≤ A − z ≤ eA−z .
+
+1404
+
+E. AÏDÉKON
+
+For any z ≥ A ≥ 0, we observe that on the event {∀u ∈ T, V (u) ≥ A − z}, we have
+
+Mn < 32 ln n − z if and only if u∈S z−A Bnz (u) ≥ 1 [recall the definition of S r and
+Bnz in (4.1) and in (4.4)]. Therefore, for n ≥ 1 and z ≥ A, we have
+0 ≤ P Mn ≤
+We notice that P(
+
+
+
+
+
+3
+ln n − z − P
+2
+
+Bnz (u) ≥ 1 ≤ eA−z .
+
+u∈S z−A
+
+
+z
+z
+u∈S z−A Bn (u) ≥ 1) ≤ E[ u∈S z−A Bn (u)]. Hence,
+ 
+
+3
+P Mn ≤ ln n − z ≤ eA−z + E
+2
+
+
+
+Bnz (u) .
+
+u∈S z−A
+
+Lemma 4.2(i) and (ii) implies that for n ≥ N1 and z ∈ [A1 , (3/2) ln(n) − A1 ],
+ez
+3
+eA1 + c
+P Mn ≤ ln n − z − C1 ≤
++ ε.
+R(z − A1 )
+2
+R(z − A1 )
+Since R(x) ∼ c0 x at infinity by (2.13), we have for n ≥ N1 and z ∈ [A2 ,
+(3/2) ln(n) − A1 ],
+ez
+3
+eA1 + c
+P Mn ≤ ln n − z − C1 ≤
++ 2ε.
+c0 z
+2
+c0 z
+We deduce that for n ≥ N1 and z ∈ [A3 , (3/2) ln(n) − A1 ],
+3
+ez
+P Mn ≤ ln n − z − C1 ≤ 3ε.
+c0 z
+2
+This proves the upper bound. Similarly, we have for the lower bound,
+P Mn ≤
+
+3
+ln n − z ≥ P
+2
+≥P
+
+If we write U (A) :=
+formula, we have
+
+
+
+
+
+Bnz (u) ≥ 1
+
+u∈S z−A
+
+
+
+Bnz (u)1{|u|≤n/2} ≥ 1 .
+
+u∈S z−A ∩T z−A
+
+z
+u∈S z−A ∩T z−A Bn (u)1{|u|≤n/2} , then by the Paley–Zygmund
+(A)]2
+. By Lemma 4.2, we know that
+P(U (A) ≥ 1) ≥ E[U
+E[U (A)2 ]
+
+ez
+R(z−A4 ) E[U (A4 )] ≥ C1 − ε
+
+for n ≥ N2 and z ∈ [A5 , (3/2) ln(n) − A4 ]. By
+Lemma 4.3, we have that E[U (A4 )2 ] ≤ (1 + ε)E[U (A4 )] if A5 is taken large
+ez
+ez
+enough. Hence, R(z−A
+P(U (A4 ) ≥ 1) ≥ R(z−A
+(1 + ε)−1 E[U (A4 )] ≥ (1 +
+4)
+4)
+ε)−1 (C1 − ε). This yields that
+ez
+3
+P Mn ≤ ln n − z ≥ (1 + ε)−1 (C1 − ε).
+R(z − A4 )
+2
+
+1405
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+From here, we proceed as before to see that for n ≥ N2 and z ∈ [A6 , (3/2) ln(n) −
+A4 ],
+ez
+3
+P Mn ≤ ln n − z ≥ C1 − c37 ε.
+c0 z
+2
+The proposition follows. 
+5. Proof of Theorem 1.1. For β ≥ 0, we look at the branching random walk
+killed below −β. The population at time n of this process is {|u| = n : V (uk ) ≥
+−β, ∀k ≤ n}. We define the associated martingale (see Appendix A)
+Dn(β) :=
+
+(5.1)
+
+
+
+|u|=n
+
+
+
+
+
+R β + V (u) e−V (u) 1{V (uk )≥−β,k≤n} .
+
+(β)
+
+(β)
+
+Since Dn is nonnegative, it has a limit almost surely that we denote by D∞ .
+(β)
+Under (1.3) and (1.4), we know by Proposition A.3 that D∞ > 0 almost surely on
+the event of nonextinction for the branching random walk killed below −β. For
+A ≥ 0, let Z [A] denote the set of particles absorbed at level A, that is,
+
+
+
+
+Z [A] := u ∈ T : V (u) ≥ A, V (uk ) < A, ∀k < |u| .
+
+In the words of Section 6 in [7], this set is a very simple optional line.
+By Theorem 6.1 (and Lemma 6.1) of [7], we know that
+u∈Z [A] R(β +
+(β)
+−V
+(u)
+V (u))e
+1{V (uk )≥−β} converges to D∞ almost surely as A → ∞. Recall that
+R(x) ∼ c0 x at infinity by (2.13). Recall from (2.2) that the martingale Wn is defined by
+Wn :=
+
+
+
+e−V (x)
+
+|x|=n
+
+and we know from [22] that Wn converges to 0 almost surely as n → ∞ un(β)
+der (1.1). On the event {minu∈T V(u) ≥ −β}, we see that necessarily D∞ =
+−V (u) 1
+c0 D∞ almost surely, and
+{V (uk )≥−β} ∼
+u∈Z [A] R(β + V (u))e
+
+−V
+(u)
+c0 u∈Z [A] (β + V (u))e
+as A → ∞. Again by Theorem 6.1 (and Lemma 6.1)
+
+of [7], we have limA→∞ u∈Z [A] e−V (u) = W∞ = 0 almost surely. We deduce that
+lim
+
+(5.2)
+
+A→∞
+
+
+
+V (u)e−V (u) = D∞
+
+u∈Z [A]
+
+on the event {minu∈T V (u) ≥ −β}, and therefore almost surely by making β → ∞.
+We can now prove the convergence in law.
+P ROOF OF T HEOREM 1.1.
+for n large enough,
+(5.3)
+
+Fix x ∈ R, and let ε > 0. For any A > 0, we have
+
+
+
+
+P ∃u ∈ Z [A] : |u| ≥ n1/2 ≤ ε,
+
+
+
+
+P ∃u ∈ Z [A] : V (u) ≥ (3/2) ln n − A ≤ ε.
+
+1406
+
+E. AÏDÉKON
+
+Again, we could replace n1/2 by any o(n). Take A > 0. Let YA := {maxu∈Z [A] |u| ≤
+n1/2 , maxu∈Z [A] V (u) ≤ ln n}. We observe that
+
+
+
+
+
+
+P Mn ≥ (3/2) ln n + x ≥ P Mn ≥ (3/2) ln n + x, YA
+ (
+
+
+=E
+
+
+
+
+
+
+
+
+
+1 − |u|,n V (u) − x , YA ,
+
+u∈Z [A]
+
+where for any integers n ≥ 1, k ∈ [0, n] and any real r ≥ 0,
+
+
+
+
+k,n (r) := P Mn−k < (3/2) ln(n) − r .
+By Proposition 4.1, there exists A large enough and N ≥ 1 such that for any n ≥ N ,
+k ≤ n1/2 and z ∈ [A − x, (3/2) ln(n) − A − x],
+ez
+k,n (z) − C1 c0 ≤ ε.
+(5.4)
+z
+We get that
+
+
+
+
+P Mn ≥ (3/2) ln n + x ≥ E
+
+ (
+
+
+
+
+
+
+u∈Z [A]
+c
+Since P(YA ) ≤ 2ε for n large enough, we have for n large enough,
+
+
+
+
+
+P Mn ≥ (3/2) ln n + x ≥ E
+
+ (
+
+
+
+
+
+
+1 − (C1 c0 + ε) V (u) − x ex−V (u) , YA .
+
+
+
+
+
+ x−V (u) 
+
+1 − (C1 c0 + ε) V (u) − x e
+
+− 2ε.
+
+u∈Z [A]
+
+In particular,
+
+
+
+lim inf P Mn ≥ (3/2) ln n + x
+n→∞
+
+≥E
+
+ (
+
+
+
+
+
+
+
+ x−V (u) 
+
+1 − (C1 c0 + ε) V (u) − x e
+
+− 2ε.
+
+u∈Z [A]
+
+We
+let A go to infinity. We have almost surely by (5.2) and the fact that
+
+−V (u) vanishes,
+u∈Z [A] e
+
+
+(5.5) lim
+
+A→∞
+
+
+
+
+
+
+
+
+
+ln 1 − (C1 c0 + ε) V (u) − x ex−V (u) = −(C1 c0 + ε)ex D∞ .
+
+u∈Z [A]
+
+By dominated convergence, we deduce that
+
+
+
+
+
+
+
+
+
+
+lim inf P Mn ≥ (3/2) ln n + x ≥ E exp −(C1 c0 + ε)ex D∞ − 2ε,
+n→∞
+
+which gives the lower bound by letting ε → 0. The upper bounds works similarly. Let A be such that (5.4) is satisfied for n ≥ N , k ≤ n1/2 and z ∈ [A −
+x, (3/2) ln(n) − A − x]. We observe that, for n large enough,
+
+
+
+
+
+
+
+
+P Mn ≥ (3/2) ln n + x ≤ P Mn ≥ (3/2) ln n + x, YA + 2ε
+ (
+
+
+=E
+
+u∈Z [A]
+
+
+
+
+
+
+
+1 − |u|,n V (u) − x , YA + 2ε.
+
+1407
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+Using (5.4), we end up with
+
+
+lim sup P Mn ≥ (3/2) ln n + x
+n→∞
+
+≤E
+
+
+
+ (
+
+
+
+
+
+
+ x−V (u) 
+
+1 − (C1 c0 − ε) V (u) − x e
+
++ 2ε.
+
+u∈Z [A]
+
+From here, we proceed as for the lower bound. 
+
+APPENDIX A: THE DERIVATIVE MARTINGALE
+We work under (1.1), (1.3) and (1.4), but we drop the assumption that L is
+nonlattice. We recall from (2.11) that the renewal function R(x) is defined by
+R(x) =
+
+ 
+
+P Sk ≥ −x, Sk <
+
+k≥0
+
+
+
+min
+
+0≤j ≤k−1
+
+Sj .
+
+The duality lemma says that R(x) is also the expected number of visits of the
+random walk (Sn )n≥0 to the interval (−x, 0] before hitting [0, ∞) (after time 1).
+For any β ≥ 0, we introduce for n ≥ 0,
+Dn(β) :=
+
+
+
+|u|=n
+
+
+
+
+
+R V (u) + β e−V (u) 1{V (uk )≥−β,∀k≤n} .
+
+The following lemma is Lemma 10.2 in [7]. The analog in the case of the Brownian
+motion is Theorem 9 in [20].
+(β)
+
+L EMMA A.1 ([7]). For any β ≥ 0, the process (Dn , n ≥ 0) is a nonnegative
+martingale with respect to (Fn , n ≥ 0).
+P ROOF. We recall that under Pa , the branching random walk (V (v), v ∈ T)
+and the one-dimensional random walk (Sk , k ≥ 0) start at a. By the Markov property, we have
+ (β)
+
+E Dn+1 |Fn
+=
+
+
+|u|=n
+
+1{V (uk )≥−β,∀k≤n} EV (u)
+
+
+
+
+
+ −V (v)
+
+R V (v) + β e
+
+|v|=1
+
+By (2.1), we see that for any u ∈ T with |u| = n,
+EV (u)
+
+
+
+|v|=1
+
+
+
+
+
+R V (v) + β e−V (v) 1{V (v)≥−β}
+
+
+= EV (u) R(S1 + β)1{S1 ≥−β} e−V (u) ,
+
+
+
+
+
+1{V (v)≥−β} .
+
+1408
+
+E. AÏDÉKON
+
+which is R(V (u) + β)e−V (u) by Lemma 1 of [24]. Therefore,
+ (β)
+
+E Dn+1 |Fn
+=
+
+
+
+|u|=n
+
+
+
+
+
+1{V (uk )≥−β,∀k≤n} R V (u) + β e−V (u) ,
+
+which completes the proof. 
+(β)
+
+Since (Dn , n ≥ 0) is a nonnegative martingale, we can define for any a ≥ 0 a
+(β)
+probability measure P̂a on F∞ such that for any n ≥ 1,
+(β)
+
+d P̂a
+dPa
+
+(A.1)
+
+(β)
+
+Dn
+=
+Fn
+R(a + β)e−a
+
+(β)
+
+(β)
+
+and we write as usual P̂(β) for P̂0 , and Êa (resp., Ê(β) ) for the expectation as(β)
+(β)
+sociated with P̂a (resp., P̂(β) ). Let B̂a be the branching random walk with a
+(β)
+(β)
+spine defined as follows: The spine w0 starts at V (w0 ) = a. At time 1 it gives
+(β)
+birth to a point process distributed as (V (x), |x| = 1) under P̂a . Then the spine
+(β)
+elementw1 at time 1 is chosen proportionally to R(V (u) + β)e−V (u) 1{V (u)≥−β}
+(β)
+(β)
+among the children u of w0 . At each time n, the spine element wn produces
+(β)
+an independent point process distributed as (V (x), |x| = 1) under P̂ (β) , while
+V (wn )
+
+the other particles |u| = n generate independent point processes distributed as
+(β)
+(V (x), |x| = 1) under PV (u) . The spine wn+1 at time n + 1 is chosen proportionally
+
+to the weight R(V (u) + β)e−V (u) 1{V (uk )≥−β,∀k≤n} among the children of wn . We
+(β)
+write Fˆn for the σ -algebra obtained from Fn by including the information on
+(β)
+the spine up to time n. We write Ba for the (nonmarked) branching random walk
+(β)
+(β)
+obtained from B̂a by ignoring the location of the spine, and note that Ba is
+measurable with respect to F∞ .
+(β)
+
+L EMMA A.2 ([7]).
+(β)
+Ba .
+
+(β)
+
+The branching random walk under P̂a
+
+is distributed as
+
+P ROOF. We give a sketch of the proof. Let n ≥ 1 and Tn be a deterministic tree
+of height less than n. We denote by T|n the (random) tree T truncated at level n.
+(β)
+Let PB̂(β) be a probability measure associated with B̂a . We want to prove that the
+a
+
+(β)
+
+projection of PB̂(β) on the space of nonmarked branching random walks is P̂a .
+a
+Given deterministic infinitesimal intervals (dzu , u ∈ Tn ), we compute that
+
+
+PB̂(β) T|n = Tn , V (u) ∈ dzu , ∀u ∈ Tn
+a
+
+=
+
+
+
+u∈Tn ,|u|=n
+
+
+
+
+
+
+
+PB̂(β) T|n = Tn , V (u) ∈ dzu , ∀u ∈ Tn , wn(β) = u .
+a
+
+1409
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+(β)
+
+For any u ∈ Tn with |u| = n, we check that, by construction of our process B̂a ,
+
+
+PB̂(β) T|n = Tn , V (u) ∈ dzu , ∀u ∈ Tn , wn(β) = u
+a
+
+
+
+= Pa T|n = Tn , V (u) ∈ dzu , ∀u ∈ Tn
+×
+
+
+
+
+
+R(V (uj ) + β)e−V (uj ) 1{minj ≤n V (uj )≥−β}
+R(a + β)e−a
+
+,
+
+where uj denotes the ancestor of u in Tn at generation j . Therefore,
+
+
+
+
+
+
+(β) 
+
+PB̂(β) T|n = Tn , V (u) ∈ dzu , ∀u ∈ Tn = Ea 1{T|n =Tn ,V (u)∈dzu ,∀u∈Tn }
+a
+
+Dn
+
+(β)
+
+,
+
+D0
+
+(β)
+
+which is P̂a (T|n = Tn , V (u) ∈ dzu ∀u ∈ Tn ) by definition. 
+(β)
+From now on, we will identify our branching random walk under P̂a with
+(β)
+B̂a . Notice that the proof shows that, for any vertex u ∈ T such that |u| = n,
+
+
+
+
+
+(β)
+P̂(β)
+a wn = u|Fn =
+
+R(V (u) + β)e−V (u) 1{minj ≤n V (uj )≥−β}
+(β)
+
+.
+
+Dn
+
+For F a measurable function from Rn+1 to R+ , we notice that
+   (β) 
+
+Ê(β)
+a F V w0
+= Ê(β)
+a
+=
+
+
+
+, . . . , V wn(β)
+
+
+
+1
+(β)
+D0
+
+
+
+ R(V (u) + β)e−V (u) 1{minj ≤n V (uj )≥−β}
+
+
+
+F V (u0 ), . . . , V (un )
+
+(β)
+
+Dn
+
+|u|=n
+
+Ea
+
+
+
+
+
+
+
+
+
+F V (u0 ), . . . , V (un )
+
+|u|=n
+
+
+
+
+
+
+
+× R V (u) + β e−V (u) 1{minj ≤n V (uj )≥−β} .
+Therefore, (2.1) yields that
+   (β) 
+
+(A.2)
+
+Ê(β)
+a F V w0
+=
+
+
+
+, . . . , V wn(β)
+
+
+
+
+
+1
+Ea F (S0 , . . . , Sn )R(Sn + β), min Sk ≥ −β .
+k≤n
+R(a + β)
+
+(β)
+
+Under P̂y , the spine process (V (wn ), n ≥ 0) is distributed as the random walk
+(Sn )n≥0 conditioned to stay above −β, in the sense of [24] or [5]. It is the Markov
+chain with transition probabilities, for any x ≥ −β,
+p̂(β) (x, dy) :=
+
+R(y + β)
+1{y≥−β} p(x, dy),
+R(x + β)
+
+1410
+
+E. AÏDÉKON
+
+where p(x, dy) = Px (S1 ∈ dy). The fact that this defines a transition probability
+comes from the equality Ex [R(S1 )1{S1 ≥0} ] = R(x) for any x ≥ 0 by Lemma 1
+in [24]. This Markov chain then never hits the region (−∞, −β), hence its name.
+(β)
+Since (Dn , n ≥ 0) is a (nonnegative) martingale, it has a limit that we denote
+(β)
+by D∞ . The question of the convergence in L1 was addressed in [7], where the
+authors give almost optimal conditions for the convergence to hold. However, we
+deal with slightly weaker conditions, so we have to prove the convergence in our
+case.
+P ROPOSITION A.3.
+
+Assume (1.1), (1.3) and (1.4). Then:
+(β)
+
+(β)
+
+(i) For any β ≥ 0, Dn converges in L1 to D∞ .
+(β)
+(ii) We have D∞ > 0 almost surely on the event of nonextinction of the
+branching random walk killed below −β.
+(iii) We have D∞ > 0 almost surely on the event of nonextinction of T.
+P ROOF. We adapt the proof of [7]; see [22] for the case of the additive martin(β)
+(β)
+gale. We observe that if supn→∞ Dn < ∞, P̂(β) -a.s, then the family (Dn )n≥0
+1
+under P is uniformly integrable, hence converges in L . Let
+ (β)
+
+ (β) 
+
+(β)
+Ĝ∞
+:= σ wj , V wj
+
+ (β)  
+
+,  wj
+
+
+
+
+
+, V (u) u∈(w(β) ) , j ≥ 1
+j
+
+be the σ -algebra of the spine and its brothers. Using the martingale property of
+(β)
+Dn for the subtrees rooted at brothers of the spine, we have
+
+
+ 
+
+
+
+
+
+n
+
+
+
+
+(β)
+
+(β)
+Ê(β) Dn(β) |Ĝ∞
+= R V wn(β) + β e−V (wn )
+
++
+
+
+
+
+
+R V (x) + β e−V (x) 1{V (xj )≥−β,∀j ≤k} .
+
+k=1 x∈(w(β) )
+k
+
+It is well known (see, e.g., the construction available in [24] for the random walk
+(β)
+conditioned to stay positive) that V (wn ) → ∞ P̂(β) -almost surely; therefore
+(β)
+(β)
+(β)
+R(V (wn )+β)e−V (wn ) goes to zero as n → ∞. Furthermore, we see that 1/Dn
+is under P̂(β) a positive supermartingale, and therefore converges as n → ∞. We
+(β)
+(β)
+still denote by D∞ the (possibly infinite) limit of Dn under P̂(β) . We already
+know that there exists c27 > 0 such that R(x) ≤ c27 (1 + x)+ ≤ c27 (1 + x+ ) for any
+x ∈ R. Then, by Fatou’s lemma,
+
+
+
+
+(β) (β)
+(β)
+|Ĝ∞ ≤ lim inf Ê(β) Dn(β) |Ĝ∞
+Ê(β) D∞
+
+(A.3)
+
+n→∞
+
+≤ c27
+
+
+
+
+
+k≥1 x∈(w(β) )
+k
+
+
+
+
+
+ 
+
+1 + β + V (x) + e−V (x) .
+
+1411
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+To prove (i), it remains to show that the right-hand side of the last inequality is
+(β)
+finite P̂(β) -almost surely (which implies that D∞ is finite P̂(β) -a.s). We observe
+that
+
+
+(A.4)
+
+
+
+
+
+
+
+ 
+
+1 + β + V (x) + e−V (x) ≤ A1 + A2
+
+k≥1 x∈(w(β) )
+k
+
+with
+(A.5) A1 :=
+
+
+
+ (β) 
+
+k≥1
+
+(A.6) A2 :=
+
+
+
+
+
+(β)
+
+1 + β + V wk−1 e−V (wk−1 )
+
+(β)
+
+e−(V (x)−V (wk−1 )) ,
+
+(β)
+
+x∈(wk )
+
+
+
+(β)
+
+e−V (wk−1 )
+
+k≥1
+
+
+
+ (β) 
+
+V (x) − V wk−1
+
+(β)
+
+−(V (x)−V (wk−1 ))
+.
++e
+
+(β)
+
+x∈(wk )
+
+
+
+
+
+Let us consider A1 . We recall that X := |x|=1 e−V (x) , X̃ := |x|=1 V (x)+ e−V (x) ,
+
+and we introduce X  := |x|=1 R(β + V (x))e−V (x) 1{V (x)≥−β} . We observe that,
+for any a ≥ −β,
+X  ≤ c27
+
+
+
+
+
+|x|=1
+
+
+
+ 
+
+e−V (x) (1 + a + β) + V (x) − a + .
+
+Therefore, we have for any z ∈ R and a ≥ −β,
+P̂(β)
+a
+
+
+
+e−(V (x)−a) > z
+
+|x|=1
+
+=
+
+
+1
+Ea X  1{|x|=1 e−(V (x)−a) >z}
+−a
+R(a + β)e
+
+≤ c40 ea Ea
+
+(A.7)
+
+
+
+e−V (x) 1 +
+
+|x|=1
+
+= c40 E[X1{X>z} ] + c40
+=: c40 h1 (z) + c40
+
+(V (x) − a)+
+1{|x|=1 e−(V (x)−a) >z}
+1+a+β
+
+
+
+1
+E[X̃1{X>z} ]
+1+a+β
+
+1
+h2 (z),
+1+a+β
+
+where h1 and h2 are defined by the last equation. We deduce by the Markov property at time k − 1 that
+P̂(β)
+
+
+
+(β)
+
+(β)
+
+e−(V (x)−V (wk−1 )) ≥ eV (wk−1 )/2
+
+(β)
+
+x∈(wk )
+
+≤ c40 Ê
+
+(β)
+
+
+
+ V (w(β) )/2 
+
+h1 e
+
+k−1
+
++
+
+1
+(β)
+
+1 + V (wk−1 ) + β
+
+ V (w(β) )/2 
+
+h2 e
+
+k−1
+
+
+
+.
+
+1412
+
+E. AÏDÉKON
+
+Hence,
+
+
+
+
+P̂(β)
+
+k≥1
+
+(β)
+
+(β)
+
+x∈(wk )
+
+≤ c40
+
+(A.8)
+
+
+
+
+
+
+
++ c40
+
+
+
+
+
+Ê
+
+
+
+≥0 Ê
+
+
+
+
+
+ V (w(β) )/2 
+
+(β)
+
+1 + V (w ) + β
+
+h2 e
+
+
+
+.
+
+(β)
+
+(β) [h (eV (w )/2 )]. By (A.2), we have
+1
+
+
+
+
+
+1
+E R(β + S )h1 eS /2 , min Sj ≥ −β
+j ≤
+R(β)
+
+
+
+(β)
+
+
+
+1
+
+(β)
+
+≥0
+
+We next estimate
+
+(β)
+
+Ê(β) h1 eV (w )/2
+
+≥0
+
+
+
+(β)
+
+e−(V (x)−V (wk−1 )) ≥ eV (wk−1 )/2
+
+Ê(β) h1 eV (w )/2 =
+
+
+
+1
+E R(β + S )X1{S ≤2 ln X} , min Sj ≥ −β ,
+j ≤
+R(β)
+
+=
+
+where X and the random walk (Sn , n ≥ 0) are taken independent. Conditioning
+on X, then using Lemma B.2(i), we get that
+
+
+
+
+≥0
+
+(A.9)
+
+
+
+(β)
+
+Ê(β) h1 eV (w )/2
+
+
+
+
+
+≤
+
+
+
+1
+E XR β + 2 ln(X)
+1{S ≤2 ln X,minj ≤ Sj ≥−β}
+R(β)
+≥0
+
+≤
+
+c41 
+E X(1 + ln+ X)2 ,
+R(β)
+
+
+
+which is finite by (1.4). Similarly,
+
+
+Ê(β)
+
+
+
+1
+(β)
+
+1 + V (w ) + β
+
+
+
+(β)
+
+h2 eV (w )/2
+
+
+
+
+
+
+
+≤ c42 E X̃1{S ≤2 ln X} , min Sj ≥ −β .
+j ≤
+
+Lemma B.2(i) implies that
+(A.10)
+
+
+
+
+
+Ê(β)
+
+≥0
+
+
+
+1
+(β)
+1 + V (w ) + β
+
+(β)
+
+h2 eV (w )/2
+
+
+
+
+
+
+
+≤ c43 E X̃(1 + ln+ X) < ∞
+
+under (1.4) by Lemma B.1(i). Equations (A.8), (A.9) and (A.10) give that
+(A.11)
+
+
+k≥1
+
+P̂(β)
+
+
+(β)
+
+x∈(wk )
+
+(β)
+
+(β)
+
+e−(V (x)−V (wk−1 )) ≥ eV (wk−1 )/2 < ∞.
+
+1413
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+By the Borel–Cantelli lemma, we obtain that
+
+
+ (β) 
+
+
+
+(β)
+
+1 + β + V wk−1 e−V (wk−1 )
+
+(β)
+
+e−(V (x)−V (wk−1 )
+
+(β)
+
+x∈(wk )
+
+
+
+ (β) 
+
+(β)
+
+≤ 1 + β + V wk−1 e−V (wk−1 )/2
+for k large enough almost surely. It is known that, for any a ∈ (0, 1/2), we have
+(β)
+V (wk ) ≥ k a for k large enough. From (A.5), we deduce that A1 < ∞. We proceed similarly for A2 , replacing in (A.7) 1{X>z} by 1{X̃>z} . By analogy, we find
+
+that A2 < ∞ if E[X(1 + ln+ X̃)2 ] and E[X̃(1 + ln+ X̃)] are finite. This is the case
+(β)
+by (1.4) and Lemma B.1(i). Equations (A.3) and (A.4) yield that D∞ < ∞ P̂(β) a.s., which ends the proof of (i). We prove now (iii). We see that, for any x ∈ T
+with |x| = 1,
+D∞ ≥ e−V (x) D∞,x ≥ 0,
+
+
+where for any x ∈ T, Dn,x := |u|=n,u≥x (V (u) − V (x))e−(V (u)−V (x)) and
+
+D∞,x := limn→∞ Dn,x . We used the fact that the martingale |u|=n,u≥x e−V (x)
+converges to 0 as n → ∞. This implies that if D∞ = 0, then D∞,x = 0. Nowriting p := P(D∞ = 0), we
+tice that D∞,x is distributed as D∞ . Therefore,
+
+1
+|x|=1
+]. Consequently, p = 1 or p ≤
+have that p > 0 implies that p ≤ E[p
+P(extinction of T). On the other hand, observe that p ≥ P(extinction of T), since
+the sum in (1.5) is empty for large n when the tree T is finite. Finally, we get
+(0)
+that P(D∞ = 0) is P(extinction of T) or 1. Now, notice that P(D∞ > 0) > 0
+(0)
+by (i). Since R(x) ≤ c27 (1 + x+ ), we see that D∞ ≤ c27 D∞ , and therefore
+P(D∞ > 0) > 0. Hence, we have D∞ > 0 P-a.s. on the event of nonextinction.
+We can now prove (ii). Let β ≥ 0. On the event of nonextinction of the branching
+random walk killed below β, we can find a vertex u (in the killed branching random walk) such that there is an infinite line of descent from u which stays above
+V (u). For such a vertex u, we have
+
+
+
+
+
+
+R V (v) + β e−V (v) 1{V (vk )≥−β,∀k≤n} =
+
+v≥u,|v|=n
+
+
+
+
+
+
+
+R V (v) + β e−V (v) .
+
+v≥u,|v|=n
+
+
+
+The sum v≥u,|v|=n R(V (v) + β)e−V (v) converges to c0 e−V (u) D∞,u as n → ∞ .
+We know from (iii) that D∞,u > 0; hence
+
+
+
+
+
+
+R β + V (v) e−V (v) 1{V (vk )≥−β,∀k≤n}
+
+v≥u,|v|=n
+
+has a positive limit as n → ∞. Since
+Dn(β) ≥
+
+
+
+v≥u,|v|=n
+(β)
+
+we have that D∞ > 0. 
+
+
+
+
+
+R β + V (v) e−V (v) 1{V (vk )≥−β,∀k≤n} ,
+
+1414
+
+E. AÏDÉKON
+
+APPENDIX B: AUXILIARY ESTIMATES
+L EMMA B.1.
+holds.
+
+Let X and X̃ be nonnegative random variables such that (1.4)
+
+(i) We have
+
+
+
+E X(ln+ X̃)2 < ∞,
+(ii) As z → ∞,
+
+ 
+
+2
+
+E[X̃ ln+ X] < ∞.
+
+
+
+
+
+
+
+
+E X ln+ (X + X̃) min ln+ (X + X̃), z = o(z),
+
+
+E X̃ ln+ (X + X̃) min ln+ (X + X̃), z = o(z).
+We first prove (i). We claim that for any x, x̃ ≥ 0,
+
+P ROOF.
+
+x(ln+ x̃)2 ≤ 4x(ln+ x)2 + 2x̃ ln+ x̃.
+
+(B.1)
+
+We can assume that x̃ ≥ 1. If x̃ < x 2 , then x(ln+ x̃)2 ≤ 4x(ln+ x)2 . If x̃ ≥ x 2 , we
+√
+check that x(ln+ x̃)2 ≤ 2x̃ ln+ x̃ since ln(y) ≤ 2 y for any y ≥ 1. This gives (B.1).
+It follows that
+
+
+
+
+E X(ln+ X̃)2 ≤ 4E X(ln+ X)2 + 2E[X̃ ln+ X̃],
+which is finite under (1.4). Also, X̃ ln+ X ≤ max(X̃ ln+ X̃, X ln+ X), hence
+E[X̃ ln+ (X)] < ∞. We turn to the proof of (ii). Let ε > 0. We observe that
+ 
+
+2
+
+
+
+E X ln+ (X + X̃) min ln+ (X + X̃), z
+ 
+
+2
+
+
+
+
+
+
+
+= E X ln+ (X + X̃) min ln+ (X + X̃), z , ln+ (X + X̃) ≥ εz
+ 
+
+2
+
+
+
+
+
++ E X ln+ (X + X̃) min ln+ (X + X̃), z , ln+ (X + X̃) < εz .
+On one hand,
+
+ 
+
+2
+
+
+
+
+
+E X ln+ (X + X̃) min ln+ (X + X̃), z , ln+ (X + X̃) ≥ εz
+ 
+
+2
+
+≤ zE X ln+ (X + X̃) , ln+ (X + X̃) ≥ εz
+= zoz (1)
+since E[X(ln+ (X + X̃))2 ] < ∞. On the other hand,
+ 
+
+2
+
+
+
+
+
+E X ln+ (X + X̃) min ln+ (X + X̃), z , ln+ (X + X̃) < εz
+
+
+≤ εzE X(ln+ X + X̃)2 .
+Thus E[X(ln+ (X + X̃))2 min(ln+ (X + X̃), z)] ≤ (1 + E[X(ln+ X + X̃)2 ])εz for
+z large enough, and is therefore o(z). We show similarly that E[X̃ ln+ (X +
+X̃) min(ln+ (X + X̃), z)] = o(z). 
+Let (Sn )n≥0 be a one-dimensional random walk, with E[S1 ] = 0 and E[(S1 )2 ] <
+∞.
+
+1415
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+(i) There exists a constant c45 > 0 such that for any z ≥ 0 and
+
+L EMMA B.2.
+x≥0
+
+
+
+
+
+
+
+
+
+
+Pz S ≤ x, min Sj ≥ 0 ≤ c45 (1 + x) 1 + min(x, z) .
+j ≤
+
+≥0
+
+(ii) Let a > 0. We have
+
+
+−aS
+
+e
+
+E
+
+
+
+1{minj ≤ Sj ≥0} = c46 (a) < ∞.
+
+≥0
+
+(iii) Let a > 0. There exists a constant c47 (a) > 0 such that for any z ≥ 0,
+Ez
+
+
+
+−aS
+
+e
+
+
+
+1{minj ≤ Sj ≥0} ≤ c47 (a).
+
+≥0
+
+P ROOF. Suppose that x < z. If τx− denotes the first passage time below level
+x of (Sn )n≥0 , we have
+
+
+
+
+
+
+Pz S ≤ x, min Sj ≥ 0 = Ez
+j ≤
+
+≥0
+
+
+
+
+
+1{S ≤x,minj ≤ Sj ≥0 }
+
+≥τx−
+
+
+
+≤E
+
+
+
+1{S ≤x,minj ≤ Sj ≥−x} ,
+
+≥0
+
+where we used the Markov property at time τx− . We have
+ 
+
+
+
+P S ≤ x, min Sj ≥ −x ≤ 1 + x 2 +
+j ≤
+
+≥0
+
+
+
+
+
+P S ≤ x, min Sj ≥ −x
+j ≤
+
+>x 2
+
+≤ 1 + x 2 + c48
+
+(B.2)
+
+
+
+
+
+(1 + x)3 −3/2
+
+>x 2
+
+≤ c49 (1 + x)2
+by (2.8). Suppose now that x ≥ z. Then
+
+
+
+
+
+
+Pz S ≤ x, min Sj ≥ 0
+j ≤
+
+≥0
+
+≤
+
+
+
+
+
+
+
+Pz min Sj ≥ 0 +
+j ≤
+
+≤x 2
+
+
+>x 2
+
+
+
+
+
+Pz S ≤ x, min Sj ≥ 0 .
+j ≤
+
+From (2.7), we know that Pz (minj ≤ Sj ≥ 0) ≤ c50 (1 + z)(1 + )−1/2 , whereas,
+by (2.8),
+
+
+
+
+Pz S ≤ x, min Sj ≥ 0 ≤ c51 (1 + z)(1 + x)2 (1 + )−3/2 .
+j ≤
+
+1416
+
+E. AÏDÉKON
+
+We get
+
+
+
+
+
+
+
+Pz S ≤ x, min Sj ≥ 0
+j ≤
+
+≥0
+
+≤ c50
+
+(B.3)
+
+ 1+z
+
+
+
+√
+(1 + z)(1 + x)2 (1 + )−3/2
++ c51
+1
++
+
+≤x 2
+>x 2
+
+≤ c52 (1 + z)(1 + x).
+From (B.2) when x < z and (B.3) when x ≥ z, we have for x, z ≥ 0,
+
+
+
+
+
+
+
+
+
+
+Pz S ≤ x, min Sj ≥ 0 ≤ (c49 + c52 )(1 + x) 1 + min(x, z) .
+j ≤
+
+≥0
+
+This ends the proof of (i). We turn to the statement (ii). Without loss of generality,
+we assume that a = 1 [in (ii) and in (iii)]. We have
+ 
+−S
+
+Ee
+
+
+
+1{minj ≤ Sj ≥0} =
+
+≥0
+
+
+
+
+
+
+
+e−i P S ∈ [i, i + 1), min Sj ≥ 0 .
+j ≤
+
+≥0 i≥0
+
+By (2.8), P(S ∈ [i, i + 1), minj ≤ Sj ≥ 0) ≤ c53 (1 + i)(1 + )−3/2 , which completes the proof of (ii). Finally, we prove (iii). Let (Tk , Hk , k ≥ 0) be the strict descending ladder epochs and heights of (Sn )n≥0 , that is, T0 := 0, H0 := S0 , and for
+any k ≥ 1, Tk := min{j > Tk−1 : Sj < Hk−1 }, Hk := STk . By applying the Markov
+property at the times (Tk , k ≥ 0), we observe that
+Ez
+
+
+
+
+
+e−S 1{minj ≤ Sj ≥0} = c46 Ez
+
+≥0
+
+
+
+
+
+e−Hk 1{Hk ≥0} ,
+
+k≥0
+
+
+
+where c46 is the constant of (ii). The fact that Z(z) := Ez [ k≥0 e−Hk 1{Hk ≥0} ] is
+bounded in z ≥ 0 then comes from the renewal 
+theorem: let U (dy) denote the
+renewal measure of (Hk , k ≥ 0), that is, U (dy) := k≥0 P(Hk ∈ dy). Then Z(z) =
+ 0 −(z+y)
+U (dy). In Section XI.1 of [14], combine lemma, page 359, with the
+−z e
+renewal theorem, page 363, to conclude that Z is bounded. This completes the
+proof of (iii). 
+For α > 0, a ≥ 0, n ≥ 1 and 0 ≤ i ≤ n, we define
+ α
+i ,
+if 0 ≤ i ≤ n/2,
+(B.4)
+ki :=
+if n/2 < i ≤ n.
+a + (n − i)α ,
+L EMMA B.3. Let α ∈ (0, 1/6) and ε > 0.
+(i) There exist d > 0 and c53 > 0 such that for any u ≥ 0, a ≥ 0 and any integer
+n ≥ 1,
+%
+
+P ∃0 ≤ i ≤ n : Si ≤ ki − d, min Sj ≥ 0,
+j ≤n
+
+(B.5)
+
+
+
+≤ (1 + u)2
+
+ε
+
+n
+
++ c53
+3/2
+
+
+
+min
+
+n/2<j ≤n
+
+(nα + a)2
+,
+n2−α
+
+Sj ≥ a, Sn ≤ a + u
+
+&
+
+1417
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+where ki is given by (B.4).
+P ROOF
+. We treat n/2 as an integer. Let E be the event in (B.5). We have
+n
+P(E) ≤ i=1 P(Ei ) where
+%
+
+&
+
+Ei := Si ≤ ki − d, min Sj ≥ 0, min Sj ≥ a, Sn ≤ a + u .
+j ≤n
+
+n/2<j ≤n
+
+We first treat the case i ≤ n/2, so that ki = i α . By the Markov property at time
+i ≥ 1 and (2.9), we have
+P(Ei ) ≤
+
+c54 (1 + u)2 
+E (1 + Si )1{Si ≤i α ,minj ≤i Sj ≥0} ,
+n3/2
+2
+
+α 3
+
+(1+i )
+by (2.8). It yields that, if K is greater than
+which is smaller than c55 n(1+u)
+3/2
+i 3/2
+some constant K0 (which does not depend on d), we have
+n/2
+
+
+(B.6)
+
+P(Ei ) ≤ (1 + u)2
+
+i=K
+
+ε
+n3/2
+
+.
+
+y
+
+( i=x := 0 if x > y.) We treat the case n/2 < i ≤ n. We have by the Markov
+property at time i and (2.8),
+P(Ei ) ≤
+
+c56 (1 + u)2 
+E (1 + Si − a)1{Si ≤a+(n−i)α ,minj ≤i Sj ≥0,minn/2<j ≤i Sj ≥a} .
+(n − i + 1)3/2
+3α−3/2
+
+If i ≥ 2n/3, we use (2.9) to see that P(Ei ) ≤ c57 (1 + u)2 (1+n−i)
+n3/2
+if K ≥ K1 (K1 does not depend on d),
+
+. Therefore,
+
+n−K
+
+
+ε
+P(Ei ) ≤ (1 + u)2 3/2 .
+n
+i= 2n/3
+
+(B.7)
+
+If n/2 < i < 2n/3, we simply write
+P(Ei ) ≤
+
+c56 (1 + u)2 
+E (1 + Si − a)1{a≤Si ≤a+(n−i)α ,minj ≤i Sj ≥0}
+(n − i + 1)3/2
+
+≤ c59 (1 + u)2
+
+
+
+(n − i)α
+α
+P
+a
+≤
+S
+≤
+a
++
+(n
+−
+i)
+,
+min
+S
+≥
+0
+i
+j
+j ≤i
+(n − i + 1)3/2
+
+≤ c60 (1 + u)2
+
+nα (a + nα )2
+n3
+
+by (2.8). We deduce that
+(B.8)
+
+2n/3
+
+i=n/2
+
+P(Ei ) ≤ c61 (1 + u)2
+
+(nα + a)2
+.
+n2−α
+
+1418
+
+E. AÏDÉKON
+
+Notice that our choice of K does not depend on the constant d. Thus, we are
+allowed to choose d ≥ K α , for which P(Ei ) = 0 if i ∈ [1, K] ∪ [n − K, n]. We
+obtain by (B.6), (B.7) and (B.8)
+
+
+n
+
+
+
+
+(nα + a)2
+P(Ei ) ≤ (1 + u) 2 3/2 + c61
+,
+n
+n2−α
+i=1
+ε
+
+2
+
++a)
+ε
++ c61 (nn2−α
+}, indeed. 
+hence P(E) ≤ (1 + u)2 {2 n3/2
+2
+
+α
+
+APPENDIX C: THE GOOD VERTEX
+Let z ≥ 0 and L ≥ 0. Let dk = dk (n, z + L, 1/2) as defined in (3.4). Let also
+⎧
+n
+⎪
+⎨ k 1/12 ,
+if 0 ≤ k ≤ ,
+(n)
+2
+ek = ek :=
+n
+⎪
+⎩ (n − k)1/12 ,
+if < k ≤ n.
+2
+z,L
+We recall from definition 3.5 that u ∈ Zn if |u| = n, V (uk ) ≥ dk for k ≤ n and
+V (u) ∈ In (z). We say that u such that |u| = n is a (z, L)-good vertex if u ∈ Znz,L
+and for any 1 ≤ k ≤ n,
+
+
+(C.1)
+
+
+
+
+
+ 
+
+e−(V (v)−dk ) 1 + V (v) − dk + ≤ Be−ek .
+
+v∈(uk )
+
+Note that a (z, 0)-good vertex is a z-good vertex as introduced in Section 3.1. We
+defined the probability P̂ in (2.3) and the spine (wn , n ≥ 0) in Section 2.1.
+L EMMA C.1. Fix L ≥ 0. For any ε > 0, we can find B large enough in (C.1)
+such that P̂(wn is not a (z, L)-good vertex, wn ∈ Znz,L ) ≤ εn−3/2 for any n ≥ 1
+and z ≥ 0.
+P ROOF.
+
+
+Fix L ≥ 0 and let ε > 0. We have
+
+P̂ wn is not a (z, L)-good vertex, wn ∈ Znz,L
+(C.2)
+
+≤ P̂ ∃k ∈ [1, n] :
+
+
+
+
+
+
+
+
+ 
+
+e−(V (v)−dk ) 1 + V (v) − dk + > Be−ek ,
+
+v∈(wk )
+
+wn ∈ Znz,L .
+We want to show that we can find B large enough such that
+P̂ ∃k ∈ [1, n] :
+(C.3)
+
+
+
+
+
+
+
+ 
+
+e−(V (v)−dk ) 1 + V (v) − dk + > Be−ek ,
+
+v∈(wk )
+
+wn ∈ Znz,L ≤
+
+ε
+n3/2
+
+.
+
+1419
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+We see that, for any 1 ≤ k ≤ n,
+ 
+
+−(V (v)−dk ) 
+
+e
+
+
+
+ 
+
+−ek
+
+1 + V (v) − dk + > Be
+
+
+
+, V (wk−1 ) ≥ dk + 2ek − c62
+
+v∈(wk )
+
+⊂
+
+ 
+
+−(V (v)−dk ) 
+
+
+
+ 
+
+−(V (wk−1 )−dk +c62 )/2
+
+1 + V (v) − dk + > Be
+
+e
+
+
+
+.
+
+v∈(wk )
+
+By Lemma B.3, there exists c62 = c62 (L) > 0 and N = N(L) such that for n ≥ N
+and z ≥ 0
+
+
+ε
+P̂ wn ∈ Znz,L , ∃0 ≤ j ≤ n − 1 : V (wj ) ≤ dj +1 + 2ej +1 − c62 ≤ 3/2 .
+n
+Consequently, it is enough to show that for B large enough,
+n
+
+
+
+
+P̂
+
+k=1
+
+
+
+
+
+ 
+
+e−(V (v)−dk ) 1 + V (v) − dk + > Be−(V (wk−1 )−dk )/2 ,
+
+v∈(wk )
+
+(C.4)
+
+wn ∈ Znz,L ≤ εn−3/2 .
+We see that
+
+
+
+
+
+
+ 
+
+e−(V (v)−dk ) 1 + V (v) − dk +
+
+v∈(wk )
+
+
+
+≤ e−(V (wk−1 )−dk )
+
+v∈(wk )
+
+
+
+
+
+e−(V (v)−V (wk−1 ))
+
+
+
+
+
+
+
+
+ 
+
+≤ e−(V (wk−1 )−dk ) 1 + V (wk−1 ) − dk +
+
+
+×
+
+
+
+
+
+ 
+
+e−(V (v)−V (wk−1 )) 1 + V (v) − V (wk−1 ) + .
+
+v∈(wk )
+
+With the notation of (4.2), we have then
+
+
+
+
+
+
+ 
+
+e−(V (v)−dk ) 1 + V (v) − dk +
+
+v∈(wk )
+
+
+
+
+
+ 
+
+≤ e−(V (wk−1 )−dk ) 1 + V (wk−1 ) − dk + ξ(wk ).
+Equation (C.4) boils down to showing that, for B large enough,
+n
+
+
+P̂ ξ(wk ) > B
+
+k=1
+
+e(V (wk−1 )−dk )/2
+, wn ∈ Znz,L ≤ εn−3/2 .
+1 + (V (wk−1 ) − dk )+
+
+Actually, we are going to show that, for B large enough,
+(C.5)
+
+n
+
+
+
+
+
+P̂ ξ(wk ) > Be(V (wk−1 )−dk )/3 , wn ∈ Znz,L ≤ εn−3/2 .
+
+k=1
+
+ 
+
+× 1 + V (wk−1 ) − dk + + V (v) − V (wk−1 ) +
+
+1420
+
+E. AÏDÉKON
+
+First, we deal with the case k ∈ [1, 3n/4]. We notice that
+
+
+
+
+
+
+
+
+P̂ ξ(wk ) > Be(V (wk−1 )−dk )/3 , wn ∈ Znz,L ≤ P̂ ξ(wk ) > BeV (wk−1 )/3 , wn ∈ Znz,L .
+By the Markov property at time k, we get
+
+
+P̂ ξ(wk ) > BeV (wk−1 )/3 , wn ∈ Znz,L
+ 
+
+
+
+
+
+= Ê λ V (wk ), k, n 1{ξ(wk )>BeV (wk−1 )/3 ,V (wj )≥0,∀j ≤k} ,
+where λ(r, k, n) := P̂r (V (wj ) ≥ dj +k , ∀j ≤ n − k, V (wn−k ) ∈ In (z)). We get
+by (2.9), λ(r, k, n) ≤ c63 n−3/2 (1 + r+ ) (since k ≤ 3n/4). This yields that
+
+
+(C.6)
+
+P̂ ξ(wk ) > BeV (wk−1 )/3 , wn ∈ Znz,L
+
+
+
+
+
+
+≤ c63 n−3/2 Ê 1 + V (wk )+ 1{ξ(wk )>BeV (wk−1 )/3 ,V (wj )≥0,∀j ≤k} .
+
+On the other hand, we have
+
+
+
+
+1 + V (wk )+ ≤ 1 + V (wk−1 )+ + V (wk ) − V (wk−1 ) + .
+Let (ξ, ) be generic random variables distributed as (ξ(w1 ), V (w1 )+ ) under P̂,
+and independent of the other random variables. By the Markov property at time
+k − 1, we obtain that
+
+
+
+
+Ê 1 + V (wk )+ 1{ξ(wk )>BeV (wk−1 )/3 ,V (wj )≥0,∀j ≤k}
+ 
+
+
+
+≤ Ê κ V (wk−1 ) 1{V (wj )≥0,∀j ≤k−1}
+with, for x ≥ 0, κ(x) := (1 + x)1{ξ >Bex/3 } + + 1{ξ >Bex/3 } . In view of (C.6), it
+follows that
+3n/4
+
+
+
+
+
+
+P̂ ξ(wk ) > BeV (wk−1 )/3 , wn ∈ Znz,L ≤ c63 n−3/2 (D1 + D2 ),
+
+k=1
+
+where
+D1 :=
+
+ 
+
+
+
+
+
+Ê 1 + V (wk ) 1{V (wk )≤3(ln ξ −ln B)} , min V (wj ) ≥ 0 ,
+j ≤k
+
+k≥0
+
+D2 :=
+
+ 
+
+
+
+Ê + 1{V (wk )≤3(ln ξ −ln B)} , min V (wj ) ≥ 0 .
+j ≤k
+
+k≥0
+
+We recall that by Proposition 2.2 (V (wn ), n ≥ 0) is distributed as (Sn , n ≥ 0) (under P). Notice that in the definition of D1 , the term inside the expectation is 0 if
+B > ξ . Therefore, we can add the indicator that B ≤ ξ . By Lemma B.2(i), we get
+that
+
+
+
+
+D1 ≤ c65 Ê 1{B≤ξ } 1 + (ln ξ − ln B)+
+
+2
+
+
+
+≤ c65 Ê 1{B≤ξ } (1 + ln+ ξ )2 .
+
+1421
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+Observe that ξ ≤ X + X̃ with the notation of (1.2). Going back to the measure P,
+we get
+
+
+
+
+2
+
+D1 ≤ c65 E X1{B≤X+X̃} 1 + ln+ (X + X̃)
+
+≤ε
+
+for B large enough since E[X(1 + ln+ (X + X̃))2 ] < ∞ by (1.4) and Lemma B.1(i).
+Similarly,
+
+
+
+
+
+
+D2 ≤ c66 E X̃1{B≤X+X̃} 1 + ln+ (X + X̃) ≤ ε
+for B large enough. Therefore, for B large enough,
+3n/4
+
+
+
+
+ε
+P̂ ξ(wk ) > Be−(V (wk−1 )−dk )/3 , wn ∈ Znz,L ≤ 2 3/2 .
+n
+k=1
+
+(C.7)
+
+In order to prove (C.5), it remains to treat the case 3n/4 ≤ k ≤ n. We want to show
+that for B large enough,
+n
+
+
+(C.8)
+
+
+
+
+
+P̂ ξ(wk ) > Be(V (wk )−dk )/3 , wn ∈ Znz,L ≤ ε.
+
+k=3n/4
+
+
+
+We want to condition the point process μ(w1 ) := u∈(w1 ) δV (u) on the value of
+V (w1 ). To do this, we make a disintegration; see, for example, 15.3.3, page 164
+of [18]. This gives the existence of probabilities Qr on the space of locally finite
+measures M on R, such that:
+• For any set A in the canonical σ -algebra of M, the map r ∈ R → Qr (A) is
+measurable with respect to the Borelian σ -algebra of R. Here, the canonical σ algebra of M refers to the one generated by the mappings μ ∈ M → μ(I ) for I
+intervals of R; see Chapter 1 of [18].
+• For any bounded measurable function F , we have
+ 
+
+
+
+Ê F μ(w1 ), V (w1 ) =
+
+
+
+R
+
+
+
+P̂ V (w1 ) ∈ dr
+
+We deduce that
+
+
+P̂ ξ(wk ) > Be(V (wk )−dk )/3 , wn ∈ Znz,L
+ 
+
+
+
+
+
+
+
+M
+
+F (μ, r)Qr (dμ).
+
+
+
+
+= P̂ ξ V (wk ) − V (wk−1 ) > Be(V (wk )−dk )/3 , wn ∈ Znz,L ,
+where, given (V (wk), k ≤ n), the random variable ξ (V (wk ) − V (wk−1 )) ∈ R has
+the distribution of x∈R (1 + x+ )e−x μ(dx) under QV (wk )−V (wk−1 ) (dμ). The last
+line is equal to
+
+
+
+
+P ξ (Sk − Sk−1 ) > Be(Sk −dk )/3 , Sn ∈ In (z), S n ≥ 0, S (n/2,n] ≥ an (z + L + 1) ,
+where S n := min{Sk , k ≤ n}, S (1 ,2 ] := min{Sk , 1 < k ≤ 2 }, and, under P, and
+conditionally on (Sk , k ≤ n), the random variable ξ (Sk − Sk−1 ) has the distribution
+
+1422
+
+E. AÏDÉKON
+
+
+
+of x∈R (1 + x+ )e−x μ(dx) under QSk −Sk−1 (dμ). We return time, that is, we replace
+Sk by Sn − Sn−k . We check that
+
+
+P ξ (Sk − Sk−1 ) > Be(Sk −dk )/3 , Sn ∈ In (z), S n ≥ 0, S (n/2,n] ≥ an (z + L + 1)
+
+
+
+
+
+≤ P ξ (Sn−k+1 − Sn−k ) > BeL+1 e−Sn−k /3 , Sn ∈ In (z), −S n ≥ −an (z),
+
+
+
+−S [0,n/2) ≥ −L − 1 ,
+where −S n := min{−Sk , k ≤ n} and −S [1 ,2 ) := min{−Sk , 1 ≤ k < 2 }. We use
+the Markov property at time n − k + 1. There exists a constant c67 > 0 such that,
+for any r ≤ L + 1, any n ≥ 1, and any k ∈ [3n/4, n],
+
+
+
+
+Pr Sk−1 ∈ In (z), −S k−1 ≥ −an (z), −S [0,k−1−n/2) ≥ −L − 1
+≤ c67 (2 + L − r)n−3/2 .
+
+The last inequality comes from (2.9), after a time reversal. This yields that, for any
+n ≥ 1 and k ∈ [3n/4, n],
+
+
+
+
+P ξ (Sk − Sk−1 ) > Be(Sk −dk )/3 , Sn ∈ In (z), S n ≥ 0, S (n/2,n] ≥ an (z + L + 1)
+
+
+≤ c67 n−3/2 E (2 + L − Sn−k+1 )1{ξ (Sn−k+1 −Sn−k )>B̃e−Sn−k /3 ,−S
+
+
+
+
+ 
+
+n−k+1 ≥−L−1}
+
+= c67 n−3/2 Ê 2 + L − V (wn−k+1 ) +
+
+× 1{ξ(wn−k )>B̃e−V (wn−k )/3 ,−V (wj )≥−L−1,∀j ≤n−k+1} ,
+where B̃ := BeL+1 . Beware that we reintegrated the measures (Qr , r ∈ R) in the
+last line. We find that, for any k ∈ [3n/4, n],
+
+
+P̂ ξ(wk ) > Be(V (wk )−dk )/3 , wn ∈ Znz,L
+
+
+
+
+
+ 
+
+≤ c67 n−3/2 Ê 2 + L − V (wn−k+1 ) +
+
+× 1{ξ(wn−k )>B̃e−V (wn−k )/3 ,−V (wj )≥−L−1,∀j ≤n−k+1} .
+This is the analog of (C.6), replacing there V (wj ) by −V (wj ), k by n − k + 1 and
+{V (wj ) ≥ 0, ∀j ≤ k} by {−V (wj ) ≥ −L − 1, ∀j ≤ n − k + 1}. Then (C.8) follows
+as in the case k ∈ [1, 3n/4]. This with (C.7) prove (C.5) and hence the lemma. 
+
+APPENDIX D: NOTATION
+Branching random walk:
+L: the point process;
+X, X̃: defined in (1.2);
+T: the genealogical tree;
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+1423
+
+V (x): position of particle x;
+|x|: generation of vertex x;
+xk : ancestor at generation k of vertex x;
+Mn : minimum at generation n of the nonkilled branching random walk;
+Fn : σ -algebra of the branching random walk up to time n;
+ξ(x): defined in (4.2);
+k,n (r) := P(Mn−k ≥ (3/2) ln(n) − r);
+Z [A]: set of particles frozen when going above level A.
+Killed branching random walk:
+Tkill : the genealogical tree of the killed branching random walk;
+|u|kill : generation of a vertex u when u ∈ Tkill ;
+Mnkill : minimum at generation n of the killed branching random walk;
+mkill,n : uniform particle in Tkill among those achieving Mnkill ;
+kill
+kill
+k,n (x, r) := Px (Mn−k ≤ (3/2) ln(n) − r).
+Random walk:
+(Sn )n≥0 : nonlattice centered random walk with finite variance, defined by (2.1).
+The nonlattice assumption is dropped in the Appendix;
+σ 2 : variance of S1 ;
+R(x): renewal function of S;
+R− (x): renewal function of −S;
+Many-to-one lemma: equation (2.1);
+Hk , Tk : strict descending ladder heights and epochs of S;
+Hk− , Tk− : strict descending ladder heights and epochs of −S.
+Martingales:
+Wn : additive martingale at time n;
+Dn : derivative martingale at time n;
+(β)
+Dn : martingale of the branching random walk killed below −β.
+Probability measures:
+Pa : probability under which the branching random walk (V (x))x∈T and the
+random walk (Sn )n starts at a (P0 = P). Expectation Ea ;
+P̂a : tilted probability I defined by (2.3). Expectation Êa ;
+(β)
+(β)
+P̂a : tilted probability II defined by (A.1). Expectation Êa .
+Spine decomposition I:
+wn : spine at generation n;
+(V (wn ))n : centered random walk distributed as (Sn )n ;
+
+L̂: Radon-Nykodim derivative i∈L e−V (i) with respect to L;
+
+1424
+
+E. AÏDÉKON
+
+B̂ : branching random walk with a spine. Under P, we identify (V (x))x∈T
+with B̂ ;
+Fˆn : σ -algebra of B̂ up to time n;
+Ĝn : σ -algebra of the spine and its siblings up to time n (Ĝn ⊂ Fˆn ).
+
+Spine decomposition II:
+(β)
+
+wn : spine at generation n;
+(β)
+(V (wn ))n : random walk conditioned to stay above −β;
+B̂ (β) : branching random walk with a spine;
+(β)
+Fˆn : σ -algebra of B̂ (β) up to time n;
+(β)
+(β)
+(β)
+Ĝn : σ -algebra of the spine and its siblings up to time n (Ĝn ⊂ Fˆn ).
+Paths of particles:
+an (z) = 32 ln(n) − z;
+dk (n, z, λ): defined in (3.4);
+ek : defined in (3.31);
+In (z) = [an (z) − 1, an (z));
+Znz,L : in Definition 3.5, see Figure 1. Particles of generation n that stayed above
+dk (n, z + L, 1/2) and end in In (z);
+S r : defined in (4.1), see Figure 2. Set of particles that achieve a new minimum
+(on their ancestral line);
+Bnz (u): defined in (4.4), see Figure 3. Equal to 1 if there is a line of descent from
+u to a vertex at generation n which stays above V (u) and ends below an (z);
+T r : defined in (4.3);
+z-good vertex: defined in (3.15);
+En (z, b): defined in (3.21). Good event on which the particles at generation
+n which are located below an (z) have a common ancestor with the spine at
+generation greater than n − b;
+FL,b : defined in (3.23);
+CL,b : defined in (3.24).
+Acknowledgments. I would like to thank the referee for helpful comments.
+I thank also Loic de Raphelis and Zhan Shi for spotting mistakes in an earlier
+version.
+REFERENCES
+[1] A DDARIO -B ERRY, L. and R EED , B. (2009). Minima in branching random walks. Ann. Probab.
+37 1044–1079. MR2537549
+[2] A ÏDÉKON , E. and S HI , Z. (2010). Weak convergence for the minimal position in a branching
+random walk: A simple proof. Period. Math. Hungar. 61 43–54. MR2728431
+
+MINIMUM OF A BRANCHING RANDOM WALK
+
+1425
+
+[3] A ÏDÉKON , E. and S HI , Z. (2012). The Seneta-Heyde scaling for the branching random walk.
+Available at arXiv:1102.0217v3 [math.PR].
+[4] BACHMANN , M. (2000). Limit theorems for the minimal position in a branching random
+walk with independent logconcave displacements. Adv. in Appl. Probab. 32 159–176.
+MR1765165
+[5] B ERTOIN , J. and D ONEY, R. A. (1994). On conditioning a random walk to stay nonnegative.
+Ann. Probab. 22 2152–2167. MR1331218
+[6] B IGGINS , J. D. (1976). The first- and last-birth problems for a multitype age-dependent branching process. Adv. in Appl. Probab. 8 446–459. MR0420890
+[7] B IGGINS , J. D. and K YPRIANOU , A. E. (2004). Measure change in multitype branching. Adv.
+in Appl. Probab. 36 544–581. MR2058149
+[8] B IGGINS , J. D. and K YPRIANOU , A. E. (2005). Fixed points of the smoothing transform: The
+boundary case. Electron. J. Probab. 10 609–631. MR2147319
+[9] B OLTHAUSEN , E. (1976). On a functional central limit theorem for random walks conditioned
+to stay positive. Ann. Probab. 4 480–485. MR0415702
+[10] B RAMSON , M. (1983). Convergence of solutions of the Kolmogorov equation to travelling
+waves. Mem. Amer. Math. Soc. 44 iv+190. MR0705746
+[11] B RAMSON , M. and Z EITOUNI , O. (2009). Tightness for a family of recursion equations. Ann.
+Probab. 37 615–653. MR2510018
+[12] C ARAVENNA , F. (2005). A local limit theorem for random walks conditioned to stay positive.
+Probab. Theory Related Fields 133 508–530. MR2197112
+[13] C HAUVIN , B. and ROUAULT, A. (1988). KPP equation and supercritical branching Brownian
+motion in the subcritical speed area. Application to spatial trees. Probab. Theory Related
+Fields 80 299–314. MR0968823
+[14] F ELLER , W. (1971). An Introduction to Probability Theory and Its Applications II, 2nd ed.
+Wiley, New York.
+[15] G ANTERT, N., H U , Y. and S HI , Z. (2011). Asymptotics for the survival probability in a
+killed branching random walk. Ann. Inst. Henri Poincaré Probab. Stat. 47 111–129.
+MR2779399
+[16] H AMMERSLEY, J. M. (1974). Postulates for subadditive processes. Ann. Probab. 2 652–680.
+MR0370721
+[17] H U , Y. and S HI , Z. (2009). Minimal position and critical martingale convergence in branching random walks, and directed polymers on disordered trees. Ann. Probab. 37 742–789.
+MR2510023
+[18] K ALLENBERG , O. (1976). Random Measures. Akademie-Verlag, Berlin. MR0431373
+[19] K INGMAN , J. F. C. (1975). The first birth problem for an age-dependent branching process.
+Ann. Probab. 3 790–801. MR0400438
+[20] K YPRIANOU , A. E. (2004). Travelling wave solutions to the K-P-P equation: Alternatives to
+Simon Harris’ probabilistic analysis. Ann. Inst. Henri Poincaré Probab. Stat. 40 53–72.
+MR2037473
+[21] L ALLEY, S. P. and S ELLKE , T. (1987). A conditional limit theorem for the frontier of a branching Brownian motion. Ann. Probab. 15 1052–1061. MR0893913
+[22] LYONS , R. (1997). A simple path to Biggins’ martingale convergence for branching random
+walk. In Classical and Modern Branching Processes (Minneapolis, MN, 1994). IMA Vol.
+Math. Appl. 84 217–221. Springer, New York. MR1601749
+[23] LYONS , R., P EMANTLE , R. and P ERES , Y. (1995). Conceptual proofs of L log L criteria for
+mean behavior of branching processes. Ann. Probab. 23 1125–1138.
+
+1426
+
+E. AÏDÉKON
+
+[24] TANAKA , H. (1989). Time reversal of random walks in one-dimension. Tokyo J. Math. 12
+159–174. MR1001739
+D EPARTMENT OF M ATHEMATICS AND C OMPUTER SCIENCE
+E INDHOVEN U NIVERSITY OF T ECHNOLOGY
+P.O. B OX 513
+5600 MB E INDHOVEN
+T HE N ETHERLANDS
+E- MAIL : elie.aidekon@gmail.com
+
+

@@ -1,0 +1,5749 @@
+The Annals of Probability
+2015, Vol. 43, No. 6, 3006–3051
+DOI: 10.1214/14-AOP954
+© Institute of Mathematical Statistics, 2015
+
+MOMENTS AND GROWTH INDICES FOR THE NONLINEAR
+STOCHASTIC HEAT EQUATION WITH ROUGH
+INITIAL CONDITIONS1
+B Y L E C HEN AND ROBERT C. DALANG
+École Polytechnique Fédérale de Lausanne
+We study the nonlinear stochastic heat equation in the spatial domain R,
+driven by space–time white noise. A central special case is the parabolic Anderson model. The initial condition is taken to be a measure on R, such as the
+Dirac delta function, but this measure may also have noncompact support and
+even be nontempered (e.g., with exponentially growing tails). Existence and
+uniqueness of a random field solution is proved without appealing to Gronwall’s lemma, by keeping tight control over moments in the Picard iteration
+scheme. Upper bounds on all pth moments (p ≥ 2) are obtained as well as
+a lower bound on second moments. These bounds become equalities for the
+parabolic Anderson model when p = 2. We determine the growth indices introduced by Conus and Khoshnevisan [Probab. Theory Related Fields 152
+(2012) 681–701].
+
+1. Introduction. The stochastic heat equation
+⎧
+⎨ ∂
+
+(1.1)
+
+
+
+
+
+ν ∂2
+Ẇ (t, x),
+u(t,
+x)
+=
+ρ
+u(t,
+x)
+2 ∂x 2
+⎩ ∂t
+u(0, ·) = μ(·),
+
+−
+
+x ∈ R, t ∈ R∗+ ,
+
+where Ẇ is space–time white noise, ρ(u) is globally Lipschitz, μ is the initial
+data, and R∗+ = ]0, ∞[, has been intensively studied during the last three decades
+by many authors: See [2–5, 8–10, 16, 19] for the intermittency problem, [14, 15]
+for probabilistic potential theory, [26, 27] for regularity of the solution and [12, 22,
+23, 25, 28] for several other properties. The important special case ρ(u) = λu is
+called the parabolic Anderson model [5]. Our work focuses on (1.1) with general
+deterministic initial data μ, and we study how the initial data affects the moments
+and asymptotic properties of the solution.
+For the existence of random field solutions (see Definition 2.1 below) to (1.1),
+the case where the initial data μ is a bounded and measurable function is covered
+by the classical theory of Walsh [29]. Initial data that is more irregular than this
+Received June 2013; revised February 2014.
+1 Supported in part by the Swiss National Foundation for Scientific Research.
+
+MSC2010 subject classifications. Primary 60H15; secondary 60G60, 35R60.
+Key words and phrases. Nonlinear stochastic heat equation, parabolic Anderson model, rough initial data, growth indices.
+
+3006
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+3007
+
+also appears the literature. For instance, when μ is a positive Borel measure on R
+such that
+√
+
+(1.2)
+for all T > 0,
+sup sup t μ ∗ Gν (t, ◦) (x) < ∞
+t∈[0,T ] x∈R
+
+where ∗ denotes convolution in the spatial variable and
+1
+x2
+exp −
+,
+(t, x) ∈ R∗+ × R.
+Gν (t, x) := √
+2νt
+2πνt
+Bertini and Cancrini [3] gave an ad-hoc definition of solution for the parabolic
+Anderson model via a smoothing of the space–time white noise and a Feynman–
+Kac type formula. Their analysis depended heavily on properties of the local times
+of Brownian bridges. Recently, Conus and Khoshnevisan [9] have constructed a
+weak solution defined through certain norms on random fields. In particular, their
+solution is defined for almost all (t, x), but not at specific (t, x). Their initial data
+has to verify certain technical conditions, which are satisfied by the Dirac delta
+function in some of their cases. More recently, Conus, Joseph, Khoshnevisan and
+Shiu [8] also studied random field solutions. In particular, they require the initial
+data to be a finite measure of compact support.
+After the basic questions of existence, the asymptotic properties of the solution
+are of particular interest, in part because the solution exhibits intermittency properties. More precisely, define the upper and lower Lyapunov exponents as follows:
+(1.3)
+
+log E[|u(t, x)|p ]
+,
+t
+t→+∞
+
+mp (x) := lim sup
+(1.4)
+
+log E[|u(t, x)|p ]
+.
+t→+∞
+t
+When the initial data is constant, these two exponents do not depend on x. In this
+case, following Bertini and Cancrini [3], we say that the solution is intermittent if
+mn := mn = mn for all n ∈ N and the following strict inequalities are satisfied:
+mn
+m2
+(1.5)
+< ··· <
+< ···.
+m1 <
+2
+n
+Carmona and Molchanov gave the following definition [5], Definition III.1.1, on
+page 55.
+mp (x) := lim inf
+
+D EFINITION 1.1. Let p be the smallest integer for which mp > 0. If p < ∞,
+then we say that the solution u(t, x) exhibits (asymptotic) intermittency of order p,
+and if p = 2, then it exhibits full intermittency.
+Carmona and Molchanov [5] showed that full intermittency implies the intermittency defined by (1.5) (see [5], Theroem III.1.2, on page 55). This mathematical
+definition of intermittency is related to the property that the solutions are close to
+
+3008
+
+L. CHEN AND R. C. DALANG
+
+zero in vast regions of space–time but develop high peaks on some small “islands.”
+For the parabolic Anderson model, this property has been well studied; see [5, 11]
+for a discrete formulation and [3, 16, 19] for the continuous formulation. Further
+general discussion of the intermittency property can be found in [30].
+When the initial data are not homogeneous, in particular, when they have certain
+decrease at infinity, Conus and Khoshnevisan [10] defined the following lower and
+upper exponential growth indices:
+(1.6)
+
+λ(p) := sup α > 0 : lim sup
+t→∞
+
+(1.7)
+
+λ(p) := inf α > 0 : lim sup
+t→∞
+
+
+1
+p
+sup log E u(t, x) > 0 ,
+t |x|≥αt
+
+
+1
+p
+sup log E u(t, x) < 0 .
+t |x|≥αt
+
+These quantities are of interest because they give information about the possible locations of high peaks, and how they propagate away from the origin.
+Indeed, if λ(p) = λ(p) =: λ(p), then there will be high peaks at time t inside [−λ(p)t, λ(p)t], but no peaks outside of this interval. Conus and Khoshnevisan [10] proved in particular that if the initial data μ is a nonnegative, lower
+semicontinuous function with compact support of positive Lebesgue measure, then
+for the Anderson model,
+λ2
+λ2
+≤ λ(2) ≤ λ(2) ≤ .
+2π
+2
+In this paper, we improve the existence result by working under a much weaker
+condition on the initial data, namely, μ can be any signed Borel measure over R
+such that
+(1.8)
+
+e−ax |μ|(dx) < +∞
+2
+
+(1.9)
+
+R
+
+for all a > 0,
+
+where, from the Jordan decomposition, μ = μ+ − μ− where μ± are two nonnegative Borel measures with disjoint support and |μ| := μ+ + μ− . Note that the
+condition (1.9) is equivalent to
+
+
+
+
+|μ| ∗ Gν (t, ·) (x) < +∞
+
+for all t > 0 and x ∈ R,
+
+which means that under condition (1.9), the solution to the homogeneous heat
+equation with initial data μ is well defined for all time.
+On the one hand, condition (1.9) allows for measure-valued initial data, such
+as the Dirac delta function, and Proposition 2.11 below shows that initial data
+cannot be extended beyond measures to other Schwartz distributions, even with
+compact support. On the other hand, the condition (1.9) permits certain exponential
+growth at infinity. For instance, if μ(dx) = f (x) dx, then f (x) = exp(a|x|p ), a >
+0, p ∈ ]0, 2[ (i.e., exponential growth at ±∞), will satisfy this condition. Note
+that the case where the initial data is a continuous function with linear exponential
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+3009
+
+growth (i.e., p = 1) has been considered by many authors; see [23, 25, 28] and the
+references therein.
+Next, we obtain estimates for the moments E(|u(t, x)|p ) with both t and x fixed
+for all even integers p ≥ 2 (see Theorem 2.4). In particular, for the parabolic Anderson model, we give an explicit formula for the second moment of the solution.
+When the initial data is either Lebesgue measure or the Dirac delta function, we
+give explicit formulas for the two-point correlation functions [see (2.27) and (2.30)
+below], which can be compared to the integral form given by Bertini and Cancrini [3], Corollaries 2.4 and 2.5 (see also Remark 2.6 below).
+Recently, Borodin and Corwin [4] also obtained the moment formulas for the
+parabolic Anderson model in the case where the initial data is the Dirac delta
+function. When p = 2, we obtain the same explicit formula. For p > 2, their pth
+moments are represented by multiple contour integrals. Our methods are very different from theirs: They approximate the continuous system by a discrete one. Our
+formulas allow more general initial data than the Dirac delta function, and are useful for establishing other properties, concerning for instance growth indices and
+sample path regularity.
+Our proof of existence is based on the standard Picard iteration scheme. The
+main difference from the conventional situation is that instead of applying Gronwall’s lemma to bound the second moment from above, we keep tight control over
+the sequence of second moments in the Picard iteration scheme. In the case of the
+parabolic Anderson model, this directly gives an explicit formula, and for more
+general functions ρ it gives good bounds. Note that series representations of the
+moments are obtained in [17], yielding a Feynman–Kac-type formula.
+Concerning growth indices, we improve (1.8) by giving upper bounds on λ(p)
+for general functions ρ, and, in the parabolic Anderson model, by showing that
+λ(2) = λ(2) = λ2 /2 when μ is a nonnegative measure with compact support (see
+Theorem 2.12), and we extend this result to a more general class of measure-valued
+initial data (not necessarily with compact support). This is possible mainly thanks
+to our explicit formula for the second moment. Our result implies in particular
+that with regard to the propagation of high peaks, an initial condition with tails
+that decrease at a sufficiently high exponential rate [as least as fast as e−β|x| with
+β ≥ λ2 /(2ν)] produces the same behavior as a compactly supported one.
+This paper is organized as follows: All the main results of this paper are stated
+in Section 2. In particular, in Section 2.1, we define the notion of random field solution of (1.1), and then show, assuming existence of the solution, that one obtains
+readily formulas for the second moments in the case of the Anderson model. Then
+we state and prove our theorem on existence, uniqueness and moment estimates,
+discuss various particular initial conditions, including Lebesgue measure and the
+Dirac delta function, and we show that existence is not possible if the initial condition is rougher than a measure. In Section 2.2, we state the results about the growth
+indices. Proofs of the results in Sections 2.1 and 2.2 are given in Sections 3 and 4,
+respectively. Finally, in Section 4.3, we gather various calculations that are used
+throughout the paper.
+
+3010
+
+L. CHEN AND R. C. DALANG
+
+2. Main results. Let M(R) be the set of locally finite (signed) Borel measures over R. Let MH (R) be the set of signed Borel measures over R satisfying (1.9). Denote the solution to the homogeneous equation
+⎧
+⎨ ∂
+
+(2.1)
+
+
+
+ν ∂2
+u(t, x) = 0,
+2 ∂x 2
+⎩ ∂t
+u(0, ·) = μ(·),
+
+x ∈ R, t ∈ R∗+ ,
+
+−
+
+by
+
+
+
+
+J0 (t, x) := μ ∗ Gν (t, ·) (x) =
+
+R
+
+Gν (t, x − y)μ(dy).
+
+2.1. Existence, uniqueness and moments. Let W = {Wt (A), A ∈ Bb (R), t ≥
+0} be a space–time white noise defined on a complete probability space ( , F , P ),
+where Bb (R) is the collection of Borel measurable sets with finite Lebesgue measure. Let
+
+
+
+
+Ft = σ Ws (A), 0 ≤ s ≤ t, A ∈ Bb (R) ∨ N ,
+
+t ≥ 0,
+
+be the natural filtration of W augmented by the σ -field N generated by all P -null
+sets in F . In the following, we fix the filtered probability space { , F , {Ft , t ≥
+0}, P }. We use · p to denote the Lp ( )-norm (p ≥ 1). With this setup,
+W becomes a worthy martingale measure in the sense of Walsh [29], and
+[0,t]×R X(s, y)W (ds, dy) is well defined in this reference for a suitable class of
+random fields {X(s, y), (s, y) ∈ R+ × R}.
+We can formally rewrite the spde (1.1) in the integral form:
+u(t, x) = J0 (t, x) + I (t, x),
+
+(2.2)
+where
+I (t, x) :=
+
+
+
+[0,t]×R
+
+
+
+Gν (t − s, x − y)ρ u(s, y) W (ds, dy).
+
+We use the convention that Gν (t, ·) ≡ 0 if t ≤ 0. Hence, [0, t] × R in the stochastic
+integral above can be replaced by R+ × R. In the following, we will use to denote
+the simultaneous convolution in both space and time variables,
+D EFINITION 2.1. A process u = (u(t, x), (t, x) ∈ R∗+ × R) is called a random
+field solution to (2.2) if:
+(1) u is adapted, that is, for all (t, x) ∈ R∗+ × R, u(t, x) is Ft -measurable;
+(2) u is jointly measurable with respect to B (R∗+ × R) × F ;
+ρ(u) 22 )(t, x) < +∞ for all (t, x) ∈ R∗+ × R, and the function
+(3) (G2ν
+(t, x) → I (t, x) mapping R∗+ × R into L2 ( ) is continuous;
+(4) u satisfies (2.2) a.s., for all (t, x) ∈ R∗+ × R.
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+3011
+
+Notice that the random field is only defined for t > 0, which is natural since at
+time t = 0, the solution is defined to be a measure.
+According to property (3) in this definition, proving the existence of a random
+field solution requires some estimates on its moments. On the other hand, if we
+assume existence, then one can readily obtain moment formulas or bounds. Indeed,
+consider for example, the parabolic Anderson model, and set
+
+
+
+
+f (t, x) = E u(t, x)2 .
+For (t, x) ∈ R∗+ × R and n ∈ N, we define
+L0 (t, x) = L0 (t, x; ν, λ) := λ2 G2ν (t, x) = √
+
+(2.3)
+
+λ2
+4πνt
+
+Gν/2 (t, x),
+
+Ln (t, x) = Ln (t, x; ν, λ) := ( L0 · · · L0 )(t, x)
+
+
+
+
+for n ≥ 1.
+
+
+
+n+1 times of L0
+
+Then by (2.2) and Itô’s isometry, f (t, x) satisfies the integral equation
+f (t, x) = J02 (t, x) + (f
+
+(2.4)
+
+L0 )(t, x).
+
+Apply this relation recursively:
+
+
+f (t, x) = J02 (t, x) + J02 + (f
+
+
+
+
+
+
+L0 )
+
+
+
+L0 (t, x)
+
+= J02 (t, x) + J02 L0 (t, x) + (f
+
+L1 )(t, x)
+
+..
+.
+= J02 (t, x) +
+
+n−1
+
+
+ 2
+J
+0
+
+
+
+Li (t, x) + (f
+
+Ln )(t, x).
+
+i=0
+
+It follows from (2.7) below and Definition 2.1(3) that (f Ln )(t, x) converges to 0
+as n → ∞, and the sum converges to (J02 K)(t, x), where
+(2.5)
+
+K(t, x) = K(t, x; ν, λ) :=
+
+∞
+
+
+Li (t, x; ν, λ).
+
+i=0
+
+Thus,
+(2.6)
+
+
+
+
+
+
+
+
+
+E u(t, x)2 = J02 (t, x) + J02 K (t, x).
+
+A central observation is that K(t, x) can be computed explicitly, as we now
+show. Let
+x
+x
+2
+2
+2
+(2π)−1/2 e−y /2 dy,
+erf(x) = √
+e−y dy,
+(x) =
+π 0
+−∞
+erfc(x) = 1 − erf(x).
+
+3012
+
+L. CHEN AND R. C. DALANG
+
+Clearly,
+
+√ 
+
+(x) = 12 1 + erf(x/ 2) ,
+√ 
+
+erfc(x) = 2 1 − ( 2x) .
+
+√
+erf(x) = 2 ( 2x) − 1,
+
+Let (·) be Euler’s gamma function [24].
+2
+
+P ROPOSITION 2.2. Let b = √λ . For all n ∈ N and (t, x) ∈ R∗+ × R, let
+4π ν
+Ln (t, x) and K(t, x) be defined in (2.3) and (2.5), respectively. Then
+√
+(b π)n+1 (n−1)/2
+t
+(2.7)
+Ln (t, x) = Gν/2 (t, x)
+= L0 (t, x)Bn (t),
+((n + 1)/2)
+with Bn (t) := π (n+1)/2 bn t n/2 / ( n+1
+2 ), and
+
+
+λ4 4
++ eλ t/(4ν)
+K(t, x) = Gν/2 (t, x) √
+4πνt 2ν
+
+(2.8)
+
+λ2
+
+
+
+
+2
+
+λ
+
+t
+2ν
+
+
+
+.
+
+Furthermore,
+(K L0 )(t, x) = K(t, x) − L0 (t, x),
+
+(2.9)
+and
+
+∞
+
+n=0 (Bn (t))
+
+1/m < +∞, for all m ∈ N∗ .
+
+√
+P ROOF. Since (1/2) = π (see [24], Equation 5.4.6, page 137), the equation (2.7) clearly holds for n = 0. Suppose by induction that it is true for n. Using
+the semigroup property of the heat kernel,
+Ln+1 (t, x) = (Ln L0 )(t, x)
+
+√
+(b π)n+1
+= Gν/2 (t, x)b
+((n + 1)/2)
+
+t
+0
+
+s −1/2 (t − s)(n−1)/2 ds.
+
+Therefore, (2.7) is obtained by using the Beta integral (see [24], (5.12.1), page 142)
+t
+
+(2.10)
+0
+
+s −1/2 (t − s)(n−1)/2 ds = t n/2
+
+(1/2) ((n + 1)/2)
+((n + 2)/2)
+
+for t > 0.
+
+Because
+2
+
+ex erf(x) =
+
+∞
+
+n=1
+
+x 2n−1
+((2n + 1)/2)
+
+and
+
+2
+
+ex =
+
+∞
+
+x 2(n−1)
+n=1
+
+(2n/2)
+
+(see [24], Equation 7.6.2, on page 162, for the first equality), we see that for x > 0,
+2
+
+
+
+ex 1 + erf(x) =
+
+∞
+
+n=1
+
+∞
+
+1
+x n−1
+x n−1
+= −√
++
+.
+((n + 1)/2)
+πx n=0 ((n + 1)/2)
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+3013
+
+√
+√
+Move the term −1/( π x) to the left-hand side, choose x = πb2 t, and then
+multiply by πb2 Gν/2 (t, x) on both sides. Hence, from (2.7), we see that
+√ n+1
+
+
+∞
+
+
+
+b
+(b
+π)
+2 π b2 t 
+t (n−1)/2
+Gν/2 (t, x) √ + 2πb e
+2πb2 t = Gν/2 (t, x)
+((n
++
+1)/2)
+t
+n=0
+=
+
+∞
+
+
+Ln (t) = K(t, x),
+
+n=0
+
+which proves (2.8).
+Formula (2.9) is a direct consequence of (2.5). Finally, fix m ∈ N∗ . Apply the
+ratio test:
+
+1/m
+√
+(Bn (t))1/m
+(n/2)
+1/m
+=
+(
+πtb)
+(Bn−1 (t))1/m
+((n + 1)/2)
+(2.11)
+ 1/(2m)
+√
+2
+→0
+as n → ∞,
+≈ ( πtb)1/m
+n
+where we have used [24], Equation
+5.11.12, page 141, for the ratio of the two
+
+1/m < +∞. This completes the proof.
+(B
+gamma functions. Therefore, ∞
+n=0 n (t))
+
+R EMARK 2.3 (Moment formula via the Fourier and Laplace transforms). If
+we assume the existence of a random field solution, then under additional assumptions, one can also obtain the moment formula by using Fourier and Laplace
+transforms. In particular, consider the case where ρ(u) = λu. Then f (t, x) =
+E[u(t, x)2 ] satisfies equation (2.4). Assume that the double transform—the Fourier
+transform in x and Laplace transform in t—of J02 (t, x) exists. Note that this assumption is rather strong: If the initial data has exponential growth, for example,
+μ(dx) = eβ|x| dx with β > 0, then J0 (t, x) has two exponentially growing tails
+[see (4.5)], and hence the Fourier transform of J02 (t, x) in x does not exist in the
+sense of tempered distributions. Apply the Fourier transform in x and then the
+Laplace transform in t on both sides of (2.4):
+ 
+ 
+LF [f ](z, ξ ) = LF J02 (z, ξ ) + λ2 LF G2ν (z, ξ )LF [f ](z, ξ ).
+Solving for LF [f ](z, ξ ), we see that
+ 
+ 
+λ2 LF [G2ν ](z, ξ )
+LF [f ](z, ξ ) = LF J02 (z, ξ ) +
+LF J02 (z, ξ ).
+2
+2
+1 − λ LF [Gν ](z, ξ )
+Apply the Fourier and Laplace transforms to G2ν (t, x) as follows (see [18],
+page 135):
+
+
+exp(−νt|ξ |2 /4)
+√
+and
+F G2ν (t, ·) (ξ ) =
+4πνt
+ 
+1
+LF G2ν (z, ξ ) = 
+,
+[z] > 0.
+4νz + |ξ |2 ν 2
+
+3014
+
+L. CHEN AND R. C. DALANG
+
+Now apply the inverse Laplace transform (see [18], (4) on page 233) to see that
+L−1
+
+
+
+λ2 LF [G2ν ](z, ξ )
+1 − λ2 LF [G2ν ](z, ξ )
+
+
+= L−1 
+
+
+
+
+λ2
+4νz + |ξ |2 ν 2 − λ2
+
+
+
+νt|ξ |2
+= exp −
+4
+
+
+
+(t)
+
+
+λ2
+
+λ4 t
+λ4
+√
+exp
++
+4ν
+4νπt 2ν
+
+
+
+ 
+2
+
+λ
+
+t
+2ν
+
+
+
+.
+
+Finally, take the inverse Fourier transform of the above quantity to obtain K(t, x)
+as in (2.8), together with (2.6).
+Assume that ρ : R → R is globally Lipschitz continuous with Lipschitz constant
+Lipρ > 0. We need some growth conditions on ρ: Assume that for some constants
+Lρ > 0 and ς ≥ 0,
+2
+
+
+
+
+
+2
+
+
+
+
+
+ρ(x) ≤ Lρ2 ς 2 + x 2
+for all x ∈ R.
+√
+Note that we can always take Lρ ≤ 2 Lipρ , and the inequality may even be strict.
+In order to bound the second moment from below, we will sometimes assume that
+for some constants lρ > 0 and ς ≥ 0,
+(2.12)
+
+(2.13)
+
+ρ(x) ≥ lρ2 ς 2 + x 2
+
+for all x ∈ R.
+
+We shall give special attention to the linear case (the parabolic Anderson model):
+ρ(u) = λu with λ = 0, which is a special case of the following quasi-linear growth
+condition: for some constant ς ≥ 0,
+(2.14)
+
+2
+
+
+
+ρ(x) = λ2 ς 2 + x 2
+
+
+
+for all x ∈ R.
+
+Recall the formula for K(t, x) in (2.8). We will use the following conventions:
+(2.15)
+
+K(t, x) := K(t, x; ν, λ),
+
+K(t, x) := K(t, x; ν, Lρ ),
+
+K(t, x) := K(t, x; ν, lρ ),
+
+p (t, x) := K(t, x; ν, ap,ς zp Lρ )
+K
+
+for all p > 2,
+where the constant ap,ς (≤ 2) is defined by
+(2.16)
+
+ap,ς :=
+
+⎧ (p−1)/p
+2
+,
+⎨√
+
+2,
+⎩
+1,
+
+if ς = 0, p > 2,
+if ς = 0, p > 2,
+if p = 2,
+
+and zp is the universal constant in the Burkholder–Davis–Gundy inequality
+(see [10], Theorem 1.4; in particular, z2 = 1), and so
+√
+zp ≤ 2 p
+(2.17)
+for all p ≥ 2.
+
+3015
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+p (t, x) implicitly depends on ς through ap,ς , which will be clear from
+Note that K
+p (t, x) = K(t, x). For t ≥ 0, define
+the context. If p = 2, then K
+
+
+
+
+
+
+t
+−1
+2ν
+(see Lemma A.1 for the second equality). In particular, by (2.8) we can write
+H(t; ν, λ) := (1 K)(t, x) = 2e
+
+(2.18)
+
+
+
+λ4 t/(4ν)
+
+2
+
+λ
+
+
+
+
+λ4 
++
+(2.19)
+K(t, x; ν, λ) = Gν/2 (t, x) √
+H(t : ν, λ) + 1 .
+4πνt 4ν
+We also apply the conventions of (2.15) to the kernel functions Ln (t, x; ν, λ) and
+H(t; ν, λ).
+Let · and ◦ denote time and space dummy variables, respectively. For τ ≥ t > 0
+and x, y ∈ R, define
+
+λ2
+
+I (t, x, τ, y; ν, ς, λ)
+
+(2.20)
+
+
+
+t
+
+:= λ2
+
+dr
+0
+
+R
+
+
+
+
+
+
+
+dz J02 (r, z) + J02 (·, ◦) K(·, ◦; ν, λ) (r, z) + ς 2 H(r; ν, λ)
+
+× Gν (t − r, x − z)Gν (τ − r, y − z)
+λ2 ς 2
+|x − y|
++
+ν
+
+ 
+
+
+
+
+
+|x − y|
+√
+−
+ν(t + τ )
+
+
+
+|x − y|
+√
+ν(τ − t)
+
+
+
+
++ λ2 ς 2 (t + τ )Gν (t + τ, x − y) − (τ − t)Gν (τ − t, x − y) .
+When τ = t in this formula, we set
+
+(|x − y|/0) = 1.
+
+T HEOREM 2.4 (Existence, uniqueness and moments). Suppose that the function ρ is Lipschitz continuous and satisfies (2.12), and μ ∈ MH (R). Then the
+stochastic integral equation (2.2) has a random field solution u = {u(t, x), (t, x) ∈
+R∗+ × R}. Moreover:
+(1) u is unique (in the sense of versions).
+(2) (t, x) → u(t, x) is Lp ( )-continuous for all integers p ≥ 2.
+(3) For all even integers p ≥ 2, all τ ≥ t > 0 and x, y ∈ R,
+2
+
+(2.21) u(t, x)p ≤
+
+and
+(2.22)
+
+
+
+
+
+
+
+J02 (t, x) + J02 K (t, x) + ς 2 H(t),
+
+
+p (t, x) + ς 2 H
+p (t),
+2J02 (t, x) + 2J02 K
+
+
+
+if p = 2,
+if p > 2,
+
+
+
+E u(t, x)u(τ, y) ≤ J0 (t, x)J0 (τ, y) + I (t, x, τ, y; ν, ς, Lρ ).
+
+(4) If ρ satisfies (2.13), then for all τ ≥ t > 0 and x, y ∈ R,
+
+
+
+u(t, x)2 ≥ J 2 (t, x) + J 2
+
+(2.23)
+and
+(2.24)
+
+0
+
+2
+
+
+
+
+
+0
+
+
+
+K (t, x) + ς 2 H(t)
+
+E u(t, x)u(τ, y) ≥ J0 (t, x)J0 (τ, y) + I (t, x, τ, y; ν, ς, lρ ).
+
+3016
+
+L. CHEN AND R. C. DALANG
+
+(5) In particular, if |ρ(u)|2 = λ2 (ς 2 + u2 ), then for all τ ≥ t > 0 and x, y ∈ R,
+
+
+
+u(t, x)2 = J 2 (t, x) + J 2
+
+(2.25)
+and
+(2.26)
+
+0
+
+2
+
+
+
+0
+
+
+
+K (t, x) + ς 2 H(t)
+
+
+
+E u(t, x)u(τ, y) = J0 (t, x)J0 (τ, y) + I (t, x, τ, y; ν, ς, λ).
+
+This theorem will be proved in Section 3.3. We note that it is not clear
+if (2.21) holds when p > 2 is a real number but not an even integer. However,
+if k ∈ {2, 3, . . .} and 2(k − 1) < p ≤ 2k, then u(t, x) 2p ≤ u(t, x) 22k and (2.21)
+applies to u(t, x) 22k .
+C OROLLARY 2.5 (Constant initial data). Suppose that |ρ(u)|2 = λ2 (ς 2 + u2 )
+and μ is Lebesgue measure. Then for all τ ≥ t > 0 and x, y ∈ R,
+
+
+
+
+E u(t, x)u(τ, y)
+(2.27)
+
+
+
+= 1 + 1 + ς2
+
+
+× exp
+
+
+
+ 4
+
+λ t¯ − 2λ2 |x − y|
+
+4ν
+
+where t¯ = (t + τ )/2, and
+
+
+
+E u(t, x)
+
+(2.28)
+
+2
+
+
+
+erfc
+
+
+
+
+
+
+|x − y| − λ2 t¯
+|x − y|
+−
+erfc
+2(ν t¯)1/2
+2(ν t¯)1/2
+
+
+
+,
+
+
+
+= 1 + 1 + ς 2 H(t).
+
+P ROOF. In this case, J0 (t, x) ≡ 1. Formula (2.28) follows from (2.25)
+and (2.18). By (2.26) and using Lemma A.9 to account for the last two terms
+in (2.20), we see that
+
+
+
+
+
+
+t
+
+E u(t, x)u(τ, y) = 1 + λ2
+
+dr
+0
+
+R
+
+
+
+
+
+
+
+dz ς 2 + 1 + 1 + ς 2 H(r)
+
+× Gν (t − r, x − z)Gν (τ − r, y − z)
+
+
+= 1 + λ2 1 + ς 2
+
+
+
+t
+0
+
+
+
+
+
+H(r) + 1 G2ν
+
+
+
+t +τ
+− r, x − y dr,
+2
+
+and this last integral is evaluated by Lemma A.6. 
+R EMARK 2.6. If ρ(u) = u (i.e., λ = 1 and ς = 0), then (2.28) recovers, in the
+case n = 2, the moment formulas of Bertini and Cancrini [3], Theorem 2.6. As for
+the two-point correlation function, [3], Corollary 2.4, states the integral formula
+
+
+(2.29)
+
+
+
+E u(t, x)u(t, y)
+
+|x − y|
+(x − y)2 t − s
+=
+ds √
+exp −
++
+4νs
+4ν
+0
+πνs 3
+t
+
+
+
+
+
+t −s
+.
+2ν
+
+3017
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+By Lemma A.7 below, the integral is equal to
+
+
+
+
+
+
+e(t−2|x−y|)/(4ν) erfc (4νt)−1/2 |x − y| − t ,
+so their result differs from ours. The difference is a term
+
+
+
+
+
+
+
+
+1 − erfc (4νt)−1/2 |x − y| = erf (4νt)−1/2 |x − y| ,
+which vanishes when x = y. However, for x = y, this is not the case. For instance, as t tends to zero, the correlation function should have a limit equal to one,
+while (2.29) has limit zero. The argument in [3] should be modified as follows (we
+use the notation in their paper): (4.6) on page 1398 should be
+β,1
+
+E0
+
+
+
+ ξ
+
+exp
+
+Lt (β)
+√
+2ν
+
+
+
+t
+
+=
+
+0
+
+β
+
+
+
+
+
+Pξ (ds)E0 exp
+
+Lt−s (β)
+√
+2ν
+
+
+
++ P (Tξ ≥ t).
+
+The extra term P (Tξ ≥ t) is equal to
+∞
+t
+
+|ξ |
+
+
+
+
+
+
+
+|ξ |
+ξ2
+√
+exp −
+ds = erf √
+3
+2s
+2t
+2πs
+
+
+
+
+
+
+
+|x − x  |
+= erf √
+.
+4νt
+
+With this term, (2.27) is recovered.
+E XAMPLE 2.7 (Higher moments for constant initial data).
+μ(dx) = dx. Then J0 (t, x) ≡ 1. By (2.21),
+
+
+E u(t, x)
+
+p
+
+
+
+≤ 2p−1 + 2p−1 2 + ς 2
+
+p/2
+
+exp
+
+Suppose that
+
+ 4 4
+ap,ς zp pLρ4 t 
+
+8ν
+
+.
+
+√
+Using (2.17) and (2.16), replace zp by 2 p, and ap,ς by 2. Thus, mp (x) ≡ mp ≤
+√
+25 p3 Lρ4 /ν. If ς = 0, we can replace ap,ς by 2 instead of 2, which gives a slightly
+better bound: mp ≤ 23 p3 Lρ4 /ν. In particular, for the parabolic Anderson model
+ρ(u) = λu, we obtain mp ≤ 23 p3 λ4 /ν, which is consistent with Bertini and Canλ4
+crini’s formula: mp = 4!ν
+p(p2 − 1) (see [3], (2.40)).
+C OROLLARY 2.8 (Dirac delta initial data). Suppose that |ρ(u)|2 = λ2 (ς 2 +
+
+u2 ) and μ is the Dirac delta measure with a unit mass at zero. Then for all t > 0
+and x, y ∈ R,
+
+
+
+|x − y|
+√
+E u(t, x)u(t, y) = Gν (t, x)Gν (t, y) − ς erfc
+2 νt
+
+
+(2.30)
+
+
+
+
+
+2
+
+ 2
+λ
+
+
+
+
+
+
+
+
+
+λ4 t − 2λ2 |x − y|
+x +y
+Gν/2 t,
++
++ ς 2 exp
+4ν
+2
+4ν
+
+
+|x − y| − λ2 t
+√
+× erfc
+2 νt
+
+
+
+
+
+3018
+
+L. CHEN AND R. C. DALANG
+
+and
+
+
+E u(t, x)
+
+(2.31)
+
+2
+
+=
+
+1
+K(t, x) + ς 2 H(t).
+λ2
+
+This corollary is proved in Section 3.4.
+R EMARK 2.9. If ρ(u) = u (i.e., λ = 1 and ς = 0), then (2.31) coincides with
+the result by Bertini and Cancrini [3], (2.27) (see also [2, 4]): E[|u(t, x)|2 ] =
+K(t, x). As for the two-point correlation function, Bertini and Cancrini gave the
+following integral (see [3], Corollary 2.5):
+
+
+
+
+E u(t, x)u(t, y) =
+
+1
+x2 + y2
+exp −
+2πνt
+2νt
+× exp −
+
+(2.32)
+
+
+
+× 1+
+
+1
+0
+
+1
+|x − y|
+
+ds √
+3
+4πνt s (1 − s)
+
+(x − y)2 1 − s
+
+
+
+4νt
+
+s
+
+πt (1 − s)
+t 1−s
+exp
+ν
+2ν 2
+
+
+
+
+
+t (1 − s)
+2ν
+
+
+
+.
+
+This integral can be evaluated explicitly (see Lemma A.8 below) and coincides
+with (2.30) for ς = 0 and λ = 1.
+E XAMPLE 2.10 (Higher moments for delta initial data). Suppose that μ =
+δ0 and ς = 0. Let p ≥ 2 be an even integer. Clearly, J0 (t, x) ≡ Gν (t, x). Then
+by (2.21) and (2.9),
+
+
+E u(t, x)
+
+p
+
+p (t, x)
+≤ 2p−1 Gpν (t, x) + 2(p−2)/2 Lρ−p zp−p K
+
+p/2
+
+.
+
+It follows from (2.8) and (2.17) that for all x ∈ R, mp (x) ≤ Lρ4 zp4 p/(2ν) ≤
+23 p3 Lρ4 /ν. Note that this upper bound is identical to the case of the constant
+initial data (Example 2.7). Concerning the growth indices, we see from (2.8)
+that
+
+1
+α 2 p Lρ4 pzp4
+p
+sup log E u(t, x) ≤ −
++
+t→+∞ t |x|>αt
+2ν
+2ν
+
+lim
+
+for all α ≥ 0.
+l2
+
+Hence, λ(p) ≤ zp2 Lρ2 . Similarly, λ(2) ≥ lρ2 /2 after using (2.23). Therefore, 2ρ ≤
+λ(p) ≤ λ(p) ≤ zp2 Lρ2 for all even integers p ≥ 2. The same bounds are obtained
+for more general initial data in Theorem 2.12.
+The following proposition shows that initial data cannot be extended beyond
+measures.
+
+3019
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+P ROPOSITION 2.11. Suppose that μ = δ0 (the derivative of the Dirac delta
+measure at zero). Let ρ(u) = λu (λ = 0). Then (2.2) does not have a random field
+solution.
+The proof of this proposition is given in Section 3.4.
+2.2. Growth indices. For β ≥ 0, define
+β
+
+MG (R) := μ ∈ M(R) :
+
+R
+
+eβ|x| |μ|(dx) < +∞ .
+
+Let M+ (R) denote the set of nonnegative Borel measures over R,
+β
+
+β
+
+MG,+ (R) = MG (R) ∩ M+ (R)
+
+and
+
+MH,+ (R) = MH (R) ∩ M+ (R).
+
+Recall the definitions of λ(p) and λ(p) in (1.6) and (1.7).
+T HEOREM 2.12. (1) Suppose that |ρ(u)|2 ≥ lρ2 (ς 2 + u2 ) and p ≥ 2. If ς = 0,
+then λ(p) ≥ lρ2 /2 for all μ ∈ MH,+ (R) with μ = 0; if ς = 0, then λ(p) = λ(p) =
++∞, for all μ ∈ MH,+ (R).
+(2) If |ρ(u)|2 ≤ Lρ2 (ς 2 + u2 ) with ς = 0 (which implies ς = ς = 0) and μ ∈
+β
+
+MG (R) for some β > 0, then for all even integers p ≥ 2,
+
+λ(p) ≤
+
+⎧
+⎪
+⎨ βν
+
++
+
+zp4 Lρ4
+
+2
+2νβ
+⎪
+⎩ 2 2
+zp L ρ ,
+
+In addition,
+λ(2) ≤
+
+,
+
+⎧
+Lρ4
+⎪
+βν
+⎪
+⎪
++
+,
+⎨
+
+2
+8νβ
+⎪
+⎪
+1
+⎪
+⎩ L2 ,
+2 ρ
+
+if 0 ≤ β < ν −1 zp2 Lρ2 ,
+if β ≥ ν −1 zp2 Lρ2 .
+
+if 0 ≤ β <
+if β ≥
+
+Lρ2
+2ν
+
+Lρ2
+2ν
+
+,
+
+.
+2
+
+λ
+(3) Suppose that |ρ(u)|2 = λ2 (ς 2 +u2 ), λ = 0. If ς = 0 and β ≥ 2ν
+, then λ(2) =
+β
+2
+λ(2) = λ /2 for all μ ∈ MG,+ (R) with μ = 0; if ς = 0, then λ(p) = λ(p) = +∞
+for all μ ∈ MH,+ (R) and p ≥ 2.
+
+This theorem generalizes the results in [10] in several regards: (i) more general
+initial data are allowed; (ii) both nontrivial upper bounds and lower bounds are
+given (compare with [10], Theorem 1.1) for the Laplace operator case; (iii) for the
+parabolic Anderson model, the exact transition is proved (see Theorem 1.3 and
+the first open problem in [10]) for n = 2 and the Laplace operator case; (iv) our
+discussions above cover the case where ρ(0) = 0. The lower bounds are proved in
+Section 4.1, the upper bounds in Section 4.2.
+
+3020
+
+L. CHEN AND R. C. DALANG
+
+Suppose that ς = ς = 0. Clearly, δ0 ∈
+β
+MG,+ (R) for all β ≥ 0. Hence, the above theorem implies that for all even integers
+l2
+k ≥ 2, 2ρ ≤ λ(k) ≤ λ(k) ≤ zk2 Lρ2 , which recovers the bounds in Example 2.10.
+E XAMPLE 2.13 (Delta initial data).
+
+P ROPOSITION 2.14. Consider the parabolic Anderson model ρ(u) = λu,
+λ = 0, with the initial data μ(dx) = e−β|x| dx (β > 0). Then
+
+(2.33)
+
+λ(2) = λ(2) =
+
+⎧
+λ4
+βν
+⎪
+⎪
+⎪
++
+,
+⎨
+
+if 0 < β ≤
+
+⎪
+⎪
+λ2
+⎪
+⎩ ,
+
+if β ≥
+
+2
+
+8βν
+
+2
+
+λ2
+,
+2ν
+
+λ2
+.
+2ν
+
+This proposition shows that for all β ∈ ]0, +∞], the exact phase transition occurs, and hence our upper bounds for λ(2) in Theorem 2.12 are sharp. See Section 4.3 for the proof.
+3. Proof of existence, uniqueness and moment estimates.
+3.1. Some criteria for predictable random fields. A random field {Z(t, x)} is
+called elementary if we can write Z(t, x) = Y 1]a,b] (t)1A (x), where 0 ≤ a < b,
+A ⊂ R is an interval, and Y is an Fa -measurable random variable. A simple process
+is a finite sum of elementary random fields. The set of simple processes generates
+the predictable σ -field on R+ ×R× , denoted by P . For p ≥ 2 and X ∈ L2 (R+ ×
+R, Lp ( )), set
+(3.1)
+
+X 2M,p :=
+
+R∗+ ×R
+
+
+
+X(s, y)2 ds dy < +∞.
+p
+
+When p = 2, we write X M instead of X M,2 . In [29], X dW is defined for
+predictable X such that X M < +∞. However, the condition of predictability is
+not always so easy to check, and as in the case of ordinary Brownian motion [7],
+Chapter 3, it is convenient to be able to integrate elements X that are merely jointly
+measurable and adapted. For this, let Pp denote the closure in L2 (R+ × R, Lp ( ))
+of simple processes. Clearly, P2 ⊇ Pp ⊇ Pq for 2 ≤ p ≤ q < +∞, and according
+to Itô’s isometry, X dW is well defined for all elements of P2 . The next proposition gives easily verifiable conditions for checking that X ∈ P2 .
+P ROPOSITION 3.1. Suppose that for some t > 0 and p ∈ [2, +∞[, a random
+field X = {X(s, y), (s, y) ∈ ]0, t[×R} has the following properties:
+(i) X is adapted, that is, for all (s, y) ∈ ]0, t[×R, X(s, y) is Fs -measurable;
+(ii) X is jointly measurable with respect to B (]0, t[×R) × F ;
+(iii) X(·, ◦)1]0,t[ (·) M,p < +∞.
+
+3021
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+Then X(·, ◦)1]0,t[ (·) belongs to P2 .
+P ROOF.
+
+Step 1. We first prove this proposition with (ii) replaced by:
+
+(ii ) For all (s, y) ∈ ]0, t[×R, X(s, y) p < +∞ and the function (s, y) →
+X(s, y) from ]0, t[×R into Lp ( ) is continuous.
+Fix ε > 0 with ε ≤ t/3. Since X(·, ◦)1]0,t[ (·) M,p < +∞, choose a = a(ε) >
+max(t, 2/t) large enough so that
+([1/a,t−1/a]×[−a,a])c
+
+
+
+X(s, y)2 1]0,t[ (s) ds dy < ε.
+p
+
+Due to the Lp ( )-continuity hypothesis in (ii ), we can choose n ∈ N large enough
+so that for all (s1 , y1 ), (s2 , y2 ) ∈ [ε, t − ε] × [−a, a],
+
+
+max |s1 − s2 |, |y1 − y2 | ≤
+
+t − 2/a
+n
+
+
+
+ε
+X(s1 , y1 ) − X(s2 , y2 ) < .
+p
+
+⇒
+
+a
+
+Choose m ∈ N large enough so that a/m ≤ (t − 2/a)/n. Set tj = j (t−2/a)
++ a1 with
+n
+j ∈ {0, . . . , n} and xi = ia
+m − a with i ∈ {0, . . . , 2m}. Then define
+Xn,m (t, x) =
+
+n−1
+ 2m−1
+
+j =0 i=0
+
+X(tj , xi )1]tj ,tj +1 ] (t)1]xi ,xi+1 ] (x).
+
+Since X is adapted, X(tj , xi ) is Ftj -measurable, and so Xn,m is predictable, and
+clearly, Xn,m ∈ Pp . Since Xn,m (t, x) vanishes outside of the rectangle [1/a, t −
+1/a] × [−a, a], we have
+
+
+X1]0,t[ − Xn,m 2
+
+M,p =
+
+([1/a,t−1/a]×[−a,a])c
+
++
+
+
+
+X(s, y)2 1]0,t[ (s) ds dy
+p
+
+n−1
+ 2m−1
+
+
+tj +1
+
+xi+1 
+
+j =0 i=0
+
+tj
+
+xi
+
+≤ε+
+
+
+X(tj , xi ) − X(s, y)2 ds dy
+p
+
+n−1
+ 2m−1
+
+
+tj +1
+
+xi+1 ε 2
+
+j =0 i=0
+
+tj
+
+xi
+
+= ε + ε2
+
+a2
+
+ds dy
+
+2at − 4
+2ε2 t
+≤ ε + 2ε2 .
+≤
+ε
++
+a2
+a
+
+Therefore, X(·, ◦)1]0,t[ (·) ∈ Pp ⊆ P2 .
+Step 2. Now we prove this proposition under (ii), assuming that X is bounded.
+Take a ψ ∈ Cc∞ (R2 ), nonnegative, such that supp(ψ) ⊂ ]0, t[× ]−1, 1[ and
+2
+∗
+R2 ψ(s, y) ds dy = 1. Let ψn (s, y) := n ψ(ns, ny) for each n ∈ N , and
+
+3022
+
+L. CHEN AND R. C. DALANG
+
+n (s, y) := (ψn X)(s, y) for all (s, y) ∈ ]0, t[×R. Note that when we do the
+X
+convolution in time, X(s, y) is understood to be zero for s ∈
+/ ]0, t[.
+n (·, ◦)1]0,t[ (·) ∈ P2 for all n ∈ N∗ and
+We shall first prove that X
+
+(3.2)
+
+
+
+n (·, ◦)1]0,t[ 
+X
+
+
+
+
+
+
+
+M,2 ≤ X(·, ◦)1]0,t[ M,2 < +∞.
+
+The inequality (3.2) is true since, by Hölder’s inequality,
+
+
+n (·, ◦)1]0,t[ (·)2
+X
+
+M,2 ≤
+
+[0,t]×R
+
+ds dy
+
+
+
+R2
+
+
+
+E X 2 (u, z) ψn (s − u, y − z) du dz,
+
+which is less than X(·, ◦)1]0,t[ (·) 2M,2 and is finite by property (iii).
+The condition that supp(ψ) ⊂ R∗+ × R, together with the joint measurability
+n is still adapted. The sample path continuity of X
+n in both
+of X, ensures that X
+2
+the space and time variables implies L ( )-continuity, thanks to the boundedness
+n (·, ◦)1]0,t[ (·) ∈ P2 , for all
+of X. Hence, we can apply step 1 to conclude that X
+∗
+n∈N .
+Property (iii) implies that there is  ⊆ such that P (  ) = 1 and for all ω ∈
+ , X(·, ◦, ω) ∈ L2 (]0, t[×R). Now fix ω ∈  . Then
+
+
+
+
+n (·, ◦, ω) − X(·, ◦, ω) 2
+lim X
+L (]0,t[×R) = 0
+
+n→+∞
+
+and
+
+
+n (·, ◦, ω) 2
+X
+
+L (]0,t[×R) ≤
+
+
+
+X(·, ◦, ω) 2
+
+L (]0,t[×R)
+
+(see, e.g., [1], Theorem 2.29(c)). Thus, by Lebesgue’s dominated convergence theorem, which applies by (iii),
+
+
+2
+
+
+
+n (·, ◦) − X(·, ◦) 2
+lim E X
+L (]0,t[×R) = 0.
+
+n→∞
+
+We conclude that X(·, ◦)1]0,t[ (·) ∈ P2 .
+Step 3. Now we consider a general X satisfying (i), (ii) and (iii). For M > 0,
+denote
+XM (s, y, ω)1]0,t[ (s) =
+
+X(s, y, ω)1]0,t[ (s),
+0,
+
+if X(s, y, ω) ≤ M,
+otherwise.
+
+Since each X M (·, ◦)1]0,t[ (·) is bounded, satisfies (i), (ii) and (iii), and
+X M (·, ◦)1]0,t[ (·) → X(·, ◦)1]0,t[ (·) in · M,2 as M → +∞ (by Lebesgue’s dominated convergence theorem), we conclude from step 2 that X(·, ◦)1]0,t[ (·) ∈ P2 .
+
+R EMARK 3.2. The step 1 in the proof of Proposition 3.1 is an extension (but
+specialized to space–time white noise) of Dalang and Frangos’s result in [13],
+Proposition 2, since the second moment of X can explode at s = 0 or s = t.
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+3023
+
+3.2. Lp -bounds on stochastic convolutions. We will need an extension of [10],
+Lemma 2.4, to allow all adapted, jointly measurable and integrable random fields
+(see also [19], Lemma 3.4).
+L EMMA 3.3. Let G (s, y) be a deterministic measurable function from R∗+ ×
+R to R and let Z = (Z(s, y), (s, y) ∈ R∗+ × R) be a process with the following
+properties:
+(1) Z is adapted and jointly measurable with respect to B (R∗+ × R) × F ;
+(2) E[ [0,t]×R G 2 (t − s, x − y)Z 2 (s, y) ds dy] < ∞, for all (t, x) ∈ R+ × R.
+Then for each (t, x) ∈ R+ × R, the random field (s, y) ∈ ]0, t[×R → G (t − s, x −
+y)Z(s, y) belongs to P2 and so the stochastic convolution
+(3.3)
+
+(G Z Ẇ )(t, x) :=
+
+[0,t]×R
+
+G (t − s, x − y)Z(s, y)W (ds, dy)
+
+is a well-defined Walsh integral and the random field G Z Ẇ is adapted. Moreover,
+for all even integers p ≥ 2 and (t, x) ∈ R+ × R,
+
+(G
+
+2
+
+
+
+2
+
+Z Ẇ )(t, x)p ≤ zp2 G (t − ·, x − ◦)Z(·, ◦)M,p .
+
+We note that [10] assumes that Z is predictable. However, using Proposition 3.1,
+the proof of this lemma is the same as that of [10].
+P ROPOSITION 3.4. Suppose that for some even integer p ∈ [2, +∞[, a random field Y = (Y (t, x), (t, x) ∈ R∗+ × R) has the following three properties:
+(i) Y is adapted;
+(ii) Y is jointly measurable with respect to B (R∗+ × R) × F ;
+(iii) for all (t, x) ∈ R∗+ × R, Gν (t − ·, x − ◦)Y (·, ◦) 2M,p < +∞.
+Then for all (t, x) ∈ R∗+ × R, Gν (t − ·, x − ◦)Y (·, ◦) ∈ P2 and the random field
+w(t, x) =
+
+]0,t[×R
+
+Gν (t − s, x − y)Y (s, y)W (ds, dy)
+
+has the property that if Y has locally bounded pth moments, that is, for K ⊂
+R∗+ × R compact,
+(3.4)
+
+
+
+
+
+sup Y (t, x)p < +∞,
+
+(t,x)∈K
+
+which is the case if Y is Lp ( )-continuous, then w is Lp ( )-continuous on
+R∗+ × R.
+Before proving this proposition, we need the following proposition.
+
+3024
+
+L. CHEN AND R. C. DALANG
+
+P ROPOSITION 3.5.
+
+There are three universal constants C1 = 1, C2 =
+
+√
+2−1
+√
+,
+π
+
+and C3 = √1π , such that for all s, t with 0 ≤ s ≤ t and x ∈ R,
+
+
+t
+
+(3.5)
+(3.6)
+(3.7)
+
+
+
+C1
+|x − y|,
+ν
+0
+R
+s
+
+2
+C2 √
+dr
+dz Gν (t − r, x − z) − Gν (s − r, x − z) ≤ √ t − s,
+ν
+0
+R
+t
+
+2
+C3 √
+dr
+dz Gν (t − r, x − z) ≤ √ t − s,
+ν
+s
+R
+dz Gν (t − r, x − z) − Gν (t − r, y − z) 2 ≤
+
+dr
+
+
+R+ ×R
+
+2
+
+Gν (t − r, x − z) − Gν (s − r, y − z) dr dz
+
+≤ 2C1
+
+
+
+|x − y|
++
+ν
+
+√
+
+|t − s|
+√
+,
+ν
+
+where we use the convention that Gν (t, ·) ≡ 0 if t ≤ 0.
+R EMARK 3.6. Similar estimates can be found in, for example, [28], Lemma 6.2, and [21], Theorem 6.7. The above is a slight improvement because all three
+constants are best possible. Since the values of these constants are not essential
+here, we refer to [6], Proposition 2.3.9, for the proof. Note that C1 = 1 was not
+obtained in this reference, but with a slight change in the last lines of the proof
+of [6], Proposition 2.3.9(i), the value C1 = 1 can be obtained, and this is optimal.
+P ROOF OF P ROPOSITION 3.4. Fix (t, x) ∈ R∗+ × R. Clearly, X = (X(s, y),
+(s, y) ∈ ]0, t[×R) with X(s, y) = Y (s, y)Gν (t − s, x − y) satisfies all conditions of
+Proposition 3.1. This implies that for all (t, x) ∈ R∗+ × R, Y (·, ◦)Gν (t − ·, x − ◦) ∈
+P2 . Hence w(t, x) is a well-defined Walsh integral and the resulting random field
+is adapted to the filtration {Fs , s ≥ 0}.
+Now we shall prove the Lp ( )-continuity. Fix (t, x) ∈ R∗+ × R. Let Bt,x and
+a denote, respectively, the set and the constant defined in Proposition A.3. We
+assume that (t  , x  ) ∈ Bt,x . Denote
+ 
+
+
+
+t , x ,
+(t∗ , x∗ ) =
+(t, x),
+
+if t  ≤ t,
+if t  > t,
+
+and
+
+(t, x),
+(tˆ, x̂) =    
+t ,x ,
+
+if t  ≤ t,
+if t  > t.
+
+Set Ka = [1/a, t + 1] × [−a, a]. Let Aa = sup(s,y)∈Ka Y (s, y) 2p , which is finite
+by (3.4). By Lemma 3.3, we have
+
+
+
+w(t, x) − w t  , x  p
+
+≤ 2p−1 zpp
+
+ t∗
+0
+
+p
+
+R
+
+
+ 
+Y (s, y)2 Gν (t − s, x − y)
+p
+
+3025
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+ 
+
+
+
+− Gν t − s, x − y
++ 2p−1 zpp
+
+
+ tˆ
+R
+
+t∗
+
+
+
+2
+
+p/2
+
+ds dy
+
+p/2
+
+
+Y (s, y)2 G2 (tˆ − s, x̂ − y) ds dy
+p
+
+≤ 2p−1 zpp L1 t, t  , x, x 
+
+p/2
+
+ν
+
+
+
+
+
++ 2p−1 zpp L2 t, t  , x, x 
+
+p/2
+
+.
+
+We first consider L1 . Write L1 = L1,1 (t, t  , x, x  ) + L1,2 (t, t  , x, x  ), where
+
+
+L1,1 t, t  , x, x 
+=
+
+
+
+([0,t∗ ]×R)\Ka
+
+
+
+L1,2 t, t  , x, x
+=
+
+
+ 
+
+
+Y (s, y)2 Gν (t − s, x − y) − Gν t  − s, x  − y 2 ds dy,
+p
+
+
+
+([0,t∗ ]×R)∩Ka
+
+
+ 
+
+
+Y (s, y)2 Gν (t − s, x − y) − Gν t  − s, x  − y 2 ds dy.
+p
+
+By Proposition A.3,
+sup
+
+
+
+(t  ,x  )∈Bt,x
+
+(3.8)
+
+
+
+Gν (t − s, x − y) − Gν t  − s, x  − y
+
+2
+
+≤ 4G2ν (t + 1 − s, x − y),
+
+for all s ∈ [0, t  ] and |y| ≥ a. Moreover,
+([0,t∗ ]×R)\Ka
+
+
+
+Y (s, y)2 G2 (t + 1 − s, x − y) ds dy
+p
+
+ν
+
+
+
+2
+
+≤ Y (·, ◦)Gν (t + 1 − ·, x − ◦)M,p < +∞.
+Therefore, Lebesgue’s dominated convergence theorem implies that
+lim
+
+(t  ,x  )→(t,x)
+
+
+
+
+
+L1,1 t, t  , x, x  = 0.
+
+By Proposition 3.5, for some constant C > 0 depending only on ν,
+
+
+L1,2 t, t  , x, x 
+
+
+
+
+
+≤ Aa
+
+([0,t∗ ]×R)∩Ka
+
+
+
+≤ Aa C x − x  +
+
+
+
+
+
+Gν (t − s, x − y) − Gν t  − s, x  − y
+
+2
+
+ds dy
+
+
+
+t − t .
+
+Therefore, lim(t  ,x  )→(t,x) L1 (t  , t, x, x  ) = 0.
+Now let us consider L2 . Decompose L2 into L2,1 (t, t  , x, x  ) + L2,2 (t, t  , x, x  ),
+where
+
+
+
+
+L2,1 t, t  , x, x  =
+
+([t∗ ,tˆ]×R)\Ka
+
+
+
+Y (s, y)2 Gν (tˆ − s, x̂ − y)2 ds dy,
+p
+
+3026
+
+L. CHEN AND R. C. DALANG
+
+
+
+
+
+L2,2 t, t  , x, x  =
+
+([t∗ ,tˆ]×R)∩Ka
+
+
+
+Y (s, y)2 Gν (tˆ − s, x̂ − y)2 ds dy.
+p
+
+The proof that lim(t  ,x  )→(t,x) L2,1 (t, t  , x, x  ) = 0 is the same as for L1,1 , except
+that (3.8) must be replaced by
+G2ν (tˆ − s, x̂ − y) ≤ G2ν (t + 1 − s, x − y).
+
+sup
+
+(t  ,x  )∈B
+
+t,x
+
+The proof for L2,2 is similar to L1,2 : by Proposition 3.5,
+
+
+
+
+L2,2 t, t  , x, x  ≤ Aa
+
+tˆ
+
+ds
+t∗
+
+R
+
+G2ν (tˆ − s, x̂ − y) dy ≤ Aa C
+
+
+
+t  − t → 0,
+
+as (t  , x  ) → (t, x). Therefore, lim(t  ,x  )→(t,x) L2 (t  , t, x, x  ) = 0, which completes
+the proof. 
+We will need deterministic integral inequalities for the moments of the solution to (2.2). Define bp = 1 if p = 2 and bp = 2 if p > 2. Recall the formula L0
+0,p using the convendefined in (2.3) and define the associated functions L0 and L
+tion (2.15).
+L EMMA 3.7. Suppose that f (t, x) is a deterministic function and ρ satisfies
+the growth condition (2.12). If the random fields w and v satisfy, for all t > 0 and
+x ∈ R,
+w(t, x) = f (t, x) +
+
+
+
+[0,t]×R
+
+
+
+Gν (t − s, x − y)ρ v(s, y) W (ds, dy),
+
+where we assume that Gν (t − ·, x − ◦)ρ(v(·, ◦)) ∈ P2 , then for all even integers
+p ≥ 2,
+
+ Gν
+
+
+
+
+
+
+
+
+
+
+
+ρ(v)Ẇ (t, x)2p ≤ zp2 Gν (t − ·, x − ◦)ρ v(·, ◦) 2M,p
+≤
+
+
+
+1  2
+0,p (t, x).
+ς + v 2p L
+bp
+
+In particular,
+
+
+
+
+
+0,p (t, x),
+w(t, x)2 ≤ bp f 2 (t, x) + ς 2 + v 2
+L
+p
+p
+
+and, assuming (2.13),
+(3.9)
+P ROOF.
+z2 = 1,
+
+
+
+
+
+
+w(t, x)2 ≥ f 2 (t, x) + ς 2 + v 2
+L0 (t, x).
+p
+2
+
+For p = 2, by the Itô isometry, (2.12), and the fact that a2,ς = 1 and
+
+
+
+
+
+0,2 (t, x),
+w(t, x)2 ≤ f 2 (t, x) + ς 2 + v 2 L
+2
+2
+
+3027
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+and (3.9) is obtained similarly. Now we consider the case p > 2. Clearly,
+
+
+
+w(t, x)2 ≤ 2 f (t, x) 2 + 2 Gν
+p
+
+
+
+2
+
+
+
+2
+
+ρ(v)Ẇ (t, x)p .
+
+By Lemma 3.3, we have that
+
+ Gν
+
+
+
+2
+
+
+
+ρ(v)Ẇ (t, x)p ≤ zp2 Gν (t − ·, x − ◦)ρ v(·, ◦) M,p .
+
+If ς = 0, then ρ(v(s, y)) 2p ≤ Lρ2 v(s, y) 2p . Otherwise, by (2.12) and subadditivity of the function x → |x|2/p ,
+ 
+
+ 
+
+
+ρ v(s, y) 2 ≤ L2 2(p−2)/p ς 2 + v(s, y)2 .
+ρ
+
+p
+
+p
+
+Combining these two cases proves that
+
+
+
+
+2
+
+zp2 bp Gν (t − ·, x − ◦)ρ v(·, ◦) M,p
+2
+≤ zp2 Lρ2 ap,ς
+
+=
+
+
+
+[0,t]×R
+
+
+
+2 
+
+G2ν (t − s, x − y) ς 2 + v(s, y)p ds dy
+
+
+2 
+
+0,p (t, x),
+ς + v(·, ◦)p L
+
+ 2
+
+2 = b , and a 2 = 2(p−2)/p+1 = 22(p−1)/p for ς = 0 and p > 2. 
+because ap,0
+p
+p,ς
+
+3.3. Proof of Theorem 2.4. We begin by stating two lemmas.
+L EMMA 3.8. The solution (t, x) → J0 (t, x) to the homogeneous equation (2.1) with μ ∈ MH (R) is smooth: J0 ∈ C ∞ (R∗+ × R). If, in addition,
+μ(dx) = f (x) dx, where f is continuous, then J0 ∈ C ∞ (R∗+ × R) ∩ C(R+ × R),
+and if f is α-Hölder continuous, then J0 ∈ C ∞ (R∗+ × R) ∩ Cα/2,α (R+ × R).
+P ROOF. The property J0 ∈ C ∞ (R∗+ × R) is a slight extension of standard
+results (see [20], (1.14) on page 210). For more details, we refer the interested
+reader to [6], Section 2.6. We only show here that J0 ∈ Cα/2,α (R+ × R) if
+μ(dx) = f (x) dx and f is α-Hölder continuous. Fix (t, x) and (t  , x  ) ∈ R+ × R
+with t  > t. By changing variables appropriately, we see that
+√ 
+√
+
+
+
+
+J0 (t, x) − J0 t  , x  = Gν (1, z) f (x − tz) − f x − t  z dz.
+R
+
+By the Hölder continuity of f , for some constants C and C  ,
+√ α
+√
+
+
+α/2
+J0 (t, x) − J0 t  , x ≤ C t − t 
+Gν (1, z)|z|α dz ≤ C  t  − t
+.
+R
+
+Spatial increments are treated similarly. 
+
+3028
+
+L. CHEN AND R. C. DALANG
+
+If the initial data is such that J02 (t, x) is a constant v 2 , that is, μ(dx) = v dx,
+then (J02 K)(t, x) = (v 2 K)(t, x) = v 2 H(t). Clearly,
+(3.10)
+
+ 2
+
+
+
+L0 (t, x) = v λ
+
+v
+
+2 2
+
+t
+
+
+
+1
+
+ds √
+0
+4πνs
+
+dy Gν/2 (s, y) = v λ
+
+2 2
+
+R
+
+t
+.
+πν
+
+For general J02 (t, x), we have the following.
+L EMMA 3.9. Fix μ ∈ MH (R). Suppose K(t, x) = Gν/2 (t, x)h(t) for some
+nonnegative function h(t). Then for all (t, x) ∈ R∗+ × R,
+ 2
+J
+
+(3.11)
+
+0
+
+√
+
+2
+K (t, x) ≤ 2 t J0∗ (2t, x)
+
+t h(t − s)
+0
+
+√
+s
+
+ds,
+
+where J0∗ (t, x) = (Gν (t, ·) ∗ |μ|)(x). In particular, for all (t, x) ∈ R∗+ × R,
+(3.12)
+
+ 2
+J
+
+
+
+
+
+K (t, x) ≤ λ2 πt/ν J0∗ (2t, x)
+
+0
+
+
+
+
+
+
+
+2
+
+
+
+1 + 2 exp
+
+ 4 
+λ t
+
+4ν
+
+< +∞,
+
+(3.13) J02 L0 (t, x) ≤ λ2 πt/ν J0∗ (2t, x) < +∞.
+2
+
+Assume that μ ≥ 0. Write J02 (s, y) as a double integral:
+
+P ROOF.
+ 2
+J
+
+
+
+K (t, x) =
+
+0
+
+(3.14)
+
+t
+
+ds
+0
+
+R
+
+dy
+
+R2
+
+Gν (s, y − z1 )Gν (s, y − z2 )
+
+× Gν/2 (t − s, x − y)h(t − s)μ(dz1 )μ(dz2 ).
+
+Then apply Lemma A.4 to Gν (s, y − z1 )Gν (s, y − z2 ) and integrate over y using
+the semigroup property of the heat kernel and setting z̄ = (z1 + z2 )/2:
+ 2
+J
+
+(3.15)
+
+0
+
+
+
+K (t, x)
+t
+
+=
+
+ds
+0
+
+R2
+
+G2ν (s, z2 − z1 )Gν/2 (t, x − z̄)h(t − s)μ(dz1 )μ(dz2 ).
+
+Applying Lemma A.5 and then integrating over z1 and z2 proves (3.11). For
+a signed measure μ, simply replace μ by |μ|. The inequality (3.13) is proved
+by choosing h(t) = λ2 (4πνt)−1/2 . Finally, (3.12) follows from (3.11) by taking
+λ2 λ4 t/(4ν)
+e
+and then using the change of variable s = u2 /a to see
+h(t) = √ 1 + 2ν
+4π νt
+that
+t ea(t−s)
+
+(3.16)
+0
+
+√
+s
+
+
+
+√
+ds = π/aeat erf( at) ≤ π/aeat ,
+
+This completes the proof. 
+
+a > 0.
+
+3029
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+Comparing the proofs of (3.12) and (3.13), we can see that (J02 K)(t, x) < ∞
+if and only if (J02 L0 )(t, x) < ∞: the main issue is the integrability around t = 0
+caused by the factor √1t in L0 .
+P ROOF OF T HEOREM 2.4. Fix an even integer p ≥ 2.
+Step 1. Define u0 (t, x) = J0 (t, x). By Lemma 3.8, u0 (t, x) is a well defined and
+continuous function over (t, x) ∈ R∗+ × R. We shall now apply Proposition 3.4
+with Y = ρ(u0 ). We check the three properties that it requires. Properties (i) and
+(ii) are trivially satisfied since Y is deterministic and continuous over R∗+ × R.
+Property (iii) is also true since, by Lemma 3.7,
+(3.17)
+
+ 
+
+2
+
+
+
+
+
+bp zp2 ρ u0 (·, ◦) Gν (t − ·, x − ◦)M,p ≤ ς 2 + J02
+
+
+
+
+
+0,p (t, x),
+L
+
+which is finite by (3.10) and Lemma 3.9. Hence, the following Walsh integral is
+well defined and is an adapted random field
+I1 (t, x) =
+
+
+
+[0,t]×R
+
+
+
+ρ u0 (s, y) Gν (t − s, x − y)W (ds, dy).
+
+The continuity of the deterministic function (s, y) → ρ(u0 (s, y)) implies its local Lp ( )-boundedness [in the sense of (3.4)]. So (t, x) → I1 (t, x) is Lp ( )continuous on R∗+ × R by Proposition 3.4.
+Define u1 (t, x) = J0 (t, x) + I1 (t, x). Since J0 (t, x) is continuous on R∗+ × R,
+u1 (t, x) is Lp ( )-continuous on R∗+ × R. Now we estimate its moments. By Itô’s
+isometry,
+
+
+ 
+
+
+I1 (t, x)2 = ρ u0 (·, ◦) Gν (t − ·, x − ◦)2
+
+M,2 ,
+
+2
+
+which equals ([ς 2 + J02 ] L0 )(t, x) for the quasi-linear case (2.14), and is bounded
+from above [see (3.17) with b2 z22 = 1] and below [if ρ additionally satisfies (2.13)],
+in which case
+ 2
+
+ς + J02
+
+
+
+
+
+
+
+2
+
+
+
+L0 (t, x) ≤ I1 (t, x)2 ≤ ς 2 + J02
+
+
+
+
+
+L0 (t, x).
+
+Since J0 (t, x) is deterministic and since E[I1 (t, x)] = 0, u1 (t, x) 22 = J02 (t, x) +
+I1 (t, x) 22 , and by Lemma 3.7,
+
+
+
+
+
+0,p (t, x)
+u1 (t, x)2 ≤ bp J 2 (t, x) + ς 2 + J 2 L
+0
+0
+p
+
+
+
+p (t, x),
+≤ bp J 2 (t, x) + ς 2 + bp J 2 K
+0
+
+0
+
+0,p ≤ K
+p by (2.5).
+since bp ≥ 1 and L
+In summary, u1 is a well-defined random field that satisfies (with k = 1) the four
+properties (1)–(4) described just below in step 2.
+
+3030
+
+L. CHEN AND R. C. DALANG
+
+Step 2. Assume by induction that for all k ≤ n and (t, x) ∈ R∗+ × R, the Walsh
+integral
+
+
+Ik (t, x) =
+
+[0,t]×R
+
+
+
+ρ uk−1 (s, y) Gν (t − s, x − y)W (ds, dy)
+
+is well defined such that:
+(1) uk := J0 + Ik is adapted to the filtration {Ft }t>0 .
+(2) The function (t, x) → uk (t, x) from R∗+ × R into Lp ( ) is continuous.
+
+2
+2
+(3) E[u2k (t, x)] = J02 (t, x) + k−1
+i=0 ([ς + J0 ] Li )(t, x) for the quasi-linear
+case and it is bounded from above and below [if ρ satisfies (2.13)] by
+J02 (t, x) +
+
+k−1
+
+
+ 2
+
+ς + J02
+
+
+
+
+
+
+
+Li (t, x) ≤ E u2k (t, x)
+
+
+
+i=0
+
+≤ J02 (t, x) +
+
+k−1
+
+
+ 2
+
+ς + J02
+
+
+
+
+
+Li (t, x).
+
+i=0
+
+(4)
+
+p )(t, x).
+uk (t, x) 2p ≤ bp J02 (t, x) + ((ς 2 + bp J02 ) K
+
+We are now going to define un+1 (t, x). We shall apply Proposition 3.4 again,
+with Y (s, y) = ρ(un (s, y)), by verifying the three properties that it requires. Properties (i) and (ii) are clearly satisfied by the induction assumptions (1) and (2). By
+Lemma 3.7 and the induction assumptions, we establish property (iii):
+ 
+
+2
+
+
+
+bp zp2 ρ un (·, ◦) Gν (t − ·, x − ◦)M,p
+
+
+(3.18)
+
+≤ ς 2 + un 2p
+
+
+
+
+
+
+
+0,p (t, x)
+L
+
+
+≤ ς 2 + bp J02 + ς 2 + bp J02
+
+
+= ς 2 + bp J02
+
+
+
+
+
+
+
+p
+K
+
+
+
+
+
+0,p (t, x)
+L
+
+p (t, x),
+K
+
+by (2.9), and this is finite by Lemma 3.9.
+Hence, for all (t, x) ∈ R∗+ × R, ρ(un (·, ◦))Gν (t − ·, x − ◦) ∈ Pp and the Walsh
+integral
+In+1 (t, x) =
+
+
+
+[0,t]×R
+
+
+
+ρ un (s, y) Gν (t − s, x − y)W (ds, dy)
+
+is a well defined and adapted random field. By assumption (2), (s, y) →
+ρ(un (s, y)) is Lp ( )-continuous, so Proposition 3.4 implies that (t, x) →
+In+1 (t, x) is also Lp ( )-continuous. Define
+un+1 (t, x) = J0 (t, x) + In+1 (t, x).
+
+3031
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+Now we estimate the moments of un+1 (t, x). By Lemma 3.7 and (3.18),
+
+
+
+
+
+p (t, x).
+un+1 (t, x)2 ≤ bp J 2 (t, x) + ς 2 + bp J 2 K
+0
+0
+p
+
+As for the second moment, by Lemma 3.7,
+
+
+J02 (t, x) + ς 2 + un 22
+
+
+
+
+
+
+
+L0 (t, x) ≤ E u2n+1 (t, x)
+
+
+
+
+
+≤ J02 (t, x) + ς 2 + un 22
+
+
+
+
+
+L0 (t, x).
+
+Substituting the bounds from induction assumption (3) gives
+J02 (t, x) +
+
+n
+
+
+
+ς 2 + J02
+
+
+
+
+
+
+
+Li (t, x) ≤ E u2n+1 (t, x)
+
+
+
+i=0
+
+≤ J02 (t, x) +
+
+n
+
+ 2
+
+ς + J02
+
+
+
+
+
+Li (t, x).
+
+i=0
+
+In the quasi-linear case, the inequalities become the equality
+
+
+
+
+E u2n+1 (t, x) = J02 (t, x) +
+
+n
+
+ 2
+
+ς + J02
+
+
+
+
+
+Li (t, x).
+
+i=0
+
+Therefore, the four properties (1)–(4) also hold for k = n + 1.
+Step 3. We claim that for all (t, x) ∈ R∗+ × R, the sequence {un (t, x)}n∈N is a
+Cauchy sequence in Lp ( ), and we will use u(t, x) to denote its limit. To prove
+this claim, define Fn (t, x) = un+1 (t, x) − un (t, x) 2p . For n ≥ 1, by Lemma 3.3
+and the Lipschitz continuity of ρ,
+Fn (t, x) ≤ (Fn−1 Lq0,p )(t, x)
+
+
+
+
+with Lq0,p (t, x) := L0 t, x; ν, zp max(Lipρ , ap,ς Lρ ) .
+q (t, x) are
+By analogy with the convention (2.15), the functions Lqn,p (t, x) and K
+q
+defined by the same parameters as L0,p (t, x). For the case n = 0, we need to use
+the linear growth condition (2.12) instead: By Lemma 3.7,
+
+
+F0 (t, x) ≤ ς 2 + J02
+
+
+
+
+
+
+
+0,p (t, x) ≤ ς 2 + J 2
+L
+0
+
+
+
+
+Lq0,p (t, x).
+
+Then apply the above relation recursively:
+
+
+
+Fn (t, x) ≤ (Fn−1 Lq0,p )(t, x) ≤ · · · ≤ ς 2 + J02 Lqn,p (t, x)
+
+
+≤ ς 2 + J02
+
+
+
+
+Lq0,p (t, x)Bn (t),
+
+by (2.7). Now by Proposition 2.2, for all (t, x) ∈ R∗+ × R fixed and all m ∈ N∗ ,
+∞
+
+i=0
+
+Fi (t, x)
+
+1/m
+
+≤
+
+ 2
+
+ς + J02
+
+
+
+
+1/m
+Lq0,p (t, x)
+
+∞
+
+i=0
+
+Bi (t)
+
+1/m
+
+< +∞,
+
+3032
+
+L. CHEN AND R. C. DALANG
+
+which proves that {un (t, x)}n∈N is a Cauchy sequence in Lp ( ) by taking m = 2.
+The moments estimates (2.21), (2.23) and (2.25) can be obtained simply by
+letting n → +∞ in the conclusions (3) and (4) of the previous step and using (2.5) and (2.18). Now let us prove the Lp ( )-continuity. For all a > 0, set
+Ka := [1/a, a] × [−a, a]. Since Bn (t) is nondecreasing, the above Lp ( ) limit is
+uniform over Ka because
+∞
+
+
+sup
+
+Fi (t, x)
+
+1/m
+
+≤
+
+i=0 (t,x)∈Ka
+
+!∞
+
+
+"
+
+Bi (a)
+
+1/m
+
+sup
+(t,x)∈Ka
+
+i=0
+
+ 2
+
+ς + J02
+
+
+
+
+1/m
+Lq0,p (t, x)
+.
+
+By (3.10), (3.13) and the continuity of (t, x) → J0∗ (2t, x) over R∗+ × R
+(see
+Lemma 3.8), we see that the right-hand side is finite. Hence,
+∞
+1/m < +∞, which implies that the function (t, x) →
+sup
+(t,x)∈Ka |Fi (t, x)|
+i=0
+u(t, x) from R∗+ × R into Lp ( ) is continuous over Ka since each un (t, x) is
+so. As a can be arbitrarily large, we have then proved the Lp ( )-continuity of
+(t, x) → u(t, x) over R∗+ × R.
+The following inequality, which will be used in step 4, is a direct consequence
+of the upper bound (4) of step 2 and (2.9):
+ 2
+
+ς + u 2p
+
+(3.19)
+
+
+
+
+
+
+
+0,p (t, x) ≤ ς 2 + bp J 2
+L
+0
+
+
+
+
+
+p (t, x).
+K
+
+Step 4 (Verifications). Now we shall verify that {u(t, x), (t, x) ∈ R∗+ × R} defined in the previous step is indeed a solution to the stochastic integral equation (2.2) in the sense of Definition 2.1. Clearly, u is adapted and jointlymeasurable, and hence it satisfies (1) and (2) of Definition 2.1. The continuity
+of the function (t, x) → u(t, x) from R∗+ × R into L2 (R) proved in step 3, Proposition 3.4 applied to Y = ρ(un ) and (3.19) imply (3) of Definition 2.1. So we only
+need to verify that u satisfies (4) of Definition 2.1, that is, u(t, x) satisfies (2.2)
+a.s., for all (t, x) ∈ R∗+ × R.
+We shall apply Proposition 3.4 with Y (s, y) = ρ(u(s, y)) by verifying the three
+properties that it requires. Properties (i) and (ii) are satisfied by (1) and (2) in
+the conclusion part of step 3. Property (iii) is also true since, by Lemma 3.7 and
+also (3.19),
+ 
+
+2
+
+
+
+
+
+
+
+
+
+
+
+bp zp2 ρ u(·, ◦) Gν (t − ·, x − ◦)M,p ≤ ς 2 + u 2p
+≤ ς 2 + bp J02
+
+
+
+0,p (t, x)
+L
+
+
+p (t, x),
+K
+
+which is finite by Lemma 3.9. Hence,
+
+
+
+
+ρ u(·, ◦) Gν (t − ·, x − ◦) ∈ Pp
+
+for all (t, x) ∈ R∗+ × R,
+
+and the following Walsh integral is well defined and is an adapted random field
+I (t, x) :=
+
+
+
+[0,t]×R
+
+
+
+ρ u(s, y) Gν (t − s, x − y)W (ds, dy).
+
+3033
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+Furthermore, by the last part of Proposition 3.4, (t, x) → I (t, x) is Lp ( )continuous, since by conclusion (2) of step 3, (t, x) → u(t, x) is Lp ( )continuous.
+By step 3,
+un (t, x) = J0 (t, x) +
+
+
+
+[0,t]×R
+
+
+
+Gν (t − s, x − y)ρ un−1 (s, y) W (ds, dy)
+
+with un (t, x) converging to u(t, x) in Lp ( ). We only need to show that the righthand side converges in Lp ( ) to J0 (t, x) + I (t, x). In fact, by Lemma 3.3,
+
+
+
+
+
+ 
+
+[0,t]×R
+
+
+
+
+
+2
+
+
+
+
+Gν (t − s, x − y) ρ u(s, y) − ρ un (s, y) W (ds, dy)
+
+≤ zp2 Lip2ρ
+
+[0,t]×R
+
+p
+
+
+2
+G2 (t − s, x − y)u(s, y) − un (s, y) ds dy.
+ν
+
+p
+
+Now apply Lebesgue’s dominated convergence theorem to conclude that the above
+integral tends to zero as n → ∞ because (i) for all (s, y) ∈ ]0, t] × R, un (s, y) −
+u(s, y) 2p → 0 as n → +∞; (ii) by step 2,
+
+
+
+
+
+p (s, y),
+un (s, y)2 ≤ bp J 2 (s, y) + ς 2 + bp J 2 K
+0
+0
+p
+
+and by step 3, the same upper bound applies to u(s, y) 2p . Finally, by Lemma 3.9
+and (2.9), the above upper bound, multiplied by G2ν (t − s, x − y), is integrable
+over [0, t] × R. This finishes the proof of the existence part of Theorem 2.4 with
+the moment estimates.
+Step 5 (Uniqueness). Let u and v be two solutions to (2.2) (in the sense
+of Definition 2.1) with the same initial data, and denote w(t, x) := u(t, x) −
+v(t, x). The L2 ( )-continuity—property (3) of Definition 2.1—guarantees that
+both (t, x) → u(t, x) and (t, x) → v(t, x) are L2 ( )-continuous since (t, x) →
+J0 (t, x) is continuous by Lemma 3.8. Then w(t, x) is well defined and the function (t, x) → w(t, x) is L2 ( )-continuous. Writing w(t, x) explicitly and then
+taking the second moment, by Itô’s isometry and the Lipschitz condition on ρ, we
+have
+
+
+(3.20)
+
+
+
+ 
+
+E w(t, x)2 ≤ E w2
+
+
+
+
+
+L∗0 (t, x)
+
+where L∗0 (t, x) := L0 (t, x; ν, Lipρ ).
+
+Now we convolve both sides with respect to K∗ (t, x) := K(t, x; ν, Lipρ ) and
+use (2.9) to obtain
+  2
+
+  
+
+Ew
+K∗ (t, x) ≤ E w2 L∗0 K∗ (t, x)
+  
+
+  
+
+= E w2 K∗ (t, x) − E w2 L∗0 (t, x).
+
+3034
+
+L. CHEN AND R. C. DALANG
+
+So (E[w2 ] L∗0 )(t, x) ≡ 0, which implies by (3.20) that E[w(t, x)2 ] = 0 for all
+(t, x) ∈ R∗+ × R. Therefore, we conclude that for all (t, x) ∈ R∗+ × R, u(t, x) =
+v(t, x) a.s.
+Step 6 (Two-point correlations). In this last step, we prove the properties (2.22),
+(2.24) and (2.26) of the two-point correlation function. Let u(t, x) be the solution to (2.2). Fix τ ≥ t ∈ R∗+ and x, y ∈ R. Consider the L2 ( )-martingale
+{U (s; t, x), s ∈ [0, t]} defined by
+U (s; t, x) := J0 (t, x) +
+
+
+
+s
+R
+
+0
+
+
+
+Gν (t − r, x − z)ρ u(r, z) W (dr, dz).
+
+Then U (t; t, x) = u(t, x) and E[U (s; t, x)] = J0 (t, x). Similarly, we define the
+martingale {U (s; τ, y), s ∈ [0, τ ]}. The mutual variation process of these two martingales is, for all s ∈ [0, t],
+#
+
+$
+
+
+
+s
+
+U (·; t, x), U (·; τ, y) s =
+
+dr
+0
+
+R
+
+
+
+dzρ 2 u(r, z) Gν (t − r, x − z)Gν (τ − r, y − z).
+
+Hence, by Itô’s lemma, for every s ∈ [0, t], E[U (s; t, x)U (s; τ, y)] is equal to
+J0 (t, x)J0 (τ, y) +
+
+
+
+s
+
+dr
+
+R
+
+0
+
+
+
+
+
+dzE ρ 2 u(r, z) Gν (t − r, x − z)Gν (τ − r, y − z).
+
+Finally, we choose s = t and note that E[u(t, x)u(τ, y)] = E[u(t, x)U (t; τ, y)] to
+get
+
+
+
+
+E u(t, x)u(τ, y)
+
+= J0 (t, x)J0 (τ, y)
+
+(3.21)
+
++
+
+ 
+
+t
+
+dr
+0
+
+R
+
+2
+
+dzρ u(r, z) 2 Gν (t − r, x − z)Gν (τ − r, y − z).
+
+Then (2.22), (2.24) and (2.26) follow from Lemma A.9. This completes the proof
+of Theorem 2.4. 
+3.4. Proofs of Corollary 2.8 and Proposition 2.11.
+P ROOF OF C OROLLARY 2.8. In this case, J0 (t, x) = Gν (t, x) and λ2 J02 (t,
+x) = L0 (t, x). So, by (2.25) and (2.9),
+
+
+E u(t, x)
+
+2
+
+=
+
+1
+1
+L0 (t, x) + 2 (L0 K)(t, x) + ς 2 H(t),
+2
+λ
+λ
+
+yielding (2.31). By (2.26) [see also the equivalent formula (3.21)], E[u(t, x) ×
+u(t, y)] = J0 (t, x)J0 (t, y) + λ2 I , where
+I=
+
+
+
+t
+
+dr
+0
+
+R
+
+dz ς 2 +
+
+
+
+1
+K(r, z) + ς 2 H(r) Gν (t − r, x − z)Gν (t − r, y − z).
+λ2
+
+3035
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+Use Lemma A.4 to replace the last two factors by Gν/2 (t −r, z−(x +y)/2)G2ν (t −
+r, x − y), so that z appears in only one factor. Then use formula (2.19) and the
+semigroup property of the heat kernel to see that
+
+
+ x +y
+1
+K(r, ·) ∗ Gν/2 (t − r, ·)
+2
+λ
+2
+
+
+x +y
+= Gν/2 t,
+2
+
+
+
+
+
+
+
+
+λ2 
+√
++
+1 + H(r) .
+4πνr 4ν
+
+1
+
+Therefore,
+I=
+
+t
+0
+
+
+
+G2ν (t − r, x − y)
+
+
+
+
+ς2 +
+
+
+
+
+
+λ2
+x+y
+Gν/2 t,
+4ν
+2
+
+
+
+
+
+
+H(r) + 1
+
+x +y
+1
+√
+dr.
+2
+4πνr
+Then apply Lemmas A.6 and A.10 to evaluate the remaining integrals over dr.
+
++ Gν/2 t,
+
+∂
+Gν (t, x) =
+P ROOF OF P ROPOSITION 2.11. If μ = δ0 , then J0 (t, x) = ∂x
+x
+− νt Gν (t, x). Suppose that (2.2) has a random field solution u(t, x). Fix (t, x) ∈
+R∗+ × R. Hence, by (2.2) and Itô’s isometry [see (2.4)], u(t, x) 22 ≥ J02 (t, x).
+
+Therefore,
+
+ 2
+G
+ν
+
+
+ 
+
+ρ(u)2 (t, x) = λ2 G2
+ν
+
+2
+
+
+
+
+
+
+
+u 22 (t, x) ≥ λ2 G2ν J02 (t, x).
+
+Write out the space–time convolution and apply the formulas in Lemma A.4 to see
+that it equals
+Gν/2 (t, x)
+4πν 3
+=
+
+
+
+t
+
+1
+ds 2 √
+s s(t − s)
+0
+
+Gν/2 (t, x)
+4πν 3
+
+2
+
+R
+
+dy y Gν/2
+
+
+s
+s(t − s)
+,y − x
+t
+t
+
+
+
+
+
+1
+s 2x 2
+2
+√
+Z
++
+ds,
+E
+t2
+0 s 2 s(t − s)
+t
+
+where Z ∼ N(0, νs(t − s)/(2t)) is a Normal random variable. The expectation is
+νs 2
+s2x2
+equal to νs
+2 − 2t + t 2 , and the last two terms yield a finite integral, but not the
+first term, so we conclude that (G2ν
+ρ(u) 22 )(t, x) ≥ +∞. This violates property (3) of Definition 2.1. 
+4. Upper and lower bounds on growth indices. Because the quasi-linear
+case corresponds to the case where Lρ = lρ = |λ| and ς = ς = ς , part (3) of Theorem 2.12 is a direct consequence of parts (1) and (2). Hence, in the following, we
+only need to prove parts (1) and (2). We first recall a lemma.
+L EMMA 4.1 ([10]).
+
+For 2 ≤ a ≤ b < +∞, λ(a) ≤ λ(b) and λ(a) ≤ λ(b).
+
+3036
+
+L. CHEN AND R. C. DALANG
+
+4.1. Proof of the lower bound. By the moment formula (2.23), we can bound
+the second moment of u(t, x) from below provided we have a lower bound on
+J0 (t, x). The next lemma gives such a bound.
+L EMMA 4.2. Assume that μ ∈ MH,+ (R) and μ = 0. For any ε > 0 and ξ ∈
+]0, ν[, there exists a constant aε,ξ,ν > 0 such that
+J0 (t, x) ≥ aε,ξ,ν 1[ε,+∞[ (t)Gξ (t, x)
+P ROOF.
+
+for all t ≥ ε and x ∈ R.
+
+It suffices to prove that
+
+
+
+
+J0 (t, x) 
+(x − y)2
+x2
+g(t, x) :=
+μ(dy)
+= ξ/ν exp −
++
+Gξ (t, x)
+2νt
+2ξ t
+R
+is strictly bounded away from zero for t ∈ [ε, +∞[ and x ∈ R. Notice that for
+0 < ξ < ν,
+−
+
+x2
+(ξ − ν)[x − ξy/(ξ − ν)]2
+y2
+y2
+(x − y)2
++
+=−
++
+≥−
+.
+2νt
+2ξ t
+2νξ t
+2(ξ − ν)t
+2(ν − ξ )t
+
+Thus, for t ∈ [ε, +∞[,
+
+
+g(t, x) ≥ ξ/ν
+
+
+
+
+e−y /(2(ν−ξ )t) μ( dy) ≥ ξ/ν
+2
+
+R
+
+
+
+
+
+e−y /(2(ν−ξ )ε) μ(dy)
+2
+
+R
+
+= 2π(ν − ξ )ξ ε/ν Gν−ξ (ε, ·) ∗ μ (0) =: aε,ξ,ν ,
+which proves the lemma. We remark that (Gν−ξ (ε, ·) ∗ μ)(0) is strictly positive
+and finite because μ ∈ MH,+ (R), μ = 0, and Gν−ξ (ε, y) > 0 for all y ∈ R. 
+P ROOF OF T HEOREM 2.12(1). Due to Lemma 4.1, we only need to estimate
+λ(2). Assume first that ς = 0. Fix ε > 0. For ξ ∈ ]0, ν[, use Lemma 4.2 to choose
+a = aε,ξ,ν > 0 such that
+J0 (t, x) ≥ I0,l (t, x) := a1[ε,+∞[ (t)Gξ (t, x).
+By (2.8) and since
+K(t, x) ≥
+
+(0) = 1/2,
+lρ4
+4ν
+
+K(t, x)
+
+4
+
+with K(t, x) := Gν/2 (t, x)elρ t/(4ν) .
+
+Set f (t, x) = E(u(t, x)2 ). By (2.23) and the above two inequalities, f (t, x) ≥
+l4ρ
+2
+4ν (I0,l
+
+ 2
+
+I0,l
+
+K)(t, x). By Lemma A.4,
+
+
+
+
+t
+4
+e−lρ s/(4ν)
+a2
+(ν − ξ )s
+√
+,x
+K (t, x) = √ elρ t/(4ν)
+Gν/2 t −
+ds.
+ν
+s
+2 πξ
+ε
+
+
+
+4
+
+3037
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+Notice that for s ∈ [ε, t],
+
+
+
+
+
+
+(ν − ξ )s
+ξt
+, x ≥ Gξ/2 (t, x)
+Gν/2 t −
+ν
+νt − (ν − ξ )ε
+and
+t e−lρ s/(4ν)
+4
+
+√
+s
+
+ε
+
+Since t ≥ ε,
+ 2
+
+I0,l
+
+1
+ds ≥ √
+t
+
+
+4
+4
+4ν  4
+e−lρ s/(4ν) ds = 4 √ e−lρ ε/(4ν) − e−lρ t/(4ν) .
+lρ t
+ε
+t
+
+
+√
+ l4 (t−ε)/(4ν)
+
+ξt
+2a 2 ν
+K (t, x) ≥ 4 √ Gξ/2 (t, x)
+eρ
+−1 .
+νt − (ν − ξ )ε
+lρ πt
+
+
+Thus,
+1
+sup log f (t, x)
+t→+∞ t |x|>αt
+
+lim sup
+
+1
+sup log f (t, x)
+t→+∞ t |x|>αt
+
+≥ lim inf
+
+lρ4
+ l4 (t−ε)/(4ν)
+
+1
+α2
+ρ
+Gξ/2 (t, x) =
+sup log e
+− .
+≥ lim
+t→+∞ t |x|>αt
+4ν
+ξ
+√
+The right-hand side is positive for α ≤ ξ/νlρ2 /2. Since ξ ∈ ]0, ν[ is arbitrary, we
+conclude that λ(2) ≥ lρ2 /2.
+As for the case ς = 0, for all μ ∈ MH,+ (R), f (t, x) ≥ ς 2 H(t), and hence
+lρ4
+
+
+1
+1
+sup log f (t, x) ≥ lim log ς 2 H(t) =
+>0
+t→∞ t |x|≥αt
+t→∞ t
+4ν
+
+for all α > 0.
+
+lim inf
+
+Therefore, λ(2) = ∞, which implies λ(2) = ∞. This proves part (1). 
+4.2. Proof of the upper bound. We need two lemmas.
+L EMMA 4.3.
+
+For all t > 0, s > 0, β > 0 and x ∈ R, denote
+
+H (x; β, t, s)
+
+
+
+
+
+
+
+z1 + z2
+exp −β|z1 | − β|z2 | .
+:= sup G2ν (s, z2 − z1 )Gν/2 t, x −
+2
+(z1 ,z2 )∈R2
+
+Then
+
+⎧
+⎪
+⎪
+⎪
+⎨
+
+
+
+
+
+1
+x2
+√ exp −
+,
+νt
+H (x; β, t, s) ≤ 2πν ts
+
+
+⎪
+1
+⎪
+⎪
+√ exp −2β|x| + νβ 2 t ,
+⎩
+2πν ts
+
+if |x| ≤ νβt,
+if |x| ≥ νβt.
+
+3038
+
+L. CHEN AND R. C. DALANG
+
+In particular, for all x ∈ R, β > 0, t > 0 and s > 0,
+H (x; β, t, s) ≤
+
+(4.1)
+P ROOF.
+
+
+
+1
+√ exp −2β|x| + νβ 2 t .
+2πν ts
+
+We only need to maximize over (z1 , z2 ) ∈ R2 the exponent
+−
+
+(z1 − z2 )2 (x − (z1 + z2 )/2)2
+−
+− β|z1 | − β|z2 |.
+4νs
+νt
+
+z1 +z2
+2
+By the change of variables u = z1 −z
+2 , w = 2 , we have that
+
+
+ (x − w)2
+u2 (x − w)2
++
++ β |u + w| + |u − w| ≥
++ 2β|w| := f (w).
+νs
+νt
+νt
+Hence, we only need to minimize f (w) for w ∈ R. Hence,
+
+min f (w) =
+
+w∈R
+
+⎧ 2
+⎨x
+⎩ νt
+
+if |x| ≤ νβt,
+
+,
+
+2β|x| − νtβ 2 ,
+
+if |x| ≥ νβt.
+
+2
+
+This also implies (4.1) since xνt ≥ 2β|x| − νtβ 2 for all x ∈ R. 
+β
+
+L EMMA 4.4. Suppose μ ∈ MG (R) with β > 0. Set C = R eβ|x| |μ|(dx). Let
+K(t, x) = Gν/2 (t, x)h(t) for some nonnegative function h(t). Then
+J02 (t, x) ≤
+
+(4.2)
+ 2
+J
+
+(4.3)
+
+0
+
+P ROOF.
+
+
+
+K (t, x) ≤
+
+C 2 −2β|x|+νβ 2 t
+e
+,
+2πνt
+C2
+2
+√ e−2β|x|+νβ t
+2πν t
+
+t h(t − s)
+0
+
+√
+s
+
+ds.
+
+Clearly,
+%
+
+J0 (t, x) ≤ sup Gν (t, x − y)e−β|y|
+
+&
+R
+
+y∈R
+
+eβ|x| |μ|(dy).
+
+2
+
+The supremum is determined by minimizing (x−y)
+2νt + β|y| over y ∈ R, which has
+been done in the proof of Lemma 4.3, and (4.2) follows. The proof of (4.3) is
+similar to Lemma 3.9. By (3.15) and Lemma 4.3,
+ 2
+J
+0
+
+
+
+K (t, x) ≤
+
+t
+0
+
+H (x; β, t, s)h(t − s) ds
+
+
+
+=
+Then apply (4.1). 
+
+R
+
+e
+
+β|x|
+
+2
+
+|μ|(dx)
+
+t
+0
+
+R2
+
+eβ|z1 |+β|z2 | |μ|(dz1 )|μ|(dz2 )
+
+H (x; β, t, s)h(t − s) ds.
+
+3039
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+Note that√one can apply the bound in (3.12) to (2.21)
+√ and then Lemma 4.4 to get
+λ(2) ≤ Lρ2 / 2. But we need a better estimate with 2 replaced by 2. This gap is
+due to the factor 2 in J0∗ (2t, x) of (3.12), coming from Lemma A.5, which is not
+optimal.
+P ROOF OF T HEOREM 2.12(2). Assume that ς = 0. We first consider λ(2).
+Set f (t, x) = E(u(t, x)2 ). Fix β > 0. Without loss of generality, assume that μ ∈
+β
+MG (R) is nonnegative; otherwise, simply replace all μ below by |μ|. By (2.8),
+Lρ2
+
+ 4 
+Lρ t
+
+Lρ4
+
+exp
++
+with h(t) = √
+,
+4ν
+4πνt 2ν
+
+K(t, x) ≤ h(t)Gν/2 (t, x)
+
+so (2.21) implies that
+
+
+
+
+f (t, x) ≤ J02 (t, x) + J02 (·, ◦) Gν/2 (·, ◦)h(·) (t, x).
+By Lemma 4.4, (2.10) and (3.16),
+
+
+
+
+C 2 Lρ2
+4
+1
+C 2 −2β|x|+νβ 2 t
+2
+√
+e
++ eLρ t/(4ν) e−2β|x|+νβ t .
++
+f (t, x) ≤
+1/2
+3/2
+2πνt
+2
+2π ν
+t
+Therefore, for α > 0,
+
+
+sup f (t, x) ≤
+
+|x|>αt
+
+
+
+C 2 Lρ2
+1
+C 2 β 2 νt−2βαt
+Lρ4 t/(4ν) −2βαt+νβ 2 t
+√
+e
++
+e
++
+e
+.
+2πνt
+2π 1/2 ν 3/2 t 2
+
+Now, the exponential growth rate comes from the second term, and
+Lρ4 t
+4ν
+
+− 2βαt + νβ 2 t < 0
+
+⇐⇒
+
+α>
+
+Lρ4
+βν
++
+.
+2
+8νβ
+
+Therefore,
+λ(2) ≤ inf α > 0 : lim sup
+t→∞
+
+Lρ4
+1
+βν
+sup log f (t, x) < 0 ≤
++
+.
+t |x|>αt
+2
+8νβ
+L4
+
+L2
+
+ρ
+ρ
+Notice that the function β → βν
+2 + 8νβ is decreasing for β ≤ 2ν and increasing for
+
+L2
+
+β
+
+L2 /(2ν)
+
+L2
+
+β ≥ 2νρ , with minimum value Lρ2 /ν, and MG (R) ⊆ MGρ
+(R) for β ≥ 2νρ . This
+yields the desired upper bound.
+Now fix an even integer p ≥ 2. Because the definition of λ(p) differs from that
+of λ(2) by the use of u(t, x) 2p , we only need to make the following changes in the
+above proof: (1) Replace f (t, x) by u(t, x) 2p . (2) As in (2.21), replace J02 (t, x)
+p (t, x), which is equivalent to replacing Lρ
+by 2J02 (t, x). (3) Replace K(t, x) by K
+√
+everywhere by 2zp Lρ . This proves (2). 
+
+3040
+
+L. CHEN AND R. C. DALANG
+
+F IG . 1. The dashed lines in both figures denote the graph of eβ|x| . The solid lines from bottom
+to top are Ea,β (x) with the parameter a ranging from 1 to 6 for Figure 1(a) and from 6 to 1 for
+Figure 1(b), which are representative of the cases β > 0 and β < 0, respectively. The parameter β
+controls the asymptotic behavior near infinity while both a and β determine how the function eβ|x|
+is smoothed at zero. The smaller a is, the closer Ea,β (0) is to 1.
+
+4.3. Proof of Proposition 2.14. For a > 0 and β ∈ R, define
+(4.4)
+
+Ea,β (x) := e−βx
+
+
+
+
+
+aβ − x
+√
++ eβx
+a
+
+
+
+
+
+aβ + x
+√
+,
+a
+
+which is a smooth version of the continuous function eβ|x| (see Figure 1). Equivalently, by Proposition A.11(ii),
+(4.5)
+
+
+
+
+
+Ea,β (x) = e−β a/2 eβ|·| ∗ Ga (1, ·) (x).
+2
+
+Note that the function (eβ|·| ∗ Gν (t, ·))(x) is the solution to the homogeneous heat
+equation (2.1) with initial condition μ(dx) = eβ|x| dx. See Proposition A.11 below
+for its properties.
+Recall ([24], Equation 7.12.1) that
+e−x /2
+(x) ∼ √
+2π x
+2
+
+1−
+(4.6)
+
+e−x /2
+(x) ∼ √
+2π|x|
+
+as x → +∞
+
+and
+
+2
+
+as x → −∞.
+
+P ROOF OF P ROPOSITION 2.14. The fact that λ(2) is bounded above by
+β
+the expression in (2.33) follows from Theorem 2.12 since μ ∈ MG,+ (R), for
+any β  < β. We now establish the corresponding lower bound on λ(2). Set
+f (t, x) = E(u(t, x)2 ). If μ(dx) = e−β|x| dx with β > 0, then by (4.5), J0 (t, x) =
+2
+eβ νt/2 Eνt,−β (x) and by Proposition A.11(iv),
+√
+2
+(4.7)
+J02 (t, x) ≥ eβ νt 2 (−β νt)Eνt,−2β (x).
+
+3041
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+By (4.5) and the lower bound in (4.7),
+J02 (t, x) ≥ e−β νt
+2
+
+2
+
+√ 
+
+(−β νt) e−2β|·| ∗ Gν (t, ·) (x).
+4
+
+4
+
+λ
+Thus, by (2.25) and the fact that K(t, x) ≥ 4ν
+Gν/2 (t, x) exp( λ4νt ),
+t
+
+f (t, x) ≥
+
+2
+
+e−β ν(t−s)
+2
+
+0
+
+×e
+
+λ4 s/(4ν)
+
+
+
+
+
+ λ4
+
+−β ν(t − s)
+
+4ν
+
+s
+e−2β|·| ∗ Gν t − , · (x) ds.
+2
+
+
+Noticing that by Proposition A.11(ii) and (vi),
+
+
+e
+
+−2β|·|
+
+
+
+s
+∗ Gν t − , ·
+2
+
+
+
+(x)
+
+2
+
+2
+
+= e2β ν(t−s/2) Eν(t−s/2),−2β (x) ≥ e2β ν(t−s/2) Eνt/2,−2β (x),
+we have that
+2
+
+t λ4
+
+2
+
+f (t, x) ≥ Eνt/2,−2β (x)eβ νt
+
+0 4ν
+
+
+
+
+
+4
+
+−β ν(t − s) eλ s/(4ν) ds.
+
+Choose an arbitrary constant c ∈ [0, 1[. The integral above is bounded by
+t λ4
+0 4ν
+
+2
+
+
+
+
+
+4
+
+−β ν(t − s) eλ s/(4ν) ds ≥
+=
+
+2
+2
+
+
+
+−β ν(1 − c)t
+
+
+
+
+
+t λ4
+ct 4ν
+
+4
+
+eλ s/(4ν) ds
+
+4
+
+
+
+4
+
+−β ν(1 − c)t eλ t/(4ν) − ecλ t/(4ν) .
+
+Hence,
+2
+
+2
+
+f (t, x) ≥ Eνt/2,−2β (x)eβ νt
+
+
+
+
+
+4
+
+4
+
+
+
+−β ν(1 − c)t eλ t/(4ν) − ecλ t/(4ν) .
+
+By Proposition A.11(v), for α > 0,
+sup Eνt/2,−2β (x) = Eνt/2,−2β (αt).
+
+|x|>αt
+
+Notice that
+Eνt/2,−2β (αt)
+ 
+
+=e
+
+
+2βαt
+
+'
+
+ 
+
+
+
+ν
+2 √
++α
+− 2β
+t + e−2βαt
+2
+ν
+
+
+
+ 
+
+' 
+
+
+
+2
+ν √
+− 2β
+α
+t .
+ν
+2
+
+If α ν2 − 2β ν2 ≥ 0, that is, α ≥ βν, then by (4.6), the second term dominates and
+so for large t,
+Eνt/2,−2β (αt) ≥ 14 e−2βαt .
+
+3042
+
+L. CHEN AND R. C. DALANG
+
+Otherwise, if α < βν, then by (4.6), for large t,
+ 
+
+
+
+
+
+
+√
+α
+∓ √
+± 2β ν/2 t ≈
+ν/2
+
+√
+
+ν exp{−(β 2 ν + α 2 /ν)t}
+√
+.
+√
+2 π|α ± βν| t
+So Eνt/2,−2β (αt) has a lower bound with the exponent −2βαt if α ≥ βν,
+2 ν + α 2 /ν)t if α < βν. For large t, by (4.6), the function t →
+and −(β
+√
+2 (−β ν(1 − c)t) contributes to an exponent β 2 ν(c − 1)t. Therefore,
+e
+
+±2βαt
+
+⎧
+λ4
+⎪
+⎪
+⎨ cβ 2 ν +
+− 2βα,
+
+1
+sup log f (t, x) ≥
+⎪
+t→∞ t |x|>αt
+⎪
+⎩
+lim
+
+4ν
+
+(c − 1)β 2 ν +
+
+if α ≥ βν,
+
+λ4 α 2
+− ,
+4ν
+ν
+
+if α < βν.
+2
+
+We now consider two cases. First, suppose that β < 2ν √λ2−c . This inequality is
+4
+
+λ
+equivalent to cνβ
+2 + 8νβ > βν, and
+
+cβ 2 ν +
+
+λ4
+− 2βα > 0
+4ν
+
+⇔
+
+α<
+
+cνβ
+λ4
++
+.
+2
+8νβ
+
+4
+
+2
+
+λ
+λ
+√
+Therefore, λ(2) ≥ cνβ
+2 + 8νβ in this first case. Second, suppose that β ≥ 2ν 2−c .
+
+
+
+This inequality is equivalent to
+
+λ4
+2 2
+4 + (c − 1)β ν ≤ βν, and
+
+λ4 α 2
+(c − 1)β 2 ν +
+−
+>0
+4ν
+ν
+
+
+
+
+⇔
+
+α<
+
+λ4
++ (c − 1)β 2 ν 2 .
+4
+
+4
+
+Therefore, λ(2) ≥ λ4 + (c − 1)β 2 ν 2 in this second case.
+Finally, since the constant c can be arbitrarily close to 1, this completes the
+proof. 
+
+L EMMA A.1.
+P ROOF.
+
+√
+√
+t
+( 2π b2 t)
+1
+−
+−
+2
+2
+b , b = 0.
+b
+2b
+
+√
+2
+eπ b u ( 2π b2 u) u=t
+By integration by parts, the left-hand side equals
+|u=0 −
+b2
+
+b
+1 t √
+ds.
+b2 0 2 s
+
+
+
+L EMMA A.2.
+(A.1)
+
+2
+
+π 0t eπ b u
+
+APPENDIX
+√
+π b2 t
+( 2πb2 u) du = e
+
+For 0 < a < b, we have that
+log(b/a) 1
+≥ .
+b−a
+b
+
+b−s
+The function f (s) = (a − s)(b − s) log a−s
+is nonincreasing over s ∈ [0, a[ with
+infs∈[0,a[ f (s) = lims→a f (s) = (b − a) log(b − a) and sups∈[0,a[ f (s) = f (0) =
+ab log(b/a).
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+P ROOF.
+
+3043
+
+Note that (A.1) is equivalent to the following statements:
+
+− log s
+≥ 1,
+1−s
+
+s ∈ ]0, 1[ ⇐⇒
+
+s − log s ≥ 1,
+
+s ∈ ]0, 1[.
+
+Let g(s) = s − log s with s ∈ ]0, 1[. Then g(s) is nonincreasing since g  (s) = (s −
+1)/s < 0 for s ∈ ]0, 1[. So g(s) ≥ lims→1 g(s) = 1. This proves (A.1). As for the
+function f (s), we only need to show that
+f  (s) = (b − a) − (a + b − 2s) log
+
+b−s
+≤0
+a−s
+
+for all s ∈ [0, a[.
+
+b−a
+b−s
+Let g(s) = a+b−2s
+− log a−s
+. Then the above statement is equivalent to the inequality g(s) ≤ 0 for all s ∈ [0, a[. By (A.1), we know that
+
+
+
+g(0) =
+
+
+
+b−a
+b
+1
+1
+≤ 0.
+− log ≤ (b − a)
+−
+a+b
+a
+a+b b
+
+So it suffices to show that
+g  (s) =
+
+1
+2(b − a)
+1
+−
+≤0
++
+2
+(a + b − 2s)
+b−s a−s
+
+for all s ∈ [0, a[.
+
+After simplifications, this statement is equivalent to
+s 2 − (a + b)s +
+
+a 2 + b2
+≥0
+2
+
+for all s ∈ [0, a[,
+
+which is clearly true since the discriminant is −(a + b)2 < 0. This completes the
+proof. 
+Fix (t, x) ∈ R∗+ × R. Set
+
+P ROPOSITION A.3.
+
+
+
+
+Bt,x = t  , x  ∈ R∗+ × R : 0 < t  ≤ t + 12 , and x  − x ≤ 1 .
+Then there exists a = at,x > 0 such that for all (t  , x  ) ∈ Bt,x , s ∈ [0, t  ] and
+|y| ≥ a,
+
+
+
+
+Gν t  − s, x  − y ≤ Gν (t + 1 − s, x − y).
+P ROOF. Since t + 1 − s is strictly larger than t  − s, the function y → Gν (t +
+1 − s, x − y) has heavier tails than y → Gν (t  − s, x  − y). Solve the inequality
+Gν (t + 1 − s, x − y) ≥ Gν (t  − s, x  − y) with t, t  , x, x  and s fixed, which is a
+quadratic inequality for y:
+
+
+−
+
+
+
+(x − y)2
+t − s
+(x  − y)2
++
+≤
+ν
+log
+.
+t − s
+t +1−s
+t +1−s
+
+3044
+
+L. CHEN AND R. C. DALANG
+
+Let y± (t, x, t  , x  , s) be the two solutions of the corresponding quadratic equation,
+which are
+
+
+
+1
+(t + 1 − s)x  − x t  − s
+
+t +1−t
+
+
+
+
+± (t + 1 − s) t  − s
+
+
+
+
+ 
+
+
+
+
+
+
+
+1/2
+t +1−s
+× x − x + t + 1 − t ν log
+.
+t − s
+Then a sufficient condition for the above inequality is |y| ≥ |y+ | ∨ |y− |. So we
+only need to show that
+
+
+
+sup
+
+ 2
+
+
+
+
+
+
+
+
+
+sup y+ t, x, t  , x  , s ∨ y− t, x, t  , x  , s < +∞.
+
+(t  ,x  )∈Bt,x s∈[0,t  ]
+
+By Lemma A.2, the supremum over s ∈ [0, t  ] of the quantity under the square root
+is
+
+
+
+
+t +1
+
+ 2
+
+t (t + 1) x − x + t + 1 − t ν log  ,
+t
+so, using the fact that |x  − x| ≤ 1, we see that
+|y+ | ∨ |y− |
+≤
+
+(t + 1)(|x| + 1) + |x|t  + [t  (t + 1){1 + (t + 1 − t  )ν log((t + 1)/t  )}]1/2
+.
+t + 1 − t
+
+Finally, because t  ∈ [0, t + 1/2], this right-hand side is bounded above by
+
+
+
+
+2(t + 1) |x| + 1 + |x|(2t + 1)
+
+
+
+
++ 2 (t + 1) (t + 1/2) + t  (t + 1)ν log
+
+
+
+
+
+
+
+
+t +1
+t
+
+1/2
+
+< (4t + 3) |x| + 1 + 2(t + 1) 1 + ν/e =: a,
+since sups≥0 s log st = s log st |s=t/e = et for all t > 0. This completes the proof. 
+L EMMA A.4. For all t, s > 0 and x, y ∈ R, we have that G2ν (t, x) =
+1
+ts sx+ty
+√
+G (t, x) and Gν (t, x)Gν (s, y) = Gν ( t+s
+, t+s )Gν (t + s, x − y).
+4π νt ν/2
+The proof of this lemma is straightforward and is left to the reader.
+2
+L EMMA A.5. For all x, z1 , z2 ∈ R and t, s > 0, denote z̄ = z1 +z
+2 , z = z1 −
+(4t)∨s
+z2 . Then G1 (t, x − z̄)G1 (s, z) ≤ √ts G1 ((4t) ∨ s, x − z1 )G1 ((4t) ∨ s, x − z2 ),
+where a ∨ b := max(a, b).
+
+3045
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+P ROOF.
+
+Since (z2 − z1 )2 + [(x − z1 ) + (x − z2 )]2 ≥ (x − z1 )2 + (x − z2 )2 ,
+
+G1 (t, x − z̄)G1 (s, z) ≤
+
+1
+2
+2
+√ e−([(x−z1 )+(x−z2 )] +(z1 −z2 ) )/(2((4t)∨s)) .
+2π ts
+
+
+
+− r, x) dr = λ12 (e(λ t−2λ |x|)/(4ν) ×
+4
+
+t
+0 (H(r) + 1)G2ν (t
+2
+|x|
+√ t ) − erfc( √
+)), t ≥ 0.
+erfc( |x|−λ
+2 νt
+2 νt
+
+L EMMA A.6.
+
+2
+
+4
+
+λ
+. By [18], (27) on page 146] and [18], (5) on page 176, the
+P ROOF. Let μ = 4ν
+Laplace transform of the convolution equals
+
+
+
+
+
+
+
+
+
+L G2ν (·, x) (z)L H(·) + 1 (z)
+
+√ √
+√
+
+
+μ
+1
+exp(−(|x|/ ν) z)
+1 1 −|x|√z/√ν
+√
+.
++√
+=√ √ e
+√
+z−μ
+z(z − μ)
+4ν z
+4νz( z − μ)
+
+Then apply the inverse Laplace transform (see [18], (14) on page 246). 
+L EMMA A.7. 0t dr |x|e
+all t ≥ 0 and x = 0.
+P ROOF.
+
+−x 2 /(4νr)+(t−r)/(4ν)
+
+√
+π νr 3
+
+
+
+(
+
+t−2|x|
+|x|−t
+t−r
+√
+2ν ) = exp( 4ν )erfc( 4νt ), for
+
+Suppose that x = 0. Denote the integral by I (t). Let
+
+|x| −x 2 /(4νt)
+f (t) = √
+e
+πνt 3
+
+g(t) = et/(4ν)
+
+and
+
+
+
+
+
+(2ν)−1 t .
+
+Clearly, I (t) is the convolution of f and g. By [18], (28) on page 146,
+
+
+
+
+
+
+L[f ](z) = 2 exp −|x| z/ν .
+
+Notice g(t) = (H (t) + 1)/2 with H (t) = H(t; ν, 1). By the calculations in
+Lemma A.6,
+L[g](z) =
+
+1
+1
++ √
+.
+2(z − 1/(4ν)) 4 νz(z − 1/(4ν))
+
+Hence,
+√
+
+e−|x| z/ν
+√ .
+L[I ](z) = L[f ](z)L[g](z) = √ √
+z( z − 1/(2 ν))
+Then apply the inverse Laplace transform (see [18], (16) on page 247). 
+L EMMA A.8. (2.32)
+√
+)erfc( |x−y|−t
+).
+exp( t−2|x−y|
+4ν
+4νt
+
+equals
+
+Gν (t, x)Gν (t, y) +
+
+x+y
+1
+4ν Gν/2 (t, 2 )
+
+×
+
+3046
+
+L. CHEN AND R. C. DALANG
+
+P ROOF. After some simplifications, the integral in (2.32) is equal to the following integral:
+
+
+x +y
+1
+Gν/2 t,
+4πνt
+2
+
+
+
+1
+0
+
+
+
+
+
+|x − y|
+(x − y)2
+ds √
+exp −
+4νts
+s3
+
+
+
+
+ 
+
+
+
+
+1
+t (1 − s)
+t (1 − s)
+× √
++ πt/ν exp
+4ν
+2ν
+1−s
+Denote this integral by I1 (1) + I2 (1). Suppose that x = y and let
+
+
+
+
+.
+
+
+
+(x − y)2
+1
+|x − y|
+,
+g(s) = √ ,
+f (s) = 3/2 exp −
+s
+4νts
+s
+√
+   
+πt
+ts
+ts
+.
+h(s) = √ exp
+ν
+4ν
+2ν
+Then by [18], (28) on page 146, and [18], page 135,
+√ √
+√ exp(−|x − y| z/ νt)
+L[I1 ](z) = L[f ](z)L[g](z) = 2π νt
+.
+√
+z
+Apply the inverse Laplace transform (see [18], (6) on page 246),
+√
+
+
+2 πνt
+(x − y)2
+for s > 0.
+exp −
+I1 (s) = √
+4νst
+s
+As for I2 (s), by the calculation in Lemma A.7,
+√
+√ 
+
+πt
+1
+t
++ √
+L[h](z) = √
+.
+2 ν z − t/(4ν) 2 νz(z − t/(4ν))
+Hence,
+√ √
+1
+√
+.
+L[I2 ](z) = L[f ](z)L[h](z) = πte−|x−y| z/ νt √ √
+z( z − t/(4ν))
+Then apply the inverse Laplace transform (see [18], (16) on page 247). Finally, let
+s = 1 and use Lemma A.4. 
+For ν > 0, τ ≥ t ≥ 0 and x, y ∈ R,
+ 
+
+
+
+|x|
+|x|
+2|x|
+√
+√
+Gν (r, x) dr =
+−
++ 2τ Gν (τ, x) − 2tGν (t, x)
+ν
+ντ
+νt
+
+L EMMA A.9.
+τ
+t
+
+and
+t
+
+dr
+0
+
+=
+
+R
+
+dzGν (t − r, x − z)Gν (τ − r, y − z)
+
+|x − y|
+ν
+
+ 
+
+
+
+|x − y|
+√
+−
+ν(τ + t)
+
+
+
+|x − y|
+√
+ν(τ − t)
+
+
+
++ (τ + t)Gν (τ + t, x − y) − (τ − t)Gν (τ − t, x − y).
+
+3047
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+P ROOF. Consider the first integral. The case where x = 0 is straightforward,
+so we assume that x = 0. This right-hand side is obtained by a change variable and
+integration by parts:
+τ
+t
+
+√
+|x|/ νt
+
+2|x|
+Gν (r, x) dr =
+ν
+
+√
+|x|/ ντ
+
+
+
+1
+2
+√
+e−u /2 du
+2π u2
+√
+
+√
+
+
+
+|x|/ νt e−u /2
+2|x| e−u /2 |x|/ ντ
+√
+√
+du .
+−
+=
+√
+√
+ν
+|x|/ ντ
+2πu |x|/ νt
+2π
+2
+
+2
+
+For the second integral, use the semigroup property to integrate over z, and then
+apply the first integral. 
+L EMMA A.10.
+
+For t ≥ 0 and x, y ∈ R, we have that
+
+
+
+
+|y|
+1
+|x|
+1
+√ +√
+Gν (r, x)Gσ (t − r, y) dr = √ erfc √
+2 νσ
+ν
+σ
+0
+2t
+t
+
+
+
+,
+
+where ν and σ are strictly positive. In particular, by letting x = 0, we have that
+
+ √
+t G (t − r, y)
+1
+|y|
+πt
+σ
+√
+dr = √ erfc √
+≤ √ Gσ (t, y).
+2 νσ
+0
+2πνr
+2σ t
+2ν
+P ROOF.
+
+By [18], (27) on page 146, the Laplace transform of the integrand is
+√
+√
+√
+
+
+
+
+exp(− 2z(|x|/ ν + |y|/ σ ))
+√
+L Gν (·, x) (z) · L Gσ (·, y) (z) =
+,
+2 νσ z2
+and the conclusion follows by applying the inverse Laplace transform (see [18],
+(3) on page 245). As for the special case x = 0, use formula [24], (Equation 7.7.1,
+page 162) to write
+erfc(x) =
+
+2 −x 2
+e
+π
+
+∞ e−x r
+
+2 2
+
+0
+
+1+r
+
+dr ≤
+2
+
+2 −x 2
+e
+π
+
+∞
+0
+
+1
+2
+dr = e−x .
+1 + r2
+
+P ROPOSITION A.11 [Properties of Ea,β (x), defined in (4.5)].
+β ∈ R,
+(i) Ea,0 (x) = 1;
+2
+(ii) for ν > 0, (eβ|·| ∗ Gν (t, ·))(x) = eβ νt/2 Eνt,β (x);
+(iii) first and second derivatives:
+
+(x) = −βe−βx
+Ea,β
+
+
+
+Ea,β
+(x) = β
+
+
+
+
+
+aβ − x
+√
++ βeβx
+a
+
+
+
+For a > 0 and
+
+
+
+aβ + x
+√
+,
+a
+
+2 −(a 2 β 2 +x 2 )/(2a)
++ β 2 Ea,β (x);
+e
+πa
+
+
+
+3048
+
+L. CHEN AND R. C. DALANG
+
+√
+1/2
+(iv) for β > 0, eβ|x| ≤ Ea,β (x) < eβx + e−βx ; for β < 0, ( aβ)Ea,2β (x) ≤
+Ea,β (x) ≤ e−|βx| ;
+(v) for β > 0, x → Ea,β (x) isstrictly convex and infx∈R Ea,β (x) = Ea,β (0) =
+√
+√
+2 −β 2 a/2
+ (0) = β
++ 2β 2 (β a) > 0; for β < 0, the
+2 (β a) > 1, with Ea,β
+πa e
+function Ea,β (x) is decreasing for x ≥ 0 and increasing for x ≤ 0, and it √
+therefore
+achieves its globalmaximum at zero: supx∈R Ea,β (x) = Ea,β (0) = 2 (β a) < 1,
+√
+2 −β 2 a/2
+ (0) = β
++ 2β 2 (β a) ≤ 0;
+with Ea,β
+πa e
+(vi) concerning a → Ea,β (x),
+
+
+
+
+∂Ea,β (x)
+a2β 2 + x 2
+β
+exp −
+.
+=√
+∂a
+2a
+2πa
+Hence, for all x ∈ R, then the function a → Ea,β (x) is nondecreasing for β > 0
+and nonincreasing for β < 0.
+P ROOF. (i) Is trivial. (ii) Follows from a direct calculation. (iii) Is routine.
+We now prove (iv). Suppose that β < 0. We first prove the upper bound. Since
+x → Ea,β (x) is an even function, we shall only consider x ≥ 0. We need to show
+that for x ≥ 0
+
+
+e−βx
+
+
+
+aβ − x
+√
++ eβx
+a
+
+or equivalently from the fact that 1 −
+
+
+F (x) := e
+
+βx
+
+This is true since
+F  (x) = βeβx
+
+
+
+√ )=
+( aβ+x
+a
+
+√
+( −aβ−x
+),
+a
+
+
+
+
+
+−aβ − x
+√
+− e−βx
+a
+
+
+
+
+
+aβ + x
+√
+≤ eβx
+a
+
+
+
+−aβ − x
+√
++ βe−βx
+a
+
+
+
+aβ − x
+√
+≥ 0.
+a
+
+
+
+
+aβ − x
+√
+≤0
+a
+
+(x) = 0 by applying l’Hôpital’s rule. Note that F (0) =
+and √
+limx→+∞ F√
+(− aβ) − ( aβ) > 0 since β < 0.
+As for the lower bound, when β < 0, we have that
+
+2
+Ea,β
+(x) =
+
+≥e
+
+e
+
+−βx
+
+−2|βx|
+
+
+
+
+
+aβ − x
+√
++ eβx
+a
+
+
+2
+
+
+
+
+
+aβ + x
+√
+a
+
+aβ + |x|
+√
+≥ e−2|βx|
+a
+
+2
+
+2 √
+
+( aβ).
+
+Then the lower bound follows from the fact that e−2|βx| ≥ Ea,2β (x). As for the
+first part of (iv) where β > 0, the upper bound holds since (·) < 1. The lower
+bound is a consequence of the upper bound with β < 0 and the equality Ea,β (x) =
+
+3049
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+eβx + e−βx − Ea,−β (x), which follows from (4.4). Now consider (v). We first
+ (x) > 0 for all x ∈ R, hence x → E
+consider the case β > 0. By (iii), Ea,β
+a,β (x) is
+strictly convex. By (4.5),
+∞
+
+
+d
+2
+Ea,β (x) = βe−aβ /2
+eβy Ga (1, x − y) − Ga (1, x + y) dy.
+dx
+0
+Clearly, if x ≥ (≤)0, then Ga (1, x − y) − Ga (1, x + y) ≥ (≤)0 for all y ≥ 0.
+d
+Ea,β (x) ≥ (≤)0 if x ≥ (≤)0 and the global minimum is achieved at
+Hence, dx
+d
+x = 0. Similarly, for β < 0, we have dx
+Ea,β (x) ≤ (≥)0 if x ≥ (≤)0 and the global
+ (0) ≤ 0 [note that by (iii),
+maximum is taken at x = 0, which then implies that Ea,β
+ (x) exists]. As for (vi),
+Ea,β
+
+∂ ∓βx
+e
+∂a
+
+
+
+
+
+
+
+
+
+aβ ∓ x
+aβ ± x
+a2β 2 + x 2
+√
+√ exp −
+=
+.
+2a
+a
+2a 3/2 2π
+
+Adding these two terms proves the formula for
+
+∂Ea,β (x)
+. The rest is clear.
+∂a
+
+
+
+Acknowledgements. The authors thank Daniel Conus, Davar Khoshnevisan,
+and Roger Tribe for stimulating discussions and Leif Döring for a discussion that
+led to Remark 2.3. The authors also thank two anonymous referees for a careful
+reading of this paper and many useful suggestions.
+REFERENCES
+[1] A DAMS , R. A. and F OURNIER , J. J. F. (2003). Sobolev Spaces, 2nd ed. Pure and Applied
+Mathematics (Amsterdam) 140. Elsevier/Academic Press, Amsterdam. MR2424078
+[2] A MIR , G., C ORWIN , I. and Q UASTEL , J. (2011). Probability distribution of the free energy of
+the continuum directed random polymer in 1 + 1 dimensions. Comm. Pure Appl. Math.
+64 466–537. MR2796514
+[3] B ERTINI , L. and C ANCRINI , N. (1995). The stochastic heat equation: Feynman–Kac formula
+and intermittence. J. Stat. Phys. 78 1377–1401. MR1316109
+[4] B ORODIN , A. and C ORWIN , I. (2014). Macdonald processes. Probab. Theory Related Fields
+158 225–400. MR3152785
+[5] C ARMONA , R. A. and M OLCHANOV, S. A. (1994). Parabolic Anderson problem and intermittency. Mem. Amer. Math. Soc. 108 viii+125. MR1185878
+[6] C HEN , L. (2013). Moments, intermittency, and growth indices for nonlinear stochastic PDE’s
+with rough initial conditions. Ph.D. thesis No. 5712, École Polytechnique Fédérale de
+Lausanne.
+[7] C HUNG , K. L. and W ILLIAMS , R. J. (1990). Introduction to Stochastic Integration, 2nd ed.
+Birkhäuser, Boston, MA. MR1102676
+[8] C ONUS , D., J OSEPH , M., K HOSHNEVISAN , D. and S HIU , S.-Y. (2014). Initial measures
+for the stochastic heat equation. Ann. Inst. Henri Poincaré Probab. Stat. 50 136–153.
+MR3161526
+[9] C ONUS , D. and K HOSHNEVISAN , D. (2010). Weak nonmild solutions to some SPDEs. Illinois
+J. Math. 54 1329–1341. MR2981850
+[10] C ONUS , D. and K HOSHNEVISAN , D. (2012). On the existence and position of the farthest
+peaks of a family of stochastic heat and wave equations. Probab. Theory Related Fields
+152 681–701. MR2892959
+
+3050
+
+L. CHEN AND R. C. DALANG
+
+[11] C RANSTON , M., M OUNTFORD , T. S. and S HIGA , T. (2002). Lyapunov exponents for the
+parabolic Anderson model. Acta Math. Univ. Comenian. (N.S.) 71 163–188. MR1980378
+[12] DALANG , R., K HOSHNEVISAN , D., M UELLER , C., N UALART, D. and X IAO , Y. (2009).
+A Minicourse on Stochastic Partial Differential Equations. Lecture Notes in Math. 1962.
+Springer, Berlin. MR1500166
+[13] DALANG , R. C. and F RANGOS , N. E. (1998). The stochastic wave equation in two spatial
+dimensions. Ann. Probab. 26 187–212. MR1617046
+[14] DALANG , R. C., K HOSHNEVISAN , D. and N UALART, E. (2007). Hitting probabilities for
+systems of non-linear stochastic heat equations with additive noise. ALEA Lat. Am. J.
+Probab. Math. Stat. 3 231–271. MR2365643
+[15] DALANG , R. C., K HOSHNEVISAN , D. and N UALART, E. (2009). Hitting probabilities for
+systems for non-linear stochastic heat equations with multiplicative noise. Probab. Theory
+Related Fields 144 371–427. MR2496438
+[16] DALANG , R. C. and M UELLER , C. (2009). Intermittency properties in a hyperbolic Anderson
+problem. Ann. Inst. Henri Poincaré Probab. Stat. 45 1150–1164. MR2572169
+[17] DALANG , R. C., M UELLER , C. and T RIBE , R. (2008). A Feynman–Kac-type formula for the
+deterministic and stochastic wave equations and other P.D.E.’s. Trans. Amer. Math. Soc.
+360 4681–4703. MR2403701
+[18] E RDÉLYI , A., M AGNUS , W., O BERHETTINGER , F. and T RICOMI , F. G. (1954). Tables of
+Integral Transforms. Vol. I. McGraw-Hill Book Company, New York. MR0061695
+[19] F OONDUN , M. and K HOSHNEVISAN , D. (2009). Intermittence and nonlinear parabolic
+stochastic partial differential equations. Electron. J. Probab. 14 548–568. MR2480553
+[20] J OHN , F. (1991). Partial Differential Equations, 4th ed. Applied Mathematical Sciences 1.
+Springer, New York. MR1185075
+[21] K HOSHNEVISAN , D. (2009). A primer on stochastic partial differential equations. In A Minicourse on Stochastic Partial Differential Equations. Lecture Notes in Math. 1962 1–38.
+Springer, Berlin. MR2508772
+[22] M UELLER , C. (1991). On the support of solutions to the heat equation with noise. Stochastics
+Stochastics Rep. 37 225–245. MR1149348
+[23] M YTNIK , L. and P ERKINS , E. (2011). Pathwise uniqueness for stochastic heat equations with
+Hölder continuous coefficients: The white noise case. Probab. Theory Related Fields 149
+1–96. MR2773025
+[24] O LVER , F. W. J., L OZIER , D. W., B OISVERT, R. F. and C LARK , C. W., eds. (2010). NIST
+Handbook of Mathematical Functions. Cambridge Univ. Press, Cambridge. MR2723248
+[25] P OSPÍŠIL , J. and T RIBE , R. (2007). Parameter estimates and exact variations for stochastic heat
+equations driven by space–time white noise. Stoch. Anal. Appl. 25 593–611. MR2321899
+[26] S ANZ -S OLÉ , M. and S ARRÀ , M. (2000). Path properties of a class of Gaussian processes
+with applications to spde’s. In Stochastic Processes, Physics and Geometry: New Interplays, I (Leipzig, 1999). CMS Conf. Proc. 28 303–316. Amer. Math. Soc., Providence, RI.
+MR1803395
+[27] S ANZ -S OLÉ , M. and S ARRÀ , M. (2002). Hölder continuity for the stochastic heat equation
+with spatially correlated noise. In Seminar on Stochastic Analysis, Random Fields and
+Applications, III (Ascona, 1999) (R. C. Dalang, M. Dozzi and F. Russo, eds.). Progress in
+Probability 52 259–268. Birkhäuser, Basel. MR1958822
+[28] S HIGA , T. (1994). Two contrasting properties of solutions for one-dimensional stochastic partial differential equations. Canad. J. Math. 46 415–437. MR1271224
+[29] WALSH , J. B. (1986). An introduction to stochastic partial differential equations. In École
+D’été de Probabilités de Saint-Flour, XIV—1984. Lecture Notes in Math. 1180 265–439.
+Springer, Berlin. MR0876085
+
+MOMENTS IN THE STOCHASTIC HEAT EQUATION
+
+3051
+
+[30] Z EL’ DOVICH , Y. B., RUZMA ĬKIN , A. A. and S OKOLOFF , D. D. (1990). The Almighty
+Chance. World Scientific Lecture Notes in Physics 20. World Scientific, River Edge, NJ.
+MR1141627
+D EPARTMENT OF M ATHEMATICS
+U NIVERSITY OF K ANSAS
+405 S NOW H ALL
+1460 JAYHAWK B LVD
+L AWRENCE , K ANSAS 66045-7594
+USA
+E- MAIL : chenle02@gmail.com
+
+I NSTITUT DE MATHÉMATIQUES
+É COLE P OLYTECHNIQUE F ÉDÉRALE DE L AUSANNE
+S TATION 8
+CH-1015 L AUSANNE
+S WITZERLAND
+E- MAIL : robert.dalang@epfl.ch
+
+

@@ -1,0 +1,3863 @@
+Stoch PDE: Anal Comp (2015) 3:360–397
+DOI 10.1007/s40072-015-0054-x
+
+Moments, intermittency and growth indices for the
+nonlinear fractional stochastic heat equation
+Le Chen1,2 · Robert C. Dalang2
+
+Received: 12 September 2014 / Published online: 10 July 2015
+© Springer Science+Business Media New York 2015
+
+Abstract We study the nonlinear fractional stochastic heat equation in the spatial
+domain R driven by space-time white noise. The initial condition is taken to be a
+measure on R, such as the Dirac delta function, but this measure may also have
+non-compact support. Existence and uniqueness, as well as upper and lower bounds
+on all pth moments ( p ≥ 2), are obtained. These bounds are uniform in the spatial variable, which answers an open problem mentioned in Conus and Khoshnevisan
+(Probab Theory Relat Fields 152(3–4):681–701, 2012). We improve the weak intermittency statement by Foondun and Khoshnevisan (Electron J Probab 14(21):548–568,
+2009), and we show that the growth indices (of linear type) introduced in Conus and
+Khoshnevisan (Probab Theory Relat Fields 152(3–4):681–701, 2012) are infinite. We
+introduce the notion of “growth indices of exponential type” in order to characterize
+the manner in which high peaks propagate away from the origin, and we show that the
+presence of a fractional differential operator leads to significantly different behavior
+compared with the standard stochastic heat equation.
+Keywords Nonlinear fractional stochastic heat equation · Parabolic Anderson
+model · Rough initial data · Intermittency · Growth indices · Stable processes
+
+Le Chen and Robert C. Dalang were supported in part by the Swiss National Foundation for Scientific
+Research.
+
+B Le Chen
+
+chenle02@gmail.com
+Robert C. Dalang
+robert.dalang@epfl.ch
+
+1
+
+Present Address: Department of Mathematics, University of Kansas, 405 Snow Hall,
+1460 Jayhawk Blvd, Lawrence, KS 66045-7594, USA
+
+2
+
+Institut de mathématiques, École Polytechnique Fédérale de Lausanne,
+Station 8, 1015 Lausanne, Switzerland
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+361
+
+Mathematics Subject Classification
+
+Primary 60H15 · Secondary 60G60 · 35R60
+
+1 Introduction
+In this paper, we consider the following nonlinear fractional stochastic heat equation:
+
+⎧
+⎨ ∂ − D a u(t, x) = ρ (u(t, x)) Ẇ (t, x), t ∈ R∗ := ]0, +∞[, x ∈ R,
+x δ
++
+∂t
+(1.1)
+⎩
+u(0, ◦) = μ(◦),
+where a ∈ ]0, 2] is the order of the fractional differential operator x Dδa and δ (|δ| ≤
+a ∧ (2 − a) := min(a, 2 − a)) is its skewness, Ẇ is the space-time white noise, μ is the
+initial data (a measure), the function ρ : R → R is Lipschitz continuous, and ◦ denotes
+the spatial dummy variable. The definition and properties of the fractional differential
+operator x Dδa are recalled in Sect. 2.1. This equation falls into a class of equations
+studied by Debbi and Dozzi [12,13]. According to [11, Theorem 11], even the linear
+form of (1.1) (ρ ≡ 1) does not have a solution if a ≤ 1, so they consider a ∈ ]1, 2]. If
+we focus on deterministic initial conditions, then in the setting of (1.1), they proved in
+[13, Theorem 1] that there is a unique random field solution if μ has a bounded density.
+Equation (1.1) is of particular interest since it is an extension of the classical parabolic Anderson model [5], in which a = 2 and δ = 0, so x Dδa is the operator ∂ 2 /∂ x 2 ,
+and ρ(u) = λu is a linear function. Foondun and Khoshnevisan [15] considered problem (1.1) with the operator x Dδa replaced by the L 2 (R)-generator L of a Lévy process.
+They proved the existence of a random field solution under the assumption that the initial data μ has a bounded and nonnegative density. In [9], the operator x Dδa is replaced
+by the generator of a symmetric Lévy process and the authors prove that μ can be
+any finite Borel measure on R. Recently, Balan and Conus [1,2] studied the Anderson
+model with fractional Laplacian and bounded initial condition, and with Gaussian,
+spatially homogeneous noise that behaves in time like a fractional Brownian motion
+with Hurst index H > 1/2.
+Following the approach of [6], in which the case a = 2 and δ = 0 was considered,
+we begin by extending the above results (for the operator x Dδa ) to allow a wider class
+of initial data: Let M (R) be the set of signed Borel measures on R. From the Jordan decomposition, μ = μ+ − μ− where μ± are two non-negative Borel measures
+with disjoint support, and denote |μ| = μ+ + μ− . Then our admissible initial data is
+μ ∈ Ma (R), where
+
+
+
+
+Ma (R) := μ ∈ M(R) : sup
+
+y∈R R
+
+|μ|(dx)
+
+1
+< +∞ , for a ∈ ]1, 2].
+1+|x−y|1+a
+
+We will also use the set Ma,+ (R) = {μ ∈ Ma (R) : μ is non negative}. For
+μ ∈ Ma (R), we obtain estimates for the moments E(|u(t, x)| p ) for all p ≥ 2.
+These estimates have the same structure as those that are given in [6, Theorem 2.4],
+but the kernel K that appears in this reference has quite different properties than those
+of the kernel K that appears in relation with Eq. (1.1): see Sect. 3.2.
+
+123
+
+362
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+Let us define the upper and lower Lyapunov exponents of order p by
+1
+1
+log E |u(t, x)| p , m p (x) := lim inf log E |u(t, x)| p ,
+t→+∞ t
+t→+∞ t
+(1.2)
+
+m p (x) := lim sup
+
+for all p ≥ 2 and x ∈ R. If the initial data is constant, then m p and m p do not depend
+on x. In this case, the solution is called fully intermittent if m 2 > 0 and m 1 = 0 by
+Carmona and Molchanov [5, Definition III.1.1, on p. 55]. For a detailed discussion
+of the meaning of this intermittency property, see [17]. Informally, it means that the
+sample paths of u(t, x) exhibit “high peaks” separated by “large valleys”.
+Foondun and Khoshnevisan proved weak intermittency in [15], namely, for all
+p ≥ 2,
+m 2 (x) > 0, and m p (x) < +∞ for all x ∈ R,
+under the conditions that μ(dx) = f (x)dx with inf x∈R f (x) > 0 and inf x =0 |ρ(x)/x| >
+0. We improve this result by showing in Theorem 3.4 that when 1 < a < 2, |δ| < 2 − a
+(strict inequality) and μ ∈ Ma (R) is nonnegative and nonvanishing, then for all
+p ≥ 2,
+inf m p (x) > 0, and sup m p (x) < +∞.
+
+x∈R
+
+x∈R
+
+For this, we need a growth condition on ρ, namely, that for some constants lρ > 0
+and ς ≥ 0,
+ρ(x)2 ≥ l 2ρ ς 2 +x 2 ,
+
+for all x ∈ R.
+
+(1.3)
+
+In a forthcoming paper [8], this weak intermittency property will be extended to full
+intermittency by showing in addition that m 1 (x) ≡ 0.
+Our result answers an open problem stated by Conus and Khoshnevisan [10].
+Indeed, for the case of the fractional Laplacian, which corresponds to our setting
+with a ∈ ]1, 2[ and δ = 0, they ask whether the function t → supx∈R E |u(t, x)|2
+has exponential growth in t for initial data with exponential decay. Our answer is “yes”
+under the condition (1.3). In addition, under these conditions, if μ ∈ Ma,+ (R) and
+μ = 0, then for fixed x ∈ R, the function t → E |u(t, x)|2 has at least exponential
+growth; see Remark 3.5.
+We define the following growth indices of exponential type:
+
+e( p) := sup α > 0 : lim
+
+
+1
+
+sup
+
+log E |u(t, x)| p > 0 ,
+
+(1.4)
+
+sup
+
+log E |u(t, x)| p < 0 ,
+
+(1.5)
+
+t→∞ t |x|≥exp(αt)
+
+e( p) := inf α > 0 : lim
+
+1
+
+t→∞ t |x|≥exp(αt)
+
+in order to give a proper characterization of the propagation speed of “high peaks”. This
+concept is discussed in Conus and Khoshnevisan [10]. These authors define analogous
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+363
+
+indices λ( p) and λ( p), in which |x| ≥ exp(αt) is replaced by |x| ≥ αt, which we call
+growth indices of linear type.
+Conus and Khoshnevisan [10] consider the case where x Dδa is replaced by the
+generator L of a real-valued symmetric Lévy process (X t , t ≥ 0). They showed in
+[10, Theorem 1.1 and Remark 1.2] that if the initial data μ is a nonnegative lower
+semicontinuous function with certain exponential decay at infinity, and if X 1 has
+exponential moments, then
+0 < λ( p) ≤ λ( p) < +∞, for all p ∈ [2, +∞) .
+For example, a Lévy process that satisfies this assumption is the “truncated symmetric
+stable process”.
+Among Lévy processes, stable processes constitute an important subclass with a
+self-similarity property. Infinitesimal generators of these processes are not covered
+by the results of [10], since even the second moment of X 1 does not exists. It turns
+out that the fractional differential operator x Dδa is the infinitesimal generator of a (not
+necessarily symmetric) strictly stable process with a ∈ ]1, 2] (see Sect. 2.1), and we
+will see that when 1 < a < 2, the presence of the fractional differential operator x Dδa
+in (1.1) leads to significantly different behaviors of the speed of propagation of high
+peaks, compared to that obtained in [10].
+Indeed, we show first that if the initial data has sufficiently rapid decay at ±∞, then
+e( p) < ∞ (see (3.22) and (3.23)). Then we show that if 1 < a < 2 and |δ| < 2 − a
+(meaning that the underlying stable process has both positive and negative jumps),
+then
+e( p) > 0, for all p ∈ [2, +∞) and μ ∈ Ma,+ (R), μ = 0,
+
+(1.6)
+
+provided ρ satisfies condition (1.3). This conclusion applies, for instance, to the case
+where the initial data μ is the Dirac delta function. In particular, for well-localized
+initial data (for instance, μ ≥ 0 and R |y|η μ(dy) < ∞ for some η > 0), 0 < e( p) ≤
+e( p) < +∞, whereas for initial data that is bounded below (μ(d x) = f (x)d x with
+f (x) > c > 0, for all x ∈ R), e( p) = e( p) = +∞. See Theorem 3.6 for the precise
+statements. As a direct consequence, λ( p) = λ( p) = +∞ for all p ∈ [2, ∞[.
+The structure of this paper is as follows. After defining the operator x Dδa and giving
+the meaning of (1.1) in Sect. 2, the main results are presented in Sect. 3: Existence
+and general bounds are given in Theorem 3.1. These bounds are expressed in terms of
+the kernel K mentioned above, for which explicit upper and lower bounds are given.
+These lead to our results on weak intermittency (Theorem 3.4) and growth indices
+(Theorem 3.6). Section 4 contains the proof of Theorem 3.1 and Sect. 5 presents the
+proofs of Theorems 3.4 and 3.6.
+
+2 Preliminaries and notation
+We begin by defining the differential operator x Dδa that appears in the spde (1.1), then
+we shall give the rigorous meaning of the spde.
+
+123
+
+364
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+2.1 The Riesz–Feller fractional derivative
+
+Let F f (ξ ) = R dx e−iξ x f (x) denote the Fourier transform. For 0 < a ≤ 2 and
+|δ| ≤ min(a, 2 − a), the Riesz–Feller fractional derivative x Dδa f of a smooth and
+integrable function f is defined (see [19, (2.2)]) by
+F(x Dδa f )(ξ ) = δ ψa (ξ ) F f (ξ ),
+
+where δ ψa (ξ ) = −|ξ |a exp(−iπ δ sgn(ξ )/2).
+(2.1)
+2
+
+When a = 2 (and therefore δ = 0), this is simply the ordinary second derivative ddx 2 .
+For 1 < a < 2 and δ ≤ 2 − a, which is the case that we are most interested in, as
+stated in [19, (2.8)] (in which integrals are understood in the sense of Cauchy principle
+values), this is equivalent to the more explicit formula
+ +∞
+
+f (x + z) − f (x) − z f (x)
+dz
+z 1+a
+0
+ 0
+f (x + z) − f (x) − z f (x)
++ ca−
+dz,
+(−z)1+a
+−∞
+
+a
++
+x Dδ f (x) = ca
+
+(2.2)
+
+where
+ca± =
+
+π
+(1 + a)
+sin (a ± δ)
+π
+2
+
+∞
+and (z) = 0 e−t t z−1 dt is Euler’s Gamma function [21]. Indeed, taking the Fourier
+transform of the right-hand side of (2.2) leads to (2.1) by (2.3) below and elementary
+properties of Fourier transform.
+From the point of view of a probabilist, the operator x Dδa is the infinitesimal generator of a strictly a-stable Lévy process X = (X t , t ≥ 0) (where “strictly” refers to
+the fact that the process is centered: see [23, Chapter 3]), with Lévy measure
+νa (dz) = ca+
+
+dz
+z 1+a
+
+1{z>0} + ca−
+
+dz
+1{z<0} .
+(−z)1+a
+
+Indeed, the general form of the infinitesimal generator of X , given in terms of its Lévy
+measure in [23, Theorem 31.5, p. 208], is
+ +∞
+
+f (x + z) − f (x) − z f (x)
+dz
+z 1+a
+0
+ 0
+f (x + z) − f (x) − z f (x)
++ ca−
+dz,
+(−z)1+a
+−∞
+
+L f (x) = ca+
+
+where no “truncation function” nor additional drift term appears because of the centering, and the characteristic function of X t , given by the Lévy–Khintchine formula
+[23, Theorem 8.1], is
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+365
+
+  +∞
+
+exp −t
+(eiξ z − 1 − iξ z) νa (dz) = exp(−t δ ψa (ξ )),
+−∞
+
+(2.3)
+
+where the right-hand side can be obtained from the left-hand side via a direct calculation using the formula (a) (1 − a) = π/ sin(πa) [21, 5.5.3, p. 138] and the identity
+ +∞
+0
+
+e−qz − 1 + qz
+dz = q a (−a),
+z 1+a
+
+q ∈ C, 1 < (a) < 2,
+
+which follows from [21, 5.9.5, p. 140].
+In order to study the spde (1.1), we need the fundamental solution of the operator
+∂
+a
+∂t − x Dδ . According to the above discussion, this is
+
+
+
+
+
+1
+−1
+exp { δ ψa (·)t} (x) =
+dξ exp iξ x−t|ξ |a e−iπ δ sgn(ξ )/2 ,
+δ G a (t, x) := F
+2π R
+(2.4)
+where F −1 is the inverse Fourier transform. This is (one way to represent) the density of the strictly a-stable random variable X t with Lévy measure tνa , as given in
+the representation (C) in [27, p. 17]. For comparison, the expression in [23, Theorem 14.15] corresponds to the representation (A) in [27, p. 9]. For strictly stable laws,
+in particular the case 1 < a < 2, these two representations are equivalent: see [27,
+(I.28),(I.26) and Theorem C.3]. Properties of δ G a will be given in Lemma 4.1 below.
+We refer to [19] for more details on these fractional differential operators.
+In this paper, we denote the solution to the homogeneous equation
+
+⎧
+⎨ ∂ − D a u(t, x) = 0, t ∈ R∗ , x ∈ R,
+x δ
++
+∂t
+⎩
+u(0, ◦) = μ(◦),
+by
+
+
+J0 (t, x) := ( δ G a (t, ◦) ∗ μ) (x) =
+
+R
+
+μ(dy) δ G a (t, x − y),
+
+where “∗” denotes the convolution in the space variable.
+2.2 The stochastic pde
+Let W = {Wt (A), A ∈ Bb (R), t ≥ 0} be a space-time white noise defined on a probability space (, F, P), where Bb (R) is the collection of Borel sets with finite Lebesgue
+measure. Let (Ft , t ≥ 0) be the filtration generated by W and augmented by the σ -field
+N generated by all P-null sets in F:
+Ft = σ (Ws (A) : 0 ≤ s ≤ t, A ∈ Bb (R)) ∨ N , t ≥ 0.
+
+123
+
+366
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+In the following, we fix this filtered probability space {, F, (Ft , t ≥ 0), P}. We
+use ||·|| p to denote the L p ()-norm ( p ≥ 1). With
+ this setup, W becomes a worthy
+martingale measure in the sense of Walsh [25], and [0,t]×R X (s, y)W (ds, dy) is welldefined in this reference for a suitable class of random fields {X (s, y), (s, y) ∈ R+ ×R}.
+The rigorous meaning of the spde (1.1) uses the integral formulation
+u(t, x) = J0 (t, x) + I (t, x), where
+
+I (t, x) =
+δ G a (t − s, x − y) ρ (u(s, y)) W (ds, dy).
+
+(2.5)
+
+[0,t]×R
+
+Definition 2.1 A process u = u(t, x), (t, x) ∈ R∗+ × R is called a random field
+solution to (1.1) if:
+(1) u is adapted, i.e., for all (t, x) ∈ R∗+ × R, u(t, x) is Ft -measurable;
+(2) u is jointly measurable with respect to B R∗+ × R × F;
+(3) δ G a2  ||ρ(u)||22 (t, x) < +∞ for all (t, x) ∈ R∗+ × R, where “” denotes the
+simultaneous convolution in both space and time variables, that is,
+2
+2
+δ G a  ||ρ(u)||2
+
+(t, x) :=
+
+ t
+
+
+ds
+
+0
+
+R
+
+dy δ G a2 (t − s, x − y) ||ρ(u(s, y))||22 ;
+
+(4) For all (t, x) ∈ R∗+ × R, u(t, x) satisfies (2.5) a.s.;
+(5) The function (t, x) → I (t, x) mapping R∗+ × R into L 2 () is continuous.
+Assume that the function ρ : R → R is globally Lipschitz continuous with Lipschitz constant Lipρ > 0. This implies a growth condition on ρ: for some constants
+L ρ > 0 and ς ≥ 0,
+ρ(x)2 ≤ L 2ρ ς 2 +x 2 ,
+
+for all x ∈ R.
+
+(2.6)
+
+√
+Note that one can take ς = |ρ(0)| and L ρ ≤ 2 Lipρ (and the inequality may even
+be strict). We shall also specially consider the linear case ρ(u) = λu with λ = 0,
+which is related to the parabolic Anderson model (a = 2). It is a special case of the
+following near-linear growth condition: for some constant ς ≥ 0,
+ρ(x)2 = λ2 ς 2 +x 2 ,
+
+for all x ∈ R .
+
+(2.7)
+
+For all (t, x) ∈ R∗+ × R, n ∈ N and λ ∈ R, define
+L0 (t, x; λ) := λ2 δ G a2 (t, x),
+Ln (t, x; λ) := (L0  · · ·  L0 ) (t, x; λ), for n ≥ 1,
+
+
+
+n+1 factors L0 (·,◦;λ)
+
+123
+
+(2.8)
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+367
+
+and
+K (t, x; λ) :=
+
+∞
+
+
+Ln (t, x; λ)
+
+(2.9)
+
+n=0
+
+(the convergence of this series is established in Proposition 3.2). For t ≥ 0, define
+H(t; λ) := (1  K(·, ◦; λ)) (t, x)
+(notice that the right-hand side does not depend on x).
+Let z p be the universal constant in the Burkholder-Davis-Gundy inequality (in
+√
+particular, z 2 = 1), and so z p ≤ 2 p for all p ≥ 2; see [4, Appendix]. Define
+⎧
+( p−1)/ p if ς = 0 and p > 2,
+⎪
+⎨2√
+a p,ς =
+2
+if ς = 0 and p > 2,
+⎪
+⎩
+1
+if p = 2.
+We apply the following conventions to the kernel functions K(t, x; λ) (and similarly
+to H(t; λ)):
+K(t, x) := K(t, x; λ), K(t, x) := K t, x; L ρ ,
+ p (t, x) := K t, x; a p,ς z p L ρ , for p ≥ 2.
+K(t, x) := K t, x; l ρ , K
+
+3 Main results
+3.1 Existence, uniqueness and moments
+The following theorem extends the result of [6, Theorem 2.4] from a = 2 to a ∈ ]1, 2].
+In view of the related result [7, Theorem 2.3] and Remark 2.4 in this reference, the
+bounds in this theorem are not a surprise, though they do require a proof. The main
+effort will be to turn these abstract bounds into concrete estimates, via explicit upper
+and lower bounds on the functions K and H (see Sect. 3.2). For τ ≥ t > 0 and
+x, y ∈ R, define
+I(t, x, τ, y; ς , λ)
+ t 
+
+dr
+dz J02 (r, z) + J02 (·, ◦)  K(·, ◦; λ) (r, z)
+:= λ2
+R
+0
+
++ ς 2 (H(r ; λ) + 1) δ G a (t − r, x − z) δ G a (τ − r, y − z).
+Theorem 3.1 (Existence,uniqueness and moments) Suppose that
+(i) 1 < a ≤ 2 and |δ| ≤ 2 − a;
+(ii) the function ρ is Lipschitz continuous and satisfies the growth condition (2.6);
+(iii) the initial data are such that μ ∈ Ma (R).
+Then the stochastic pde (1.1) has a random field solution (u(t, x), (t, x) ∈ R∗+ × R).
+Moreover:
+
+123
+
+368
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+(1) u(t, x) is unique in the sense of versions;
+(2) (t, x) → u(t, x) is L p ()-continuous for all integers p ≥ 2;
+(3) For all even integers p ≥ 2, all τ ≥ t > 0 and x, y ∈ R,
+
+
+
+
+J02 (t, x) + ς 2 +J02  K (t, x),
+if p = 2,
+
+ 2
+2
+2
+
+2J0 (t, x) + ς +2J0  K p (t, x), if p > 2,
+
+(3.1)
+
+E [u(t, x)u (τ, y)] ≤ J0 (t, x)J0 (τ, y) + I(t, x, τ, y; ς , L ρ ).
+
+(3.2)
+
+||u(t, x)||2p ≤
+and
+
+(4) If ρ satisfies (1.3), then for all τ ≥ t > 0 and x, y ∈ R,
+||u(t, x)||22 ≥ J02 (t, x) +
+
+ς 2 +J02  K (t, x),
+
+(3.3)
+
+and
+E [u(t, x)u (τ, y)] ≥ J0 (t, x)J0 (τ, y) + I(t, x, τ, y; ς , l ρ ).
+
+(3.4)
+
+(5) If ρ satisfies (2.7), then for all τ ≥ t > 0 and x, y ∈ R,
+||u(t, x)||22 = J02 (t, x) +
+
+ς 2 +J02  K (t, x),
+
+(3.5)
+
+and
+E [u(t, x)u (τ, y)] = J0 (t, x)J0 (τ, y) + I(t, x, τ, y; ς , λ).
+
+(3.6)
+
+The proof of this theorem is explained in Sect. 4.
+3.2 Estimates on the kernel function K(t, x)
+Recall that if the partial differential operator is the heat operator ∂t∂ − ν2 , then
+
+
+K
+
+heat
+
+ 
+t
+λ4 λ4 t
+e 4ν  λ2
+(t, x; λ) = G ν2 (t, x) √
++
+2ν
+2ν
+4π νt
+λ2
+
+,
+
+(3.7)
+
+where ν > 0 and (x) is the distribution function of a standard Normal random
+variable; see [6, Proposition 2.2]. When the partial differential operator is the wave
+2
+operator ∂t∂ 2 − κ 2 ,
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+369
+
+⎛#
+⎞
+2
+2 ((κt)2 − x 2 )
+λ
+λ
+⎠ 1{|x|≤κt} ,
+I0 ⎝
+Kwave (t, x; λ) =
+4
+2κ
+
+(3.8)
+
+where κ > 0 and I0 (x) is the modified Bessel function of the first kind of order 0; see
+[7, Proposition 3.1].
+Except in the above two cases, we do not have an explicit formula for the kernel
+function K(t, x) in (2.9). In order to make use of the moment formulas in (3.1) and
+(3.3), we derive upper and lower bounds on this kernel function in the following two
+propositions. We will need the two-parameter Mittag-Leffler function [22, Sect. 1.2]:
+E α,β (z) :=
+
+∞
+
+k=0
+
+zk
+,
+(αk + β)
+
+α > 0, β > 0.
+
+(3.9)
+
+Let a ∗ be the dual of a: 1/a + 1/a ∗ = 1. By Lemma 4.1 below (Property (ii)), the
+constant
+ = δ a := sup δ G a (1, x)
+
+(3.10)
+
+x∈R
+
+is finite. In particular,
+
+ ∞
+1
+1
+a
+dξ exp −|ξ | =
+dt e−t t −1+1/a =
+0 a = 0 G a (1, 0) =
+2π R
+aπ 0
+
+(1 + 1/a)
+.
+π
+
+In the following, we often omit the dependence of δ a on δ and a and simply write
+ instead of δ a . Define
+γ := λ2  (1/a ∗ ),
+
+γ := L 2ρ  (1/a ∗ ),
+
+γ p := a 2p,ς z 2p L 2ρ  (1/a ∗ ), for p ≥ 2.
+γ := l 2ρ  (1/a ∗ ), 
+
+(3.11)
+
+Clearly, 
+γ2 = γ .
+Proposition 3.2 (Upper bound on K(t, x)) Suppose that a ∈ ]1, 2] and |δ| ≤ 2 − a.
+The kernel function K(t, x) defined in (2.9) satisfies, for all t ≥ 0 and x ∈ R,
+γ
+∗
+K(t, x) ≤ δ G a (t, x) 1/a E 1/a ∗ ,1/a ∗ γ t 1/a
+t
+C
+∗
+≤ 1/a δ G a (t, x) 1 + t 1/a exp γ a t
+t
+
+(3.12)
+,
+
+(3.13)
+
+< +∞.
+
+(3.14)
+
+where the constant C = C(a, δ, λ) can be chosen as
+C(a, δ, λ) := γ sup
+
+E 1/a ∗ ,1/a ∗ γ t 1/a
+
+t≥0 1 + t
+
+1/a exp
+
+∗
+
+∗
+
+γa t
+
+123
+
+370
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+This proposition is proved in Sect. 4. For a lower bound on K(t, x), we need another
+family of kernel functions: for a > 0, t > 0 and x ∈ R, define
+ga (t, x) :=
+
+t
+1
+.
+π t 2/a + x 2 a2 + 21
+
+(3.15)
+
+These functions have the same scaling property as δ G a (t, x) (see Lemma 4.1(iv)
+below):
+ga (t, x) =
+
+x
+1, 1/a .
+t
+
+1
+
+ga
+t 1/a
+
+Note that g1 (t, x) is the Poisson kernel (see, e.g., [26, p. 268]), which satisfies the
+semigroup property
+(g1 (t − s, ·) ∗ g1 (s, ·)) (x) = g1 (t, x),
+
+0 ≤ s ≤ t, x ∈ R.
+
+For a ∈ ]1, 2[ and |δ| < 2 − a, define
+&a,δ :=
+C
+
+inf
+
+δ G a (t, x)
+
+(t,x)∈R∗+ ×R πga (t, x)
+
+>0
+
+(3.16)
+
+(for the strict positivity, see Lemma 5.1 below). Then let
+ϒ(λ, a, δ) :=
+
+&2 C 2
+λ2 C
+a,δ a+1/2
+
+(1/a ∗ )
+
+π 22(a+3+1/a)
+
+,
+
+(3.17)
+
+where
+Cν :=
+
+(ν) (1/2)
+,
+2 (ν + 1/2)
+
+ν ≥ 1/2 .
+
+(3.18)
+
+Proposition 3.3 (Lower bound on K(t, x)) Fix a ∈ ]1, 2[ and |δ| < 2 − a (note the
+strict inequality). Then for all t > 0 and x ∈ R,
+∗
+2
+&a,δ
+K(t, x) ≥ π 2 C
+λ2 (1/a ∗ ) ga2 (t, x) E 1/a ∗ ,1/a ∗ ϒ(λ, a, δ) t 1/a .
+
+(3.19)
+
+In particular, for all t > 0 and x ∈ R,
+(1  K) (t, x) ≥
+
+&2 λ2 (1/a ∗ ) (a + 1/2)
+π 1/2 C
+a,δ
+(1+a)
+
+∗
+
+∗
+
+t 1/a E 1/a ∗ ,1+1/a ∗ ϒ(λ, a, δ) t 1/a .
+
+(3.20)
+This proposition is proved in Sect. 5.1.
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+371
+
+3.3 Growth indices and weak intermittency
+Theorem 3.4 (Weak intermittency) Suppose that a ∈ ]1, 2] and |δ| ≤ 2 − a.
+(1) If ρ satisfies (2.6) and μ ∈ Ma (R), then for all even integers p ≥ 2,
+sup m p (x) ≤
+
+x∈R
+
+a∗
+1
+16 L 2ρ  (1/a ∗ )
+p 2+1/(a−1) .
+2
+
+(3.21)
+
+(2) Suppose ρ satisfies (1.3), |δ| < 2 − a (strict inequality) and μ ∈ Ma,+ (R). If
+either μ = 0 or ς = 0, then for all p ≥ 2,
+inf m p (x) ≥
+
+x∈R
+
+p
+a∗
+ϒ l ρ , a, δ
+> 0.
+2
+
+Note that if a = 2, then (3.21) implies that for some constant C, we have m p ≤ C p 3 ,
+which recovers previous analyses (see [3], [6, Example 2.7], etc).
+Remark 3.5 Fix p ≥ 2. Clearly, Theorem 3.4 implies that for all x ∈ R,
+1
+1
+sup log E |u(t, y)| p ≥ lim inf log E |u(t, x)| p
+t→∞ t
+t y∈R
+p
+a∗
+= m p (x) ≥ ϒ l ρ , a, δ
+>0.
+2
+
+lim inf
+t→∞
+
+Hence, the function t → sup y∈R E (|u(t, y)| p ) has at least exponential growth. This
+answers the second open problem stated by Conus and Khoshnevisan in [10]. Moreover, Theorem 3.4 implies that for all fixed x ∈ R, the function t → E (|u(t, x)| p )
+also has at least exponential growth.
+Recall the definitions of the constants 
+γ p and ϒ(l ρ , a, δ) in (3.11) and (3.17),
+respectively.
+Theorem 3.6 (Growth indices)
+(1) Suppose that a ∈ ]1, 2], |δ| ≤ 2 − a and ρ satisfies (2.6) with ς = 0. If there are
+C < ∞, α > 0 and β > 0 such that for all (t, x) ∈ [1, ∞[ ×R,
+|J0 (t, x)| ≤ C(1 + t α )(1 + |x|)−β ,
+
+(3.22)
+
+then
+e( p) ≤
+
+pa
+γ
+β
+
+∗
+
+< +∞.
+
+(3.23)
+
+
+In particular, if, for some η > 0, R |μ|(dy)(1 + |y|η ) < ∞, then (3.22) and
+(3.23) are satisfied with β = min(η, 1 + a).
+
+123
+
+372
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+(2) Suppose that a ∈ ]1, 2[ (note that a = 2), |δ| < 2 − a (strict inequality) and ρ
+satisfies (1.3). For all μ ∈ Ma,+ (R), μ = 0 and all p ≥ 2, if ς = 0, then
+ϒ l ρ , a, δ
+e( p) ≥
+2(a + 1)
+
+a∗
+
+> 0.
+
+For these μ, if ς = 0 and there is c > 0 such that
+J0 (t, x) ≥ c,
+
+for all (t, x) ∈ R+ × R,
+
+(3.24)
+
+or if ς = 0, then e( p) = e( p) = +∞. In particular, λ( p) = λ( p) = +∞ for
+all p ≥ 2, and a sufficient condition for (3.24) is that μ(d x) = f (x)d x with
+f (x) ≥ c, for all x ∈ R.
+The two theorems above are proved in Sect. 5.
+Remark 3.7 In the case of the classical parabolic Anderson model, in which a = 2,
+δ = 0 and ρ(u) = λu, it was shown in [6] that λ(2) = λ(2) = λ2 /2 when the initial
+data has compact support (for instance). Here, it is natural to ask whether e( p) = e( p)
+when ρ(u) = λu, for instance for initial data with compact support. This remains an
+open question.
+
+4 Proof of Theorem 3.1
+We need some technical results. The proof of Theorem 3.1 will be presented at the
+end of this section.
+The Green functions defined in (2.4) are densities of stable random variables. Some
+key properties are stated in the next lemma. Recall that a probability density function
+f : R → R+ is called bell-shaped if f is infinitely differentiable and its k-th derivative
+f (k) has exactly k zeros in its support for all k.
+Lemma 4.1 For a ∈ ]0, 2], the following properties hold:
+(i) For fixed t > 0, the function δ G a (t, ·) is a bell-shaped density function. In
+particular, R δ G a (t, x)dx = 1.
+(ii) The unique mode is located on the positive semi-axis x > 0 if δ > 0, on the
+negative semi-axis x < 0 if δ < 0, and at x = 0 if δ = 0.
+(iii) δ G a (t, x) satisfies the semigroup property, i.e., for 0 < s < t,
+δ G a (t + s, x) = ( δ G a (t, ◦) ∗ δ G a (s, ◦))(x).
+
+(iv)
+
+δ G a (t, x) has the following scaling property: For all n ≥ 0,
+
+'
+'
+∂n
+∂n
+− n+1
+'
+a
+.
+δ G a (t, x) = t
+δ G a (1, ξ )'
+∂xn
+∂ξ n
+ξ =t −1/a x
+
+123
+
+(4.1)
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+373
+
+(v) For 0 < a < 2 with a = 1, when x → ±∞,
+1  −a j−1 (−1) j+1
+(a j + 1) sin ( j (a ± δ)π/2)
+|x|
+π
+j!
+N
+
+δ G a (1, x) =
+
+j=1
+
++ O |x|−a(N +1)−1 .
+(vi) If a ∈ ]1, 2], then there exist finite constants K a,n such that
+' n
+'
+'∂
+'
+K a,n
+'
+'≤
+G
+(1,
+x)
+' ∂xn δ a
+' 1 + |x|1+n+a , for n ≥ 0.
+
+(4.2)
+
+Moreover, for all T ≥ t > 0, n ≥ 0 and x ∈ R,
+' n
+'
+n+1
+'∂
+'
+K a,n
+(T ∨ 1)1+ a
+− n+1
+− n+1
+'
+'
+a
+a
+≤ K a,n t
+.
+' ∂ x n δ G a (t, x)' ≤ t
+1 + |t −1/a x|1+n+a
+1 + |x|1+n+a
+(4.3)
+(vii) limt↓0 δ G a (t, x) = δ0 (x), where δ0 (x) is the Dirac delta function with unit mass
+at zero.
+Proof Most of these properties appear in several books [18,24,27]. We refer the interested readers to [13, Lemma 1] for Properties (i) (except the bell-shaped density),
+(iii) and (iv). Formula (v) can be found in [18], (5.9.3) in Sects. 5.9 and (5.8.6) in
+Sect. 5.8; for x → −∞, use (5.8.2c) in this reference (note that the formula in [13,
+Lemma 1(vii)] is not quite correct for x → −∞). The proof that the density is bellshaped is due to Gawronski [16]. Property (ii) can be found in the summary part of
+[27, Sect. 2.7, p. 143–147].
+Now we prove (vi). Property (4.2) follows from [13, Corollary 1]. By the scaling
+property (4.1) and (4.2),
+'
+' n
+n+1
+'
+' ∂
+n+1
+K a,n
+K a,n t 1+ a
+− n+1
+−
+'
+'
+.
+' ∂ x n δ G a (t, x)' ≤ t a 1 + |t −1/a x|1+n+a = t a 1+ n+1
+a + |x|1+n+a
+t
+t
+Using the fact that the function t → t+z
+is monotone increasing on R+ , the above
+quantity is less than
+n+1
+
+n+1
+
+t− a
+
+K a,n (T ∨ 1)1+ a
+n+1
+
+(T ∨ 1)1+ a + |x|1+n+a
+
+n+1
+
+n+1
+
+≤ t− a
+
+K a,n (T ∨ 1)1+ a
+.
+1 + |x|1+n+a
+
+This proves (4.3).
+Property (vii) follows easily by taking Fourier transforms F( δ G a (t, ·))(ξ ) =
+
+
+exp ( δ ψa (ξ )t) → 1 as t ↓ 0. This completes the proof of Lemma 4.1.
+
+123
+
+374
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+Let Ln (t, x; λ), K(t, x; λ), and  = δ a be defined in (2.8), (2.9), and (3.10),
+respectively. Recall that 1/a + 1/a ∗ = 1.
+Lemma 4.2 (Theorem 1.3 p. 32 in [22]) If 0 < α < 2, β is an arbitrary complex
+number and μ is an arbitrary real number such that
+π α/2 < μ < π ∧ (π α),
+then for an arbitrary integer p ≥ 1 the following expression holds:
+
+z −k
+1 (1−β)/α
+z
++ O |z|−1− p ,
+exp z 1/α −
+α
+(β − αk)
+p
+
+E α,β (z) =
+
+k=1
+
+as |z| → ∞ with | arg(z)| ≤ μ.
+Proposition 4.3 For 1 < a ≤ 2, |δ| ≤ 2 − a and λ > 0, we have the following
+properties:
+(i) Ln (t, x; λ) is non-negative and for all n ≥ 0 and (t, x) ∈ R∗+ × R,
+Ln (t, x; λ) ≤ Bn+1 (t; λ) δ G a (t, x),
+
+(4.4)
+
+where
+Bn (t; λ) := λ2n n
+
+(1/a ∗ )n −1+n/a ∗
+t
+(n/a ∗ )
+
+(n ≥ 0, λ ∈ R).
+
+(∞
+1/m
+(ii) Bn (t ; λ) ≥ 0 and for all m ∈ N∗ , (
+< +∞.
+n=0 Bn (t ; λ)
+∞
+(iii) For all t > 0 and λ > 0, the series n=1 Ln (t, x; λ) converges uniformly over
+x ∈ R and hence K(t, x; λ) in (2.9) is well defined.
+Proof (i) Non-negativity is clear. The scaling property (4.1) and the definition of 
+in (3.10) imply that
+δ G a (t, x) ≤ t
+
+−1/a
+
+,
+
+(4.5)
+
+which establishes the case n = 0 in (4.4). Suppose by induction that the relation (4.4)
+holds up to n − 1. Then by (4.5), we have
+Ln (t, x; λ) =
+
+ t
+
+
+
+dy Ln−1 (t − s, x − y) λ2 δ G a2 (s, y)
+∗ n  t
+∗
+2(n+1) n+1 (1/a )
+≤λ
+
+ds (t − s)−1+n/a s −1/a
+(n/a ∗ ) 0
+
+×
+dy δ G a (t − s, x − y) δ G a (s, y) .
+ds
+
+0
+
+R
+
+123
+
+R
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+375
+
+The conclusion now follows from the semigroup property of δ G a (t, x) and Euler’s
+Beta integral (see [21, 5.12.1, on p. 142]):
+ t
+
+(a) (b) a+b−1
+t
+,
+(a + b)
+
+ds s a−1 (t − s)b−1 =
+
+0
+
+with (a) > 0 and (b) > 0.
+(4.6)
+
+of
+
+(ii) The non-negativity is clear. Denote β := 1/a ∗ . In order to show convergence
+(
+1/m
+, we use the ratio test:
+n Bn (t ; λ)
+
+
+Bn (t ; λ)
+Bn−1 (t ; λ)
+
+1/m
+
+= λ2  (β) t β
+
+1/m
+
+
+
+((n − 1)/a ∗ )
+(n/a ∗ )
+
+1/m
+.
+
+By the asymptotic expansion of the Gamma function ([21, 5.11.2, on p. 140]),
+((n − 1)/a ∗ )
+≈
+(n/a ∗ )
+
+
+ β 
+1 (n−1)β 1
+e
+1
+1−
+≈
+,
+β
+β
+n
+n
+(βn)β
+
+for large n. Clearly, β > 0 since 1/a < 1. Hence for all t > 0, for large n,
+
+
+Bn (t ; λ)
+Bn−1 (t ; λ)
+
+1/m
+
+≈ λ2  (β) t β
+
+1/m
+
+1
+,
+(βn)β/m
+
+and this goes to zero as n → +∞.
+(iii) By (4.4) and (4.5),
+Ln (t, x; λ) ≤ Bn+1 (t ; λ) t −1/a ,
+
+
+
+so (ii) implies (iii). This completes the proof of Proposition 4.3.
+Proof of Proposition 3.2 The bound (3.12) follows from the fact that
+∞
+
+k=1
+
+zk
+= z E α,α (z),
+(αk)
+
+(4.7)
+
+which can be easily seen from the definition, and the bound in Proposition 4.3(i):
+
+K (t, x; λ) ≤ δ G a (t, x)
+
+∞
+
+n=1
+∗
+
+= λ  (1/a )t
+2
+
+∞
+λ2  (1/a ∗ ) t 1/a
+
+1
+Bn (t; λ) = δ G a (t, x)
+t
+(n/a ∗ )
+
+−1/a
+
+∗
+
+n
+
+n=1
+
+δ G a (t, x)E 1/a ∗ ,1/a ∗
+
+λ2  (1/a ∗ )t 1/a
+
+∗
+
+.
+
+123
+
+376
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+As for (3.13), we only need to show that the constant C defined in (3.14) is finite. Let
+
+f (t) =
+
+E 1/a ∗ ,1/a ∗ γ t 1/a
+
+∗
+
+∗
+
+1 + t 1/a exp γ a t
+
+.
+∗
+
+By Lemma 4.2 with the real non-negative value z = γ t 1/a and p = 1,
+γE
+
+1/a ∗ ,1/a ∗
+
+γ t
+
+1/a ∗
+
+∗
+
+≤a γ
+
+a ∗ 1/a
+
+t
+
+exp γ
+
+a∗
+
+
+t +O
+
+
+
+1
+|t|2/a
+
+∗
+
+,
+
+t → +∞ ,
+
+where we have used the convention that 1/ (0) = 0 (see [21, 5.7.1, p.139]), therefore
+∗
+
+lim f (t) ≤ a ∗ γ a .
+
+t→+∞
+
+Since E α,α (·) is continuous (by uniform convergence of the series in (3.9)), we con
+
+clude that supt≥0 f (t) < +∞. This completes the proof of Proposition 3.2.
+The next proposition is in principle a consequence of certain calculations in [13]. It is
+however not stated explicitly there, so we include a proof for the convenience of the
+reader.
+Proposition 4.4 Fix 1 < a ≤ 2, |δ| ≤ 2 − a and 1/a + 1/a ∗ = 1. There are three
+universal constants
+
+1 − cos(u)
+a ∗ (1 + 1/a)
+C1 :=
+,
+du,
+C
+:=
+3
+a
+21/a π cos1/a (π δ/2)
+R 2π cos(π δ/2)|u|
+and
+C2 := 21/a − 1 C3 +
+
+(1 + 1/a) sin2 (π δ/2)
+,
+2πa[cos(π δ/2)]2+1/a
+
+such that
+(i) for all t > 0 and x, y ∈ R,
+ t
+
+
+dr
+
+0
+
+R
+
+dz [ δ G a (t − r, x − z) − δ G a (t − r, y − z)]2 ≤ C1 |x − y|a−1 ;
+(4.8)
+
+(ii) for all s, t ∈ R∗+ with s ≤ t, and x ∈ R,
+
+
+ s
+dr
+0
+
+123
+
+R
+
+dz [ δ G a (t − r, x − z) − δ G a (s − r, x − z)]2 ≤ C2 (t − s)1−1/a
+(4.9)
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+377
+
+and
+
+
+ t
+dr
+s
+
+R
+
+dz [ δ G a (t − r, x − z)]2 ≤ C3 (t − s)1−1/a .
+
+(4.10)
+
+Remark 4.5 This proposition is a generalization of [6, Proposition 3.5] for the heat
+equation. In fact, if we take a = 2 and δ = 0, then δ G a (t, x) = G 2 (t, x) =
+√ 1 exp −x 2 /(4t) . Let C , i = 1, 2, 3, be the optimal constants given in [6, Propoi
+4π t
+sition 3.5] with ν = 2. Then we have the following relations:
+C1
+1
+= C1 = ,
+2
+2
+
+√
+C2
+2−1
+,
+√ = C2 = √
+2π
+2
+
+C
+1
+√3 = C3 = √ ,
+2π
+2
+
+
+∞
+where for C1 , we use the fact that R 1−cos(u)
+du = 2 0 sin(u)
+u du = π ; see [21,
+u2
+4.26.12, on p. 122] for the last integral. This recovers the optimal inequalities of
+[6, Proposition 3.5], since ν appears in the right-hand side of the inequalities in this
+reference.
+Proof of Proposition 4.4 (i) Note that
+
+
+dx e−iξ x δ G a (t, x) = exp {t δ ψa (ξ )}
+R
+
+
+= exp −t|ξ |a e−iπ δ sgn(ξ )/2 .
+
+F( δ G a (t, ·))(ξ ) :=
+
+By Plancherel’s theorem, the left hand side of (4.8) equals
+1
+2π
+
+
+
+ t
+dr
+0
+
+'
+'
+a iπ δ sgn(ξ )/2
+a iπ δ sgn(ξ )/2 '2
+'
+dξ 'e−iξ x−(t−r )|ξ | e
+− e−iξ y−(t−r )|ξ | e
+'
+R
+ t 
+'2
+'
+1
+'
+'
+=
+dr
+dξ exp{−2(t − r )|ξ |a cos(π δ/2)} 'e−iξ x −e−iξ y '
+2π 0
+R
+
+
+1 t
+=
+dr
+dξ exp{−2(t−r )|ξ |a cos(π δ/2)} (1− cos(ξ(x−y))) .
+π 0
+R
+
+After integrating over r , the above integral equals
+
+1
+1 − exp{−2t|ξ |a cos(π δ/2)}
+dξ
+(1 − cos(ξ(x − y))) .
+π R
+2 cos(π δ/2)|ξ |a
+Use the change of variables ξ = u/|x − y| to see that this is equal to
+
+1
+1 − exp(−2t|u|a cos(π δ/2)/|x − y|a )
+|x − y|a−1
+du
+(1 − cos(u))
+π
+2 cos(π δ/2)|u|a
+R
+≤ C1 |x − y|a−1 ,
+
+123
+
+378
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+where
+
+
+
+1 − cos(u)
+du.
+2π
+cos(π
+δ/2)|u|a
+R
+
+C1 =
+
+This proves (4.8).
+(ii) Denote the left hand side of (4.9) by I . Apply Plancherel’s theorem to I :
+ s 
+1
+dr
+dξ | exp(−iξ x − (t − r )|ξ |a eiπ δ sgn(ξ )/2 )
+I =
+2π 0
+R
+=
+
+1
+2π
+
+− exp(−iξ x − (s − r )|ξ |a eiπ δ sgn(ξ )/2 )|2
+
+
+
+ s
+dr
+
+R
+
+0
+
+dξ | exp(−(t − r )|ξ |a eiπ δ sgn(ξ )/2 )
+− exp(−(s − r )|ξ |a eiπ δ sgn(ξ )/2 )|2 .
+
+Denote β := π δ sgn(ξ )/2 ∈ ] − π2 , π2 [ and
+Ar,t := (t − r )|ξ |a cos(β),
+
+Br,t := (t − r )|ξ |a sin(β) .
+
+Then
+'
+'2
+'
+'
+'exp(−(t − r )|ξ |a eiπ δ sgn(ξ )/2 ) − exp(−(s − r )|ξ |a eiπ δ sgn(ξ )/2 )'
+'
+'2
+'
+'
+= 'e−Ar,t cos(Br,t ) − ie−Ar,t sin(Br,t ) − e−Ar,s cos(Br,s ) + ie−Ar,s sin(Br,s )'
+= e−2 Ar,t + e−2 Ar,s − 2e−(Ar,t +Ar,s ) cos Br,t − Br,s .
+Now, according to [21, Equation 5.9.1, p.139], for z ∈ C with (z) > 0,
+
+R
+
+dξ e
+
+−z|ξ |a
+
+=2
+
+ ∞
+
+dξ e−zξ = 2z −1/a (1 + 1/a) .
+a
+
+(4.11)
+
+0
+
+Hence, since cos (β) = cos(π δ/2), which does not depend on ξ ,
+
+R
+
+dξ e
+
+−2 Ar,t
+
+
+=
+
+R
+
+dξ e
+
+−2(t−r ) cos(β)|ξ |a
+
+∗
+
+1
+21/a (1 + 1/a)
+=
+.
+cos1/a (β)
+(t − r )1/a
+
+Similarly,
+
+R
+
+dξ e
+
+−2 Ar,s
+
+∗
+
+1
+21/a (1 + 1/a)
+=
+.
+cos1/a (β)
+(s − r )1/a
+
+For the third term, notice that
+e−(Ar,t +Ar,s ) cos(Br,t − Br,s )
+
+
+ 
+t +s
+− r 2 |ξ |a cos(β) cos (t − s) |ξ |a sin(β)
+= exp −
+2
+
+123
+
+(4.12)
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+379
+
+
+
+*
+
+) 
+t +s
+− r 2 cos(β) + i(t − s) sin(β) |ξ |a .
+=  exp −
+2
+Apply (4.11) with z = t+s
+2 − r 2 cos(β) + i(t − s) sin(β):
+
+
+*
+) 
+
+t +s
+− r 2 cos(β) + i(t − s) sin(β) |ξ |a
+dξ exp −
+2
+R
+
+−1/a
+
+t +s
+− r 2 cos(β) + i(t − s) sin(β)
+.
+= 2 (1 + 1/a)
+2
+2
+2
+Apply Lemma 4.6 below with c = 1/a, b = t+s
+2 −r 2 cos(β) and x = (t −s) sin (β):
+
+−1/a
+
+t +s
+−r 2 cos(β) + i(t − s) sin(β)
+
+2
+1
+1
+≥ 1/a
+2 cos1/a (β) ((t + s)/2−r )1/a
+
+−
+
+(a + 1) sin2 (β)
+
+(t − s)2
+
+2a 2 [2 cos(β)]2+1/a ((t + s)/2 − r )2+1/a
+
+.
+
+Hence,
+
+2
+
+R
+
+dξ e−(Ar,t +Ar,s ) cos(Br,t − Br,s )
+
+≥ 21+1/a
+−
+
+∗
+
+1
+(1 + 1/a)
+cos1/a (β) ((t + s)/2 − r )1/a
+
+2 (1 + 1/a)(a + 1) sin2 (β)
+
+(t − s)2
+
+a 2 [2 cos(β)]2+1/a
+
+((t + s)/2 − r )2+1/a
+
+.
+
+Integrating over r and then applying Lemma 4.7 below, we get
+
+ s 
+(1 + 1/a)
+1
+1
+2
+I ≤ 1/a
+dr
++
+−
+2 π cos1/a (β) 0
+(t − r )1/a
+(s − r )1/a
+[(t + s)/2 − r ]1/a
+
+(t − s)2
+(1 + 1/a)(a + 1) sin2 (β) s
+dr
++
+πa 2 [2 cos(β)]2+1/a
+((t + s)/2 − r )2+1/a
+0
+∗
+
+≤ C2 (t − s)1/a ,
+where 1/a ∗ + 1/a = 1.
+As for (4.10), from (4.12), we have
+ t
+
+
+
+1
+dr
+dz [ δ G a (t − r, x − z)] =
+2π
+s
+R
+2
+
+
+
+ t
+
+dξ e−2(t−r )|ξ | cos(β)
+s
+R
+ t
+(1 + 1/a)
+1
+= 1/a
+dr
+2 π cos1/a (β) s
+(t − r )1/a
+a ∗ (1 + 1/a)
+∗
+(t − s)1/a .
+= 1/a
+(4.13)
+2 π cos1/a (β)
+dr
+
+a
+
+123
+
+380
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+
+
+
+This completes the proof of Proposition 4.4.
+Lemma 4.6 Suppose b > 0 and c ∈ ]0, 1]. Then for all x ≥ 0,
+√
+1
+c(1 + c) x
+.
+ (b ± i x)−c ≥ c −
+b
+2
+b2+c
+
+√
+√
+Proof Let θ = arctan( x/b) ∈ [0, π/2[ and denote f (x) :=  (b ± i x)−c .
+Then
+−c/2
+
+f (x) = b2 + x
+
+cos (c θ ).
+
+Because cos(θ ) ≥ 1 − θ 2 /2 and arctan(y) ≤ y for y ≥ 0, we have that
+cos (c θ ) ≥ 1 −
+
+c2 θ 2
+c2 x
+≥ 1− 2.
+2
+2b
+
+By Taylor’s theorem, for some ζ ∈ [0, x],
+−c/2
+
+b2 + x
+
+1
+1
+= b−c − cx(b2 + ζ )−1−c/2 ≥ b−c − cxb−2−c .
+2
+2
+
+
+
+Combining the above two lower bounds proves the lemma.
+Lemma 4.7 For all t ≥ s ≥ 0 and a ∈ ]1, 2], we have
+
+
+ s
+dr
+0
+
+1
+1
+2
++
+−
+1/a
+1/a
+(t − r )
+(s − r )
+((t + s)/2−r )1/a
+
+
+
+∗
+
+≤ a ∗ (21/a −1) (t−s)1/a ,
+
+and
+ s
+dr
+0
+
+(t − s)2
+((t + s)/2 − r )
+
+2+1/a
+
+≤
+
+a
+∗
+21+1/a (t − s)1/a ,
+a+1
+
+where a ∗ is the dual of a: 1/a + 1/a ∗ = 1.
+Proof Clearly,
+1
+a∗
+
+
+
+ s
+dr
+0
+1/a ∗
+
+=s
+
+1
+1
+2
++
+−
+1/a
+1/a
+(t − r )
+(s − r )
+((t + s)/2 − r )1/a
+∗
+
+∗
+
+∗
+
+
+∗
+
++ t 1/a − (t − s)1/a + 21/a (t − s)1/a − 21/a (t + s)1/a .
+
+We shall to prove that
+∗
+
+∗
+
+∗
+
+∗
+
+∗
+
+∗
+
+(t − s)−1/a [s 1/a + t 1/a − (t − s)1/a + 21/a (t − s)1/a − 21/a (t + s)1/a ]
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+381
+
+is bounded from above for all 0 ≤ s < t, or, equivalently, that
+∗
+
+g(r ) :=
+
+∗
+
+∗
+
+r 1/a + 1 − (1 − r )1/a + 21/a (1 − r )1/a − 21/a (1 + r )1/a
+∗
+(1 − r )1/a
+
+∗
+
+is bounded for all r ∈ [0, 1[. Clearly, g(0) = 0 and limr ↑1 g(r ) = 21/a − 1 (by
+applying L’Hospital’s rule once). Hence supr ∈[0,1[ g(r ) < ∞. In addition,
+g (r ) =
+
+(1 + r )1/a + (1 + 1/r )1/a − 21+1/a
+,
+a ∗ (1 − r )2−1/a (1 + r )1/a
+
+and notice that for all r ∈ ]0, 1],
+(1 + r )
+
+1/a
+
++(1+1/r )
+
+1/a
+
+≥ 2 [(1+r )(1+1/r )]
+
+1/(2a)
+
+
+
+√
+1 1/a
+=2
+r+√
+≥ 21+1/a .
+r
+
+Hence g (r ) ≥ 0 for r ∈ [0, 1[ and supr ∈[0,1[ g(r ) = limr ↑1 g(r ) = 21/a − 1.
+Therefore, the first inequality is proved with the constant a ∗ (21/a − 1).
+As for the second inequality, we have that
+ s
+dr
+0
+
+(t −s)2
+((t + s)/2−r )
+
+(t + s)1+1/a − (t − s)1+1/a
+a
+∗
+21+1/a
+(t −s)1/a
+1+1/a
+a +1
+(t + s)
+a
+1+1/a
+1/a ∗
+2
+≤
+(t −s)
+,
+a+1
+
+=
+2+1/a
+
+
+
+
+which completes the proof of the Lemma 4.7.
+The following proposition is useful to prove the L p ()–continuity of I (t, x).
+
+Proposition 4.8 Suppose that a ∈ ]1, 2] and |δ| ≤ 2 −a. Fix (t, x) ∈ R∗+ × R. Denote
++
+,
+B := Bt,x = (t , x ) ∈ R∗+ × R : 0 ≤ t ≤ t + 1/2, |x − x | ≤ 1 .
+Then there exists a constant A > 0 such that for all (t , x ) ∈ B, s ∈ [0, t [ and
+|y| ≥ A,
+δ Ga
+
+t − s, x − y ≤ −δ G a (t + 1 − s, x − y) + δ G a (t + 1 − s, x − y).
+
+Proof The case where a = 2 is proved in [6, Proposition A.3], so we only need to
+prove the case where 1 < a < 2. Denote F(t, x) := δ G a (t, x)+ −δ G a (t, x). Suppose
+the mode of the density δ G a (1, x) is located at m ∈ R. By the scaling property, the
+mode of the density δ G a (t, x) is located at t 1/a m. Hence, when x ≥ t 1/a |m| (resp.
+x ≤ −t 1/a |m|), the function x → F(t, x) is decreasing (resp. increasing).
+
+123
+
+382
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+Fix (t, x) ∈ R∗+ × R. Assume that |y − x| > 1 + (t + 1/2)1/a |m|. From the above
+observation, we deduce that for all (t , x ) ∈ B,
+δ Ga
+
+t − s, x − y ≤ F t − s, |y − x| − |x − x | ≤ F t − s, |y − x| − 1 .
+(4.14)
+
+Apply Lemma 4.1(v) with N = 1 and use the scaling property of δ G a (t, x) to get
+(a + 1)
+π
+π
+sin
+a cos
+δ t |x|−1−a + O t 2 |x|−1−2a .
+π
+2
+2
+
+F(t, x) = 2
+
+Because |δ| ≤ 2 − a and a ∈ ]1, 2[ , we see that sin(πa/2) cos(π δ/2) = 0. Hence,
+F (t + 1 − s, x − y)
+F (t − s, |y − x| − 1)
+(t + 1 − s)|x − y|−1−a + O (t + 1 − s)2 |x − y|−1−2a
+=
+(t − s) ||y − x| − 1|−1−a + O (t − s)2 ||y − x| − 1|−1−2a
+=
+
+|x − y|−1−a + O (t + 1 − s) |x − y|−1−2a
+t +1−s
+.
+t − s ||y − x| − 1|−1−a + O (t − s) ||y − x| − 1|−1−2a
+
+Now it is clear that
+lim
+
+inf
+
+|x − y|−1−a + O (t + 1 − s)|x − y|−1−2a
+
+|y|→+∞ (t ,x )∈B, s∈[0,t [ ||y − x| − 1|−1−a + O
+
+(t − s) ||y − x| − 1|−1−2a
+
+= 1,
+
+which implies that
+F (t + 1 − s, x − y)
+t +1−s
+≥
+inf
+|y|→+∞ (t ,x )∈B, s∈[0,t [ F (t − s, |y − x| − 1)
+(t ,x )∈B, s∈[0,t [ t + 1/2 − s
+1
+t +1
+=1+
+> 1,
+=
+t + 1/2
+2t + 1
+lim
+
+inf
+
+where we have used the fact that s → (t + 1 − s)/(t + 1/2 − s) is increasing. Hence,
+by (4.14), we can choose a large constant A such that for all |y| ≥ A, (t , x ) ∈ B and
+s ∈ [0, t [, the inequality
+1
+F (t + 1 − s, x − y)
+≥1+
+>1
+G
+−
+s,
+x
+−
+y)
+2(t
++ 1)
+(t
+δ a
+
+
+
+holds. This completes the proof of Proposition 4.8.
+(n,m)
+
+Lemma 4.9 For all m, n ∈ N, there exist polynomials {Pi
+such that:
+
+123
+
+(x), i = 0, . . . , n},
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+(n,m)
+
+(1) the Pi
+
+383
+
+(x) are of degree ≤ i and they satisfy
+
+∂ n+m
+1  (n,m)
+∂ i+m
+G
+(t,
+x)
+=
+P
+(x)
+δ
+δ G a (t, x) ;
+a
+i
+∂t n ∂ x m
+(at)n
+∂ x i+m
+n
+
+i=0
+
+(2) For fixed t > 0, the partial derivative ∂t∂n ∂ x m δ G a (t, ·) as a function of x is smooth
+and integrable.
+n+m
+
+Proof Part (2) is a direct consequence of (1) and (i) and (vi) in Lemma 4.1. We now
+(0,0)
+prove (1). It is clearly true for n = m = 0: in this case, P0 (x) ≡ 1. Moreover,
+(0,m)
+(x) = 1. Consider the case n = 1 and
+if n = 0, then it is trivially true, with P0
+m = 0. Using the scaling properties twice, we have
+
+'
+∂
+1/a
+1 ∂ δ G a (1, ξ ) x/a ''
+δ G a (t, x) = − 1+1/a δ G a (1, ξ ) − 1/a
+∂t
+t
+t
+∂ξ
+t 1+1/a 'ξ =t −1/a x
+
+'
+1
+x
+x ∂ δ G a (1, ξ ) ''
+1
+=−
+δ G a 1, 1/a + 2/a
+' −1/a
+at t 1/a
+t
+t
+∂ξ
+ξ =t
+x
+
+
+1
+∂
+=−
+δ G a (t, x) + x
+δ G a (t, x) .
+at
+∂x
+(1,0)
+
+(1,0)
+
+So in this case, P0 (x) = −1 and P1 (x) = −x. Now suppose that (1) is true for
+n, m ∈ N. It is easy to see that (1) is true also for n, m + 1 with
+(n,m+1)
+
+Pi
+
+(n,m)
+
+(x) = Pi
+
+(x) +
+
+Pn(n,m+1) (x) = Pn(n,m) (x),
+
+d (n,m)
+P
+(x), for i = 0, . . . , n − 1,
+dx i+1
+
+(n,m+1)
+
+(x) is a polynomial of degree ≤ i.
+so Pi
+Now assume by induction that n ≥ 1 and the property is true for ñ ≤ n and all
+m ≥ 0. We shall establish the property for n + 1 and m. By the induction assumption,
+we have
+∂ n+1+m
+−na  (n,m)
+∂ i+m
+G
+(t,
+x)
+=
+P
+(x)
+δ
+δ G a (t, x)
+a
+i
+∂t n+1 ∂ x m
+(at)n+1
+∂ x i+m
+n
+
+i=0
+
++
+
+1
+(at)n
+
+n
+
+
+(n,m)
+
+Pi
+
+(x)
+
+i=0
+
+∂ 1+i+m
+δ G a (t, x).
+∂t∂ x i+m
+
+∂
+Then replace ∂t∂
+G (t, x) by the following sum using the induction assumption:
+x i+m δ a
+1+i+m
+
+1
+∂ 1+i+m
+δ G a (t, x) =
+∂t∂ x i+m
+at
+
+
+
+(1,i+m)
+
+P0
+
+(x)
+
+∂ i+m
+δ G a (t, x)
+∂ x i+m
+
+123
+
+384
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+(1,i+m)
+
++ P1
+
+(x)
+
+
+∂ i+m+1
+G
+(t,
+x)
+.
+δ a
+∂ x i+m+1
+
+Finally, after grouping terms one can choose the following polynomials:
+P0(n+1,m) (x) = − na P0(n,m) (x) + P0(n,m) (x)P0(1,m) (x),
+which is a polynomial of order 0,
+(n,m)
+Pi(n+1,m) (x) = − na Pi(n,m) (x) + Pi(n,m) (x)P0(1,i+m) (x) + Pi−1
+(x)P1(1,i+m−1) (x),
+
+which are polynomials of degree ≤ i, for i = 1, . . . , n, and
+(n+1,m)
+
+Pn+1
+
+(1,n+m)
+
+(x) =Pn(n,m) (x)P1
+
+(x),
+
+which are polynomials of degree ≤ n + 1. This completes the proof of Lemma 4.9. 
+
+Lemma 4.10 Suppose that a ∈ ]1, 2] and μ ∈ Ma (R).
+(1) The function J0 (t, x) = ( δ G a (t, ·) ∗ μ) (x) belongs to C ∞ R∗+ × R .
+(2) For all compact sets K ⊂ R∗+ × R and v ∈ R,
+sup
+
+(t,x)∈K
+
+
+
+v 2 + J02  K (t, x) < ∞.
+
+(4.15)
+
+In fact, for all (t, x) ∈ R∗+ × R,
+
+
+∗
+J02  K (t, x) ≤ C (t ∨ 1)2(1+1/a) t 1−2/a t −1/a + exp γ a t ,
+
+(4.16)
+
+where
+C
+
+2
+:= C Aa2 K a,0
+max
+
+
+
+(1/a ∗ )2
+∗
+,
+a ,
+(2/a ∗ )
+
+(4.17)
+
+C = C(a, δ, λ) is defined in (3.14), K a,0 is defined in (4.2), and
+
+
+|μ|(dz)
+.
+1
++
+|y − z|1+a
+y∈R R
+
+Aa := sup
+
+(4.18)
+
+Proof (1) Fix 0 < t ≤ T and n, m ∈ N. By Lemma 4.9 and (4.3),
+' n+m
+'
+n
+' ∂
+'
+1  '' (n,m) ''
+(T ∨ 1)1+(i+m+1)/a
+'
+'
+≤
+G
+(t,
+x)
+(x)' K a,i+m t −(i+m+1)/a
+.
+'Pi
+' ∂t n ∂ x m δ a
+' (at)n
+1 + |x|1+i+m+a
+i=0
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+385
+
+(n,m)
+
+Since the polynomials Pi
+(x) are of degree ≤ i, for some finite constant C > 0
+depending on a, m, n and T , the above bound reduces to
+' n+m
+'
+n
+
+' ∂
+'
+g(t)
+'
+'
+≤
+C
+G
+(t,
+x)
+,
+with
+g(t)
+:=
+t −n−(i+m+1)/a .
+' ∂t n ∂ x m δ a
+'
+1 + |x|m+1+a
+i=0
+
+Hence, for 0 < t1 < t2 ≤ T ,
+ t2
+t1
+
+' n+m
+'
+' ∂
+'
+'
+ds
+μ(dz) ' n m δ G a (s, z)'' < +∞.
+∂s ∂ x
+R
+
+
+(4.19)
+
+By Fubini’s theorem and induction, it is now possible to conclude that J0 (·, ◦) ∈
+C ∞ (R∗+ × R). Indeed, the first step of this induction argument is:
+
+J0 (t2 , x) − J0 (t1 , x) =
+
+μ(dy)( δ G a (t2 , x − y) − δ G a (t1 , x − y))
+
+ t2
+∂
+=
+μ(dy)
+dt
+δ G a (t, x − y)
+∂t
+R
+t1
+ t2 
+∂
+dt
+μ(dy) δ G a (t, x − y),
+=
+∂t
+t1
+R
+R
+
+where we have used Fubini’s theorem, which applies by (4.19). This shows that
+
+∂
+∂
+J0 (t, x) =
+μ(dy) δ G a (t, x − y),
+∂t
+∂t
+R
+and higher derivatives are obtained by induction. This proves (1).
+(2) By (4.3), for 0 < s ≤ t,
+|J0 (s, y) | ≤ Aa K a,0 (t ∨ 1)1+1/a s −1/a ,
+
+(4.20)
+
+where Aa is defined in (4.18). Let (t, x) ∈ R∗+ × R. By (3.13), and by replacing one
+factor |J0 (s, y)| of J02 (s, y) by the above bound, we have that
+J02  K
+
+
+
+
+1
+a∗
+(t, x) ≤ C
+ds
++exp γ (t −s)
+dy δ G a (t − s, x − y)
+(t−s)1/a
+R
+0
+'
+'
+'
+'
+1+1/a −1/a '
+'
+× Aa K a,0 (t ∨ 1)
+s
+' μ(dz) δ G a (s, y − z)' ,
+ t
+
+R
+
+where the constant C := C(a, δ, λ) is defined in (3.14). Integrate over dy using the
+semigroup property, and then integrate over μ(dz):
+J02  K (t, x) ≤ C Aa K a,0 (t ∨ 1)1+1/a |J0 (t, x)|
+
+123
+
+386
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+×
+
+ t
+ds
+0
+
+
+
+1
+s 1/a
+
+1
+∗
++ exp γ a (t − s)
+(t − s)1/a
+
+
+.
+
+(4.21)
+
+Apply (4.20) to J0 (t, x). The integral over s gives
+
+
+
+1
+1
+a∗
+ds 1/a
++
+exp γ (t −s)
+s (t −s)1/a s 1/a
+0
+
+ t 
+1
+1
+a∗
+ds 1/a
++
+exp γ t .
+≤
+s (t −s)1/a s 1/a
+0
+
+ t
+
+Use (4.6) to see that this is equal to
+t
+
+1−2/a
+
+(1−1/a)2
+∗
+∗
+∗
++a ∗ t 1/a exp γ a t = t 1/a
+(2−2/a)
+
+-
+
+1
+t 1/a
+
+.
+(1/a ∗ )2
+∗
+a∗
++a exp γ t .
+(2/a ∗ )
+(4.22)
+
+Hence, combining the above facts proves (4.16).
+For (4.15), we consider the case μ(d x) = v d x, for which μ ∈ Ma (R) and
+J0 (t, x) ≡ v. Together with (4.16) for all μ ∈ Ma (R), we obtain (4.15). This
+completes the proof of Lemma 4.10.
+
+
+Proof of Theorem 3.1 The proof follows the same six steps as those in the proof of [6,
+Theorem 2.4] with some minor changes:
+(1) Both proofs rely on estimates on the kernel function K(t, x). Instead of an explicit
+formula as for the heat equation case (see [6, Proposition 2.2]), Proposition 3.2
+ensures the finiteness and provides a bound on the kernel function K(t, x).
+(2) In the Picard iteration scheme (i.e., Steps 1–4 in the proof of [6, Theorem 2.4]),
+we need to check the L p ()-continuity of the stochastic integral, which then
+guarantees that at the next step, the integrand is again in P2 , via [6, Proposition 3.4].
+Here, the statement of [6, Proposition 3.4] is still true by replacing in its proof
+[6, Propositions 3.5 and A.3] by Propositions 4.4 and 4.8, respectively. Note
+that when applying Proposition 4.8, we need to replace the G 2ν in [6, (3.8)] by
+( −δ G a + δ G a )2 ≤ 2 −δ G a2 + 2 δ G a2 .
+(3) In the first step of the Picard iteration scheme, the following property is useful:
+For all compact sets K ⊆ R+ × R,
+sup
+
+(t,x)∈K
+
+
+
+1 + J02  δ G a2 (t, x) < +∞.
+
+For the heat equation, this property is discussed in [6, Lemma 3.9]. Here, Lemma
+4.10 gives the desired result with minimal requirements on the initial data. This
+property, together with the calculation of the upper bound on the function K in
+Proposition 3.2, guarantees (as in [6, Lemmas 3.3 and 3.7]) that all the L p ()moments of u(t, x) are finite. This property is also used to establish uniform
+convergence of the Picard iteration scheme, hence L p ()–continuity of (t, x) →
+I (t, x).
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+387
+
+The proofs of (3.1)–(3.4) are identical to those of the corresponding properties in [6,
+Theorem 2.4], and (3.5) and (3.6) are direct consequences of the preceding statements.
+This completes the proof of Theorem 3.1.
+
+
+
+5 Proofs of Theorems 3.4 and 3.6
+We begin with the upper bound in Theorem 3.4.
+Proof of Theorem 3.4(1) Recall from (3.11) that 
+γ p = a 2p,ς z 2p L 2ρ  (1/a ∗ ), and
+∗
+a = a/(a − 1). By (3.1), (4.16) and (4.20), for all x ∈ R,
+γ pa p
+
+log ||u(t, x)|| p
+p 2 2 2
+a z L 
+≤
+=
+m p (x) = lim sup
+t
+2
+2 p,ς p ρ
+t→∞
+p
+
+∗
+
+1/a ∗
+
+√
+Since a p,ς ≤ 2 and z p ≤ 2 p, (3.21) follows.
+
+a ∗
+
+.
+
+
+
+5.1 Lower bound on K(t, x) (Proposition 3.3)
+We need some properties of ga (t, x) defined in (3.15).
+&a,δ defined
+Lemma 5.1 Suppose that a ∈ ]1, 2[ and |δ| < 2 − a. Then the constant C
+in (3.16) is strictly positive, and so for all t > 0 and x ∈ R,
+&a,δ π ga (t, x) =
+δ G a (t, x) ≥ C
+
+&a,δ t
+C
+a
+
+t 2/a + x 2 2
+
++ 21
+
+.
+
+(5.1)
+
+Proof By the scaling property of both δ G a and ga (t, x),
+inf
+
+(t,x)∈R∗+ ×R
+
+1
+δ G a (t, x)
+=
+inf
+πga (t, x)
+π y∈R
+
+δ G a (1, y)
+
+ga (1, y)
+
+.
+
+Let f (y) = δ G a (1, y)/ga (1, y). In the case where 1 < a < 2 and |δ| < 2 − a, both
+δ G a (1, y) and ga (1, y) have tails at ±∞ with polynomial decay of the same rate as
+|y|−1−a : see [27, p. 143] (we use here the fact that |δ| = 2 − a). Since y → δ G a (t, y)
+is unimodal (see [18, Lemma 5.10.1]), we conclude that f (y) > 0 for all y ∈ R, and
+that lim y→±∞ f (y) > 0 . Therefore, inf y∈R f (y) > 0, and this completes the proof
+of Lemma 5.1.
+
+
+Lemma 5.2 Let f b,ν (x) = f (x) := b2 + x 2
+
+F[ f ](z) =
+
+R
+
+−ν−1/2
+
+with b > 0 and ν ≥ 1/2. Then
+
+dx e−i zx f (x) ≥ Cν b−2ν exp (−b|z|) ,
+
+(5.2)
+
+for all b > 0 and z ∈ R, where the constant Cν > 0 is given in (3.18).
+
+123
+
+388
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+Proof Note that the function f (x) is an even function, so its Fourier transform is
+real-valued, instead of complex-valued, which allows us to bound this transform from
+below. Indeed, by [14, (7), p. 11], we have that
+
+F[ f ](z) =
+
+|z|
+b
+
+ν
+
+√
+
+π
+K ν (b|z|) , for (b) > 0 and ν > −1/2,
+2ν (ν + 1/2)
+
+where K ν (x) is the modified Bessel function of the second kind. Equivalently, we
+need to prove that the function
+
+R+ × R  (b, z) →
+
+|z|
+b
+
+ν
+2ν
+
+√
+π
+K ν (b|z|) b2ν exp (b|z|)
+(ν + 1/2)
+
+is uniformly bounded away from zero. By choosing u = b|z|, we reduce this problem
+to bounding the following function
+R+  u →
+
+2ν
+
+√
+π
+h(u)
+(ν + 1/2)
+
+(5.3)
+
+away from zero, where h(u) := u ν eu K ν (u). By the differential formula for x ±ν K ν (x)
+(see, for instance, [20, 51:10:4, p. 532]),
+h (u) = eu u ν (K ν (u) − K ν−1 (u)).
+By the integral representation of K ν (z) in [21, 10.32.9, p. 252],
+K ν (u) − K ν−1 (u) =
+
+1
+2
+
+ ∞
+
+e−u cosh(t) eνt − e−(ν−1)t
+
+1 − e−t dt ≥ 0
+
+0
+
+since ν ≥ 1/2. Hence, h (u) > 0 and
+inf h(u) = lim h(u) = 2ν−1 (ν),
+
+u∈R+
+
+u→0
+
+where we have used the property K ν (u) ∼
+10.30.2, p. 252]).
+Therefore,
+Cν = inf
+
+u∈R+ 2ν
+
+1
+2
+
+(ν)( 21 u)−ν as u ↓ 0 (see [21,
+
+√
+(ν) (1/2)
+π
+h(u) =
+.
+2 (ν + 1/2)
+(ν + 1/2)
+
+This completes the proof of Lemma 5.2.
+
+
+
+
+In the next lemma, we gather some properties of the function ga (t, x).
+Lemma 5.3 (1) For a > 0 and t > 0, ga (t, x − y) ≥ π 2−(a+1) t 1/a ga (t, x)ga (t, y).
+(2) For t > 0 and z ∈ R, F[ga2 (t, ·)](z) ≥ Ca+1/2 π −2 t −1/a exp(−t 1/a |z|).
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+389
+
+(3) For all a > 0, t ≥ s > 0 and x ∈ R, we have
+ga2 (t − s, ·) ∗ ga2 (s, ·) (x) ≥
+
+2
+Ca+1/2
+
+π 3 22a+3
+
+(ts)−1/a (t − s)1/a ga2 (t − s, x),
+
+where the constant Ca+1/2 is defined in (3.18).
+(4) For t ≥ r ≥ t/2 > 0, ga (r, x) ≥ (t/r )1/a 2−1−1/a ga (t, x).
+Proof (1) Because 1+(u −v)2 ≤ 1+2u 2 +2v 2 ≤ (1+2u 2 )(1+2v 2 ), ga (t, x − y) is
+√
+√
+bounded from below by π t 1/a ga t, 2 x ga t, 2 y . Then use the inequality
+√
+ga t, 2 x ≥ 2−(a+1)/2 ga (t, x).
+(2) We apply Lemma 5.2 with ν = a + 1/2 and b = t 1/a .
+(3) By (1),
+ga2 (t − s, ·) ∗ ga2 (s, ·) (x) ≥ π 2 2−2(a+1) (t − s)2/a ga2 (t − s, x)
+
+× dy ga2 (t − s, y) ga2 (s, y) .
+R
+
+The integral can be bounded using Plancherel’s identity and (2):
+
+dy ga2 (t − s, y) ga2 (s, y)
+R
+
+
+2
+Ca+1/2
+1
+dz
+((t − s)s)−1/a exp{−|z|((t − s)1/a + s 1/a )}
+2π R
+π4
+2
+Ca+1/2
+2
+=
+((t − s)s)−1/a
+1/a
+5
+(t − s) + s 1/a
+2π
+2
+Ca+1/2
+≥
+((t − s)s)−1/a t −1/a .
+2π 5
+≥
+
+This proves (3).
+(4) Notice that for t ≥ r ≥ t/2 > 0,
+ga (r, x) =
+
+r −1/a
+π
+
+
+1+
+
+x2
+r 2/a
+
+−(a+1)/2
+≥
+
+r −1/a
+π
+
+
+1+
+
+x2
+(t/2)2/a
+
+−(a+1)/2
+
+r −1/a
+(t/2)1+1/a ((t/2)2/a + x 2 )−(a+1)/2
+π
+r −1/a 1+1/a
+r −1/a 1/a
+2/a
+2 −(a+1)/2
+=
+t
+((t/2)
++
+x
+)
+≥
+t ga (t, x).
+π 21+1/a
+21+1/a
+≥
+
+
+
+
+123
+
+390
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+Proof of Proposition 3.3 Denote
+ga2
+
+n
+
+(t, x) := ga2  · · ·  ga2 (t, x) .
+
+
+
+n factors ga2
+
+Notice that by (2.9) and (5.1),
+K(t, x; λ) =
+
+∞
+
+
+λ2 δ G a2
+
+(n+1)
+
+n=0
+
+(t, x) ≥
+
+∞
+
+
+2
+&a,δ
+λ2 C
+π 2 ga2
+
+(n+1)
+
+(t, x). (5.4)
+
+n=0
+
+We now bound space-time convolutions of ga2 with itself. We claim that
+λ2 ga2
+
+(n+1)
+
+(t, x) ≥
+
+λ2(n+1) an (1/a ∗ )n+1 n/a ∗ 2
+t
+ga (t, x)
+((n+1)/a ∗ )
+
+for all n ≥ 0, (5.5)
+
+where
+2
+a := Ca+1/2
+π −3 2−2(a+3+1/a) .
+
+The case where n = 0 is clear. Consider n ≥ 1 and assume by induction that (5.5)
+holds for n − 1. By the induction hypothesis and Lemma 5.3(3),
+λ2 ga2
+
+(n+1)
+
+(t, x)
+
+
+λ2(n+1) an−1 (1/a ∗ )n t
+∗
+≥
+ds (t − s)(n−1)/a (ga2 (t − s, ·) ∗ ga2 (s, ·))(x)
+(n/a ∗ )
+0
+ t
+n−1 2
+ds ga2 (t − s, x) [(t − s)s]−1/a (t − s) a∗ + a ,
+(5.6)
+≥ K n t −1/a
+0
+
+where
+Kn =
+
+2
+λ2(n+1) an−1 (1/a ∗ )n Ca+1/2
+
+(n/a ∗ ) π 3 22a+3
+
+.
+
+Notice that t − s ≥ t/2 for 0 ≤ s ≤ t/2, so we apply Lemma 5.3(4) to see that
+λ2 ga2
+
+(n+1)
+
+(t, x) ≥
+
+Kn
+
+2
+
+t 1/a ga2 (t, x)
+2+2/a
+
+ t/2
+
+n−1
+
+ds [s(t−s)]−1/a (t−s) a∗ .
+
+(5.7)
+
+0
+
+For 0 ≤ s ≤ t/2, we have t − s ≥ s, so we replace the last factor t − s by s to see that
+λ2 ga2
+
+123
+
+(n+1)
+
+(t, x) ≥
+
+Kn
+
+2
+
+t 1/a ga2 (t, x)
+2+2/a
+
+ t/2
+0
+
+n−1
+
+ds [s(t − s)]−1/a s a∗ .
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+391
+
+Use the change of variables s → t − s in (5.7) and add to this last integral to see that
+λ2 ga2
+
+(n+1)
+
+(t, x) ≥
+
+Kn
+
+2
+
+1
+t 1/a ga2 (t, x)
+2+2/a
+
+ t
+
+2
+
+n−1
+
+ds [s(t − s)]−1/a s a∗ .
+
+0
+
+Then apply Euler’s Beta integral (4.6). This proves (5.5).
+Therefore, by (5.4), (5.5) and (3.9),
+K(t, x; λ) ≥
+
++∞
+
+
+2
+&a,δ
+λ2 C
+π 2 ga2
+
+(n+1)
+
+(t, x)
+
+n=0
+∗
+
+2
+&a,δ
+≥ π2 C
+λ2 (1/a ∗ )ga2 (t, x)
+
++∞
+&2 π 2 a (1/a ∗ )t 1/a )n
+
+(λ2 C
+a,δ
+
+((n + 1)/a ∗ )
+
+n=0
+
+∗
+
+2
+2
+&a,δ
+&a,δ
+= π2 C
+λ2 (1/a ∗ )ga2 (t, x)E 1/a ∗ ,1/a ∗ (λ2 C
+π 2 a (1/a ∗ )t 1/a ).
+
+This proves the statement (3.19) in Proposition 3.3.
+As for (3.20), notice that by (3.19),
+(1  K) (t, x) =
+
+ t
+
+
+ds
+
+0
+
+≥C
+
+ t
+0
+
+R
+
+dy K(s, y)
+
+ds E 1/a ∗ ,1/a ∗ ϒ(λ, a, δ) s 1/a
+
+∗
+
+
+R
+
+dy ga2 (s, y),
+
+&2 λ2 (1/a ∗ ). By [21, 5.12.3, p.142] and Euler’s beta integral,
+where C = π 2 C
+a,δ
+
+R
+
+ ∞
+
+s −1/a
+1
+s −1/a ∞
+1
+2
+dz
+=
+dy 1/2
+2
+2
+a+1
+2
+π
+(1 + z )
+π
+y (1 + y)a+1
+0
+0
+(a + 1/2) −1/a
+=
+s
+.
+(1 + a)π 3/2
+
+dy ga2 (s, y) =
+
+By [22, (1.99), p. 24],
+ t
+0
+
+ds s −1/a E 1/a ∗ ,1/a ∗ ϒ(λ, a, δ) s 1/a
+
+∗
+
+∗
+
+∗
+
+= t 1/a E 1/a ∗ ,1+1/a ∗ ϒ(λ, a, δ) t 1/a .
+
+This establishes (3.20) and completes the proof of Proposition 3.3.
+
+
+
+
+5.2 Proofs of Theorems 3.6 and 3.4(2)
+Lemma 5.4 Suppose that a ∈ ]1, 2[, |δ| < 2 − a and μ ∈ Ma,+ (R), μ = 0. Then
+for all  > 0, there exists a constant C such that for all t ≥ 0 and x ∈ R,
+( δ G a (t, ·) ∗ μ) (x) ≥ C 1[,∞[ (t) ga (t, x) .
+
+123
+
+392
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+Proof Denote J0 (t, x) = ( δ G a (t, ·) ∗ μ) (x). By the lower bound on δ G a (t, x) in
+(5.1), Lemma 5.3(1) and the scaling property of ga (t, x), we have
+&a,δ π
+J0 (t, x) ≥ C
+
+
+R
+
+μ(dy) ga (t, x − y)
+
+
+&a,δ π 2 1/a
+C
+t
+g
+μ(dy) ga (t, y)
+x)
+(t,
+a
+2a+1
+R
+− a+1
+
+
+2
+&a,δ π
+C
+y2
+= a+1 ga (t, x) μ(dy) 1 + 2/a
+.
+2
+t
+R
+≥
+
+The above integrand is non-decreasing with respect to t. Hence
+− a+1
+
+
+2
+&a,δ π
+C
+y2
+J0 (t, x) ≥ a+1 1{t≥} ga (t, x) μ(dy) 1 + 2/a
+2
+
+R
+
+&a,δ π 2  1/a
+C
+=
+1{t≥} ga (t, x) μ(dy) ga (, y) .
+2a+1
+R
+Since the function y → ga (, y) is strictly positive and μ is nonnegative and non&a,δ π 2  1/a 2−(a+1)
+vanishing,
+the integral is positive. Finally, we can take C := C
+
+μ(dy)
+g
+y).
+
+
+a (,
+R
+Lemma 5.5 Suppose β > 1. For all x ∈ R,
+
+β
+
+min |x − y| + |y| ≥
+y∈R
+
+'
+'
+β
+1 '
+1
+'
+β 1−β + '|x| − β 1−β ' if |x| ≥ β 1−β ,
+|x|β
+
+otherwise.
+
+Proof Fix x ∈ R and set f (y) = |x − y|β + |y|. Assume first that x ≥ 0. By studying
+1
+
+the sign of the derivative of f (y), we find that if x ≥ β 1−β , then f achieves its
+1
+
+1
+
+minimum at y = x − β 1−β . If 0 ≤ x ≤ β 1−β , then f achieves it minimum at 0. The
+case x < 0 is treated similarly.
+
+
+Proof of Theorem 3.6 (1) In the following, we use C to denote some nonnegative
+constant, which may depend on a, δ and L ρ , and can change from line to line. Fix
+p ≥ 2. By (4.21) and (4.22), when t ≥ 1,
+∗
+ p (t, x) ≤ Ct 2 1 + exp(
+γ pa t) |J0 (t, x)| ,
+J02  K
+
+where the constant 
+γ p is defined in (3.11). By (3.1) with ς = 0 and (3.22), for α ≥ 0,
+1
+1
+ p (t, x)
+sup log ||u(t, x)||2p = lim
+sup log J02  K
+t→+∞ t |x|≥exp(αt)
+t→+∞ t |x|≥exp(αt)
+lim
+
+∗
+
+≤
+γ pa − αβ.
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+393
+
+∗
+
+∗
+
+Now, 
+γ pa − αβ < 0 if and only if α > β −1 
+γ pa . Therefore,
+
+
+∗
+
+γ pa
+
+1
+sup log E |u(t, x)| p < 0 ≤
+< +∞.
+t→∞ t |x|≥exp(αt)
+β
+
+e( p) := inf α > 0 : lim
+
+ Concerning the ηsufficient condition for (3.22), suppose that for some η > 0,
+R |μ|(dy)(1 + |y| ) < ∞. We consider first the case where η ∈ ]0, 1 + a[. Then
+by (4.3),
+
+K a,0 (1 + t)
+|μ|(dy)
+|J0 (t, x)| ≤
+1
++
+|x − y|1+a
+R
+
+−η
+≤ C K a,0 (1 + t) sup (1 + |y|)(1 + |x − y|)(1+a)/η
+.
+y∈R
+
+Let β̃ = (1 + a)/η > 1. Notice that
+(1 + |x − y|β̃ )(1 + |y|) ≥ 1 + |x − y|β̃ + |y|.
+By Lemma 5.5, we see that
+|J0 (t, x)| ≤ C̃(1 + t)
+
+1
+,
+1 + |x|η
+
+which is condition (3.22) with β = η.
+Now consider the case where η ≥ 1 + a. Notice that if η > 1 + a, then we generally
+do not expect (3.22) to hold with β = η, since for instance, J0 (t, x) ∼ 1/|x|1+a as
+|x| → ∞ when μ = δ0 . Observe that
+
+|μ|(dy)
+G (t, x − y) 1 + |x − y|1+a .
+|J0 (t, x)| ≤
+1+a δ a
+R 1 + |x − y|
+From (4.3), we deduce that for t ≥ 1,
+δ G a (t, x − y)
+
+1 + |x − y|1+a ≤ K a,n t.
+
+Let ϕ = η/(1 + a), so that ϕ ≥ 1. Since for some c̃ > 0,
+
+
+1
+1
++ |x − y|2 + + |y|2ϕ ≥ c̃ 1 + |x − y|2 + |y|2
+2
+2
+
+
+x2
+,
+≥ c̃ 1 +
+2
+
+(1 + |x − y|2 )(1 + |y|2ϕ ) ≥
+
+we see that for all t ≥ 1 and x ∈ R, there is c > 0 such that
+
+|μ|(dy)
+|J0 (t, x)| ≤ C K a,n t
+(1 + |y|η )
+2 )(1 + |y|2ϕ )](1+a)/2
+[(1
++
+|x
+−
+y|
+R
+
+123
+
+394
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+≤ C̃
+
+
+t
+|μ|(dy) (1 + |y|η ),
+(1 + x 2 )(1+a)/2 R
+
+which implies (3.22) with β = 1 + a.
+(2) We only need to consider the case p = 2 because e( p) ≥ e(2) for p ≥ 2.
+ according to
+Assume first that ς = 0. Fix any  ∈ ]0, t/2[ , choose a constant C
+Lemma 5.4 such that
+ 1[,∞[ (t) ga (t, x) =: I (t, x).
+J0 (t, x) = ( δ G a (t, ·) ∗ μ) ≥ C
+By (3.3),
+||u(t, x)||22 ≥ J02 (t, x) + J02  K (t, x) ≥ I2  K (t, x).
+Set ϒ = ϒ l ρ , a, δ (see (3.17)). By Proposition 3.3 and Lemma 5.3(3),
+I2  K
+
+2 C
+(t, x) ≥ C
+
+ t−
+ds E
+0
+
+≥
+
+1/a ∗ ,1/a ∗
+
+ϒs
+
+1/a ∗
+
+
+R
+
+dy ga2 (t−s, x−y) ga2 (s, y)
+
+ t−
+2 C C 2
+C
+∗
+a+1/2 −1/a
+t
+ds E 1/a ∗ ,1/a ∗ ϒs 1/a
+π 3 22a+3
+0
+× s −1/a (t − s)1/a ga2 (t − s, x).
+
+Notice that
+ga2 (t − s, x) ≥ (t − s)2 t −2 ga2 (t, x).
+Hence,
+I2  K
+
+ t−
+2 C C 2
+C
+a+1/2 −2−1/a 2
+(t, x) ≥
+t
+ga (t, x)
+ds
+π 3 22a+3
+0
+
+×E 1/a ∗ ,1/a ∗ ϒs 1/a
+
+∗
+
+s −1/a (t − s)2+1/a .
+
+The above integral is bounded from below by
+E 1/a ∗ ,1/a ∗ ϒ (t − 2)1/a
+
+∗
+
+ t−
+
+ds s −1/a (t − s)2+1/a
+
+t−2
+
+≥ E 1/a ∗ ,1/a ∗ ϒ (t − 2)1/a
+
+∗
+
+ 2+1/a
+.
+(t − )1/a
+
+Therefore, we have
+I2  K (t, x) ≥ C ga2 (t, x) t −2−1/a (t − )−1/a E 1/a ∗ ,1/a ∗ ϒ(t − 2)1/a
+
+∗
+
+,
+(5.8)
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+395
+
+where
+C=
+
+2 C C 2
+ 3+1/a C
+a+1/2
+π 3 22a+3
+
+.
+
+Because x → ga (t, x) is an even function, decreasing for x ≥ 0, we deduce that for
+all β > 0,
+sup
+
+|x|>exp(βt)
+
+||u(t, x)||22 ≥ C ga2 (t, exp(βt)) t −2−1/a (t − )−1/a
+×E 1/a ∗ ,1/a ∗ ϒ(t − 2)1/a
+
+∗
+
+.
+
+Because a > 0, there exists t0 ≥ 0 such that for all t ≥ t0 , t 2/a ≤ e2βt , so
+ga2 (t, exp(βt)) =
+
+t2
+t2
+1
+1
+≥
+.
+π 2 t 2/a + e2βt a+1
+π 2 2a+1 e2β(a+1)t
+
+Finally, by the asymptotic expansion of the Mittag-Leffler function in Lemma 4.2,
+1
+∗
+sup log ||u(t, x)||22 ≥ ϒ a − 2β(a + 1) .
+t→∞ t |x|>exp(βt)
+lim
+
+(5.9)
+
+Therefore,
+
+e(2) = sup β > 0 : lim
+
+1
+
+sup
+
+t→+∞ t |x|>exp(βt)
+
+log ||u(t, x)||22 > 0
+
+
+
+∗
+≥ sup β > 0 : ϒ a − 2β(a + 1) > 0 =
+
+∗
+
+ϒa
+.
+2(a + 1)
+
+Now let us consider the case where there is c > 0 with J0 ≥ c, or ς = 0. In this
+case, by (3.3) and Proposition 3.3,
+∗
+
+||u(t, x)||22 ≥ (c2 + ς 2 ) 1  K (t, x) ≥ Ct 1/a E 1/a ∗ ,1+1/a ∗ ϒt 1/a
+
+∗
+
+.
+
+This lower bound does not depend on x and hence, by Lemma 4.2, we get (5.9) with
+∗
+the right-hand side replaced by ϒ a .
+This completes the proof of Theorem 3.6.
+
+
+Proof of Theorem 3.4 (2) If ς = 0, then from (3.3) and Proposition 3.3, for some
+constant C > 0,
+∗
+
+||u(t, x)||22 ≥ ς 2 1  K (t, x) ≥ C ς 2 t 1/a E 1/a ∗ ,1+1/a ∗ ϒ(l ρ , a, δ)t 1/a
+
+∗
+
+,
+
+123
+
+396
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+where the constant ϒ(l ρ , a, δ) is defined in (3.17). Then use the asymptotic expansion
+of E α,β (z) in Lemma 4.2 to obtain
+m 2 (x) ≥ ϒ l ρ , a, δ
+
+a∗
+
+.
+
+(5.10)
+
+If ς = 0, then from (3.3), (5.8) and the asymptotics of E α,β (z) in Lemma 4.2, we
+obtain, via the calculation that led to (5.9), but without replacing x by exp(βt), the
+same lower bound as (5.10). Note that this lower bound does not depend on x. This
+proves the statement (2) with p = 2. For p > 2, we use Hölder’s inequality
+
+
+
+2/ p
+E |u(t, x)|2 ≤ E |u(t, x)| p
+.
+Hence, m p (x) ≥ 2p m 2 (x). This completes the proof of Theorem 3.4.
+
+
+
+
+Acknowledgments The authors thank Davar Khoshnevisan for interesting discussions on this problem. A
+preliminary version of this work was presented at a conference at Michigan State University, East Lansing,
+USA, August 2013. The authors also thank two anonymous referees for a careful reading of this paper and
+many useful suggestions, which led to significant improvements.
+
+References
+1. Balan, R., Conus, D.: Intermittency for the wave and heat equations with fractional noise in time. Ann.
+Probab. (to appear)
+2. Balan, R., Conus, D.: A note on intermittency for the fractional heat equation. Stat. Probab. Lett. 95,
+6–14 (2014)
+3. Bertini, L., Cancrini, N.: The stochastic heat equation: Feynman-Kac formula and intermittence. J.
+Stat. Phys. 78(5–6), 1377–1401 (1995)
+4. Carlen, E., Krée, P.: L p estimates on iterated stochastic integrals. Ann. Probab. 19(1), 354–368 (1991)
+5. Carmona, R.A., Molchanov, S.A.: Parabolic Anderson problem and intermittency. Mem. Am. Math.
+Soc. 108(518), Viii+125 (1994)
+6. Chen, L., Dalang, R.C.: Moments and growth indices for nonlinear stochastic heat equation with rough
+initial conditions. Ann. Probab. (2015). arXiv:1307.0600
+7. Chen, L., Dalang, R.C.: Moment bounds and asymptotics for the stochastic wave equation. Stoch.
+Process. Appl. 125, 1605–1628 (2015)
+8. Chen, L., Kim, K.: A comparison principle for the nonlinear stochastic fractional heat equation (2014).
+arXiv:1410.0604
+9. Conus, D., Joseph, M., Khoshnevisan, D., Shiu, S.-Y.: Initial measures for the stochastic heat equation.
+Ann. Inst. Henri Poincaré Probab. Stat. 50(1), 136–153 (2014)
+10. Conus, D., Khoshnevisan, D.: On the existence and position of the farthest peaks of a family of
+stochastic heat and wave equations. Probab. Theory Relat. Fields 152(3–4), 681–701 (2012)
+11. Dalang, R.C.: Extending the martingale measure stochastic integral with applications to spatially
+homogeneous s.p.d.e.’s. Electron. J. Probab. 4(6), 1–29 (1999)
+12. Debbi, L.: Explicit solutions of some fractional partial differential equations via stable subordinators.
+J. Appl. Math. Stoch. Anal. 2006, 93502 (2006). doi:10.1155/JAMSA/2006/93502
+13. Debbi, L., Dozzi, M.: On the solutions of nonlinear stochastic fractional partial differential equations
+in one spatial dimension. Stoch. Process. Appl. 115(11), 1764–1781 (2005)
+14. Erdélyi, A., Magnus, W., Oberhettinger, F., Tricomi, F.G.: Tables of Integral Transforms, vol. I.
+McGraw-Hill Book Company Inc., New York (1954)
+15. Foondun, M., Khoshnevisan, D.: Intermittence and nonlinear parabolic stochastic partial differential
+equations. Electron. J. Probab. 14(21), 548–568 (2009)
+16. Gawronski, W.: On the bell-shape of stable densities. Ann. Probab. 12(1), 230–242 (1984)
+
+123
+
+Stoch PDE: Anal Comp (2015) 3:360–397
+
+397
+
+17. Khoshnevisan, D.: Analysis of Stochastic Partial Differential Equations. CBMS Regional Conference
+Series in Mathematics, vol. 119, American Mathematical Society, Providence (2014)
+18. Lukacs, E.: Characteristic Functions, 2nd edn. Hafner Publishing Co., New York (1970)
+19. Mainardi, F., Luchko, Y., Pagnini, G.: The fundamental solution of the space-time fractional diffusion
+equation. Fract. Calc. Appl. Anal. 4(2), 153–192 (2001)
+20. Oldham, K., Myland, J., Spanier, J.: An Atlas of Functions, 2nd edn. Springer, New York (2009)
+21. Olver, F.W.J., Lozier, D.W., Boisvert, R.F., Clark, C.W. (eds.): NIST Handbook of Mathematical
+Functions. U.S. Department of Commerce National Institute of Standards and Technology, Washington,
+DC (2010)
+22. Podlubny, I.: Fractional Differential Equations. Academic Press Inc., San Diego, CA (1999)
+23. Sato, K.: Lévy Processes and Infinitely Divisible Distributions. Revised edition of the 1999 English
+translation. Cambridge University Press, Cambridge (2013)
+24. Uchaikin, V.V., Zolotarev, V.M.: Chance and Stability. VSP, Utrecht (1999)
+25. Walsh, J.B.: An Introduction to Stochastic Partial Differential Equations. École d’été de probabilités
+de Saint-Flour. XIV–1984, pp. 265–439. Springer, Berlin (1986)
+26. Yosida, K.: Functional Analysis. Springer, Berlin (1995)
+27. Zolotarev, V.M.: One-Dimensional Stable Distributions. American Mathematical Society, Providence
+(1986)
+
+123
+
+

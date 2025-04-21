@@ -1,1304 +1,0 @@
-Journal of Functional Analysis 180, 195209 (2001)
-doi:10.1006jfan.2000.3685, available online at http:www.idealibrary.com on
-
-A Reflected Stochastic Heat Equation as Symmetric
-Dynamics with Respect to the 3-d Bessel Bridge
-Lorenzo Zambotti
-Scuola Normale Superiore, Piazza dei Cavalieri 7, 56126 Pisa, Italy
-E-mail: zambotticibs.sns.it
-Communicated by Paul Malliavin
-Received July 20, 2000; accepted September 6, 2000
-
-We prove that a stochastic heat equation with reflection at 0, on the spatial
-interval [0, 1] with Dirichlet boundary conditions and additive white-noise, admits
-an explicit symmetrizing invariant measure on C([0, 1]): the 3-d Bessel Bridge, i.e.,
-the law of the modulus of a 3-dimensional Brownian motion conditioned to be 0
-at time 1, a classical measure in probability theory, also connected with the theory
-of excursions of Brownian motion. This is a non-trivial example of a Gibbs-type
-measure being singular with respect to the reference Gaussian measure and concen 2001
-trated on the convex set of positive, continuous functions on [0, 1].
-Academic Press
-
-1. INTRODUCTION
-In [6], Nualart and Pardoux studied existence and uniqueness of a solution to a reflected stochastic heat equation, namely of a pair (u, '), where
-u is a continuous function of (t, !) # O :=[0, +)_[0, 1] and ' is a
-positive measure on O, satisfying
-
-{
-
- 2W '(dt, d!)
-u 1  2u
-=
-+
-& f (!, u(t, !))+
-2
-t 2 !
-t !
-dt d!
-u(0, !)=x(!),
-u0,
-
-u(t, 0)=u(t, 1)=0
-
-(1)
-
-| u d'=0.
-O
-
-where x : [0, 1] [ [0, ) is continuous with x(0)=x(1)=0, [W(t, !) :
-(t, !) # O] is a Brownian sheet, and f : [0, 1]_R [ R.
-195
-0022-123601 35.00
-Copyright  2001 by Academic Press
-All rights of reproduction in any form reserved.
-
-196
-
-LORENZO ZAMBOTTI
-
-The aim of this paper is to prove that Eq. (1) admits, on the space
-C 0(0, 1) of continuous functions of ! # [0, 1], satisfying Dirichlet boundary
-conditions, an explicit invariant and symmetrizing measure, given by
-1
-
-x(!)
-
-0
-
-0
-
-{ | d! |
-
-=
-
-2 f (!, s) ds &(dx),
-
-exp &
-
-x # C 0(0, 1),
-
-(2)
-
-where & is a well-known probability measure on C 0(0, 1): the 3-d Bessel
-bridge, namely the law of the modulus of a 3-dimensional Brownian
-motion (B { ) { # [0, 1] , conditioned to be 0 at {=1. This measure plays an
-important role in the study of Brownian motion (see [7]).
-On the other hand, Da Prato proved in [2] the existence of a symmetric
-semigroup (P t ) t0 on L 2(H, ( H e &2U d+) &1 e &2U d+), associated with the
-stochastic differential inclusion
-dX # (AX&U(X )) dt+dW,
-
-X(0)=x # H,
-
-(3)
-
-where H is a separable Hilbert space, A :=D(A)/H [ H is a strictly
-negative self-adjoint operator such that Q :=(&2A) &1 is trace-class, + is
-the Gaussian measure N(0, Q) on H with 0 mean and covariance operator
-Q, and W is a cylindrical white-noise on H. Moreover, U: H [ R _ [+]
-is a convex, lower semicontinuous function, satisfying suitable integrability
-conditions with respect to + and
-+(x : U(x)<+ and U(x){<)=1,
-where U(x), the subdifferential of U at x, is defined as the subset of H:
-U(x) :=[ y # H : U(x+h)U(x)+( h, y), \h # H ].
-Equation (1) can be interpreted as an example of (3), setting H :=
-L 2(0, 1), A :=(12) d 2d! 2 on H with Dirichlet boundary conditions,
-
-{
-
-1
-
-x(!)
-
-0
-
-0
-
-d! |
-U(x) := |
-
-f (!, s) ds
-
-if x0
-
-+
-
-(4)
-
-otherwise
-
-and defining, for all non-negative x # H, U(x) as the subset of the dual
-space M of C 0(0, 1), M :=[signed measures on (0, 1)],
-U(x) :=[m # M : U(x+z)U(x)+( z, m), \z # C 0(0, 1)]
-
-{
-
-= f (!, x(!)) d!& m # M : m0,
-
-|
-
-=
-
-x(!) m(d!)=0 .
-(0, 1)
-
-197
-
-REFLECTED STOCHASTIC HEAT EQUATION
-
-Then (1) can be written formally as a differential inclusion of measures:
-
-\
-
- 2W
-u
-&Au&
-d! # U (u(t, } )).
-t
-t !
-
-+
-
-However, in this case +(U=+)=1 (see Lemma 5 below) and the
-measure ``( H e &2U d+) &1 e &2U d+'' is not well defined. Our result shows
-that a natural Gibbs-type measure for (1) is provided by (2). Notice that
-& is not Gaussian and is even singular with respect to the reference
-Gaussian measure +. Moreover, the support of & is a closed convex set having empty interior both in the topologies of L 2(0, 1) and C([0, 1]).
-The proof we give relies on the construction of solutions to (1) given by
-Nualart and Pardoux in [6] and on a result of Biane on a connection
-between the law of the Brownian Bridge and the law of the 3-d Bessel
-Bridge (see [1] and Theorem 4 below).
-
-2. DEFINITIONS
-Our aim is to find a symmetrizing invariant measure for the process
-x [ u(t, } ), t0, where (u, ') satisfies:
-
-{
-
- 2W '(dt, d!)
-u 1  2u
-=
-+
-&
-f
-(!,
-u(t,
-!))+
-t 2 ! 2
-t !
-dt d!
-u(0, !)=x(!),
-u+:0,
-
-u(t, 0)=u(t, 1)=0
-
-(5)
-
-| (u+:) d'=0,
-O
-
-where :0, x: [0, 1] [ [&:, +) is continuous and x(0)=x(1)=0.
-We introduce the following notations: (t, !) # O :=[0, +)_[0, 1],
-H :=L 2(0, 1) with scalar product ( } , } ) and norm & } &,
-1
-
-( h, k) :=
-
-| h(!) k(!) d!,
-
-&h& 2 :=( h, h),
-
-0
-
-C 0(0, 1) :=[c: [0, 1] [ R continuous, c(0)=c(1)=0],
-A: D(A)/H [ H,
-
-D(A) :=H 2 & H 10(0, 1),
-
-A :=
-
-1 d2
-.
-2 d! 2
-
-198
-
-LORENZO ZAMBOTTI
-
-We set K : :=[h # H : h &:] with :0, and we denote by 6 K: : H [ K :
-the projection from H onto the closed convex set K : /H. Recall that 6 K:
-is 1-Lipschitz continuous. If DH, we denote by C b(D) the space of all
-.: D [ R being bounded and uniformly continuous with respect to & } &. If
-DH and . # C b(D), we denote by | . the modulus of continuity of .:
-| . : [0, ) [ [0, 1],
-
-| .(r) :=sup[ |.(x)&.(x$)| 7 1 : &x&x$&r].
-
-We identify C b(K : ) with a subspace of C b(H ) by means of the injection:
-C b(K : ) % . [ . b 6 K: # C b(H ). If 0:;, then C b(K : )C b(K ; ).
-If [m n ] n _ [m] is a sequence of probability measures on (H, B(H )),
-where B(H ) is the Borel _-field of H, we say that m n converges weakly to
-m, if:
-lim
-
-nÄ
-
-| . dm = | . dm,
-
-\. # C b(H ).
-
-n
-
-H
-
-H
-
-Given a Markov process [Y(t, x) : t0, x # D] on DH, we say that a
-probability measure m on D is symmetrizing for Y, if, setting for all
-. # C b(D) : R Yt .(x) :=E[.(Y(t, x))], x # D, we have:
-
-| . R  dm=|  R . dm,
-D
-
-Y
-t
-
-Y
-t
-
-D
-
-\.,  # C b(D).
-
-A symmetrizing measure is in particular invariant; i.e.,
-
-| R . dm= | . dm,
-D
-
-Y
-t
-
-\. # C b(D).
-
-D
-
-We denote by 1 D ( } ) the characteristic function of a set D. We sometimes
-write m(.) for  H . dm, . # C b(H ).
-By W=[W(t, !) : (t, !) # O] we denote a two-parameter Wiener process
-defined on a complete probability space (0, F, P), i.e., W is a Gaussian
-process with zero mean and covariance function
-E [W(t, !) W(t$, !$)]=(t 7 t$)(! 7 !$),
-
-(t, !), (t$, !$) # O.
-
-We denote by Ft the _-field generated by the random variables [W(s, !) :
-
-(s, !) # [0, t]_[0, 1]] and by C 
-c (0, 1) the subset of C 0(0, 1) of all C
-functions with support being compact in (0, 1).
-We always assume in the following that:
-(H1)
-
-f =f 1 + f 2 , f 1 , f 2 : [0, 1]_R [ R are jointly measurable.
-
-(H2) There exists c>0 such that | f 1(!, y)& f 1(!, y$)| c | y& y$| for
-all ! # [0, 1], y, y$ # R.
-
-REFLECTED STOCHASTIC HEAT EQUATION
-
-(H3)
-
-199
-
-f 2(!, } ) is non-decreasing and continuous, for all ! # [0, 1].
-
-(H4) There exist a constant *<? 2, a # H and a polynomial p of
-degree N # N, such that for all ! # [0, 1], y # R:
-&a(!)&* | y| 2f (!, y)a(!)+p( | y| ).
-Following [6], we set the following:
-Definition 1. A pair (u, ') is said to be a solution of Eq. (5) with
-reflection in &:0 and initial value x # K : & C 0(0, 1), if:
-(i) [u(t, !) : (t, !) # O] is a continuous and adapted process, i.e.,
-u(t, !) is Ft -measurable for all (t, !) # O, and a.s. u( } , } ) is continuous on
-O, u(t, } ) # K : & C 0(0, 1) for all t0, and u(0, } )=x.
-(ii) '(dt, d!) is a random positive measure on O such that
-'([0, T]_[$, 1&$])<+ for all T, $>0, and ' is adapted; i.e., '(B) is
-Ft -measurable for every Borel set B/[0, t]_[0, 1].
-(iii)
-
-For all t0 and . # C 
-c (0, 1), setting u s :=u(s, } ),
-t
-
-( u t , .) &
-
-t
-
-| ( u , A.) ds+| ( f ( } , u ), .) ds
-s
-
-s
-
-0
-
-0
-
-t
-
-=( x, .) +
-
-t
-
-1
-
-0
-
-0
-
-s, !
-
-0
-
-(iv)
-
-1
-
-| | .(!) dW + | | .(!) '(ds, d!).
-0
-
- O (u+:) d'=0.
-
-Finally, we will use the following:
-Lemma 1. Let T be a Polish metric space, and let [m n ] n _ [m], respectively
-[. n ] n , be a sequence of probability measures, resp. of real-valued continuous
-functions, on T, satisfying:
-v m n converges weakly to m.
-v The family [. n ] n is uniformly bounded and equicontinuous on T.
-v . n(x) has a limit .(x) as n Ä , for all x # S, with ST Borel and
-m(S)=1.
-Then:
-lim
-
-nÄ
-
-| . dm = | . dm.
-n
-
-T
-
-n
-
-S
-
-200
-
-LORENZO ZAMBOTTI
-
-Proof. We can suppose that 0. n 1 for all n. By Prokhorov's
-theorem, there exists for every $>0 a compact set Q $ /T such that eventually m n(Q $ )1&$. Let [. nk ] k be any subsequence of [. n ] n . On Q $ we
-can apply the AscoliArzela theorem and obtain uniform convergence of a
-sub-subsequence [. nk(l ) ] l to a continuous function f: Q $ [ R. Then:
-
-| .
-T
-
-nk(l )
-
-dm nk(l ) &
-
-| .
-T
-
-nk(l )
-
-dmm nk(l )(T&Q $ )+
-$+2$+
-
-| .
-Q$
-
-| f [dm
-Q$
-
-nk(l )
-
-nk(l )
-
-[dm nk(l ) &dm]
-
-&dm],
-
-where for ll 0 , sup Q$ |. nk(l ) & f | $. Since m(T&S)=0 and Q $ is closed,
-lim
-
-nÄ
-
-lim sup
-
-lÄ
-
-| .
-T
-
-n
-
-T
-
-S
-
-| f dm  | f dm,
-n
-
-Q$
-
-nÄ
-
-lim sup
-
-| . dm=| . dm,
-
-nk(l )
-
-and therefore:
-
-Q$
-
-dm nk(l ) 
-
-| . dm.
-S
-
-Changing . n with 1&. n , we obtain the thesis.
-
-K
-
-3. THE PROCESS X : , :0
-In [6], the following theorem is proved:
-Theorem 1. Assume that f satisfies (H1), (H2), (H3), (H4) and let
-x # K : & C 0(0, 1). Then there exists a unique solution (u, ') to Eq. (5) with
-reflection in &: and initial value x.
-We recall the strategy of the proof, given in [6], of the existence of
-solutions. First, the following approximating problem is introduced:
-
-{
-
- 2W (:+u =: ) &
-u =: 1  2u =:
-=
-=
-+
-&
-f(
-}
-,
-u
-(t,
-}
-))+
-:
-t 2 ! 2
-t !
-=
-u =:(0, } )=x # H,
-
-u =:(t, 0)=u =:(t, 1)=0,
-
-\t0.
-
-(6)
-
-201
-
-REFLECTED STOCHASTIC HEAT EQUATION
-
-with =>0, (r) & :=sup[ &r, 0], and :0. This is now a SPDE in L 2(0, 1)
-with additive noise and monotone or Lipschitz-continuous drift terms, for
-which existence and uniqueness of a solution are well known (see [3]).
-Then, if x # K : & C 0(0, 1), the following is proved:
-(a)
-
-u =:(t, } ) # C 0(0, 1) for all t0, and u =: is continuous on O.
-
-(b) The map 0<= [ u =:(t, !) is non-decreasing for all (t, !) # O. The
-limit lim = a 0 u =:(t, !)=sup =>0 u =:(t, !)=: u :(t, !) is finite for all (t, !) # O,
-u :(t, } ) # K : & C 0(0, 1) for all t0, and u : is continuous on O.
-(c) The measure on O, ' =:(dt, d!) :=(1=)(:+u =: ) & dt d!, converges
-distributionally to a measure ' :(dt, d!) on O.
-(d) The pair (u : , ' : ) is the solution to (5) with reflection in &: and
-initial value x # K : & C 0(0, 1).
-We set for all t0, :0, =>0:
-v X :(t, x) # C 0(0, 1), X :(t, x)(!) :=u :(t, !), x # K : & C 0(0, 1),
-v X =:(t, x) # H, X =:(t, x)(!) :=u =:(t, !), x # H.
-Lemma 2. For all :0, =>0, t0, we have: \x, x$ # C 0(0, 1),
-&X =:(t, x)&X =:(t, x$)&e ct &x&x$&,
-
-(7)
-
-where & } & denotes the norm in H and c>0 is the constant of (H2).
-Proof.
-
-By the monotonicity properties of ( } ) & and f 2(!, } ) we have
-1d
-&X =:(t, x)&X =:(t, x$)& 2 c &X =:(t, x)&X =:(t, x$)& 2
-2 dt
-
-and the thesis follows from Gronwall's lemma. K
-Therefore, the same estimate holds for X : , :0 : \x, x$ # K : & C 0(0, 1),
-&X :(t, x)&X :(t, x$)&e ct &x&x$&
-
-(8)
-
-and we can uniquely extend X =:(t, } ), respectively X :(t, } ), to maps from H
-to H, resp. from K : to K : , that we denote by the same symbols, satisfying
-(7) for all x, x$ # H, resp. (8) for all x, x$ # K : . We set for all :0, =>0,
-. # C b(H ), t0:
-P =:(t) .: H [ R,
-
-P =:(t) .(x) :=E[.(X =:(t, x))],
-
-x # H,
-
-(9)
-
-P :(t) .: K : [ R,
-
-P :(t) .(x) :=E[.(X :(t, x))],
-
-x # K: .
-
-(10)
-
-202
-
-LORENZO ZAMBOTTI
-
-Lemma 3. For all :0, =>0, . # C b(H ), t0, we have:
-P =:(t) . # C b(H ),
-
-| P =: (t) .(r)| .(e ctr)
-
-\r0,
-
-(11)
-
-\r0,
-
-(12)
-
-lim P =:(t) .(x)=P :(t) .(x)
-
-\x # K : ,
-
-(13)
-
-P :(s) P :(t) .(x)=P :(t+s) .(x),
-
-\x # K : .
-
-(14)
-
-ct
-
-P :(t) . # C b(K : ),
-
-| P: (t) .(r)| .(e r)
-
-=a0
-
-In particular, (P :(t)) t0 is a Markov semigroup acting on C b(K : ).
-Proof.
-
-For (12), notice that, by (8), for all x, x$ # K : :
-|P :(t) .(x)&P :(t) .(x$)| E[ |.(X :(t, x))&.(X :(t, x$))| ]
-E[| .(&X :(t, x)&X :(t, x$)&)]
-| .(e ct &x&x$&),
-
-and (11) follows analogously. Equation (13) is a consequence of (b) in the
-proof of Theorem 1 and (11). It is well known that (P =:(t)) t0 is a semigroup acting on C b(H ): since the family of probability measures [m = ] =>0 ,
-where m = is the law of X =:(s, x), and the family of functions [P =:(t) .] =>0
-satisfy the Hypothesis of Lemma 1; Eq. (14) follows. K
-Lemma 4. For all . # C b(H ), lim : a 0 P :(t) .(x)=P 0(t) .(x), t0, x # K 0 .
-Proof. If x # K 0 & C 0(0, 1), then the map 0<: [ X =:(t, x)(!) is nondecreasing for all (t, !) # O, =>0. Therefore,
-lim X :(t, x)(!)=sup X :(t, x)(!)=sup sup X =:(t, x)(!)
-:a0
-
-:>0
-
-:>0 =>0
-=
-:
-
-=sup sup X (t, x)(!)=sup X =0(t, x)(!)
-=>0 :>0
-
-=>0
-
-=X 0(t, x)(!),
-since sup :>0 X =:(t, x)( } )=X =0(t, x)( } ) by the uniqueness of solutions to (6).
-The general case follows by (12) and a density argument. K
-
-4. THE BROWNIAN BRIDGE RESTRICTED TO K :
-AS SYMMETRIZING MEASURE FOR X : , :>0
-Recall that the OrnsteinUhlenbeck process
-Z(t, x) :=e tAx+
-
-t
-
-|e
-0
-
-(t&s) A
-
-dW s
-
-t0,
-
-x # H,
-
-203
-
-REFLECTED STOCHASTIC HEAT EQUATION
-
-is, under our assumptions, a continuous Markov process with values in H,
-admitting as symmetrizing measure + :=N(0, (&2A) &1 ), i.e., the Gaussian
-measure on H with 0 mean and covariance operator (&2A) &1.
-Our next lemma identifies + with a well-known probability measure on
-C 0(0, 1): the law of the Brownian bridge. Recall that the Brownian bridge
-is defined as a linear Brownian motion (w { ) { # [0, 1] , conditioned to be 0 at
-{=1, and can be realized as [0, 1] % { [ w { &{w 1 . The law of the
-Brownian bridge is concentrated on C 0(0, 1) and is the unique Gaussian
-measure on R [0, 1] with 0 mean and covariance function: 1({, _)=
-{ 7 _&{_, _, { # [0, 1], (see [7, Chap. I]).
-Lemma 5. The measure + coincides with the law of the Brownian bridge.
-Proof. Recall that the measure + is concentrated on C([0, 1])/H. By
-definition of Gaussian measures, the following holds for all h, k # H:
-
-| ( x, h)( x, k) N(0, (&2A) )(dx)=( (&2A)
-&1
-
-&1
-
-h, k).
-
-(15)
-
-H
-
-Since the operator (&2A) &1 can be expressed as an integral operator with
-kernel: ! 7 _&!_, !, _ # [0, 1], then setting in (19) h=/ [0, t] , k=/ [0, s] ,
-s, t # [0, 1], and differentiating with respect to t and s, we obtain:
-
-|
-
-x(t) x(s) d+(x)=t 7 s&ts.
-
-K
-
-C([0, 1])
-
-Lemma 5 allows us to calculate explicitly +(K : ):
-+(K : )=1&exp[ &2: 2 ],
-
-:0,
-
-(16)
-
-(see [7, Chap. III, Exercise (3.14)]). We introduce the functions
-F: L N+1(0, 1)/H [ R,
-
-F (x) :=
-
-1
-
-x(!)
-
-0
-
-0
-
-| d! |
-
-f (!, s) ds,
-
-V : : H [ [0, +),
-V :(x) := 12
-
-1
-
-| [(:+x(!)) ] d!= [d(x, K )] ,
-0
-
-&
-
-2
-
-1
-2
-
-2
-
-:
-
-where N is the degree of p in (H4) and d(x, K : ) denotes the distance in H
-of x from the closed convex set K : , :0. Notice that +(L N+1(0, 1))=1,
-
-204
-
-LORENZO ZAMBOTTI
-
-and by (H2), (H3), and (H4), exp( &F ) is well defined and satisfies for all
-x # H,
-*
-\
-&x& 2
-exp(&2F (x))exp ( a, x) + &x& 2 exp(C &a& 2 ) exp
-2
-2
-
-\
-
-+
-
-\
-
-+ (17)
-
-for some *<\<? 2, C>0. Since &2A? 2 >\, we have:
-
-| exp( &2F (x)) +(dx)e
-
-C &a&2
-
-H
-
-\
-
-| exp \ 2 &x& + N(0, (&2A) )
-2
-
-&1
-
-H
-
-=e C &a&
-
-1
-
-2
-
-- det(I+\(2A) &1 )
-
-<.
-
-(18)
-
-V : is Frechet differentiable on H with Lipschitz-continuous gradient
-{V :(x)=&(:+x( } )) &, x # H. F belongs to the Sobolev space W 1, p(H, +)
-for all p # [1, [, with gradient {F (x)= f ( } , x( } )), x # L 2N (0, 1), and
-+(L 2N (0, 1))=1. Equation (6) can now be written in the following form:
-1
-dX := = AX := &{F (X := )& { V :(X := ) dt+dW
-=
-
-{ \
-
-+
-
-(19)
-
-:
-=
-
-X (0, x)=x # H
-
-If =>0, (19) is a gradient system, namely (see [4, Sect. 8.6], and
-[5, Chap. 2]):
-Proposition 1. If =>0, then \:0, setting
-Z :, = :=
-
-| e
-
-&2F&(2V: =)
-
-d+>0,
-
-H
-
-the probability measure on H,
-& F:, =(dx) :=
-
-1
-2
-exp &2F (x)& V :(x) +(dx),
-Z :, =
-=
-
-{
-
-=
-
-is symmetrizing for the process [X =:(t, x) : t0, x # H ].
-By (16), if :>0 then +(K : )>0, and we can introduce the probability
-measures & : and & F: on K : , with Z : := K: e &2F d+>0:
-d& : :=
-
-1
-1 K d+,
-+(K : ) :
-
-d& F: :=
-
-1
-1 K e &2F d+.
-Z: :
-
-(20)
-
-Theorem 2. If :>0, & F: is a symmetrizing measure for the processes
-[X :(t, x) : t0, x # K : ] and [X :(t, x) : t0, x # K : & C 0(0, 1)].
-
-205
-
-REFLECTED STOCHASTIC HEAT EQUATION
-
-Proof.
-
-First, we have:
-
-1
-2
-1
-1 K (x) e &2F (x) =lim
-exp &2F (x)& V :(x)
-Z: :
-= a 0 Z :, =
-=
-
-{
-
-2
-1
-*
-1
-exp &2F& V : 
-exp ( a, x) + &x& 2
-Z :, =
-=
-Z :, 1
-2
-
-{
-
-=
-
-{
-
-=
-
-= \ x # H,
-\ = # ]0, 1].
-
-Then, by (13), (17), and (18) and by the dominated convergence theorem,
-we obtain:
-& F:( P :(t) .)=lim & F:, =( P =:(t) .)=lim & F:, =(. P =:(t) )=& F:(. P :(t) )
-=a0
-
-=a0
-
-for all .,  # C b(H ). Therefore, & F: is symmetrizing measure for [X :(t, x) :
-t0, x # K : ]. Finally, & F:(K : & C 0(0, 1))=1 and, by Theorem 1, the set
-K : & C 0(0, 1) is invariant for [X :(t, } ) : t0], i.e., x # K : & C 0(0, 1) implies
-X :(t, x) # K : & C 0(0, 1) for all t0, a.s. K
-5. CONVERGENCE OF & : TO &
-Let (B { ) { # [0, 1] be a 3-dimensional Brownian motion. We denote by & the
-law of the 3-d Bessel Bridge, namely of the modulus of B, conditioned to
-be equal to 0 at {=1. The probability measure & is concentrated on K 0 &
-C 0(0, 1). In this section we prove the following:
-Theorem 3. The measures d& : =(1+(K : )) 1 K: d+,
-weakly as : a 0 to the law & of the 3-d Bessel bridge.
-
-:>0,
-
-converge
-
-We recall the following result from [1]:
-Theorem 4. Let (e { ) { # [0, 1] be a 3-d Bessel bridge, and let ` be a random
-variable with uniform distribution on [0, 1] and independent of e. Then the process:
-; { :=e { Ä ` &e ` ,
-
-(; { ) { # [0, 1] ,
-
-where Ä denotes the sum mod 1, is a Brownian bridge.
-Theorem 3 was proved in [8]. We give here a proof, based on Theorem 4,
-which seems to be promising for further developments.
-We set e { : C 0(0, 1) [ R, e {(x) :=x({), { # [0, 1]. Then (e { ) { # [0, 1] is a
-3-d Bessel bridge under &. By Theorem 4 and (16), we have for :>0,
-. # C b(H ),
-& :(.)=
-
-1
-1&exp[ &2: 2 ]
-
-1
-
-| &(.(e
-
-since [e ( } Ä r) &e r  &:]=[e r :].
-
-0
-
-( } Ä r)
-
-&e r ) 1 (er :) ) dr,
-
-(21)
-
-206
-
-LORENZO ZAMBOTTI
-
-Lemma 6. For all r # [0, 1], there exists a regular conditional distribution
-[&( } | e r = y) : y0] of & given e r , such that, setting
-$ .(r, y) :=&(.(e ( } Ä r) &e r ) | e r = y),
-
-. # C b(H ),
-
-r # ]0, 1[,
-
-y0,
-
-we have for all y0:
-lim $ .(r, - r(1&r) y)=lim $ .(r, - r(1&r) y)=&(.).
-ra0
-
-rA1
-
-Proof. Let (B { ) { # [0, ) and (B { ) { # [0, ) be two independent 3-d
-Brownian motions and r # ]0, 1[. Denoting by | } | the euclidean norm in
-R 3, we set b := |B|, b := |B |,
-;(z)({) :=B { &{B 1 +{z,
-
-;(z)({) :=B { &{B 1 +{z,
-
-{ # [0, 1],
-
-z # R 3,
-
-? r , ?^ r : L 2(0, )_L 2(0, ) [ L 2(0, 1),
-? r(c, d )({) :=1 [0, r]({) c({)+1 ] r, 1]({) d(1&{),
-?^ r(c, d )({) :=1 [0, 1&r]({) d(1&r&{)+1 ]1&r, 1]({) c({+r&1).
-(22)
-For all . # C b(H ), we set
-&(.(e) | e r = y) :=E[.(? r(b, b )) | b r = y=b 1&r ],
-E[.(b) | b(1)= y] :=
-
-| _(dn) E[.( |;( yn)| )],
-
-y0,
-
-(23)
-
-y0,
-
-(24)
-
-S2
-
-where S 2 is the unitary sphere in R 3 and _(dn) is the normalized uniform
-distribution on S 2. Then (23), respectively (24), is a regular conditional
-distribution of & given e r , resp. of P(b # } ) given b(1). In particular, the law
-of | ;(0)| is equal to &. By (22) and (23) we have:
-&(.(e ( } Ä r) &e r ) | e r = y)=E[.(?^ r(b, b )& y) | b r = y=b 1&r ].
-
-(25)
-
-Identifying h # L 2(0, 1) with h1 [0, 1] # L 2(0, ), we set . r : H_H [ R,
-. r(h, k) :=.(?^ r(- r h( } r), - 1&r k( } (1&r)))&- r(1&r) y).
-Since for #>0, - # B ( } #) is still a 3-d Brownian motion, we obtain by (25):
-$ .(r, - r(1&r) y)
-=&(.(e ( } Ä r) &e r ) | e r =- r(1&r) y)
-=E[.(?^ r(b, b )&- r(1&r) y) | b r =- r(1&r) y=b 1&r ]
-=E[. r(b, b ) | b 1 =- 1&r y, b 1 =- r y].
-
-(26)
-
-207
-
-REFLECTED STOCHASTIC HEAT EQUATION
-
-Since for all n # S 2 and y0,
-lim . r(|;(- 1&r yn)|, | ;(- r yn)| )=.( | ;(0)(1& } )| ),
-ra0
-
-lim . r( | ;(- 1&r yn)|, | ;(- r yn)| )=.( | ;(0)| ),
-rA1
-
-and since & is invariant by the time-change { [ 1&{, the thesis follows by
-(24)(26) and by the dominated convergence theorem. K
-Proof of Theorem 3. We split the integral on [0, 1] in (21) into two
-integrals on [0, 12] and [12, 1], respectively. Conditioning with respect
-to e r and setting c : :=(1&exp[ &2: 2 ]), we obtain
-1
-c:
-
-|
-
-12
-
-0
-
-=
-
-dr &(.(e ( } Ä r) &e r ) 1 (er :) )
-1
-c:
-
-|
-
-1
-c:
-
-|
-
-12
-
-dr
-0
-
-|
-
-:
-
-dy
-
-0
-
-12
-
-
-
-y2
-2
-2
-y
-exp
-&
-$ .(r, y)
-?[r(1&r)] 3
-2r(1&r)
-
-{
-
-=
-
-y2
-2 2
-y exp &
-$ .(r, - r(1&r) y)
-?
-2
-
-:- r(1&r)
-
-
-{ =
-1 2
-y
-=
-dy exp &
-{ 2 = y | dr $ (r, - r(1&r) y)
-c ? |
-:
-y
-2
-y
-+
-dy exp &
-dr $ (r, - r(1&r) y)
-|
-
-{
-=\
-c
-?
-2 :+ |
-1
-2:
-:
-=: I (:)+I (:),
-\(:, y) := 1& 1&
-\ y + + t \ y+
-2\
-=
-
-dr
-
-0
-
-|
-
-dy
-
-0
-
-2
-
-2:
-
-2
-
-12
-
-.
-
-0
-
-:
-
-0
-
-2
-
-+
-
-:
-
-2:
-
-2
-
-2
-
-\(:, y)
-
-.
-
-0
-
-2
-
-1
-
-2
-
-2
-
-as : a 0, y>0. It is easy to see that lim : a 0 I 1(:)=0, while I 2(:) tends to
-(12) &(.) by Lemma 6 and the dominated convergence theorem. Since
-analogous computations hold for the integral on [12, 1], we obtain that
-& :(.) converges to &(.) and Theorem 3 is proved. K
-
-6. 3-D BESSEL BRIDGE AS SYMMETRIZING MEASURE FOR X 0
-In this section we prove that the probability measure on K 0 :
-d& F :=
-
-1
-exp[ &2F ] d&,
- K0 exp[ &2F ] d&
-
-(27)
-
-208
-
-LORENZO ZAMBOTTI
-
-is well defined, that & F: , defined in (20), converges weakly to & F as : a 0, and
-that X 0 is symmetric with respect to & F. The difficulty is that exp( &2F ) is
-not bounded, so that we cannot apply directly Theorem 3.
-Lemma 7. &(e &2F ) # ]0, [ and & F: converges weakly to & F as : a 0.
-Proof. We retain the notations of the proof of Lemma 6. Moreover,
-we set for all . # C b(H ), . F :=.e &2F. By Lemma 5 the law of ;(0) on
-H_H_H is +  +  +=N(0, Q), Q :=(&2A) &1 Ä (&2A) &1 Ä (&2A) &1.
-Since &2A? 2 >*, we have by (17), (H4) and by +(L N+1(0, 1))=1:
-
-| exp[ &2F ] d&=E[exp[ &2F ( | ;(0)| )]]
-=
-
-| exp[ &2F (|z| )] N(0, Q)(dz) # ]0, [.
-H3
-
-Notice that
-
-{
-
-*
-\
-2
-&;( yn)& 2 e Cy exp
-&;(0)& 2
-2
-2
-
-=
-
-(28)
-
-_ { 2 &;(0)& =& =- det(I&\Q)<.
-
-(29)
-
-exp
-
-=
-
-{
-
-for some *<\<? 2, C>0, and:
-E exp
-
-\
-
-1
-
-2
-
-By (23), (24), (28), and (29), &(e &2F (e) | e(r)= y)<, and therefore
-$ (. F )(r, y) is well defined for all r # ]0, 1[ and y0. Arguing as in the proof
-of Lemma 6, by the dominated convergence theorem we have for all
-. # C b(H ) and y0,
-lim $ (. F )(r, - r(1&r) y)=lim $ (.F )(r, - r(1&r) y)=&(. F ),
-ra0
-
-rA1
-
-(30)
-
-and the thesis follows proceeding as in the proof of Theorem 3. K
-Theorem 5. & F is a symmetrizing measure for the processes [X 0(t, x) :
-t0, x # K 0 ] and [X 0(t, x) : t0, x # K 0 & C 0(0, 1)].
-Proof. Arguing as in the proof of Theorem 2, the thesis follows from
-Lemmas 1, 3, 4, and 7, Theorems 1 and 2, and from & F (K 0 & C 0(0, 1))=
-&(K 0 & C 0(0, 1))=1. K
-
-REFLECTED STOCHASTIC HEAT EQUATION
-
-209
-
-ACKNOWLEDGMENTS
-The author thanks the University of Bielefeld for a very pleasant stay, during which part
-of this work was done.
-Note added in proof. While correcting proofs, we were informed that the result of
-Theorem 5 in this paper was stated independently in a recent preprint [9] of T. Funaki and
-S. Olla.
-
-REFERENCES
-1. P. Biane, Relations entre pont et excursion du mouvement Brownien reel, Ann. Inst. Henri
-Poincare 22 (1986), 17.
-2. G. Da Prato, Monotone gradient systems in L 2 spaces, to appear in ``Proceedings of the
-Ascona Conference on Stochastic Analysis, Random Fields and Applications,'' 1999.
-3. G. Da Prato and J. Zabczyk, ``Stochastic Equations in Infinite Dimensions,'' Encyclopedia
-of Mathematics and its Applications, Cambridge Univ. Press, Cambridge, UK, 1992.
-4. G. Da Prato and J. Zabczyk, ``Ergodicity for Infinite Dimensional Systems,'' London
-Mathematical Society Lecture Notes, Vol. 229, Cambridge Univ. Press, Cambridge, UK,
-1996.
-5. Z. M. Ma and M. Rockner, ``Introduction to the Theory of (Non Symmetric) Dirichlet
-Forms,'' Springer-Verlag, BerlinNew York, 1992.
-6. D. Nualart and E. Pardoux, White noise driven quasilinear SPDEs with reflection, Probab.
-Theory Related Fields 93 (1992), 7789.
-7. D. Revuz and M. Yor, ``Continuous Martingales and Brownian Motion,'' Springer-Verlag,
-BerlinNew York, 1991.
-8. R. T. Durrett, D. L. Iglehart, and D. R. Miller, Weak convergence to Brownian meander
-and Brownian excursion, Ann. Probab. 5, No. 1 (1977), 117129.
-9. T. Funaki and S. Olla, Fluctuations for {, interface model on a wall, preprint, 2000.
-
-
