@@ -1,9 +1,16 @@
 from setuptools import setup
+import pathlib
+
+# Read the long description from the README file
+HERE = pathlib.Path(__file__).parent
+long_description = (HERE / "Readme.md").read_text(encoding="utf-8")
 
 setup(
     name='lemmabot',
     version='0.2.0',
     description='Local Research Assistant CLI for PDF documents',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     license='MIT',
     py_modules=['chatpdf'],
     install_requires=[

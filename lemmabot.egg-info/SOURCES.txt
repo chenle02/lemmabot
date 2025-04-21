@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+Readme.md
+chatpdf.py
+setup.py
+lemmabot.egg-info/PKG-INFO
+lemmabot.egg-info/SOURCES.txt
+lemmabot.egg-info/dependency_links.txt
+lemmabot.egg-info/entry_points.txt
+lemmabot.egg-info/requires.txt
+lemmabot.egg-info/top_level.txt
