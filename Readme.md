@@ -1,7 +1,7 @@
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 ![Python](https://img.shields.io/badge/python-3.8--3.12-blue)
 
-# ChatPDF: Local AI-Powered Research Assistant for PDFs
+# LemmaBot: Local AI-Powered Research Assistant for PDFs
 
 A fast, offline-friendly CLI tool for indexing and querying large collections of research papers using OpenAI's models, FAISS, and (optionally) Grobid.
 
@@ -14,17 +14,17 @@ A fast, offline-friendly CLI tool for indexing and querying large collections of
 ## Quickstart
 
 ```bash
-# Install ChatPDF (and dependencies)
+# Install LemmaBot (and dependencies)
 pip install .
 
 # Save OpenAI API key securely
-chatpdf auth login
+lemmabot auth login
 
 # Index a folder of PDFs
-chatpdf index ./papers myindex
+lemmabot index ./papers myindex
 
 # Ask a one-off question
-chatpdf query myindex "What is the main result in the KPZ paper?"
+lemmabot query myindex "What is the main result in the KPZ paper?"
 ```
 
 ## Setup
@@ -38,9 +38,9 @@ chatpdf query myindex "What is the main result in the KPZ paper?"
     ```
   - Or use the built-in auth command:
     ```bash
-    chatpdf auth login
+    lemmabot auth login
     ```
-    This will prompt you for your key and store it in `~/.config/chatpdf/.env`.
+    This will prompt you for your key and store it in `~/.config/lemmabot/.env`.
 
 
 
@@ -72,16 +72,16 @@ pip install -e .
 
 After install, the main command is:
 ```bash
-chatpdf --help
+lemmabot --help
 ```
 
 ## Configuration
 
 You can customize model choices and chunking parameters via a JSON configuration file.
-ChatPDF looks for configuration in two locations:
+LemmaBot looks for configuration in two locations:
 
-- Local: `./.chatpdf.json`
-- Global: `~/.config/chatpdf/config.json` (created by `chatpdf auth login`)
+- Local: `./.lemmabot.json`
+- Global: `~/.config/lemmabot/config.json` (created by `lemmabot auth login`)
 
 Supported configuration keys:
 - `embedding_model`: OpenAI embedding model name (default: "text-embedding-ada-002").
@@ -89,7 +89,7 @@ Supported configuration keys:
 - `chunk_size`: Number of tokens per chunk (default: 500).
 - `chunk_overlap`: Token overlap between chunks (default: 50).
 
-Example `~/.config/chatpdf/config.json`:
+Example `~/.config/lemmabot/config.json`:
 ```json
 {
   "embedding_model": "text-embedding-ada-002",
@@ -140,7 +140,7 @@ chatpdf repl myindex --top_k 8 --temperature 0.3
 
 1. Index your PDFs (creates a FAISS index and metadata):
    ```bash
-   chatpdf index <root_directory> <index_prefix> [--grobid] [--grobid-url URL] [--semantic]
+   lemmabot index <root_directory> <index_prefix> [--grobid] [--grobid-url URL] [--semantic]
    ```
    Options:
    - `--grobid` to use Grobid for structured section extraction (requires Grobid service running)
@@ -152,13 +152,13 @@ chatpdf repl myindex --top_k 8 --temperature 0.3
 
 2. Query your PDF collection (uses FAISS for fast retrieval):
    ```bash
-   chatpdf query <index_prefix> "Your question here"
+   lemmabot query <index_prefix> "Your question here"
    ```
    This will print the answer (with any mathematical formulas formatted in LaTeX notation) and a list of references (file path and page number) for each retrieved chunk.
 
 3. Interactive REPL mode:
    ```bash
-   chatpdf repl <index_prefix>
+   lemmabot repl <index_prefix>
    ```
    Starts a session where you can ask multiple follow-up questions against the same index. Type `exit` or press Ctrl-D to quit.
 

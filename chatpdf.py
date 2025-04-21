@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Command-line tool to chat with a collection of local PDF documents using OpenAI APIs.
+LemMabot: Command-line tool to chat with a collection of local PDF documents using OpenAI APIs.
 """
 
 __version__ = '0.1.0'
@@ -31,20 +31,20 @@ from PyPDF2.errors import PdfReadError
 
 # Load user configuration
 def load_config():
-    """Load configuration from local .chatpdf.json and global ~/.config/chatpdf/config.json."""
+    """Load configuration from local .lemmabot.json and global ~/.config/lemmabot/config.json."""
     config = {}
     # Local config in cwd
-    local_cfg = os.path.join(os.getcwd(), '.chatpdf.json')
+    local_cfg = os.path.join(os.getcwd(), '.lemmabot.json')
     if os.path.exists(local_cfg):
         try:
             with open(local_cfg) as f:
                 config.update(json.load(f))
         except Exception as e:
             print(f"⚠️ Warning loading local config {local_cfg}: {e}", file=sys.stderr)
-    # Global config under XDG_CONFIG_HOME or ~/.config/chatpdf/config.json
+    # Global config under XDG_CONFIG_HOME or ~/.config/lemmabot/config.json
     home = os.path.expanduser('~')
     config_home = os.environ.get('XDG_CONFIG_HOME', os.path.join(home, '.config'))
-    global_cfg = os.path.join(config_home, 'chatpdf', 'config.json')
+    global_cfg = os.path.join(config_home, 'lemmabot', 'config.json')
     if os.path.exists(global_cfg):
         try:
             with open(global_cfg) as f:
@@ -65,10 +65,10 @@ CHUNK_OVERLAP = _CONFIG.get('chunk_overlap', 50)
 def load_api_key():
     # Load local .env first, then global config
     load_dotenv()
-    # Load global config from XDG or ~/.config/chatpdf/.env
+    # Load global config from XDG or ~/.config/lemmabot/.env
     home = os.path.expanduser("~")
     config_home = os.environ.get("XDG_CONFIG_HOME", os.path.join(home, ".config"))
-    conf_file = os.path.join(config_home, "chatpdf", ".env")
+    conf_file = os.path.join(config_home, "lemmabot", ".env")
     load_dotenv(conf_file)
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
@@ -348,7 +348,7 @@ def auth_login():
     # Write to XDG_CONFIG_HOME/chatpdf/.env
     home = os.path.expanduser("~")
     config_home = os.environ.get("XDG_CONFIG_HOME", os.path.join(home, ".config"))
-    conf_dir = os.path.join(config_home, "chatpdf")
+    conf_dir = os.path.join(config_home, "lemmabot")
     os.makedirs(conf_dir, exist_ok=True)
     conf_file = os.path.join(conf_dir, ".env")
     try:
@@ -416,8 +416,8 @@ def repl_chat(index_prefix, top_k=5, temperature=0.2):
 
 def main():
     parser = argparse.ArgumentParser(
-        prog='chatpdf',
-        description="Chat with your local PDF collection."
+        prog='lemmabot',
+        description="Chat with your local PDF collection using LemmaBot."
     )
     parser.add_argument('--version', action='version', version=__version__)
     subparsers = parser.add_subparsers(dest='command')

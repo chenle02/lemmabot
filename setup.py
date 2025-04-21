@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='chatpdf',
+    name='lemmabot',
     version='0.1.0',
     description='Local Research Assistant CLI for PDF documents',
     license='MIT',
@@ -19,7 +19,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'chatpdf=chatpdf:main',
+            'lemmabot=chatpdf:main',
         ],
     },
     classifiers=[
