@@ -131,10 +131,10 @@ In addition to model choice, you can adjust these parameters:
 Examples:
 ```bash
 # Use top 10 chunks and a higher sampling temperature
-chatpdf query myindex "Explain the main theorem" --top_k 10 --temperature 0.7
+lemmabot query myindex "Explain the main theorem" --top_k 10 --temperature 0.7
 
 # In REPL mode, adjust temperature and top_k
-chatpdf repl myindex --top_k 8 --temperature 0.3
+lemmabot repl myindex --top_k 8 --temperature 0.3
 ```
 
 ## Usage
@@ -164,6 +164,39 @@ chatpdf repl myindex --top_k 8 --temperature 0.3
    Starts a session where you can ask multiple follow-up questions against the same index. Type `exit` or press Ctrl-D to quit.
    Upon exit, the full session transcript (questions, answers, and references) is saved to a Markdown file named `repl_session_YYYYMMDD_HHMMSS.md` in the current directory.
 
+
+## Contributing
+
+Contributions are welcome! To contribute to LemmaBot, please follow these steps:
+
+1. Fork the repository on GitHub (or your preferred Git host).
+2. Clone your fork locally:
+   ```bash
+   git clone <repository-url>
+   cd lemmabot
+   ```
+3. Create a new branch for your feature or bugfix:
+   ```bash
+   git checkout -b feature/my-feature
+   ```
+4. Make your changes in this branch. Add or update tests and documentation as needed.
+5. Install development dependencies and run pre-commit hooks:
+   ```bash
+   pip install -r requirements.txt
+   pre-commit run --all-files
+   ```
+6. Commit your changes with a clear message:
+   ```bash
+   git add .
+   git commit -m "Add feature: describe feature here"
+   ```
+7. Push your branch to your fork:
+   ```bash
+   git push origin feature/my-feature
+   ```
+8. Open a pull request against the `main` branch of the upstream repository, referencing any related issue.
+
+For bug reports or feature requests, please open an issue on the project's issue tracker.
 
 ## License
 
