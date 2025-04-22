@@ -109,7 +109,7 @@ Example `~/.config/lemmabot/config.json`:
 ```
 
 ### Recommended OpenAI Models
-When choosing models, you should balance cost, speed, and quality. Here are some common options:
+When choosing models, you should balance cost, speed, and quality. For up‑to‑date pricing, see [OpenAI Pricing](https://platform.openai.com/docs/pricing). Here are some common options:
 
 Embedding models:
 - text-embedding-ada-002 (default): very cost-effective and high-quality for most tasks
