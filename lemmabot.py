@@ -488,7 +488,7 @@ def main():
             '  docker pull lfoppiano/grobid:0.7.3\n'
             '  docker run --rm -t -p 8070:8070 lfoppiano/grobid:0.7.3\n'
             '  export GROBID_URL=http://localhost:8070\n'
-            'Use --grobid to enable Grobid-based extraction. See README for details.'
+            'Use --grobid (or specify --grobid-url) to enable Grobid-based extraction. See README for details.'
         )
     )
     root_arg = parser_index.add_argument(
@@ -511,7 +511,7 @@ def main():
     parser_index.add_argument(
         '--grobid-url',
         default=os.getenv('GROBID_URL', 'http://localhost:8070'),
-        help='URL of running Grobid service (default from GROBID_URL or http://localhost:8070)'
+        help='URL of running Grobid service (implies --grobid; default from GROBID_URL or http://localhost:8070)'
     )
     parser_index.add_argument(
         '--semantic', '-s',
@@ -553,10 +553,15 @@ def main():
     # Load API key from env or config
     load_api_key()
     if args.command == 'index':
-        index_pdfs(args.root_dir, args.index_prefix,
-                   use_grobid=args.grobid,
-                   grobid_url=args.grobid_url,
-                   use_semantic=args.semantic)
+        # enable Grobid-based extraction if --grobid flag or --grobid-url option is provided
+        use_grobid_flag = args.grobid or ('--grobid-url' in sys.argv)
+        index_pdfs(
+            args.root_dir,
+            args.index_prefix,
+            use_grobid=use_grobid_flag,
+            grobid_url=args.grobid_url,
+            use_semantic=args.semantic,
+        )
     elif args.command == 'query':
         question = ' '.join(args.question)
         query_index(args.index_prefix, question, args.top_k, args.temperature)
