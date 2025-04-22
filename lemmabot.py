@@ -197,6 +197,30 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
                 continue
             full_path = os.path.join(dirpath, fname)
             print(f"Processing file: {full_path}")
+            # Check for TXT backup and use it first if available
+            txt_path = os.path.splitext(full_path)[0] + '.txt'
+            if os.path.exists(txt_path):
+                try:
+                    with open(txt_path, 'r', encoding='utf-8') as f:
+                        txt_text = f.read()
+                except Exception as e:
+                    print(f"⚠️ Error reading TXT backup for {full_path}: {e}", file=sys.stderr)
+                else:
+                    if txt_text.strip():
+                        print(f"ℹ️ Using TXT backup for {full_path}")
+                        if use_semantic:
+                            paras = txt_text.split('\n\n')
+                            chunks = semantic_chunk_paragraphs(paras)
+                        else:
+                            chunks = chunk_text(txt_text)
+                        for chunk_idx, chunk in enumerate(chunks):
+                            docs.append({
+                                'path': full_path,
+                                'chunk': chunk_idx,
+                                'page': None,
+                                'text': chunk
+                            })
+                        continue
             # Extract content: prefer Grobid if requested, but fall back to page-based parsing
             sections = []
             if use_grobid:
