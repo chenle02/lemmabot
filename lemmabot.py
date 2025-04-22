@@ -338,7 +338,8 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
     )
     user_prompt = "Context:\n" + "\n---\n".join(context_texts) + f"\nQuestion: {question}"
     print("Querying chat completion...")
-    chat_resp = openai.ChatCompletion.create(
+    # Use new OpenAI Python v1 API for chat completions
+    chat_resp = openai.chat.completions.create(
         model=CHAT_MODEL,
         messages=[{"role": "user", "content": question}],
         temperature=temperature,
