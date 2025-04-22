@@ -31,6 +31,14 @@ import openai
 from PyPDF2 import PdfReader
 from PyPDF2.errors import PdfReadError
 
+try:
+    import argcomplete
+    from argcomplete.completers import FilesCompleter, DirectoriesCompleter
+except ImportError:
+    argcomplete = None
+    FilesCompleter = None
+    DirectoriesCompleter = None
+
 
 # Load user configuration
 def load_config():
@@ -483,14 +491,18 @@ def main():
             'Use --grobid to enable Grobid-based extraction. See README for details.'
         )
     )
-    parser_index.add_argument(
+    root_arg = parser_index.add_argument(
         'root_dir',
         help='Root directory to search for PDF files'
     )
-    parser_index.add_argument(
+    if DirectoriesCompleter:
+        root_arg.completer = DirectoriesCompleter()
+    prefix_arg = parser_index.add_argument(
         'index_prefix',
         help='Prefix for output index files (without extension)'
     )
+    if FilesCompleter:
+        prefix_arg.completer = FilesCompleter()
     parser_index.add_argument(
         '--grobid', '-g',
         action='store_true',
@@ -508,15 +520,23 @@ def main():
     )
 
     parser_query = subparsers.add_parser('query', help='Query the indexed PDFs')
-    parser_query.add_argument('index_prefix', help='Prefix of the index files (without extension)')
+    query_prefix = parser_query.add_argument('index_prefix', help='Prefix of the index files (without extension)')
+    if FilesCompleter:
+        query_prefix.completer = FilesCompleter()
     parser_query.add_argument('question', nargs='+', help='Question to ask')
     parser_query.add_argument('--top_k', type=int, default=5, help='Number of top chunks to use')
     parser_query.add_argument('--temperature', type=float, default=0.2, help='Sampling temperature for chat model')
 
     parser_repl = subparsers.add_parser('repl', help='Interactive REPL mode')
-    parser_repl.add_argument('index_prefix', help='Prefix of the index files (without extension)')
+    repl_prefix = parser_repl.add_argument('index_prefix', help='Prefix of the index files (without extension)')
+    if FilesCompleter:
+        repl_prefix.completer = FilesCompleter()
     parser_repl.add_argument('--top_k', type=int, default=5, help='Number of top chunks to use')
     parser_repl.add_argument('--temperature', type=float, default=0.2, help='Sampling temperature for chat model')
+
+    # enable bash tab-completion if argcomplete is available
+    if argcomplete:
+        argcomplete.autocomplete(parser)
 
     args = parser.parse_args()
     # Handle auth commands without requiring API key loaded

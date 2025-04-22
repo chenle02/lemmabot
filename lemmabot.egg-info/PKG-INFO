@@ -18,6 +18,7 @@ Requires-Dist: tiktoken>=0.3.0
 Requires-Dist: requests>=2.28.0
 Requires-Dist: lxml>=4.9.0
 Requires-Dist: unstructured>=0.7.3
+Requires-Dist: argcomplete>=2.0.0
 Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type

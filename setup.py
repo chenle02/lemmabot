@@ -22,7 +22,8 @@ setup(
         'tiktoken>=0.3.0',
         'requests>=2.28.0',
         'lxml>=4.9.0',
-        'unstructured>=0.7.3'
+        'unstructured>=0.7.3',
+        'argcomplete>=2.0.0'
     ],
     entry_points={
         'console_scripts': [
