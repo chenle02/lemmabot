@@ -9,6 +9,7 @@ import os
 import sys
 import argparse
 import pickle
+from datetime import datetime
 import requests
 from lxml import etree
 from tqdm import tqdm
@@ -29,6 +30,7 @@ import tiktoken
 import openai
 from PyPDF2 import PdfReader
 from PyPDF2.errors import PdfReadError
+
 
 # Load user configuration
 def load_config():
@@ -53,6 +55,7 @@ def load_config():
         except Exception as e:
             print(f"⚠️ Warning loading global config {global_cfg}: {e}", file=sys.stderr)
     return config
+
 
 # Initialize config and model names
 _CONFIG = load_config()
@@ -116,7 +119,8 @@ def chunk_text(text, chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP):
         chunks.append(chunk_str)
         start += chunk_size - overlap
     return chunks
- 
+
+
 def semantic_chunk_paragraphs(paragraphs, chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP):
     """Chunk list of paragraphs into semantic chunks based on token count."""
     # Initialize tokenizer
@@ -140,6 +144,7 @@ def semantic_chunk_paragraphs(paragraphs, chunk_size=CHUNK_SIZE, overlap=CHUNK_O
     if current_chunk:
         chunks.append("\n\n".join(current_chunk))
     return chunks
+
 
 def extract_with_grobid(pdf_path, grobid_url):
     """Extract sections and paragraphs from PDF using Grobid fulltext API."""
@@ -335,11 +340,9 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
     print("Querying chat completion...")
     chat_resp = openai.ChatCompletion.create(
         model=CHAT_MODEL,
-        messages=[
-            {'role': 'system', 'content': system_prompt},
-            {'role': 'user', 'content': user_prompt}
-        ],
-        temperature=temperature
+        messages=[{"role": "user", "content": question}],
+        temperature=temperature,
+        max_tokens=top_k
     )
     answer = chat_resp['choices'][0]['message']['content']
     return answer, selected
@@ -389,8 +392,6 @@ def query_index(index_path, question, top_k=5, temperature=0.2):
         print(f"[{idx}] {path} (page {page})")
 
 
-from datetime import datetime
-
 def repl_chat(index_prefix, top_k=5, temperature=0.2):
     """Interactive REPL mode for querying PDF index, with automatic session logging."""
     # Load documents and FAISS index
@@ -410,7 +411,7 @@ def repl_chat(index_prefix, top_k=5, temperature=0.2):
         print(f"⚠️ Could not open log file {log_filename}: {e}")
         log_f = None
     if log_f:
-        log_f.write(f"# LemmaBot Session Log\n")
+        log_f.write("# LemmaBot Session Log\n")
         log_f.write(f"Date: {now.isoformat()}\n\n")
     print(f"Entering interactive REPL mode. Type 'exit' or press Ctrl-D to quit. Logging to {log_filename}.")
     # Run REPL with guaranteed log closing
@@ -431,8 +432,8 @@ def repl_chat(index_prefix, top_k=5, temperature=0.2):
                 print(f" [{idx}] {path} (page {page})")
             # Log to file
             if log_f:
-                log_f.write(f"## User:\n{question}\n\n")
-                log_f.write(f"## Assistant:\n{answer}\n\n")
+                log_f.write(f"## User: \n{question}\n\n")
+                log_f.write(f"## Assistant: \n{answer}\n\n")
                 log_f.write("**References:**\n")
                 for idx, ctx in enumerate(contexts, start=1):
                     path = ctx.get('path', '<unknown>')
