@@ -8,6 +8,19 @@
 
 A fast, offline-friendly CLI tool for indexing and querying large collections of research papers using OpenAI's models, FAISS, and (optionally) Grobid.
 
+## Table of Contents
+
+- [Who Is This For?](#who-is-this-for)
+- [Quickstart](#quickstart)
+- [Setup](#setup)
+  - [Grobid Setup (optional)](#grobid-setup-optional)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Tunable Parameters](#tunable-parameters)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Who Is This For?
 
 - **Researchers** looking to ask natural language questions across a large collection of scientific papers—especially those containing mathematical formulas, figures, and references.

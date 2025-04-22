@@ -13,3 +13,5 @@ repl_session_*.md
 !repl_session_20250421_233915.md
 
 testprefix.faiss
+
+.venv

@@ -1,4 +1,4 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: lemmabot
 Version: 0.2.0
 Summary: Local Research Assistant CLI for PDF documents
@@ -9,24 +9,6 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: openai>=0.27.0
-Requires-Dist: PyPDF2>=3.0.0
-Requires-Dist: numpy>=1.20.0
-Requires-Dist: python-dotenv>=0.21.0
-Requires-Dist: faiss-cpu>=1.7.1
-Requires-Dist: tiktoken>=0.3.0
-Requires-Dist: requests>=2.28.0
-Requires-Dist: lxml>=4.9.0
-Requires-Dist: unstructured>=0.7.3
-Requires-Dist: argcomplete>=2.0.0
-Dynamic: classifier
-Dynamic: description
-Dynamic: description-content-type
-Dynamic: license
-Dynamic: license-file
-Dynamic: requires-dist
-Dynamic: requires-python
-Dynamic: summary
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 ![Python](https://img.shields.io/badge/python-3.8--3.12-blue)
@@ -139,7 +121,7 @@ Example `~/.config/lemmabot/config.json`:
 ```
 
 ### Recommended OpenAI Models
-When choosing models, you should balance cost, speed, and quality. Here are some common options:
+When choosing models, you should balance cost, speed, and quality. For up‑to‑date pricing, see [OpenAI Pricing](https://platform.openai.com/docs/pricing). Here are some common options:
 
 Embedding models:
 - text-embedding-ada-002 (default): very cost-effective and high-quality for most tasks
@@ -149,7 +131,8 @@ Embedding models:
 Chat / reasoning models:
 - gpt-3.5-turbo (default): fast and affordable general-purpose chat
 - gpt-3.5-turbo-16k: extended context window (up to 16k tokens)
-- gpt-4: top-tier reasoning quality, standard-window (~8k tokens)
+ - gpt-4: top-tier reasoning quality, standard-window (~8k tokens)
+ - gpt-4.1: enhanced reasoning performance and efficiency, standard-window (~8k tokens)
 - gpt-4-32k: extended context window (up to 32k tokens) for very long conversations
 
 Specify your choice in the config file under `embedding_model` and `chat_model`.
@@ -204,7 +187,7 @@ lemmabot repl myindex --top_k 8 --temperature 0.3
    ```
    Starts a session where you can ask multiple follow‑up questions against the same index. Type `exit` or press Ctrl-D to quit.
    Upon exit, the full session transcript (questions, answers, and references) is saved to a Markdown file named `repl_session_YYYYMMDD_HHMMSS.md` in the current directory.
-   - Example session transcript: [repl_session_20250421_232425.md](repl_session_20250421_232425.md)
+   - Example session transcript: [repl_session_20250421_233915.md](repl_session_20250421_233915.md)
 
 
 ## Contributing
