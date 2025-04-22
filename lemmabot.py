@@ -185,7 +185,7 @@ def extract_with_grobid(pdf_path, grobid_url):
         if paras:
             sections.append({'title': title, 'paragraphs': paras})
     return sections
- 
+
 def extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic, allow_txt_backup=True):
     """Extract and chunk text from a single PDF, returning list of metadata dicts."""
     docs_entries = []

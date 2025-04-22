@@ -189,6 +189,14 @@ def extract_with_grobid(pdf_path, grobid_url):
 def extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic, allow_txt_backup=True):
     """Extract and chunk text from a single PDF, returning list of metadata dicts."""
     docs_entries = []
+    # Record file metadata for metadata-driven incremental parsing
+    file_mtime = os.path.getmtime(full_path)
+    file_size = os.path.getsize(full_path)
+    # Initialize tokenizer for token count metadata
+    try:
+        encoder = tiktoken.encoding_for_model(CHAT_MODEL)
+    except Exception:
+        encoder = tiktoken.get_encoding("cl100k_base")
     # Try Grobid extraction if requested
     sections = []
     if use_grobid:
@@ -199,14 +207,22 @@ def extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic, allow_t
             paras = sec.get('paragraphs', [])
             if use_semantic:
                 chunks = semantic_chunk_paragraphs(paras)
+                source_type = 'grobid_semantic'
             else:
                 chunks = chunk_text("\n\n".join(paras))
+                source_type = 'grobid'
             for idx, chunk in enumerate(chunks):
                 docs_entries.append({
                     'path': full_path,
                     'section': sec.get('title', ''),
+                    'page': None,
                     'chunk': idx,
-                    'text': chunk
+                    'text': chunk,
+                    'char_length': len(chunk),
+                    'token_count': len(encoder.encode(chunk)),
+                    'file_mtime': file_mtime,
+                    'file_size': file_size,
+                    'source': source_type,
                 })
         return docs_entries
     # Fallback to PDF page text extraction
@@ -244,14 +260,22 @@ def extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic, allow_t
             except Exception:
                 paras = page_text.split('\n\n')
             chunks = semantic_chunk_paragraphs(paras)
+            source_type = 'pdf_semantic'
         else:
             chunks = chunk_text(page_text)
+            source_type = 'pdf'
         for idx, chunk in enumerate(chunks):
             docs_entries.append({
                 'path': full_path,
+                'section': '',
                 'page': page_num,
                 'chunk': idx,
-                'text': chunk
+                'text': chunk,
+                'char_length': len(chunk),
+                'token_count': len(encoder.encode(chunk)),
+                'file_mtime': file_mtime,
+                'file_size': file_size,
+                'source': source_type,
             })
     return docs_entries
 
