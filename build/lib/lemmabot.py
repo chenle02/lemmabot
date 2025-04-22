@@ -197,12 +197,14 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
                 continue
             full_path = os.path.join(dirpath, fname)
             print(f"Processing file: {full_path}")
-            # Extract content
+            # Extract content: prefer Grobid if requested, but fall back to page-based parsing
+            sections = []
             if use_grobid:
                 sections = extract_with_grobid(full_path, grobid_url)
+            if sections:
+                # Process Grobid-extracted sections
                 for sec in sections:
                     paras = sec.get('paragraphs', [])
-                    # Chunk by semantic or simple token window
                     if use_semantic:
                         chunks = semantic_chunk_paragraphs(paras)
                     else:
@@ -244,7 +246,6 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
                 if not text_pages:
                     continue
                 for page_num, page_text in enumerate(text_pages, start=1):
-                    # Semantic chunk per page if requested
                     if use_semantic:
                         paras = []
                         try:
