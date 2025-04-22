@@ -501,6 +501,19 @@ def query_index(index_path, question, top_k=5, temperature=0.2):
 
 def repl_chat(index_prefix, top_k=5, temperature=0.2):
     """Interactive REPL mode for querying PDF index, with automatic session logging."""
+    # Enable arrow-key history and line editing (if readline is available)
+    try:
+        import readline, atexit
+        histfile = os.path.expanduser("~/.lemmabot_history")
+        try:
+            readline.read_history_file(histfile)
+        except FileNotFoundError:
+            pass
+        atexit.register(readline.write_history_file, histfile)
+        readline.set_history_length(1000)
+        readline.parse_and_bind("tab: complete")
+    except ImportError:
+        pass
     # Load documents and FAISS index
     base, _ = os.path.splitext(index_prefix)
     docs_file = base + '.pkl'
