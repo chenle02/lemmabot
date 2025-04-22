@@ -338,12 +338,17 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
     )
     user_prompt = "Context:\n" + "\n---\n".join(context_texts) + f"\nQuestion: {question}"
     print("Querying chat completion...")
-    # Use new OpenAI Python v1 API for chat completions
+    # Use new OpenAI Python v1 API for chat completions, include system prompt and context
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user",   "content": user_prompt},
+    ]
     chat_resp = openai.chat.completions.create(
         model=CHAT_MODEL,
-        messages=[{"role": "user", "content": question}],
+        messages=messages,
         temperature=temperature,
-        max_tokens=top_k
+        # allow enough tokens for a full answer (increased)
+        max_tokens=1024
     )
     # Extract content from the new v1 ChatCompletion object
     # chat_resp.choices is a list of Choice, each with a .message attribute
