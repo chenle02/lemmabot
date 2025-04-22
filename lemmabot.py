@@ -345,7 +345,9 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
         temperature=temperature,
         max_tokens=top_k
     )
-    answer = chat_resp['choices'][0]['message']['content']
+    # Extract content from the new v1 ChatCompletion object
+    # chat_resp.choices is a list of Choice, each with a .message attribute
+    answer = chat_resp.choices[0].message.content
     return answer, selected
 
 
