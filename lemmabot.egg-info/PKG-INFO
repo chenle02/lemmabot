@@ -183,6 +183,8 @@ lemmabot repl myindex --top_k 8 --temperature 0.3
    - `<index_prefix>.pkl` (documents metadata)
    - `<index_prefix>.faiss` (FAISS vector index)
 
+   **Incremental indexing**: If `<index_prefix>.pkl` and `<index_prefix>.faiss` already exist, re-running the `index` command will only process new PDF files not already indexed and append them to the existing index.
+
 2. Query your PDF collection (uses FAISS for fast retrieval):
    ```bash
    lemmabot query <index_prefix> "Your question here"

@@ -185,84 +185,150 @@ def extract_with_grobid(pdf_path, grobid_url):
         if paras:
             sections.append({'title': title, 'paragraphs': paras})
     return sections
+ 
+def extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic):
+    """Extract and chunk text from a single PDF, returning list of metadata dicts."""
+    docs_entries = []
+    # Try Grobid extraction if requested
+    sections = []
+    if use_grobid:
+        sections = extract_with_grobid(full_path, grobid_url)
+    # If Grobid returned sections, chunk per section
+    if sections:
+        for sec in sections:
+            paras = sec.get('paragraphs', [])
+            if use_semantic:
+                chunks = semantic_chunk_paragraphs(paras)
+            else:
+                chunks = chunk_text("\n\n".join(paras))
+            for idx, chunk in enumerate(chunks):
+                docs_entries.append({
+                    'path': full_path,
+                    'section': sec.get('title', ''),
+                    'chunk': idx,
+                    'text': chunk
+                })
+        return docs_entries
+    # Fallback to PDF page text extraction
+    text_pages = []
+    try:
+        reader = PdfReader(full_path)
+        for page in reader.pages:
+            try:
+                t = page.extract_text() or ''
+            except Exception:
+                t = ''
+            if t.strip():
+                text_pages.append(t)
+    except PdfReadError as e:
+        print(f"⚠️ Skipping unreadable PDF: {full_path} ({e})")
+        return []
+    # If no text, try TXT backup
+    if not text_pages:
+        txt_path = os.path.splitext(full_path)[0] + '.txt'
+        if os.path.exists(txt_path):
+            try:
+                with open(txt_path, 'r', encoding='utf-8') as f:
+                    txt = f.read()
+                if txt.strip():
+                    text_pages = [txt]
+                    print(f"ℹ️ Using TXT backup for {full_path}")
+            except Exception as e:
+                print(f"⚠️ Error reading TXT backup for {full_path}: {e}")
+    # Chunk pages
+    for page_num, page_text in enumerate(text_pages, start=1):
+        if use_semantic:
+            try:
+                elems = partition_text(text=page_text)
+                paras = [el.text.strip() for el in elems if getattr(el, 'element_type', '') == 'NarrativeText' and el.text]
+            except Exception:
+                paras = page_text.split('\n\n')
+            chunks = semantic_chunk_paragraphs(paras)
+        else:
+            chunks = chunk_text(page_text)
+        for idx, chunk in enumerate(chunks):
+            docs_entries.append({
+                'path': full_path,
+                'page': page_num,
+                'chunk': idx,
+                'text': chunk
+            })
+    return docs_entries
 
 
 def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_semantic=False):
     """Walk the directory, extract and embed text chunks (optionally via Grobid/Unstructured), and save index."""
+    # Incremental indexing: detect existing index files
+    base = output_prefix
+    docs_file = base + '.pkl'
+    faiss_file = base + '.faiss'
+    if os.path.exists(docs_file) and os.path.exists(faiss_file):
+        # Load existing metadata and index
+        try:
+            with open(docs_file, 'rb') as f:
+                docs = pickle.load(f)
+        except Exception:
+            docs = []
+        try:
+            index = faiss.read_index(faiss_file)
+        except Exception:
+            index = None
+        existing_paths = set(d['path'] for d in docs)
+        # Find new PDF files
+        new_files = []
+        for dirpath, _, filenames in os.walk(root_dir):
+            for fname in filenames:
+                if fname.lower().endswith('.pdf'):
+                    full_path = os.path.join(dirpath, fname)
+                    if full_path not in existing_paths:
+                        new_files.append(full_path)
+        if not new_files:
+            print("No new PDF files to index. Exiting.")
+            return
+        # Extract and chunk new files
+        new_docs = []
+        for full_path in new_files:
+            print(f"Processing new file: {full_path}")
+            new_docs.extend(extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic))
+        if not new_docs:
+            print("⚠️ No extractable text in new PDFs. Exiting.")
+            return
+        # Embed new chunks
+        print(f"Embedding {len(new_docs)} new chunks...")
+        embeddings_new = []
+        for doc in tqdm(new_docs, desc="Embedding new chunks", unit="chunk"):
+            try:
+                resp = openai.embeddings.create(input=doc['text'], model=EMBED_MODEL)
+                emb = resp.data[0].embedding
+            except Exception as e:
+                print(f"Error embedding chunk for {doc.get('path', '<unknown>')}: {e}", file=sys.stderr)
+                emb = [0.0] * len(resp.data[0].embedding)
+            embeddings_new.append(emb)
+        embeddings_new = np.array(embeddings_new, dtype=np.float32)
+        faiss.normalize_L2(embeddings_new)
+        if index is None:
+            dim = embeddings_new.shape[1]
+            index = faiss.IndexFlatIP(dim)
+        index.add(embeddings_new)
+        # Update and save
+        docs.extend(new_docs)
+        with open(docs_file, 'wb') as f:
+            pickle.dump(docs, f)
+        faiss.write_index(index, faiss_file)
+        print(f"Updated FAISS index saved to {faiss_file} ({len(new_docs)} new chunks)")
+        return
+    # No existing index: start fresh
     docs = []
     print(f"Indexing PDFs under {root_dir}...")
+    # Initial pass: extract chunks from all PDF files
     for dirpath, _, filenames in os.walk(root_dir):
         for fname in filenames:
             if not fname.lower().endswith('.pdf'):
                 continue
             full_path = os.path.join(dirpath, fname)
             print(f"Processing file: {full_path}")
-            # Extract content: prefer Grobid if requested, but fall back to page-based parsing
-            sections = []
-            if use_grobid:
-                sections = extract_with_grobid(full_path, grobid_url)
-            if sections:
-                # Process Grobid-extracted sections
-                for sec in sections:
-                    paras = sec.get('paragraphs', [])
-                    if use_semantic:
-                        chunks = semantic_chunk_paragraphs(paras)
-                    else:
-                        chunks = chunk_text("\n\n".join(paras))
-                    for chunk_idx, chunk in enumerate(chunks):
-                        docs.append({
-                            'path': full_path,
-                            'section': sec.get('title', ''),
-                            'chunk': chunk_idx,
-                            'text': chunk
-                        })
-            else:
-                # Page-based or TXT fallback extraction
-                text_pages = []
-                try:
-                    reader = PdfReader(full_path)
-                    for page in reader.pages:
-                        try:
-                            page_text = page.extract_text() or ''
-                        except Exception:
-                            page_text = ''
-                        if page_text.strip():
-                            text_pages.append(page_text)
-                except PdfReadError as e:
-                    print(f"⚠️ Skipping unreadable PDF: {full_path} ({e})")
-                    continue
-                if not text_pages:
-                    txt_path = os.path.splitext(full_path)[0] + '.txt'
-                    if os.path.exists(txt_path):
-                        try:
-                            with open(txt_path, 'r', encoding='utf-8') as f:
-                                txt_text = f.read()
-                            if txt_text.strip():
-                                text_pages = [txt_text]
-                                print(f"ℹ️ Using TXT backup for {full_path}")
-                        except Exception as e:
-                            print(f"⚠️ Error reading TXT {txt_path}: {e}")
-                # Skip if still no text
-                if not text_pages:
-                    continue
-                for page_num, page_text in enumerate(text_pages, start=1):
-                    if use_semantic:
-                        paras = []
-                        try:
-                            elems = partition_text(text=page_text)
-                            paras = [el.text.strip() for el in elems if getattr(el, 'element_type', '') == 'NarrativeText' and el.text]
-                        except Exception:
-                            paras = page_text.split('\n\n')
-                        chunks = semantic_chunk_paragraphs(paras)
-                    else:
-                        chunks = chunk_text(page_text)
-                    for chunk_idx, chunk in enumerate(chunks):
-                        docs.append({
-                            'path': full_path,
-                            'page': page_num,
-                            'chunk': chunk_idx,
-                            'text': chunk
-                        })
+            entries = extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic)
+            docs.extend(entries)
     print(f"Created {len(docs)} chunks.")
     # Report how many distinct PDFs were indexed
     unique_paths = set(doc['path'] for doc in docs)
@@ -483,8 +549,10 @@ def main():
     # index subcommand
     parser_index = subparsers.add_parser(
         'index',
-        help='Index PDFs under a directory',
+        help='Index PDFs under a directory (supports incremental updates)',
         epilog=(
+            'Incremental indexing: if <index_prefix>.pkl and <index_prefix>.faiss already exist, '\
+            'only new PDF files will be processed and appended to the existing index.\n\n'
             'Grobid setup (optional):\n'
             '  docker pull lfoppiano/grobid:0.7.3\n'
             '  docker run --rm -t -p 8070:8070 lfoppiano/grobid:0.7.3\n'

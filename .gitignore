@@ -10,3 +10,5 @@ index.pkl
 .DS_Store
 All_pdfs/c/example.pdf
 repl_session_*.md
+
+testprefix.faiss
