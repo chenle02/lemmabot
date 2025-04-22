@@ -119,7 +119,8 @@ Embedding models:
 Chat / reasoning models:
 - gpt-3.5-turbo (default): fast and affordable general-purpose chat
 - gpt-3.5-turbo-16k: extended context window (up to 16k tokens)
-- gpt-4: top-tier reasoning quality, standard-window (~8k tokens)
+ - gpt-4: top-tier reasoning quality, standard-window (~8k tokens)
+ - gpt-4.1: enhanced reasoning performance and efficiency, standard-window (~8k tokens)
 - gpt-4-32k: extended context window (up to 32k tokens) for very long conversations
 
 Specify your choice in the config file under `embedding_model` and `chat_model`.
