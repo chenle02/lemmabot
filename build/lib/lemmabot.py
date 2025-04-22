@@ -501,6 +501,19 @@ def query_index(index_path, question, top_k=5, temperature=0.2):
 
 def repl_chat(index_prefix, top_k=5, temperature=0.2):
     """Interactive REPL mode for querying PDF index, with automatic session logging."""
+    # Enable arrow-key history and line editing (if readline is available)
+    try:
+        import readline, atexit
+        histfile = os.path.expanduser("~/.lemmabot_history")
+        try:
+            readline.read_history_file(histfile)
+        except FileNotFoundError:
+            pass
+        atexit.register(readline.write_history_file, histfile)
+        readline.set_history_length(1000)
+        readline.parse_and_bind("tab: complete")
+    except ImportError:
+        pass
     # Load documents and FAISS index
     base, _ = os.path.splitext(index_prefix)
     docs_file = base + '.pkl'
@@ -520,6 +533,15 @@ def repl_chat(index_prefix, top_k=5, temperature=0.2):
     if log_f:
         log_f.write("# LemmaBot Session Log\n")
         log_f.write(f"Date: {now.isoformat()}\n\n")
+        # Record session settings
+        log_f.write("## Session Settings\n")
+        log_f.write(f"- Index prefix: {index_prefix}\n")
+        log_f.write(f"- Documents metadata file: {docs_file}\n")
+        log_f.write(f"- FAISS index file: {faiss_file}\n")
+        log_f.write(f"- Embedding model: {EMBED_MODEL}\n")
+        log_f.write(f"- Chat model: {CHAT_MODEL}\n")
+        log_f.write(f"- Top K chunks: {top_k}\n")
+        log_f.write(f"- Temperature: {temperature}\n\n")
     print(f"Entering interactive REPL mode. Type 'exit' or press Ctrl-D to quit. Logging to {log_filename}.")
     # Run REPL with guaranteed log closing
     try:

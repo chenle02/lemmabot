@@ -533,6 +533,15 @@ def repl_chat(index_prefix, top_k=5, temperature=0.2):
     if log_f:
         log_f.write("# LemmaBot Session Log\n")
         log_f.write(f"Date: {now.isoformat()}\n\n")
+        # Record session settings
+        log_f.write("## Session Settings\n")
+        log_f.write(f"- Index prefix: {index_prefix}\n")
+        log_f.write(f"- Documents metadata file: {docs_file}\n")
+        log_f.write(f"- FAISS index file: {faiss_file}\n")
+        log_f.write(f"- Embedding model: {EMBED_MODEL}\n")
+        log_f.write(f"- Chat model: {CHAT_MODEL}\n")
+        log_f.write(f"- Top K chunks: {top_k}\n")
+        log_f.write(f"- Temperature: {temperature}\n\n")
     print(f"Entering interactive REPL mode. Type 'exit' or press Ctrl-D to quit. Logging to {log_filename}.")
     # Run REPL with guaranteed log closing
     try:
