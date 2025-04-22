@@ -174,7 +174,7 @@ lemmabot repl myindex --top_k 8 --temperature 0.3
    ```
    Starts a session where you can ask multiple follow‑up questions against the same index. Type `exit` or press Ctrl-D to quit.
    Upon exit, the full session transcript (questions, answers, and references) is saved to a Markdown file named `repl_session_YYYYMMDD_HHMMSS.md` in the current directory.
-   - Example session transcript: [repl_session_20250421_232425.md](repl_session_20250421_232425.md)
+   - Example session transcript: [repl_session_20250421_233915.md](repl_session_20250421_233915.md)
 
 
 ## Contributing
