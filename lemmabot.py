@@ -418,14 +418,24 @@ def answer_question(docs, faiss_index, question, top_k=5, temperature=0.2):
                 selected.append(entry)
                 if len(selected) >= top_k:
                     break
-    # Extract texts for prompt
-    context_texts = [entry['text'] for entry in selected]
+    # Extract texts and label contexts for prompt
+    labeled_contexts = []
+    for idx, entry in enumerate(selected, start=1):
+        # prefix each chunk with its citation label
+        labeled_contexts.append(f"[{idx}] {entry['text']}")
+    # System prompt: instruct LLM to cite contexts inline
     system_prompt = (
         "You are a helpful assistant that answers questions based on provided document excerpts. "
+        "When referencing these excerpts, cite them inline using bracketed numbers like [1], [2], etc., "
+        "corresponding to the listed contexts below. "
         "When including mathematical formulas or equations, format them using LaTeX notation—"
         "use $...$ for inline math and $$...$$ for display math."
     )
-    user_prompt = "Context:\n" + "\n---\n".join(context_texts) + f"\nQuestion: {question}"
+    user_prompt = (
+        "Context:\n" +
+        "\n---\n".join(labeled_contexts) +
+        f"\nQuestion: {question}"
+    )
     print("Querying chat completion...")
     # Use new OpenAI Python v1 API for chat completions, include system prompt and context
     messages = [

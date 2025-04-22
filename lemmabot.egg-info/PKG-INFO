@@ -196,7 +196,7 @@ lemmabot repl myindex --top_k 8 --temperature 0.3
    ```bash
    lemmabot query <index_prefix> "Your question here"
    ```
-   This will print the answer (with any mathematical formulas formatted in LaTeX notation) and a list of references (file path and page number) for each retrieved chunk.
+   The assistant’s answer will include inline citations `[1]`, `[2]`, etc., referring to the context excerpts.  After the answer, a **References** list will map each citation number to the source file path and page (or section) number.
 
 3. Interactive REPL mode:
    ```bash
