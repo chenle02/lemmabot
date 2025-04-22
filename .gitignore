@@ -12,3 +12,7 @@ repl_session_*.md
 testprefix.faiss
 
 .venv
+
+z.pkl
+testprefix.pkl
+myindex.pkl
