@@ -1,4 +1,4 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: lemmabot
 Version: 0.2.0
 Summary: Local Research Assistant CLI for PDF documents
@@ -9,6 +9,24 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: openai>=0.27.0
+Requires-Dist: PyPDF2>=3.0.0
+Requires-Dist: numpy>=1.20.0
+Requires-Dist: python-dotenv>=0.21.0
+Requires-Dist: faiss-cpu>=1.7.1
+Requires-Dist: tiktoken>=0.3.0
+Requires-Dist: requests>=2.28.0
+Requires-Dist: lxml>=4.9.0
+Requires-Dist: unstructured>=0.7.3
+Requires-Dist: argcomplete>=2.0.0
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 ![Python](https://img.shields.io/badge/python-3.8--3.12-blue)
@@ -19,6 +37,20 @@ License-File: LICENSE
 **⚠️ Experimental**: This tool is in an experimental stage. APIs and features may change without notice.
 
 A fast, offline-friendly CLI tool for indexing and querying large collections of research papers using OpenAI's models, FAISS, and (optionally) Grobid.
+
+## Table of Contents
+
+- [Who Is This For?](#who-is-this-for)
+- [Quickstart](#quickstart)
+- [Setup](#setup)
+  - [Grobid Setup (optional)](#grobid-setup-optional)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Tunable Parameters](#tunable-parameters)
+- [Usage](#usage)
+- [Test Dataset](#test-dataset)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Who Is This For?
 
@@ -41,7 +73,7 @@ lemmabot index ./papers myindex
 # Re-run to incrementally index only new PDF files
 lemmabot index ./papers myindex
 
-# Disable fallback to .txt backups when PDF/Grobid extraction yields no text
+# Disable fallback to .txt backup when PDF/Grobid extraction yields no text
 lemmabot index --no-txt-backup ./papers myindex
 
 # Ask a one-off question
@@ -162,7 +194,7 @@ lemmabot repl myindex --top_k 8 --temperature 0.3
 
 1. Index your PDFs (creates a FAISS index and metadata):
    ```bash
-   lemmabot index <root_directory> <index_prefix> [--grobid] [--grobid-url URL] [--semantic]
+   lemmabot index <root_directory> <index_prefix> [--grobid] [--grobid-url URL] [--semantic] [--no-txt-backup]
    ```
    Options:
    - `--grobid` to use Grobid for structured section extraction (requires Grobid service running)
@@ -189,6 +221,10 @@ lemmabot repl myindex --top_k 8 --temperature 0.3
    Upon exit, the full session transcript (questions, answers, and references) is saved to a Markdown file named `repl_session_YYYYMMDD_HHMMSS.md` in the current directory.
    - Example session transcript: [repl_session_20250421_233915.md](repl_session_20250421_233915.md)
 
+
+## Test Dataset
+
+For testing and demonstration purposes, a sample dataset is provided in the `All_pdfs` folder. See [TEST_DATASET.md](./TEST_DATASET.md) for details and the full folder structure.
 
 ## Contributing
 
