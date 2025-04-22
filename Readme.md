@@ -43,7 +43,7 @@ lemmabot index ./papers myindex
 # Re-run to incrementally index only new PDF files
 lemmabot index ./papers myindex
 
-# Disable fallback to .txt backups when PDF/Grobid extraction yields no text
+# Disable fallback to .txt backup when PDF/Grobid extraction yields no text
 lemmabot index --no-txt-backup ./papers myindex
 
 # Ask a one-off question
@@ -164,7 +164,7 @@ lemmabot repl myindex --top_k 8 --temperature 0.3
 
 1. Index your PDFs (creates a FAISS index and metadata):
    ```bash
-   lemmabot index <root_directory> <index_prefix> [--grobid] [--grobid-url URL] [--semantic]
+   lemmabot index <root_directory> <index_prefix> [--grobid] [--grobid-url URL] [--semantic] [--no-txt-backup]
    ```
    Options:
    - `--grobid` to use Grobid for structured section extraction (requires Grobid service running)
