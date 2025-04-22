@@ -541,7 +541,9 @@ def repl_chat(index_prefix, top_k=5, temperature=0.2):
         log_f.write(f"- Embedding model: {EMBED_MODEL}\n")
         log_f.write(f"- Chat model: {CHAT_MODEL}\n")
         log_f.write(f"- Top K chunks: {top_k}\n")
-        log_f.write(f"- Temperature: {temperature}\n\n")
+        log_f.write(f"- Temperature: {temperature}\n")
+        log_f.write(f"- Chunk size: {CHUNK_SIZE}\n")
+        log_f.write(f"- Chunk overlap: {CHUNK_OVERLAP}\n\n")
     print(f"Entering interactive REPL mode. Type 'exit' or press Ctrl-D to quit. Logging to {log_filename}.")
     # Run REPL with guaranteed log closing
     try:
