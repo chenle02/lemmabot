@@ -23,12 +23,18 @@ pip install .
 # Save OpenAI API key securely
 lemmabot auth login
 
-# Index a folder of PDFs
+# Index a folder of PDFs (first run)
 lemmabot index ./papers myindex
+
+# Re-run to incrementally index only new PDF files
+lemmabot index ./papers myindex
+
+# Disable fallback to .txt backups when PDF/Grobid extraction yields no text
+lemmabot index --no-txt-backup ./papers myindex
 
 # Ask a one-off question
 lemmabot query myindex "What is the main result in the KPZ paper?"
-```
+``` 
 
 ## Setup
 
@@ -149,6 +155,7 @@ lemmabot repl myindex --top_k 8 --temperature 0.3
    - `--grobid` to use Grobid for structured section extraction (requires Grobid service running)
    - `--grobid-url URL` to specify the Grobid server URL (default: http://localhost:8070)
    - `--semantic` to enable Unstructured-based paragraph tokenization and semantic chunking
+   - `--no-txt-backup` to disable fallback to .txt backup when PDF or Grobid extraction yields no text
    This will walk through `<root_directory>`, extract and embed text chunks, and save:
    - `<index_prefix>.pkl` (documents metadata)
    - `<index_prefix>.faiss` (FAISS vector index)

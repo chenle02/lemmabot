@@ -186,7 +186,7 @@ def extract_with_grobid(pdf_path, grobid_url):
             sections.append({'title': title, 'paragraphs': paras})
     return sections
  
-def extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic):
+def extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic, allow_txt_backup=True):
     """Extract and chunk text from a single PDF, returning list of metadata dicts."""
     docs_entries = []
     # Try Grobid extraction if requested
@@ -223,8 +223,8 @@ def extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic):
     except PdfReadError as e:
         print(f"⚠️ Skipping unreadable PDF: {full_path} ({e})")
         return []
-    # If no text, try TXT backup
-    if not text_pages:
+    # If no text, optionally try TXT backup
+    if not text_pages and allow_txt_backup:
         txt_path = os.path.splitext(full_path)[0] + '.txt'
         if os.path.exists(txt_path):
             try:
@@ -256,7 +256,7 @@ def extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic):
     return docs_entries
 
 
-def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_semantic=False):
+def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_semantic=False, allow_txt_backup=True):
     """Walk the directory, extract and embed text chunks (optionally via Grobid/Unstructured), and save index."""
     # Incremental indexing: detect existing index files
     base = output_prefix
@@ -289,7 +289,15 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
         new_docs = []
         for full_path in new_files:
             print(f"Processing new file: {full_path}")
-            new_docs.extend(extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic))
+            new_docs.extend(
+                extract_file_chunks(
+                    full_path,
+                    use_grobid,
+                    grobid_url,
+                    use_semantic,
+                    allow_txt_backup,
+                )
+            )
         if not new_docs:
             print("⚠️ No extractable text in new PDFs. Exiting.")
             return
@@ -327,7 +335,13 @@ def index_pdfs(root_dir, output_prefix, use_grobid=False, grobid_url=None, use_s
                 continue
             full_path = os.path.join(dirpath, fname)
             print(f"Processing file: {full_path}")
-            entries = extract_file_chunks(full_path, use_grobid, grobid_url, use_semantic)
+            entries = extract_file_chunks(
+                full_path,
+                use_grobid,
+                grobid_url,
+                use_semantic,
+                allow_txt_backup,
+            )
             docs.extend(entries)
     print(f"Created {len(docs)} chunks.")
     # Report how many distinct PDFs were indexed
@@ -587,6 +601,11 @@ def main():
         action='store_true',
         help='Enable Unstructured-based semantic chunking of paragraphs'
     )
+    parser_index.add_argument(
+        '--no-txt-backup',
+        action='store_true',
+        help='Disable fallback to .txt backup when PDF or Grobid extraction yields no text'
+    )
 
     parser_query = subparsers.add_parser('query', help='Query the indexed PDFs')
     query_prefix = parser_query.add_argument('index_prefix', help='Prefix of the index files (without extension)')
@@ -630,6 +649,7 @@ def main():
             use_grobid=use_grobid_flag,
             grobid_url=args.grobid_url,
             use_semantic=args.semantic,
+            allow_txt_backup=not getattr(args, 'no_txt_backup', False),
         )
     elif args.command == 'query':
         question = ' '.join(args.question)
